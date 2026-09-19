@@ -7,6 +7,7 @@
 | NCERT edition | Pre-rationalisation NCERT (2018-19 edition) |
 | Needed for | JEE Advanced |
 | PDF | [`lech105-legacy.pdf`](lech105-legacy.pdf) |
+| Module PDF | _not uploaded yet_ |
 | Official URL | no longer published - removed in the 2023 rationalisation. `lech105.pdf` on ncert.nic.in is now *Coordination Compounds*, not this chapter |
 | Mirror used | `manisoni28/books` -> `books/ta20181001153836887712ChemistryNcertChapter5.pdf` |
 
@@ -16,4 +17,4 @@ This chapter was **removed** from the NCERT textbook during rationalisation (202
 
 ## Notes
 
-<!-- Add your notes for this chapter below. -->
+<!-- Add your notes for this chapter below (notes.md). -->
