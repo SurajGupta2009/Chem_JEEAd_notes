@@ -376,6 +376,21 @@ def write_chapter_readme(record):
     size = pdf.stat().st_size if pdf.exists() else 0
     repo, path = record["mirror"]
     src_label, src_value = source_line(record)
+    folder = readme_path(record).parent
+    notes = folder / "notes.md"
+    if notes.exists():
+        notes_section = (
+            "Combined NCERT + Allen notes for JEE Main + Advanced are in "
+            "[`notes.md`](notes.md)."
+        )
+    else:
+        notes_section = "<!-- Add your notes for this chapter below (notes.md). -->"
+    extra_lines = []
+    if folder.exists():
+        for extra in sorted(folder.iterdir()):
+            if extra.suffix.lower() == ".pdf" and extra != pdf:
+                label = extra.stem.removesuffix(".pdf")
+                extra_lines.append("| Module PDF | [`%s`](%s) |" % (extra.name, label))
     body = f"""# {record['title']}
 
 | | |
@@ -385,6 +400,7 @@ def write_chapter_readme(record):
 | NCERT edition | {EDITION_LABEL[record['edition']]} |
 | Needed for | {", ".join(record['exams'])} |
 | PDF | [`{pdf.name}`]({pdf.name}) |
+{chr(10).join(extra_lines) if extra_lines else "| Module PDF | _not uploaded yet_ |"}
 | {src_label} | {src_value} |
 | Mirror used | `{repo}` -> `{path}` |
 
@@ -394,7 +410,7 @@ def write_chapter_readme(record):
 
 ## Notes
 
-<!-- Add your notes for this chapter below. -->
+{notes_section}
 """
     readme_path(record).write_text(body, encoding="utf-8")
 

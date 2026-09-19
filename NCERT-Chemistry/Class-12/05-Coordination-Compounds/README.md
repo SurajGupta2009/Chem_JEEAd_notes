@@ -7,6 +7,7 @@
 | NCERT edition | Rationalised NCERT (2023 onwards) |
 | Needed for | JEE Main, JEE Advanced |
 | PDF | [`lech105.pdf`](lech105.pdf) |
+| Module PDF | [`3-JAEIC-Coordination Compound_Eng.pdf.pdf`](3-JAEIC-Coordination Compound_Eng) |
 | Official URL | https://ncert.nic.in/textbook/pdf/lech105.pdf |
 | Mirror used | `AnonymousCoder-hub/NCERT-Textbooks-Physics-Chemistry-Biology` -> `Chemistry_12_Part1/Chapter_05.pdf` |
 
@@ -16,4 +17,4 @@ This chapter is in the current (rationalised) NCERT textbook, which is what the 
 
 ## Notes
 
-<!-- Add your notes for this chapter below. -->
+Combined NCERT + Allen notes for JEE Main + Advanced are in [`notes.md`](notes.md).
