@@ -26,12 +26,18 @@ Practical-Chemistry/
 
 ## Where the Allen modules live
 
-| Uploaded Allen PDF | Chapter folder | Notes |
+| Chapter folder | Allen PDF in the folder | Notes |
 |---|---|---|
-| `d-Block_Theory_26.pdf` | [`Class-12/04-The-d-and-f-Block-Elements`](NCERT-Chemistry/Class-12/04-The-d-and-f-Block-Elements/) | ✅ [`notes.md`](NCERT-Chemistry/Class-12/04-The-d-and-f-Block-Elements/notes.md) written |
-| `3-JAEIC-Coordination Compound_Eng.pdf.pdf` | [`Class-12/05-Coordination-Compounds`](NCERT-Chemistry/Class-12/05-Coordination-Compounds/) | ⏳ notes pending |
-| `5-JAEIC-Metallurgy_Eng.pdf.pdf` | [`Class-12/13-General-Principles-and-Processes-of-Isolation-of-Elements`](NCERT-Chemistry/Class-12/13-General-Principles-and-Processes-of-Isolation-of-Elements/) | ⏳ notes pending |
-| `Salt Analysis_Theory_26.pdf` + `Reaction of Salt Analysis_Theory_26.pdf` | [`Practical-Chemistry/Salt-Analysis`](Practical-Chemistry/Salt-Analysis/) | ⏳ notes pending |
+| [`Class-11/06-Equilibrium`](NCERT-Chemistry/Class-11/06-Equilibrium/) | _none uploaded yet_ | ✅ [`notes.md`](NCERT-Chemistry/Class-11/06-Equilibrium/notes.md) written (NCERT + 🆇 Advanced extras; covers chemical **and** ionic equilibrium) |
+| [`Class-11/07-Redox-Reactions`](NCERT-Chemistry/Class-11/07-Redox-Reactions/) | _none uploaded yet_ | ✅ [`notes.md`](NCERT-Chemistry/Class-11/07-Redox-Reactions/notes.md) written (NCERT + 🆇 extras) |
+| [`Class-12/02-Electrochemistry`](NCERT-Chemistry/Class-12/02-Electrochemistry/) | _none uploaded yet_ | ✅ [`notes.md`](NCERT-Chemistry/Class-12/02-Electrochemistry/notes.md) written (NCERT + 🆇 extras) |
+| [`Class-12/04-The-d-and-f-Block-Elements`](NCERT-Chemistry/Class-12/04-The-d-and-f-Block-Elements/) | `d-Block_Theory_26.pdf` | ✅ [`notes.md`](NCERT-Chemistry/Class-12/04-The-d-and-f-Block-Elements/notes.md) written |
+| [`Class-12/05-Coordination-Compounds`](NCERT-Chemistry/Class-12/05-Coordination-Compounds/) | `3-JAEIC-Coordination Compound_Eng.pdf.pdf` | ✅ [`notes.md`](NCERT-Chemistry/Class-12/05-Coordination-Compounds/notes.md) written |
+| [`Class-12/13-General-Principles-and-Processes-of-Isolation-of-Elements`](NCERT-Chemistry/Class-12/13-General-Principles-and-Processes-of-Isolation-of-Elements/) | `5-JAEIC-Metallurgy_Eng.pdf.pdf` | ⏳ notes pending |
+| [`Practical-Chemistry/Salt-Analysis`](Practical-Chemistry/Salt-Analysis/) | `Salt Analysis_Theory_26.pdf` + `Reaction of Salt Analysis_Theory_26.pdf` | ✅ [`notes.md`](Practical-Chemistry/Salt-Analysis/notes.md) written |
+
+Where no Allen module exists yet, the `notes.md` is built from the NCERT chapter and marks
+every beyond-NCERT point with 🆇 instead of 🅰.
 
 New Allen modules should be dropped into the matching chapter folder as they are uploaded.
 
