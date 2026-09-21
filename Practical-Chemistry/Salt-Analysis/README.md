@@ -1,7 +1,9 @@
 # Salt Analysis (Qualitative Analysis)
 
-Practical / qualitative chemistry is **not** an NCERT chapter, so it lives outside
-[`NCERT-Chemistry/`](../../NCERT-Chemistry/). It is part of the JEE Main & Advanced
+Practical / qualitative chemistry is **not** an NCERT chapter, so it lives outside the three
+branch folders — [Physical-Chemistry](../../Physical-Chemistry/),
+[Inorganic-Chemistry](../../Inorganic-Chemistry/) and
+[Organic-Chemistry](../../Organic-Chemistry/). It is part of the JEE Main & Advanced
 syllabus (practical chemistry).
 
 | | |

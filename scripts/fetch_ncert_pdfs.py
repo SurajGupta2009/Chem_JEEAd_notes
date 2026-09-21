@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 """
 Fetch NCERT Chemistry chapter PDFs for the JEE (Main + Advanced) syllabus and lay
-them out one folder per chapter.
+them out as three branch folders -- Physical / Inorganic / Organic Chemistry -- each
+holding one folder per chapter with the chapter PDF and its README.
 
-    NCERT-Chemistry/
-        Class-11/
-            01-Some-Basic-Concepts-of-Chemistry/
-                kech101.pdf
-                README.md
-            ...
-        Class-12/
-            ...
+    Physical-Chemistry/            Inorganic-Chemistry/         Organic-Chemistry/
+      01-Some-Basic-Concepts-...     01-Classification-...         01-Organic-Chemistry-Some-...
+        kech101.pdf                    kech103.pdf                   kech202.pdf
+        README.md                      README.md                     README.md
+      02-Structure-of-Atom           02-Chemical-Bonding-...        02-Hydrocarbons
+      ...                            ...                             ...
+      07-Solutions                   07-Coordination-Compounds      ...
+      ...
+
+Chapter numbering is per branch (in Class XI then Class XII order, by NCERT unit), so
+the folder number is NOT the NCERT unit number -- the NCERT unit and class live in each
+chapter's README and in the branch index. Move a chapter to another branch by editing
+BRANCH_OF below and re-running: the script renumbers, regenerates every chapter README
+and regenerates the three branch indexes (it never touches notes.md or module PDFs).
 
 Two NCERT editions are involved, because the two exams are not aligned:
 
@@ -29,8 +36,9 @@ Sources, in order of preference:
      network). Every mirrored file is the corresponding NCERT chapter PDF.
 
 Usage:
-    python3 scripts/fetch_ncert_pdfs.py             # download + write READMEs
+    python3 scripts/fetch_ncert_pdfs.py             # download + write READMEs + indexes
     python3 scripts/fetch_ncert_pdfs.py --verify    # check what is on disk
+    python3 scripts/fetch_ncert_pdfs.py --layout    # print NCERT unit -> branch/folder
     python3 scripts/fetch_ncert_pdfs.py --no-mirror # official source only
 
 Set GITHUB_TOKEN / GH_TOKEN to raise the GitHub API rate limit (60 -> 5000/hr).
@@ -45,11 +53,15 @@ import os
 import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-OUT_ROOT = REPO_ROOT / "NCERT-Chemistry"
+
+# The three branch folders the chapters are filed under.
+BRANCHES = ("Physical", "Inorganic", "Organic")
+BRANCH_DIR = {b: REPO_ROOT / (b + "-Chemistry") for b in BRANCHES}
 
 OFFICIAL_BASE = "https://ncert.nic.in/textbook/pdf/"
 
@@ -233,6 +245,82 @@ CLASS12_LEGACY = [
 
 CHAPTERS = CLASS11 + CLASS11_LEGACY + CLASS12 + CLASS12_LEGACY
 
+# --------------------------------------------------------------------------
+# Branch classification: (class, NCERT unit number) -> branch.
+#
+# The usual JEE split, with three deliberate judgement calls:
+#   * Solid State, Surface Chemistry and Metallurgy are filed under Physical
+#     (lattice / kinetic / process chemistry), not Inorganic.
+#   * Chemical Bonding, Hydrogen and Environmental Chemistry stay Inorganic.
+#   * Biomolecules, Polymers and Chemistry in Everyday Life go with Organic,
+#     because the carbon chemistry is what the questions actually test.
+# Move a chapter by editing its entry and re-running: folder numbering, the
+# chapter READMEs and the three branch indexes all follow automatically.
+# --------------------------------------------------------------------------
+BRANCH_OF = {
+    (11, 1): "Physical",    # Some Basic Concepts of Chemistry (mole concept)
+    (11, 2): "Physical",    # Structure of Atom
+    (11, 5): "Physical",    # Thermodynamics
+    (11, 6): "Physical",    # Equilibrium (chemical + ionic)
+    (11, 7): "Physical",    # Redox Reactions
+    (11, 10): "Physical",   # States of Matter (Advanced only)
+    (12, 1): "Physical",    # Solutions
+    (12, 2): "Physical",    # Electrochemistry
+    (12, 3): "Physical",    # Chemical Kinetics
+    (12, 11): "Physical",   # The Solid State (Advanced only)
+    (12, 12): "Physical",   # Surface Chemistry (Advanced only)
+    (12, 13): "Physical",   # Isolation of Elements / Metallurgy (Advanced only)
+    (11, 3): "Inorganic",   # Classification & Periodicity
+    (11, 4): "Inorganic",   # Chemical Bonding & Molecular Structure
+    (11, 11): "Inorganic",  # Hydrogen (Advanced only)
+    (11, 12): "Inorganic",  # s-Block (Advanced only)
+    (11, 13): "Inorganic",  # p-Block, groups 13-14 (Advanced only)
+    (11, 14): "Inorganic",  # Environmental Chemistry (Advanced only)
+    (12, 4): "Inorganic",   # d- and f-Block
+    (12, 5): "Inorganic",   # Coordination Compounds
+    (12, 14): "Inorganic",  # p-Block, groups 15-18 (Advanced only)
+    (11, 8): "Organic",     # Organic Chemistry: Some Basic Principles & Techniques
+    (11, 9): "Organic",     # Hydrocarbons
+    (12, 6): "Organic",     # Haloalkanes & Haloarenes
+    (12, 7): "Organic",     # Alcohols, Phenols & Ethers
+    (12, 8): "Organic",     # Aldehydes, Ketones & Carboxylic Acids
+    (12, 9): "Organic",     # Amines
+    (12, 10): "Organic",    # Biomolecules
+    (12, 15): "Organic",    # Polymers (Advanced only)
+    (12, 16): "Organic",    # Chemistry in Everyday Life (Advanced only)
+}
+
+BRANCH_INDEX = {}
+
+
+def apply_layout():
+    """Give every chapter its branch and its branch-sequential folder number.
+
+    The `folder` in the chapter tables above is the NCERT-style name, prefixed with
+    the NCERT unit number ('06-Equilibrium' = Class XI Unit 6). That prefix is
+    replaced by the chapter's position inside its branch, so each branch folder reads
+    01..NN in teaching order while `num` still holds the NCERT unit -- which is what
+    codes such as kech106 refer to.
+    """
+    per_branch = {b: [] for b in BRANCHES}
+    for record in CHAPTERS:
+        key = (record["class"], record["num"])
+        branch = BRANCH_OF.get(key)
+        if branch is None:
+            raise SystemExit("no branch for Class %d unit %d -- add it to BRANCH_OF" % key)
+        record["branch"] = branch
+        record["name"] = re.sub(r"^\d+-", "", record["folder"])
+        per_branch[branch].append(record)
+    for branch, rows in per_branch.items():
+        rows.sort(key=lambda r: (r["class"], r["num"]))
+        for i, r in enumerate(rows, start=1):
+            r["folder"] = "%02d-%s" % (i, r["name"])
+            r["dir"] = BRANCH_DIR[branch] / r["folder"]
+        BRANCH_INDEX[branch] = rows
+
+
+apply_layout()
+
 
 # --------------------------------------------------------------------------
 # Download helpers
@@ -331,11 +419,11 @@ def verify(record):
 
 
 def pdf_path(record):
-    return OUT_ROOT / ("Class-%d" % record["class"]) / record["folder"] / (record["code"] + ".pdf")
+    return record["dir"] / (record["code"] + ".pdf")
 
 
 def readme_path(record):
-    return OUT_ROOT / ("Class-%d" % record["class"]) / record["folder"] / "README.md"
+    return record["dir"] / "README.md"
 
 
 # --------------------------------------------------------------------------
@@ -381,7 +469,8 @@ def write_chapter_readme(record):
     if notes.exists():
         notes_section = (
             "Combined NCERT + Allen notes for JEE Main + Advanced are in "
-            "[`notes.md`](notes.md)."
+            "[`notes.md`](notes.md). Filed under %s Chemistry \u2014 see the "
+            "[branch index](../README.md)." % record["branch"]
         )
     else:
         notes_section = "<!-- Add your notes for this chapter below (notes.md). -->"
@@ -389,13 +478,15 @@ def write_chapter_readme(record):
     if folder.exists():
         for extra in sorted(folder.iterdir()):
             if extra.suffix.lower() == ".pdf" and extra != pdf:
-                label = extra.stem.removesuffix(".pdf")
-                extra_lines.append("| Module PDF | [`%s`](%s) |" % (extra.name, label))
+                href = urllib.parse.quote(extra.name)
+                extra_lines.append("| Module PDF | [`%s`](%s) |" % (extra.name, href))
     body = f"""# {record['title']}
 
 | | |
 |---|---|
+| Branch | {record['branch']} Chemistry |
 | Class | {record['class']} |
+| NCERT unit | Unit {record['num']} (Class {record['class']}) |
 | NCERT code | `{record['code'].split('-')[0]}` |
 | NCERT edition | {EDITION_LABEL[record['edition']]} |
 | Needed for | {", ".join(record['exams'])} |
@@ -430,59 +521,52 @@ def rationale(record):
 
 
 def write_index():
-    lines = [
-        "# NCERT Chemistry for JEE (Main + Advanced)",
-        "",
-        "One folder per NCERT chemistry chapter, each holding the chapter PDF.",
-        "",
-        "- **JEE Main** follows the **rationalised NCERT (2023+)**: 19 chemistry "
-        "chapters (Class XI: 9, Class XII: 10).",
-        "- **JEE Advanced** additionally covers topics that rationalisation deleted "
-        "from the textbooks. Those 11 chapters are included from the "
-        "**pre-rationalisation (2018-19) NCERT** and are marked *Advanced only*.",
-        "",
-        "Total: **30 chapters** (Class XI: 14, Class XII: 16).",
-        "",
-        "> **Careful with the NCERT codes.** The rationalised books are shorter, so "
-        "codes were reused: `kech105` was *States of Matter* and is now "
-        "*Thermodynamics*; `lech101` was *The Solid State* and is now *Solutions*. "
-        "Legacy files are named `<code>-legacy.pdf` to keep the two apart.",
-        "",
-        "Re-fetch or check everything with:",
-        "",
-        "```bash",
-        "python3 scripts/fetch_ncert_pdfs.py            # download",
-        "python3 scripts/fetch_ncert_pdfs.py --verify   # check PDFs on disk",
-        "```",
-        "",
-    ]
-    for cls in (11, 12):
-        group = [c for c in CHAPTERS if c["class"] == cls]
-        lines += ["## Class %d" % cls, "",
-                  "| # | Chapter | NCERT code | Edition | Needed for |",
-                  "|---|---|---|---|---|"]
-        for c in group:
-            rel = "Class-%d/%s" % (cls, c["folder"])
+    """Write one index README into each branch folder."""
+    for branch, rows in BRANCH_INDEX.items():
+        lines = [
+            "# %s Chemistry \u2014 JEE (Main + Advanced)" % branch.capitalize(),
+            "",
+            "One folder per NCERT chapter: the chapter PDF, any module PDF that has been",
+            "uploaded, and `notes.md` once written. Chapters are numbered in this branch's",
+            "own order (Class XI first, then Class XII, by NCERT unit).",
+            "",
+            "| # | Chapter | Class | NCERT unit | Code | Edition | Needed for | Notes |",
+            "|---|---|---|---|---|---|---|---|",
+        ]
+        for c in rows:
             edition = "rationalised" if c["edition"] == "rationalised" else "legacy 2018-19"
             exams = "Main + Advanced" if "JEE Main" in c["exams"] else "**Advanced only**"
-            lines.append("| %d | [%s](%s) | `%s` | %s | %s |"
-                         % (c["num"], c["title"], rel,
-                            c["code"].split("-")[0], edition, exams))
-        lines.append("")
-    lines += [
-        "## Sources",
-        "",
-        "All PDFs are NCERT's own chapter files, published by the National Council of "
-        "Educational Research and Training, Government of India, and made freely "
-        "available for educational use. See "
-        "<https://ncert.nic.in/copyright.php>.",
-        "",
-        "They are fetched from <https://ncert.nic.in/textbook.php> when reachable, "
-        "otherwise from GitHub mirrors of the same files (listed per chapter in each "
-        "chapter README).",
-        "",
-    ]
-    (OUT_ROOT / "README.md").write_text("\n".join(lines), encoding="utf-8")
+            has_notes = (c["dir"] / "notes.md").exists()
+            notes = "[\u2705 notes.md](%s/notes.md)" % c["folder"] if has_notes else "\u23f3 pending"
+            lines.append("| %s | [%s](%s) | %d | %d | `%s` | %s | %s | %s |"
+                         % (c["folder"][:2], c["title"], c["folder"], c["class"], c["num"],
+                            c["code"].split("-")[0], edition, exams, notes))
+        lines += [
+            "",
+            "The `#` column is this branch's own order. The NCERT unit number keeps its own",
+            "column because that is what the NCERT codes mean: `kech1xx` = Class XI Part I,",
+            "`kech2xx` = Class XI Part II, `lech1xx` / `lech2xx` likewise for Class XII.",
+            "The rationalised books are shorter, so NCERT reused codes \u2014 `kech105` was",
+            "*States of Matter* and is now *Thermodynamics*; `lech101` was *The Solid State*",
+            "and is now *Solutions*. Legacy chapter PDFs are therefore named",
+            "`<code>-legacy.pdf`. Full layout and notes conventions: [repo",
+            "README](../README.md).",
+            "",
+            "Refresh with `python3 scripts/fetch_ncert_pdfs.py` (`--verify` checks the PDFs on",
+            "disk, `--layout` prints the NCERT-unit \u2192 branch mapping).",
+            "",
+        ]
+        (BRANCH_DIR[branch] / "README.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def print_layout():
+    print("NCERT chapter -> where it lives in this repo\n")
+    for branch, rows in BRANCH_INDEX.items():
+        print("%s-Chemistry/" % branch)
+        for c in rows:
+            print("  %-56s <- Class %d Unit %d (%s)"
+                  % (c["folder"], c["class"], c["num"], c["code"]))
+        print()
 
 
 # --------------------------------------------------------------------------
@@ -493,7 +577,13 @@ def main():
     ap.add_argument("--no-official", action="store_true", help="skip ncert.nic.in")
     ap.add_argument("--no-mirror", action="store_true", help="skip GitHub mirrors")
     ap.add_argument("--force", action="store_true", help="re-download existing files")
+    ap.add_argument("--layout", action="store_true",
+                    help="print the NCERT-unit -> branch/folder mapping and exit")
     args = ap.parse_args()
+
+    if args.layout:
+        print_layout()
+        return 0
 
     ok = 0
     failures = []
@@ -502,7 +592,7 @@ def main():
     for record in CHAPTERS:
         pdf = pdf_path(record)
         pdf.parent.mkdir(parents=True, exist_ok=True)
-        label = "Class-%d/%s" % (record["class"], record["folder"])
+        label = "%s-Chemistry/%s" % (record["branch"], record["folder"])
 
         if args.verify:
             good, detail, pages = verify(record)
@@ -540,6 +630,7 @@ def main():
     else:
         write_index()
         for record in CHAPTERS:
+            record["dir"].mkdir(parents=True, exist_ok=True)
             if pdf_path(record).exists():
                 write_chapter_readme(record)
         print("\n%d/%d chapters downloaded and verified" % (ok, len(CHAPTERS)))
