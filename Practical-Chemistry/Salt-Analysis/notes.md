@@ -855,5 +855,5 @@ the on/off mechanism is a favourite one-liner.
 
 *This file covers both Allen modules completely; coordination-compound theory used
 above (Ni–dmg, cyano-complexes, Prussian blue) is developed in
-[`NCERT-Chemistry/Class-12/05-Coordination-Compounds/notes.md`](../../NCERT-Chemistry/Class-12/05-Coordination-Compounds/notes.md).*
+[`Inorganic-Chemistry/08-Coordination-Compounds/notes.md`](../../Inorganic-Chemistry/08-Coordination-Compounds/notes.md).*
 
