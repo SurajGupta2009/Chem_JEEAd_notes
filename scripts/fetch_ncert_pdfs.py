@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """
 Fetch NCERT Chemistry chapter PDFs for the JEE (Main + Advanced) syllabus and lay
-them out as three branch folders -- Physical / Inorganic / Organic Chemistry -- each
+them out as two branch folders -- Physical / Inorganic Chemistry -- each
 holding one folder per chapter with the chapter PDF and its README.
+Organic Chemistry has been removed as per user request.
 
-    Physical-Chemistry/            Inorganic-Chemistry/         Organic-Chemistry/
-      01-Some-Basic-Concepts-...     01-Classification-...         01-Organic-Chemistry-Some-...
-        kech101.pdf                    kech103.pdf                   kech202.pdf
-        README.md                      README.md                     README.md
-      02-Structure-of-Atom           02-Chemical-Bonding-...        02-Hydrocarbons
-      ...                            ...                             ...
-      07-Solutions                   07-Coordination-Compounds      ...
+    Physical-Chemistry/            Inorganic-Chemistry/
+      01-Some-Basic-Concepts-...     01-Classification-...
+        kech101.pdf                    kech103.pdf
+        README.md                      README.md
+      02-Structure-of-Atom           02-Chemical-Bonding-...
+      ...                            ...
+      07-Solutions                   07-Coordination-Compounds
       ...
 
 Chapter numbering is per branch (in Class XI then Class XII order, by NCERT unit), so
@@ -59,8 +60,8 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
-# The three branch folders the chapters are filed under.
-BRANCHES = ("Physical", "Inorganic", "Organic")
+# The branch folders the chapters are filed under - now only Physical + Inorganic.
+BRANCHES = ("Physical", "Inorganic")
 BRANCH_DIR = {b: REPO_ROOT / (b + "-Chemistry") for b in BRANCHES}
 
 OFFICIAL_BASE = "https://ncert.nic.in/textbook/pdf/"
@@ -279,15 +280,7 @@ BRANCH_OF = {
     (12, 4): "Inorganic",   # d- and f-Block
     (12, 5): "Inorganic",   # Coordination Compounds
     (12, 14): "Inorganic",  # p-Block, groups 15-18 (Advanced only)
-    (11, 8): "Organic",     # Organic Chemistry: Some Basic Principles & Techniques
-    (11, 9): "Organic",     # Hydrocarbons
-    (12, 6): "Organic",     # Haloalkanes & Haloarenes
-    (12, 7): "Organic",     # Alcohols, Phenols & Ethers
-    (12, 8): "Organic",     # Aldehydes, Ketones & Carboxylic Acids
-    (12, 9): "Organic",     # Amines
-    (12, 10): "Organic",    # Biomolecules
-    (12, 15): "Organic",    # Polymers (Advanced only)
-    (12, 16): "Organic",    # Chemistry in Everyday Life (Advanced only)
+    # Organic chapters removed as per user request - only Physical + Inorganic notes needed
 }
 
 BRANCH_INDEX = {}
@@ -301,13 +294,17 @@ def apply_layout():
     replaced by the chapter's position inside its branch, so each branch folder reads
     01..NN in teaching order while `num` still holds the NCERT unit -- which is what
     codes such as kech106 refer to.
+    Only Physical + Inorganic branches are kept now.
     """
     per_branch = {b: [] for b in BRANCHES}
     for record in CHAPTERS:
         key = (record["class"], record["num"])
         branch = BRANCH_OF.get(key)
         if branch is None:
-            raise SystemExit("no branch for Class %d unit %d -- add it to BRANCH_OF" % key)
+            # Organic chapters or unmapped - skip as per user request
+            continue
+        if branch not in BRANCHES:
+            continue
         record["branch"] = branch
         record["name"] = re.sub(r"^\d+-", "", record["folder"])
         per_branch[branch].append(record)
@@ -589,7 +586,10 @@ def main():
     failures = []
     total = 0
 
-    for record in CHAPTERS:
+    # Only process Physical + Inorganic chapters now
+    active_chapters = [r for r in CHAPTERS if r.get("branch") in BRANCHES]
+
+    for record in active_chapters:
         pdf = pdf_path(record)
         pdf.parent.mkdir(parents=True, exist_ok=True)
         label = "%s-Chemistry/%s" % (record["branch"], record["folder"])
@@ -626,14 +626,14 @@ def main():
 
     if args.verify:
         print("\n%d/%d chapters verified, %.1f MB on disk"
-              % (ok, len(CHAPTERS), total / 1e6))
+              % (ok, len(active_chapters), total / 1e6))
     else:
         write_index()
-        for record in CHAPTERS:
+        for record in active_chapters:
             record["dir"].mkdir(parents=True, exist_ok=True)
             if pdf_path(record).exists():
                 write_chapter_readme(record)
-        print("\n%d/%d chapters downloaded and verified" % (ok, len(CHAPTERS)))
+        print("\n%d/%d chapters downloaded and verified" % (ok, len(active_chapters)))
 
     if failures:
         print("Problems:")
