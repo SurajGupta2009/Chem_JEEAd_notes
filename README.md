@@ -56,6 +56,8 @@ Physical-Chemistry/           # 12 chapters   Inorganic-Chemistry/  # 9    Organ
 
 ## Notes status
 
+> **Where the project stands** (goal, progress, next steps): [`PROJECT-STATUS.md`](PROJECT-STATUS.md).
+
 | Chapter folder | Allen module in the folder | Notes |
 |---|---|---|
 | [`Physical-Chemistry/04-Equilibrium`](Physical-Chemistry/04-Equilibrium/notes.md) | _none uploaded yet_ | ✅ written (NCERT + 🆇 extras; covers chemical **and** ionic equilibrium) |
