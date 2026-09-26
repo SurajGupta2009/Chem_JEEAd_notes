@@ -1,3 +1,16 @@
+---
+branch: "Physical Chemistry"
+chapter: "Electrochemistry"
+status: written
+words: 10450
+updated: 2026-09-26
+class: "12"
+ncert_unit: "Unit 2 (Class 12)"
+ncert_code: "lech102"
+sources: ["lech102.pdf"]
+tags: [chemistry, jee]
+---
+
 # Electrochemistry — JEE Main + Advanced Notes
 
 > **Sources merged into these notes**
