@@ -1,301 +1,328 @@
+---
+branch: Physical Chemistry
+chapter: Redox Reactions
+class: 11
+ncert_unit: 7
+ncert_code: kech201
+edition: rationalised
+exams: [JEE Main, JEE Advanced]
+sources: [kech201.pdf]
+status: written
+words: 13852
+updated: 2026-09-25
+tags: [chemistry/physical, jee/main, jee/advanced]
+---
+
 # Redox Reactions — JEE Main + Advanced Notes
 
 > **Sources merged into these notes**
 > | Source | File |
 > |---|---|
-> | NCERT Class XI Chemistry (rationalised, 2023+), Unit 7 | [`kech201.pdf`](kech201.pdf) |
+> | NCERT Class XI Chemistry (rationalised, reprint 2026-27), Unit 7 | [`kech201.pdf`](kech201.pdf) |
 > | Allen module for this chapter | _not uploaded yet — drop it in this folder and the 🅰 tags below get filled in_ |
 >
-> Section numbers `7.x` below follow the NCERT Unit 7 exactly, so you can read the PDF and
-> these notes side by side. 🆇 = extra point needed for **JEE Advanced** that NCERT does not
-> spell out. ⚠ marks the traps that actually appear in papers.
+> Section numbers `7.x` follow NCERT Unit 7 exactly, so the PDF and these notes read side by
+> side; "NCERT eq. 7.n" and "Problem 7.n" point at the book's own numbered equations and solved
+> problems. 🆇 = extra point needed for **JEE Advanced** that NCERT does not spell out.
+> ⚠ = a trap that actually appears in papers.
+>
+> **Study layer:** [chapter map](figures/redox-map.md) (opens as a mindmap in Obsidian) ·
+> [flashcards](cards.md) · [structure source](figures/structures.md).
+> Formatting follows [the rulebook](../../docs/NOTE-FORMATTING-RULEBOOK.md).
 
 ## Contents
 
 - [Part A — The Three Languages of Redox](#part-a--the-three-languages-of-redox)
-  1. [Classical idea: gain/loss of oxygen and hydrogen](#1-classical-idea-gainloss-of-oxygen-and-hydrogen-71)
-  2. [Electronic concept: electron transfer](#2-electronic-concept-electron-transfer-72)
-  3. [Competitive electron transfer — who wins?](#3-competitive-electron-transfer--who-wins-721)
-  4. [Oxidation number: definition and the rule set](#4-oxidation-number-definition-and-the-rule-set-73)
-  5. [Assigning O.S. in the nasty species (the memorise-this list)](#5-assigning-os-in-the-nasty-species-the-memorise-this-list)
-  6. [Oxidation number ≠ formal charge ≠ real charge](#6-oxidation-number--formal-charge--real-charge-)
+  - [1. Classical idea: gain/loss of oxygen and hydrogen (7.1)](#1-classical-idea-gainloss-of-oxygen-and-hydrogen-71)
+  - [2. Electronic concept: electron transfer (7.2)](#2-electronic-concept-electron-transfer-72)
+  - [3. Competitive electron transfer — who wins? (7.2.1)](#3-competitive-electron-transfer--who-wins-721)
+  - [4. Oxidation number: definition and the rule set (7.3)](#4-oxidation-number-definition-and-the-rule-set-73)
+  - [5. Assigning O.S. in the nasty species (the memorise-this list)](#5-assigning-os-in-the-nasty-species-the-memorise-this-list)
+  - [6. Oxidation number ≠ formal charge ≠ real charge 🆇](#6-oxidation-number--formal-charge--real-charge-)
 - [Part B — Classifying and Balancing](#part-b--classifying-and-balancing)
-  7. [Types of redox reactions](#7-types-of-redox-reactions-731)
-  8. [Oxidising and reducing agents from oxidation states](#8-oxidising-and-reducing-agents-from-oxidation-states)
-  9. [Balancing by the oxidation-number method](#9-balancing-by-the-oxidation-number-method-732-a)
-  10. [Balancing by the ion–electron (half-reaction) method](#10-balancing-by-the-ionelectron-half-reaction-method-732-b)
-  11. [n-factor, equivalent weight, normality](#11-n-factor-equivalent-weight-normality-)
+  - [7. Types of redox reactions (7.3.1)](#7-types-of-redox-reactions-731)
+  - [8. Oxidising and reducing agents from oxidation states](#8-oxidising-and-reducing-agents-from-oxidation-states)
+  - [9. Balancing by the oxidation-number method (7.3.2 a)](#9-balancing-by-the-oxidation-number-method-732-a)
+  - [10. Balancing by the ion–electron (half-reaction) method (7.3.2 b)](#10-balancing-by-the-ionelectron-half-reaction-method-732-b)
+  - [11. n-factor, equivalent weight, normality 🆇](#11-n-factor-equivalent-weight-normality-)
 - [Part C — Redox in the Lab and in the Cell](#part-c--redox-in-the-lab-and-in-the-cell)
-  12. [Redox titrations: permanganate, dichromate, iodometry](#12-redox-titrations-permanganate-dichromate-iodometry-733)
-  13. [Limitations of the oxidation-number concept](#13-limitations-of-the-oxidation-number-concept-734)
-  14. [Redox couples and electrode processes: the Daniell cell](#14-redox-couples-and-electrode-processes-the-daniell-cell-74)
-  15. [Standard electrode potentials — NCERT Table 7.1](#15-standard-electrode-potentials--ncert-table-71-74)
-  16. [Everything Table 7.1 lets you predict](#16-everything-table-71-lets-you-predict-)
+  - [12. Redox titrations: permanganate, dichromate, iodometry (7.3.3)](#12-redox-titrations-permanganate-dichromate-iodometry-733)
+  - [13. Limitations of the oxidation-number concept (7.3.4)](#13-limitations-of-the-oxidation-number-concept-734)
+  - [14. Redox couples and electrode processes: the Daniell cell (7.4)](#14-redox-couples-and-electrode-processes-the-daniell-cell-74)
+  - [15. Standard electrode potentials — NCERT Table 7.1 (7.4)](#15-standard-electrode-potentials--ncert-table-71-74)
+  - [16. Everything Table 7.1 lets you predict 🆇](#16-everything-table-71-lets-you-predict-)
 - [Part D — JEE Advanced Corner](#part-d--jee-advanced-corner)
-  17. [Latimer diagrams and the disproportionation test](#17-latimer-diagrams-and-the-disproportionation-test-)
-  18. [Oxidation-state map of the p-block (redox behaviour of elements)](#18-oxidation-state-map-of-the-p-block)
-  19. [Species bank: structures, O.S. and reactions that decide the question](#19-species-bank-structures-os-and-reactions-that-decide-the-question)
-  20. [Worked problem patterns](#20-worked-problem-patterns)
-  21. [NCERT exercise gems worth re-doing](#21-ncert-exercise-gems-worth-re-doing)
-  22. [Quick Revision Sheet](#22-quick-revision-sheet)
+  - [17. Latimer diagrams and the disproportionation test 🆇](#17-latimer-diagrams-and-the-disproportionation-test-)
+  - [18. Oxidation-state map of the p-block](#18-oxidation-state-map-of-the-p-block)
+  - [19. Species bank: structures, O.S. and reactions that decide the question](#19-species-bank-structures-os-and-reactions-that-decide-the-question)
+  - [20. Worked problem patterns](#20-worked-problem-patterns)
+  - [21. NCERT exercise gems worth re-doing](#21-ncert-exercise-gems-worth-re-doing)
+  - [22. Quick Revision Sheet](#22-quick-revision-sheet)
 
 ---
 
 # Part A — The Three Languages of Redox
 
-NCERT builds the topic in **three layers** (the chapter summary calls it "three tier
-conceptualisation"): **classical (O/H)** → **electronic (e⁻)** → **oxidation number
-(book-keeping)**. Every JEE question is asked in the third language, but the *reasoning*
-is usually the second one.
+NCERT's summary calls its approach a **"three tier conceptualisation"**: **classical (O/H)** →
+**electronic (e⁻)** → **oxidation number (book-keeping)**. Every JEE question is *asked* in the
+third language, but the *reasoning* is usually done in the second.
 
 ```mermaid
 flowchart LR
-    A["Layer 1: CLASSICAL<br>gain/loss of O or H"] --> B["Layer 2: ELECTRONIC<br>loss/gain of e⁻"]
-    B --> C["Layer 3: OXIDATION NUMBER<br>change in O.S. (works even with no real e⁻ transfer)"]
-    C --> D["Layer 4 (Class XII): ELECTRODE POTENTIAL<br>quantifies the same idea: E° is a measure of<br>'how badly this couple wants to be reduced'"]
-    A -."fails for CaO + SO₃, Cl₂ + NaOH".-> X["❌"]
-    B -."fails for covalent H₂ + Cl₂".-> X
-    C -."fails to explain WHY; gives fractional values".-> X
+    A["Tier 1: CLASSICAL<br>gain/loss of O or H"] --> B["Tier 2: ELECTRONIC<br>loss/gain of e⁻"]
+    B --> C["Tier 3: OXIDATION NUMBER<br>change in O.S.<br>works with no real e⁻ transfer"]
+    C --> D["7.4 ELECTRODE POTENTIAL<br>E° measures how strongly<br>a couple wants to be reduced"]
+    A -.->|"fails: 2Na + Cl₂, CaO + SO₃"| X["limit"]
+    B -.->|"fails: covalent H₂ + Cl₂"| X
+    C -.->|"fails: says nothing about WHY or how fast"| X
 ```
+*Each tier widens the one before it; the dotted arrows are where each tier breaks down (§1, §2, §13).*
 
 ## 1. Classical idea: gain/loss of oxygen and hydrogen (7.1)
 
-| | Classical definition |
+| Term | Classical definition (NCERT's widening sequence) |
 |---|---|
-| **Oxidation** | addition of **oxygen**, or removal of **hydrogen** |
-| **Reduction** | addition of **hydrogen**, or removal of **oxygen** |
+| **Oxidation** | addition of **oxygen** → removal of **hydrogen** → addition of any **electronegative** element → removal of an **electropositive** element |
+| **Reduction** | removal of **oxygen** → addition of **hydrogen** → removal of an **electronegative** element → addition of an **electropositive** element |
 
 NCERT's own examples:
 
 ```
-2Mg + O₂ → 2MgO            Mg is oxidised (O added)
-S  + O₂ → SO₂              S is oxidised
-Cl₂ + H₂S → 2HCl + S       H₂S is oxidised (H removed) → S
-3Cl₂ + 2NH₃ → N₂ + 6HCl    NH₃ is oxidised (H removed) → N₂
-SO₂ + 2H₂S → 3S + 2H₂O     SO₂ reduced (O removed), H₂S oxidised (H removed)
+2Mg + O₂ → 2MgO                  Mg oxidised       (O added)
+CH₄ + 2O₂ → CO₂ + 2H₂O           CH₄ oxidised      (H replaced by O)
+2H₂S + O₂ → 2S + 2H₂O            H₂S oxidised      (H removed)
+Mg + F₂ → MgF₂ ; Mg + S → MgS    Mg oxidised       (electronegative element added)
+2HgO → 2Hg + O₂                  HgO reduced       (O removed)
+2FeCl₃ + H₂ → 2FeCl₂ + 2HCl      FeCl₃ reduced     (electronegative Cl removed)
+CH₂=CH₂ + H₂ → CH₃–CH₃           ethene reduced    (H added)
+2HgCl₂ + SnCl₂ → Hg₂Cl₂ + SnCl₄  HgCl₂ reduced     (electropositive Hg added)
+                                 SnCl₂ oxidised    (electronegative Cl added)
 ```
 
-**Etymology (asked as assertion–reason):** *reduction* = "a **reduction** in the weight /
-in the oxidation number", because metal ores (oxides) *lost* weight when roasted to metal.
+**Etymology:** *reduction* comes from Latin *reducere*, "to lead back": the ore is led back to
+the metal (and it loses mass as oxygen leaves).
 
-> **⚠ Where layer 1 dies:** reactions with **no oxygen at all** — e.g.
-> `CaO + SO₃ → CaSO₄`, `2Na + Cl₂ → 2NaCl`, `Cl₂ + 2NaOH → NaCl + NaOCl + H₂O`.
-> These are still redox (or not) and the classical language cannot say.
-> Also note: `CaO + SO₃ → CaSO₄` is **not redox at all** (no O.S. changes) — the classical
-> "oxygen was transferred, so it must be redox" reasoning is a **wrong** argument.
+> **⚠ Where tier 1 fails:** in `2Na + Cl₂ → 2NaCl` there is no oxygen or hydrogen at all, yet it
+> is redox. And the reverse error: `CaO + SO₃ → CaSO₄` "adds oxygen" to CaO but is **not redox**
+> (no O.S. changes). "Oxygen moved, so it must be redox" is a **wrong** argument.
 
 ## 2. Electronic concept: electron transfer (7.2)
 
-| | Electronic definition |
+| Term | Electronic definition |
 |---|---|
-| **Oxidation** | **loss** of electrons → species becomes **more positive** |
-| **Reduction** | **gain** of electrons → species becomes **less positive** |
-| **Oxidant (oxidising agent)** | electron **acceptor** → itself gets **reduced** |
-| **Reductant (reducing agent)** | electron **donor** → itself gets **oxidised** |
+| **Oxidation** | **loss** of electrons → species becomes more positive |
+| **Reduction** | **gain** of electrons → species becomes less positive |
+| **Oxidant (oxidising agent)** | electron **acceptor** → is itself **reduced** |
+| **Reductant (reducing agent)** | electron **donor** → is itself **oxidised** |
 
-NCERT's worked illustration, `FeCl₃ + KI`:
+NCERT's model reaction, `2Na + Cl₂ → 2NaCl`, split into halves:
+
+```
+2Na(s) → 2Na⁺(g) + 2e⁻          oxidation half   (Na is the REDUCTANT)
+Cl₂(g) + 2e⁻ → 2Cl⁻(g)          reduction half   (Cl₂ is the OXIDANT)
+```
+
+The classic JEE illustration, `FeCl₃ + KI`:
 
 ```
 2FeCl₃ + 2KI → 2FeCl₂ + I₂ + 2KCl          (molecular)
-2Fe³⁺ + 2I⁻  → 2Fe²⁺ + I₂                  (net ionic — ALWAYS write this first)
+2Fe³⁺ + 2I⁻  → 2Fe²⁺ + I₂                  (net ionic: ALWAYS write this first)
    │              │
    │              └─ I⁻ loses 1e⁻ each → oxidised → I⁻ is the REDUCTANT
    └─ Fe³⁺ gains 1e⁻ → reduced → Fe³⁺ is the OXIDANT
 ```
 
-Second NCERT example — `CuSO₄ + KI` (the one students get wrong because a **precipitate**
-also forms):
+`CuSO₄ + KI` (NCERT eq. 7.59), the one students get wrong because a **precipitate** also forms:
 
 ```
-2CuSO₄ + 4KI → Cu₂I₂↓ + 2K₂SO₄ + I₂
-2Cu²⁺ + 4I⁻ → 2Cu⁺ + 2I⁻ + I₂  →  2CuI(s) + I₂
-   Cu²⁺ → Cu⁺  (reduced; blue → colourless CuI)
-   I⁻  → ½I₂  (oxidised; liberated iodine = brown)
+2Cu²⁺ + 4I⁻ → Cu₂I₂(s) + I₂
+   Cu²⁺ → Cu⁺   reduced   (blue solution → white CuI)
+   I⁻   → ½I₂   oxidised  (liberated iodine → brown)
 ```
 
-> **⚠ Mnemonics that never fail:**
-> **OIL RIG** — Oxidation Is Loss, Reduction Is Gain.
-> **GEROA / CER** — Gain of Electrons = Reduction of Oxidising Agent, i.e. *the oxidant
-> is reduced, the reductant is oxidised.* The agent is named for what it **does**, not for
-> what happens to it. Half the objective questions are just this swap.
+> **⚠ Mnemonics that never fail:** **OIL RIG** (Oxidation Is Loss, Reduction Is Gain) and
+> **"the agent is named for what it *does*, not for what happens to it"**: the oxidant *is
+> reduced*, the reductant *is oxidised*. Half the objective questions are just this swap.
 
-**Both must occur together.** Electrons cannot float free in solution: number of e⁻ lost =
-number of e⁻ gained (this "e⁻ bookkeeping" is what powers every titration calculation in §12).
+**Both halves happen together.** Electrons cannot float free in solution, so e⁻ lost = e⁻ gained.
+This electron book-keeping powers every titration calculation in §12.
 
 ## 3. Competitive electron transfer — who wins? (7.2.1)
 
-NCERT's two-tube experiment (the **origin of the electrochemical series**):
+NCERT's experiment (Fig. 7.1), the **origin of the electrochemical series**:
 
 ```
-   Tube A:  Zn strip in CuSO₄(aq)          Tube B:  Cu strip in ZnSO₄(aq)
-   ┌───────────────────────┐               ┌───────────────────────┐
-   │  blue colour fades    │               │  no change            │
-   │  Zn dissolves, Cu deposits │            │  (Cu cannot push e⁻  │
-   │  (a redox reaction)   │               │   onto Zn²⁺)          │
-   └───────────────────────┘               └───────────────────────┘
-
-   Zn + Cu²⁺ → Zn²⁺ + Cu        ✔  spontaneous   (Zn is the better reductant)
-   Cu + Zn²⁺ → no reaction      ✘
+   Beaker A: Zn strip in Cu(NO₃)₂(aq)      Beaker B: Cu strip in Zn²⁺(aq)
+   ┌──────────────────────────────┐        ┌──────────────────────────────┐
+   │ blue colour fades            │        │ no change                    │
+   │ Zn dissolves, red Cu coats   │        │ Cu cannot push e⁻ onto Zn²⁺  │
+   │ the strip (redox occurs)     │        │                              │
+   └──────────────────────────────┘        └──────────────────────────────┘
+   Zn + Cu²⁺ → Zn²⁺ + Cu      ✔ spontaneous  (Zn is the better reductant)   NCERT eq. 7.15
+   Cu + Zn²⁺ → no reaction    ✘
 ```
 
-General form: `M₁ + N₂²⁺ → M₁²⁺ + N₂` occurs **only if M₁ has greater tendency to lose
-electrons than N₂**. So a single reaction ranks two metals. NCERT builds a ladder from
-several such pairwise tests:
+General form: `M₁ + N²⁺ → M₁²⁺ + N` occurs **only if M₁ loses electrons more readily than N**.
+One reaction ranks two metals; pairwise tests build the activity series:
 
 ```
-   reducing strength (tendency to lose e⁻)  falls  ─────────────────────────►
-        Li > K > Ba > Ca > Na > Mg > Al > Mn > Zn > Cr > Fe > Co > Ni > Sn
-        > Pb > (H₂) > Cu > Ag > Hg > Pt > Au
+   reducing strength (tendency to lose e⁻) falls  ───────────────────────────────►
+   Li > K > Ba > Ca > Na > Mg > Al > Mn > Zn > Cr > Fe > Co > Ni > Sn > Pb > (H₂)
+      > Cu > Ag ≈ Hg > Pt > Au
 ```
 
-Same logic for **non-metals** (NCERT's halogen set):
+Same logic for **non-metals**, the halogens:
 
 ```
-Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂        ✔    ⇒ oxidising power  Cl₂ > Br₂
-Br₂ + 2I⁻  → 2Br⁻  + I₂        ✔    ⇒ oxidising power  Br₂ > I₂
-∴  oxidising power:   F₂ > Cl₂ > Br₂ > I₂
-   reducing power of halides (reverse!):  I⁻ > Br⁻ > Cl⁻ > F⁻
+Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂    ✔   ⇒ oxidising power Cl₂ > Br₂
+Br₂ + 2I⁻  → 2Br⁻ + I₂     ✔   ⇒ oxidising power Br₂ > I₂
+∴ oxidising power:            F₂ > Cl₂ > Br₂ > I₂
+  reducing power of halides:  I⁻ > Br⁻ > Cl⁻ > F⁻   (reverse!)
 ```
 
-And the NCERT "textbook" example showing that even a **gas** competes:
+The same ladder decides whether Fe²⁺ can be oxidised:
 
 ```
-2Fe²⁺ + Br₂ → 2Fe³⁺ + 2Br⁻        ✔   (Br₂ is strong enough to oxidise Fe²⁺)
-2Fe²⁺ + I₂ →  no reaction          ✘   (I₂ is not; hence Fe³⁺ oxidises I⁻ instead)
+2Fe²⁺ + Br₂ → 2Fe³⁺ + 2Br⁻     ✔   (Br₂ is strong enough)
+2Fe²⁺ + I₂  → no reaction      ✘   (I₂ is not; instead Fe³⁺ oxidises I⁻)
 ```
 
-> **⚠ Rule:** the **stronger reductant + stronger oxidant → weaker reductant + weaker
-> oxidant**. Every spontaneous displacement reaction runs "downhill" on both ladders
-> simultaneously. If a proposed reaction has a strong reductant on the right-hand side,
-> reject it.
+> **⚠ Rule:** **stronger reductant + stronger oxidant → weaker reductant + weaker oxidant.**
+> Every spontaneous displacement runs "downhill" on both ladders at once. If a proposed
+> reaction puts a strong reductant on the product side, reject it.
 
 ## 4. Oxidation number: definition and the rule set (7.3)
 
-**Oxidation number (O.N.)** = the *apparent* charge an atom appears to carry **after
-assigning every shared electron pair to the more electronegative partner** — a formal
-book-keeping charge, not a measured charge (NCERT says exactly this: "the concept of
-oxidation number is used to keep track of electrons"; see also §13).
+**Oxidation number (O.N.)** is the *apparent* charge an atom carries **after every shared
+electron pair is assigned to the more electronegative partner**. It is a book-keeping charge,
+not a measured one: NCERT says it is used "to keep track of electrons" (see §13).
 
-Then: **oxidation = increase in O.N.; reduction = decrease in O.N.** and a reaction is redox
-iff at least one element's O.N. rises while another's falls.
+So **oxidation = increase in O.N.; reduction = decrease in O.N.**, and a reaction is redox
+if and only if at least one element's O.N. rises while another's falls.
 
-### The rules (apply in this order — later rules lose to earlier ones)
+### The rules (apply in this order: a later rule never overrides an earlier one)
 
 | # | Rule | Notes / examples |
 |---|---|---|
-| 1 | Free element (any allotrope) = **0** | Na, Mg, H₂, O₂, O₃, P₄, S₈, Cl₂, Cr, graphite = 0 |
-| 2 | Monoatomic ion = charge | Na⁺ +1, Mg²⁺ +2, Al³⁺ +3, N³⁻ −3, Fe³⁺ +3 |
-| 3 | **Fluorine = −1 always** (in every compound, incl. with metals *and* non-metals) | OF₂: O = **+2**; O₂F₂: O = **+1**; SF₄: S=+4, ClF₃: Cl=+3, BrF₅: Br=+5 |
-| 4 | **Alkali = +1, alkaline earth = +2** in compounds | (Li in Li₃N is +1, N is −3) |
-| 5 | **H = +1** with non-metals; **H = −1 (hydride)** with metals | H₂O, HCl: +1 · NaH, CaH₂, LiAlH₄, NaBH₄: −1 · **0 in elemental H₂** |
-| 6 | **O = −2** normally; **−1 in peroxides** (H₂O₂, Na₂O₂, BaO₂, H₂SO₅, H₂S₂O₈); **−½ in superoxides** (KO₂, RbO₂); **−⅓ in ozonides** (KO₃); **+2 in OF₂, +1 in O₂F₂**; **0 in O₂/O₃** |
+| 1 | Free element (any allotrope) = **0** | Na, H₂, O₂, O₃, P₄, S₈, Cl₂, graphite |
+| 2 | Monoatomic ion = its charge | Na⁺ +1, Al³⁺ +3, N³⁻ −3, Fe³⁺ +3 |
+| 3 | **Fluorine = −1** in every compound | OF₂: O = **+2** · O₂F₂: O = **+1** · ClF₃: Cl +3 |
+| 4 | **Group 1 = +1, Group 2 = +2** in compounds | Li₃N: Li +1, N −3 |
+| 5 | **H = +1** with non-metals; **−1** in metal hydrides | HCl +1 · NaH, CaH₂, LiAlH₄, NaBH₄: H −1 |
+| 6 | **O = −2** normally | peroxide −1 · superoxide −½ · ozonide −⅓ · OF₂ +2 |
 | 7 | Sum of O.N. = **charge on the species** | neutral → 0; ion → its charge |
-| 8 | In a **X–X bond** the pair is split equally → contributes 0 to each atom | S₈: 0; H₂O₂ has O–O so O = −1; Cl₂O₇ no such issue |
-| 9 | More electronegative atom takes the pair | hence in **NCl₃** N = **−3**, Cl = **+1** (N is more EN than Cl!) — ⚠ the "Cl is always −1" reflex fails here |
-| 10 | **Transition metals / others:** compute by rule 7 and quote the number | MnO₄⁻: Mn=+7 · Cr₂O₇²⁻: Cr=+6 · MnO₄²⁻: +6 · MnO₂: +4 · K₂MnO₄: +6 |
+| 8 | An **X–X bond** contributes 0 to each atom | S₈: 0 · O–O in H₂O₂ ⇒ O = −1 |
+| 9 | More electronegative atom takes the pair | **NCl₃**: N **−3**, Cl **+1** (see box) |
+| 10 | Everything else: solve with rule 7 | MnO₄⁻ +7 · MnO₄²⁻ +6 · MnO₂ +4 · Cr₂O₇²⁻ +6 |
+
+> **⚠ Rule 9 trap, NCl₃:** the reflex "Cl is always −1" fails here, and the electronegativity
+> scales disagree: Pauling puts Cl (3.16) slightly above N (3.04), while Allred–Rochow puts N
+> (3.07) well above Cl (2.83). JEE settles it with the chemistry: hydrolysis gives
+> `NCl₃ + 3H₂O → NH₃ + 3HOCl`, **with no O.S. changes**, so N is **−3** and Cl **+1**. (Contrast
+> PCl₃ → H₃PO₃ + HCl, where P is +3 and Cl is −1.)
 
 ### Fixed-value ions worth knowing cold
 
-```
-NO₃⁻  N +5      NO₂⁻  N +3      NH₄⁺  N −3      NH₂OH  N −1      N₂H₄  N −2      HN₃  N −⅓(avg)
-SO₄²⁻ S +6      SO₃²⁻ S +4      S₂O₃²⁻  S +2(avg)      S₄O₆²⁻  S +2.5(avg)
-ClO⁻  Cl +1     ClO₂⁻ +3        ClO₃⁻ +5        ClO₄⁻ +7      ClO₂ +4
-CO₃²⁻ C +4      HCO₃⁻ +4        C₂O₄²⁻ +3       CN⁻  C +2, N −3
-PO₄³⁻ P +5      HPO₄²⁻ +5      H₂PO₂⁻ P +1      HPO₃²⁻ P +3
-MnO₄⁻ +7        Cr₂O₇²⁻ +6      Fe(CN)₆⁴⁻ Fe +2     Fe(CN)₆³⁻ Fe +3
-```
+| Element | Common species | The tricky ones |
+|---|---|---|
+| N | NO₃⁻ +5 · NO₂⁻ +3 · NH₄⁺ −3 | NH₂OH −1 · N₂H₄ −2 · HN₃ −⅓ (avg) |
+| S | SO₄²⁻ +6 · SO₃²⁻ +4 · H₂S −2 | S₂O₃²⁻ +2 (avg) · S₄O₆²⁻ +2.5 (avg) |
+| Cl | ClO⁻ +1 · ClO₃⁻ +5 · ClO₄⁻ +7 | ClO₂⁻ +3 · ClO₂ +4 |
+| C | CO₃²⁻ +4 · HCO₃⁻ +4 · CO +2 | C₂O₄²⁻ +3 · CN⁻ C +2, N −3 |
+| P | PO₄³⁻ +5 · HPO₄²⁻ +5 | H₂PO₂⁻ +1 · HPO₃²⁻ +3 |
+| Mn, Cr, Fe | MnO₄⁻ +7 · Cr₂O₇²⁻ +6 | [Fe(CN)₆]⁴⁻ +2 · [Fe(CN)₆]³⁻ +3 · FeO₄²⁻ +6 |
 
-> **⚠ The single most common error:** treating an *average* O.N. as if every atom had it.
-> `Na₂S₂O₃` → S = +2 average is fine for balancing, but structurally one S is **−2** and the
-> other **+6**. In redox **titration** of thiosulphate with iodine the *average* is what the
-> electron count sees (+2 → +2.5 in S₄O₆²⁻), which is why `n = 1` per thiosulphate.
+> **⚠ The single most common error:** treating an *average* O.N. as if every atom carried it.
+> `Na₂S₂O₃` → S = +2 on average, but structurally one S is **−2** and the other **+6** (§5).
+> In the thiosulphate–iodine titration the *average* is what the electron count sees
+> (+2 → +2.5 in S₄O₆²⁻), which is why `n = 1` per thiosulphate.
 
 ## 5. Assigning O.S. in the nasty species (the memorise-this list)
 
-The JEE-standard "hard" set, with the structure drawn — because **you must see the bonds,
-not just the formula**:
+These are the JEE-standard "hard" species. **You must see the bonds, not just the formula.**
+Every drawing below carries its O.S. in the caption:
+
+![Structures of the peroxo acids, CrO₅, sulphur oxy-anions, phosphorus oxyacids, HN₃, NH₄NO₃ and bleaching powder, each captioned with its oxidation states](figures/structures.svg)
+
+*Drawn from [`figures/structures.md`](figures/structures.md) by `scripts/render_structures.py`
+(RDKit). In Obsidian the SMILES in that file also render live with the Chem plugin.*
+
+The arithmetic that proves the peroxide cases:
 
 ```
-(a) H₂SO₅  (Caro's acid)          (b) CrO₅  (blue peroxide, "butterfly")
-        O                                   O ‖
-        ‖                                   O═Cr═O     each O–O peroxide O = −1
-   H–O–S═O                            /     \
-        |                              O──────O         Cr = +6, NOT +10
-        O–H
-   S = +6 (not +8): two peroxide O are −1
-   check: 2H(+1) + S(+6) + 3O(−2) + 2O(−1) = 0 ✔
-
-(c) H₂S₂O₈ (Marshall's acid)       (d) Na₂S₂O₃ (thiosulphate)
-   HO–S(=O)₂–O–O–S(=O)₂–OH           NaO–S(=O)₂–S
-   S = +6 (NOT +7/+8)                 terminal S = −2, central S = +6 (avg +2)
-   2 peroxide oxygens at −1
-                                    (e) Na₂S₄O₆ (tetrathionate)
-                                       ⁻O₃S–S–S–SO₃⁻
-                                       two terminal S = +5, two central (S–S) = 0
-                                       (avg +2.5) — this is why titration
-                                       of S₂O₃²⁻→S₄O₆²⁻ is only 1 e⁻ each
+H₂SO₅   2H(+1) + S + 3O(−2) + 2O(−1, peroxide) = 0   ⇒ S = +6   (blind "all O = −2" gives +8: impossible)
+H₂S₂O₈  2H(+1) + 2S + 6O(−2) + 2O(−1)          = 0   ⇒ S = +6   (not +7)
+CrO₅    Cr + 1O(−2) + 4O(−1)                   = 0   ⇒ Cr = +6  (not +10)
 ```
 
 | Species | O.S. of the marked element | Why (the point of the question) |
 |---|---|---|
-| `Na₂S₂O₃` S | **+2 avg** (−2, +6) | peroxide-free but non-equivalent S |
-| `Na₂S₄O₆` S | **+2.5 avg** (0, +5) | S–S bonds → 0 |
-| `H₂SO₅` S | **+6** | 2 peroxide O |
-| `H₂S₂O₈` S | **+6** | 2 peroxide O |
-| `CrO₅` Cr | **+6** | 4 peroxide O |
-| `HN₃` N | **−⅓ avg** (−1, 0, 0) | fractional allowed |
-| `NH₂OH` N | **−1** | O takes the pairs, H gives to N |
-| `N₂H₄` N | **−2** | |
-| `NH₄NO₃` N | **−3 and +5** (avg −1) | two N in *different* environments — ⚠ |
-| `Fe₃O₄` Fe | **+8⁄3 avg** (2×+3, 1×+2) | it is `FeO·Fe₂O₃` |
-| `Mn₃O₄` Mn | **+8⁄3** (2×+3, 1×+2) | `MnO·Mn₂O₃` |
-| `Pb₃O₄` Pb | **+8⁄3** (2×+4, 1×+2) | `2PbO·PbO₂` |
-| `KO₂` O | **−½** | superoxide, has 1 unpaired e⁻ → paramagnetic |
-| `O₂F₂` O | **+1** | F wins |
-| `NO₂` (neutral) N | **+4**; but in **N₂O₄** dimer still +4 | NO₂ is odd-electron → dimerises |
-| `NO⁺` / `NO⁻` | N **+3** / **+1** | the species charge is not zero: N + (−2) = +1 ⇒ N = +3 |
-| `ClO₂` Cl | **+4**; `ClO₂⁻` +3; `ClO₂⁺` +5 | charge of species, not 0 |
-| `C₆H₁₂O₆` (glucose) C | **0 avg** | 6C + 12(+1) + 6(−2) = 0 |
-| `CaOCl₂` (bleaching powder) Cl | **+1 and −1** | it is `Ca(OCl)Cl` — mixed O.S., **not** +1 avg for both |
-| `Mg₂Si` / `Mg₂Sn` | Si/Sn **−4** | metals with *more electropositive* partner |
-| `H₂[PdCl₄]` Pd | **+2** | Pt/Pd in complexes use rule 7 |
-| `[Fe(CN)₅NO]²⁺` nitroprusside | Fe **+2**, NO as **NO⁺** | ⚠ the brown-ring test `FeSO₄ + NO → [Fe(H₂O)₅NO]²⁺` is best treated with **NO⁺**, Fe²⁺ unchanged — it is a *complexation*, not a redox reaction, which is precisely why the ring is stable only in concentrated H₂SO₄ |
-| `C₁₁H₂₂O₁₁`/sucrose, benzene C | **0**, benzene C **−1** | |
-| `K₃PO₃`(phosphite) P | **+3** | only 2 ionisable H → structure `HPO₃²⁻` |
-| `H₄P₂O₅`(hypophosphoric) P | **+3** | P–P bond → 0 for that bond |
-| `H₄P₂O₆` (pyrophosphorous) P | **+4** | P–P bond |
-| `H₃PO₂/H₃PO₃/H₃PO₄` P | **+1 / +3 / +5** | basicity 1 / 2 / 3 as well |
-| `NaBH₄` B | **+3**, H **−1** | hydride! |
-| `LiAlH₄` Al | **+3**, H **−1** | |
-| `Al₄C₃` / `CaC₂` | C **−4** (methide) / **−1** (acetylide, C≡C) | `Ca⁺⁺[C≡C]²⁻` |
-| `FeO₄²⁻` (ferrate) Fe | **+6** | strong oxidant |
-| `XeF₂ / XeF₄ / XeF₆` | Xe **+2 / +4 / +6** | hydrolysis gives XeO₃ (+6) |
+| `Na₂S₂O₃` S | **+2 avg** (−2, +6) | non-equivalent S atoms |
+| `Na₂S₄O₆` S | **+2.5 avg** (0, +5) | S–S bonds contribute 0 |
+| `H₂SO₅`, `H₂S₂O₈` S | **+6** | peroxide O = −1 |
+| `CrO₅` Cr | **+6** | four peroxide O |
+| `KI₃` I | **−⅓ avg** (0, 0, −1) | I₃⁻ = I₂ + I⁻ (NCERT Ex. 7.2) |
+| `HN₃` N | **−⅓ avg** | fractional values are allowed |
+| `NH₂OH` N | **−1** | O takes N's pair; H gives N its pair |
+| `N₂H₄` N | **−2** | N–N bond contributes 0 |
+| `NH₄NO₃` N | **−3 and +5** (avg +1) | two N in different environments ⚠ |
+| `Fe₃O₄` Fe | **+8⁄3 avg** (+2, +3, +3) | it is `FeO·Fe₂O₃` |
+| `Mn₃O₄` Mn | **+8⁄3 avg** (+2, +3, +3) | `MnO·Mn₂O₃` |
+| `Pb₃O₄` Pb | **+8⁄3 avg** (+2, +2, +4) | `2PbO·PbO₂` (NCERT Problem 7.7) |
+| `KO₂` O | **−½** | superoxide: one unpaired e⁻, paramagnetic |
+| `O₂F₂` / `OF₂` O | **+1 / +2** | F always wins |
+| `NO₂`, `N₂O₄` N | **+4** in both | odd-electron NO₂ dimerises |
+| `NO⁺` / `NO⁻` N | **+3 / +1** | the species charge is not zero |
+| `ClO₂` / `ClO₂⁻` / `ClO₂⁺` Cl | **+4 / +3 / +5** | same formula, different charge |
+| `C₆H₁₂O₆` glucose C | **0 avg** | 6C + 12(+1) + 6(−2) = 0 |
+| `C₁₂H₂₂O₁₁` sucrose C | **0 avg** | same book-keeping as glucose |
+| `C₆H₆` benzene C | **−1** | each C carries one H |
+| `CH₃CH₂OH` C | **−3 and −1** (avg −2) | NCERT Ex. 7.2 |
+| `CH₃COOH` C | **−3 and +3** (avg 0) | NCERT Ex. 7.2 |
+| `CaOCl₂` Cl | **+1 and −1** | it is `Ca(OCl)Cl`: mixed, not +0 avg |
+| `Mg₂Si` Si | **−4** | the metal is the electropositive partner |
+| `Na₂[Fe(CN)₅NO]` Fe | **+2** (NO as NO⁺) | 2(+1) + Fe + 5(−1) + (+1) = 0 |
+| `H₂[PdCl₄]` Pd | **+2** | rule 7 on the complex ion |
+| `K₂HPO₃` P | **+3** | phosphorous acid is dibasic (one P–H) |
+| `H₃PO₂ / H₃PO₃ / H₃PO₄` P | **+1 / +3 / +5** | basicity 1 / 2 / 3 as well |
+| `H₄P₂O₅` pyrophosphorous P | **+3** | P–O–P bridge, two P–H |
+| `H₄P₂O₆` hypophosphoric P | **+4** | a **P–P** bond, contributes 0 |
+| `H₄P₂O₇` pyrophosphoric P | **+5** | NCERT Ex. 7.1 |
+| `NaBH₄` / `LiAlH₄` | B / Al **+3**, H **−1** | hydrides |
+| `Al₄C₃` / `CaC₂` C | **−4** / **−1** | methide / acetylide `[C≡C]²⁻` |
+| `FeO₄²⁻` ferrate Fe | **+6** | very strong oxidant |
+| `XeF₂ / XeF₄ / XeF₆` Xe | **+2 / +4 / +6** | hydrolysis gives XeO₃ (+6) |
+| `Na₄XeO₆` perxenate Xe | **+8** | oxidises F⁻ to F₂ (NCERT Ex. 7.16) |
 
-> **⚠ Structural assignment vs algebraic average — when each is asked:**
-> "Find the oxidation number of S in Na₂S₂O₃" → **+2 (average)** is the NCERT answer.
+> **⚠ The brown-ring complex `[Fe(H₂O)₅NO]²⁺`:** the JEE/NCERT-era answer is **Fe +1 with
+> NO⁺**. It forms from Fe²⁺ + neutral NO, so an electron has moved from NO to Fe: that step
+> *is* redox. (Spectroscopy suggests Fe(III)–NO⁻ instead; in an exam, write +1.) Contrast
+> nitroprusside, `[Fe(CN)₅NO]²⁻`, where Fe is +2 with NO⁺.
+
+> **⚠ Structural O.S. vs algebraic average: when each is asked**
+> "Find the oxidation number of S in Na₂S₂O₃" → **+2 (average)**, the NCERT answer.
 > "Find the oxidation states of the two sulphur atoms" → **−2 and +6**.
-> In **balancing** and **equivalent-weight** work, use the *average*, since electrons are
-> counted for the whole molecule.
+> For **balancing** and **equivalent weights**, use the *average*: electrons are counted for
+> the whole formula unit.
 
 ## 6. Oxidation number ≠ formal charge ≠ real charge 🆇
 
-| | Oxidation number | Formal charge | Actual (partial) charge |
+| Aspect | Oxidation number | Formal charge | Actual (partial) charge |
 |---|---|---|---|
 | Rule | bonding pairs → **more EN atom, entirely** | bonding pairs → **split equally** | from experiment / calculation |
 | Needs EN? | yes | no | — |
-| Same atom differs? | yes (Cl in Cl₂ = 0, in ClF = +1) | yes (FC in CO: C −1, O +1) | — |
-| Example: CO | C **+2**, O **−2** | C **−1**, O **+1** (triple bond + lone pairs) | C slightly **negative** end… yet C binds metals |
+| Example: CO | C **+2**, O **−2** | C **−1**, O **+1** | small dipole, C end slightly negative |
+| Used for | redox book-keeping | best Lewis structure | reactivity, dipoles |
 
 ```
-   CO:   :C≡O:      formal charge  C(−1) O(+1)   → C donates to metals
-         O.N.  C(+2) O(−2)                        → book-keeping for redox
+   CO:   :C≡O:     formal charge  C(−1) O(+1)   → the lone pair on C bonds to metals
+                   O.N.           C(+2) O(−2)   → the number redox book-keeping uses
 ```
 
-**Why JEE likes this:** in `Ni(CO)₄` nickel's oxidation state is **0**, but CO ligands are
-neutral so nothing contradicts the −1 formal charge on C. In `Fe(CO)₅`, Fe = 0. Oxidation
-states can be **0 and negative**: `Ni(CO)₄` (0), `HCo(CO)₄` (Co −1), `Mn₂(CO)₁₀` (0), and
-`Fe₂(CO)₉`. ⚠ "Oxidation state of an element in a compound can be zero or fractional but
-never… " — no such limit exists; metal carbonyls prove 0, and `Fe₃O₄` proves fractional.
+**Why JEE likes this:** in `Ni(CO)₄` and `Fe(CO)₅` the metal is at **0**, because CO is a
+neutral ligand. O.N. can also be **negative** for a metal: `Na[Co(CO)₄]` (Co **−1**),
+`Na₂[Fe(CO)₄]` (Fe **−2**). ⚠ "The O.S. of an element in a compound can be zero or fractional
+but never…": no such limit exists. Carbonyls prove 0 and negative, `Fe₃O₄` proves fractional.
 
 ---
 
@@ -303,339 +330,406 @@ never… " — no such limit exists; metal carbonyls prove 0, and `Fe₃O₄` pr
 
 ## 7. Types of redox reactions (7.3.1)
 
+NCERT sorts redox reactions into **four** categories. JEE Advanced also uses two extra lenses
+(🆇), shown dotted:
+
 ```mermaid
 flowchart TD
-    R["REDOX reactions"] --> I["INTERmolecular<br>(oxidant & reductant in different species)"]
-    R --> IN["INTRA molecular<br>(oxidised & reduced atoms in the SAME molecule)"]
-    R --> D["DISPLACEMENT<br>(one element pushes another out)"]
-    R --> DI["DISPROPORTIONATION<br>same element, one atom up + one atom down"]
-    R --> CO["COMPROPORTIONATION (synproportionation)<br>same element in two states → one intermediate"]
-    I --> I1["2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I₂"]
-    IN --> IN1["2KClO₃ → 2KCl + 3O₂ (thermal decomposition type)"]
-    IN --> IN2["NH₄NO₂ → N₂ + 2H₂O (N −3 & +5/+3 → 0)"]
-    D --> D1["Zn + Cu²⁺ → Zn²⁺ + Cu"]
-    DI --> DI1["Cl₂ + 2OH⁻ → Cl⁻ + ClO⁻ + H₂O"]
-    CO --> CO1["2H₂S + SO₂ → 3S + 2H₂O"]
+    R["Redox reactions<br>NCERT 7.3.1"] --> C["(a) Combination<br>A + B → AB"]
+    R --> DE["(b) Decomposition<br>AB → A + B"]
+    R --> DP["(c) Displacement<br>X + YZ → XZ + Y"]
+    R --> DS["(d) Disproportionation<br>one element goes up AND down"]
+    C --> C1["3Mg + N₂ → Mg₃N₂"]
+    DE --> D1["2KClO₃ → 2KCl + 3O₂"]
+    DP --> DM["Metal displacement<br>Zn + Cu²⁺ → Zn²⁺ + Cu"]
+    DP --> DN["Non-metal displacement<br>H₂ from water/acids · halogens"]
+    DS --> S1["P₄ + 3OH⁻ + 3H₂O → PH₃ + 3H₂PO₂⁻"]
+    R -.->|"🆇 other lenses"| X["inter- vs intramolecular<br>comproportionation (e)"]
 ```
+*NCERT's four categories, each with the book's own example. The dotted branch is extra
+vocabulary JEE Advanced also uses (§7e).*
 
-### (a) Intermolecular redox
-Oxidation and reduction happen on **different** reactant species.
+### (a) Combination: A + B → C
 
-```
-2KMnO₄ + 16HCl → 2KCl + 2MnCl₂ + 8H₂O + 5Cl₂      Mn +7→+2 (reduced); Cl −1→0 (oxidised)
-K₂Cr₂O₇ + 14HCl → 2KCl + 2CrCl₃ + 7H₂O + 3Cl₂      Cr +6→+3
-```
-
-### (b) Intramolecular redox
-One molecule contains both an oxidisable and a reducible centre:
+Redox **only if A or B (or both) is an element**. Every combustion in O₂ qualifies:
 
 ```
-2KClO₃ → 2KCl + 3O₂          Cl +5→−1 (reduced), O −2→0 (oxidised) — same formula unit
-2NaNO₃ → 2NaNO₂ + O₂         N +5→+3, O −2→0
-(NH₄)₂Cr₂O₇ → N₂ + 4H₂O + Cr₂O₃   N −3→0, Cr +6→+3   (the "volcano" demo)
+C + O₂ → CO₂                    C 0 → +4
+3Mg + N₂ → Mg₃N₂                Mg 0 → +2, N 0 → −3
+CH₄ + 2O₂ → CO₂ + 2H₂O          C −4 → +4
 ```
 
-### (c) Displacement — metal displacing metal / non-metal
+### (b) Decomposition: C → A + B
+
+Redox **only if at least one product is an element**:
 
 ```
-Metal–metal:      Fe + CuSO₄ → FeSO₄ + Cu        (Fe above Cu)
-Metal–hydrogen:   Zn + 2HCl → ZnCl₂ + H₂  ✔   ·   Cu + HCl ✘ (Cu below H₂)
-Non-metal:        Cl₂ + 2KBr → 2KCl + Br₂  ✔   ·   Br₂ + 2KCl ✘
+2H₂O → 2H₂ + O₂                 H +1 → 0, O −2 → 0
+2NaH → 2Na + H₂                 Na +1 → 0, H −1 → 0
+2KClO₃ → 2KCl + 3O₂             Cl +5 → −1, O −2 → 0
+2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂    N +5 → +4, O −2 → 0        (NCERT Problem 7.6)
+(NH₄)₂Cr₂O₇ → N₂ + 4H₂O + Cr₂O₃ N −3 → 0, Cr +6 → +3      (the "volcano" demo)
 ```
 
-### (d) Disproportionation — the ⭐ of JEE
+> **⚠ Not every decomposition is redox:** `CaCO₃ → CaO + CO₂` has no O.S. change at all.
 
-One element in an **intermediate** O.S. simultaneously rises and falls:
+### (c) Displacement: X + YZ → XZ + Y
 
-```
-2H₂O₂ → 2H₂O + O₂                    O −1 → −2 and 0
-Cl₂ + 2OH⁻ (cold) → Cl⁻ + ClO⁻ + H₂O   Cl 0 → −1, +1
-3Cl₂ + 6OH⁻ (hot) → 5Cl⁻ + ClO₃⁻ + 3H₂O  Cl 0 → −1, +5
-3ClO⁻ → ClO₃⁻ + 2Cl⁻                  Cl +1 → +5, −1   (bleach on standing)
-2Cu⁺ → Cu²⁺ + Cu                      (+1 unstable vs +2/0; E° 0.52→0.153 ✔)
-3MnO₄²⁻ + 4H⁺ → 2MnO₄⁻ + MnO₂ + 2H₂O  Mn +6 → +7, +4
-Mn³⁺ → Mn²⁺ + MnO₂ (aq)                NCERT Q7.21
-P₄ + 3NaOH + 3H₂O → PH₃ + 3NaH₂PO₂     P 0 → −3 and +1   ⚠ classic
-Br₂ + 2OH⁻ → Br⁻ + BrO⁻ + H₂O  (I₂ does **not** give a stable hypoiodite:
-     3I₂ + 6OH⁻ → 5I⁻ + IO₃⁻ + 3H₂O goes straight to iodate — see §8 note)
-3S + 6NaOH → 2Na₂S + Na₂SO₃ + 3H₂O      S 0 → −2 and +4 ✔
-2ClO₂ + 2OH⁻ → ClO₂⁻ + ClO₃⁻ + H₂O      Cl +4 → +3 and +5  ✔
-NO₂ + H₂O → HNO₃ + HNO₂ (N +4 → +5, +3)  ✔  and 3NO₂ + H₂O → 2HNO₃ + NO
-2NO₂ + 2OH⁻ → NO₂⁻ + NO₃⁻ + H₂O  ✔
-```
-
-### (e) Comproportionation (conproportionation)
+**Metal displacement** (the basis of much metallurgy):
 
 ```
-2H₂S + SO₂ → 3S + 2H₂O          S −2 and +4 → 0
-NH₄NO₂ → N₂ + 2H₂O              N −3 and +3 → 0
-NO + NO₂ + H₂O → 2HNO₂          N +2 and +4 → +3
-H₂SO₃ + 2H₂S → 3S + 3H₂O        S +4 and −2 → 0
-Mn²⁺ + MnO₄⁻ → 2MnO₂ (neutral)  Mn +2 and +7 → +4
-   ⇒ this is why a trace of Mn²⁺ makes permanganate stop at brown MnO₂ instead of
-     going to Mn²⁺, and why Mn²⁺ is *added* in some iodometric permanganate assays
-Cl⁻ + ClO⁻ + 2H⁺ → Cl₂ + H₂O  ✔ (bleach + HCl gives Cl₂ — ⚠ dangerous, asked as reason)
+CuSO₄ + Zn → Cu + ZnSO₄           (NCERT eq. 7.29)
+V₂O₅ + 5Ca → 2V + 5CaO
+TiCl₄ + 2Mg → Ti + 2MgCl₂         (Kroll process)
+Cr₂O₃ + 2Al → Al₂O₃ + 2Cr         (thermite / aluminothermy)
 ```
 
-> **⚠ Not every "combination/decomposition" is redox:**
-> `CaO + CO₂ → CaCO₃` ✘, `Na₂CO₃ + CaCl₂ → CaCO₃ + 2NaCl` ✘,
-> `CaCO₃ →(Δ) CaO + CO₂` ✘, `NH₃ + HCl → NH₄Cl` ✘,
-> `2HI → H₂ + I₂` ✔ (H +1→0, I −1→0). **Check O.N., not the pattern.**
+**Non-metal displacement**, mostly hydrogen and halogens:
+
+```
+2Na + 2H₂O(cold) → 2NaOH + H₂      very active metals, cold water
+Mg + 2H₂O(hot)   → Mg(OH)₂ + H₂    less active metals need hot water/steam
+3Fe + 4H₂O(steam) → Fe₃O₄ + 4H₂    ⚠ NCERT eq. 7.36 writes Fe₂O₃; the real product is Fe₃O₄
+Zn + 2HCl → ZnCl₂ + H₂  ✔          ·   Cu + HCl ✘  (Cu is below H₂)
+Cl₂ + 2KBr → 2KCl + Br₂ ✔          ·   Br₂ + 2KCl ✘
+2F₂ + 2H₂O → 4HF + O₂              F₂ displaces O from water itself
+```
+
+> **⚠ Why F₂ cannot be used to displace Cl⁻/Br⁻ from their aqueous salts** (NCERT): it
+> attacks the **water** first (last line above). The halide displacement order is therefore
+> quoted from Cl₂ downwards.
+
+### (d) Disproportionation: the ⭐ of JEE
+
+One element in an **intermediate** O.S. rises and falls at the same time:
+
+```
+2H₂O₂ → 2H₂O + O₂                      O −1 → −2 and 0
+P₄ + 3OH⁻ + 3H₂O → PH₃ + 3H₂PO₂⁻        P 0 → −3 and +1       (NCERT eq. 7.46) ⚠ classic
+S₈ + 12OH⁻ → 4S²⁻ + 2S₂O₃²⁻ + 6H₂O      S 0 → −2 and +2       (NCERT eq. 7.47)
+Cl₂ + 2OH⁻ (cold) → Cl⁻ + ClO⁻ + H₂O     Cl 0 → −1 and +1      (NCERT eq. 7.48)
+3Cl₂ + 6OH⁻ (hot) → 5Cl⁻ + ClO₃⁻ + 3H₂O  Cl 0 → −1 and +5
+3ClO⁻ → ClO₃⁻ + 2Cl⁻                    Cl +1 → +5 and −1     (bleach on standing/heating)
+4ClO₃⁻ → Cl⁻ + 3ClO₄⁻                   Cl +5 → −1 and +7     (NCERT Problem 7.5)
+2Cu⁺ → Cu²⁺ + Cu                        Cu +1 → +2 and 0      (E° 0.52 > 0.15, §17)
+3MnO₄²⁻ + 4H⁺ → 2MnO₄⁻ + MnO₂ + 2H₂O    Mn +6 → +7 and +4
+2Mn³⁺ + 2H₂O → Mn²⁺ + MnO₂ + 4H⁺        Mn +3 → +2 and +4     (NCERT Ex. 7.21)
+2NO₂ + 2OH⁻ → NO₂⁻ + NO₃⁻ + H₂O          N +4 → +3 and +5      (NCERT Problem 7.6)
+3NO₂ + H₂O → 2HNO₃ + NO                 N +4 → +5 and +2
+2ClO₂ + 2OH⁻ → ClO₂⁻ + ClO₃⁻ + H₂O       Cl +4 → +3 and +5
+(CN)₂ + 2OH⁻ → CN⁻ + CNO⁻ + H₂O          C +3 → +2 and +4      (NCERT Ex. 7.20)
+```
+
+**Who *cannot* disproportionate (NCERT Problem 7.5):** a species already at its **highest**
+or **lowest** O.S. `ClO₄⁻` (Cl +7) cannot, while ClO⁻, ClO₂⁻ and ClO₃⁻ can. **Fluorine**
+cannot either, having no positive O.S. to rise to: `2F₂ + 2OH⁻ → 2F⁻ + OF₂ + H₂O` (NCERT
+eq. 7.49) is plain reduction of F (O goes −2 → +2), not disproportionation.
+
+### (e) 🆇 Two more lenses JEE Advanced uses
+
+| Lens | Meaning | Example |
+|---|---|---|
+| **Intermolecular** | oxidant and reductant are **different species** | `2KMnO₄ + 16HCl → 2KCl + 2MnCl₂ + 5Cl₂ + 8H₂O` |
+| **Intramolecular** | oxidised and reduced atoms sit in the **same formula unit** (but are *different* elements) | `2KClO₃ → 2KCl + 3O₂` · `(NH₄)₂Cr₂O₇ → N₂ + Cr₂O₃ + 4H₂O` |
+| **Comproportionation** (synproportionation) | reverse of disproportionation: two O.S. of one element → one intermediate | see below |
+
+```
+2H₂S + SO₂ → 3S + 2H₂O                    S −2 and +4 → 0
+NH₄NO₂ → N₂ + 2H₂O                        N −3 and +3 → 0   (also intramolecular)
+NO + NO₂ + H₂O → 2HNO₂                    N +2 and +4 → +3
+IO₃⁻ + 5I⁻ + 6H⁺ → 3I₂ + 3H₂O              I +5 and −1 → 0   (the iodate standard, §12c)
+3Mn²⁺ + 2MnO₄⁻ + 2H₂O → 5MnO₂ + 4H⁺        Mn +2 and +7 → +4
+Cl⁻ + ClO⁻ + 2H⁺ → Cl₂ + H₂O               Cl −1 and +1 → 0
+```
+
+> **⚠ Two consequences asked as "reason" questions:** (1) the Mn²⁺ + MnO₄⁻ reaction is why a
+> permanganate titration with **too little acid** turns turbid brown (MnO₂) instead of
+> colourless; (2) the Cl⁻ + ClO⁻ reaction is why **bleach + acid releases toxic Cl₂**.
+
+> **⚠ Not every combination/decomposition is redox:** `CaO + CO₂ → CaCO₃` ✘,
+> `NH₃ + HCl → NH₄Cl` ✘, `CaCO₃ → CaO + CO₂` ✘, but `2HI → H₂ + I₂` ✔ (H +1 → 0, I −1 → 0).
+> **Check the O.N., not the pattern** (sieve in §20, P6).
 
 ## 8. Oxidising and reducing agents from oxidation states
 
 **The master rule (this single line answers a dozen questions):**
 
+```mermaid
+flowchart TD
+    A["Take the key element:<br>find its O.S. in the species"] --> B{"Where does it sit<br>in its possible O.S. range?"}
+    B -->|"at the maximum"| C["Can only go DOWN<br>oxidant only<br>HNO₃, KMnO₄, K₂Cr₂O₇"]
+    B -->|"at the minimum"| D["Can only go UP<br>reductant only<br>H₂S, NH₃, I⁻, H⁻"]
+    B -->|"in between"| E["Can go either way<br>oxidant AND reductant<br>SO₂, H₂O₂, HNO₂, Fe²⁺"]
+    E --> F["May disproportionate<br>(§7d)"]
+    E --> G["The partner decides:<br>stronger oxidant present<br>⇒ it acts as reductant"]
 ```
-   element at its HIGHEST O.S.  →  can only fall   →  OXIDISING agent only
-   element at its LOWEST  O.S.  →  can only rise   →  REDUCING agent only
-   element at an INTERMEDIATE   →  can go either way → BOTH (or disproportionate)
-```
+*Position in the O.S. range decides the possible roles; E° (§15) decides which role actually
+happens with a given partner.*
 
-| Element | only reductant | both | only oxidant |
+| Element (O.S. range) | Only reductant | Both | Only oxidant |
 |---|---|---|---|
-| **S** (−2…+6) | H₂S, S²⁻, Na₂S, M₂S | S(0), SO₂, H₂SO₃, SO₃²⁻, HSO₃⁻, S₂O₃²⁻, H₂S₂O₃ | H₂SO₄ (conc), SO₄²⁻ (dil: none!), SO₃, HClO₄, Na₂S₂O₈, K₂S₂O₈ |
-| **N** (−3…+5) | NH₃, NH₄⁺, N³⁻ | N₂(0), NO(+2), NO₂(+4), HNO₂(+3), N₂O₄ | HNO₃, NO₃⁻ (conc), N₂O₅ |
-| **Cl** (−1…+7) | HCl, Cl⁻ | Cl₂(0), HOCl(+1), HClO₂ | HClO₃, HClO₄, ClO₄⁻ |
-| **Fe** | Fe(0) | Fe²⁺ (+2 → both) | Fe³⁺ (+3 = max for Fe in normal media; FeO₄²⁻ +6 = very strong oxidant) |
-| **Mn** | Mn(0) | Mn²⁺ (weak reductant) | Mn³⁺, MnO₂(+4), MnO₄²⁻(+6), **MnO₄⁻(+7)** |
-| **Sn** | Sn(0) | Sn²⁺ (reductant; can also be reduced) | Sn⁴⁺ (only oxidant, and a weak one) |
-| **I** (−1…+7) | I⁻, HI | I₂ (0), IO₃⁻/HIO₃ (+5) | IO₄⁻/H₅IO₆ (+7) |
+| **S** (−2 … +6) | H₂S, S²⁻ | S, SO₂, SO₃²⁻, HSO₃⁻, S₂O₃²⁻ | H₂SO₄ (conc.), SO₃ · peroxo S₂O₈²⁻ (via its O–O) |
+| **N** (−3 … +5) | NH₃, NH₄⁺, N³⁻ | N₂, NO, HNO₂, NO₂, N₂O₄ | HNO₃, NO₃⁻, N₂O₅ |
+| **Cl** (−1 … +7) | HCl, Cl⁻ | Cl₂, HOCl, HClO₂, ClO₃⁻ | HClO₄, ClO₄⁻ |
+| **O** (−2 … +2) | H₂O, O²⁻ (weakly) | H₂O₂, O₂²⁻ | O₃ in practice (only F can oxidise O) |
+| **Fe** (0 … +3; +6 rare) | Fe | Fe²⁺ | Fe³⁺ · FeO₄²⁻ (+6, very strong) |
+| **Mn** (0 … +7) | Mn | Mn²⁺ (weak reductant), MnO₂, MnO₄²⁻ | **MnO₄⁻** |
+| **Sn** (0 … +4) | Sn | Sn²⁺ (good reductant) | Sn⁴⁺ (weak) |
+| **I** (−1 … +7) | I⁻, HI | I₂, IO₃⁻ | IO₄⁻, H₅IO₆ |
 
 Consequences NCERT and JEE both drill:
 
-- **SO₂ is both**: decolourises acid KMnO₄ (as **reductant**, S +4→+6) and turns
-  `K₂Cr₂O₇` orange→green (reductant); but with H₂S it is the **oxidant** (`SO₂ + 2H₂S → 3S`).
-- **H₂O₂ is both**: oxidant toward `PbS → PbSO₄` (also `H₂S`, `Fe²⁺`, `I⁻`, `NO₂⁻`, `SO₃²⁻`);
-  reductant toward `MnO₄⁻`, `Cr₂O₇²⁻`, `O₃`, `Cl₂`, `Br₂`, `PbO₂` (`PbO₂ + H₂O₂ → PbO + H₂O + O₂↑`).
-  It also **disproportionates**: `2H₂O₂ → 2H₂O + O₂` (O −1 → −2 and 0), a reaction that is
-  thermodynamically eager (E° = +1.10 V, see §17) but kinetically slow — hence MnO₂/light/
-  dust catalyse it; commercial H₂O₂ is therefore stabilised with acetanilide or EDTA and
-  stored in dark waxed bottles. **It can act as oxidant, reductant AND disproportionate;
-  the medium and partner decide.**
-- **Conc. H₂SO₄** oxidises Cu, C, S, Br⁻, I⁻ but **not** Fe/Al/Cr (passivation by a dense
-  oxide layer) and **not** Au/Pt. It cannot be used to dry H₂S/HBr/HI (they reduce it).
-- **HNO₃** oxidises everything except Au, Pt (need aqua regia 3HCl:HNO₃).
-  `Cu + HNO₃`: conc → NO₂ (+5→+4), dil → NO (+5→+2); with very dilute HNO₃ and active
-  metals → NH₄NO₃ (N +5→−3) — the 8-electron jump, favourite in "number of moles of
-  HNO₃ reduced" questions.
-- **HCl is never an oxidant via Cl⁻** in these media: it is a reductant, which is why
-  **HCl cannot be used to acidify KMnO₄** (Cl⁻ → Cl₂, and 2MnO₄⁻ + 16HCl error).
-- ⚠ `I₂` cannot oxidise Fe²⁺, so **FeI₃ does not exist** (Fe³⁺ oxidises I⁻), whereas
-  **FeBr₃ does**. Similarly **CuI₂ doesn't exist**, but **CuI₂'s absence** doesn't stop
-  CuF₂ and CuCl₂. And `AgF₂` (Ag²⁺) is a monster oxidant while `AgF` is stable (NCERT Q7.10).
-- ⚠ `2Hg²⁺ + 2Fe²⁺ → Hg₂²⁺ + 2Fe³⁺` (NCERT) shows the oxidant stopping at the **intermediate**
-  state (+1, not 0) when the reductant is in limited supply. NCERT Q7.11 states the general
-  principle: **excess reductant → oxidant is pushed to its lowest O.S.; excess oxidant →
-  reductant is pushed to its highest O.S.**
-  `P + Cl₂`: limited Cl₂ → PCl₃, excess Cl₂ → PCl₅;
-  `Sn + Cl₂` → SnCl₄ (Sn goes to its maximum with a strong oxidant);
-  `Fe + I₂` → FeI₂ **only**, however much I₂ you use, because I₂ (0.54 V) cannot
-  push Fe to +3 (Fe³⁺/Fe²⁺ = 0.77 V) — "excess oxidant" has a ceiling set by E°, not
-  by stoichiometry. That is the one case where the NCERT rule needs the Table 7.1 caveat.
+- **Why SO₂ and H₂O₂ are both, but O₃ and HNO₃ only oxidants** (NCERT Ex. 7.8): S (+4) and
+  O (−1) are intermediate. N in HNO₃ is at its maximum (+5). O in O₃ is formally 0, but
+  oxygen can only be driven positive by fluorine, so ozone behaves as an oxidant only.
+- **SO₂** decolourises acidified KMnO₄ and turns K₂Cr₂O₇ orange → green (as **reductant**,
+  S +4 → +6), yet with H₂S it is the **oxidant** (`SO₂ + 2H₂S → 3S + 2H₂O`).
+- **H₂O₂** is an oxidant toward `PbS → PbSO₄`, Fe²⁺, I⁻, NO₂⁻, SO₃²⁻, and a reductant toward
+  MnO₄⁻, Cr₂O₇²⁻, O₃, Cl₂ and PbO₂ (`PbO₂ + H₂O₂ → PbO + H₂O + O₂↑`). It also
+  **disproportionates** (`2H₂O₂ → 2H₂O + O₂`, E° = +1.10 V, §17): thermodynamically eager but
+  kinetically slow, so MnO₂, light and dust catalyse it. Commercial H₂O₂ is stabilised (e.g.
+  with acetanilide) and stored in dark, wax-lined bottles.
+- **Conc. H₂SO₄** oxidises Cu, C, S, Br⁻ and I⁻, but **not** Fe/Al/Cr (a dense oxide film
+  passivates them) and not Au/Pt. It cannot dry H₂S, HBr or HI, because they reduce it.
+  **NCERT Ex. 7.12(b):** with a chloride it only gives **HCl** (Cl⁻ is too weak a reductant),
+  with a bromide it gives **Br₂** (`2HBr + H₂SO₄ → Br₂ + SO₂ + 2H₂O`).
+- **HNO₃** oxidises almost all metals except Au and Pt (aqua regia, 3HCl : 1HNO₃, needed).
+  `Cu + HNO₃`: conc. → NO₂ (N +5 → +4); dilute → NO (+5 → +2); very dilute HNO₃ with Zn →
+  NH₄NO₃ (+5 → −3, the **8-electron jump** behind "moles of HNO₃ reduced" questions).
+- **HCl is a reductant, never a safe acid for KMnO₄:** its Cl⁻ is oxidised to Cl₂, consuming
+  permanganate (§12a).
+- ⚠ **FeI₃ does not exist** (Fe³⁺ oxidises I⁻, §16), whereas FeBr₃ does. **CuI₂ does not
+  exist** either (`2Cu²⁺ + 4I⁻ → 2CuI + I₂`), while CuCl₂ and CuBr₂ do. **AgF₂** (Ag²⁺) is a
+  monster oxidant, while AgF is stable (NCERT Ex. 7.10).
+- **Excess reagent decides the product** (NCERT Ex. 7.11): **excess reductant** pushes the
+  oxidant to its **lowest** accessible O.S.; **excess oxidant** pushes the reductant to its
+  **highest**.
+  - `2HgCl₂ + SnCl₂ → Hg₂Cl₂ + SnCl₄` (limited SnCl₂: Hg stops at +1), but with excess SnCl₂,
+    `Hg₂Cl₂ + SnCl₂ → 2Hg + SnCl₄` (down to 0).
+  - `P + Cl₂`: limited Cl₂ → PCl₃, excess → PCl₅. `C + O₂`: limited O₂ → CO, excess → CO₂.
+  - ⚠ **Ceiling set by E°, not stoichiometry:** `Fe + I₂` gives **FeI₂ only**, however much
+    I₂ is used, because I₂ (0.54 V) cannot push Fe²⁺ to Fe³⁺ (0.77 V).
 
-> **⚠ Why iodine never disproportionates in alkali:** `I₂ + 2OH⁻ → I⁻ + IO⁻` is
-> thermodynamically reversible and `3I₂ + 6OH⁻ → 5I⁻ + IO₃⁻ + 3H₂O` **does** happen in hot
-> concentrated alkali — the *hypoiodite* IO⁻ is unstable so the cold reaction gives
-> essentially no stable hypoiodite. Fluorine does not disproportionate either: F is always
-> −1 (nothing more electronegative except in F₂), so `F₂ + OH⁻` gives **OF₂** (+2 on O — F
-> still −1) or O₂ depending on conditions; F₂ can only be reduced → strongest oxidant, ever.
+> **⚠ Halogens + alkali: which product?**
+> **Cl₂:** cold, dilute → Cl⁻ + ClO⁻; hot, concentrated → Cl⁻ + ClO₃⁻.
+> **Br₂:** hypobromite survives only near 0 °C; at room temperature it goes on to BrO₃⁻.
+> **I₂:** hypoiodite IO⁻ disproportionates almost instantly at any temperature, so the product
+> is iodate directly: `3I₂ + 6OH⁻ → 5I⁻ + IO₃⁻ + 3H₂O`.
+> **F₂:** cannot disproportionate (no positive O.S.); it gives OF₂ or O₂ (§7d).
 
 ## 9. Balancing by the oxidation-number method (7.3.2 a)
 
+Which method should you use? Both work; the choice is about speed and safety:
+
+```mermaid
+flowchart TD
+    A["Skeleton equation"] --> B{"Medium stated?"}
+    B -->|"no"| B2["Infer it: Mn²⁺ or Cr³⁺ product ⇒ acid<br>MnO₂ product ⇒ neutral/basic"]
+    B -->|"yes"| C{"Same element<br>goes up AND down?"}
+    B2 --> C
+    C -->|"yes"| D["Ion–electron:<br>write that species in both halves"]
+    C -->|"no"| E{"Ionic, in solution?"}
+    E -->|"yes"| F["Ion–electron §10<br>safest for JEE"]
+    E -->|"no: molecular / dry"| G["Oxidation-number §9<br>fastest"]
+    D --> H["Check atoms, then charge<br>no H⁺ in base, no OH⁻ in acid"]
+    F --> H
+    G --> H
 ```
-STEP 1  Write the skeleton; assign O.N. to every atom.
-STEP 2  Identify the element oxidised and the element reduced.
-STEP 3  Compute Δ per molecule (multiply by the number of atoms of that element
-        in the formula unit!) → "increase" and "decrease".
-STEP 4  Cross-multiply the two changes as coefficients → conservation of e⁻.
-STEP 5  Balance the remaining atoms by inspection — LAST the H and O (as H₂O).
-STEP 6  Check the CHARGE on both sides too. A redox equation that balances atoms
-        but not charge is wrong.
+*Both methods must give the same equation; the final atom-and-charge check is not optional.*
+
+**NCERT's steps for the O.N. method:**
+
+1. Write the skeleton (ionic form where possible) and assign O.N. to every atom.
+2. Identify the element oxidised and the element reduced.
+3. Compute the O.N. change **per formula unit** (multiply by the number of those atoms in it).
+4. Cross-multiply so that the total increase equals the total decrease.
+5. Balance **charge** with H⁺ (acid) or OH⁻ (base).
+6. Balance **H** with H₂O, then check O. A redox equation that balances atoms but not charge
+   is wrong.
+
+**Worked: NCERT Problem 7.8 (acid), dichromate + sulphite:**
+
+```
+Cr₂O₇²⁻ + SO₃²⁻ → Cr³⁺ + SO₄²⁻
+ Cr: +6 → +3   decrease 3 × 2 Cr = 6 per dichromate
+ S:  +4 → +6   increase 2 per sulphite           ⇒ 1 Cr₂O₇²⁻ : 3 SO₃²⁻
+ charge: LHS −2 −6 = −8, RHS +6 −6 = 0  ⇒ add 8H⁺ on the left; then 4H₂O on the right
+ ─────────────────────────────────────────────────────────────
+ Cr₂O₇²⁻ + 3SO₃²⁻ + 8H⁺ → 2Cr³⁺ + 3SO₄²⁻ + 4H₂O
+ atoms: Cr 2|2 · S 3|3 · O 7+9 = 16 | 12+4 = 16 · H 8|8 ✔   charge: 0 | 0 ✔
 ```
 
-**Worked (NCERT's own example, Fe²⁺ + Cr₂O₇²⁻ in acid):**
+**Worked: NCERT Problem 7.9 (base), permanganate + bromide:**
 
 ```
-Fe²⁺ + Cr₂O₇²⁻ + H⁺ → Fe³⁺ + Cr³⁺ + H₂O
+MnO₄⁻ + Br⁻ → MnO₂ + BrO₃⁻
+ Mn: +7 → +4   decrease 3
+ Br: −1 → +5   increase 6                        ⇒ 2 MnO₄⁻ : 1 Br⁻
+ charge: LHS −3, RHS −1  ⇒ add 2OH⁻ on the right; then 1H₂O on the left
+ ─────────────────────────────────────────────────────────────
+ 2MnO₄⁻ + Br⁻ + H₂O → 2MnO₂ + BrO₃⁻ + 2OH⁻
+ atoms: O 8+1 = 9 | 4+3+2 = 9 · H 2|2 ✔   charge: −3 | −3 ✔
+```
 
- Fe:  +2 → +3     increase 1  per Fe
- Cr:  +6 → +3     decrease 3  per Cr ×2 atoms = 6  per dichromate
- ⇒ multiply Fe species by 6, dichromate by 1
+**For comparison, the reaction NCERT balances by the half-reaction method (eq. 7.50), done
+here by O.N.:**
 
+```
+Fe²⁺ + Cr₂O₇²⁻ → Fe³⁺ + Cr³⁺            (acid)
+ Fe: +2 → +3  increase 1 ;  Cr: +6 → +3, ×2 = decrease 6   ⇒ 6 Fe²⁺ : 1 Cr₂O₇²⁻
  6Fe²⁺ + Cr₂O₇²⁻ + 14H⁺ → 6Fe³⁺ + 2Cr³⁺ + 7H₂O
-
- charge: LHS 6(+2) + (−2) + 14(+1) = +24 ;  RHS 6(+3) + 2(+3) = +24 ✔
- charge: 12 − 2 + 14 = +24  |  18 + 6 = +24  ✔   (atoms: 6Fe, 2Cr, 7O, 14H ✔)
+ charge: 12 − 2 + 14 = +24 | 18 + 6 = +24 ✔
 ```
 
-**Second worked one (NCERT's H₂S + MnO₄⁻ style, in acid):**
-
-```
-MnO₄⁻ + H₂S + H⁺ → Mn²⁺ + S + H₂O
- Mn +7→+2 : ↓5        S −2→0 : ↑2
- ⇒ 2MnO₄⁻ + 5H₂S + 6H⁺ → 2Mn²⁺ + 5S + 8H₂O     (check charge: LHS −2+6=+4, RHS +4 ✔)
-```
-
-⚠ Where this method **cannot** be used: reactions where the same element both rises and
-falls by an unclear amount (disproportionations like `Cl₂ + OH⁻`) — there, use ion–electron.
+⚠ The O.N. method gets clumsy for **disproportionation** (the same species is both oxidant and
+reductant): write it twice on the left, or switch to ion–electron.
 
 ## 10. Balancing by the ion–electron (half-reaction) method (7.3.2 b)
 
-```
-        ACIDIC MEDIUM                                BASIC MEDIUM
-   ┌─────────────────────────────┐          ┌─────────────────────────────┐
-   │ 1. split into 2 half-rxns   │          │ 1. split into 2 half-rxns   │
-   │ 2. balance every atom       │          │ 2. balance every atom except │
-   │    except O and H           │          │    O and H                  │
-   │ 3. O:   add H₂O             │          │ 3. O:   add 1 H₂O per O     │
-   │ 4. H:   add H⁺              │          │         needed, on the side │
-   │ 5. charge: add e⁻           │          │         short of O          │
-   │ 6. multiply so e⁻ cancel    │          │ 4. H:   add H⁺ as usual     │
-   │ 7. add, cancel, check       │          │ 5. kill every H⁺: add the   │
-   │    atoms AND charge         │          │    SAME number of OH⁻ to    │
-   └─────────────────────────────┘          │    BOTH sides; H⁺+OH⁻→H₂O; │
-                                            │    cancel surplus H₂O       │
-   ⚡ Shortcut: balance it in acid, then      │ 6. multiply so e⁻ cancel    │
-   add OH⁻ to both sides for each H⁺ and      │ 7. add, cancel, check      │
-   finish in one pass.                         │    atoms AND charge       │
-                                            └─────────────────────────────┘
-```
+| Step | Acidic medium | Basic medium |
+|---|---|---|
+| 1 | Split into oxidation and reduction halves | same |
+| 2 | Balance all atoms except O and H | same |
+| 3 | O: add **H₂O** to the side short of O | same |
+| 4 | H: add **H⁺** to the side short of H | same, **then** add as many OH⁻ as there are H⁺ to **both** sides; turn H⁺ + OH⁻ into H₂O |
+| 5 | Charge: add **e⁻** to the more positive side | same |
+| 6 | Multiply the halves so the e⁻ cancel; add them | same |
+| 7 | Cancel common H₂O / H⁺; check atoms **and** charge | same; **no H⁺** may remain |
 
+*NCERT Problem 7.10 uses exactly this basic-medium route (step 4).*
 
-**Half-reaction recipe bank (memorise these seven — they cover ~90 % of papers):**
+**Half-reaction bank: memorise these; they cover ~90 % of papers:**
 
-```
- reduction   MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O        (acid)
- reduction   MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂ + 4OH⁻       (neutral/faintly alkaline)
- reduction   MnO₄⁻ + e⁻ → MnO₄²⁻                     (strongly alkaline)
- reduction   Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O
- reduction   CrO₄²⁻ + 4H₂O + 3e⁻ → Cr(OH)₃ + 5OH⁻   (alkaline dichromate/chromate)
- oxidation   C₂O₄²⁻ → 2CO₂ + 2e⁻
- oxidation   H₂O₂ → O₂ + 2H⁺ + 2e⁻        (H₂O₂ as reductant)
- reduction   H₂O₂ + 2H⁺ + 2e⁻ → 2H₂O            (H₂O₂ as oxidant, acid)
- reduction   HO₂⁻ + H₂O + 2e⁻ → 3OH⁻             (H₂O₂ as oxidant, base)
- oxidation   2I⁻ → I₂ + 2e⁻      ;   reduction  I₂ + 2e⁻ → 2I⁻
- oxidation   2S₂O₃²⁻ → S₄O₆²⁻ + 2e⁻
- oxidation   SO₂ + 2H₂O → SO₄²⁻ + 4H⁺ + 2e⁻
- reduction   NO₃⁻ + 4H⁺ + 3e⁻ → NO + 2H₂O
- reduction   ClO⁻ + H₂O + 2e⁻ → Cl⁻ + 2OH⁻
- oxidation   Fe²⁺ → Fe³⁺ + e⁻
- reduction   O₂ + 4H⁺ + 4e⁻ → 2H₂O    ;  O₂ + 2H₂O + 4e⁻ → 4OH⁻ (neutral/basic: corrosion!)
-```
+| Half-reaction | Medium / role | e⁻ |
+|---|---|---:|
+| `MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O` | acid | 5 |
+| `MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂ + 4OH⁻` | neutral / faintly alkaline | 3 |
+| `MnO₄⁻ + e⁻ → MnO₄²⁻` | strongly alkaline | 1 |
+| `Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O` | acid | 6 |
+| `CrO₄²⁻ + 4H₂O + 3e⁻ → Cr(OH)₃ + 5OH⁻` | alkaline | 3 |
+| `H₂O₂ + 2H⁺ + 2e⁻ → 2H₂O` | H₂O₂ as oxidant, acid | 2 |
+| `HO₂⁻ + H₂O + 2e⁻ → 3OH⁻` | H₂O₂ as oxidant, base | 2 |
+| `H₂O₂ → O₂ + 2H⁺ + 2e⁻` | H₂O₂ as reductant | 2 |
+| `O₂ + 4H⁺ + 4e⁻ → 2H₂O` | acid | 4 |
+| `O₂ + 2H₂O + 4e⁻ → 4OH⁻` | neutral/basic (corrosion) | 4 |
+| `NO₃⁻ + 4H⁺ + 3e⁻ → NO + 2H₂O` | dilute HNO₃ | 3 |
+| `ClO⁻ + H₂O + 2e⁻ → Cl⁻ + 2OH⁻` | bleach, base | 2 |
+| `C₂O₄²⁻ → 2CO₂ + 2e⁻` | oxalate as reductant | 2 |
+| `2I⁻ → I₂ + 2e⁻` | iodide as reductant | 2 |
+| `2S₂O₃²⁻ → S₄O₆²⁻ + 2e⁻` | thiosulphate + I₂ | 2 |
+| `SO₂ + 2H₂O → SO₄²⁻ + 4H⁺ + 2e⁻` | SO₂ as reductant | 2 |
+| `Fe²⁺ → Fe³⁺ + e⁻` | ferrous as reductant | 1 |
 
-**Worked, basic medium — NCERT's `MnO₄⁻ + I⁻ → MnO₂ + IO₃⁻`:**
+**Worked, basic medium: NCERT Problem 7.10, `MnO₄⁻ + I⁻ → MnO₂ + I₂`:**
 
 ```
- ox:   I⁻ + 6OH⁻ → IO₃⁻ + 3H₂O + 6e⁻        (I: −1 → +5  ⇒ 6 e⁻, ⚠ not 5)
- red:  MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂ + 4OH⁻     (Mn: +7 → +4 ⇒ 3 e⁻)
- multiply red ×2 (LCM of 6 and 3 = 6) and add:
-   I⁻ + 6OH⁻ + 2MnO₄⁻ + 4H₂O → IO₃⁻ + 3H₂O + 2MnO₂ + 8OH⁻
- cancel 3H₂O (4−3) and 6OH⁻ (8−6):
+ ox:   2I⁻ → I₂ + 2e⁻                                 (× 3)
+ red:  MnO₄⁻ + 4H⁺ + 3e⁻ → MnO₂ + 2H₂O                (acid form first)
+       + 4OH⁻ both sides:  MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂ + 4OH⁻      (× 2)
+ add:  6I⁻ + 2MnO₄⁻ + 4H₂O → 3I₂ + 2MnO₂ + 8OH⁻
  ─────────────────────────────────────────────────────────────
-   2MnO₄⁻ + I⁻ + H₂O → 2MnO₂ + IO₃⁻ + 2OH⁻
-   atoms: Mn 2|2 · I 1|1 · O 8+1 = 9 | 4+3+2 = 9 ✔ · H 2|2 ✔
-   charge: −2−1 = −3 | −1−2 = −3 ✔     ← and no H⁺ anywhere: basic medium ✔
+ atoms: O 8+4 = 12 | 4+8 = 12 · H 8|8 ✔    charge: −8 | −8 ✔   no H⁺ ✔
 ```
 
-⚠ Same reagents, **acidic** medium → `MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺` and `2I⁻ → I₂ + 2e⁻`,
-so `2MnO₄⁻ + 10I⁻ + 16H⁺ → 2Mn²⁺ + 5I₂ + 8H₂O`: the MnO₄⁻ : I⁻ ratio flips from **2 : 1**
-in base to **2 : 5** in acid. "Medium decides the stoichiometry" is a favourite JEE
-Advanced assertion, and it is why every balancing question must state the medium.
+**🆇 JEE variant: excess alkaline permanganate pushes iodide on to iodate:**
+
+```
+ ox:   I⁻ + 6OH⁻ → IO₃⁻ + 3H₂O + 6e⁻                   (I: −1 → +5 ⇒ 6e⁻, ⚠ not 5)
+ red:  MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂ + 4OH⁻               (× 2)
+ add and cancel 3H₂O, 6OH⁻:
+   2MnO₄⁻ + I⁻ + H₂O → 2MnO₂ + IO₃⁻ + 2OH⁻
+   atoms: O 9 | 9 · H 2 | 2 ✔     charge: −3 | −3 ✔
+```
+
+⚠ **Medium decides the stoichiometry.** Same reagents in **acid**:
+`2MnO₄⁻ + 10I⁻ + 16H⁺ → 2Mn²⁺ + 5I₂ + 8H₂O`. So MnO₄⁻ : I⁻ is **1 : 5** in acid, **1 : 3** in
+base (→ I₂), and **2 : 1** with excess alkaline permanganate (→ IO₃⁻). This is why every
+balancing question must state the medium.
 
 **Disproportionation done properly (`Cl₂ + OH⁻`):**
 
 ```
  red:  Cl₂ + 2e⁻ → 2Cl⁻
- ox:   Cl₂ + 8OH⁻ → 2ClO⁻ + 4H₂O + 2e⁻      (Cl: 0 → +1)
- add and halve:
-   Cl₂ + 2OH⁻ → Cl⁻ + ClO⁻ + H₂O            ✔ cold, dilute alkali
-   3Cl₂ + 6OH⁻ → 5Cl⁻ + ClO₃⁻ + 3H₂O        ✔ hot, concentrated alkali
-   (hot version check: 5 Cl⁰ → 5Cl⁻ gains 5e⁻ while 1 Cl⁰ → Cl⁺⁵ loses 5e⁻ ✔)
+ ox (cold):  Cl₂ + 4OH⁻ → 2ClO⁻ + 2H₂O + 2e⁻          (Cl: 0 → +1)
+   add, halve:   Cl₂ + 2OH⁻ → Cl⁻ + ClO⁻ + H₂O           ✔ cold, dilute
+ ox (hot):   Cl₂ + 12OH⁻ → 2ClO₃⁻ + 6H₂O + 10e⁻       (Cl: 0 → +5)
+   red × 5, add, halve:   3Cl₂ + 6OH⁻ → 5Cl⁻ + ClO₃⁻ + 3H₂O   ✔ hot, concentrated
+   check: 5 Cl gain 5e⁻ in total; 1 Cl loses 5e⁻ ✔
 ```
+
+**NCERT Ex. 7.19(a) in the same way:** `P₄ + 3OH⁻ + 3H₂O → PH₃ + 3H₂PO₂⁻` (the question
+prints `HPO₂⁻`; the product is hypophosphite, `H₂PO₂⁻`).
 
 > **⚠ The two checks that catch every slip:** atoms of **each** element, then total
-> **charge**. In basic medium H⁺ must not survive in the final equation; in acidic medium
-> OH⁻ must not survive. Most "is this equation balanced?" MCQ options fail exactly one of
-> these two tests.
-**Disproportionation done properly (`Cl₂ + OH⁻`):**
-
-```
- red: Cl₂ + 2e⁻ → 2Cl⁻
- ox:  Cl₂ + 8OH⁻ → 2ClO⁻ + 4H₂O + 2e⁻   (halve the coefficients at the end)
-   ox:  Cl₂ + 4OH⁻ → 2ClO⁻ + 2H₂O + 2e⁻
-   add: Cl₂ + 2OH⁻ → Cl⁻ + ClO⁻ + H₂O      ✔ (cold, dilute)
-   hot/conc: 3Cl₂ + 6OH⁻ → 5Cl⁻ + ClO₃⁻ + 3H₂O   ✔
-```
-
-> **⚠ Do not "balance" by adding O²⁻, H⁺ *and* OH⁻ to the same side, and do not forget that
-> in **basic** medium H⁺ cannot appear in the final equation; in **acidic** medium OH⁻ cannot
-> appear. That single check rejects most wrong options in JEE's "which equation is balanced"
-> MCQs (also watch for a **missing** H₂O or a coefficient of ½ that was never doubled).**
+> **charge**. In basic medium H⁺ must not survive in the final equation; in acidic medium OH⁻
+> must not. Also watch for a missing H₂O or a ½ coefficient that was never doubled. Most
+> "which equation is balanced?" MCQ options fail one of these tests.
 
 ## 11. n-factor, equivalent weight, normality 🆇
 
 Everything in §12 hangs on this.
 
-```
-  n-factor (valency factor) of an OXIDANT/REDUCTANT  = e⁻ lost or gained per formula unit
-  Equivalent weight  E = M / n
-  Normality N = n × M = (moles of e⁻ capacity) / V(L)
-  At the endpoint:  N₁V₁ = N₂V₂      (equivalents of oxidant = equivalents of reductant)
-```
+| Quantity | Expression |
+|---|---|
+| n-factor of an oxidant/reductant | e⁻ gained or lost **per formula unit**, in *that* reaction |
+| Equivalent weight | `E = M / n` |
+| Normality | `N = n × molarity` = equivalents per litre |
+| End point | `N₁V₁ = N₂V₂` (equivalents of oxidant = equivalents of reductant) |
 
 **How to get n in each case:**
 
-| Species | Reaction | n |
+| Species | Change | n (M → E) |
 |---|---|---|
-| `KMnO₄` | acid: Mn⁺⁷→Mn⁺² | **5** |
-| `KMnO₄` | neutral/faintly alkaline: →MnO₂ | **3** |
-| `KMnO₄` | alkaline: →MnO₄²⁻ | **1** |
-| `K₂Cr₂O₇` | Cr₂O₇²⁻→2Cr³⁺ | **6** (per mole = 2 Cr × 3) |
-| `H₂C₂O₄·2H₂O` | C⁺³→2C⁺⁴ | **2** (M = 126, E = 63) |
-| `Na₂C₂O₄` | | **2** (134 → 67) |
-| `FeSO₄·(NH₄)₂SO₄·6H₂O` (Mohr salt) | Fe²⁺→Fe³⁺ | **1** (392 → 392) |
-| `FeC₂O₄` | Fe²⁺→Fe³⁺ **and** C₂O₄²⁻→2CO₂ | **3** (144 → 48) |
-| `Fe₂(C₂O₄)₃` | 3 oxalate × 2 | **6** |
-| `Na₂S₂O₃` | → ½S₄O₆²⁻ | **1** (158 → 158) |
-| `Na₂S₂O₃` | → HSO₄⁻/SO₄²⁻ (with Cl₂/Br₂) | **8** (158 → 19.75) |
-| `H₂O₂` | as reductant → O₂, or as oxidant → H₂O | **2** both ways (34 → 17) |
-| `I₂` | I₂→2I⁻ | **2** (254 → 127) |
-| `SO₂` | S⁺⁴→S⁺⁶ | **2** (64 → 32) |
-| `H₂S` | S⁻²→S⁰ | **2**; to SO₂/SO₄²⁻ → **8** |
-| `SnCl₂` | Sn²⁺→Sn⁴⁺ | **2** |
-| `HNO₃` | →NO₂ **1**, →NO **3**, →N₂O **4**, →NH₄⁺ **8** |
-| `Zn` | Zn→Zn²⁺ | **2** (65.4 → 32.7) |
-| `KClO₃` | `2KClO₃ → 2KCl + 3O₂`: Cl +5→−1 = 6 e⁻ **gained** per Cl, O −2→0 = 2 e⁻ **lost** per O (×6 O = 12) ⇒ 2 × 6 = 12 ✔ | **6** (M 122.5 → E 20.4) |
-| `KIO₄`/`NaIO₄` | periodate → iodate IO₃⁻ | **2**; → I⁻ = **8** |
+| `KMnO₄` | acid: Mn +7 → +2 | **5** (158 → 31.6) |
+| `KMnO₄` | neutral / faintly alkaline: → MnO₂ | **3** (158 → 52.7) |
+| `KMnO₄` | strongly alkaline: → MnO₄²⁻ | **1** (158 → 158) |
+| `K₂Cr₂O₇` | Cr₂O₇²⁻ → 2Cr³⁺ (2 Cr × 3) | **6** (294 → 49) |
+| `H₂C₂O₄·2H₂O` | 2C: +3 → +4 | **2** (126 → 63) |
+| `Na₂C₂O₄` | same | **2** (134 → 67) |
+| Mohr's salt `FeSO₄·(NH₄)₂SO₄·6H₂O` | Fe²⁺ → Fe³⁺ | **1** (392 → 392) |
+| `FeC₂O₄` | Fe²⁺ → Fe³⁺ **and** C₂O₄²⁻ → 2CO₂ | **3** (144 → 48) |
+| `Fe₂(C₂O₄)₃` | only the 3 oxalates (Fe is already +3) | **6** |
+| `Na₂S₂O₃` | with I₂: → ½S₄O₆²⁻ | **1** (158 → 158) |
+| `Na₂S₂O₃` | with Cl₂/Br₂: → SO₄²⁻ | **8** (158 → 19.75) |
+| `H₂O₂` | → O₂ (reductant) or → H₂O (oxidant) | **2** either way (34 → 17) |
+| `I₂` | I₂ → 2I⁻ | **2** (254 → 127) |
+| `SO₂` | S +4 → +6 | **2** (64 → 32) |
+| `H₂S` | → S / → SO₄²⁻ | **2** / **8** |
+| `SnCl₂` | Sn²⁺ → Sn⁴⁺ | **2** |
+| `HNO₃` | → NO₂ / NO / N₂O / NH₄⁺ | **1 / 3 / 4 / 8** |
+| `KClO₃` | → KCl (Cl +5 → −1) | **6** (122.5 → 20.4) |
+| `KIO₄` | → IO₃⁻ / → I⁻ | **2** / **8** |
+| `Zn` | Zn → Zn²⁺ | **2** (65.4 → 32.7) |
 
-**For non-redox (metathesis) the n-factor changes meaning — total charge exchanged:**
+**NCERT Ex. 7.14** is exactly the thiosulphate pair: I₂, the weaker oxidant, stops at
+tetrathionate (n = 1); Br₂, the stronger, drives S all the way to sulphate (n = 8).
 
-```
- acid  n = H⁺ actually transferred  → HCl 1, H₂SO₄ 2, H₃PO₂ 1 (!), H₃PO₃ 2, H₃PO₄ 3,
-        oxalic acid 2, CH₃COOH 1, H₃BO₃ 1 (Lewis, accepts OH⁻), Ca(OH)₂ 2
- base  n = OH⁻ available
- salt  n = total cationic (or anionic) charge that gets replaced
-        Na₂CO₃ → NaHCO₃ : 1        Na₂CO₃ → CO₂ : 2
-        BaCl₂·2H₂O : 2 (2 Cl⁻)     K₄[Fe(CN)₆] : 4     AgNO₃ : 1
- redox-active salt: use the e⁻ change, e.g. K₂Cr₂O₇ 6, and in
-        2Na₂S₂O₃ + I₂ the n of I₂ is 2 while of thiosulphate is 1.
-⚠ A species has NO unique n-factor — it depends on the reaction quoted.
-   Always ask "n for which reaction?"
-```
+**For non-redox (acid–base, metathesis) reactions the n-factor means charge exchanged:**
 
-**Mastering the arithmetic shortcuts:**
+| Type | n = | Examples |
+|---|---|---|
+| Acid | replaceable H⁺ actually given | HCl 1 · H₂SO₄ 2 · **H₃PO₂ 1** · **H₃PO₃ 2** · H₃PO₄ 3 · H₃BO₃ 1 (Lewis acid) |
+| Base | OH⁻ available | NaOH 1 · Ca(OH)₂ 2 |
+| Salt | total cation (or anion) charge replaced | BaCl₂ 2 · K₄[Fe(CN)₆] 4 · AgNO₃ 1 |
+| Salt, stepwise | depends on the end point | Na₂CO₃ → NaHCO₃: 1 · Na₂CO₃ → CO₂: 2 |
 
-```
-  strength (g L⁻¹) = N × E        equivalents = N(L)×V(L) = mass/E = meq/1000
-  mixing:   N_R = (N₁V₁ ± N₂V₂)/(V₁+V₂)     (+ same-type, − excess of larger)
-  dilution: N₁V₁ = N₂V₂                     (also for M)
-  % purity = (N_titrant × V_titrant(L) × E_analyte / mass_of_sample(g)) × 100
-```
+> **⚠ A species has no unique n-factor:** it depends on the reaction quoted. Always ask
+> "n for **which** reaction?"
 
-> **⚠ Normality is a trap-laden shortcut for anything but acid–base and redox endpoints.**
-> For JEE Advanced, prefer *moles + electron balance*: write the two half-reactions, take the
-> LCM of electrons, and read off mole ratios. n-factor is then a fast check, not the reasoning.
+**Arithmetic shortcuts:**
+
+| Want | Formula |
+|---|---|
+| Strength (g L⁻¹) | `N × E` |
+| Equivalents | `N × V(L)` = `mass / E` = `meq / 1000` |
+| Mixing (same type) | `N = (N₁V₁ + N₂V₂)/(V₁ + V₂)` |
+| Mixing (acid + base) | `N = |N₁V₁ − N₂V₂|/(V₁ + V₂)` (the one in excess wins) |
+| Dilution | `N₁V₁ = N₂V₂` (also for molarity) |
+| % purity | `N_titrant × V_titrant(L) × E_analyte / mass_sample × 100` |
+
+> **⚠ Normality is a trap-laden shortcut.** For JEE Advanced, prefer *moles + electron
+> balance*: write the two half-reactions, take the LCM of electrons and read off mole ratios.
+> Use the n-factor as a fast check, not as the reasoning.
 
 ---
 
@@ -643,350 +737,375 @@ Everything in §12 hangs on this.
 
 ## 12. Redox titrations: permanganate, dichromate, iodometry (7.3.3)
 
-### (a) Permanganate titrations — "self-indicator"
+NCERT's point: acid–base titrations need a pH indicator; redox titrations need a **redox
+indicator**, and NCERT describes **three** ways of getting one: (i) a **self-indicating**
+reagent (MnO₄⁻), (ii) an **added indicator** that the titrant oxidises just after the
+equivalence point (Cr₂O₇²⁻ + diphenylamine), (iii) **liberated iodine + starch** (Cu²⁺ + I⁻,
+then thiosulphate). Pick the method with this chart:
+
+```mermaid
+flowchart TD
+    A["What is being estimated?"] --> B{"A reductant?<br>Fe²⁺, C₂O₄²⁻, H₂O₂, NO₂⁻"}
+    A --> C{"An oxidant?<br>Cu²⁺, ClO⁻, Cr₂O₇²⁻, IO₃⁻"}
+    B -->|"no Cl⁻ present"| D["KMnO₄ in dil. H₂SO₄<br>self-indicator: pale pink"]
+    B -->|"Cl⁻ present"| E["K₂Cr₂O₇<br>diphenylamine: violet-blue"]
+    B -->|"weak reductant<br>S₂O₃²⁻, SO₃²⁻, As(III)"| F["IODIMETRY: titrate with I₂<br>starch: blue APPEARS"]
+    C --> G["IODOMETRY: add excess KI,<br>titrate the I₂ with S₂O₃²⁻<br>starch: blue DISAPPEARS"]
+```
+*Choosing the titration. Permanganate is the default for reductants, dichromate when chloride
+would be oxidised, and iodine chemistry for weak reductants and for almost every oxidant.*
+
+### (a) Permanganate titrations: the self-indicator
 
 ```
-  2KMnO₄ + 3H₂SO₄ → K₂SO₄ + 2MnSO₄ + 3[O] + 3H₂O     (NCERT's "nascent oxygen" book-keeping)
-  MnO₄⁻ (intense purple, ε very large)  →  Mn²⁺ (almost colourless)
-  ⇒ 1 drop excess KMnO₄ gives the permanent pale PINK end point — no indicator needed
+2KMnO₄ + 3H₂SO₄ → K₂SO₄ + 2MnSO₄ + 3H₂O + 5[O]      ("nascent oxygen" book-keeping: 5[O] per 2 mol)
+MnO₄⁻ (intense purple) → Mn²⁺ (almost colourless)
+⇒ one drop of excess KMnO₄ gives a permanent pale PINK end point; no indicator needed
 ```
 
-Titrated with **dilute H₂SO₄ acidified** permanganate (burette) into:
+Titrant in the burette: KMnO₄ acidified with **dilute H₂SO₄**. Analytes:
 
-| Analyte | Net ionic equation (acid medium) | Mole ratio |
+| Analyte | Net ionic equation (acid medium) | MnO₄⁻ : analyte |
 |---|---|---|
 | Fe²⁺ (Mohr's salt) | `MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O` | 1 : 5 |
 | oxalate C₂O₄²⁻ | `2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O` | 2 : 5 |
 | H₂O₂ | `2MnO₄⁻ + 5H₂O₂ + 6H⁺ → 2Mn²⁺ + 5O₂ + 8H₂O` | 2 : 5 |
 | NO₂⁻ | `2MnO₄⁻ + 5NO₂⁻ + 6H⁺ → 2Mn²⁺ + 5NO₃⁻ + 3H₂O` | 2 : 5 |
 | SO₃²⁻ | `2MnO₄⁻ + 5SO₃²⁻ + 6H⁺ → 2Mn²⁺ + 5SO₄²⁻ + 3H₂O` | 2 : 5 |
-| I⁻, Br⁻, Cl⁻ | oxidised too → **never** use KMnO₄ with hydrohalic acids | — |
+| Cl⁻, Br⁻, I⁻ | oxidised as well, so **never** titrate KMnO₄ in HCl/HBr/HI | not usable |
 
-**The reasons that are asked (NCERT says all of these):**
+**The "reason" questions:**
 
-- ⚠ **Why H₂SO₄ and never HCl (or HNO₃)?** HCl's Cl⁻ is itself oxidised
-  (`2MnO₄⁻ + 10Cl⁻ + 16H⁺ → 2Mn²⁺ + 5Cl₂ + 8H₂O`), consuming permanganate → high, unstable
-  titre. HNO₃ is an oxidising acid and would pre-oxidise the analyte (Fe²⁺ → Fe³⁺), giving a
-  low titre. Only dilute H₂SO₄ is inert to both partners.
-- ⚠ **Why heat the oxalate to ~60–70 °C?** The MnO₄⁻/C₂O₄²⁻ reaction is *slow* at room
-  temperature; it is **autocatalysed by the Mn²⁺ product**, so the first drop is slow and the
-  rest are fast. Above ~80 °C oxalic acid/H₂SO₄ decompose (`H₂C₂O₄ → CO + CO₂ + H₂O`) →
-  too-high titre. (Titration *kinetics*, not equilibrium — Advanced loves this pairing.)
-- ⚠ **Why is KMnO₄ not a primary standard?** Traces of MnO₂ catalyse its own decomposition
-  by attacking the water/organics; it can't be obtained pure and is light-sensitive. So it is
-  **standardised against** primary standards: **sodium oxalate** (or oxalic acid dihydrate,
-  E = 63), **arsenious oxide**, or **Mohr's salt** (E = 392, n = 1).
-- **Fe²⁺ in an ore/liquid:** dissolve in acid, reduce all Fe to Fe²⁺ with **SnCl₂** then
-  remove excess Sn²⁺ with **HgCl₂** (Volhard–Zimmermann inhibitor: `Sn²⁺ + 2HgCl₂ →
-  Sn⁴⁺ + Hg₂Cl₂↓ + 2Cl⁻`) so that Cl⁻ is masked and never reaches MnO₄⁻.
-- **Licorice/"permanganate index"** of water: MnO₄⁻ in **alkaline** medium (n = 1, MnO₄²⁻
-  green) oxidises organic matter — back-titrate the leftover oxalate.
+- ⚠ **Why dilute H₂SO₄ and never HCl or HNO₃?** Cl⁻ is itself oxidised
+  (`2MnO₄⁻ + 10Cl⁻ + 16H⁺ → 2Mn²⁺ + 5Cl₂ + 8H₂O`), consuming extra permanganate: **high
+  titre**. HNO₃ is an oxidising acid and pre-oxidises part of the analyte (Fe²⁺ → Fe³⁺):
+  **low titre**. Only dilute H₂SO₄ is inert to both partners.
+- ⚠ **Too little acid** → brown turbidity of MnO₂ (`MnO₄⁻` stops at +4, or comproportionates
+  with Mn²⁺, §7e): the n-factor changes from 5 towards 3 and the result is wrong.
+- ⚠ **Why warm the oxalate to 60–70 °C?** The MnO₄⁻/C₂O₄²⁻ reaction is slow at room
+  temperature and is **autocatalysed by its product Mn²⁺**: the first drops decolourise slowly,
+  the rest fast. **Overheating** (boiling) decomposes some oxalic acid
+  (`H₂C₂O₄ → CO + CO₂ + H₂O`) before it is titrated, so **less KMnO₄ is needed: low titre**.
+  This is a kinetics question, not an equilibrium one.
+- ⚠ **Why is KMnO₄ not a primary standard?** It is never obtained 100 % pure, and traces of
+  MnO₂ catalyse its decomposition in solution, especially in light. It is **standardised
+  against** a primary standard: **sodium oxalate** (or oxalic acid dihydrate, E = 63),
+  **As₂O₃**, or **Mohr's salt** (E = 392, n = 1).
+- **Iron in an ore:** dissolve in HCl, reduce all Fe³⁺ to Fe²⁺ with **SnCl₂**, destroy the
+  excess Sn²⁺ with **HgCl₂** (`Sn²⁺ + 2HgCl₂ → Sn⁴⁺ + Hg₂Cl₂↓ + 2Cl⁻`, a silky white
+  precipitate), then titrate. Because the solution now contains Cl⁻, add the
+  **Zimmermann–Reinhardt reagent** (MnSO₄ + H₃PO₄ + H₂SO₄): the Mn²⁺ lowers the MnO₄⁻
+  potential so Cl⁻ is not oxidised, and the H₃PO₄ complexes the yellow Fe³⁺ so the pink end
+  point is visible.
 
-### (b) Dichromate titrations — the *better* permanganate
-
-```
- K₂Cr₂O₇ + 7H₂SO₄ → K₂SO₄ + Cr₂(SO₄)₃ + 7H₂O + 3[O]
- Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O        E° = +1.33 V (vs MnO₄⁻ 1.51 V)
-```
-
-- K₂Cr₂O₇ **is a primary standard**: available ultra-pure, **not** deliquescent (unlike
-  Na₂Cr₂O₇, which is why potash salt is used), stable on drying at 573 K, and its solution
-  is stable indefinitely (no catalytic decomposition by light/MnO₂-type attack).
-- Colour change orange → green is **too weak** to see → use a **redox indicator**:
-  **diphenylamine** or **diphenylamine suliphonic acid** (violet → colourless/green), or
-  **ferroin** (red → pale blue).
-- Because E°(Cr₂O₇²⁻/Cr³⁺) = 1.33 V < E°(Cl₂/Cl⁻) = 1.36 V, dichromate **can** be used in
-  **HCl** medium — its the reason COD (chemical oxygen demand) analysis is done with
-  dichromate in concentrated H₂SO₄/HCl-containing samples where permanganate fails.
-- Same analytes, ratio `Cr₂O₇²⁻ : 6Fe²⁺`:
-  `Cr₂O₇²⁻ + 6Fe²⁺ + 14H⁺ → 2Cr³⁺ + 6Fe³⁺ + 7H₂O` (1 : 6).
-
-### (c) Iodometry / iodimetry (thiosulphate) — "the indirect army"
+### (b) Dichromate titrations: the steadier oxidant
 
 ```
- IODIMETRY  (direct): titrate the ANALYTE with standard I₂  — analyte is a reductant
-                       (S₂O₃²⁻, SO₃²⁻, H₂S, Sn²⁺, As(III), vitamin C)
- IODOMETRY  (indirect): add excess KI to the OXIDANT, liberate I₂, titrate I₂ with
-                       standard Na₂S₂O₃  — for Cu²⁺, Cr₂O₇²⁻, MnO₄⁻, ClO⁻, IO₃⁻, Fe³⁺, H₂O₂, OCl⁻
-
-   Oxidant + I⁻ → I₂ (or I₃⁻) ;  I₂ + 2S₂O₃²⁻ → 2I⁻ + S₄O₆²⁻
-   indicator: FRESH STARCH (deep blue; starch–I₂ charge-transfer complex)
-              add near the END point (else the blue complex is trapped and slow to release)
+K₂Cr₂O₇ + 4H₂SO₄ → K₂SO₄ + Cr₂(SO₄)₃ + 4H₂O + 3[O]
+Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O        E° = +1.33 V   (MnO₄⁻: +1.51 V)
+Cr₂O₇²⁻ + 6Fe²⁺ + 14H⁺ → 2Cr³⁺ + 6Fe³⁺ + 7H₂O        (1 : 6)
 ```
 
-Standard iodometric systems and their stoichiometry (memorise the **e⁻** count, not the text):
+- K₂Cr₂O₇ **is a primary standard**: obtainable very pure, **not** hygroscopic (unlike
+  Na₂Cr₂O₇, which is why the potassium salt is used), can be dried by heating, and its
+  solution keeps indefinitely.
+- The orange → green change is **not sharp enough** to see, so a redox indicator is added.
+  NCERT: **diphenylamine** is oxidised "just after the equivalence point to produce an intense
+  blue colour". In the flask the end point is **green → violet-blue**. (Ferroin, red → pale
+  blue, is the alternative.)
+- **Works in HCl:** E°(Cr₂O₇²⁻/Cr³⁺) = 1.33 V < E°(Cl₂/Cl⁻) = 1.36 V, so dilute Cl⁻ is not
+  oxidised. That is dichromate's main advantage over permanganate.
+- **COD (chemical oxygen demand)** of waste water uses excess dichromate refluxed in conc.
+  H₂SO₄ (Ag₂SO₄ catalyst), with **HgSO₄ added to tie up Cl⁻** as HgCl₂, since chloride *would*
+  be oxidised under those harsh conditions. The unused dichromate is back-titrated with Mohr's
+  salt.
+
+### (c) Iodometry and iodimetry (thiosulphate)
 
 ```
- Cu²⁺:  2Cu²⁺ + 4I⁻ → Cu₂I₂↓ + I₂        ⇒ 1 Cu²⁺ ≡ 1 S₂O₃²⁻  (Cu is 1-each, not 2)
- Cr₂O₇²⁻: Cr₂O₇²⁻ + 6I⁻ + 14H⁺ → 2Cr³⁺ + 3I₂ + 7H₂O ⇒ 1 dichromate ≡ 6 thiosulphate
- IO₃⁻:  IO₃⁻ + 5I⁻ + 6H⁺ → 3I₂ + 3H₂O ⇒ 1 iodate ≡ 6 thiosulphate
- ClO⁻ / "available chlorine": OCl⁻ + 2I⁻ + 2H⁺ → Cl⁻ + I₂ + H₂O ⇒ 1 ≡ 2
- H₂O₂:  H₂O₂ + 2I⁻ + 2H⁺ → I₂ + 2H₂O ⇒ 1 ≡ 2
- MnO₄⁻ (iodometric): 2MnO₄⁻ + 10I⁻ + 16H⁺ → 2Mn²⁺ + 5I₂ ⇒ 1 ≡ 5
- Fe³⁺:  2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I₂ ⇒ 1 Fe³⁺ ≡ 1 thiosulphate
+IODIMETRY (direct):   titrate the ANALYTE (a reductant) with standard I₂
+                      S₂O₃²⁻, SO₃²⁻, H₂S, Sn²⁺, As(III), vitamin C
+                      end point: first excess I₂ → blue APPEARS
+IODOMETRY (indirect): add excess KI to the OXIDANT, liberate I₂, titrate that I₂ with
+                      standard Na₂S₂O₃. Used for Cu²⁺, Cr₂O₇²⁻, MnO₄⁻, ClO⁻, IO₃⁻, Fe³⁺, H₂O₂
+                      end point: last I₂ consumed → blue DISAPPEARS
+
+   oxidant + I⁻ → I₂ (held in solution as I₃⁻, i.e. KI₃)
+   I₂ + 2S₂O₃²⁻ → 2I⁻ + S₄O₆²⁻                           (NCERT eq. 7.60)
+   indicator: FRESH STARCH, added near the end point (pale straw colour); added early, the
+              starch–iodine complex holds I₂ and releases it slowly, so the end point drags
 ```
 
-⚠ Iodometric determination of **Cu²⁺ must be buffered to pH ~3–4** (acetate): in strong acid
-I⁻ is oxidised by atmospheric O₂ (titre too high), in alkaline medium Cu²⁺ precipitates as
-Cu(OH)₂ (titre too low); and **KSCN is added near the end point** to displace I₂ adsorbed on the
-CuI precipitate (`CuI·I₂ + SCN⁻ → CuSCN↓ + I₂`), which otherwise makes the end point hazy.
+Standard iodometric systems (memorise the **electron** count):
 
-**"Available chlorine" of bleaching powder** — the classic industrial calculation:
-
-```
- acidify with acetic acid:  OCl⁻ + Cl⁻ + 2H⁺ → Cl₂ + H₂O   (comproportionation +1,−1 → 0)
- assay (iodometric):        OCl⁻ + 2I⁻ + 2H⁺ → Cl⁻ + I₂ + H₂O
-                            I₂ + 2S₂O₃²⁻ → 2I⁻ + S₄O₆²⁻
- ⇒ 1 mol CaOCl₂ ≡ 1 mol Cl₂ ≡ 1 mol I₂ ≡ 2 mol S₂O₃²⁻
- "available chlorine" = the Cl₂ that acid can liberate;
- pure CaOCl₂ (M = 126.98) → 70.9/126.98 = 55.8 % max (commercial bleach 25–35 %)
- N(thiosulphate) × V(L) × 35.45 g = mass of available chlorine   (E of Cl₂ = 70.9/2)
-```
-
-### (d) Which titration, which indicator — one table to remember
-
-| Titration | Indicator | End point colour |
+| Oxidant | Reaction with I⁻ | Oxidant : S₂O₃²⁻ |
 |---|---|---|
-| Fe²⁺ / SO₃²⁻ / I⁻ vs **KMnO₄** | none (self) | colourless → **permanent pale pink** |
-| Fe²⁺ vs **K₂Cr₂O₇** | diphenylamine(-sulphonate) / ferroin | violet → **green**/colourless |
-| **I₂** vs S₂O₃²⁻ (iodimetry) | starch | blue → **colourless** |
-| oxidant + KI vs **S₂O₃²⁻** (iodometry) | starch | blue → **colourless** |
-| **Ce(SO₄)₂** (cerimetry, E° Ce⁴⁺/Ce³⁺ = 1.44) | ferroin | red → pale blue |
+| Cu²⁺ | `2Cu²⁺ + 4I⁻ → Cu₂I₂↓ + I₂` (NCERT eq. 7.59) | **1 : 1** (Cu gains only 1 e⁻) |
+| Cr₂O₇²⁻ | `Cr₂O₇²⁻ + 6I⁻ + 14H⁺ → 2Cr³⁺ + 3I₂ + 7H₂O` | 1 : 6 |
+| IO₃⁻ | `IO₃⁻ + 5I⁻ + 6H⁺ → 3I₂ + 3H₂O` | 1 : 6 |
+| MnO₄⁻ | `2MnO₄⁻ + 10I⁻ + 16H⁺ → 2Mn²⁺ + 5I₂ + 8H₂O` | 1 : 5 |
+| ClO⁻ | `ClO⁻ + 2I⁻ + 2H⁺ → Cl⁻ + I₂ + H₂O` | 1 : 2 |
+| H₂O₂ | `H₂O₂ + 2I⁻ + 2H⁺ → I₂ + 2H₂O` | 1 : 2 |
+| Fe³⁺ | `2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I₂` | 1 : 1 |
+| O₃ | `O₃ + 2I⁻ + H₂O → O₂ + I₂ + 2OH⁻` | 1 : 2 |
 
-> **⚠ Ce⁴⁺/Ce³⁺ is the "ideal" one-electron oxidant** (no side reactions, sharp end point,
-> stable in HClO₄/H₂SO₄, E° depends on the acid — 🆇 asked as "why cerimetry over permanganate").
+⚠ **Copper assay details:** keep the pH mildly acidic (acetic acid/acetate). In strong acid
+air oxidises I⁻ (high titre); in alkali Cu(OH)₂ precipitates (low titre). **KSCN** is added
+near the end point: CuSCN, being less soluble, replaces CuI and releases the I₂ adsorbed on
+the precipitate, sharpening the end point.
+
+**"Available chlorine" of bleaching powder, the classic industrial calculation:**
+
+```
+acidify:        OCl⁻ + Cl⁻ + 2H⁺ → Cl₂ + H₂O           (comproportionation +1, −1 → 0)
+assay:          OCl⁻ + 2I⁻ + 2H⁺ → Cl⁻ + I₂ + H₂O
+                I₂ + 2S₂O₃²⁻ → 2I⁻ + S₄O₆²⁻
+⇒ 1 mol CaOCl₂ ≡ 1 mol Cl₂ ≡ 1 mol I₂ ≡ 2 mol S₂O₃²⁻
+"available chlorine" = the Cl₂ that acid can liberate
+pure CaOCl₂ (M ≈ 127) → 70.9 / 127 = 55.8 % at most  (commercial: 25–35 %)
+mass of available Cl₂ = N(thio) × V(L) × 35.45 g     (E of Cl₂ = 70.9 / 2)
+```
+
+### (d) Which titration, which indicator: one table to remember
+
+| Titration | Indicator | End point |
+|---|---|---|
+| Fe²⁺ / C₂O₄²⁻ / H₂O₂ vs **KMnO₄** | none (self) | colourless → **permanent pale pink** |
+| Fe²⁺ vs **K₂Cr₂O₇** | diphenylamine (or its sulphonate) | green → **violet-blue** |
+| reductant vs **I₂** (iodimetry) | starch | colourless → **blue appears** |
+| oxidant + KI vs **S₂O₃²⁻** (iodometry) | starch | blue → **colourless** |
+| Fe²⁺ vs **Ce⁴⁺** (cerimetry, E° ≈ 1.44 V in H₂SO₄) | ferroin | red → pale blue |
+
+> **⚠ Why cerimetry over permanganate (🆇):** Ce⁴⁺ → Ce³⁺ is a clean **one-electron** change
+> with no intermediate O.S., its solutions are stable, and it can be used in the presence of
+> Cl⁻.
 
 ## 13. Limitations of the oxidation-number concept (7.3.4)
 
-NCERT closes the chapter's concept with four honest admissions — and every one of them is
-somebody's assertion–reason question:
+**What NCERT actually says (one paragraph):** the concept of redox is still evolving, and
+"in recent past" **oxidation is visualised as a decrease in electron density**, and
+**reduction as an increase in electron density**, around the atom(s) involved. This is the
+fourth language: it covers covalent reactions where no electron visibly changes hands.
 
-1. **O.N. is a book-keeping device, not a measured charge.** In `H₂SO₄` sulphur carries +6
-   but the real charge on S (from X-ray/electron density) is far smaller and possibly even
-   positive-but-not-6.
-2. **Fractional / average values are accepted** — `Fe₃O₄` (+8/3), `S₄O₆²⁻` (+2.5), `HN₃`
-   (−1/3), `KO₂` (−1/2) — even though "no atom actually loses ⅓ of an electron".
-3. **It fails when peroxide/oxygen–oxygen linkages are present.** Applying "O = −2" blindly
-   to `H₂SO₅`/`H₂S₂O₈` gives S = +8, which is impossible (S has only 6 valence electrons).
-   The structure, not the rule, must be consulted.
-4. **Same element, same compound, different O.N.** — the two N of `NH₄NO₃` (−3 and +5), the
-   two S of thiosulphate, the three Fe of `Fe₃O₄`. A single "oxidation number" hides this.
+**The standard limitations list (🆇 — assertion–reason material):**
 
-Plus two 🆇 points:
-
-5. O.N. **cannot** rank oxidising power — `MnO₄⁻`(+7) vs `Cr₂O₇²⁻`(+6) vs `HClO₄`(+7): you
-   need **E°** (§15). Fluorine is −1 in every compound yet F₂ is the strongest oxidant.
-6. O.N. does not describe **catalytic/inner-sphere electron transfer** (e.g.
-   `Fe²⁺/Tl³⁺` is slow despite a big O.N. driving force because Tl²⁺(6s²6p¹) is a
-   high-energy intermediate) — i.e. O.N. says *whether*, never *how fast*.
+1. **O.N. is book-keeping, not a measured charge.** S in H₂SO₄ is +6 by the rules, but the
+   real partial charge on S is far smaller.
+2. **Fractional / average values** appear (Fe₃O₄ +8⁄3, S₄O₆²⁻ +2.5, HN₃ −⅓, KO₂ −½), although no
+   atom loses a fraction of an electron.
+3. **Blind rules fail on O–O bonds.** "O = −2" gives S = +8 in H₂SO₅ and H₂S₂O₈, which is
+   impossible (S has 6 valence electrons). You must look at the structure (NCERT Ex. 7.5
+   calls this "the fallacy").
+4. **Inequivalent atoms are hidden** by one number: the two N of NH₄NO₃ (−3, +5), the two S
+   of thiosulphate, the three Fe of Fe₃O₄.
+5. **O.N. cannot rank oxidants.** MnO₄⁻ (+7) is stronger than ClO₄⁻ (+7) in practice, and F
+   is −1 in every compound yet F₂ is the strongest oxidant. You need **E°** (§15).
+6. **O.N. says nothing about rate.** Fe²⁺ + Tl³⁺ is slow despite a large driving force: the
+   one-electron path passes through the unstable **Tl²⁺ (6s¹)**. O.N. tells you *whether* a
+   change is possible, never *how fast*.
+7. **Assignments can be convention-bound.** NCl₃ (§4) and B₂H₆ (§21, Ex. 7.3c) depend on
+   which electronegativity scale you trust.
 
 ## 14. Redox couples and electrode processes: the Daniell cell (7.4)
 
-NCERT's key conceptual move: **separate the two half-reactions in space and make the
-electrons travel through a wire** — then heat is replaced by electrical work, and each
-half-cell develops a measurable potential.
+NCERT's key move: **separate the two half-reactions in space and make the electrons travel
+through a wire.** Zn in CuSO₄ gives only heat; the same reaction split into two beakers gives
+electrical work, and each half-cell develops a measurable potential.
+
+A **redox couple** is the oxidised and reduced form of the same species, written **Ox/Red**
+(oxidised form first): `Zn²⁺/Zn`, `Cu²⁺/Cu`, `Fe³⁺/Fe²⁺`, `MnO₄⁻/Mn²⁺`, `Cl₂/Cl⁻`, `H⁺/H₂`.
 
 ```
-        REDOX COUPLE = oxidised form + reduced form of the same species,
-                       written Ox / Red  (NCERT: oxidised form first)
-
-        Zn²⁺/Zn      Cu²⁺/Cu      Fe³⁺/Fe²⁺      MnO₄⁻/Mn²⁺      Cl₂/Cl⁻      H⁺/H₂
-
-   ┌───────────────┐  salt bridge ┌───────────────┐
-   │ Zn rod in     │  (U-tube,    │ Cu rod in     │
-   │ ZnSO₄(aq)     │  KCl or      │ CuSO₄(aq)     │
-   │               │  NH₄NO₃ in   │               │
-   │  Zn → Zn²⁺+2e⁻│  agar jelly) │ Cu²⁺+2e⁻ → Cu │
-   │  OXIDATION    │ ~~~~  ‖~~~~  │  REDUCTION    │
-   │  = ANODE (−)  │  ions flow   │  = CATHODE (+)│
-   └───────┬───────┘  to close    └───────┬───────┘
-           │   the circuit                │
-           └──── e⁻ ───► A ───► ──────────┘     Ecell ≈ 1.1 V
-             (electrons flow Zn → Cu through the wire;
-              CONVENTIONAL current flows Cu → Zn, i.e. opposite — NCERT Fig 7.3)
+   ┌───────────────┐   salt bridge   ┌───────────────┐
+   │ Zn rod in     │   (U-tube, KCl  │ Cu rod in     │
+   │ ZnSO₄(aq)     │   or NH₄NO₃     │ CuSO₄(aq)     │
+   │               │   set in agar)  │               │
+   │ Zn → Zn²⁺+2e⁻ │   ~~~~~‖~~~~~   │ Cu²⁺+2e⁻ → Cu │
+   │ OXIDATION     │   ions migrate  │ REDUCTION     │
+   │ ANODE (−)     │   to close the  │ CATHODE (+)   │
+   └───────┬───────┘   circuit       └───────┬───────┘
+           └──── e⁻ ───► (V) ───► ───────────┘        E°cell = 1.10 V
+   electrons flow Zn → Cu through the wire;
+   conventional current flows Cu → Zn (NCERT Fig. 7.3)
 ```
 
-**Anode vs cathode — the only definition that never fails:**
+**Anode vs cathode: the only definition that never fails**
 
-| | **Anode** | **Cathode** |
+| Aspect | Anode | Cathode |
 |---|---|---|
-| Process | **oxidation** always | **reduction** always |
-| Daniell (galvanic) | Zn, **negative** electrode | Cu, **positive** electrode |
-| Electrolytic cell | **+** electrode | **−** electrode |
-| Ion migration | anions migrate **to** it | cations migrate **to** it |
+| Process | **oxidation**, always | **reduction**, always |
+| Galvanic (Daniell) cell | Zn, **negative** | Cu, **positive** |
+| Electrolytic cell | **positive** | **negative** |
+| Ions migrating towards it | anions | cations |
 
-> **⚠ The sign of the electrodes is *not* definitional — the reaction is.** In a galvanic
-> cell the anode is negative (it *pushes* electrons out); in an electrolytic cell the anode
-> is positive (it is *connected to* the + terminal of the supply). Mnemonic:
-> **"AnOx RedCat"** (Anode = Oxidation, Reduction = Cathode) works for both.
+> **⚠ Electrode sign is not the definition; the reaction is.** A galvanic anode is negative
+> because it *pushes out* electrons; an electrolytic anode is positive because it is wired to
+> the + terminal. Mnemonic **"AN OX, RED CAT"** (anode = oxidation, reduction = cathode)
+> holds in both.
 
-**Functions of the salt bridge (NCERT asks this directly):**
+**Functions of the salt bridge (asked directly):**
 
-1. completes the circuit → allows current (ion migration) to flow between the half-cells;
-2. keeps each beaker **electrically neutral** — otherwise ZnSO₄ would build +ve charge and
-   CuSO₄ −ve charge and the cell would die in microseconds (liquid-junction potential);
-3. **prevents mixing** of the two solutions, so direct reaction (wasteful short-circuit that
-   just makes heat) does not occur;
-4. minimises (does not eliminate) the **liquid junction potential** — hence electrolytes with
-   near-equal ionic mobilities: KCl, NH₄NO₃, KNO₃ (🆇 `u°(K⁺) = 73.5`, `u°(Cl⁻) = 76.3`).
+1. It **completes the circuit**: ions migrate through it, so current can flow.
+2. It **keeps each half-cell electrically neutral**. Without it, charge would build up at
+   once (excess Zn²⁺ on one side, excess SO₄²⁻ on the other) and the current would stop.
+3. It **prevents mixing**, so Cu²⁺ never meets the Zn rod directly (that would only waste the
+   reaction as heat).
+4. It **minimises the liquid-junction potential**. That is why its electrolyte has cation and
+   anion of near-equal limiting molar conductivity: λ°(K⁺) = 73.5, λ°(Cl⁻) = 76.3
+   S cm² mol⁻¹; also KNO₃, NH₄NO₃.
 
-⚠ **Why not KCl with Ag⁺ or Pb²⁺?** it precipitates AgCl/PbCl₂ and blocks the bridge →
-use **NH₄NO₃** or **KNO₃**. ⚠ Why not NaCl? `u°(Na⁺) = 50.1` ≠ `u°(Cl⁻) = 76.3` → large
-junction potential. ⚠ Why agar? to hold the electrolyte as a **jelly** so solutions cannot flow
-and dilute each other while ions still diffuse.
+⚠ **Why not KCl with Ag⁺ or Pb²⁺?** It precipitates AgCl/PbCl₂ in the bridge, so use
+**KNO₃ or NH₄NO₃**. ⚠ **Why not NaCl?** λ°(Na⁺) = 50.1 ≠ λ°(Cl⁻) = 76.3, which gives a large
+junction potential. ⚠ **Why agar?** It sets the electrolyte as a **jelly**: solutions cannot
+flow through, but ions still diffuse.
 
-**What builds up at each electrode:** metal ions leaving the rod leave it electron-rich (−ve);
-the solution gains an excess of cations. The two layers form an **electrical double layer**,
-whose potential difference is the **electrode potential** — a *tendency*, measurable only
-relative to another electrode (hence the SHE, §15, and Class XII Unit 2).
+**What builds up at each electrode:** ions leaving (or depositing on) the rod create a charge
+separation between metal and solution, an **electrical double layer**. Its potential difference
+is the **electrode potential**. It can only be measured *relative to another electrode*, hence
+the SHE (§15) and Class XII Electrochemistry.
 
 ## 15. Standard electrode potentials — NCERT Table 7.1 (7.4)
 
-**Definition (all four conditions matter):** the electrode potential when (i) every species is
-at **unit activity ≈ 1 M** concentration, (ii) any **gas is at 1 bar** (NCERT says 1 atm),
-(iii) **T = 298 K**, (iv) and the value is written for the **reduction** half-reaction
-(IUPAC convention), measured against the **standard hydrogen electrode, whose E° is
-defined as 0.00 V**.
+**Definition (all conditions matter):** the potential of a half-cell when every species is at
+**unit concentration (activity) ≈ 1 M**, gases at **1 bar**, **T = 298 K**, written for the
+**reduction** half-reaction and measured against the **standard hydrogen electrode**, whose
+E° is defined as **0.00 V**.
 
-### Table 7.1 (reduction potentials at 298 K) — the numbers JEE actually quotes
+NCERT's reading notes: a **negative E°** means the couple is a **stronger reducing agent** than
+H⁺/H₂; a **positive E°** means it is a **weaker** one.
 
-```
-   E° / V   half-reaction (written as REDUCTION)
-  ┌──────────────────────────────────────────────────────────────────────┐
-  +2.87   F₂(g) + 2e⁻ → 2F⁻                          ⤒ STRONGEST OXIDANT
-  +1.81   Co³⁺ + e⁻ → Co²⁺                            ⚠ stronger oxidant than MnO₄⁻!
-  +1.78   H₂O₂ + 2H⁺ + 2e⁻ → 2H₂O
-  +1.51   MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O
-  +1.40   Au³⁺ + 3e⁻ → Au(s)
-  +1.36   Cl₂(g) + 2e⁻ → 2Cl⁻
-  +1.33   Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O
-  +1.23   O₂(g) + 4H⁺ + 4e⁻ → 2H₂O
-  +1.23   MnO₂(s) + 4H⁺ + 2e⁻ → Mn²⁺ + 2H₂O
-  +1.09   Br₂ + 2e⁻ → 2Br⁻
-  +0.96   NO₃⁻ + 4H⁺ + 3e⁻ → NO(g) + 2H₂O      (NCERT Table 7.1: 0.97)
-  +0.92   2Hg²⁺ + 2e⁻ → Hg₂²⁺
-  +0.80   Ag⁺ + e⁻ → Ag(s)
-  +0.77   Fe³⁺ + e⁻ → Fe²⁺
-  +0.68   O₂(g) + 2H⁺ + 2e⁻ → H₂O₂
-  +0.54   I₂(s) + 2e⁻ → 2I⁻
-  +0.52   Cu⁺ + e⁻ → Cu(s)
-  +0.34   Cu²⁺ + 2e⁻ → Cu(s)
-  +0.22   AgCl(s) + e⁻ → Ag(s) + Cl⁻
-  +0.10   AgBr(s) + e⁻ → Ag(s) + Br⁻
-  +0.00   2H⁺ + 2e⁻ → H₂(g)   ← the reference, by convention
-  −0.13   Pb²⁺ + 2e⁻ → Pb(s)
-  −0.14   Sn²⁺ + 2e⁻ → Sn(s)
-  −0.25   Ni²⁺ + 2e⁻ → Ni(s)
-  −0.44   Fe²⁺ + 2e⁻ → Fe(s)
-  −0.74   Cr³⁺ + 3e⁻ → Cr(s)
-  −0.76   Zn²⁺ + 2e⁻ → Zn(s)
-  −0.83   2H₂O + 2e⁻ → H₂(g) + 2OH⁻        ← H₂ in BASE (why Al/Zn dissolve in NaOH)
-  −1.66   Al³⁺ + 3e⁻ → Al(s)
-  −2.37   Mg²⁺ + 2e⁻ → Mg(s)
-  −2.71   Na⁺ + e⁻ → Na(s)
-  −2.87   Ca²⁺ + 2e⁻ → Ca(s)
-  −2.93   K⁺ + e⁻ → K(s)
-  −3.05   Li⁺ + e⁻ → Li(s)                  ⤓ STRONGEST REDUCTANT (metal) — but see 🆇
-  └──────────────────────────────────────────────────────────────────────┘
-      ↑ increasing strength of OXIDISING agent (top forms)
-      ↓ increasing strength of REDUCING agent (bottom forms)
-```
+### Table 7.1 — the numbers JEE actually quotes (reduction, 298 K)
+
+| E° / V | Half-reaction (Ox + ne⁻ → Red) | Note |
+|---:|---|---|
+| +2.87 | `F₂(g) + 2e⁻ → 2F⁻` | strongest oxidant |
+| +1.81 | `Co³⁺ + e⁻ → Co²⁺` | ⚠ stronger than MnO₄⁻: aqueous Co³⁺ oxidises water |
+| +1.78 | `H₂O₂ + 2H⁺ + 2e⁻ → 2H₂O` | H₂O₂ as oxidant |
+| +1.51 | `MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O` | — |
+| +1.40 | `Au³⁺ + 3e⁻ → Au(s)` | — |
+| +1.36 | `Cl₂(g) + 2e⁻ → 2Cl⁻` | — |
+| +1.33 | `Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O` | below Cl₂: works in HCl |
+| +1.23 | `O₂(g) + 4H⁺ + 4e⁻ → 2H₂O` | — |
+| +1.23 | `MnO₂(s) + 4H⁺ + 2e⁻ → Mn²⁺ + 2H₂O` | Cl₂ lab preparation from MnO₂ + conc. HCl |
+| +1.09 | `Br₂ + 2e⁻ → 2Br⁻` | — |
+| +0.97 | `NO₃⁻ + 4H⁺ + 3e⁻ → NO(g) + 2H₂O` | why HNO₃ dissolves Cu and Ag |
+| +0.92 | `2Hg²⁺ + 2e⁻ → Hg₂²⁺` | — |
+| +0.80 | `Ag⁺ + e⁻ → Ag(s)` | — |
+| +0.77 | `Fe³⁺ + e⁻ → Fe²⁺` | — |
+| +0.68 | `O₂(g) + 2H⁺ + 2e⁻ → H₂O₂` | — |
+| +0.54 | `I₂(s) + 2e⁻ → 2I⁻` | — |
+| +0.52 | `Cu⁺ + e⁻ → Cu(s)` | — |
+| +0.34 | `Cu²⁺ + 2e⁻ → Cu(s)` | — |
+| +0.22 | `AgCl(s) + e⁻ → Ag(s) + Cl⁻` | — |
+| +0.10 | `AgBr(s) + e⁻ → Ag(s) + Br⁻` | — |
+| 0.00 | `2H⁺ + 2e⁻ → H₂(g)` | the reference, by definition |
+| −0.13 | `Pb²⁺ + 2e⁻ → Pb(s)` | — |
+| −0.14 | `Sn²⁺ + 2e⁻ → Sn(s)` | — |
+| −0.25 | `Ni²⁺ + 2e⁻ → Ni(s)` | — |
+| −0.44 | `Fe²⁺ + 2e⁻ → Fe(s)` | — |
+| −0.74 | `Cr³⁺ + 3e⁻ → Cr(s)` | — |
+| −0.76 | `Zn²⁺ + 2e⁻ → Zn(s)` | — |
+| −0.83 | `2H₂O + 2e⁻ → H₂(g) + 2OH⁻` | H₂ in base: why Zn and Al dissolve in NaOH |
+| −1.66 | `Al³⁺ + 3e⁻ → Al(s)` | — |
+| −2.36 | `Mg²⁺ + 2e⁻ → Mg(s)` | — |
+| −2.71 | `Na⁺ + e⁻ → Na(s)` | — |
+| −2.87 | `Ca²⁺ + 2e⁻ → Ca(s)` | — |
+| −2.93 | `K⁺ + e⁻ → K(s)` | — |
+| −3.05 | `Li⁺ + e⁻ → Li(s)` | strongest reductant in water (see below) |
+
+*Going up the table, the left-hand species are stronger **oxidants**; going down, the
+right-hand species are stronger **reductants**.*
 
 **Reading rules:**
 
-- `E° > 0` → the **reduced** form is a **weaker** reductant than H₂ (couple sits above
-  hydrogen; its ion is easier to reduce than H⁺). `E° < 0` → reduced form is a **stronger**
-  reductant than H₂ → the metal dissolves in acid with H₂ evolution.
-- **Higher E°(Ox/Red) = stronger oxidant** on the left of that equation. Oxidising power:
+- **Higher E° ⇒ stronger oxidant** (left side). Oxidising power:
   `F₂ > MnO₄⁻ > Cl₂ > Cr₂O₇²⁻ > MnO₂ > Br₂ > Fe³⁺ > I₂`.
-- **Lower (more negative) E° = stronger reductant.** Reducing power of metals:
-  `Li > K > Ca > Na > Mg > Al > Mn > Zn > Cr > Fe > Ni > Sn > Pb > (H₂) > Cu > Ag`.
-- ⚠ `E°` is an **intensive** property: doubling the half-reaction **does not** double E°.
-  `2H⁺ + 2e⁻ → H₂` and `H⁺ + e⁻ → ½H₂` both have E° = 0.00 V;
-  `Fe³⁺/Fe²⁺ = +0.77` whether or not you multiply by 6 in a dichromate balance.
-  (ΔG° **does** multiply — the correct route is always ΔG° = −nFE°.)
+- **Lower (more negative) E° ⇒ stronger reductant** (right side). Reducing power of metals:
+  `Li > K > Ca > Na > Mg > Al > Zn > Cr > Fe > Ni > Sn > Pb > (H₂) > Cu > Ag > Au`.
+- Metals with **E° < 0** reduce H⁺, so they liberate H₂ from dilute (non-oxidising) acids.
+- ⚠ **E° is intensive.** Multiplying a half-reaction does **not** multiply E°:
+  `2H⁺ + 2e⁻ → H₂` and `H⁺ + e⁻ → ½H₂` both have 0.00 V, and Fe³⁺/Fe²⁺ stays +0.77 V even when
+  written ×6 in a dichromate balance. **ΔG° does multiply**, so always combine through
+  ΔG° = −nFE° (§17).
 
-### 🆇 Li vs Na "anomaly" and the two extra scales
+### 🆇 Why lithium tops the table: the hydration argument
 
-`E°(Li⁺/Li) = −3.05 V` is the most negative of all — so Li is the strongest reductant
-**in aqueous solution**, even though its atom loses its electron **least** easily (ΔᵢH°(Li) = 520 kJ mol⁻¹ vs ΔᵢH°(Cs) = 376 kJ mol⁻¹) The reason Li wins is its huge hydration
-enthalpy; the order of *ionisation enthalpy* alone would put Cs first. Full thermodynamic
-cycle (this is a classic Advanced passage):
+E°(Li⁺/Li) = −3.05 V is the most negative value, so **in water** Li is the strongest reductant,
+even though its atom gives up its electron **least** readily of the alkali metals. The cycle
+explains it:
 
-```
-   M(s) → M(g)         ΔaH°            (sublimation: Li 161 > Cs 76)
-   M(g) → M⁺(g) + e⁻    ΔiH°            (ionisation: Li 520 ≫ Cs 376)  ← disfavours Li
-   M⁺(g) → M⁺(aq)      ΔhydH°          (hydration: Li −520 ≪ Cs −265) ← WINS for Li
-   ──────────────────────────────────────────────────────────────
-   Σ  ⇒  E°(Li⁺/Li) most negative  ⇒  Li is the strongest aqueous reductant
-```
+| Step (kJ mol⁻¹, approx.) | Li | Cs | Favours |
+|---|---:|---:|---|
+| Sublimation `M(s) → M(g)` | +161 | +76 | Cs |
+| Ionisation `M(g) → M⁺(g) + e⁻` | +520 | +376 | Cs |
+| Hydration `M⁺(g) → M⁺(aq)` | −506 | −276 | **Li, by far** |
 
-- In the **gas phase / fused salt / non-aqueous** (and in batteries with organic
-  electrolytes), the "activity-series" order is reversed at the top: **Cs > Rb > K > Na >
-  Li** by IE alone. That is why the "electrochemical series ≠ reactivity series in every
-  solvent" caveat appears in Advanced solutions.
-- ⚠ Lithium nevertheless **reacts least vigorously with water** (melting point + kinetics +
-  it does not fragment, so surface stays wet) — "highest E° but slowest-looking reaction" is
-  an assertion–reason favourite: thermodynamics ≠ kinetics.
+*Hydration enthalpies from NCERT's s-block table. The tiny Li⁺ is hydrated so strongly that
+it more than pays back the larger sublimation and ionisation costs.*
+
+- In the **gas phase** (ionisation alone) the order at the top reverses: Cs > Rb > K > Na > Li.
+  "Electrochemical series ≠ reactivity series in every medium" is the Advanced caveat.
+- ⚠ **Li nevertheless reacts less vigorously with water than Na or K.** E° is thermodynamics;
+  the reaction rate is kinetics. Li is hard and high-melting, so it does not melt into a
+  fresh, fast-reacting ball on the water surface.
 
 ## 16. Everything Table 7.1 lets you predict 🆇
 
 ```mermaid
 flowchart TD
-    Q["Given: a proposed redox reaction"] --> S1["Write the two half-reactions as REDUCTIONS"]
-    S1 --> S2["E°cell = E°(cathode, where reduction is proposed) − E°(anode, where oxidation is proposed)"]
-    S2 --> D{"E°cell > 0 ?"}
-    D -->|"yes"| Y["spontaneous (ΔG° = −nFE° < 0)<br>K = 10^(nE°/0.059) » 1"]
-    D -->|"no"| N["not spontaneous as written;<br>the reverse reaction IS"]
-    D -->|"≈ 0"| E["at/near equilibrium — think Ksp, buffers"]
+    Q["Proposed redox reaction"] --> S1["Write both half-reactions as REDUCTIONS<br>and read their E° from Table 7.1"]
+    S1 --> S2["E°cell = E°(species being reduced)<br>minus E°(species being oxidised)"]
+    S2 --> D{"Sign of E°cell?"}
+    D -->|"positive"| Y["Spontaneous as written<br>ΔG° = −nFE° < 0 · K > 1"]
+    D -->|"negative"| N["Not spontaneous;<br>the REVERSE reaction is"]
+    D -->|"close to 0"| E["Near equilibrium:<br>concentrations decide (Nernst, Class XII)"]
+```
+*The single test behind every Table 7.1 question: reduction potential of the would-be oxidant
+minus that of the would-be reductant.*
+
+**The four question types (NCERT Ex. 7.26–7.30 are exactly these):**
+
+```
+(1) "Is the reaction feasible?"   (NCERT Ex. 7.26)
+    (a) Fe³⁺ + I⁻   : 0.77 − 0.54    = +0.23 V  ✔   (⇒ FeI₃ cannot exist)
+    (b) Ag⁺ + Cu    : 0.80 − 0.34    = +0.46 V  ✔
+    (c) Fe³⁺ + Cu   : 0.77 − 0.34    = +0.43 V  ✔   (FeCl₃ etches copper circuit boards)
+    (d) Ag + Fe³⁺   : 0.77 − 0.80    = −0.03 V  ✘   (the reverse, Ag⁺ + Fe²⁺, is feasible)
+    (e) Br₂ + Fe²⁺  : 1.09 − 0.77    = +0.32 V  ✔
+    and by contrast: Fe³⁺ + Br⁻ : 0.77 − 1.09 = −0.32 V ✘  (⇒ FeBr₃ is stable)
+
+(2) Displacement order   (NCERT Ex. 7.28: Al, Cu, Fe, Mg, Zn)
+    sort by E°: Mg (−2.36) < Al (−1.66) < Zn (−0.76) < Fe (−0.44) < Cu (+0.34)
+    each metal displaces every metal to its right from a solution of its salt
+    ⇒ Mg > Al > Zn > Fe > Cu
+
+(3) Rank reducing power   (NCERT Ex. 7.29, using the values printed in the question)
+    K⁺/K −2.93, Mg²⁺/Mg −2.37, Cr³⁺/Cr −0.74, Hg²⁺/Hg +0.79, Ag⁺/Ag +0.80
+    increasing reducing power:  Ag < Hg < Cr < Mg < K
+    ⚠ Hg and Ag differ by only 0.01 V: read the numbers, not your memory
+
+(4) Depict a cell and find E°   (NCERT Ex. 7.30: Zn + 2Ag⁺ → Zn²⁺ + 2Ag)
+    (−) Zn(s) | Zn²⁺(aq) ‖ Ag⁺(aq) | Ag(s) (+)
+    anode Zn (negative) · cathode Ag · E°cell = 0.80 − (−0.76) = +1.56 V
+    current carriers: electrons in the external wire, ions in the solutions and salt bridge
 ```
 
-**Worked — the four question types (NCERT Q7.26/7.28/7.29/7.30 are exactly these):**
+**Other one-line predictions:**
 
-```
-(1) "Will the reaction occur?" — compute E°cell from the two reduction potentials:
-    Zn(s) + Cu²⁺(0.1 M) → Zn²⁺ + Cu(s):
-        E°cell = E°(Cu²⁺/Cu) − E°(Zn²⁺/Zn) = 0.34 − (−0.76) = +1.10 V > 0 ✔ occurs
-    2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I₂:   E° = 0.77 − 0.54 = +0.23 V ✔ occurs (⇒ FeI₃ cannot exist)
-    2Fe³⁺ + 2Br⁻ → 2Fe²⁺ + Br₂:  E° = 0.77 − 1.09 = −0.32 V ✘ not feasible (⇒ FeBr₃ is fine)
-
-(2) Displacement order (NCERT Q7.28: Al, Cu, Fe, Mg, Zn):
-    more negative E° displaces less negative from its salt:
-    sort by increasing E°: Mg(−2.37) < Al(−1.66) < Zn(−0.76) < Fe(−0.44) < Cu(+0.34)
-    each metal displaces **every metal to its right** (higher E°) from its salt solution.
-    So Mg displaces Al, Zn, Fe, Cu; Al displaces Zn, Fe, Cu; … Cu displaces none.
-    ⇒ "arrange in the order in which they displace each other from their salt solutions"
-      = simply list by increasing E°.
-
-(3) Which is the strongest reductant / oxidant?   NCERT Q7.29:
-    given K +/K −2.93, Ag +/Ag +0.80, Hg 2+/Hg +0.85, Mg 2+/Mg −2.37, Cr 3+/Cr −0.74
-    → reducing power: K > Mg > Cr > Ag > Hg ; oxidising power (ions): Hg²⁺ > Ag⁺ > Cr³⁺ > Mg²⁺ > K⁺
-
-(4) Depict the cell & compute emf   NCERT Q7.30: Zn(s) + 2Ag⁺ → Zn²⁺ + 2Ag(s)
-    anode (left) : Zn|Zn²⁺      cathode (right): Ag⁺|Ag
-    E°cell = 0.80 − (−0.76) = +1.56 V
-    cell: (−) Zn(s) | Zn²⁺(aq) ‖ Ag⁺(aq) | Ag(s) (+)
-```
-
-**Other predictions the table supports** (all standard JEE one-liners):
-
-- ⚠ **Metals above H₂ liberate H₂ from acids** — but **not** from HNO₃ (NO₃⁻ is a better
-  oxidant than H⁺, so nitrogen oxides form instead of H₂; with very dilute HNO₃ and
-  Mn/Zn the reduction of nitrate can go as far as **NH₄NO₃** (N +5 → −3, 8 e⁻) — the
-  exception NCERT-class questions love to include.
-- **Storage/transport:** CuSO₄ solution **cannot** be stored in a Zn pot (Zn reduces Cu²⁺);
-  it **cannot** be stored in a Fe vessel either (E°(Fe²⁺/Fe) = −0.44 < +0.34, so Fe also
-  reduces Cu²⁺). Only a **copper** vessel is safe. (Class XII intext 2.2 asks exactly this.)
-- **Non-metals:** F₂ oxidises water (`2F₂ + 2H₂O → 4HF + O₂`, E° 2.87 > 1.23); Cl₂ oxidises
-  Br⁻/I⁻; Br₂ oxidises I⁻ but not Cl⁻.
-- **Extracting metals:** only metals with strongly negative E° are obtained by
-  **electrolysis** (Na, K, Mg, Ca, Al; and F₂/Cl₂/NaOH from the chlor-alkali/Fluorine
-  route); Cu, Ag, Hg can be got
-  by roasting/reduction with C or by displacement.
-- **Which ion disproportionates** — do it with §17's Latimer test.
-- **E°(M³⁺/M²⁺) trends of the 3d series** and **why Fe²⁺ is a reductant while Fe³⁺ is an
-  oxidant** connect to the d-block notes (§5 there): `E°(Co³⁺/Co²⁺) = +1.81` (aquated)
-  explains why Co(III) exists only in complexes.
+- ⚠ **Metals above H₂ displace H₂ from acids, but not from HNO₃**, because NO₃⁻ (+0.97 V) is
+  a better oxidant than H⁺ and nitrogen oxides form instead. Two exceptions JEE likes:
+  (i) **very dilute (~2 %) HNO₃ with Mg or Mn does give H₂**; (ii) very dilute HNO₃ with Zn
+  reduces nitrate all the way to **NH₄NO₃** (N +5 → −3, 8 e⁻).
+- **Storage:** CuSO₄ solution cannot be kept in a **zinc** pot (Zn reduces Cu²⁺) or an **iron**
+  one (−0.44 < +0.34). A copper vessel is safe. AgNO₃ cannot be kept in a copper vessel.
+- **Non-metals:** F₂ oxidises water (`2F₂ + 2H₂O → 4HF + O₂`, 2.87 > 1.23); Cl₂ oxidises Br⁻
+  and I⁻; Br₂ oxidises I⁻ but not Cl⁻.
+- **Extraction:** metals with strongly negative E° (Na, K, Ca, Mg, Al) come only from
+  **electrolysis of fused salts**, because water is reduced first in solution (−0.83 V). Cu,
+  Ag and Hg can be won by chemical reduction or displacement.
+- **Which ion disproportionates:** use the Latimer test in §17.
+- **Why aqueous Co³⁺ is rare:** at +1.81 V it oxidises water. Co(III) survives only in
+  complexes such as [Co(NH₃)₆]³⁺ (see the d-block and coordination notes).
 
 ---
 
@@ -994,237 +1113,286 @@ flowchart TD
 
 ## 17. Latimer diagrams and the disproportionation test 🆇
 
-A **Latimer diagram** writes the couples of one element in **decreasing oxidation state**,
-left → right, with the standard **reduction** potential of each step above the arrow. Read it
-right-to-left for oxidising power. Acid values at 298 K:
+A **Latimer diagram** lists one element's species in **decreasing oxidation state**, left to
+right, with the standard **reduction** potential of each step written on the link.
 
 ```
- chlorine:  ClO₄⁻ ─+0.36─ ClO₃⁻ ─+0.42─ HClO₂ ─+1.64─ HOCl ─+1.63─ Cl₂ ─+1.36─ Cl⁻
- manganese: MnO₄⁻ ─+0.56─ MnO₄²⁻ ─+2.26─ MnO₂ ─+0.95─ Mn³⁺ ─+1.51─ Mn²⁺ ─−1.18─ Mn
-              (and MnO₄⁻ ─+1.51, 5e⁻─ Mn²⁺,  MnO₂ ─+1.23, 2e⁻─ Mn²⁺  — all self-consistent)
- iron:      FeO₄²⁻ ─≈+2.20─ Fe³⁺ ─+0.77─ Fe²⁺ ─−0.44─ Fe
- copper:    Cu²⁺ ─+0.153─ Cu⁺ ─+0.521─ Cu
- oxygen:    O₂ ─+0.68─ H₂O₂ ─+1.78─ H₂O
+ACID (pH 0), E° / V
+ chlorine:  ClO₄⁻ ─1.20─ ClO₃⁻ ─1.18─ HClO₂ ─1.65─ HOCl ─1.63─ Cl₂ ─1.36─ Cl⁻
+             +7           +5           +3           +1         0         −1
+ manganese: MnO₄⁻ ─0.56─ MnO₄²⁻ ─2.26─ MnO₂ ─0.95─ Mn³⁺ ─1.51─ Mn²⁺ ─(−1.18)─ Mn
+ iron:      FeO₄²⁻ ─≈2.20─ Fe³⁺ ─0.77─ Fe²⁺ ─(−0.44)─ Fe
+ copper:    Cu²⁺ ─0.153─ Cu⁺ ─0.521─ Cu
+ oxygen:    O₂ ─0.68─ H₂O₂ ─1.78─ H₂O
+
+BASE (pH 14), E° / V
+ chlorine:  ClO₄⁻ ─0.37─ ClO₃⁻ ─0.30─ ClO₂⁻ ─0.68─ ClO⁻ ─0.42─ Cl₂ ─1.36─ Cl⁻
 ```
 
-**Test A — will the middle species disproportionate?**
+### Test A — will the middle species disproportionate?
 
 ```
-  For a species sitting between two steps:
-        disproportionation is spontaneous   ⇔   E°(step to its RIGHT) > E°(step to its LEFT)
+A species disproportionates spontaneously  ⇔  E°(link on its RIGHT) > E°(link on its LEFT)
+(E°cell of the disproportionation = E°right − E°left)
 
-  · Cu⁺     : 0.521 > 0.153  → 2Cu⁺ → Cu²⁺ + Cu   E°cell = +0.368 V  ✔ spontaneous
-  · MnO₄²⁻  : 2.26  > 0.56   → 3MnO₄²⁻ + 4H⁺ → 2MnO₄⁻ + MnO₂ + 2H₂O  E° = +1.70 V ✔
-               (this is exactly the number the d-block notes §14 quote for manganate)
-  · Mn³⁺    : 1.51  > 0.95   → 2Mn³⁺ + 2H₂O → Mn²⁺ + MnO₂ + 4H⁺  ✔  (NCERT Q7.21)
-  · H₂O₂    : 1.78  > 0.68   → 2H₂O₂ → 2H₂O + O₂  E° = +1.10 V  ✔ (thermodynamically eager,
-               kinetically lazy — hence the stabilisers, and MnO₂/light catalysis)
-  · Fe²⁺    : −0.44 < +0.77  → does NOT disproportionate ✔ (that is why Fe²⁺ is a normal ion)
-  · Cl⁻     : nothing below it → stable.  HOCl: 1.63 vs 1.64 → borderline, so bleach decays
-               slowly and only accelerates on heating: 3ClO⁻ → ClO₃⁻ + 2Cl⁻ (hot conc.)
+ Cu⁺     : 0.521 > 0.153  ✔  2Cu⁺ → Cu²⁺ + Cu                     E° = +0.368 V
+ MnO₄²⁻  : 2.26  > 0.56   ✔  3MnO₄²⁻ + 4H⁺ → 2MnO₄⁻ + MnO₂ + 2H₂O  E° = +1.70 V
+ Mn³⁺    : 1.51  > 0.95   ✔  2Mn³⁺ + 2H₂O → Mn²⁺ + MnO₂ + 4H⁺     (NCERT Ex. 7.21)
+ H₂O₂    : 1.78  > 0.68   ✔  2H₂O₂ → 2H₂O + O₂                    E° = +1.10 V (slow: kinetics)
+ Fe²⁺    : −0.44 < 0.77   ✘  stable, which is why Fe²⁺ is an ordinary ion
+ acid:  HClO₂ 1.65 > 1.18 ✔ disproportionates · HOCl 1.63 < 1.65 ✘ · Cl₂ 1.36 < 1.63 ✘
+ base:  Cl₂   1.36 > 0.42 ✔ ⇒ Cl₂ + 2OH⁻ → Cl⁻ + ClO⁻ + H₂O (bleach formation, §7d)
+        ClO₂⁻ 0.68 > 0.30 ✔
 ```
 
-**Test B — combining steps: never add E°, add ΔG°**
+⚠ **The medium flips the answer for Cl₂:** stable in acid (1.36 < 1.63), disproportionates in
+base (1.36 > 0.42). That is exactly why chlorine water is kept acidic and bleach is made in
+alkali.
+
+**ClO⁻ in base, a two-link test:** ClO⁻ has no disproportionation to its *neighbours*
+(0.42 < 0.68). But combine links first (Test B): E°(ClO⁻/Cl⁻) = (0.42 + 1.36)/2 = 0.89 V and
+E°(ClO₃⁻/ClO⁻) = (2×0.30 + 2×0.68)/4 = 0.49 V. Since 0.89 > 0.49,
+`3ClO⁻ → ClO₃⁻ + 2Cl⁻` is spontaneous (E° ≈ +0.40 V). It is slow at room temperature and fast
+when hot: bleach loses strength on storage, and hot alkali gives chlorate (§7d).
+
+⚠ **Perchlorate is thermodynamically a good oxidant (1.20 V) but kinetically inert:** a
+symmetric ClO₄⁻ tetrahedron has no easy path for oxygen transfer. So dilute HClO₄ and
+KClO₄ are handled routinely, while chlorates and chlorites are touchy.
+
+### Test B — combining steps: never add E°, add ΔG°
 
 ```
-  E°(overall, n₁+n₂ electrons) = (n₁E°₁ + n₂E°₂) / (n₁ + n₂)
+E°(overall) = (n₁E°₁ + n₂E°₂) / (n₁ + n₂)          (because ΔG° = −nFE° is additive)
 
-  · Cu²⁺/Cu   = (1×0.153 + 1×0.521)/2 = +0.337 ≈ +0.34 ✔  (Table 7.1 says 0.34)
-  · Fe³⁺/Fe   = (1×0.77 + 2×(−0.44))/3 = −0.037 V
-  · MnO₄⁻/Mn²⁺: from MnO₄⁻ →MnO₂ (3e⁻, +1.70) and MnO₂ →Mn²⁺ (2e⁻, +1.23)
-                = (3×1.70 + 2×1.23)/5 = +1.51 ✔  ← the check that the diagram is consistent
-  ⚠ A question that asks for E°(Fe³⁺/Fe) by "0.77 + (−0.44)" is a trap: the answer needs
-    the n-weighted mean, and any MCQ whose option equals the plain sum is wrong.
+ Cu²⁺/Cu    = (1×0.153 + 1×0.521)/2        = +0.337 ≈ +0.34 V   ✔ matches Table 7.1
+ Fe³⁺/Fe    = (1×0.77 + 2×(−0.44))/3       = −0.037 V
+ MnO₄⁻/MnO₂ = (1×0.56 + 2×2.26)/3          = +1.69 V
+ MnO₂/Mn²⁺  = (1×0.95 + 1×1.51)/2          = +1.23 V            ✔ matches Table 7.1
+ MnO₄⁻/Mn²⁺ = (3×1.69 + 2×1.23)/5          = +1.51 V            ✔ matches Table 7.1
 ```
 
-**Frost (oxidation-state) diagram — the fastest qualitative picture 🆇**
+⚠ An option equal to "0.77 + (−0.44) = 0.33 V" for Fe³⁺/Fe is the trap answer.
+
+### Frost (oxidation-state) diagram: the fastest qualitative picture
 
 ```
-   plot  n·E°(element → that state)  (∝ −ΔG°/F)  against  oxidation number n
-   · the LOWER the curve at a point, the more STABLE that state
-   · a point lying ABOVE the chord joining its two neighbours → it disproportionates
-   · a point lying BELOW that chord → its neighbours comproportionate into it
-   · slope of a segment = E° of that couple ⇒ steeper downward slope = stronger oxidant
-   Mn (acid): curve bottoms out at Mn²⁺ ⇒ every higher state is an oxidant toward Mn²⁺;
-              in BASE the minimum moves to MnO₂ — which is exactly why neutral KMnO₄ stops
-              at MnO₂ (brown ppt) and does not reach Mn²⁺.
-   Cl (acid): the minimum is at Cl⁻, so every positive O.S. of chlorine is an oxidant.
-              Yet perchlorate (Cl +7) has only E° = +0.36 V and is kinetically stubborn
-              (no O–O bond to break, symmetric tetrahedron) whereas ClO₃⁻/ClO₂ from
-              chlorate are far livelier — "low E° but high O.S." vs "high E° and high O.S."
-              is why KClO₄ is storable and KClO₃ is a pyrotechnic oxidiser.
-              Same logic for MnO₄⁻ (E° 1.51, fast) vs ClO₄⁻ (0.36, slow).
+plot  n·E° (for element → that state, ∝ −ΔG°/F)  against oxidation number n
+· the LOWER a point, the more STABLE that state
+· a point ABOVE the line joining its two neighbours → it disproportionates
+· a point BELOW that line → its neighbours comproportionate into it
+· slope of a segment = E° of that couple: a steep segment means a strong oxidant
+Mn in acid:  the minimum is Mn²⁺, so every higher state oxidises down to Mn²⁺
+Mn in base:  the minimum moves to MnO₂, which is why neutral/alkaline KMnO₄ stops at brown MnO₂
+Cl in acid:  the minimum is Cl⁻, so every positive O.S. of chlorine is an oxidant
 ```
 
 ## 18. Oxidation-state map of the p-block
 
-```
-        group →   13     14      15      16      17
-   "inert pair" stability of the LOWER state grows ↓ going DOWN the group:
-   +3 Al > Ga > In > Tl(Tl⁺ most stable)   ·   +4 C,Si  vs +2 Pb (Pb⁴⁺ = oxidant, PbO₂)
-   +5 N,P,As,Sb vs +3 Bi (Bi³⁺ the stable one); +7 Cl,Br vs the +5/+7 dominance of I
-   (periodic acid H₅IO₆, I only reaches +7 with F or O); +6 S,Se vs +4 Te.
-   ⇒ PbO₂ (Pb⁴⁺), NaBiO₃ (Bi⁵⁺), AgF₂ (Ag²⁺) are all fierce oxidants: "highest state =
-     oxidant", and the oxidant strength rises steeply down the group.
-   ⇒ GENERAL LAWS worth writing in an Advanced answer:
-      (i) down a group the HIGHER state becomes less and less stable, because the (n−1)d/f
-          contraction leaves the ns² pair inert: Sn⁴⁺ is content, Pb⁴⁺ is an oxidant;
-          Sb⁵⁺ mild but Bi⁵⁺ violent (NaBiO₃ oxidises Mn²⁺ to MnO₄⁻); SO₄²⁻ is inert while
-          TeO₄²⁻ (tellurate) is a decent oxidant. "Inert pair effect" is the *why*;
-          "the highest state of the heavy congener oxidises" is the JEE-observable result.
-      (ii) correspondingly the oxidising power of the highest state RISES down a group:
-          ClO₄⁻ (very mild, E° 0.36) < BrO₄⁻ < periodate H₅IO₆/IO₄⁻ (strong, oxidises Mn²⁺
-          to MnO₄⁻);  HClO₄ is a stable, non-oxidising strong acid while HBrO₄/H₅IO₆ are not.
-      (iii) 2nd-period elements are capped by the **absence of d orbitals** — N cannot form
-          5 bonds to F or Cl, so `NF₅ ✘`, `NCl₅ ✘`, `PCl₅ ✔`; N's +5 exists only in oxo-species
-          (HNO₃, NO₃⁻) where π donation compensates. Same reason `CF₄` has no `CF₆²⁻`,
-          and `SiF₆²⁻` exists. ⚠ So "maximum O.S. = group number" is *not* universal in p-block.
-```
+| Group | Highest O.S. | Lower state that grows stable down the group | JEE-level consequence |
+|---|---|---|---|
+| 13 | +3 | +1 (Tl⁺ most stable) | Tl³⁺ is an oxidant; In⁺ disproportionates |
+| 14 | +4 | +2 (Pb²⁺) | Sn²⁺ is a reductant; **PbO₂** (Pb +4) is an oxidant |
+| 15 | +5 | +3 (Bi³⁺) | **NaBiO₃** (Bi +5) oxidises Mn²⁺ to MnO₄⁻ |
+| 16 | +6 | +4 | H₂SeO₄ is a **stronger** oxidant than H₂SO₄ |
+| 17 | +7 | +5, +1 … | oxidising power of per-halates: **Br > I > Cl** (see below) |
+
+- **(i) Inert-pair effect (why):** down groups 13–15 the ns² pair is held more tightly (poor
+  shielding by the filled d and f shells), so the **group O.S. − 2** state gains stability and
+  the group O.S. becomes oxidising. Observable result: "the highest state of the heaviest
+  member is an oxidant" (Tl³⁺, Pb⁴⁺, Bi⁵⁺).
+- **(ii) The middle-row anomaly (🆇):** the 4p elements, just after the first d-block
+  contraction, hold their highest state *less* comfortably than both neighbours. Hence
+  **perbromate (BrO₄⁻/BrO₃⁻ ≈ 1.85 V) > periodate (H₅IO₆/IO₃⁻ ≈ 1.60 V) > perchlorate
+  (ClO₄⁻/ClO₃⁻ 1.20 V)**. Perbromate was not made until 1968. The same pattern makes selenic
+  acid a stronger oxidant than sulphuric acid, and As(V) more oxidising than P(V).
+  ⚠ So "oxidising power of the highest state rises steadily down a group" is **wrong** for
+  groups 16–17.
+- **(iii) Period-2 caps:** with no valence d orbitals, N forms at most **four** covalent bonds
+  (`NF₅ ✘`, `NCl₅ ✘`, but `PCl₅ ✔`). N reaches +5 only in oxo-species (HNO₃, NO₃⁻, N₂O₅).
+  Likewise O never reaches +6 (its maximum is +2, in OF₂) and F never goes positive at all.
+  ⚠ "Maximum O.S. = group number" is *not* universal in the p-block.
 
 ## 19. Species bank: structures, O.S. and reactions that decide the question
 
-| Species / reaction | the fact that solves the problem |
-|---|---|
-| `H₂O₂` as **oxidant** (acid: `H₂O₂ + 2H⁺ + 2e⁻ → 2H₂O`, E° 1.78; base: `HO₂⁻ + H₂O + 2e⁻ → 3OH⁻`, E° 0.88) | turns `PbS → PbSO₄` (the old oil-paint restoration), `CN⁻ → CNO⁻`, `Fe²⁺ → Fe³⁺`, `NO₂⁻ → NO₃⁻`, `SO₃²⁻ → SO₄²⁻`, `Mn²⁺ → MnO₂` (in base) |
-| `H₂O₂` as **reductant** (`H₂O₂ → O₂ + 2H⁺ + 2e⁻`) | reduces `MnO₄⁻ → Mn²⁺`, `Cr₂O₇²⁻ → Cr³⁺`, `HOCl → HCl`, `O₃ → O₂`, `PbO₂ → PbO`, `Ag₂O → Ag` — in every case **O₂ is evolved**, so effervescence is the visible proof of its reducing action |
-| `BaO₂` | `BaO₂ + H₂SO₄ → BaSO₄↓ + H₂O₂` — the old industrial prep of H₂O₂; itself made by `2BaO + O₂ ⇌ 2BaO₂` (forward at ~823 K, reverse at ~673 K — a Le Chatelier temperature-cycling demo) |
-| `Na₂O₂` + water | `2Na₂O₂ + 2H₂O → 4NaOH + H₂O₂` (cold, dilute) then H₂O₂ decomposes → O₂ |
-| `KO₂` (superoxide, O = −½) | `4KO₂ + 2H₂O → 4KOH + 3O₂` and `4KO₂ + 2CO₂ → 2K₂CO₃ + 3O₂` — it **removes CO₂ and gives O₂ back**, which is exactly why it is used in gas masks and in submarine/spacecraft life support |
-| ozone vs I⁻ | `O₃ + 2I⁻ + H₂O → O₂ + I₂ + 2OH⁻` (iodometric assay of ozone); `O₃ + H₂O₂ → 2O₂ + H₂O` — the H₂O₂-reduces-ozone case |
-| `SO₂` bleaching | addition to the chromophore — **temporary** (O₂ in air restores colour); Cl₂ bleaching = **oxidation**, permanent. Also SO₂ decolourises (i) acid KMnO₄ (redox), (ii) K₂Cr₂O₇ (redox), (iii) acidified K₂Cr₂O₇ (green), and (iv) **Schiff's reagent (fuchsin–SO₂)** — where the colour returns on heating because that one is **addition**, not redox → aldehyde-specific addition (not redox!) |
-| `Cl₂` + cold dilute NaOH → bleach | `Cl₂ + 2NaOH → NaCl + NaOCl + H₂O`; on standing `3NaOCl → 2NaCl + NaClO₃`; with water + CO₂ it releases HOCl (the actual bleaching agent, so bleach works only in mildly acidic/neutral conditions) ⚠ never mix bleach with acid (Cl₂ gas) or with ammonia (chloramines/NCl₃) |
-| `NaBH₄` vs `LiAlH₄` | both are **hydride (H⁻) donors**, H is −1 → the substrate is reduced while H⁻ is *oxidised* (−1 → +1). NaBH₄ is milder (works in water/alcohol because B–H is less polar) |
-| `H₂ + C₂H₂ → C₂H₄` (Lindlar) | hydrogenation = reduction of C from −1 → −2 by *formal* O.N., though nothing looks like electron transfer — the O.N. language is what makes it countable |
-| `2HI → H₂ + I₂` and `HI + H₂SO₄` | conc. H₂SO₄ oxidises I⁻ all the way to I₂ + H₂S (+SO₂): HI cannot be prepared by the "NaI + H₂SO₄" method (unlike HCl, HBr partly) — reducing power I⁻ > Br⁻ > Cl⁻ in one question |
-| `Fe³⁺ + SCN⁻ → [Fe(SCN)]²⁺` | **not redox** — thiocyanate test is complexation, no O.S. change. Contrast with `Fe³⁺ + I⁻` (redox). ⚠ JEE's favourite "which of these is not a redox reaction" pair |
-| `CuSO₄ + KI` | gives CuI (white) + I₂ (brown) — Cu²⁺ is reduced, I⁻ oxidised; add thiosulphate to titrate the I₂ → **assay of Cu²⁺** |
-| `KMnO₄ + oxalic acid + H₂SO₄, warm` | autocatalysis by Mn²⁺ (§12) |
-| manganate → permanganate (green → purple) | `3MnO₄²⁻ + 4H⁺ → 2MnO₄⁻ + MnO₂ + 2H₂O` — Mn(+6) disproportionates as soon as the medium is acidified (Table 7.1 + d-block notes §14) |
-| `Mn³⁺ (aq)` | `2Mn³⁺ + 2H₂O → Mn²⁺ + MnO₂ + 4H⁺` (NCERT Q7.21) |
-| `ClO₂` | Cl +4, odd electron, explosive gas; excellent bleach/de-lignising agent; disproportionates in alkali to ClO₂⁻ + ClO₃⁻ (NCERT Q7.12) |
-| `Na₂S₂O₃ + Cl₂ (excess)` | `Na₂S₂O₃ + 4Cl₂ + 5H₂O → 2NaHSO₄ + 8HCl` — used to **destroy excess chlorine** in drinking water (NCERT Q7.23) |
-| `AgF₂` | Ag(II) is a very strong oxidant and fluorinating agent, wants to return to Ag(I) (NCERT Q7.10); it even oxidises sulfate to peroxodisulfate and halides to X₂ |
-| `SnCl₂` | the workhorse reductant: `HgCl₂ + SnCl₂ → Hg₂Cl₂(white) → 2Hg(grey) + SnCl₄` (⚠ that colour change **is** the confirmatory test for Hg²⁺ in salt analysis, and it is 3 separate redox steps) |
+| Species / reaction | Fact that solves the problem | Watch out |
+|---|---|---|
+| **H₂O₂ as oxidant** (acid: `H₂O₂ + 2H⁺ + 2e⁻ → 2H₂O`, 1.78 V; base: `HO₂⁻ + H₂O + 2e⁻ → 3OH⁻`, 0.88 V) | `PbS → PbSO₄` (restoring blackened oil paintings), `Fe²⁺ → Fe³⁺`, `I⁻ → I₂`, `NO₂⁻ → NO₃⁻`, `SO₃²⁻ → SO₄²⁻`, `Mn²⁺ → MnO₂` (in base) | n = 2 either way |
+| **H₂O₂ as reductant** (`H₂O₂ → O₂ + 2H⁺ + 2e⁻`) | reduces MnO₄⁻, Cr₂O₇²⁻, O₃, Cl₂, HOCl, PbO₂, Ag₂O | **O₂ always evolves**: effervescence is the proof |
+| **BaO₂** | `BaO₂ + H₂SO₄ → BaSO₄↓ + H₂O₂` (old lab preparation of H₂O₂) | `2BaO + O₂ ⇌ 2BaO₂`: forms near 773 K, gives O₂ back near 1073 K (Brin process) |
+| **Na₂O₂ + cold water** | `Na₂O₂ + 2H₂O → 2NaOH + H₂O₂` | warm water: H₂O₂ decomposes to O₂ |
+| **KO₂** (O = −½) | `4KO₂ + 2CO₂ → 2K₂CO₃ + 3O₂` | removes CO₂ **and** returns O₂: breathing apparatus, submarines |
+| **O₃ vs I⁻** | `O₃ + 2I⁻ + H₂O → O₂ + I₂ + 2OH⁻` | the iodometric estimation of ozone |
+| **SO₂ bleaching** | `SO₂ + 2H₂O → SO₄²⁻ + 4H⁺ + 2e⁻` releases [H], which **reduces** the dye | **temporary**: air re-oxidises the dye. Cl₂ bleaches by **oxidation** (permanent) |
+| **Cl₂ + cold dilute NaOH** | `Cl₂ + 2NaOH → NaCl + NaOCl + H₂O` | never mix bleach with acid (Cl₂ gas, §7e) or with ammonia (chloramines) |
+| **Antichlor** (NCERT Ex. 7.23) | `SO₂ + Cl₂ + 2H₂O → H₂SO₄ + 2HCl` | thiosulphate also works: `S₂O₃²⁻ + 4Cl₂ + 5H₂O → 2SO₄²⁻ + 8Cl⁻ + 10H⁺` |
+| **NaBH₄, LiAlH₄** | hydride donors: H⁻ (−1) is oxidised to +1 while the substrate is reduced | NaBH₄ is milder and survives water and alcohols |
+| **HI + conc. H₂SO₄** | `8HI + H₂SO₄ → 4I₂ + H₂S + 4H₂O` | HI (and HBr) cannot be made from NaX + conc. H₂SO₄; HCl can |
+| **Fe³⁺ + SCN⁻** | `[Fe(SCN)]²⁺` blood-red: **complexation, not redox** | JEE's favourite "not a redox reaction" option |
+| **CuSO₄ + KI** | white CuI + brown I₂ (NCERT eq. 7.59) | 1 Cu²⁺ ≡ 1 S₂O₃²⁻ |
+| **Manganate on acidifying** | green MnO₄²⁻ → purple MnO₄⁻ + brown MnO₂ | E° = +1.70 V (§17) |
+| **ClO₂** (Cl +4) | odd-electron, explosive yellow gas; bleaches wood pulp and treats water | disproportionates in alkali: ClO₂⁻ + ClO₃⁻ |
+| **SnCl₂ + HgCl₂** | `2HgCl₂ + SnCl₂ → Hg₂Cl₂↓ (white) + SnCl₄`, then `Hg₂Cl₂ + SnCl₂ → 2Hg (grey-black) + SnCl₄` | **two** redox steps: the white → grey test for Hg²⁺ (salt analysis) |
+| **Lindlar: C₂H₂ + H₂ → C₂H₄** | C goes −1 → −2: a reduction by O.N., though nothing looks like e⁻ transfer | O.N. is what makes organic redox countable |
 
 ## 20. Worked problem patterns
 
-**P1 · "Which O.S. does the oxidant reach?" (NCERT Q7.11 style)**
-> Excess Zn is added to `FeCl₃` solution. Final iron species?
-Excess **reductant** → the oxidant (Fe³⁺) is pushed to its **lowest** accessible state:
-`2Fe³⁺ + Zn → 2Fe²⁺ + Zn²⁺`, and with still more Zn / longer time `Fe²⁺ + Zn → Fe + Zn²⁺`
-(E° −0.44 > −0.76 ⇒ spontaneous). So: **Fe²⁺ first, then Fe(s).** Compare with limited Zn: only Fe²⁺.
-
-**P2 · Balancing + n-factor in one go**
-> `xMnO₄⁻ + yC₂O₄²⁻ + zH⁺ → xMn²⁺ + 2yCO₂ + (z/2)H₂O` — find x : y : z.
-e⁻: Mn gains 5, oxalate loses 2 ⇒ LCM 10 ⇒ **x = 2, y = 5**; charge: −2 + 0 + z = +4 ⇒
-`z = 16`; H₂O = 8. ⇒ `2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O` ✔ (classic NCERT
-answer; also note MnO₄⁻ : oxalate = 2 : 5 ⇒ "1 mol KMnO₄ oxidises 2.5 mol oxalate").
-
-**P3 · Titration arithmetic (the "hard water/COD" family)**
-> 0.316 g of an oxalic-acid-containing sample required 28.5 mL of 0.1 N KMnO₄ in acid medium.
-> % w/w of H₂C₂O₄·2H₂O?
-meq of KMnO₄ = 28.5 × 0.1 = 2.85 meq = meq of acid ⇒ mass = 2.85×10⁻³ × 63 (E of
-dihydrate = 126/2) = 0.1796 g ⇒ **56.8 %**. (Do it with moles to check: 2.85/5 = 0.57 meq of
-MnO₄⁻ … same answer — always cross-check n!)
-
-**P4 · O.N. counting across a process chain (NCERT Q7.25, Ostwald)**
+```mermaid
+flowchart TD
+    A["Balanced equation in front of you"] --> B["Assign O.S. to EVERY element<br>on both sides"]
+    B --> C{"Any O.S. changed?"}
+    C -->|"no"| N["NOT redox<br>neutralisation, precipitation,<br>complexation, most hydrolyses"]
+    C -->|"yes"| Y["Redox"]
+    Y --> D{"Same element both<br>up and down?"}
+    D -->|"yes"| E["Disproportionation<br>(or comproportionation if<br>two O.S. meet in one)"]
+    D -->|"no"| F["Ordinary redox:<br>check e⁻ lost = e⁻ gained"]
 ```
-   NH₃ (−3) ─cat.ox.→ NO (+2) ─auto-ox.→ NO₂ (+4) ─+H₂O/O₂→ HNO₃ (+5)
-   4NH₃ + 5O₂ → 4NO + 6H₂O   (each N loses 5 e⁻; O₂ gains 4 e⁻ each → LCM 20)
-   2NO + O₂ → 2NO₂            (N +2→+4; O₂ 0→−2)
-   4NO₂ + O₂ + 2H₂O → 4HNO₃   (N +4→+5)
-   ⇒ overall for 1 mol NH₃ → 1 mol HNO₃, 8 e⁻ transferred per N (−3 → +5)
-   ⚠ "How many moles of e⁻ per mole of NH₃ in the whole process?" = 8 (LCM book-keeping),
-     and each individual step's e⁻ count is the one the equation needs.
+*The "is it redox?" sieve (P6): the only reliable test is an O.S. change.*
+
+**P1 · "Which O.S. does the oxidant reach?" (NCERT Ex. 7.11 style)**
+
+> Excess Zn is added to FeCl₃ solution. What is the final iron species?
+
+Excess **reductant** pushes the oxidant (Fe³⁺) to its **lowest accessible** state:
+`2Fe³⁺ + Zn → 2Fe²⁺ + Zn²⁺` (0.77 − (−0.76) = +1.53 V), then with more Zn
+`Fe²⁺ + Zn → Fe + Zn²⁺` (−0.44 − (−0.76) = +0.32 V, still spontaneous). So **Fe²⁺ first,
+then Fe(s)**. With limited Zn, only Fe²⁺.
+
+**P2 · Balancing and mole ratio in one go**
+
+> `xMnO₄⁻ + yC₂O₄²⁻ + zH⁺ → xMn²⁺ + 2yCO₂ + (z/2)H₂O`. Find x : y : z.
+
+Electrons: Mn gains 5, each oxalate loses 2 ⇒ LCM 10 ⇒ **x = 2, y = 5**. Charge:
+−2 − 10 + z = +4 ⇒ **z = 16**, and H₂O = 8.
+`2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O`. So 1 mol KMnO₄ oxidises 2.5 mol oxalate.
+
+**P3 · Titration arithmetic**
+
+> 0.316 g of a sample containing oxalic acid needs 28.5 mL of 0.1 N KMnO₄ (acid medium).
+> Find the % w/w of H₂C₂O₄·2H₂O.
+
+```
+meq KMnO₄ = 28.5 × 0.1 = 2.85 meq = meq of oxalic acid
+mass      = 2.85 × 10⁻³ × 63 (E = 126/2) = 0.1796 g   ⇒  0.1796 / 0.316 = 56.8 %
+mole check: 0.1 N KMnO₄ (n = 5) is 0.02 M, so 28.5 mL holds 0.57 mmol MnO₄⁻;
+            × 5/2 = 1.425 mmol oxalic acid × 126 = 0.1796 g   ✔ same answer
 ```
 
-**P5 · Latimer/disproportionation numeric (Advanced 2015-ish style)**
-> Given `E°(Cu²⁺/Cu⁺) = +0.153 V`, `E°(Cu⁺/Cu) = +0.521 V`, find the equilibrium constant for
-> `2Cu⁺ ⇌ Cu²⁺ + Cu` at 298 K.
-`E°cell = 0.521 − 0.153 = +0.368 V`, n = 1 ⇒
-`log K = nE°/0.0591 = 0.368/0.0591 = 6.23` ⇒ **K ≈ 1.7 × 10⁶** ⇒ Cu⁺(aq) is a hopeless
-proposition — this is *the* thermodynamic reason behind "CuCl is a white solid, unstable in
-water, and Cu⁺ chemistry needs insoluble or complexed forms".
+**P4 · Limiting reagent in a redox step (NCERT Ex. 7.25, Ostwald process)**
 
-**P6 · "Is it redox?" sieve (put this on your exam scratch paper)**
+> Maximum mass of NO from 10.00 g NH₃ and 20.00 g O₂?
+
 ```
-   assign O.S. to EVERY element → write them in a row above/below → any change?
-   no change  → NOT redox  (neutralisation, precipitation, most hydrations,
-                             esterification, hydrolysis of esters, CaC₂ + H₂O,
-                             SO₃ + H₂O, N₂O₅ + H₂O, P₄O₁₀ + H₂O, ether + HI)
-   change     → redox; then check e⁻ lost total = e⁻ gained total (that also
-                             settles the "which coefficient is wrong" questions)
+4NH₃ + 5O₂ → 4NO + 6H₂O        (each N loses 5 e⁻; each O₂ gains 4 e⁻ → LCM 20)
+NH₃ = 10.00/17 = 0.588 mol  needs  0.588 × 5/4 = 0.735 mol O₂
+O₂  = 20.00/32 = 0.625 mol  < 0.735   ⇒ O₂ is limiting
+NO  = 0.625 × 4/5 = 0.500 mol = 0.500 × 30 = 15.0 g
+Whole Ostwald chain: NH₃ (−3) → NO (+2) → NO₂ (+4) → HNO₃ (+5): 8 e⁻ per N overall
 ```
-⚠ Non-redox-but-looks-like-it list that appears repeatedly:
-`Cl₂ + H₂O → HCl + HOCl` **IS redox** (disproportionation);
-`NO₂ + H₂O → HNO₃ + HNO₂` **IS** redox (N +4 → +5 and +3), and so is the same reaction
-written for the dimer, `N₂O₄ + H₂O`.
-`CO₂ + NaOH`, `SO₃ + H₂O`, `BF₃ + F⁻`, `NH₄Cl + NaOH`, `CaCO₃ + HCl` are **NOT**.
+
+**P5 · Latimer to K (Advanced style)**
+
+> Given E°(Cu²⁺/Cu⁺) = +0.153 V and E°(Cu⁺/Cu) = +0.521 V, find K for `2Cu⁺ ⇌ Cu²⁺ + Cu` at
+> 298 K.
+
+E°cell = 0.521 − 0.153 = +0.368 V, n = 1 ⇒ log K = 0.368/0.0591 = 6.23 ⇒ **K ≈ 1.7 × 10⁶**.
+Aqueous Cu⁺ is therefore hopeless, and Cu(I) chemistry lives in insoluble solids (CuCl, CuI,
+Cu₂O) or complexes.
+
+**P6 · "Is it redox?" (the sieve above)**
+
+⚠ **Looks non-redox but IS redox:** `Cl₂ + H₂O → HCl + HOCl` (disproportionation);
+`2NO₂ + H₂O → HNO₃ + HNO₂` (N +4 → +5 and +3), and the same for N₂O₄; `2HI → H₂ + I₂`.
+
+⚠ **Looks redox but is NOT:** `CaO + SO₃ → CaSO₄`, `CO₂ + NaOH`, `BF₃ + F⁻`, `NH₄Cl + NaOH`,
+`CaCO₃ + HCl`, `CaC₂ + H₂O`, `NCl₃ + H₂O` (§4), `2CrO₄²⁻ + 2H⁺ → Cr₂O₇²⁻ + H₂O` (Cr stays +6),
+and `Fe³⁺ + SCN⁻`.
 
 ## 21. NCERT exercise gems worth re-doing
 
-| NCERT Q | one-line essence of the answer |
+| NCERT Ex. | Essence of the answer |
 |---|---|
-| 7.4 F₂ reacts with ice: `F₂ + H₂O → HF + HOF` | F₂ is so strong an oxidant that it oxidises the **oxygen of water**. In HOF the atoms are H +1, F −1, **O +2** — oxygen is the reductant for once; with excess F₂ the reaction runs to `2F₂ + 2H₂O → 4HF + O₂` |
-| 7.5 O.S. of S in H₂SO₅, Cr in Cr₂O₇²⁻, N in Ca₃N₂, P in H₃PO₃, I in NaIO₄ | **+6**, **+6**, **−3**, **+3**, **+7** — H₂SO₅ needs the peroxide rule, Ca₃N₂ needs the more-electropositive-first rule |
-| 7.8 why SO₂ and H₂O₂ are both but H₂S only reducing, H₂SO₄ only oxidising | §8 master rule |
-| 7.9 comparing H₃PO₂ with H₃PO₃ (basicity *and* O.S.) | P is **+1** in H₃PO₂ (monobasic) and **+3** in H₃PO₃ (dibasic): the H bonded directly to P is never ionisable, so basicity and O.S. come from the same structure |
-| 7.10 AgF₂ strong oxidant | Ag²⁺→Ag⁺ strongly favoured |
-| 7.11 excess reductant → lower O.S. of the metal; excess oxidant → higher O.S. of the non-metal | e.g. P + limited Cl₂ → PCl₃; excess Cl₂ → PCl₅ |
-| 7.12 the three "explain these observations" items (ClO₂ a good bleach; HNO₃ with Fe gives no H₂; etc.) | every answer is one of three moves: (a) intermediate O.S. → both roles, (b) the oxidant in the acid would be attacked too (HNO₃ with KMnO₄; HCl with KMnO₄), (c) disproportionation/comproportionation of Cl oxyanions — see §12 and §19 |
-| 7.15 F₂ the best oxidant, I⁻ the best reductant among halogens | from E°(X₂/X⁻): 2.87 > 1.36 > 1.09 > 0.54 (oxidising power of X₂) while reducing power of X⁻ runs the other way |
-| 7.16 why does the reaction occur even though it "looks" backwards | assign both couples, compute `E°cell = E°(cathode) − E°(anode)`; if positive it occurs — O.S. book-keeping alone cannot say |
-| 7.17 the two observations about H₃PO₂/H₃PO₃-type and chlorine oxyacids | both answered by "which O.S. is at the minimum of the Frost curve" (§17) |
-| 7.19 balance in **basic** medium (ion–electron) | §10 recipe |
-| 7.20 what a single balanced equation tells you | mole ratios, the e⁻ count, which species is oxidised/reduced — and if **no** O.S. changed, that it is not redox at all |
-| 7.21 Mn³⁺ disproportionation | §19 |
-| 7.22 which element shows **only** a negative O.S.? | **Fluorine**, always −1 (nothing is more electronegative). Contrast H (+1, −1, 0) and metals like Mn/Cr that reach +7 in oxo-anions |
-| 7.23 excess Cl₂ removed with thiosulphite | §19 equation |
-| 7.24 from the periodic table: most electropositive metal, largest ion etc. | combine Table 7.1 order with the IE/hydration argument of §15 |
-| 7.26 predict reaction occurs (Mg+Fe²⁺ etc.) | §16 (1) |
-| 7.27 predict products of electrolysis | the discharge-order logic; full treatment in [Electrochemistry §13](../08-Electrochemistry/notes.md) — NCERT deliberately overlaps the two chapters |
-| 7.28–7.30 displacement order, strongest reductant, cell depiction | §16 (2)–(4) |
+| 7.1 O.N. of the underlined atoms | NaH₂PO₄ P **+5** · NaHSO₄ S **+6** · H₄P₂O₇ P **+5** · K₂MnO₄ Mn **+6** · CaO₂ O **−1** · NaBH₄ B **+3** · H₂S₂O₇ S **+6** · KAl(SO₄)₂·12H₂O S **+6** |
+| 7.2 KI₃, H₂S₄O₆, Fe₃O₄, ethanol, acetic acid | averages −⅓, +2.5, +8⁄3, −2, 0 **hide inequivalent atoms**: I (0, 0, −1); S (+5, 0, 0, +5); Fe (+2, +3, +3); C (−3, −1); C (−3, +3) (§5) |
+| 7.3 Justify that these are redox | show an O.N. change in each. ⚠ (c) `4BCl₃ + 3LiAlH₄ → 2B₂H₆ + …`: the NCERT key takes B **+3 → −3** (H in B₂H₆ treated as +1). By Pauling EN (H 2.20 > B 2.04) B stays +3, so this is a convention question (§13) |
+| 7.4 `H₂O + F₂ → HF + HOF` | in HOF: H +1, F −1, so **O = 0**. O is oxidised (−2 → 0), F reduced (0 → −1) |
+| 7.5 S in H₂SO₅, Cr in Cr₂O₇²⁻, N in NO₃⁻ | **+6, +6, +5**. "The fallacy": blind rules give +8 for S, because H₂SO₅ has a peroxide O–O (§5) |
+| 7.6 formulas | HgCl₂, NiSO₄, SnO₂, Tl₂SO₄, Fe₂(SO₄)₃, Cr₂O₃ |
+| 7.7 C from −4 to +4, N from −3 to +5 | C: CH₄ −4, C₂H₆ −3, CH₃OH −2, C₂H₂ −1, HCHO 0, CO +2, H₂C₂O₄ +3, CO₂ +4 · N: NH₃ −3, N₂H₄ −2, NH₂OH −1, N₂ 0, N₂O +1, NO +2, N₂O₃ +3, NO₂ +4, N₂O₅ +5 |
+| 7.8 SO₂, H₂O₂ both roles; O₃, HNO₃ only oxidants | intermediate vs extreme O.S. (§8) |
+| 7.9 why write `6CO₂ + 12H₂O → C₆H₁₂O₆ + 6H₂O + 6O₂` | all the O₂ comes from **water**, not CO₂; in `O₃ + H₂O₂` one O₂ comes from each. Technique: **¹⁸O isotope tracer** |
+| 7.10 AgF₂ strong oxidant | Ag²⁺ (d⁹) is unstable and grabs an electron to become Ag⁺ (stable d¹⁰) |
+| 7.11 excess reagent decides the product | three illustrations: HgCl₂ + SnCl₂, P + Cl₂, C + O₂ (§8) |
+| 7.12(a) toluene → benzoic acid | alcoholic KMnO₄ because toluene dissolves in alcohol: `C₆H₅CH₃ + 2MnO₄⁻ → C₆H₅COO⁻ + 2MnO₂ + OH⁻ + H₂O` (C −3 → +3, 6 e⁻ = 2 × 3) |
+| 7.12(b) conc. H₂SO₄ + Cl⁻ vs Br⁻ | Cl⁻ gives only HCl (too weak a reductant); Br⁻ is oxidised to Br₂ (§8) |
+| 7.13 identify oxidant and reductant | (a) AgBr / hydroquinone (photographic developer) · (b) [Ag(NH₃)₂]⁺ / HCHO (Tollens') · (c) Cu²⁺ / HCHO (Fehling's) · (d) H₂O₂ / N₂H₄ · (e) PbO₂ / Pb (lead–acid cell, a comproportionation) |
+| 7.14 thiosulphate with I₂ vs Br₂ | the stronger oxidant Br₂ takes S to +6 (SO₄²⁻); I₂ stops at S₄O₆²⁻ (§11) |
+| 7.15 F₂ best oxidant, HI best reductant | E°(X₂/X⁻): 2.87 > 1.36 > 1.09 > 0.54, so reducing power runs I⁻ > Br⁻ > Cl⁻ > F⁻ |
+| 7.16 `XeO₆⁴⁻ + 2F⁻ + 6H⁺ → XeO₃ + F₂ + 3H₂O` | it happens, so perxenate (Xe +8) is a **stronger oxidant than F₂** |
+| 7.17 H₃PO₂ reduces Ag⁺ and Cu²⁺; benzaldehyde reduces only Ag⁺ | **Ag⁺ is a stronger oxidant than Cu²⁺** (0.80 vs 0.34 V) |
+| 7.18 balance by ion–electron | (a) Problem 7.10 (§10) · (b) `2MnO₄⁻ + 5SO₂ + 2H₂O + H⁺ → 2Mn²⁺ + 5HSO₄⁻` · (c) `H₂O₂ + 2Fe²⁺ + 2H⁺ → 2Fe³⁺ + 2H₂O` · (d) `Cr₂O₇²⁻ + 3SO₂ + 2H⁺ → 2Cr³⁺ + 3SO₄²⁻ + H₂O` |
+| 7.19 balance in basic medium | (a) `P₄ + 3OH⁻ + 3H₂O → PH₃ + 3H₂PO₂⁻` · (b) `3N₂H₄ + 4ClO₃⁻ → 6NO + 4Cl⁻ + 6H₂O` · (c) `Cl₂O₇ + 4H₂O₂ + 2OH⁻ → 2ClO₂⁻ + 4O₂ + 5H₂O` |
+| 7.20 `(CN)₂ + 2OH⁻ → CN⁻ + CNO⁻ + H₂O` | cyanogen is a **pseudohalogen** and disproportionates like Cl₂ (C +3 → +2 and +4) |
+| 7.21 Mn³⁺ disproportionation | `2Mn³⁺ + 2H₂O → Mn²⁺ + MnO₂ + 4H⁺` (§17) |
+| 7.22 Cs, Ne, I, F | only negative: **F** · only positive: **Cs** · both: **I** · neither: **Ne** |
+| 7.23 removing excess Cl₂ | `SO₂ + Cl₂ + 2H₂O → H₂SO₄ + 2HCl` (§19) |
+| 7.24 who can disproportionate | non-metals: **P, S, Cl** · metals: **Cu, Mn, In** (Cu⁺, Mn³⁺/MnO₄²⁻, In⁺) |
+| 7.25 Ostwald limiting reagent | **15.0 g NO** (§20 P4) |
+| 7.26 feasibility with Table 7.1 | ✔ ✔ ✔ ✘ ✔ (§16) |
+| 7.27 electrolysis products | (i) AgNO₃, Ag electrodes: Ag deposits, Ag anode dissolves · (ii) AgNO₃, Pt: Ag and O₂ · (iii) dil. H₂SO₄, Pt: H₂ and O₂ · (iv) CuCl₂, Pt: Cu and Cl₂. Full logic in [Electrochemistry](../08-Electrochemistry/notes.md) |
+| 7.28 displacement order | **Mg > Al > Zn > Fe > Cu** |
+| 7.29 increasing reducing power | **Ag < Hg < Cr < Mg < K** |
+| 7.30 Zn/Ag⁺ cell | Zn is negative; electrons carry current in the wire, ions in solution; E° = 1.56 V (§16) |
 
 ## 22. Quick Revision Sheet
 
-- **Three definitions:** classical (O/H) → electronic (e⁻) → oxidation number. Only the
-  third is universal; only **electron count** can be wrong-checked (e⁻ lost = e⁻ gained).
-- **Oxidant is reduced; reductant is oxidised.** OIL RIG / AnOx RedCat.
-- Rules that override: F always −1; **peroxide O = −1**, superoxide −½; H = −1 in hydrides;
-  sum = charge; X–X bonds contribute 0.
-- Fractional/average O.N. allowed: `Fe₃O₄` +8⁄3, `S₄O₆²⁻` +2.5, `HN₃` −⅓, `KO₂` −½.
-  Peroxide traps: `H₂SO₅`/`H₂S₂O₈` → S = **+6**; `CrO₅` → Cr = **+6**.
-- Element at max O.S. → only oxidant; min → only reductant; middle → both (SO₂, H₂O₂, Fe²⁺).
-  Excess **reductant** → oxidant reaches its **lowest** state; excess **oxidant** → reductant
-  reaches its **highest** state.
-- Types: intermolecular · intramolecular · displacement · **disproportionation** ·
-  **comproportionation**. `P₄ + NaOH`, `Cl₂ + OH⁻` (cold → OCl⁻, hot → ClO₃⁻),
-  `MnO₄²⁻`, `Mn³⁺`, `Cu⁺`, `NO₂ + H₂O` are the six to know cold.
-- Balancing: oxidation-number method for intermolecular; **ion–electron always** for
-  disproportionation and for basic medium. Finish with atom check **and** charge check;
-  no H⁺ in base, no OH⁻ in acid.
-- **n-factor:** MnO₄⁻ 5 (acid) / 3 (neutral) / 1 (alkaline); Cr₂O₇²⁻ 6; C₂O₄²⁻ 2;
-  FeC₂O₄ 3; Mohr's salt 1; S₂O₃²⁻ 1 (I₂) or 8 (Cl₂); H₂O₂ 2 both ways.
-- **KMnO₄:** self-indicator, dil. H₂SO₄ only, heat oxalate to 60–70 °C, autocatalysed by
-  Mn²⁺, **not** a primary standard (standardise on Na₂C₂O₄). **K₂Cr₂O₇:** primary standard,
-  diphenylamine indicator, works in HCl, E = M/6.
-- **Iodometry:** oxidant + KI → I₂, titrate with S₂O₃²⁻/starch; 2Cu²⁺ ≡ I₂ ≡ 2S₂O₃²⁻.
-- **Daniell cell:** redox couple `Ox/Red`; salt bridge = complete circuit + neutrality +
-  prevent mixing (KCl/NH₄NO₃ in agar; never with Ag⁺/Pb²⁺); e⁻ Zn→Cu, current Cu→Zn.
-- **E°** = reduction potential at 1 M, 1 bar, 298 K vs SHE (0.00 V); **intensive** — never
-  multiply. Higher E° → stronger oxidant (F₂ +2.87 → best). Lower → stronger reductant
-  (Li −3.05 → best in water; hydration enthalpy is why).
-- `E°cell > 0 ⇔ ΔG° < 0 ⇔ K > 1`; `E°(Ox/Red)` also predicts displacement order, acid →
-  H₂ evolution, storage of solutions, and extraction methods.
-- **O.N. limits:** book-keeping only, average values, fails on peroxides and
-  inequivalent atoms, cannot rank oxidants and says nothing about rate.
-- **Advanced tools:** Latimer test "disproportionates if E°right > E°left"; combine steps
-  with **ΔG°** ⇒ `E° = (n₁E₁ + n₂E₂)/(n₁+n₂)`; Frost diagram — above the line ⇒ unstable.
+- **Three tiers:** classical (O/H) → electronic (e⁻) → oxidation number. Only O.N. is
+  universal; always check **e⁻ lost = e⁻ gained**.
+- **Oxidant is reduced; reductant is oxidised.** OIL RIG; AN OX, RED CAT.
+- Priority rules: F always −1; peroxide O −1, superoxide −½; H −1 in metal hydrides; sum =
+  charge; X–X bonds count 0.
+- Averages allowed: Fe₃O₄ +8⁄3, S₄O₆²⁻ +2.5, HN₃ −⅓, KI₃ −⅓. But **H₂SO₅, H₂S₂O₈ → S +6;
+  CrO₅ → Cr +6**.
+- Mixed atoms: Na₂S₂O₃ (−2, +6), NH₄NO₃ (−3, +5), CaOCl₂ (+1, −1). Brown ring: Fe +1, NO⁺.
+- At maximum O.S. → only oxidant; minimum → only reductant; in between → both (SO₂, H₂O₂,
+  HNO₂, Fe²⁺).
+- Excess reductant → oxidant's **lowest** state; excess oxidant → reductant's **highest**.
+  E° can cap it (Fe + I₂ → FeI₂ only).
+- NCERT's four types: combination, decomposition, displacement (metal / non-metal),
+  **disproportionation**. Extra lenses: intra- vs intermolecular, comproportionation.
+- Must-know disproportionations: P₄ + OH⁻, S₈ + OH⁻, Cl₂ + OH⁻ (cold → ClO⁻, hot → ClO₃⁻),
+  MnO₄²⁻, Mn³⁺, Cu⁺, NO₂. F₂ and ClO₄⁻ cannot.
+- **Balancing:** O.N. method for molecular equations; ion–electron for ions, base and
+  disproportionation. Finish with atoms **and** charge; no H⁺ in base.
+- Medium changes stoichiometry: MnO₄⁻ : I⁻ = 1 : 5 (acid), 1 : 3 (base → I₂), 2 : 1 (→ IO₃⁻).
+- **n-factor:** MnO₄⁻ 5 / 3 / 1 (acid / neutral / strongly alkaline); Cr₂O₇²⁻ 6; C₂O₄²⁻ 2;
+  FeC₂O₄ 3; Mohr's salt 1; S₂O₃²⁻ 1 (I₂) or 8 (Cl₂, Br₂); H₂O₂ 2; KClO₃ → KCl 6.
+- **KMnO₄:** self-indicator; dil. H₂SO₄ only; warm oxalate 60–70 °C (Mn²⁺ autocatalysis;
+  overheating gives a low titre); not a primary standard.
+- **K₂Cr₂O₇:** primary standard; diphenylamine (green → violet-blue); usable in HCl
+  (1.33 < 1.36 V).
+- **Iodine:** iodometry (oxidant + KI, titrate I₂ with S₂O₃²⁻, blue disappears) vs iodimetry
+  (titrate with I₂, blue appears). 1 Cu²⁺ ≡ 1 S₂O₃²⁻.
+- **Daniell cell:** Ox/Red couples; anode = oxidation (− in galvanic cells); salt bridge
+  completes the circuit, keeps neutrality, prevents mixing. KNO₃ with Ag⁺.
+- **E°:** reduction, 1 M, 1 bar, 298 K vs SHE = 0. Intensive: never multiply it. Higher →
+  stronger oxidant (F₂ +2.87); lower → stronger reductant (Li −3.05, thanks to hydration).
+- **E°cell = E°(reduced species) − E°(oxidised species) > 0** ⇔ ΔG° < 0 ⇔ K > 1. Fe³⁺
+  oxidises I⁻ but not Br⁻.
+- **HNO₃** gives NO or NO₂, not H₂, except very dilute acid with Mg or Mn. Very dilute acid
+  with Zn → NH₄NO₃.
+- **O.N. limits:** book-keeping only; averages; fails on O–O bonds; hides inequivalent atoms;
+  cannot rank oxidants; silent on rate.
+- **Latimer:** disproportionates if E°right > E°left. Cl₂ is stable in acid and
+  disproportionates in base. Combine links with n-weighted E° (ΔG°), never a plain sum.
+- **p-block:** inert pair → Tl³⁺, Pb⁴⁺, Bi⁵⁺ oxidise. Per-halate power Br > I > Cl
+  (middle-row anomaly).
 
 ---
 
-*Cross-links:* [Equilibrium (Unit 6)](../04-Equilibrium/notes.md) — for the electrode
-potential ⇄ ΔG ⇄ K connection; [Electrochemistry (Class XII Unit 2)](../08-Electrochemistry/notes.md)
-— where the qualitative E° logic of §15–16 becomes quantitative (Nernst, Faraday);
-[d- and f-block (Class XII Unit 4)](../../Inorganic-Chemistry/07-The-d-and-f-Block-Elements/notes.md)
-— the KMnO₄/K₂Cr₂O₇ preparations behind §12.
+*Cross-links:* [Equilibrium (Unit 6)](../04-Equilibrium/notes.md), for ΔG° = −RT ln K, the
+thermodynamic side of E° · [Electrochemistry (Class XII Unit 2)](../08-Electrochemistry/notes.md),
+where §14–§17 become quantitative (Nernst, Faraday, electrolysis) ·
+[The d- and f-Block Elements](../../Inorganic-Chemistry/07-The-d-and-f-Block-Elements/notes.md),
+for the preparation and chemistry of KMnO₄ and K₂Cr₂O₇ behind §12 ·
+[Salt Analysis](../../Practical-Chemistry/Salt-Analysis/notes.md), for the redox confirmatory
+tests (Hg²⁺ with SnCl₂, the brown ring).

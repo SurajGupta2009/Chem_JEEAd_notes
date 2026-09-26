@@ -59,7 +59,7 @@ Physical-Chemistry/           # 12 chapters   Inorganic-Chemistry/  # 9    Organ
 | Chapter folder | Allen module in the folder | Notes |
 |---|---|---|
 | [`Physical-Chemistry/04-Equilibrium`](Physical-Chemistry/04-Equilibrium/notes.md) | _none uploaded yet_ | ✅ written (NCERT + 🆇 extras; covers chemical **and** ionic equilibrium) |
-| [`Physical-Chemistry/05-Redox-Reactions`](Physical-Chemistry/05-Redox-Reactions/notes.md) | _none uploaded yet_ | ✅ written (NCERT + 🆇 extras) |
+| [`Physical-Chemistry/05-Redox-Reactions`](Physical-Chemistry/05-Redox-Reactions/notes.md) | _none uploaded yet_ | ✅ written (NCERT + 🆇 extras) · **rulebook v1.0 format**: tables, 7 Mermaid charts, structure SVG, [map](Physical-Chemistry/05-Redox-Reactions/figures/redox-map.md), [cards](Physical-Chemistry/05-Redox-Reactions/cards.md) |
 | [`Physical-Chemistry/08-Electrochemistry`](Physical-Chemistry/08-Electrochemistry/notes.md) | _none uploaded yet_ | ✅ written (NCERT + 🆇 extras) |
 | [`Inorganic-Chemistry/07-The-d-and-f-Block-Elements`](Inorganic-Chemistry/07-The-d-and-f-Block-Elements/notes.md) | `d-Block_Theory_26.pdf` | ✅ written |
 | [`Inorganic-Chemistry/08-Coordination-Compounds`](Inorganic-Chemistry/08-Coordination-Compounds/notes.md) | `3-JAEIC-Coordination Compound_Eng.pdf.pdf` | ✅ written |
@@ -69,6 +69,23 @@ Physical-Chemistry/           # 12 chapters   Inorganic-Chemistry/  # 9    Organ
 Where no Allen module exists yet, `notes.md` is built from the NCERT chapter alone and every
 beyond-NCERT point is marked 🆇 instead of 🅰. New Allen modules should be dropped into the
 matching chapter folder as they are uploaded.
+
+## Reading and writing these notes in Obsidian
+
+The repo is plain markdown + PDF, so it opens directly as an Obsidian vault — and Obsidian's core
+already renders everything the convention uses (GFM tables, Mermaid, MathJax **including mhchem
+`\ce{}`**, callouts). [`docs/OBSIDIAN-SETUP.md`](docs/OBSIDIAN-SETUP.md) is a catalogued plugin
+list for the Arena-AI-writes-markdown → `obsidian-git`-pulls → you-revise loop: chemistry
+structure editors (ChemEdit, Chem/SMILES, Ketcher), PDF annotation for the NCERT and Allen files
+(PDF++, Marker PDF→MD), spaced-repetition flashcards, and a Dataview "what's left to write"
+dashboard. It also records the one portability rule: `\ce{}` and `[[wikilinks]]` are
+Obsidian-only, so committed notes keep Unicode subscripts and markdown links.
+
+- [`docs/NOTE-FORMATTING-RULEBOOK.md`](docs/NOTE-FORMATTING-RULEBOOK.md) — **the formatting
+  spec every `notes.md` follows**: skeleton, notation, markers, and when to use a table, Mermaid
+  flowchart, mindmap or chemical structure (plus which plugin authors each).
+- [`docs/OBSIDIAN-VAULT-PLAN.md`](docs/OBSIDIAN-VAULT-PLAN.md) — the phased plan for turning this
+  repo into an Obsidian vault without moving a single file.
 
 ## NCERT editions — why there are two
 
