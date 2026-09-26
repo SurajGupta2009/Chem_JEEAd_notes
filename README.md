@@ -59,7 +59,7 @@ Physical-Chemistry/           # 12 chapters   Inorganic-Chemistry/  # 9    Organ
 | Chapter folder | Allen module in the folder | Notes |
 |---|---|---|
 | [`Physical-Chemistry/04-Equilibrium`](Physical-Chemistry/04-Equilibrium/notes.md) | _none uploaded yet_ | ✅ written (NCERT + 🆇 extras; covers chemical **and** ionic equilibrium) |
-| [`Physical-Chemistry/05-Redox-Reactions`](Physical-Chemistry/05-Redox-Reactions/notes.md) | _none uploaded yet_ | ✅ written (NCERT + 🆇 extras) · **rulebook v1.0 format**: tables, 7 Mermaid charts, structure SVG, [map](Physical-Chemistry/05-Redox-Reactions/figures/redox-map.md), [cards](Physical-Chemistry/05-Redox-Reactions/cards.md) |
+| [`Physical-Chemistry/05-Redox-Reactions`](Physical-Chemistry/05-Redox-Reactions/notes.md) | _none uploaded yet_ | ✅ written (NCERT + 🆇 extras) · **rulebook v1.1 format**: tables, 7 Mermaid charts, 32 [Chem/ChemEdit structures](Physical-Chemistry/05-Redox-Reactions/figures/structures.md) with computed O.S., [map](Physical-Chemistry/05-Redox-Reactions/figures/redox-map.md), [cards](Physical-Chemistry/05-Redox-Reactions/cards.md) |
 | [`Physical-Chemistry/08-Electrochemistry`](Physical-Chemistry/08-Electrochemistry/notes.md) | _none uploaded yet_ | ✅ written (NCERT + 🆇 extras) |
 | [`Inorganic-Chemistry/07-The-d-and-f-Block-Elements`](Inorganic-Chemistry/07-The-d-and-f-Block-Elements/notes.md) | `d-Block_Theory_26.pdf` | ✅ written |
 | [`Inorganic-Chemistry/08-Coordination-Compounds`](Inorganic-Chemistry/08-Coordination-Compounds/notes.md) | `3-JAEIC-Coordination Compound_Eng.pdf.pdf` | ✅ written |
@@ -86,6 +86,8 @@ Obsidian-only, so committed notes keep Unicode subscripts and markdown links.
   flowchart, mindmap or chemical structure (plus which plugin authors each).
 - [`docs/OBSIDIAN-VAULT-PLAN.md`](docs/OBSIDIAN-VAULT-PLAN.md) — the phased plan for turning this
   repo into an Obsidian vault without moving a single file.
+- [`docs/COMPOUND-LIBRARY.md`](docs/COMPOUND-LIBRARY.md) — every structure drawn in the notes
+  (generated); point ChemEdit's compound-library setting at it.
 
 ## NCERT editions — why there are two
 
@@ -106,6 +108,17 @@ The two exams are not aligned on NCERT:
 > **Careful with the NCERT codes.** Because the rationalised books are shorter, NCERT reused
 > codes — `kech105` was *States of Matter* and is now *Thermodynamics*, `lech101` was
 > *The Solid State* and is now *Solutions*. Legacy PDFs are therefore named `<code>-legacy.pdf`.
+
+## Redrawing chemical structures
+
+Structure drawings live in each chapter's `figures/structures.md` (one SMILES table) and are
+generated into `figures/mol/*.svg` with oxidation states computed and checked
+([rulebook R18](docs/NOTE-FORMATTING-RULEBOOK.md#r18--the-chemical-structure-ladder)):
+
+```bash
+pip install rdkit                     # dev-only; readers of the notes never need it
+python3 scripts/render_structures.py --all --library docs/COMPOUND-LIBRARY.md
+```
 
 ## Refreshing the NCERT PDFs
 

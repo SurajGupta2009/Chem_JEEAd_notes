@@ -1,4 +1,4 @@
-# Notes Formatting Rulebook — v1.0
+# Notes Formatting Rulebook — v1.1
 
 **Authority.** This file is the single specification for every `notes.md` in this repo. Where it
 and habit disagree, this wins. The six finished notes
@@ -41,7 +41,7 @@ implementation** — every rule below was extracted from what they already do.
 Physical-Chemistry/04-Equilibrium/
 ├── notes.md          ← you + Arena AI write this      (rule book applies)
 ├── cards.md          ← optional study layer            (§Part 7, Obsidian-only syntax allowed)
-├── figures/          ← optional: Excalidraw sources + exported SVG
+├── figures/          ← optional: structures.md + mol/*.svg (R18), map, Excalidraw SVG
 ├── kech106.pdf       ← NCERT chapter                   (fetched by the script)
 ├── <module>.pdf      ← Allen module, if uploaded       (dropped in by hand)
 └── README.md         ← ⚠ GENERATED. Never hand-edit.
@@ -321,18 +321,52 @@ Choose the lowest rung that communicates the point. Climbing rungs costs portabi
 | 7 | Excalidraw hand-drawn | ✅ SVG export | ✅ | ⚠ noisy | Mechanisms with curved arrows |
 
 > **⚠ Rung discipline.** The existing notes live on rungs 1 and 3 and that is *why* they read
-> perfectly on GitHub. Organic chemistry is the first branch that genuinely needs rungs 4–5;
-> introduce them there, with the rung-3 ASCII fallback kept alongside.
+> perfectly on GitHub. Rungs 4–5 are for structures whose *bonds* are the point (peroxide O–O,
+> P–H, S–S, per-carbon O.S.). Redox §5 was the first user; organic chemistry will need them
+> everywhere.
 
-**The SMILES → SVG pipeline (rungs 4 + 5 together).** Keep structures in
-`figures/structures.md` as a table `| Label | SMILES | Note |`, then run
-`python scripts/render_structures.py <chapter>/figures/structures.md`. The script (RDKit,
-CoordGen layout) writes `figures/structures.svg` with Unicode captions as real SVG `<text>`,
-and refreshes the ` ```smiles ` block between `<!-- smiles:begin -->` / `<!-- smiles:end -->`
-for the Chem plugin. Embed the SVG in `notes.md` with an alt text that states the O.S./point.
-RDKit is a **dev-only** dependency (`pip install rdkit` in a local venv); readers never need
-it. Never use RDKit's built-in legends: its font drops subscripts and `−`. First used in
-[Redox §5](../Physical-Chemistry/05-Redox-Reactions/notes.md).
+**The structure pipeline (rungs 4 + 5 together).** One table per chapter,
+`figures/structures.md`, is the single source for every drawn structure:
+
+```
+| Label | SMILES | ID | O.S. | Check | Note |
+|---|---|---|---|---|---|
+| H₂SO₅ Caro's acid | OOS(=O)(=O)O | h2so5 | auto | S=+6 O=-2,-1 | one O–O |
+```
+
+Run `python scripts/render_structures.py <chapter>/figures/structures.md` (or `--all
+--library docs/COMPOUND-LIBRARY.md`). The script (RDKit, CoordGen layout):
+
+1. writes **`figures/mol/<ID>.svg`** per row. This is a normal SVG drawing *and* a Ketcher SVG:
+   the molfile is embedded as `<desc id="ketcher-data" data-format="mol">`, so GitHub shows
+   an image and ChemEdit opens the same file in Ketcher;
+2. **computes the oxidation state of every atom** from the bonds (the more electronegative
+   atom takes each bond; like atoms count 0; conventions N > Cl and P > H) and prints them in
+   red. `O.S.` = `auto` / `-` (none) / `show:0,3` (only these atoms) / `1:+6` (override) /
+   `H` (draw every hydrogen);
+3. **asserts the `Check` column** (`S=+6`: every S is +6; `S=+5,0`: exactly these values;
+   `S~+5/2`: average) plus "O.S. sum = charge", and exits non-zero on any mismatch;
+4. regenerates the gallery table (`<!-- gallery:begin/end -->`) and the ` ```smiles ` block
+   (`<!-- smiles:begin/end -->`) inside `structures.md`;
+5. with `--library`, rebuilds [`COMPOUND-LIBRARY.md`](COMPOUND-LIBRARY.md) from every chapter.
+
+**Who does what (Chem vs ChemEdit):**
+
+| Place | Syntax | Plugin | GitHub shows |
+|---|---|---|---|
+| `notes.md` | `![alt stating the O.S.](figures/mol/<ID>.svg)`, grouped in image tables | **ChemEdit** (opens the SVG in Ketcher) | the drawing |
+| `figures/structures.md` | generated ` ```smiles ` block | **Chem** (live grid) | the SMILES text |
+| `cards.md` | inline `` `$smiles=CCO` `` inside the question | **Chem** (turn on *Inline SMILES*) | the SMILES as code |
+| `docs/COMPOUND-LIBRARY.md` | `\| Name \| SMILES \| Chapter \|` | **ChemEdit** *Insert SMILES from Library* | a table |
+
+No ` ```smiles ` blocks and no `$smiles=` in `notes.md`: GitHub would show raw strings where a
+drawing belongs. **Editing a structure:** change the SMILES in `structures.md` and rerun.
+If you drew it in Ketcher, copy the SMILES out (right-click → *Copy SMILES*) into the table.
+A Ketcher save rewrites `mol/<ID>.svg` in Ketcher's own style, without the O.S. labels, and
+the next script run overwrites it anyway. RDKit is a **dev-only** dependency
+(`pip install rdkit` in a local venv); readers never need it. First used in
+[Redox §5](../Physical-Chemistry/05-Redox-Reactions/notes.md) (32 structures, including the
+carbon O.S. ladder).
 
 ### R19 — The fallback rule (the one that protects the repo)
 
@@ -414,7 +448,7 @@ so the `## Contents` block and the Quick Revision Sheet *become* a mindmap for f
 | **Tables** | Advanced Tables | `table-editor-obsidian` | Sheets Extended `sheets` (private only) | Plain GFM markdown — always works |
 | **Mindmaps** | Mindmap Nextgen | `obsidian-mindmap-nextgen` | Markmind `obsidian-markmind` | The nested outline itself, or ASCII Tree Generator `ascii-tree-generator` |
 | **Flowcharts** | Mermaid (**core**) + Mermaid Tools | `mermaid-tools` | PlantUML `obsidian-plantuml` (private), draw.io `drawio`, Excalidraw | Mermaid renders natively on GitHub; Excalidraw → committed SVG |
-| **Chemical structures** | ChemEdit | `chemedit` | Chem `chem` (SMILES inline), Ketcher `ketcher`, Chemical Structure Renderer `chemical-structure-renderer`, TikZJax `tikzjax` | Unicode formulas + ASCII drawings (rungs 1 & 3) |
+| **Chemical structures** | ChemEdit (Ketcher SVGs in `notes.md`, compound library) + Chem (`smiles` galleries, inline in cards), split as in R18 | `chemedit` + `chem` | Ketcher `ketcher`, Chemical Structure Renderer `chemical-structure-renderer`, TikZJax `tikzjax` | The generated SVG itself (it renders on GitHub), plus Unicode formulas / ASCII (rungs 1 & 3) |
 | *(support)* PDFs beside notes | PDF++ | `pdf-plus` | Annotator `obsidian-annotator` | — |
 | *(support)* Module PDF → text for Arena AI | Marker PDF to MD | `marker-api` | Text Extractor `text-extractor` | — |
 
@@ -596,4 +630,5 @@ Answer-first statement.
 
 | Version | Date | Change |
 |---|---|---|
+| 1.1 | 2026-09-26 | R18: structure pipeline v2 (per-molecule Ketcher SVGs, computed and checked O.S. labels, compound library) and the Chem/ChemEdit division of labour; R1, R24 updated |
 | 1.0 | 2026-09-24 | First issue. Codified the conventions of the six finished notes; added the four-visual-system decision matrix (R17–R24), the GitHub/Obsidian portability rules (N2, R8, R19) and the quality gate (R32) |

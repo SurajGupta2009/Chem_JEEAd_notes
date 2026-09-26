@@ -8,8 +8,8 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [kech201.pdf]
 status: written
-words: 13852
-updated: 2026-09-25
+words: 14886
+updated: 2026-09-26
 tags: [chemistry/physical, jee/main, jee/advanced]
 ---
 
@@ -27,7 +27,8 @@ tags: [chemistry/physical, jee/main, jee/advanced]
 > ⚠ = a trap that actually appears in papers.
 >
 > **Study layer:** [chapter map](figures/redox-map.md) (opens as a mindmap in Obsidian) ·
-> [flashcards](cards.md) · [structure source](figures/structures.md).
+> [flashcards](cards.md) · [structure gallery + source](figures/structures.md) ·
+> [compound library](../../docs/COMPOUND-LIBRARY.md).
 > Formatting follows [the rulebook](../../docs/NOTE-FORMATTING-RULEBOOK.md).
 
 ## Contents
@@ -240,12 +241,48 @@ if and only if at least one element's O.N. rises while another's falls.
 ## 5. Assigning O.S. in the nasty species (the memorise-this list)
 
 These are the JEE-standard "hard" species. **You must see the bonds, not just the formula.**
-Every drawing below carries its O.S. in the caption:
+In every drawing below the **red numbers are oxidation states**, worked out from the bonds
+(each bond's electrons go to the more electronegative atom; bonds between like atoms count 0).
+O at the ordinary −2 and H at +1 are left unlabelled, so every red number is something to learn.
 
-![Structures of the peroxo acids, CrO₅, sulphur oxy-anions, phosphorus oxyacids, HN₃, NH₄NO₃ and bleaching powder, each captioned with its oxidation states](figures/structures.svg)
+**Peroxide and superoxide oxygen: O is not −2**
 
-*Drawn from [`figures/structures.md`](figures/structures.md) by `scripts/render_structures.py`
-(RDKit). In Obsidian the SMILES in that file also render live with the Chem plugin.*
+| H₂SO₅ · S +6 | H₂S₂O₈ · S +6 | CrO₅ · Cr +6 | KO₂ · O −½ avg |
+|---|---|---|---|
+| ![H₂SO₅: HO–O–S(=O)₂–OH, S +6, both peroxide O −1](figures/mol/h2so5.svg) | ![H₂S₂O₈: two SO₃H groups joined by O–O, both S +6, the bridging O −1](figures/mol/h2s2o8.svg) | ![CrO₅: Cr with one oxo O and two O–O rings (butterfly), Cr +6, peroxide O −1](figures/mol/cro5.svg) | ![KO₂: K⁺ and the superoxide ion O–O⁻ with one unpaired electron, O −1 and 0](figures/mol/ko2.svg) |
+
+**Contrast: no O–O bond, and oxygen made positive by fluorine**
+
+| H₂S₂O₇ · S +6 | Cr₂O₇²⁻ · Cr +6 | OF₂ · O +2 | O₂F₂ · O +1 |
+|---|---|---|---|
+| ![H₂S₂O₇: two SO₃H groups joined by one O, S +6](figures/mol/h2s2o7.svg) | ![Cr₂O₇²⁻: two CrO₃ units sharing one O, Cr +6](figures/mol/cr2o7.svg) | ![OF₂: F–O–F, O +2, F −1](figures/mol/of2.svg) | ![O₂F₂: F–O–O–F, O +1, F −1](figures/mol/o2f2.svg) |
+
+**One element, inequivalent atoms: the average hides them**
+
+| S₂O₃²⁻ · +6, −2 (avg +2) | S₄O₆²⁻ · +5, 0 (avg +2.5) | HN₃ · −1, +1 (avg −⅓) | I₃⁻ · 0, −1 (avg −⅓) |
+|---|---|---|---|
+| ![S₂O₃²⁻: central S bonded to three O and one terminal S; conventional values +6 and −2](figures/mol/s2o3.svg) | ![S₄O₆²⁻: O₃S–S–S–SO₃, end S +5, bridging S 0](figures/mol/s4o6.svg) | ![HN₃: H–N=N⁺=N⁻, N values −1, +1, −1](figures/mol/hn3.svg) | ![I₃⁻ drawn as I₂ plus I⁻: I 0, 0, −1](figures/mol/i3.svg) |
+
+**Two environments of one element, and a hydride**
+
+| NH₄NO₃ · N −3 and +5 | CaOCl₂ · Cl +1 and −1 | NaBH₄ · B +3, H −1 |
+|---|---|---|
+| ![NH₄⁺ with N −3 and NO₃⁻ with N +5](figures/mol/nh4no3.svg) | ![CaOCl₂ as Ca²⁺, OCl⁻ (Cl +1) and Cl⁻ (Cl −1)](figures/mol/caocl2.svg) | ![Na⁺ and BH₄⁻, B +3](figures/mol/nabh4.svg) |
+
+**Phosphorus oxyacids: count the P–H bonds (they are not acidic)**
+
+| H₃PO₂ · P +1 · monobasic | H₃PO₃ · P +3 · dibasic | H₃PO₄ · P +5 · tribasic |
+|---|---|---|
+| ![H₃PO₂: P with two H, one OH and one =O, P +1](figures/mol/h3po2.svg) | ![H₃PO₃: P with one H, two OH and one =O, P +3](figures/mol/h3po3.svg) | ![H₃PO₄: P with three OH and one =O, P +5](figures/mol/h3po4.svg) |
+
+| H₄P₂O₅ · P +3 (P–O–P) | H₄P₂O₆ · P +4 (P–P) | H₄P₂O₇ · P +5 (P–O–P) |
+|---|---|---|
+| ![H₄P₂O₅: two P–H units joined by P–O–P, P +3](figures/mol/h4p2o5.svg) | ![H₄P₂O₆: two PO(OH)₂ units joined by a P–P bond, P +4](figures/mol/h4p2o6.svg) | ![H₄P₂O₇: two PO(OH)₂ units joined by P–O–P, P +5](figures/mol/h4p2o7.svg) |
+
+*Generated from [`figures/structures.md`](figures/structures.md) by `scripts/render_structures.py`
+(RDKit), which also checks every value against that table. Each SVG carries its molfile, so in
+Obsidian the **ChemEdit** plugin opens it in the Ketcher editor; the same file also has a live
+**Chem** gallery (rulebook R18–R19).*
 
 The arithmetic that proves the peroxide cases:
 
@@ -301,9 +338,50 @@ CrO₅    Cr + 1O(−2) + 4O(−1)                   = 0   ⇒ Cr = +6  (not +10
 
 > **⚠ Structural O.S. vs algebraic average: when each is asked**
 > "Find the oxidation number of S in Na₂S₂O₃" → **+2 (average)**, the NCERT answer.
-> "Find the oxidation states of the two sulphur atoms" → **−2 and +6**.
+> "Find the oxidation states of the two sulphur atoms" → **−2 and +6**. This split is a
+> convention: strict bond-counting gives +4/0 on the S=S Lewis structure and +5/−1 on the
+> S–S⁻ one, while only the average +2 is the same in every structure. JEE keys use −2/+6.
 > For **balancing** and **equivalent weights**, use the *average*: electrons are counted for
 > the whole formula unit.
+
+### O.S. of carbon in organic molecules (NCERT Ex. 7.2, 7.7, 7.12, 7.13)
+
+Organic redox is asked **per carbon**, not per molecule. For one carbon atom, add:
+
+| Bond from that carbon to… | Contribution to its O.S. |
+|---|---|
+| H | **−1** per bond (C is more electronegative) |
+| O, N, halogen | **+1 per bond** (C=O counts **+2**, C≡N **+3**) |
+| another C | **0** |
+| a formal charge on that C | add it (a carbanion C⁻ gets −1 extra) |
+
+**The one-carbon ladder: each step up is a 2-electron oxidation**
+
+| CH₄ · C −4 | CH₃OH · C −2 | HCHO · C 0 | HCOOH · C +2 | CO₂ · C +4 |
+|---|---|---|---|---|
+| ![CH₄ with all four H drawn, C −4](figures/mol/ch4.svg) | ![CH₃OH with all H drawn, C −2](figures/mol/ch3oh.svg) | ![HCHO, H₂C=O, C 0](figures/mol/hcho.svg) | ![HCOOH, H–C(=O)–OH, C +2](figures/mol/hcooh.svg) | ![O=C=O, C +4](figures/mol/co2.svg) |
+| alkane | alcohol | aldehyde | carboxylic acid | fully oxidised |
+
+Burning methane climbs the whole ladder at once: C −4 → +4, **8 e⁻ per carbon**. Reading the
+ladder backwards gives the reductions: LiAlH₄ takes an acid to a primary alcohol (+3 → −1 for
+the functional C in RCOOH → RCH₂OH).
+
+**Three NCERT reactions, carbon by carbon**
+
+| Reaction | Before | After | What changed |
+|---|---|---|---|
+| Ethanol → acetic acid by acidified dichromate (orange → green, the old breathalyser test) | ![Ethanol with all H drawn: CH₃ carbon −3, CH₂OH carbon −1](figures/mol/ethanol.svg) | ![Acetic acid with all H drawn: CH₃ carbon −3, COOH carbon +3](figures/mol/acetic.svg) | CH₂OH carbon −1 → +3 (**4 e⁻**); CH₃ stays −3. `3CH₃CH₂OH + 2Cr₂O₇²⁻ + 16H⁺ → 3CH₃COOH + 4Cr³⁺ + 11H₂O` |
+| Toluene → benzoate by alkaline KMnO₄ (NCERT Ex. 7.12a) | ![Toluene: the CH₃ carbon is −3](figures/mol/toluene.svg) | ![Benzoate ion: the COO⁻ carbon is +3](figures/mol/benzoate.svg) | CH₃ carbon −3 → +3 (**6 e⁻**); ring C unchanged. Two MnO₄⁻ (+7 → +4, 3 e⁻ each) supply them |
+| Hydroquinone → p-benzoquinone, the photographic developer (NCERT Ex. 7.13a) | ![Hydroquinone: the two ring carbons bearing OH are +1](figures/mol/hydroquinone.svg) | ![p-Benzoquinone: the two C=O carbons are +2](figures/mol/quinone.svg) | the two C–O carbons +1 → +2 (**2 e⁻** in total), which reduce 2Ag⁺ (from AgBr) to 2Ag |
+
+> **Shortcut for any CₓHᵧO_z species of charge q:** the sum of the carbon O.S. is
+> **q − y + 2z**. So between two compounds, electrons lost = (H removed) + 2 × (O added) −
+> (extra negative charge). Check: toluene C₇H₈ → benzoate C₇H₅O₂⁻ gives 3 + 4 − 1 = **6 e⁻**.
+> Glucose C₆H₁₂O₆: 0 − 12 + 12 = 0, so the average C is **0**.
+
+> **⚠ Average vs individual carbon:** ethanol's average C is −2 and acetic acid's is 0, a
+> change of +2 *per carbon* but **+4 per molecule**, all on one carbon. Use the per-molecule
+> figure (4) as the n-factor, never the per-carbon average (§11).
 
 ## 6. Oxidation number ≠ formal charge ≠ real charge 🆇
 
@@ -723,7 +801,7 @@ tetrathionate (n = 1); Br₂, the stronger, drives S all the way to sulphate (n 
 | Strength (g L⁻¹) | `N × E` |
 | Equivalents | `N × V(L)` = `mass / E` = `meq / 1000` |
 | Mixing (same type) | `N = (N₁V₁ + N₂V₂)/(V₁ + V₂)` |
-| Mixing (acid + base) | `N = |N₁V₁ − N₂V₂|/(V₁ + V₂)` (the one in excess wins) |
+| Mixing (acid + base) | `N = \|N₁V₁ − N₂V₂\|/(V₁ + V₂)` (the one in excess wins) |
 | Dilution | `N₁V₁ = N₂V₂` (also for molarity) |
 | % purity | `N_titrant × V_titrant(L) × E_analyte / mass_sample × 100` |
 
@@ -1315,16 +1393,16 @@ and `Fe³⁺ + SCN⁻`.
 | 7.2 KI₃, H₂S₄O₆, Fe₃O₄, ethanol, acetic acid | averages −⅓, +2.5, +8⁄3, −2, 0 **hide inequivalent atoms**: I (0, 0, −1); S (+5, 0, 0, +5); Fe (+2, +3, +3); C (−3, −1); C (−3, +3) (§5) |
 | 7.3 Justify that these are redox | show an O.N. change in each. ⚠ (c) `4BCl₃ + 3LiAlH₄ → 2B₂H₆ + …`: the NCERT key takes B **+3 → −3** (H in B₂H₆ treated as +1). By Pauling EN (H 2.20 > B 2.04) B stays +3, so this is a convention question (§13) |
 | 7.4 `H₂O + F₂ → HF + HOF` | in HOF: H +1, F −1, so **O = 0**. O is oxidised (−2 → 0), F reduced (0 → −1) |
-| 7.5 S in H₂SO₅, Cr in Cr₂O₇²⁻, N in NO₃⁻ | **+6, +6, +5**. "The fallacy": blind rules give +8 for S, because H₂SO₅ has a peroxide O–O (§5) |
+| 7.5 S in H₂SO₅, Cr in Cr₂O₇²⁻, N in NO₃⁻ | **+6, +6, +5**. "The fallacy": blind rules give +8 for S, because H₂SO₅ has a peroxide O–O. All three are drawn in §5 (NO₃⁻ inside NH₄NO₃) |
 | 7.6 formulas | HgCl₂, NiSO₄, SnO₂, Tl₂SO₄, Fe₂(SO₄)₃, Cr₂O₃ |
-| 7.7 C from −4 to +4, N from −3 to +5 | C: CH₄ −4, C₂H₆ −3, CH₃OH −2, C₂H₂ −1, HCHO 0, CO +2, H₂C₂O₄ +3, CO₂ +4 · N: NH₃ −3, N₂H₄ −2, NH₂OH −1, N₂ 0, N₂O +1, NO +2, N₂O₃ +3, NO₂ +4, N₂O₅ +5 |
+| 7.7 C from −4 to +4, N from −3 to +5 | C: CH₄ −4, C₂H₆ −3, CH₃OH −2, C₂H₂ −1, HCHO 0, CO +2, H₂C₂O₄ +3, CO₂ +4 · N: NH₃ −3, N₂H₄ −2, NH₂OH −1, N₂ 0, N₂O +1, NO +2, N₂O₃ +3, NO₂ +4, N₂O₅ +5. The one-carbon ladder is drawn in §5 |
 | 7.8 SO₂, H₂O₂ both roles; O₃, HNO₃ only oxidants | intermediate vs extreme O.S. (§8) |
 | 7.9 why write `6CO₂ + 12H₂O → C₆H₁₂O₆ + 6H₂O + 6O₂` | all the O₂ comes from **water**, not CO₂; in `O₃ + H₂O₂` one O₂ comes from each. Technique: **¹⁸O isotope tracer** |
 | 7.10 AgF₂ strong oxidant | Ag²⁺ (d⁹) is unstable and grabs an electron to become Ag⁺ (stable d¹⁰) |
 | 7.11 excess reagent decides the product | three illustrations: HgCl₂ + SnCl₂, P + Cl₂, C + O₂ (§8) |
-| 7.12(a) toluene → benzoic acid | alcoholic KMnO₄ because toluene dissolves in alcohol: `C₆H₅CH₃ + 2MnO₄⁻ → C₆H₅COO⁻ + 2MnO₂ + OH⁻ + H₂O` (C −3 → +3, 6 e⁻ = 2 × 3) |
+| 7.12(a) toluene → benzoic acid | alcoholic KMnO₄ because toluene dissolves in alcohol: `C₆H₅CH₃ + 2MnO₄⁻ → C₆H₅COO⁻ + 2MnO₂ + OH⁻ + H₂O` (C −3 → +3, 6 e⁻ = 2 × 3; drawn in §5) |
 | 7.12(b) conc. H₂SO₄ + Cl⁻ vs Br⁻ | Cl⁻ gives only HCl (too weak a reductant); Br⁻ is oxidised to Br₂ (§8) |
-| 7.13 identify oxidant and reductant | (a) AgBr / hydroquinone (photographic developer) · (b) [Ag(NH₃)₂]⁺ / HCHO (Tollens') · (c) Cu²⁺ / HCHO (Fehling's) · (d) H₂O₂ / N₂H₄ · (e) PbO₂ / Pb (lead–acid cell, a comproportionation) |
+| 7.13 identify oxidant and reductant | (a) AgBr / hydroquinone (photographic developer; drawn in §5) · (b) [Ag(NH₃)₂]⁺ / HCHO (Tollens') · (c) Cu²⁺ / HCHO (Fehling's) · (d) H₂O₂ / N₂H₄ · (e) PbO₂ / Pb (lead–acid cell, a comproportionation) |
 | 7.14 thiosulphate with I₂ vs Br₂ | the stronger oxidant Br₂ takes S to +6 (SO₄²⁻); I₂ stops at S₄O₆²⁻ (§11) |
 | 7.15 F₂ best oxidant, HI best reductant | E°(X₂/X⁻): 2.87 > 1.36 > 1.09 > 0.54, so reducing power runs I⁻ > Br⁻ > Cl⁻ > F⁻ |
 | 7.16 `XeO₆⁴⁻ + 2F⁻ + 6H⁺ → XeO₃ + F₂ + 3H₂O` | it happens, so perxenate (Xe +8) is a **stronger oxidant than F₂** |

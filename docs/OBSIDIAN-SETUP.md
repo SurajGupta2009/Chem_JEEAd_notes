@@ -145,6 +145,38 @@ CC(=O)O
 → acetic acid drawn properly. For organic chapters this beats ASCII structures every time —
 and it is plain text, so Arena AI can write it and git can diff it.
 
+### 5.1a Chem + ChemEdit together (how this repo uses them)
+
+Install **both**. They split the work (rulebook R18):
+
+| You see | Where | Plugin that makes it interactive |
+|---|---|---|
+| Structure drawings with red oxidation states | `notes.md` → `figures/mol/*.svg` | **ChemEdit**: the SVGs carry their molfile, so Ketcher can open them |
+| A live grid of every structure in a chapter | `figures/structures.md` (```` ```smiles ```` block) | **Chem** |
+| Molecules drawn inside flashcards | `cards.md` (`` `$smiles=…` `` in the question) | **Chem** (Settings → Chem → turn on **Inline SMILES**) |
+| "Insert SMILES from Library" | [`COMPOUND-LIBRARY.md`](COMPOUND-LIBRARY.md) | **ChemEdit** (Settings → ChemEdit → **Compound Library File Path** = `docs/COMPOUND-LIBRARY.md`) |
+
+**Setup, once:**
+
+1. Install and enable **Chem** first, then **ChemEdit**.
+2. **Both plugins register the ```` ```smiles ```` code block, and only one can own it.**
+   If the gallery in `structures.md` renders as a Ketcher viewer instead of a Chem grid (or
+   not at all), disable ChemEdit, reload, and re-enable it so it loads after Chem. The
+   developer console (Ctrl+Shift+I) shows an error mentioning `smiles` for the plugin that
+   lost. ChemEdit registers `smiles` as its last step, so losing it costs ChemEdit nothing
+   else. Either renderer draws the gallery, so this is cosmetic.
+3. Chem → renderer **RDKit.js** (handles ions like `[NH4+]` and `[O-]` better than
+   SmilesDrawer).
+4. ChemEdit → set the compound-library path as above.
+
+**Editing a structure in Ketcher.** Open the SVG itself (click it in the file explorer, or
+right-click → *Edit SVG in Ketcher*; double-clicking the embedded image in a note works where
+ChemEdit recognises the embed). Ketcher saves in its own drawing style **without the red O.S.
+labels**, and the next `render_structures.py` run overwrites the file anyway. So treat the
+table as the source: right-click the structure → *Copy SMILES*, paste it into
+`figures/structures.md`, and rerun the script (rulebook R18). A "Not a Ketcher SVG" message
+means the SVG was not made by the script (e.g. an old export); regenerate it.
+
 ### 5.2 Equations and typesetting
 
 | Plugin | ID | Notes |

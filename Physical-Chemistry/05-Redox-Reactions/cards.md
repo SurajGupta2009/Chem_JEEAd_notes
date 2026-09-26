@@ -2,7 +2,7 @@
 branch: Physical Chemistry
 chapter: Redox Reactions
 source: notes.md
-updated: 2026-09-25
+updated: 2026-09-26
 tags: [flashcards/physical/redox]
 ---
 
@@ -12,6 +12,31 @@ tags: [flashcards/physical/redox]
 
 *Study file for the Spaced Repetition plugin (see [the rulebook, R29](../../docs/NOTE-FORMATTING-RULEBOOK.md)).
 Every card comes from [`notes.md`](notes.md); the § in brackets says where.*
+
+## Read the structure
+
+*These cards draw their molecule with the **Chem** plugin (turn on **Inline SMILES** in its
+settings; the same `$smiles=` syntax works with ChemEdit). On GitHub the SMILES shows as code.*
+
+Name this acid and give the O.S. of S: `$smiles=OOS(=O)(=O)O`::H₂SO₅ (Caro's acid). S +6; the two O–O oxygens are −1 (§5)
+
+O.S. of Cr here? `$smiles=O=[Cr]12(OO1)OO2`::CrO₅: Cr +6, since four of the five O are peroxide O at −1 (§5)
+
+O.S. of each S in this ion? `$smiles=[O-]S(=O)(=O)SSS(=O)(=O)[O-]`::S₄O₆²⁻ (tetrathionate): end S +5, bridging S 0, average +2.5 (§5)
+
+Basicity and O.S. of P? `$smiles=OP([H])(=O)O`::H₃PO₃: dibasic (the P–H hydrogen is not acidic), P +3 (§5)
+
+O.S. of P here? `$smiles=OP(=O)(O)P(=O)(O)O`::H₄P₂O₆ (hypophosphoric acid): P +4, since the P–P bond counts 0 (§5)
+
+O.S. of O here? `$smiles=FOOF`::O₂F₂: O +1 (F always −1; the O–O bond counts 0) (§5)
+
+O.S. of each carbon? `$smiles=CC(=O)O`::Acetic acid: CH₃ −3, COOH +3, average 0 (§5)
+
+O.S. of this carbon? `$smiles=OC=O`::Formic acid: C +2 (one C–H −1, three bonds to O +3) (§5)
+
+Electrons lost when this becomes benzoate: `$smiles=Cc1ccccc1`::6 per toluene; the CH₃ carbon goes −3 → +3, the ring is unchanged (§5)
+
+Electrons lost when this becomes p-benzoquinone: `$smiles=Oc1ccc(O)cc1`::2 in total; each C–O carbon goes +1 → +2 (§5)
 
 ## Oxidation states
 
