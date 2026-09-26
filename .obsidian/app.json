@@ -1,0 +1,11 @@
+{
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative",
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "./figures",
+  "strictLineBreaks": true,
+  "propertiesInDocument": "visible",
+  "readableLineLength": true,
+  "userIgnoreFilters": ["scripts/", ".venv/", "__pycache__/"],
+  "showUnsupportedFiles": false
+}

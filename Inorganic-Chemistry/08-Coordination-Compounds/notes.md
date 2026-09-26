@@ -1,3 +1,16 @@
+---
+branch: "Inorganic Chemistry"
+chapter: "Coordination Compounds"
+status: written
+words: 4988
+updated: 2026-09-26
+class: "12"
+ncert_unit: "Unit 5 (Class 12)"
+ncert_code: "lech105"
+sources: ["3-JAEIC-Coordination Compound_Eng.pdf.pdf", "lech105.pdf"]
+tags: [chemistry, jee]
+---
+
 # Coordination Compounds — JEE Main + Advanced Notes
 
 > **Sources merged into these notes**

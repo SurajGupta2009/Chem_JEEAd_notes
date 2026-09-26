@@ -74,6 +74,12 @@ matching chapter folder as they are uploaded.
 
 ## Reading and writing these notes in Obsidian
 
+**This repo is now an Obsidian vault.** Open the repository root as a vault and follow
+[Vault start and plugin checklist](meta/VAULT-START.md). For the Redox chapter, the
+[rendered reaction gallery](Physical-Chemistry/05-Redox-Reactions/figures/reactions.md)
+uses Obsidian’s built-in chemistry renderer; the main Redox note now uses typeset reactions for Obsidian on Android (GitHub shows raw `\ce` source for these).
+
+
 The repo is plain markdown + PDF, so it opens directly as an Obsidian vault — and Obsidian's core
 already renders everything the convention uses (GFM tables, Mermaid, MathJax **including mhchem
 `\ce{}`**, callouts). [`docs/OBSIDIAN-SETUP.md`](docs/OBSIDIAN-SETUP.md) is a catalogued plugin

@@ -1,3 +1,13 @@
+---
+branch: "Practical Chemistry"
+chapter: "Analysis"
+status: written
+words: 6995
+updated: 2026-09-26
+sources: ["Salt Analysis_Theory_26.pdf", "Reaction of Salt Analysis_Theory_26.pdf"]
+tags: [chemistry, jee]
+---
+
 # Salt Analysis (Qualitative Analysis) — JEE Main + Advanced Notes
 
 > **Sources merged into these notes**

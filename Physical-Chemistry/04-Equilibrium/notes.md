@@ -1,3 +1,16 @@
+---
+branch: "Physical Chemistry"
+chapter: "Equilibrium"
+status: written
+words: 16303
+updated: 2026-09-26
+class: "11"
+ncert_unit: "Unit 6 (Class 11)"
+ncert_code: "kech106"
+sources: ["kech106.pdf"]
+tags: [chemistry, jee]
+---
+
 # Chemical & Ionic Equilibrium — JEE Main + Advanced Notes
 
 > **Sources merged into these notes**

@@ -2,3 +2,12 @@ __pycache__/
 *.py[cod]
 .venv/
 .cache/
+# Local Obsidian state and downloaded third-party plugins
+.obsidian/workspace*.json
+.obsidian/cache/
+.obsidian/plugins/
+.obsidian/themes/
+.obsidian/graph.json
+.obsidian/backlink.json
+.obsidian/plugins.json
+.trash/

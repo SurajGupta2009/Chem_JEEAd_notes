@@ -1,0 +1,4 @@
+/* Enable in Appearance > CSS snippets (desktop or Android). */
+.markdown-rendered img { max-width: 100%; height: auto; }
+.markdown-rendered .math-block, .markdown-rendered .math-inline { max-width: 100%; overflow-x: auto; }
+.markdown-rendered li { margin-bottom: .55em; }

@@ -171,7 +171,9 @@ not `\ce{}` — because GitHub renders them everywhere (search, mobile, PDF expo
 
 **LaTeX** (`$…$`, `$$…$$`) is for *mathematics*, not for writing formulas:
 `$$\log K = \frac{nE^\circ}{0.0591}$$`, `$$K_p = K_c(RT)^{\Delta n_g}$$`, `$$E = E^\circ - \frac{RT}{nF}\ln Q$$`.
-`\ce{}` is **forbidden in committed notes** (GitHub has no mhchem) and allowed in `cards.md`.
+**Redox exception:** `notes.md` now uses `$\ce{…}$` for reactions so they render as chemistry
+on Android Obsidian (built-in MathJax/mhchem). GitHub may display raw `\ce` markup.
+Keep Unicode formulas in prose and avoid converting non-reaction diagrams to math.
 
 ### R9 — Reaction equations
 
