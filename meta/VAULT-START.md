@@ -2,7 +2,7 @@
 
 1. Install **Obsidian desktop**, Git, then clone this repository and choose **Open folder as vault** at the repository root (the folder containing `.obsidian/`). On mobile use a local clone or your preferred one-way sync; do not run two sync engines on the same folder.
 2. Settings → Community plugins → disable Restricted mode → Browse and install the plugins below. Obsidian cannot automatically install plugins merely because they are mentioned in this repository; `.obsidian/community-plugins.json` intentionally starts empty to avoid enabling missing plugins.
-3. Enable `chem-notes` under Settings → Appearance → CSS snippets. Open [Redox reaction gallery](../Physical-Chemistry/05-Redox-Reactions/figures/reactions.md) in Reading view. `\ce` rendering is **built into Obsidian**; no chemistry plugin is required to typeset an ionic equation. For SMILES structure drawings install **Chem**; ChemEdit is desktop-only on many Android devices.
+3. Enable `chem-notes` under Settings → Appearance → CSS snippets. Install **Scrolling** (`scrolling`) from Community plugins, then disable code-block wrapping and enable horizontal scrolling in its settings. This is the mobile-friendly fix for long monospaced Latimer diagrams and calculations: it preserves their alignment without changing note text. Open [Redox reaction gallery](../Physical-Chemistry/05-Redox-Reactions/figures/reactions.md) in Reading view. `\ce` rendering is **built into Obsidian**; no chemistry plugin is required to typeset an ionic equation. For SMILES structure drawings install **Chem**; ChemEdit is desktop-only on many Android devices.
 4. Install **Git** (`obsidian-git`): pull on startup, auto-pull every 10 minutes if you want, but leave auto-commit-and-sync **off**. Commit and push manually after reviewing diffs. Keep your local vault on your own branch (normally `main`); merge the Arena working branch by PR first, then pull your branch. Do not have Obsidian Git auto-push to an Arena session branch.
 
 ## Plugins to install
@@ -16,6 +16,7 @@
 | Recommended | Spaced Repetition (`obsidian-spaced-repetition`) | [Redox flashcards](../Physical-Chemistry/05-Redox-Reactions/cards.md) |
 | Optional | LaTeX Suite (`obsidian-latex-suite`) | Faster entry of MathJax and `\ce` reaction equations |
 | Optional | Excalidraw (`obsidian-excalidraw-plugin`) | Curved-arrow mechanisms; export SVG alongside editable source for GitHub |
+| Recommended for mobile | Scrolling (`scrolling`) | Prevent long fenced diagrams/calculations from wrapping; enables horizontal scrolling in Reading view |
 | Optional | Advanced Tables (`table-editor-obsidian`) | Edit dense comparison tables |
 | Optional | PDF++ (`pdf-plus`) | Annotate NCERT PDFs in the vault |
 | Optional | Templater (`templater-obsidian`) | Scaffold future notes from `meta/templates` (set template folder there) |

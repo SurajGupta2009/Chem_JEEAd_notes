@@ -116,6 +116,7 @@ Obsidian core already renders the entire convention used in these notes:
 | Markdown table checkboxes | `table-checkboxes` | Makes `- [ ]` clickable *inside* tables (useful for a revision checklist table) |
 | CSV Table | `obsidian-csv-table` | Render a `.csv` as a sortable/filterable table — e.g. a bond-length/bond-enthalpy data file |
 | Tabsdown | `tabsdown` | Tabbed content blocks via markdown fences; tabs can contain math, Mermaid, callouts |
+| **Scrolling** | `scrolling` | ⭐ On desktop and mobile, disable code-block wrapping and horizontally scroll long fenced diagrams/calculations; can also scroll long MathJax expressions |
 | Importer | `obsidian-importer` | Migrate from Notion/Evernote/OneNote/Apple Notes/CSV/HTML if you have old notes elsewhere |
 | Consistent Attachments and Links | *(search by name)* | Keeps relative links intact when a chapter folder is moved — matters if you ever edit `BRANCH_OF` in `scripts/fetch_ncert_pdfs.py` and `git mv` a chapter |
 
@@ -435,7 +436,7 @@ status: draft
 | Files & Links → New link format | Relative path to file | Survives `git mv` of a chapter folder |
 | Files & Links → Default attachment location | *In subfolder under current folder* → `figures` | Pasted images/exports land in `figures/`, which the fetch script does not scan. Allen module PDFs are still dropped by hand into the chapter folder itself — that is how the script detects them as `Module PDF` rows |
 | Editor → **Strict line breaks** | **on** | The notes hard-wrap prose at ~100 columns. GitHub joins those lines into one paragraph; Obsidian only does so with this **on** (off = every wrapped line becomes a visible break) |
-| Editor → Line wrap | on | Long tables and ASCII blocks stay scannable |
+| Editor → Line wrap | on | Wraps prose in the editor; it does not control fenced code-block wrapping in Reading view. For that, install **Scrolling** and turn off code wrapping / turn on horizontal scrolling. |
 | Editor → Properties in document | Source or hidden | Chapter cards use metadata *tables*, not YAML — keep them readable |
 | Core plugins → PDF viewer, Canvas, Backlinks, Outline, Tags, Bases | on | Canvas is genuinely good for a chapter map |
 
@@ -466,7 +467,8 @@ The full, final version (with the whitelist of shareable plugin settings) is in
   "pdf-plus",
   "obsidian-spaced-repetition",
   "templater-obsidian",
-  "omnisearch"
+  "omnisearch",
+  "scrolling"
 ]
 ```
 
