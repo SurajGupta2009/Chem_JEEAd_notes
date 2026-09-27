@@ -10,6 +10,39 @@ in the file is still correct.
 
 | Name | SMILES | Chapter |
 |---|---|---|
+| H₂O water | O | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| NH₃ ammonia | N | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| CH₄ methane | C | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| BF₃ boron trifluoride | FB(F)F | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| BeCl₂ beryllium chloride | Cl[Be]Cl | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| CO₂ carbon dioxide | O=C=O | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| C₂H₂ ethyne | C#C | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| C₂H₄ ethene | C=C | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| NH₄⁺ ammonium | [NH4+] | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| PCl₅ phosphorus pentachloride | ClP(Cl)(Cl)(Cl)Cl | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| SF₄ sulfur tetrafluoride | FS(F)(F)F | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| ClF₃ chlorine trifluoride | FCl(F)F | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| XeF₂ xenon difluoride | F[Xe]F | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| SF₆ sulfur hexafluoride | FS(F)(F)(F)(F)F | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| XeF₄ xenon tetrafluoride | F[Xe](F)(F)F | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| BrF₅ bromine pentafluoride | FBr(F)(F)(F)F | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| IF₇ iodine heptafluoride | FI(F)(F)(F)(F)(F)F | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| SO₂ sulfur dioxide | O=S=O | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| O₃ ozone | [O-][O+]=O | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| CO carbon monoxide | [C-]#[O+] | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| NO nitric oxide | [N]=O | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| HF hydrogen fluoride | F | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| HCl hydrogen chloride | Cl | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| BF₃ with back bonding | FB(F)F | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| BCl₃ boron trichloride | ClB(Cl)Cl | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| NMe₃ trimethylamine | CN(C)C | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| N(SiH₃)₃ trisilylamine | N([SiH3])[SiH3][SiH3] | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| H₂S hydrogen sulfide | S | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| PH₃ phosphine | P | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| CCl₄ carbon tetrachloride | ClC(Cl)(Cl)Cl | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| CHCl₃ chloroform | ClC(Cl)Cl | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| Benzene | c1ccccc1 | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
+| NO₃⁻ nitrate | [O-][N+](=O)[O-] | [02-Chemical-Bonding-and-Molecular-Structure](../Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md) |
 | H₂SO₅ Caro's acid | OOS(=O)(=O)O | [05-Redox-Reactions](../Physical-Chemistry/05-Redox-Reactions/figures/structures.md) |
 | H₂S₂O₈ Marshall's acid | OS(=O)(=O)OOS(=O)(=O)O | [05-Redox-Reactions](../Physical-Chemistry/05-Redox-Reactions/figures/structures.md) |
 | H₂S₂O₇ pyrosulphuric acid | OS(=O)(=O)OS(=O)(=O)O | [05-Redox-Reactions](../Physical-Chemistry/05-Redox-Reactions/figures/structures.md) |
