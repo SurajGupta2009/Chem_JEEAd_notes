@@ -43,7 +43,7 @@ Every step is additive, so rollback is `git revert` or deleting two folders.
 
 ### Target tree (new items marked ✚)
 
-```
+```dataview
 Chem_JEEAd_notes/                      ← vault root = repo root
 ├── .obsidian/                     ✚  config (selectively committed, Phase 1)
 │   ├── app.json  appearance.json  core-plugins.json  community-plugins.json  hotkeys.json

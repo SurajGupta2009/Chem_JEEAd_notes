@@ -9,7 +9,7 @@ Each chapter has **one folder** holding everything for that chapter — no Class
 level; the class and the NCERT unit number are recorded inside each chapter's `README.md` and
 in the branch index.
 
-```
+```text
 Physical-Chemistry/           # 12 chapters   Inorganic-Chemistry/  # 9    Organic-Chemistry/  # 9
 ├── README.md                 # index         ├── README.md               ├── README.md
 ├── 01-Some-Basic-Concepts-of-Chemistry/      │   ...                     │   ...

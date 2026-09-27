@@ -150,25 +150,40 @@ This electron book-keeping powers every titration calculation in §12.
 
 NCERT's experiment (Fig. 7.1), the **origin of the electrochemical series**:
 
+```mermaid
+flowchart TD
+    N0["Beaker A: Zn strip in Cu(NO₃)₂(aq)      Beaker B: Cu strip in Zn²⁺(aq)"]
+    N1["┌──────────────────────────────┐        ┌──────────────────────────────┐"]
+    N2["│ blue colour fades            │        │ no change                    │"]
+    N3["│ Zn dissolves, red Cu coats   │        │ Cu cannot push e⁻ onto Zn²⁺  │"]
+    N4["│ the strip (redox occurs)     │        │                              │"]
+    N5["└──────────────────────────────┘        └──────────────────────────────┘"]
+    N6["Zn + Cu²⁺ → Zn²⁺ + Cu      ✔ spontaneous  (Zn is the better reductant)   NCERT eq. 7.15"]
+    N7["Cu + Zn²⁺ → no reaction    ✘"]
+    N0 --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
+    N5 --> N6
+    N6 --> N7
 ```
-   Beaker A: Zn strip in Cu(NO₃)₂(aq)      Beaker B: Cu strip in Zn²⁺(aq)
-   ┌──────────────────────────────┐        ┌──────────────────────────────┐
-   │ blue colour fades            │        │ no change                    │
-   │ Zn dissolves, red Cu coats   │        │ Cu cannot push e⁻ onto Zn²⁺  │
-   │ the strip (redox occurs)     │        │                              │
-   └──────────────────────────────┘        └──────────────────────────────┘
-   Zn + Cu²⁺ → Zn²⁺ + Cu      ✔ spontaneous  (Zn is the better reductant)   NCERT eq. 7.15
-   Cu + Zn²⁺ → no reaction    ✘
-```
+*Converted from ASCII: {lines[0][:80] if lines else ''}*
+
 
 General form: $\ce{M1 + N^{2+}  ->  M1^{2+} + N}$ occurs **only if M₁ loses electrons more readily than N**.
 One reaction ranks two metals; pairwise tests build the activity series:
 
+```mermaid
+flowchart TD
+    N0["reducing strength (tendency to lose e⁻) falls  ───────────────────────────────►"]
+    N1["Li &gt; K &gt; Ba &gt; Ca &gt; Na &gt; Mg &gt; Al &gt; Mn &gt; Zn &gt; Cr &gt; Fe &gt; Co &gt; Ni &gt; Sn &gt; Pb &gt; ("]
+    N2["&gt; Cu &gt; Ag ≈ Hg &gt; Pt &gt; Au"]
+    N0 --> N1
+    N1 --> N2
 ```
-   reducing strength (tendency to lose e⁻) falls  ───────────────────────────────►
-   Li > K > Ba > Ca > Na > Mg > Al > Mn > Zn > Cr > Fe > Co > Ni > Sn > Pb > (H₂)
-      > Cu > Ag ≈ Hg > Pt > Au
-```
+*Converted from ASCII: {lines[0][:80] if lines else ''}*
+
 
 Same logic for **non-metals**, the halogens:
 
@@ -281,11 +296,10 @@ Obsidian the **ChemEdit** plugin opens it in the Ketcher editor; the same file a
 
 The arithmetic that proves the peroxide cases:
 
-```
 H₂SO₅   2H(+1) + S + 3O(−2) + 2O(−1, peroxide) = 0   ⇒ S = +6   (blind "all O = −2" gives +8: impossible)
 H₂S₂O₈  2H(+1) + 2S + 6O(−2) + 2O(−1)          = 0   ⇒ S = +6   (not +7)
 CrO₅    Cr + 1O(−2) + 4O(−1)                   = 0   ⇒ Cr = +6  (not +10)
-```
+
 
 | Species | O.S. of the marked element | Why (the point of the question) |
 |---|---|---|
@@ -387,10 +401,10 @@ the functional C in RCOOH → RCH₂OH).
 | Example: CO | C **+2**, O **−2** | C **−1**, O **+1** | small dipole, C end slightly negative |
 | Used for | redox book-keeping | best Lewis structure | reactivity, dipoles |
 
-```
-   CO:   :C≡O:     formal charge  C(−1) O(+1)   → the lone pair on C bonds to metals
-                   O.N.           C(+2) O(−2)   → the number redox book-keeping uses
-```
+$\ce{CO:   :C≡O:     formal charge  C(−1) O(+1)   -> the lone pair on C bonds to metals}$
+
+$\ce{O.N.           C(+2) O(−2)   -> the number redox book-keeping uses}$
+
 
 **Why JEE likes this:** in `Ni(CO)₄` and `Fe(CO)₅` the metal is at **0**, because CO is a
 neutral ligand. O.N. can also be **negative** for a metal: `Na[Co(CO)₄]` (Co **−1**),
@@ -894,19 +908,26 @@ Titrant in the burette: KMnO₄ acidified with **dilute H₂SO₄**. Analytes:
 
 ### (c) Iodometry and iodimetry (thiosulphate)
 
-```
 IODIMETRY (direct):   titrate the ANALYTE (a reductant) with standard I₂
-                      S₂O₃²⁻, SO₃²⁻, H₂S, Sn²⁺, As(III), vitamin C
-                      end point: first excess I₂ → blue APPEARS
-IODOMETRY (indirect): add excess KI to the OXIDANT, liberate I₂, titrate that I₂ with
-                      standard Na₂S₂O₃. Used for Cu²⁺, Cr₂O₇²⁻, MnO₄⁻, ClO⁻, IO₃⁻, Fe³⁺, H₂O₂
-                      end point: last I₂ consumed → blue DISAPPEARS
 
-   oxidant + I⁻ → I₂ (held in solution as I₃⁻, i.e. KI₃)
-   I₂ + 2S₂O₃²⁻ → 2I⁻ + S₄O₆²⁻                           (NCERT eq. 7.60)
-   indicator: FRESH STARCH, added near the end point (pale straw colour); added early, the
-              starch–iodine complex holds I₂ and releases it slowly, so the end point drags
-```
+S₂O₃²⁻, SO₃²⁻, H₂S, Sn²⁺, As(III), vitamin C
+
+$\ce{end point: first excess I₂ -> blue APPEARS}$
+
+IODOMETRY (indirect): add excess KI to the OXIDANT, liberate I₂, titrate that I₂ with
+
+standard Na₂S₂O₃. Used for Cu²⁺, Cr₂O₇²⁻, MnO₄⁻, ClO⁻, IO₃⁻, Fe³⁺, H₂O₂
+
+$\ce{end point: last I₂ consumed -> blue DISAPPEARS}$
+
+$\ce{oxidant + I⁻ -> I₂ (held in solution as I₃⁻, i.e. KI₃)}$
+
+$\ce{I₂ + 2S₂O₃²⁻ -> 2I⁻ + S₄O₆²⁻}$  (NCERT eq. 7.60)
+
+indicator: FRESH STARCH, added near the end point (pale straw colour); added early, the
+
+starch–iodine complex holds I₂ and releases it slowly, so the end point drags
+
 
 Standard iodometric systems (memorise the **electron** count):
 
@@ -986,19 +1007,30 @@ electrical work, and each half-cell develops a measurable potential.
 A **redox couple** is the oxidised and reduced form of the same species, written **Ox/Red**
 (oxidised form first): `Zn²⁺/Zn`, `Cu²⁺/Cu`, `Fe³⁺/Fe²⁺`, `MnO₄⁻/Mn²⁺`, `Cl₂/Cl⁻`, `H⁺/H₂`.
 
+```mermaid
+flowchart TD
+    N0["┌───────────────┐   salt bridge   ┌───────────────┐"]
+    N1["│ Zn rod in     │   (U-tube, KCl  │ Cu rod in     │"]
+    N2["│ ZnSO₄(aq)     │   or NH₄NO₃     │ CuSO₄(aq)     │"]
+    N3["│               │   set in agar)  │               │"]
+    N4["│ Zn → Zn²⁺+2e⁻ │   ~~~~~‖~~~~~   │ Cu²⁺+2e⁻ → Cu │"]
+    N5["│ OXIDATION     │   ions migrate  │ REDUCTION     │"]
+    N6["│ ANODE (−)     │   to close the  │ CATHODE (+)   │"]
+    N7["└───────┬───────┘   circuit       └───────┬───────┘"]
+    N8["└──── e⁻ ───► (V) ───► ───────────┘        E°cell = 1.10 V"]
+    N9["electrons flow Zn → Cu through the wire;"]
+    N0 --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
+    N5 --> N6
+    N6 --> N7
+    N7 --> N8
+    N8 --> N9
 ```
-   ┌───────────────┐   salt bridge   ┌───────────────┐
-   │ Zn rod in     │   (U-tube, KCl  │ Cu rod in     │
-   │ ZnSO₄(aq)     │   or NH₄NO₃     │ CuSO₄(aq)     │
-   │               │   set in agar)  │               │
-   │ Zn → Zn²⁺+2e⁻ │   ~~~~~‖~~~~~   │ Cu²⁺+2e⁻ → Cu │
-   │ OXIDATION     │   ions migrate  │ REDUCTION     │
-   │ ANODE (−)     │   to close the  │ CATHODE (+)   │
-   └───────┬───────┘   circuit       └───────┬───────┘
-           └──── e⁻ ───► (V) ───► ───────────┘        E°cell = 1.10 V
-   electrons flow Zn → Cu through the wire;
-   conventional current flows Cu → Zn (NCERT Fig. 7.3)
-```
+*Converted from ASCII: {lines[0][:80] if lines else ''}*
+
 
 **Anode vs cathode: the only definition that never fails**
 
@@ -1136,30 +1168,44 @@ minus that of the would-be reductant.*
 
 **The four question types (NCERT Ex. 7.26–7.30 are exactly these):**
 
-```
 (1) "Is the reaction feasible?"   (NCERT Ex. 7.26)
-    (a) Fe³⁺ + I⁻   : 0.77 − 0.54    = +0.23 V  ✔   (⇒ FeI₃ cannot exist)
-    (b) Ag⁺ + Cu    : 0.80 − 0.34    = +0.46 V  ✔
-    (c) Fe³⁺ + Cu   : 0.77 − 0.34    = +0.43 V  ✔   (FeCl₃ etches copper circuit boards)
-    (d) Ag + Fe³⁺   : 0.77 − 0.80    = −0.03 V  ✘   (the reverse, Ag⁺ + Fe²⁺, is feasible)
-    (e) Br₂ + Fe²⁺  : 1.09 − 0.77    = +0.32 V  ✔
-    and by contrast: Fe³⁺ + Br⁻ : 0.77 − 1.09 = −0.32 V ✘  (⇒ FeBr₃ is stable)
+
+$\ce{(a) Fe³⁺ + I⁻   : 0.77 − 0.54    = +0.23 V  ✔   (-> FeI₃ cannot exist)}$
+
+(b) Ag⁺ + Cu    : 0.80 − 0.34    = +0.46 V  ✔
+
+(c) Fe³⁺ + Cu   : 0.77 − 0.34    = +0.43 V  ✔   (FeCl₃ etches copper circuit boards)
+
+(d) Ag + Fe³⁺   : 0.77 − 0.80    = −0.03 V  ✘   (the reverse, Ag⁺ + Fe²⁺, is feasible)
+
+(e) Br₂ + Fe²⁺  : 1.09 − 0.77    = +0.32 V  ✔
+
+$\ce{and by contrast: Fe³⁺ + Br⁻ : 0.77 − 1.09 = −0.32 V ✘  (-> FeBr₃ is stable)}$
 
 (2) Displacement order   (NCERT Ex. 7.28: Al, Cu, Fe, Mg, Zn)
-    sort by E°: Mg (−2.36) < Al (−1.66) < Zn (−0.76) < Fe (−0.44) < Cu (+0.34)
-    each metal displaces every metal to its right from a solution of its salt
-    ⇒ Mg > Al > Zn > Fe > Cu
+
+sort by E°: Mg (−2.36) < Al (−1.66) < Zn (−0.76) < Fe (−0.44) < Cu (+0.34)
+
+each metal displaces every metal to its right from a solution of its salt
+
+$\ce{-> Mg > Al > Zn > Fe > Cu}$
 
 (3) Rank reducing power   (NCERT Ex. 7.29, using the values printed in the question)
-    K⁺/K −2.93, Mg²⁺/Mg −2.37, Cr³⁺/Cr −0.74, Hg²⁺/Hg +0.79, Ag⁺/Ag +0.80
-    increasing reducing power:  Ag < Hg < Cr < Mg < K
-    ⚠ Hg and Ag differ by only 0.01 V: read the numbers, not your memory
 
-(4) Depict a cell and find E°   (NCERT Ex. 7.30: Zn + 2Ag⁺ → Zn²⁺ + 2Ag)
-    (−) Zn(s) | Zn²⁺(aq) ‖ Ag⁺(aq) | Ag(s) (+)
-    anode Zn (negative) · cathode Ag · E°cell = 0.80 − (−0.76) = +1.56 V
-    current carriers: electrons in the external wire, ions in the solutions and salt bridge
-```
+K⁺/K −2.93, Mg²⁺/Mg −2.37, Cr³⁺/Cr −0.74, Hg²⁺/Hg +0.79, Ag⁺/Ag +0.80
+
+increasing reducing power:  Ag < Hg < Cr < Mg < K
+
+⚠ Hg and Ag differ by only 0.01 V: read the numbers, not your memory
+
+$\ce{(4) Depict a cell and find E°   (NCERT Ex. 7.30: Zn + 2Ag⁺ -> Zn²⁺ + 2Ag)}$
+
+(−) Zn(s) | Zn²⁺(aq) ‖ Ag⁺(aq) | Ag(s) (+)
+
+anode Zn (negative) · cathode Ag · E°cell = 0.80 − (−0.76) = +1.56 V
+
+current carriers: electrons in the external wire, ions in the solutions and salt bridge
+
 
 **Other one-line predictions:**
 
@@ -1187,34 +1233,51 @@ minus that of the would-be reductant.*
 A **Latimer diagram** lists one element's species in **decreasing oxidation state**, left to
 right, with the standard **reduction** potential of each step written on the link.
 
+```mermaid
+flowchart TD
+    N0["ACID (pH 0), E° / V"]
+    N1["chlorine:  ClO₄⁻ ─1.20─ ClO₃⁻ ─1.18─ HClO₂ ─1.65─ HOCl ─1.63─ Cl₂ ─1.36─ Cl⁻"]
+    N2["+7           +5           +3           +1         0         −1"]
+    N3["manganese: MnO₄⁻ ─0.56─ MnO₄²⁻ ─2.26─ MnO₂ ─0.95─ Mn³⁺ ─1.51─ Mn²⁺ ─(−1.18)─ Mn"]
+    N4["iron:      FeO₄²⁻ ─≈2.20─ Fe³⁺ ─0.77─ Fe²⁺ ─(−0.44)─ Fe"]
+    N5["copper:    Cu²⁺ ─0.153─ Cu⁺ ─0.521─ Cu"]
+    N6["oxygen:    O₂ ─0.68─ H₂O₂ ─1.78─ H₂O"]
+    N7["BASE (pH 14), E° / V"]
+    N8["chlorine:  ClO₄⁻ ─0.37─ ClO₃⁻ ─0.30─ ClO₂⁻ ─0.68─ ClO⁻ ─0.42─ Cl₂ ─1.36─ Cl⁻"]
+    N0 --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
+    N5 --> N6
+    N6 --> N7
+    N7 --> N8
 ```
-ACID (pH 0), E° / V
- chlorine:  ClO₄⁻ ─1.20─ ClO₃⁻ ─1.18─ HClO₂ ─1.65─ HOCl ─1.63─ Cl₂ ─1.36─ Cl⁻
-             +7           +5           +3           +1         0         −1
- manganese: MnO₄⁻ ─0.56─ MnO₄²⁻ ─2.26─ MnO₂ ─0.95─ Mn³⁺ ─1.51─ Mn²⁺ ─(−1.18)─ Mn
- iron:      FeO₄²⁻ ─≈2.20─ Fe³⁺ ─0.77─ Fe²⁺ ─(−0.44)─ Fe
- copper:    Cu²⁺ ─0.153─ Cu⁺ ─0.521─ Cu
- oxygen:    O₂ ─0.68─ H₂O₂ ─1.78─ H₂O
+*Converted from ASCII: {lines[0][:80] if lines else ''}*
 
-BASE (pH 14), E° / V
- chlorine:  ClO₄⁻ ─0.37─ ClO₃⁻ ─0.30─ ClO₂⁻ ─0.68─ ClO⁻ ─0.42─ Cl₂ ─1.36─ Cl⁻
-```
 
 ### Test A — will the middle species disproportionate?
 
-```
-A species disproportionates spontaneously  ⇔  E°(link on its RIGHT) > E°(link on its LEFT)
+$\ce{A species disproportionates spontaneously  <=>  E°(link on its RIGHT) > E°(link on its LEFT)}$
+
 (E°cell of the disproportionation = E°right − E°left)
 
- Cu⁺     : 0.521 > 0.153  ✔  2Cu⁺ → Cu²⁺ + Cu                     E° = +0.368 V
- MnO₄²⁻  : 2.26  > 0.56   ✔  3MnO₄²⁻ + 4H⁺ → 2MnO₄⁻ + MnO₂ + 2H₂O  E° = +1.70 V
- Mn³⁺    : 1.51  > 0.95   ✔  2Mn³⁺ + 2H₂O → Mn²⁺ + MnO₂ + 4H⁺     (NCERT Ex. 7.21)
- H₂O₂    : 1.78  > 0.68   ✔  2H₂O₂ → 2H₂O + O₂                    E° = +1.10 V (slow: kinetics)
- Fe²⁺    : −0.44 < 0.77   ✘  stable, which is why Fe²⁺ is an ordinary ion
- acid:  HClO₂ 1.65 > 1.18 ✔ disproportionates · HOCl 1.63 < 1.65 ✘ · Cl₂ 1.36 < 1.63 ✘
- base:  Cl₂   1.36 > 0.42 ✔ ⇒ Cl₂ + 2OH⁻ → Cl⁻ + ClO⁻ + H₂O (bleach formation, §7d)
-        ClO₂⁻ 0.68 > 0.30 ✔
-```
+$\ce{Cu⁺     : 0.521 > 0.153  ✔  2Cu⁺ -> Cu²⁺ + Cu                     E° = +0.368 V}$
+
+$\ce{MnO₄²⁻  : 2.26  > 0.56   ✔  3MnO₄²⁻ + 4H⁺ -> 2MnO₄⁻ + MnO₂ + 2H₂O  E° = +1.70 V}$
+
+$\ce{Mn³⁺    : 1.51  > 0.95   ✔  2Mn³⁺ + 2H₂O -> Mn²⁺ + MnO₂ + 4H⁺     (NCERT Ex. 7.21)}$
+
+$\ce{H₂O₂    : 1.78  > 0.68   ✔  2H₂O₂ -> 2H₂O + O₂                    E° = +1.10 V (slow: kinetics)}$
+
+Fe²⁺    : −0.44 < 0.77   ✘  stable, which is why Fe²⁺ is an ordinary ion
+
+acid:  HClO₂ 1.65 > 1.18 ✔ disproportionates · HOCl 1.63 < 1.65 ✘ · Cl₂ 1.36 < 1.63 ✘
+
+$\ce{base:  Cl₂   1.36 > 0.42 ✔ -> Cl₂ + 2OH⁻ -> Cl⁻ + ClO⁻ + H₂O (bleach formation, §7d)}$
+
+ClO₂⁻ 0.68 > 0.30 ✔
+
 
 ⚠ **The medium flips the answer for Cl₂:** stable in acid (1.36 < 1.63), disproportionates in
 base (1.36 > 0.42). That is exactly why chlorine water is kept acidic and bleach is made in
@@ -1232,7 +1295,6 @@ KClO₄ are handled routinely, while chlorates and chlorites are touchy.
 
 ### Test B — combining steps: never add E°, add ΔG°
 
-```
 E°(overall) = (n₁E°₁ + n₂E°₂) / (n₁ + n₂)          (because ΔG° = −nFE° is additive)
 
  Cu²⁺/Cu    = (1×0.153 + 1×0.521)/2        = +0.337 ≈ +0.34 V   ✔ matches Table 7.1
@@ -1240,22 +1302,28 @@ E°(overall) = (n₁E°₁ + n₂E°₂) / (n₁ + n₂)          (because ΔG°
  MnO₄⁻/MnO₂ = (1×0.56 + 2×2.26)/3          = +1.69 V
  MnO₂/Mn²⁺  = (1×0.95 + 1×1.51)/2          = +1.23 V            ✔ matches Table 7.1
  MnO₄⁻/Mn²⁺ = (3×1.69 + 2×1.23)/5          = +1.51 V            ✔ matches Table 7.1
-```
+
 
 ⚠ An option equal to "0.77 + (−0.44) = 0.33 V" for Fe³⁺/Fe is the trap answer.
 
 ### Frost (oxidation-state) diagram: the fastest qualitative picture
 
-```
-plot  n·E° (for element → that state, ∝ −ΔG°/F)  against oxidation number n
+$\ce{plot  n·E° (for element -> that state, ∝ −ΔG°/F)  against oxidation number n}$
+
 · the LOWER a point, the more STABLE that state
-· a point ABOVE the line joining its two neighbours → it disproportionates
-· a point BELOW that line → its neighbours comproportionate into it
+
+$\ce{· a point ABOVE the line joining its two neighbours -> it disproportionates}$
+
+$\ce{· a point BELOW that line -> its neighbours comproportionate into it}$
+
 · slope of a segment = E° of that couple: a steep segment means a strong oxidant
+
 Mn in acid:  the minimum is Mn²⁺, so every higher state oxidises down to Mn²⁺
+
 Mn in base:  the minimum moves to MnO₂, which is why neutral/alkaline KMnO₄ stops at brown MnO₂
+
 Cl in acid:  the minimum is Cl⁻, so every positive O.S. of chlorine is an oxidant
-```
+
 
 ## 18. Oxidation-state map of the p-block
 
@@ -1341,12 +1409,11 @@ $\ce{2MnO4^{-} + 5C2O4^{2-} + 16H^{+}  ->  2Mn^{2+} + 10CO2 + 8H2O}$. So 1 mol K
 > 0.316 g of a sample containing oxalic acid needs 28.5 mL of 0.1 N KMnO₄ (acid medium).
 > Find the % w/w of H₂C₂O₄·2H₂O.
 
-```
 meq KMnO₄ = 28.5 × 0.1 = 2.85 meq = meq of oxalic acid
 mass      = 2.85 × 10⁻³ × 63 (E = 126/2) = 0.1796 g   ⇒  0.1796 / 0.316 = 56.8 %
 mole check: 0.1 N KMnO₄ (n = 5) is 0.02 M, so 28.5 mL holds 0.57 mmol MnO₄⁻;
             × 5/2 = 1.425 mmol oxalic acid × 126 = 0.1796 g   ✔ same answer
-```
+
 
 **P4 · Limiting reagent in a redox step (NCERT Ex. 7.25, Ostwald process)**
 

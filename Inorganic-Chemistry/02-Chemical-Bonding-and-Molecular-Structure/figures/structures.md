@@ -3,7 +3,7 @@
 This table is the **single source** for every structure drawing in [`../notes.md`](../notes.md).
 Edit a row, then regenerate:
 
-```
+```bash
 python scripts/render_structures.py Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/figures/structures.md
 ```
 

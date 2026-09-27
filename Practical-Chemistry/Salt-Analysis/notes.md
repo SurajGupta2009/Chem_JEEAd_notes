@@ -77,11 +77,12 @@ tags: [chemistry, jee]
 - **Extracts:** water extract (W.E.) if the salt dissolves in water; **sodium carbonate
   extract (S.C.E.)** if it does not.
 
-```
 Preparation of sodium carbonate extract:
-1 g salt + ~3 g solid Na2CO3 + 15 mL distilled water → boil ~10 min → cool → filter.
+
+$\ce{1 g salt + ~3 g solid Na2CO3 + 15 mL distilled water -> boil ~10 min -> cool -> filter.}$
+
 Filtrate = sodium carbonate extract (S.C.E.)
-```
+
 
 🆇 **Ion list handled in the JEE practical syllabus (module's Experiment 1.1):**
 - Cations: Pb²⁺, Cu²⁺, As³⁺, Al³⁺, Fe³⁺, Mn²⁺, Ni²⁺, Zn²⁺, Co²⁺, Ca²⁺, Sr²⁺, Ba²⁺,
@@ -98,20 +99,17 @@ Filtrate = sodium carbonate extract (S.C.E.)
   from incandescent carbon particles.
 - Air vent **open**, correct mix → **non-luminous blue flame** — hotter.
 
+```mermaid
+flowchart TD
+    Flame["Bunsen flame (non-luminous)"] --> F["(f) Upper oxidising zone<br>O₂ excess"]
+    Flame --> E["(e) Upper reducing zone<br>tip of blue cone, C-rich"]
+    Flame --> D["(d) Hottest / fusion zone<br>~1/3 height"]
+    Flame --> C["(c) Lower oxidising zone"]
+    Flame --> B["(b) Lower reducing zone"]
+    Flame --> A["(a) Base - coldest"]
 ```
-                  ┌─ (f) upper oxidising zone  (O2 excess; oxidations
-                  │      not needing max temperature)
-                  ├─ (e) upper reducing zone   (tip of blue cone; rich in
-                  │      incandescent C → reduces oxide incrustations)
-                  ├─ (d) HOTTEST portion / fusion zone (~⅓ height)
-                  ├─ (c) lower oxidising zone  (oxidising borax/Na2CO3 beads)
-                  ├─ (b) lower reducing zone   (weaker reduction of beads)
-                  └─ (a) lowest temperature zone (volatile substances:
-                         do they colour the flame?)
-        Inner dark cone = unburnt gas + air (coldest; no combustion)
-        Middle blue cone = incomplete combustion
-        Outer purplish mantle = complete combustion (hottest region overall)
-```
+*Bunsen flame zones: reducing (C-rich) vs oxidising (O₂-rich), hottest is fusion zone.*
+
 
 - **Striking back:** with vents fully open + too little gas, the flame travels down the
   tube and burns at the nozzle; tube becomes dangerously hot. Remedy: shut off, cool,
@@ -175,15 +173,18 @@ reducing (luminous) flames.
 
 **Chemistry:**
 
-```
-Na2B4O7·10H2O --Δ--> Na2B4O7 + 10 H2O
-Na2B4O7       --Δ--> 2 NaBO2 (sodium metaborate) + B2O3 (boric anhydride)
-CuSO4 + B2O3  --oxidising flame-->  Cu(BO2)2 (cupric metaborate, BLUE-GREEN) + SO3
+$\ce{Na2B4O7·10H2O --Δ--> Na2B4O7 + 10 H2O}$
+
+$\ce{Na2B4O7       --Δ--> 2 NaBO2 (sodium metaborate) + B2O3 (boric anhydride)}$
+
+$\ce{CuSO4 + B2O3  --oxidising flame-->  Cu(BO2)2 (cupric metaborate, BLUE-GREEN) + SO3}$
 
 Reducing flame:
-2 Cu(BO2)2 + 2 NaBO2 + C → 2 CuBO2 (colourless cuprous metaborate) + Na2B4O7 + CO
-or   further reduction → 2 Cu (metallic; red, opaque bead)
-```
+
+$\ce{2 Cu(BO2)2 + 2 NaBO2 + C -> 2 CuBO2 (colourless cuprous metaborate) + Na2B4O7 + CO}$
+
+$\ce{or   further reduction -> 2 Cu (metallic; red, opaque bead)}$
+
 
 **Borax bead colour table:**
 
@@ -204,10 +205,10 @@ resolved by the reducing flame (Cu → red opaque, Co stays blue). **Microcosmic
   with a blow-pipe in the **reducing (luminous)** flame. Carbonates decompose to oxides
   (coloured residue); the charcoal carbon may reduce the oxide to metal.
 
-```
-CuSO4 + Na2CO3 → CuCO3 + Na2SO4 ;  CuCO3 → CuO + CO2 ;  CuO + C → Cu (red) + CO
-ZnSO4 + Na2CO3 → ZnCO3 + Na2SO4 ;  ZnCO3 → ZnO (yellow hot, white cold) + CO2
-```
+$\ce{CuSO4 + Na2CO3 -> CuCO3 + Na2SO4 ;}$  CuCO3 → CuO + CO2 ;  CuO + C → Cu (red) + CO
+
+$\ce{ZnSO4 + Na2CO3 -> ZnCO3 + Na2SO4 ;}$  ZnCO3 → ZnO (yellow hot, white cold) + CO2
+
 
 | Observation in the cavity | Inference |
 |---|---|
@@ -221,12 +222,14 @@ ZnSO4 + Na2CO3 → ZnCO3 + Na2SO4 ;  ZnCO3 → ZnO (yellow hot, white cold) + CO
 Add 2–3 drops Co(NO₃)₂ solution to the residue; heat strongly in the non-luminous
 flame. Co(NO₃)₂ decomposes to CoO which colours the metal oxide:
 
-```
-2 Co(NO3)2 → 2 CoO + 4 NO2 + O2
-CoO + ZnO   → CoO·ZnO   Rinmann's GREEN
-CoO + MgO   → CoO·MgO   PINK
-CoO + Al2O3 → CoO·Al2O3 THENARD'S BLUE
-```
+$\ce{2 Co(NO3)2 -> 2 CoO + 4 NO2 + O2}$
+
+$\ce{CoO + ZnO   -> CoO·ZnO   Rinmann's GREEN}$
+
+$\ce{CoO + MgO   -> CoO·MgO   PINK}$
+
+$\ce{CoO + Al2O3 -> CoO·Al2O3 THENARD'S BLUE}$
+
 
 🆇 Same chemistry as "Rinmann's green" in the d-block notes. A **yellow-green incrustation**
 in the charcoal cavity also points to Zn; Cd gives a brown incrustation.
@@ -252,11 +255,12 @@ which is tested on the salt itself, since S.C.E. already contains CO₃²⁻).
 
 ### CO₃²⁻ — carbonate
 
-```
-Na2CO3 + H2SO4 → Na2SO4 + H2O + CO2↑ (brisk effervescence)
-Ca(OH)2 + CO2 → CaCO3↓ + H2O        (lime water turns milky)
-CaCO3 + CO2 + H2O → Ca(HCO3)2        (excess CO2: milkiness DISAPPEARS — soluble)
-```
+$\ce{Na2CO3 + H2SO4 -> Na2SO4 + H2O + CO2↑ (brisk effervescence)}$
+
+$\ce{Ca(OH)2 + CO2 -> CaCO3↓ + H2O}$  (lime water turns milky)
+
+$\ce{CaCO3 + CO2 + H2O -> Ca(HCO3)2}$  (excess CO2: milkiness DISAPPEARS — soluble)
+
 
 ### S²⁻ — sulphide
 
@@ -445,13 +449,16 @@ CaCO3 + CO2 + H2O → Ca(HCO3)2        (excess CO2: milkiness DISAPPEARS — sol
 **Original solution (O.S.)** — dissolve the salt trying solvents **in this strict
 order** (move to the next only if the previous fails, cold and hot):
 
-```
-1. distilled water (cold → hot)
-2. dilute HCl (cold → hot)
+$\ce{1. distilled water (cold -> hot)}$
+
+$\ce{2. dilute HCl (cold -> hot)}$
+
 3. concentrated HCl (hot)
+
 4. dilute HNO3
+
 5. aqua regia (conc. HCl : conc. HNO3 = 3 : 1)
-```
+
 
 A salt insoluble even in aqua regia is classed as insoluble. 🆇 O.S. is **never**
 prepared in conc. HNO₃ or conc. H₂SO₄ (nitrate/sulphate would be introduced, and they
@@ -539,36 +546,45 @@ flowchart TD
 
 ### Cu²⁺ (IIA)
 
-```
-3 CuS + 8 HNO3 → 3 Cu(NO3)2 + 2 NO + 3 S + 4 H2O      (ppt dissolves; long heating
-S + 2 HNO3 → H2SO4 + 2 NO                               oxidises S → CuSO4, blue solution)
-2 Cu2+ + SO4^2- + 2 NH3 + 2 H2O → Cu(OH)2·CuSO4↓ + 2 NH4+   (basic copper sulphate)
-Cu(OH)2·CuSO4 + 8 NH3 → 2 [Cu(NH3)4]SO4 + 2 OH- + SO4^2-    (DEEP BLUE)
-[Cu(NH3)4]SO4 + 4 CH3COOH → CuSO4 + 4 CH3COONH4
-2 CuSO4 + K4[Fe(CN)6] → Cu2[Fe(CN)6]↓ (chocolate brown) + 2 K2SO4
-```
+$\ce{3 CuS + 8 HNO3 -> 3 Cu(NO3)2 + 2 NO + 3 S + 4 H2O}$  (ppt dissolves; long heating
+
+$\ce{S + 2 HNO3 -> H2SO4 + 2 NO}$  oxidises S → CuSO4, blue solution)
+
+$\ce{2 Cu2+ + SO4^2- + 2 NH3 + 2 H2O -> Cu(OH)2·CuSO4↓ + 2 NH4+}$  (basic copper sulphate)
+
+$\ce{Cu(OH)2·CuSO4 + 8 NH3 -> 2 [Cu(NH3)4]SO4 + 2 OH- + SO4^2-}$  (DEEP BLUE)
+
+$\ce{[Cu(NH3)4]SO4 + 4 CH3COOH -> CuSO4 + 4 CH3COONH4}$
+
+$\ce{2 CuSO4 + K4[Fe(CN)6] -> Cu2[Fe(CN)6]↓ (chocolate brown) + 2 K2SO4}$
+
 
 - Signature tests: excess NH₄OH → **deep blue**; acidified + K₄[Fe(CN)₆] →
   **chocolate-brown** Cu₂[Fe(CN)₆].
 
 ### Pb²⁺ (IIA)
 
-```
-3 PbS + 8 HNO3 → 3 Pb(NO3)2 + 2 NO + 4 H2O + 3 S
-Pb(NO3)2 + H2SO4 → PbSO4↓ (white) + 2 HNO3
-→ dissolve in ammonium acetate, acidify with CH3COOH, split:
-   + K2CrO4 → PbCrO4↓ (yellow) ;  + KI → PbI2↓ (yellow)
-```
+$\ce{3 PbS + 8 HNO3 -> 3 Pb(NO3)2 + 2 NO + 4 H2O + 3 S}$
+
+$\ce{Pb(NO3)2 + H2SO4 -> PbSO4↓ (white) + 2 HNO3}$
+
+$\ce{-> dissolve in ammonium acetate, acidify with CH3COOH, split:}$
+
+$\ce{+ K2CrO4 -> PbCrO4↓ (yellow) ;}$  + KI → PbI2↓ (yellow)
+
 
 ### As³⁺ (IIB)
 
-```
-As2S3 + 3 (NH4)2S → 2 (NH4)3AsS4 + S        (dissolves in yellow ammonium sulphide)
-2 (NH4)3AsS4 + 6 HCl → As2S5↓ (yellow) + 3 H2S + 6 NH4Cl
-3 As2S5 + 10 HNO3 + 4 H2O → 6 H3AsO4 + 10 NO + 15 S
-H3AsO4 + 12 (NH4)2MoO4 + 21 HNO3 → (NH4)3[As(Mo3O10)4]↓ + 21 NH4NO3 + 12 H2O
-                                          canary yellow
-```
+$\ce{As2S3 + 3 (NH4)2S -> 2 (NH4)3AsS4 + S}$  (dissolves in yellow ammonium sulphide)
+
+$\ce{2 (NH4)3AsS4 + 6 HCl -> As2S5↓ (yellow) + 3 H2S + 6 NH4Cl}$
+
+$\ce{3 As2S5 + 10 HNO3 + 4 H2O -> 6 H3AsO4 + 10 NO + 15 S}$
+
+$\ce{H3AsO4 + 12 (NH4)2MoO4 + 21 HNO3 -> (NH4)3[As(Mo3O10)4]↓ + 21 NH4NO3 + 12 H2O}$
+
+canary yellow
+
 
 - Signature: arsenate gives the same **canary-yellow ammonium arsenomolybdate** as
   phosphate does with ammonium molybdate.
@@ -605,28 +621,29 @@ H3AsO4 + 12 (NH4)2MoO4 + 21 HNO3 → (NH4)3[As(Mo3O10)4]↓ + 21 NH4NO3 + 12 H2O
 
 ### Zn²⁺
 
-```
-ZnS + 2 HCl → ZnCl2 + H2S
-ZnCl2 + 2 NaOH → Zn(OH)2↓ (white) ;  Zn(OH)2 + 2 NaOH → Na2ZnO2 + 2 H2O (soluble)
-2 ZnCl2 + K4[Fe(CN)6] → Zn2[Fe(CN)6]↓ (white / bluish-white) + 4 KCl
-```
+$\ce{ZnS + 2 HCl -> ZnCl2 + H2S}$
+
+$\ce{ZnCl2 + 2 NaOH -> Zn(OH)2↓ (white) ;}$  Zn(OH)2 + 2 NaOH → Na2ZnO2 + 2 H2O (soluble)
+
+$\ce{2 ZnCl2 + K4[Fe(CN)6] -> Zn2[Fe(CN)6]↓ (white / bluish-white) + 4 KCl}$
+
 
 ### Mn²⁺
 
-```
-MnS + 2 HCl → MnCl2 + H2S
-MnCl2 + 2 NaOH → Mn(OH)2↓ (white) →(air O2) MnO(OH)2 (brown, hydrated MnO2)
-```
+$\ce{MnS + 2 HCl -> MnCl2 + H2S}$
+
+$\ce{MnCl2 + 2 NaOH -> Mn(OH)2↓ (white) ->(air O2) MnO(OH)2 (brown, hydrated MnO2)}$
+
 
 🆇 Stronger confirmatory: oxidise Mn²⁺ to purple MnO₄⁻ with **NaBiO₃** or PbO₂ in
 HNO₃ (see d-block notes).
 
 ### Ni²⁺
 
-```
-3 NiS + 2 HNO3 + 6 HCl → 3 NiCl2 + 2 NO + 3 S + 4 H2O   (aqua regia)
-NiCl2 + 2 NH4OH + 2 dmgH → [Ni(dmg)2]↓ + 2 NH4Cl + 2 H2O
-```
+$\ce{3 NiS + 2 HNO3 + 6 HCl -> 3 NiCl2 + 2 NO + 3 S + 4 H2O}$  (aqua regia)
+
+$\ce{NiCl2 + 2 NH4OH + 2 dmgH -> [Ni(dmg)2]↓ + 2 NH4Cl + 2 H2O}$
+
 
 - **Dimethylglyoxime (dmg) test:** ammoniacal solution + dmg → **bright
   pink/rose-red** precipitate of [Ni(dmg)₂] (square-planar, H-bonded chelate —
@@ -636,10 +653,10 @@ NiCl2 + 2 NH4OH + 2 dmgH → [Ni(dmg)2]↓ + 2 NH4Cl + 2 H2O
 
 ### Co²⁺
 
-```
-CoS + HNO3 + 3 HCl → CoCl2 + NOCl + S + 2 H2O
-CoCl2 + 7 KNO2 + 2 CH3COOH → K3[Co(NO2)6]↓ + 2 KCl + 2 CH3COOK + NO + H2O
-```
+$\ce{CoS + HNO3 + 3 HCl -> CoCl2 + NOCl + S + 2 H2O}$
+
+$\ce{CoCl2 + 7 KNO2 + 2 CH3COOH -> K3[Co(NO2)6]↓ + 2 KCl + 2 CH3COOK + NO + H2O}$
+
 
 - Neutralise with NH₄OH, acidify with CH₃COOH, add solid KNO₂ → **yellow precipitate**
   of **potassium hexanitritocobaltate(III)** (the module's "Fisher salt").
@@ -866,4 +883,3 @@ the on/off mechanism is a favourite one-liner.
 *This file covers both Allen modules completely; coordination-compound theory used
 above (Ni–dmg, cyano-complexes, Prussian blue) is developed in
 [`Inorganic-Chemistry/08-Coordination-Compounds/notes.md`](../../Inorganic-Chemistry/08-Coordination-Compounds/notes.md).*
-

@@ -64,10 +64,10 @@ tags: [chemistry, jee]
 **Addition compounds** form when solutions of two or more salts in simple molecular
 proportion are evaporated and new crystals separate:
 
-```
-K2SO4 + Al2(SO4)3 + 24 H2O → K2SO4·Al2(SO4)3·24H2O   (potash alum)
-CuSO4 + 4 NH3 + H2O → [Cu(NH3)4]SO4·H2O
-```
+$\ce{K2SO4 + Al2(SO4)3 + 24 H2O -> K2SO4·Al2(SO4)3·24H2O}$  (potash alum)
+
+$\ce{CuSO4 + 4 NH3 + H2O -> [Cu(NH3)4]SO4·H2O}$
+
 
 They divide into two classes:
 
@@ -329,11 +329,10 @@ Same **empirical** formula, different molecular weight — *not true isomerism*:
 - **Ma₃b₃** → **fac** (three identical ligands on one octahedral face) and **mer**
   (around the meridian) — e.g. [Co(NH₃)₃(NO₂)₃].
 
-```
 octahedral Ma4b2:                 octahedral Ma3b3:
    cis: b's at 90°                 fac: a-a-a on one face
    trans: b's at 180°              mer: a's around a meridian
-```
+
 
 ## 8. Stereoisomerism — Optical & Isomer Counting
 
@@ -392,9 +391,8 @@ NCERT.)
 🅰 **EAN** = total electrons on the central metal **after** receiving ligand lone
 pairs:
 
-```
 EAN = (Z of metal − oxidation state) + 2 × (coordination number)
-```
+
 
 Stable complexes tend to reach the **atomic number of the next noble gas**:
 - K₄[Fe(CN)₆]: Fe²⁺ → 26 − 2 + 12 = **36 (Kr)** ✓
@@ -464,12 +462,11 @@ asymmetric ligand field lifts the degeneracy → **crystal field splitting**.
 Ligands approach along the axes → **dx²−y², dz² (eg set)** are raised; **dxy, dyz,
 dxz (t2g set)** are lowered relative to the barycentre:
 
-```
-                        eg (dx2-y2, dz2)     +0.6 Δo  (= +3/5 Δo)
+eg (dx2-y2, dz2)     +0.6 Δo  (= +3/5 Δo)
  free ion      ---- barycentre ----
  d (degenerate)                     split by 6L
                         t2g (dxy, dxz, dyz)  -0.4 Δo  (= -2/5 Δo)
-```
+
 
 - Δo depends on the ligand field and metal charge.
 - **Spectrochemical series** (experimental; increasing field strength):
@@ -498,12 +495,11 @@ dxz (t2g set)** are lowered relative to the barycentre:
 
 Remove the two trans (z-axis) ligands from an octahedron:
 
-```
 dx2-y2   (highest — ligands approach along x, y)
 dxy
 dz2
 dxz, dyz (lowest — no ligand on z-axis)
-```
+
 
 Δsp = Δ₁ + Δ₂ + Δ₃ > Δo; experimentally **Δsp ≈ 1.3 Δo**. This is why d⁸ metals with
 strong ligands (Ni²⁺/Pd²⁺/Pt²⁺ + CN⁻) go square planar and diamagnetic.
@@ -578,13 +574,16 @@ resolved by Ligand Field Theory / MOT.
 
 🅰 Stepwise formation of an aquo-metal complex (ignoring charges):
 
-```
-[M(H2O)6] + L ⇌ [M(H2O)5L] + H2O        K1
-[M(H2O)5L] + L ⇌ [M(H2O)4L2] + H2O      K2
+$\ce{[M(H2O)6] + L <=> [M(H2O)5L] + H2O}$  K1
+
+$\ce{[M(H2O)5L] + L <=> [M(H2O)4L2] + H2O}$  K2
+
 ...
-[M(H2O)Ln-1] + L ⇌ [MLn] + H2O          Kn
+
+$\ce{[M(H2O)Ln-1] + L <=> [MLn] + H2O}$  Kn
+
 Overall stability constant:  βn = K1 × K2 × ... × Kn
-```
+
 
 - **Thermodynamic stability** — magnitude of βn at equilibrium; larger βn = more
   product. Measured from aqueous solutions (ligand displaces water from the aqua
@@ -613,10 +612,10 @@ missing electron in Mn and Co).
 
 **Synergic (σ + π) bonding:**
 
-```
-M  —σ donate→  CO   (lone pair on C → empty metal hybrid)
-M  ←π back—   CO    (filled metal dπ → empty π* antibonding of CO)
-```
+$\ce{M  —σ donate->  CO   (lone pair on C -> empty metal hybrid)}$
+
+$\ce{M  ←π back—   CO    (filled metal dπ -> empty π* antibonding of CO)}$
+
 
 - The metal→CO π back-donation strengthens the M–C σ bond **and** weakens the C≡O
   bond (C–O stretch frequency in IR is diagnostic — bridging CO absorbs at lower ν).
@@ -728,4 +727,3 @@ Fixing with hypo (sodium thiosulphate) dissolves unexposed AgBr as
 (complexes used as reagents and precipitates — K₄[Fe(CN)₆], DMG, K₃[Co(NO₂)₆]).
 *Sources:* NCERT Class XII rationalised ed. (lech105) · Allen Coordination Compound
 module (Enthusiast, JEE Main + Advanced).
-

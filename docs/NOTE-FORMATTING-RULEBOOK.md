@@ -1,4 +1,4 @@
-# Notes Formatting Rulebook — v1.1
+# Notes Formatting Rulebook — v1.2
 
 **Authority.** This file is the single specification for every `notes.md` in this repo. Where it
 and habit disagree, this wins. The six finished notes
@@ -21,12 +21,13 @@ implementation** — every rule below was extracted from what they already do.
 
 ---
 
-## Part 0 — The five non-negotiables
+## Part 0 — The six non-negotiables
 
 | # | Rule |
 |---|---|
 | **N1** | Exactly **one `notes.md` per chapter folder**, named `notes.md`. Never `Notes.md`, never `chapter-4.md`. The fetch script and every index detect that exact filename. |
-| **N2** | **GitHub-safe markdown** in every committed file: GFM tables, Mermaid, `$…$`/`$$…$$`, fenced ASCII, relative links. No `[[wikilinks]]`, no `> [!callout]`, no Dataview blocks, no `\ce{}`. |
+| **N2** | **GitHub-safe markdown** in every committed file: GFM tables, Mermaid, `$…$`/`$$…$$`, `$\ce{…}$`, relative links, ChemEdit SVGs. **No bare ASCII fences**. No `[[wikilinks]]`, no `> [!callout]`, no Dataview blocks. |
+| **N6** | **No terminal-like ASCII diagrams.** Every diagram must be rendered by Obsidian plugins: Mermaid `flowchart`, `smiles` + Chem/ChemEdit SVG, Excalidraw SVG, or LaTeX `$\ce{}$`. Bare ` ``` ` fences are forbidden — use ` ```mermaid `, ` ```smiles `, or a named language. |
 | **N3** | House markers used with their fixed meanings: **🅰** Allen-only · **🆇** beyond-NCERT/Advanced · **⚠** trap · **✅** written · **⏳** pending. |
 | **N4** | Every section heading carries **NCERT's own section number** in parentheses — `(8.7.5)` — so the PDF and the notes can be read side by side. |
 | **N5** | Every `notes.md` ends with a **Quick Revision Sheet** and a **cross-links footer**. |
@@ -37,7 +38,7 @@ implementation** — every rule below was extracted from what they already do.
 
 ### R1 — File inventory of a chapter folder
 
-```
+```text
 Physical-Chemistry/04-Equilibrium/
 ├── notes.md          ← you + Arena AI write this      (rule book applies)
 ├── cards.md          ← optional study layer            (§Part 7, Obsidian-only syntax allowed)
@@ -106,7 +107,7 @@ It renders as a properties panel in Obsidian and is invisible on GitHub.
 
 ### R5 — Required order
 
-```
+```text
 1  # <Chapter> — JEE Main + Advanced Notes          (H1, exactly one)
 2  > Sources merged into these notes  (blockquote + 2-col table + marker legend)
 3  ## Contents                                      (Parts as links, sections as nested list)
@@ -177,7 +178,7 @@ Keep Unicode formulas in prose and avoid converting non-reaction diagrams to mat
 
 ### R9 — Reaction equations
 
-```
+```text
 Reactants → Products        (conditions in parentheses after the arrow, on the same line)
 CH₃CH₂OH ⟶ CH₂═CH₂ + H₂O    (conc. H₂SO₄, 443–453 K)
 N₂(g) + 3H₂(g) ⇌ 2NH₃(g)    (Fe/Mo catalyst, 200 atm, 773 K; ΔH = −92.4 kJ mol⁻¹)
@@ -297,12 +298,12 @@ The **Quick Revision Sheet is never a table** — bullets only (R30).
 | You are drawing… | System | Renders on GitHub? | Plugin to author/edit |
 |---|---|---|---|
 | A molecule's formula, an ion, a unit | **Unicode text** (R8) | ✅ | — |
-| A balanced equation / ionic equation | Unicode, or `\ce{}` **in private files only** | ✅ / ❌ | LaTeX Suite (snippets), mhchem is core |
-| A small structural formula, apparatus, orbital picture, energy profile, lattice | **ASCII in a fenced block** | ✅ | plain text; ASCII Tree Generator for trees |
+| A balanced equation / ionic equation | `$\ce{…}$` (mhchem) — **allowed in committed notes for reactions**, or Unicode | ✅ GitHub renders via MathJax, Obsidian via mhchem | LaTeX Suite (snippets), mhchem is core |
+| A small structural formula, apparatus, orbital picture, energy profile, lattice | **Mermaid `flowchart`** or ChemEdit SVG — **no ASCII art** (R21 deprecated) | ✅ | Mermaid Tools, ChemEdit |
 | A process, decision tree, classification, cycle, reaction map | **Mermaid `flowchart`** | ✅ | Mermaid Tools, Mermaid Popup, Mermaid Link Navigator |
 | A chapter overview / revision map | **Mindmap from the note's own outline** | ❌ (outline itself is the fallback ✅) | Mindmap Nextgen (markmap), Markmind, Canvas Mindmap |
-| A flowsheet with loops and parallel branches (metallurgy, salt analysis) | **Mermaid** first; **PlantUML** only in private files | ✅ / ❌ | PlantUML (`obsidian-plantuml`) |
-| A skeletal organic structure or reaction scheme | **SMILES code block** → drawn structure | ❌ raw string ✅ (readable) | Chem (`chem`), ChemEdit (`chemedit`) |
+| A flowsheet with loops and parallel branches (metallurgy, salt analysis) | **Mermaid** — mandatory; PlantUML forbidden in committed notes | ✅ | Mermaid |
+| A skeletal organic structure or reaction scheme | **SMILES code block** → drawn structure + ChemEdit SVG | ✅ SVG + string | Chem (`chem`), ChemEdit (`chemedit`) |
 | A publication-grade skeletal formula / `chemfig` | **TikZJax** | ❌ | `tikzjax` |
 | A curved-arrow mechanism, anything freehand | **Excalidraw** + committed SVG export | ✅ via the SVG | Excalidraw (`obsidian-excalidraw-plugin`) |
 | A draw.io-style box diagram | **draw.io** | ❌ | `drawio` |
@@ -315,9 +316,9 @@ Choose the lowest rung that communicates the point. Climbing rungs costs portabi
 | Rung | Syntax | GitHub | Obsidian | Diffable | Use for |
 |---|---|---|---|---|---|
 | 1 | `CH₃CH₂OH`, `[Fe(CN)₆]⁴⁻` | ✅ | ✅ | ✅ | 95 % of cases — prose, tables, bullets |
-| 2 | `$\ce{CH3CH2OH + [O] -> CH3CHO}$` | ❌ | ✅ | ✅ | Private `cards.md`, study sheets |
-| 3 | ASCII drawing in a fence | ✅ | ✅ | ✅ | Conformations, apparatus, orbital splitting, `CrO₅` butterfly |
-| 4 | ` ```smiles ` + `CC(=O)O` | string only | ✅ drawn | ✅ | Organic: every compound in a named-reaction table |
+| 2 | `$\ce{CH3CH2OH + [O] -> CH3CHO}$` | ✅ (GitHub MathJax + Obsidian mhchem) | ✅ | ✅ | **Reactions in committed notes** — preferred over ASCII |
+| 3 | **DEPRECATED** ASCII drawing — use Mermaid or ChemEdit SVG instead | ❌ forbidden by N6 | ❌ | ❌ | No longer allowed — convert to rungs 2,4,5,7 |
+| 4 | ` ```smiles ` + `CC(=O)O` + `figures/mol/*.svg` | ✅ SVG + string | ✅ drawn | ✅ | Organic: every compound; also replaces old ASCII butterfly structures |
 | 5 | `.mol` / `.cdxml` in `figures/` + exported SVG | ✅ SVG | ✅ editable | ✅ (SVG is text) | Multi-step schemes, isomer sets, stereochemistry |
 | 6 | TikZJax `chemfig` | ❌ | ✅ | ✅ | When rung 5 isn't precise enough |
 | 7 | Excalidraw hand-drawn | ✅ SVG export | ✅ | ⚠ noisy | Mechanisms with curved arrows |
@@ -330,7 +331,7 @@ Choose the lowest rung that communicates the point. Climbing rungs costs portabi
 **The structure pipeline (rungs 4 + 5 together).** One table per chapter,
 `figures/structures.md`, is the single source for every drawn structure:
 
-```
+```markdown
 | Label | SMILES | ID | O.S. | Check | Note |
 |---|---|---|---|---|---|
 | H₂SO₅ Caro's acid | OOS(=O)(=O)O | h2so5 | auto | S=+6 O=-2,-1 | one O–O |
@@ -401,13 +402,12 @@ flowchart TD
 | Caption | One italic line under the fence saying what the reader should take from it |
 | Language tag | Exactly ` ```mermaid ` (lowercase) |
 
-### R21 — ASCII house style
+### R21 — ASCII ban — Obsidian-rendered diagrams only (v1.2)
 
-- Always inside a bare ` ``` ` fence (no language tag) so nothing tries to highlight it.
-- ≤ 100 columns; box-drawing characters `│ ─ ┌ ┐ └ ┘ ├ ┤ ┬ ┴ ┼` are allowed and preferred over `+--+`.
-- Label every atom and every arrow; put curved-arrow electron movement in words *under* the drawing
-  ("lone pair on O attacks the carbonyl C; π electrons go up to O").
-- One drawing = one idea. Two related drawings side by side are better than one wide drawing.
+- **DEPRECATED — bare ` ``` ` fences are forbidden by N6.** All legacy ASCII must be migrated.
+- Replace with: Mermaid `flowchart` for apparatus/cycles/energy profiles/orbital diagrams; `$\ce{}$` for reactions; `smiles` + ChemEdit SVG for structures; Excalidraw SVG for curved-arrow/freehand.
+- **No ASCII art**: Daniell cell, Bunsen flame, charcoal cavity, titration curves, Ostwald dilution, Latimer/Frost, crystal-field splitting, etc. must be Mermaid or SVG.
+- One Mermaid diagram = one idea; ≤14 nodes; caption below; `flowchart TD/LR` with quoted labels.
 
 ### R22 — Mindmaps: generated, never hand-maintained
 
@@ -432,14 +432,14 @@ so the `## Contents` block and the Quick Revision Sheet *become* a mindmap for f
 
 ### R23 — Where each visual system is used, chapter by chapter
 
-| Chapter | Tables | Flowchart (Mermaid) | Mindmap | ASCII | Structures |
+| Chapter | Tables | Flowchart (Mermaid) | Mindmap | ASCII (deprecated → Mermaid/SVG) | Structures |
 |---|---|---|---|---|---|
-| **Equilibrium** | K-conversion bank, Le Chatelier 5-factor table, pH/salt-hydrolysis table, formula bank §23 | ✅ exists (§8 ICE-table logic); add: "which K do I use?" decision tree | Parts A/B/C outline → revision map | Titration curves, Ostwald dilution, buffer action | — |
-| **Redox** | ✅ 10 rules, fixed-value ions, n-factor bank, species bank | ✅ exists (§1 three languages); add: balancing-method chooser | Oxidation-state map §18 as an outline tree | Latimer & Frost diagrams, Daniell cell | `CrO₅`, `H₂S₂O₈` ✅ exist |
-| **Electrochemistry** | Cell-notation rules, battery comparison, Kohlrausch applications, trap list | ✅ exists (§4 Nernst forms); add: **products-of-electrolysis discharge rules** — the best flowchart candidate here | Conductance family tree | Galvanic cell, salt bridge, conductance cell, Pourbaix | — |
-| **d- and f-block** | ✅ trends, oxidation states, halide/oxide stability | ✅ exists; add: K₂Cr₂O₇ and KMnO₄ **preparation flowsheets** | Lanthanoid vs actinoid comparison as a map | Crystal-field splitting, lanthanide contraction | — |
-| **Coordination** | ✅ ligand classification, VBT hybridisation, nomenclature order | Isomer-counting decision tree; CFT strong/weak-field split | ⭐ **Isomerism taxonomy** — the single best mindmap in the repo (structural → ionisation/hydrate/linkage/coordination; stereo → geometrical/optical) | Octahedral/tetrahedral/square-planar splitting, Jahn–Teller | Complexes as SMILES/`chemedit` where useful |
-| **Salt Analysis** | ✅ group reagents, flame colours, borax bead, anion summary | ⭐ **The whole chapter is a flowchart**: anion Groups A/B/C and cation Groups 0–VI with confirmatory tests | Group scheme as an outline | Charcoal cavity, borax bead apparatus | Precipitate colours |
+| **Equilibrium** | K-conversion bank, Le Chatelier 5-factor table, pH/salt-hydrolysis table, formula bank §23 | ✅ Mermaid for ICE logic, K-choice tree, Le Chatelier flow, pH vs dilution | Parts A/B/C outline → revision map | ❌ → Mermaid: titration curves, Ostwald dilution, buffer action as flowcharts | — |
+| **Redox** | ✅ 10 rules, fixed-value ions, n-factor bank, species bank | ✅ Mermaid for balancing chooser + oxidation-state map | Oxidation-state map §18 as an outline tree | ❌ → Mermaid: Latimer & Frost, Daniell cell as flowchart + $\ce{}$ | `CrO₅`, `H₂S₂O₈` ChemEdit SVGs ✅ |
+| **Electrochemistry** | Cell-notation rules, battery comparison, Kohlrausch applications, trap list | ✅ Mermaid for Nernst forms + discharge rules | Conductance family tree | ❌ → Mermaid: Galvanic cell, salt bridge, conductance cell, Pourbaix as flowchart | — |
+| **d- and f-block** | ✅ trends, oxidation states, halide/oxide stability | ✅ Mermaid for K₂Cr₂O₇/KMnO₄ prep flowsheets + CFT splitting | Lanthanoid vs actinoid comparison as a map | ❌ → Mermaid: crystal-field splitting, lanthanide contraction as flowcharts | — |
+| **Coordination** | ✅ ligand classification, VBT hybridisation, nomenclature order | Mermaid for isomer-counting + CFT strong/weak-field split | ⭐ **Isomerism taxonomy** mindmap | ❌ → Mermaid: octahedral/tetrahedral/square-planar splitting, Jahn–Teller | Complexes as SMILES/`chemedit` |
+| **Salt Analysis** | ✅ group reagents, flame colours, borax bead, anion summary | ⭐ Mermaid for entire anion Groups A/B/C + cation Groups 0–VI flowsheet | Group scheme as an outline | ❌ → Mermaid + $\ce{}$: charcoal cavity, borax bead, flame zones as flowchart | Precipitate colours + $\ce{}$ |
 | **Organic (when written)** | Named-reaction banks, reagent → product matrices, acidity/basicity orders, isomer counts | ⭐ **Functional-group interconversion maps**, reaction-mechanism decision trees (SN1 vs SN2 vs E1 vs E2), electrophile/Markovnikov prediction | Conversion ladders per chapter | Newman/sawhorse, chair conformations, energy profiles, resonance contributors | ⭐ **SMILES + ChemEdit** for every structure; Excalidraw for curved-arrow mechanisms |
 | **Metallurgy — Physical 12 (module uploaded, notes pending)** | Concentration-method choice, reduction-temperature table | ⭐ Extraction flowsheets (Fe, Cu, Al, Zn, Ag/Au) — natural Mermaid | Ellingham-diagram reading order | Blast furnace, Bessemer, Hall–Héroult, electrolytic refining | — |
 
@@ -460,7 +460,7 @@ so the `## Contents` block and the Quick Revision Sheet *become* a mindmap for f
 
 ### R25 — Section internal order (the repeating unit)
 
-```
+```markdown
 ## N. Title (NCERT §x.y)
    1–2 sentence answer-first statement of what this is and why JEE asks it
    The rule / the expression / the table
@@ -550,11 +550,11 @@ Never hand-write ✅ into a script-owned file.
 - [ ] Exactly one H1 title; Parts are H1; H2 numbering continuous, no gaps or duplicates
 - [ ] Every heading's NCERT section number present where one exists (N4)
 - [ ] Contents block: every link resolves; anchors generated mechanically (R7)
-- [ ] No `[[wikilinks]]`, no `> [!…]`, no `\ce{}`, no Dataview in a committed note (N2)
+- [ ] No `[[wikilinks]]`, no `> [!…]`, no Dataview in a committed note (N2) — `$\ce{}$` **allowed** for reactions (N2 v1.2)
+- [ ] **No bare ` ``` ` fences** — every fence must have language tag: `mermaid`, `smiles`, or code (N6)
 - [ ] Every table: ≤ 6 columns, aligned delimiters, no empty cells, ≤ 55-char cells
-- [ ] Every Mermaid fence: `flowchart`, quoted labels, ≤ 14 nodes, caption below, renders on GitHub
-- [ ] Every ASCII drawing inside a bare fence, ≤ 100 columns
-- [ ] Every Obsidian-only visual has its R19 fallback
+- [ ] Every Mermaid fence: `flowchart`, quoted labels, ≤ 14 nodes, caption below, renders on GitHub — replaces all old ASCII (R21)
+- [ ] Every Obsidian-only visual has its R19 fallback (SVG committed for ChemEdit/Excalidraw)
 - [ ] Markers: 🅰 only where the module PDF is in the folder; one marker per bullet
 - [ ] Quick Revision Sheet present, bullets only, no new facts (R30)
 - [ ] Cross-links footer: relative links, `notes.md` where it exists else `README.md`, spaces URL-encoded
@@ -565,7 +565,7 @@ Never hand-write ✅ into a script-owned file.
 
 The checklist is mechanical enough to script. A `scripts/check_notes.py` should verify, for every
 `notes.md`: single H1, continuous H2 numbering, Contents anchors resolving against generated
-slugs, presence of `Quick Revision Sheet`, absence of `[[`, `> [!`, `\ce{`, `dataview`, table
+slugs, presence of `Quick Revision Sheet`, absence of `[[`, `> [!`, bare ` ``` ` fences (N6), `dataview`, table
 pipe-count consistency per block, Mermaid node counts, and word-count bands — exiting non-zero
 with a per-file report. Run it before committing and, ideally, in a GitHub Action on pull
 requests. *(Not yet written — spec only.)*
@@ -632,5 +632,6 @@ Answer-first statement.
 
 | Version | Date | Change |
 |---|---|---|
+| 1.2 | 2026-09-27 | N6: repo-wide ASCII ban — bare ``` fences forbidden; mandatory Mermaid/$\ce{}$/ChemEdit SVG/Excalidraw. R17, R18 rung 3 deprecated, R21 rewritten as ban, R23 ASCII column → Mermaid, R32 checklist updated. |
 | 1.1 | 2026-09-26 | R18: structure pipeline v2 (per-molecule Ketcher SVGs, computed and checked O.S. labels, compound library) and the Chem/ChemEdit division of labour; R1, R24 updated |
 | 1.0 | 2026-09-24 | First issue. Codified the conventions of the six finished notes; added the four-visual-system decision matrix (R17–R24), the GitHub/Obsidian portability rules (N2, R8, R19) and the quality gate (R32) |

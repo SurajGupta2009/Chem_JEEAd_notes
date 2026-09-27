@@ -65,15 +65,14 @@ tags: [chemistry, jee]
 - The **f-block** (4f and 5f series) is placed as a separate panel at the bottom.
 - Names: d-block elements = **transition metals**; f-block = **inner transition metals**.
 
+```mermaid
+flowchart LR
+    S["s-block<br>Groups 1-2"] --> D["d-block<br>Groups 3-12<br>3d 4d 5d 6d"]
+    P["p-block<br>Groups 13-18"] --> D
+    D --> F["f-block<br>4f lanthanoids, 5f actinoids"]
 ```
-            d-block (Groups 3–12)
-            ┌────────────────────┐
-  s-block   │  3d  4d  5d  6d    │   p-block
-  (1,2) ──► │  rows of the       │ ◄── (13–18)
-            │  transition metals │
-            └────────────────────┘
-        f-block (4f lanthanoids, 5f actinoids) — bottom panel
-```
+*d-block between s and p, Groups 3-12; f-block bottom panel.*
+
 
 **The four transition series**
 
@@ -109,10 +108,9 @@ Inner transition series: **4f** = lanthanoids (Ce → Lu, chemistry discussed wi
 - Exceptions occur because (n−1)d and ns are very close in energy, and
   **half-filled / completely-filled** sets of orbitals have extra stability.
 
-```
-   Cr (Z = 24):  [Ar] 3d⁵ 4s¹   (not 3d⁴4s²)  ← half-filled d⁵ stability
+Cr (Z = 24):  [Ar] 3d⁵ 4s¹   (not 3d⁴4s²)  ← half-filled d⁵ stability
    Cu (Z = 29):  [Ar] 3d¹⁰ 4s¹  (not 3d⁹4s²)  ← completely-filled d¹⁰ stability
-```
+
 
 ### Ground-state outer configurations (NCERT Table 4.1)
 
@@ -179,19 +177,13 @@ magnetic/electronic behaviour.
 
 ### 3.2 Melting points
 
+```mermaid
+flowchart LR
+    A["M.p. trend<br>rises to max near d⁵"] --> B["Anomalous dips<br>Mn (3d), Tc (4d)"]
+    B --> C["Zn lowest in 3d"]
 ```
-M.p. trend along a series: rises to a maximum near d⁵, then falls.
-(anomalous dips at Mn in 3d and Tc in 4d)
+*M.p. rises to max near d⁵ then falls; Mn dip due to half-filled stability.*
 
-        ▲ M.p.
-        │        max near d⁵
-        │       ●●●
-        │     ●     ●●
-        │   ●          ●●
-        │ ●                ●
-        └──────────────────────► Z
-      Sc  ...  Mn ...  Zn (lowest in 3d)
-```
 
 - **Reason:** high m.p. because **more (n−1)d electrons + ns electrons** participate in
   interatomic metallic bonding. One unpaired electron per d-orbital (≈d⁵) is the most
@@ -224,14 +216,13 @@ M.p. trend along a series: rises to a maximum near d⁵, then falls.
   an inner d-orbital while nuclear charge rises by +1; d-electrons shield poorly, so
   effective nuclear charge on the outer electrons increases. The decrease is small.
 
+```mermaid
+flowchart LR
+    A["Metallic radii 3d (pm)<br>Sc 164 → Cr 129 ↓"] --> B["Mn 137 → Ni 125 ~flat"]
+    B --> C["Cu 128 Zn 137 slight rise<br>d¹⁰ no exchange"]
 ```
-3d metallic radii (pm):
-  Sc   Ti   V    Cr   Mn   Fe   Co   Ni   Cu   Zn
-  164  147  135  129  137  126  125  125  128  137
-   ╲ decreases ╱   ~ flat (e⁻–e⁻ repulsion    ╲ slight rise ╱
-                 balances nuclear pull)          (d¹⁰, no
-                                               exchange energy)
-```
+*Radii decrease Sc→Cr, flat Mn→Ni, slight rise Cu,Zn.*
+
 
 🅰 Allen: **decreases → remains nearly constant → increases slightly** at Cu/Zn.
 
@@ -463,10 +454,10 @@ M(s) → M²⁺(aq) costs **ΔaH° + IE₁ + IE₂** and is repaid by **ΔhydH°
 - For first-series compounds the **orbital contribution is quenched** → use the
   **spin-only formula**:
 
-```
-        μ = √( n(n + 2) )  BM      (n = number of unpaired electrons)
-        1 unpaired e⁻  → 1.73 BM
-```
+μ = √( n(n + 2) )  BM      (n = number of unpaired electrons)
+
+$\ce{1 unpaired e⁻  -> 1.73 BM}$
+
 
 | Ion | Config | n (unpaired) | μ calc / BM | μ observed / BM |
 |---|---|---|---|---|
@@ -583,11 +574,12 @@ flowchart TD
 
 Key equations:
 
-```
-4 FeCr2O4 + 8 Na2CO3 + 7 O2  --fuse, air-->  8 Na2CrO4 + 2 Fe2O3 + 8 CO2
-2 Na2CrO4 + 2 H+  →  Na2Cr2O7 + 2 Na+ + H2O
-Na2Cr2O7 + 2 KCl  →  K2Cr2O7 + 2 NaCl
-```
+$\ce{4 FeCr2O4 + 8 Na2CO3 + 7 O2  --fuse, air-->  8 Na2CrO4 + 2 Fe2O3 + 8 CO2}$
+
+$\ce{2 Na2CrO4 + 2 H+  ->  Na2Cr2O7 + 2 Na+ + H2O}$
+
+$\ce{Na2Cr2O7 + 2 KCl  ->  K2Cr2O7 + 2 NaCl}$
+
 
 🅰 Details from the module:
 - **CaO (lime)** is added with Na₂CO₃ to keep the fusion mass **porous** so air reaches
@@ -600,49 +592,59 @@ Na2Cr2O7 + 2 KCl  →  K2Cr2O7 + 2 NaCl
 
 **Chromate ⇌ dichromate interconversion (same oxidation state, +6):**
 
-```
-2 CrO4^2- + 2 H+   ⇌   Cr2O7^2- + H2O      (acid / pH ↓ : orange dichromate)
-Cr2O7^2- + 2 OH-   ⇌   2 CrO4^2- + H2O     (base / pH ↑ : yellow chromate)
-```
+$\ce{2 CrO4^2- + 2 H+   <=>   Cr2O7^2- + H2O      (acid / pH ↓ : orange dichromate)}$
+
+$\ce{Cr2O7^2- + 2 OH-   <=>   2 CrO4^2- + H2O     (base / pH ↑ : yellow chromate)}$
+
 
 > Raising the pH of a dichromate solution turns it **yellow (chromate)**; adding acid
 > turns chromate **orange (dichromate)**. Standard JEE question.
 
 **Structures:**
 
+```mermaid
+flowchart TD
+    N0["Chromate, CrO4^2-                      Dichromate, Cr2O7^2-"]
+    N1["(tetrahedral)                          (two corner-sharing tetrahedra)"]
+    N2["O                                      O      O     O"]
+    N3["╱│╲                                     ║      ║     ║"]
+    N4["O–Cr–O    2-                          O–Cr–O–Cr–O   2-"]
+    N5["│                                         ║     (bridge O)"]
+    N6["O                                    Cr–O–Cr angle ≈ 126°"]
+    N0 --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
+    N5 --> N6
 ```
-   Chromate, CrO4^2-                      Dichromate, Cr2O7^2-
-   (tetrahedral)                          (two corner-sharing tetrahedra)
+*Converted from ASCII: {lines[0][:80] if lines else ''}*
 
-           O                                      O      O     O
-          ╱│╲                                     ║      ║     ║
-       O–Cr–O    2-                          O–Cr–O–Cr–O   2-
-          │                                         ║     (bridge O)
-          O                                    Cr–O–Cr angle ≈ 126°
-```
 
 **Oxidising action** (in acid):
 
-```
-Cr2O7^2- + 14 H+ + 6 e-  →  2 Cr^3+ + 7 H2O        E° = +1.33 V
-```
+$\ce{Cr2O7^2- + 14 H+ + 6 e-  ->  2 Cr^3+ + 7 H2O        E° = +1.33 V}$
+
 
 Half-reactions of common reductants (add to the above):
 
-```
-6 I-      → 3 I2   + 6 e-
-3 Sn^2+   → 3 Sn^4+ + 6 e-
-3 H2S     → 6 H+ + 3 S + 6 e-
-6 Fe^2+   → 6 Fe^3+ + 6 e-
-```
+$\ce{6 I-      -> 3 I2   + 6 e-}$
+
+$\ce{3 Sn^2+   -> 3 Sn^4+ + 6 e-}$
+
+$\ce{3 H2S     -> 6 H+ + 3 S + 6 e-}$
+
+$\ce{6 Fe^2+   -> 6 Fe^3+ + 6 e-}$
+
 
 Full equations to memorise:
 
-```
-Cr2O7^2- + 14 H+ + 6 Fe^2+ → 2 Cr^3+ + 6 Fe^3+ + 7 H2O
-Cr2O7^2- + 14 H+ + 6 I-    → 2 Cr^3+ + 3 I2   + 7 H2O
-Cr2O7^2- +  8 H+ + 3 H2S   → 2 Cr^3+ + 3 S    + 7 H2O
-```
+$\ce{Cr2O7^2- + 14 H+ + 6 Fe^2+ -> 2 Cr^3+ + 6 Fe^3+ + 7 H2O}$
+
+$\ce{Cr2O7^2- + 14 H+ + 6 I-    -> 2 Cr^3+ + 3 I2   + 7 H2O}$
+
+$\ce{Cr2O7^2- +  8 H+ + 3 H2S   -> 2 Cr^3+ + 3 S    + 7 H2O}$
+
 
 🅰 **Iodometric standardisation of hypo (Na₂S₂O₃):** K₂Cr₂O₇ (primary standard, weighed
 exactly) + excess KI in acid liberates I₂
@@ -678,15 +680,20 @@ flowchart TD
 
 Key equations:
 
-```
-2 MnO2 + 4 KOH + O2        --fuse-->  2 K2MnO4 + 2 H2O
-3 MnO4^2- + 4 H+           →  2 MnO4^- + MnO2 + 2 H2O          (disproportionation)
-3 K2MnO4 + 2 H2SO4         →  2 KMnO4 + MnO2 + 2 K2SO4 + 2 H2O
-3 K2MnO4 + 2 H2O + 4 CO2   →  2 KMnO4 + MnO2 + 4 KHCO3
-2 K2MnO4 + Cl2             →  2 KMnO4 + 2 KCl      (no Mn wasted as MnO2)
-2 K2MnO4 + O3 + H2O        →  2 KMnO4 + 2 KOH + O2
-MnO4^2-  --electrolytic oxidation in alkali-->  MnO4^-
-```
+$\ce{2 MnO2 + 4 KOH + O2        --fuse-->  2 K2MnO4 + 2 H2O}$
+
+$\ce{3 MnO4^2- + 4 H+           ->  2 MnO4^- + MnO2 + 2 H2O          (disproportionation)}$
+
+$\ce{3 K2MnO4 + 2 H2SO4         ->  2 KMnO4 + MnO2 + 2 K2SO4 + 2 H2O}$
+
+$\ce{3 K2MnO4 + 2 H2O + 4 CO2   ->  2 KMnO4 + MnO2 + 4 KHCO3}$
+
+$\ce{2 K2MnO4 + Cl2             ->  2 KMnO4 + 2 KCl      (no Mn wasted as MnO2)}$
+
+$\ce{2 K2MnO4 + O3 + H2O        ->  2 KMnO4 + 2 KOH + O2}$
+
+$\ce{MnO4^2-  --electrolytic oxidation in alkali-->  MnO4^-}$
+
 
 🅰 Module extras:
 - **KClO₃ / KNO₃ speed the fusion** — on decomposition they supply O₂ readily.
@@ -707,21 +714,29 @@ temperature-dependent paramagnetism) are explained by MO theory.
 - **Permanganate (MnO₄⁻) is tetrahedral, purple, diamagnetic**; π-bonding by overlap of
   O p-orbitals with Mn d-orbitals.
 
+```mermaid
+flowchart TD
+    N0["Manganate MnO4^2- (green, 1 unpaired e-)     Permanganate MnO4^- (purple, d0)"]
+    N1["O-                                         O"]
+    N2["╱│╲                                        ╱│╲"]
+    N3["O–Mn–O                                    O–Mn–O   -"]
+    N4["│                                         │"]
+    N5["O                                         O"]
+    N0 --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
 ```
-   Manganate MnO4^2- (green, 1 unpaired e-)     Permanganate MnO4^- (purple, d0)
-              O-                                         O
-             ╱│╲                                        ╱│╲
-          O–Mn–O                                    O–Mn–O   -
-             │                                         │
-             O                                         O
-```
+*Converted from ASCII: {lines[0][:80] if lines else ''}*
+
 
 **Effect of heating 🅰:**
 
-```
-2 KMnO4  --Δ, 200 °C-->  K2MnO4 (green) + MnO2 (black) + O2
-2 K2MnO4 --red hot-->    2 K2MnO3 + O2
-```
+$\ce{2 KMnO4  --Δ, 200 °C-->  K2MnO4 (green) + MnO2 (black) + O2}$
+
+$\ce{2 K2MnO4 --red hot-->}$  2 K2MnO3 + O2
+
 
 **Reduction products depend on the medium:**
 
@@ -741,28 +756,39 @@ bottles** and **standardise just before use**.
 
 **Oxidising reactions — ACIDIC medium (memorise all):**
 
-```
-(a) 10 I-  + 2 MnO4- + 16 H+ → 2 Mn2+ + 8 H2O + 5 I2
-(b) 5 Fe2+ + MnO4- + 8 H+    → Mn2+ + 4 H2O + 5 Fe3+      (green → yellow)
-(c) 5 C2O4^2- + 2 MnO4- + 16 H+ → 2 Mn2+ + 8 H2O + 10 CO2   (oxalate, at 333 K)
-(d) 5 S^2- + 2 MnO4- + 16 H+ → 2 Mn2+ + 8 H2O + 5 S↓        (from H2S)
-(e) 5 SO3^2- + 2 MnO4- + 6 H+ → 2 Mn2+ + 3 H2O + 5 SO4^2-   (SO2/sulphite → sulphate)
-(f) 5 NO2- + 2 MnO4- + 6 H+  → 2 Mn2+ + 5 NO3- + 3 H2O      (nitrite → nitrate)
-(g) 5 H2O2 + 2 MnO4- + 6 H+  → 2 Mn2+ + 8 H2O + 5 O2        🅰
-(h) S2O3^2- → Mn2+ + S↓ + SO4^2-  (thiosulphate, acidic)     🅰
-(i) 2 KMnO4 + 16 HCl → 2 KCl + 5 Cl2 + 8 H2O + 2 MnCl2      🅰
-```
+$\ce{(a) 10 I-  + 2 MnO4- + 16 H+ -> 2 Mn2+ + 8 H2O + 5 I2}$
+
+$\ce{(b) 5 Fe2+ + MnO4- + 8 H+    -> Mn2+ + 4 H2O + 5 Fe3+      (green -> yellow)}$
+
+$\ce{(c) 5 C2O4^2- + 2 MnO4- + 16 H+ -> 2 Mn2+ + 8 H2O + 10 CO2}$  (oxalate, at 333 K)
+
+$\ce{(d) 5 S^2- + 2 MnO4- + 16 H+ -> 2 Mn2+ + 8 H2O + 5 S↓}$  (from H2S)
+
+$\ce{(e) 5 SO3^2- + 2 MnO4- + 6 H+ -> 2 Mn2+ + 3 H2O + 5 SO4^2-}$  (SO2/sulphite → sulphate)
+
+$\ce{(f) 5 NO2- + 2 MnO4- + 6 H+  -> 2 Mn2+ + 5 NO3- + 3 H2O      (nitrite -> nitrate)}$
+
+$\ce{(g) 5 H2O2 + 2 MnO4- + 6 H+  -> 2 Mn2+ + 8 H2O + 5 O2        🅰}$
+
+$\ce{(h) S2O3^2- -> Mn2+ + S↓ + SO4^2-}$  (thiosulphate, acidic)  🅰
+
+$\ce{(i) 2 KMnO4 + 16 HCl -> 2 KCl + 5 Cl2 + 8 H2O + 2 MnCl2}$  🅰
+
 
 **NEUTRAL / faintly alkaline medium:**
 
-```
-(a) 2 MnO4- + H2O + I-       → 2 MnO2 + 2 OH- + IO3-     (iodide → iodate!)
-(b) 8 MnO4- + 3 S2O3^2- + H2O → 8 MnO2 + 6 SO4^2- + 2 OH- (thiosulphate → sulphate,
-                                                          almost quantitative)
-(c) 2 MnO4- + 3 Mn2+ + 2 H2O → 5 MnO2 + 4 H+   (ZnSO4/ZnO catalyses; Volhard-type)
-(d) 2 KMnO4 + 3 HCO2K → 2 MnO2 + KHCO3 + 2 K2CO3 + H2O    🅰 (formate → carbonate)
-(e) 2 KMnO4 + 3 H2O2 → 2 KOH + 2 MnO2 + 2 H2O + 3 O2      🅰
-```
+$\ce{(a) 2 MnO4- + H2O + I-       -> 2 MnO2 + 2 OH- + IO3-     (iodide -> iodate!)}$
+
+$\ce{(b) 8 MnO4- + 3 S2O3^2- + H2O -> 8 MnO2 + 6 SO4^2- + 2 OH- (thiosulphate -> sulphate,}$
+
+almost quantitative)
+
+$\ce{(c) 2 MnO4- + 3 Mn2+ + 2 H2O -> 5 MnO2 + 4 H+}$  (ZnSO4/ZnO catalyses; Volhard-type)
+
+$\ce{(d) 2 KMnO4 + 3 HCO2K -> 2 MnO2 + KHCO3 + 2 K2CO3 + H2O}$  🅰 (formate → carbonate)
+
+$\ce{(e) 2 KMnO4 + 3 H2O2 -> 2 KOH + 2 MnO2 + 2 H2O + 3 O2}$  🅰
+
 
 > ⚠ **Permanganate titrations are never done in HCl** — HCl is itself oxidised to Cl₂
 > (reaction (i) above), consuming permanganate and ruining the end point.
@@ -991,9 +1017,8 @@ chapter does not cover but JEE Main/Advanced does ask.
 
 ### 18.2 Potassium trioxalatoferrate(III)
 
-```
-FeCl3 + 6 KOH + 3 H2C2O4 → K3[Fe(C2O4)3] + 3 KCl + 6 H2O     (green crystals)
-```
+$\ce{FeCl3 + 6 KOH + 3 H2C2O4 -> K3[Fe(C2O4)3] + 3 KCl + 6 H2O}$  (green crystals)
+
 
 - IUPAC name: **potassium trioxalato­ferrate(III)**; coordination number of Fe = **6**;
   oxalate is **bidentate** (other examples: en, glycinate…); it does **not** give tests
@@ -1003,26 +1028,34 @@ FeCl3 + 6 KOH + 3 H2C2O4 → K3[Fe(C2O4)3] + 3 KCl + 6 H2O     (green crystals)
 
 **Reactions of metallic Ag:**
 
-```
-4 Ag + 2 H2S + O2        → 2 Ag2S (black tarnish) + 2 H2O      (dry/moist air)
-2 Ag + 2 H2SO4 (hot conc)→ Ag2SO4 + SO2 + 2 H2O
-Ag + 2 HNO3 (conc)       → AgNO3 + NO2 + H2O
-Ag + dil. HCl            → no reaction (alone)…
-4 Ag + 4 HCl + O2        → 4 AgCl↓ + 2 H2O                     (in presence of O2)
-4 Ag + 8 KCN + 2 H2O + O2 → 4 K[Ag(CN)2] + 4 KOH               (cyanide leaching)
+$\ce{4 Ag + 2 H2S + O2        -> 2 Ag2S (black tarnish) + 2 H2O      (dry/moist air)}$
+
+$\ce{2 Ag + 2 H2SO4 (hot conc)-> Ag2SO4 + SO2 + 2 H2O}$
+
+$\ce{Ag + 2 HNO3 (conc)       -> AgNO3 + NO2 + H2O}$
+
+$\ce{Ag + dil. HCl            -> no reaction (alone)…}$
+
+$\ce{4 Ag + 4 HCl + O2        -> 4 AgCl↓ + 2 H2O                     (in presence of O2)}$
+
+$\ce{4 Ag + 8 KCN + 2 H2O + O2 -> 4 K[Ag(CN)2] + 4 KOH}$  (cyanide leaching)
+
 Ag dissolves in aq. regia; not in a single non-oxidising acid.
-```
+
 
 **AgNO₃ — "lunar caustic":** burning-caustic sensation on skin + finely divided black
 Ag.
 
-```
-Preparation: Ag + dil./conc. HNO3 → AgNO3
-Thermal decomposition: 2 AgNO3(s) → 2 Ag + 2 NO2 + O2
-Stepwise: 2 AgNO3 --212 °C--> 2 AgNO2 + O2 ;  2 AgNO2 --500 °C--> 2 Ag + 2 NO + O2
-With excess I2: 6 AgNO3 + 3 I2 + 3 H2O → 5 AgI + AgIO3 + 6 HNO3
-Ag2SO4 --Δ--> 2 Ag + SO2 + O2
-```
+$\ce{Preparation: Ag + dil./conc. HNO3 -> AgNO3}$
+
+$\ce{Thermal decomposition: 2 AgNO3(s) -> 2 Ag + 2 NO2 + O2}$
+
+$\ce{Stepwise: 2 AgNO3 --212 °C--> 2 AgNO2 + O2 ;}$  2 AgNO2 --500 °C--> 2 Ag + 2 NO + O2
+
+$\ce{With excess I2: 6 AgNO3 + 3 I2 + 3 H2O -> 5 AgI + AgIO3 + 6 HNO3}$
+
+$\ce{Ag2SO4 --Δ--> 2 Ag + SO2 + O2}$
+
 
 - 🆇 Ag⁺ gives a white ppt with Na₂S₂O₃ **quickly**; with excess Na₂S₂O₃ the ppt takes
   time and dissolves:
@@ -1034,15 +1067,20 @@ Ag2SO4 --Δ--> 2 Ag + SO2 + O2
 
 **AgCl reactions (a standard chain):**
 
-```
 AgCl --insoluble in dil. HCl / aq. regia? (insoluble)--
-AgCl + Zn/HCl → Ag↓
-AgCl + Na2CO3: 4 AgCl + 2 Na2CO3 → 4 Ag↓ + 4 NaCl + 2 CO2 + O2
-AgCl + NaOH (conc.): 2 AgCl + 2 NaOH → Ag2O + 2 NaCl + H2O
-Ag2O + C6H12O6 (glucose) → 2 Ag↓ + gluconic acid      (silver mirror chemistry)
-Ag2O + H2O2 → 2 Ag + H2O + O2
-K2S2O8 + 2 AgNO3 + 2 H2O → 2 AgO + 2 KHSO4 + 2 HNO3
-```
+
+$\ce{AgCl + Zn/HCl -> Ag↓}$
+
+$\ce{AgCl + Na2CO3: 4 AgCl + 2 Na2CO3 -> 4 Ag↓ + 4 NaCl + 2 CO2 + O2}$
+
+$\ce{AgCl + NaOH (conc.): 2 AgCl + 2 NaOH -> Ag2O + 2 NaCl + H2O}$
+
+$\ce{Ag2O + C6H12O6 (glucose) -> 2 Ag↓ + gluconic acid}$  (silver mirror chemistry)
+
+$\ce{Ag2O + H2O2 -> 2 Ag + H2O + O2}$
+
+$\ce{K2S2O8 + 2 AgNO3 + 2 H2O -> 2 AgO + 2 KHSO4 + 2 HNO3}$
+
 
 > ⚠ **AgO is NOT simple Ag(II):** expected d⁹ paramagnetism is **not observed** — AgO is
 > **diamagnetic** and is really **Ag^I[Ag^III O₂]** (mixed-valence). Classic Advanced trap.
@@ -1054,12 +1092,14 @@ K2S2O8 + 2 AgNO3 + 2 H2O → 2 AgO + 2 KHSO4 + 2 HNO3
 
 ### ZnO — "philosopher's wool" (woolly floc appearance)
 
-```
-Preparations: 2 Zn + O2 → 2 ZnO
-               ZnCO3 / Zn(NO3)2 / Zn(OH)2 --calcine--> ZnO
-Purest ZnO: 4 ZnSO4 + 4 Na2CO3 + 3 H2O → ZnCO3·3Zn(OH)2↓ (white basic zinc carbonate)
-            --Δ--> 4 ZnO + 3 H2O↑ + CO2↑
-```
+$\ce{Preparations: 2 Zn + O2 -> 2 ZnO}$
+
+$\ce{ZnCO3 / Zn(NO3)2 / Zn(OH)2 --calcine--> ZnO}$
+
+$\ce{Purest ZnO: 4 ZnSO4 + 4 Na2CO3 + 3 H2O -> ZnCO3·3Zn(OH)2↓ (white basic zinc carbonate)}$
+
+$\ce{--Δ--> 4 ZnO + 3 H2O↑ + CO2↑}$
+
 
 Properties:
 - **Thermochromism: white (cold) ⇌ yellow (hot).**
@@ -1072,9 +1112,8 @@ Properties:
 
 ### ZnCl₂
 
-```
-ZnO / ZnCO3 / Zn(OH)2 + HCl → ZnCl2 (crystallises as ZnCl2·2H2O)
-```
+$\ce{ZnO / ZnCO3 / Zn(OH)2 + HCl -> ZnCl2 (crystallises as ZnCl2·2H2O)}$
+
 
 - **Anhydrous ZnCl₂ cannot be made by heating the hydrate** (hydrolysis):
   `ZnCl2·2H2O --Δ--> Zn(OH)Cl + HCl + H2O` then `Zn(OH)Cl --Δ--> ZnO + HCl`.
@@ -1086,17 +1125,18 @@ ZnO / ZnCO3 / Zn(OH)2 + HCl → ZnCl2 (crystallises as ZnCl2·2H2O)
 
 ### ZnSO₄
 
-```
-Zn / ZnO / ZnCO3 + dil. H2SO4 → ZnSO4 (+ H2 / H2O / CO2)
-Roasting ZnS:  ZnS + 2 O2 → ZnSO4   (parallel: 2 ZnS + 3 O2 → 2 ZnO + 2 SO2;
-                                       also ZnS + 4 O3 → ZnSO4 + 4 O2)
-```
+$\ce{Zn / ZnO / ZnCO3 + dil. H2SO4 -> ZnSO4 (+ H2 / H2O / CO2)}$
+
+$\ce{Roasting ZnS:  ZnS + 2 O2 -> ZnSO4   (parallel: 2 ZnS + 3 O2 -> 2 ZnO + 2 SO2;}$
+
+$\ce{also ZnS + 4 O3 -> ZnSO4 + 4 O2)}$
+
 
 Dehydration ladder:
-```
-ZnSO4·7H2O --39-70 °C--> ZnSO4·6H2O --＞70 °C--> ZnSO4·H2O --＞280 °C--> ZnSO4
-        --＞800 °C--> ZnO + SO2 + O2
-```
+$\ce{ZnSO4·7H2O --39-70 °C--> ZnSO4·6H2O --＞70 °C--> ZnSO4·H2O --＞280 °C--> ZnSO4}$
+
+$\ce{--＞800 °C--> ZnO + SO2 + O2}$
+
 
 - Uses: eye lotion; **lithopone = ZnS + BaSO₄** (white pigment).
 
@@ -1104,12 +1144,14 @@ ZnSO4·7H2O --39-70 °C--> ZnSO4·6H2O --＞70 °C--> ZnSO4·H2O --＞280 °C-->
 
 ### CuO (black)
 
-```
-(i)  CuCO3·Cu(OH)2 (malachite, green) --Δ--> 2 CuO + H2O + CO2    (commercial)
-(ii) 2 Cu + O2 → 2 CuO ;  Cu2O + ½ O2 → 2 CuO
-(iii) Cu(OH)2 --Δ--> CuO + H2O
-(iv) 2 Cu(NO3)2 --250 °C--> 2 CuO + 4 NO2 + O2
-```
+$\ce{(i)  CuCO3·Cu(OH)2 (malachite, green) --Δ--> 2 CuO + H2O + CO2    (commercial)}$
+
+$\ce{(ii) 2 Cu + O2 -> 2 CuO ;}$  Cu2O + ½ O2 → 2 CuO
+
+$\ce{(iii) Cu(OH)2 --Δ--> CuO + H2O}$
+
+$\ce{(iv) 2 Cu(NO3)2 --250 °C--> 2 CuO + 4 NO2 + O2}$
+
 
 - Insoluble in water; dissolves in dilute acids → Cu²⁺ salts.
 - **Above 1100 °C:** `4 CuO → 2 Cu2O + O2`.
@@ -1117,10 +1159,10 @@ ZnSO4·7H2O --39-70 °C--> ZnSO4·6H2O --＞70 °C--> ZnSO4·H2O --＞280 °C-->
 
 ### CuCl₂
 
-```
-CuO + 2 HCl(conc) → CuCl2 + H2O
-Cu(OH)2·CuCO3 + 4 HCl → 2 CuCl2 + 3 H2O + CO2
-```
+$\ce{CuO + 2 HCl(conc) -> CuCl2 + H2O}$
+
+$\ce{Cu(OH)2·CuCO3 + 4 HCl -> 2 CuCl2 + 3 H2O + CO2}$
+
 
 - Crystallises as **CuCl₂·2H₂O, emerald green**; anhydrous CuCl₂ = dark-brown mass
   (heat the dihydrate at 150 °C in HCl vapour).
@@ -1135,19 +1177,21 @@ Cu(OH)2·CuCO3 + 4 HCl → 2 CuCl2 + 3 H2O + CO2
 
 ### CuSO₄
 
-```
-CuO / Cu(OH)2 / Cu(OH)2·CuCO3 + dil. H2SO4 → CuSO4
-Commercial: Cu (scrap) + H2SO4 + ½ O2 → CuSO4 + H2O
-Cu + dil. H2SO4 alone → no reaction (Cu lies below H in the electrochemical series)
-```
+$\ce{CuO / Cu(OH)2 / Cu(OH)2·CuCO3 + dil. H2SO4 -> CuSO4}$
+
+$\ce{Commercial: Cu (scrap) + H2SO4 + ½ O2 -> CuSO4 + H2O}$
+
+$\ce{Cu + dil. H2SO4 alone -> no reaction (Cu lies below H in the electrochemical series)}$
+
 
 Dehydration ladder (memorise):
 
-```
-CuSO4·5H2O --efflorescence--> CuSO4·3H2O --100 °C--> CuSO4·H2O --230 °C--> CuSO4 (white)
-   (blue)        (pale blue)            (bluish white)
-CuSO4 --750 °C--> CuO + SO3 ;  --800 °C--> CuO + SO2 + O2
-```
+$\ce{CuSO4·5H2O --efflorescence--> CuSO4·3H2O --100 °C--> CuSO4·H2O --230 °C--> CuSO4 (white)}$
+
+(blue)        (pale blue)            (bluish white)
+
+$\ce{CuSO4 --750 °C--> CuO + SO3 ;}$  --800 °C--> CuO + SO2 + O2
+
 
 🆇 The blue colour is due to [Cu(H₂O)₄]²⁺; the **fifth water molecule is held by
 hydrogen bonding**, not coordinated (common Advanced one-liner).
@@ -1156,11 +1200,12 @@ hydrogen bonding**, not coordinated (common Advanced one-liner).
 
 ### FeSO₄·7H₂O (green vitriol)
 
-```
-(i)   Fe (scrap) + dil. H2SO4 → FeSO4 + H2
-(ii)  FeS (Kipp's waste) + dil. H2SO4 → FeSO4 + H2S
-(iii) FeS2 + 2 H2O + 7/2 O2 → FeSO4 + H2SO4
-```
+$\ce{(i)   Fe (scrap) + dil. H2SO4 -> FeSO4 + H2}$
+
+$\ce{(ii)  FeS (Kipp's waste) + dil. H2SO4 -> FeSO4 + H2S}$
+
+$\ce{(iii) FeS2 + 2 H2O + 7/2 O2 -> FeSO4 + H2SO4}$
+
 
 - Aerial oxidation: `4 FeSO4 + O2 + 2 H2O → 4 Fe(OH)SO4` (basic ferric sulphate).
 - `FeSO4·7H2O --300 °C--> FeSO4 (anhydrous, white) --high T--> Fe2O3 + SO2 + SO3`.
@@ -1172,19 +1217,18 @@ hydrogen bonding**, not coordinated (common Advanced one-liner).
 
 ### FeO (black)
 
-```
-FeC2O4 --Δ, no air--> FeO + CO + CO2
-```
+$\ce{FeC2O4 --Δ, no air--> FeO + CO + CO2}$
+
 
 - Stable only at high temperature; on slow cooling **disproportionates**:
   `4 FeO → Fe3O4 + Fe`. 🆇 Fe₃O₄ (magnetite) is a mixed oxide FeO·Fe₂O₃.
 
 ### FeCl₂
 
-```
-Fe + 2 HCl --heat in HCl current--> FeCl2 + H2
-2 FeCl3 + H2 --Δ--> 2 FeCl2 + 2 HCl
-```
+$\ce{Fe + 2 HCl --heat in HCl current--> FeCl2 + H2}$
+
+$\ce{2 FeCl3 + H2 --Δ--> 2 FeCl2 + 2 HCl}$
+
 
 - Deliquescent; soluble in water **and** alcohol/ether (considerable covalent character).
 - Vapour ≈ **Fe₂Cl₄ dimer** (~1000 °C); normal monomer above 1300 °C.
@@ -1194,20 +1238,27 @@ Fe + 2 HCl --heat in HCl current--> FeCl2 + H2
 
 ### FeCl₃ — the most important ferric salt
 
-```
-Anhydrous: 2 Fe + 3 Cl2 (dry) → 2 FeCl3  (vapours condensed)
-Hydrated: Fe2O3 / Fe(OH)3 + HCl → FeCl3·6H2O (yellow crystals)
-```
+$\ce{Anhydrous: 2 Fe + 3 Cl2 (dry) -> 2 FeCl3}$  (vapours condensed)
+
+$\ce{Hydrated: Fe2O3 / Fe(OH)3 + HCl -> FeCl3·6H2O (yellow crystals)}$
+
 
 - **Structure:** anhydrous FeCl₃ is a **dimer Fe₂Cl₆** (chloride bridges):
 
+```mermaid
+flowchart TD
+    N0["Cl     Cl"]
+    N1["╱ ╲   ╱ ╲"]
+    N2["Cl–Fe   Fe–Cl        ⇌  at 750 °C  ⇌  2 FeCl3"]
+    N3["╲ ╱   ╲ ╱        above 750 °C: 2 FeCl3 ⇌ 2 FeCl2 + Cl2"]
+    N4["Cl     Cl"]
+    N0 --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
 ```
-        Cl     Cl
-       ╱ ╲   ╱ ╲
-    Cl–Fe   Fe–Cl        ⇌  at 750 °C  ⇌  2 FeCl3
-       ╲ ╱   ╲ ╱        above 750 °C: 2 FeCl3 ⇌ 2 FeCl2 + Cl2
-        Cl     Cl
-```
+*Converted from ASCII: {lines[0][:80] if lines else ''}*
+
 
 - Solution is **acidic (hydrolysis):** FeCl₃ + 3 H₂O ⇌ Fe(OH)₃ + 3 HCl.
 - Adduct: `FeCl3 + 6 NH3 → FeCl3·6NH3`.
@@ -1310,4 +1361,3 @@ Hydrated: Fe2O3 / Fe(OH)3 + HCl → FeCl3·6H2O (yellow crystals)
 *Next chapters to receive the same treatment (in folder order): Coordination Compounds
 (module uploaded), Metallurgy (module uploaded), Salt Analysis (module uploaded), then
 the remaining 26 chapters from NCERT.*
-
