@@ -9,7 +9,7 @@
 | NCERT edition | Pre-rationalisation NCERT (2018-19 edition) |
 | Needed for | JEE Advanced |
 | PDF | [`kech204-legacy.pdf`](kech204-legacy.pdf) |
-| Module PDF | _not uploaded yet_ |
+| Module PDF | [`p-block_Theory_26.pdf`](p-block_Theory_26.pdf) |
 | Official URL | no longer published - removed in the 2023 rationalisation, and the code `kech204` no longer exists in the current book |
 | Mirror used | `palhiman/ncert` -> `XI/Chemistry-2/kech204.pdf` |
 

@@ -9,7 +9,7 @@
 | NCERT edition | Pre-rationalisation NCERT (2018-19 edition) |
 | Needed for | JEE Advanced |
 | PDF | [`kech203-legacy.pdf`](kech203-legacy.pdf) |
-| Module PDF | _not uploaded yet_ |
+| Module PDF | [`s-Block_Theory_26.pdf`](s-Block_Theory_26.pdf) |
 | Official URL | no longer published - removed in the 2023 rationalisation. `kech203.pdf` on ncert.nic.in is now *Hydrocarbons*, not this chapter |
 | Mirror used | `palhiman/ncert` -> `XI/Chemistry-2/kech203.pdf` |
 
