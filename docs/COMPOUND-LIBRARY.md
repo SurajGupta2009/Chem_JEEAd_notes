@@ -11,6 +11,8 @@ Auto-generated from all `figures/structures.md` — source for ChemEdit plugin.
 | BF₃ with back bonding | FB(F)F | Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure |
 | BeCl₂ beryllium chloride | Cl[Be]Cl | Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure |
 | Benzene | c1ccccc1 | Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure |
+| Beryllium chloride BeCl₂ chain | Cl[Be]Cl | Inorganic-Chemistry/04-The-s-Block-Elements |
+| Beryllium oxide BeO | [Be+2].[O-2] | Inorganic-Chemistry/04-The-s-Block-Elements |
 | Borax anion [B₄O₅(OH)₄]²⁻ | O[B-]1OB2OB(O)OB(O2)O1 | Inorganic-Chemistry/05-The-p-Block-Elements |
 | Borazine B₃N₃H₆ | B1NBNBN1 | Inorganic-Chemistry/05-The-p-Block-Elements |
 | Boric acid H₃BO₃ | OB(O)O | Inorganic-Chemistry/05-The-p-Block-Elements |
@@ -30,6 +32,10 @@ Auto-generated from all `figures/structures.md` — source for ChemEdit plugin.
 | CO₂ | O=C=O | Physical-Chemistry/05-Redox-Reactions |
 | CO₂ carbon dioxide | O=C=O | Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure |
 | CaOCl₂ bleaching powder | [Ca+2].[O-]Cl.[Cl-] | Physical-Chemistry/05-Redox-Reactions |
+| Calcium carbonate CaCO₃ | [Ca+2].[O-]C([O-])=O | Inorganic-Chemistry/04-The-s-Block-Elements |
+| Calcium hydroxide Ca(OH)₂ | [Ca+2].[OH-].[OH-] | Inorganic-Chemistry/04-The-s-Block-Elements |
+| Calcium oxide CaO | [Ca+2].[O-2] | Inorganic-Chemistry/04-The-s-Block-Elements |
+| Calcium sulphate CaSO₄ | [Ca+2].[O-]S([O-])(=O)=O | Inorganic-Chemistry/04-The-s-Block-Elements |
 | Carbon dioxide CO₂ | O=C=O | Inorganic-Chemistry/05-The-p-Block-Elements |
 | Carbon monoxide CO | [C-]#[O+] | Inorganic-Chemistry/05-The-p-Block-Elements |
 | Chlorine monofluoride ClF | FCl | Inorganic-Chemistry/09-The-p-Block-Elements |
@@ -72,6 +78,9 @@ Auto-generated from all `figures/structures.md` — source for ChemEdit plugin.
 | Iodine heptafluoride IF₇ | F[I](F)(F)(F)(F)(F)F | Inorganic-Chemistry/09-The-p-Block-Elements |
 | I₃⁻ (KI₃) as I₂·I⁻ | II.[I-] | Physical-Chemistry/05-Redox-Reactions |
 | KO₂ superoxide | [K+].[O-][O] | Physical-Chemistry/05-Redox-Reactions |
+| Lithium nitride Li₃N | [Li+].[Li+].[Li+].[N-3] | Inorganic-Chemistry/04-The-s-Block-Elements |
+| Magnesium chloride MgCl₂ | [Mg+2].[Cl-].[Cl-] | Inorganic-Chemistry/04-The-s-Block-Elements |
+| Magnesium nitride Mg₃N₂ | [Mg+2].[Mg+2].[Mg+2].[N-3].[N-3] | Inorganic-Chemistry/04-The-s-Block-Elements |
 | Methane CH₄ | C | Inorganic-Chemistry/05-The-p-Block-Elements |
 | N(SiH₃)₃ trisilylamine | N([SiH3])[SiH3][SiH3] | Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure |
 | NH₃ ammonia | N | Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure |
@@ -100,6 +109,7 @@ Auto-generated from all `figures/structures.md` — source for ChemEdit plugin.
 | Phosphorus pentoxide P₄O₁₀ | O=P12OP3OP(=O)OP1OP2O3 | Inorganic-Chemistry/09-The-p-Block-Elements |
 | Phosphorus trichloride PCl₃ | ClP(Cl)Cl | Inorganic-Chemistry/09-The-p-Block-Elements |
 | Phosphorus trioxide P₄O₆ | O1P2OP3OP1OP2O3 | Inorganic-Chemistry/09-The-p-Block-Elements |
+| Potassium superoxide KO₂ | [K+].[O-][O] | Inorganic-Chemistry/04-The-s-Block-Elements |
 | SF₄ sulfur tetrafluoride | FS(F)(F)F | Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure |
 | SF₆ sulfur hexafluoride | FS(F)(F)(F)(F)F | Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure |
 | SO₂ sulfur dioxide | O=S=O | Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure |
@@ -107,6 +117,11 @@ Auto-generated from all `figures/structures.md` — source for ChemEdit plugin.
 | Silicate tetrahedron SiO₄⁴⁻ | [Si]([O-])([O-])([O-])[O-] | Inorganic-Chemistry/05-The-p-Block-Elements |
 | Silicon dioxide SiO₂ | O=[Si]=O | Inorganic-Chemistry/05-The-p-Block-Elements |
 | Silicon tetrachloride SiCl₄ | [Si](Cl)(Cl)(Cl)Cl | Inorganic-Chemistry/05-The-p-Block-Elements |
+| Sodium bicarbonate NaHCO₃ | [Na+].OC(=O)[O-] | Inorganic-Chemistry/04-The-s-Block-Elements |
+| Sodium carbonate Na₂CO₃ | [Na+].[Na+].[O-]C([O-])=O | Inorganic-Chemistry/04-The-s-Block-Elements |
+| Sodium hydroxide NaOH | [Na+].[OH-] | Inorganic-Chemistry/04-The-s-Block-Elements |
+| Sodium oxide Na₂O | [Na+].[Na+].[O-2] | Inorganic-Chemistry/04-The-s-Block-Elements |
+| Sodium peroxide Na₂O₂ | [Na+].[Na+].[O-][O-] | Inorganic-Chemistry/04-The-s-Block-Elements |
 | Sulphur dioxide SO₂ | O=S=O | Inorganic-Chemistry/09-The-p-Block-Elements |
 | Sulphur trioxide SO₃ | O=S(=O)=O | Inorganic-Chemistry/09-The-p-Block-Elements |
 | Sulphuric acid H₂SO₄ | OS(O)(=O)=O | Inorganic-Chemistry/09-The-p-Block-Elements |
