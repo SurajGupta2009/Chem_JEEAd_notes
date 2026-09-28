@@ -8,7 +8,7 @@ edition: pre-rationalised
 exams: [JEE Advanced]
 sources: [kech204-legacy.pdf, p-block_Theory_26.pdf]
 status: written
-words: 4896
+words: 4864
 updated: 2026-09-27
 tags: [chemistry/inorganic, jee/advanced, p-block, boron, aluminium, carbon, silicon]
 ---
@@ -380,10 +380,6 @@ Compounds +4 covalent, +2 ionic character more.
 **Graphite:** sp² hybridized C, layered hexagonal rings, each layer 2D sheet, C-C 141.5 pm within layer, layers held by van der Waals 340 pm, each C bonded to 3 C, 4th electron delocalised → conductor (parallel to layers), soft lubricant (layers slide), black opaque, density 2.22 g/cm³, used as electrode, lubricant, moderator.
 
 **Fullerenes:** $\ce{C60}$ buckminsterfullerene, 60 C atoms arranged as 20 hexagons + 12 pentagons, truncated icosahedron, soccer ball, C-C 143.5 pm, aromatic, discovered 1985, $\ce{C70}$ etc.
-
-![C60 fullerene fragment](figures/mol/c60frag.svg)
-*A piece of the C₆₀ cage: each carbon is sp² and three-coordinate, so the shell is a network of
-pentagons and hexagons rather than the flat sheets of graphite.*
 
 **Graphene:** Single layer of graphite, 2D, sp², extremely strong, conductor, 1 atom thick.
 

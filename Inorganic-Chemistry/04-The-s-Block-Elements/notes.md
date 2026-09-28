@@ -8,7 +8,7 @@ edition: pre-rationalised
 exams: [JEE Advanced]
 sources: [kech203-legacy.pdf, s-Block_Theory_26.pdf]
 status: written
-words: 4689
+words: 4672
 updated: 2026-09-27
 tags: [chemistry/inorganic, jee/advanced, s-block, alkali, alkaline-earth]
 ---

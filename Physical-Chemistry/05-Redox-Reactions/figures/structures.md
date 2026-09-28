@@ -48,10 +48,10 @@ docstring; rulebook R18–R19.
 | CO₂ | `O=C=O` | co2 | auto | C=+4 | carbon ladder |
 | CH₃CH₂OH ethanol | `CCO` | ethanol | auto H | C=-3,-1 C~-2 | NCERT Ex. 7.2(d) |
 | CH₃COOH acetic acid | `CC(=O)O` | acetic | auto H | C=-3,+3 C~0 | NCERT Ex. 7.2(e) |
-| C₆H₅CH₃ toluene | `Cc1ccccc1` | toluene | show:0 | | NCERT Ex. 7.12(a): the CH₃ carbon is oxidised |
-| C₆H₅COO⁻ benzoate | `[O-]C(=O)c1ccccc1` | benzoate | show:1 | | CH₃ (−3) → COO⁻ (+3): 6 e⁻ |
-| hydroquinone | `Oc1ccc(O)cc1` | hydroquinone | show:1,4 | | NCERT Ex. 7.13(a): photographic developer |
-| p-benzoquinone | `O=C1C=CC(=O)C=C1` | quinone | show:1,4 | | two C go +1 → +2: 2 e⁻ in total |
+| C₆H₅CH₃ toluene | `Cc1ccccc1` | toluene | show:0 | — | NCERT Ex. 7.12(a): the CH₃ carbon is oxidised |
+| C₆H₅COO⁻ benzoate | `[O-]C(=O)c1ccccc1` | benzoate | show:1 | — | CH₃ (−3) → COO⁻ (+3): 6 e⁻ |
+| hydroquinone | `Oc1ccc(O)cc1` | hydroquinone | show:1,4 | — | NCERT Ex. 7.13(a): photographic developer |
+| p-benzoquinone | `O=C1C=CC(=O)C=C1` | quinone | show:1,4 | — | two C go +1 → +2: 2 e⁻ in total |
 
 ## Gallery (generated)
 

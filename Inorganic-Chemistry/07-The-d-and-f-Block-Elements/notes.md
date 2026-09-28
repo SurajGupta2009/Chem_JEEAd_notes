@@ -2,7 +2,7 @@
 branch: "Inorganic Chemistry"
 chapter: "The d and f Block Elements"
 status: written
-words: 10573
+words: 10730
 updated: 2026-09-26
 class: "12"
 ncert_unit: "Unit 4 (Class 12)"

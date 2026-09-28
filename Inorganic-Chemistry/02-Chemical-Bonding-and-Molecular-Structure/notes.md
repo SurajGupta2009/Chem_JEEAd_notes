@@ -8,7 +8,7 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [kech104.pdf, CHEMICAL BONDING- Theory.pdf]
 status: written
-words: 6563
+words: 6693
 updated: 2026-09-27
 tags: [chemistry/inorganic, jee/main, jee/advanced]
 ---
@@ -769,7 +769,7 @@ flowchart LR
 
 | BF₃ pπ-pπ back bonding | BCl₃ no strong back bonding | NMe₃ pyramidal basic | N(SiH₃)₃ planar non-basic pπ-dπ |
 |---|---|---|---|
-| ![BF3](figures/mol/bf3-bb.svg) | ![BCl3](figures/mol/bcl3.svg) | ![NMe3](figures/mol/nme3.svg) | ![NSiH3](figures/mol/nsih3.svg) |
+| ![BF3](figures/mol/bf3.svg) | ![BCl3](figures/mol/bcl3.svg) | ![NMe3](figures/mol/nme3.svg) | ![NSiH3](figures/mol/nsih3.svg) |
 
 | Molecule | Back bonding | Effect |
 |---|---|---|

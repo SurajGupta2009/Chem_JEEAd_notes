@@ -7,7 +7,7 @@ ncert_code: none
 edition: "2026"
 exams: [JEE Advanced, "Board Practical"]
 status: written
-words: 6952
+words: 7129
 updated: 2026-09-26
 sources: ["Salt Analysis_Theory_26.pdf", "Reaction of Salt Analysis_Theory_26.pdf"]
 tags: [chemistry, jee]

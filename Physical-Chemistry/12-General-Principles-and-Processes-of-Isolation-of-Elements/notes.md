@@ -8,7 +8,7 @@ edition: legacy
 exams: [JEE Advanced]
 sources: [lech106-legacy.pdf, 5-JAEIC-Metallurgy_Eng.pdf.pdf]
 status: written
-words: 5499
+words: 5508
 updated: 2026-09-28
 tags: [chemistry/physical, jee/advanced, metallurgy, ellingham, concentration, refining, extraction]
 ---

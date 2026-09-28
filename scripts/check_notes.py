@@ -5,6 +5,7 @@ the rulebook asks for in R33. No third-party dependencies, so it runs in CI and 
 hook. Exits non-zero and prints one line per finding, grouped by file.
 
     python3 scripts/check_notes.py              # every notes.md
+    python3 scripts/check_notes.py --all        # every markdown file in the repo
     python3 scripts/check_notes.py --quiet      # only the summary
     python3 scripts/check_notes.py <path> ...   # specific files
 
@@ -19,6 +20,8 @@ What it enforces, and where the rule lives:
   R5   exactly one H1 title; Parts are the only other H1s
   R6   H2s are numbered 1..N with no gaps or duplicates
   R7   every Contents anchor resolves against the GitHub slug of a real heading
+  R12  every relative link and image exists, and every #fragment it carries is a real
+       heading in the file it points at
   R14  tables: <= 6 columns, consistent pipe counts, no empty cells
   R20  Mermaid: `flowchart TD`/`LR` only, every label quoted, <= 14 nodes, no box-drawing
   R30  the Quick Revision Sheet is bullets only, <= 30 of them
@@ -67,8 +70,35 @@ def gh_slug(heading: str) -> str:
 
 def strip_code_spans(text: str) -> str:
     """Blank out fenced blocks and `code` spans so the text checks ignore examples."""
-    text = re.sub(r"```.*?```", lambda m: re.sub(r"[^\n]", " ", m.group(0)), text, flags=re.S)
-    return re.sub(r"`[^`\n]*`", " ", text)
+    return re.sub(r"`[^`\n]*`", " ", unfenced(text))
+
+
+FENCE = re.compile(r"^[ \t]{0,3}(`{3,}|~{3,})")
+
+
+def unfenced(text: str) -> str:
+    """Drop fenced blocks, keeping the line count.
+
+    CommonMark opens a block on a line-start run of three or more backticks (or tildes) and
+    closes it on a run of at least the same length. Matching line by line rather than with
+    one `.*?` regex matters: a run of backticks *inside* a sentence is not a fence, and a
+    non-greedy pair-up misreads it as one and swallows the rest of the file.
+    """
+    out, fence = [], None
+    for line in text.splitlines():
+        m = FENCE.match(line)
+        if fence is None:
+            if m:
+                fence = m.group(1)
+                out.append("")
+                continue
+            out.append(line)
+        else:
+            if m and m.group(1)[0] == fence[0] and len(m.group(1)) >= len(fence) \
+                    and line.strip().strip("`~") == "":
+                fence = None
+            out.append("")
+    return "\n".join(out)
 
 
 # ---------------------------------------------------------------------------
@@ -173,14 +203,7 @@ def check_contents(path: Path, lines: list[str], add):
                 add("R7", "line %d: Contents anchor '#%s' matches no heading" % (i + 1, target))
     if not seen_contents:
         add("R5", "no '## Contents' block")
-    # cross-file anchors too
-    for m in re.finditer(r"\]\((?!https?:|#)([^)\s]+\.md)#([^)]+)\)", path.read_text(encoding="utf-8")):
-        tgt = (path.parent / m.group(1)).resolve()
-        if tgt.suffix == ".md" and tgt.exists():
-            other = {gh_slug(x) for x in tgt.read_text(encoding="utf-8").splitlines()
-                     if re.match(r"^#{1,6} +", x)}
-            if m.group(2) not in other:
-                add("R7", "link to %s#%s matches no heading there" % (m.group(1), m.group(2)))
+    # cross-file anchors are check_links' job (R12): it resolves the file and the slug together
 
 
 def check_links(path: Path, lines: list[str], add):
@@ -195,11 +218,37 @@ def check_links(path: Path, lines: list[str], add):
     # blank out inline math first: $\ce{...->[x](y)...}$ is LaTeX, not a link
     naked = re.sub(r"\$[^$\n]*\$", lambda m: " " * len(m.group(0)), strip_code_spans(text))
     for m in re.finditer(r"(?<!!)\[([^\]]*)\]\(([^)\s]+)\)", naked):
-        t = urllib.parse.unquote(m.group(2).strip())
-        if t.startswith(("http://", "https://", "mailto:", "#")) or "<" in t:
+        raw = m.group(2).strip()
+        if raw.startswith(("http://", "https://", "mailto:")) or "<" in raw:
             continue
-        if not (path.parent / t).exists():
-            add("R12", "link target %s does not exist" % t)
+        target, _, frag = urllib.parse.unquote(raw).partition("#")
+        if not target or not is_path(target):
+            continue
+        dest = path.parent / target
+        if not dest.exists():
+            add("R12", "link target %s does not exist" % target)
+        elif frag and dest.suffix.lower() == ".md" and frag not in heading_slugs(dest):
+            add("R12", "link target %s has no heading #%s" % (target, frag))
+
+
+def is_path(target: str) -> bool:
+    """Is this link target a file path, or a formula GitHub happened to read as one?
+
+    The compound library writes SMILES raw — ChemEdit reads column 2 verbatim, so
+    backticks would break it — which means GitHub turns `[O-]`, `[SiH3]` and `[Cl](=O)`
+    into links. Those are data, not navigation, and no file by that name exists.
+    """
+    return "/" in target or bool(re.search(r"\.[A-Za-z0-9]{1,5}$", target))
+
+
+def heading_slugs(path: Path) -> set[str]:
+    """The GitHub anchors a markdown file actually exposes."""
+    out = set()
+    for line in unfenced(path.read_text(encoding="utf-8")).splitlines():
+        m = re.match(r"^(#{1,6})\s+(.*?)\s*#*\s*$", re.sub(r"`[^`\n]*`", " ", line))
+        if m:
+            out.add(gh_slug(m.group(2)))
+    return out
 
 
 def split_row(line: str) -> list[str]:
@@ -307,48 +356,63 @@ def check_sheet(path: Path, lines: list[str], add):
 
 
 # ---------------------------------------------------------------------------
-def check_file(path: Path) -> list[tuple[str, int, str]]:
+# Rules that describe the shape of a chapter's notes.md, and so only apply to one.
+CHAPTER_ONLY = ("N1", "N2", "N3", "N4", "N5", "R3", "R5", "R6", "R7", "R30")
+
+
+def check_file(path: Path, chapter: bool = True) -> list[tuple[str, int, str]]:
+    """Check one markdown file.
+
+    `chapter` is True for a notes.md, which the chapter rules (frontmatter, Contents, the
+    Quick Revision Sheet) apply to in full. For any other markdown — the README, the
+    rulebook, a generated table — only the file-agnostic rules run, because a document
+    that is not a chapter has no frontmatter and no Contents block to get wrong.
+    """
     findings: list[tuple[str, int, str]] = []
 
     def add(rule, msg):
         findings.append((rule, 0, msg))
 
     lines = path.read_text(encoding="utf-8").split("\n")
-    check_frontmatter(path, lines, add)
-    check_structure(path, lines, add)
-    check_n2(path, lines, add)
-    check_fences(path, lines, add)
-    check_contents(path, lines, add)
-    check_links(path, lines, add)
-    check_tables(path, lines, add)
-    check_mermaid(path, lines, add)
-    check_sheet(path, lines, add)
-    return findings
+    for fn in (check_frontmatter, check_structure, check_n2, check_fences, check_contents,
+               check_links, check_tables, check_mermaid, check_sheet):
+        fn(path, lines, add)
+    return findings if chapter else [f for f in findings if f[0] not in CHAPTER_ONLY]
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("paths", nargs="*", type=Path)
+    ap.add_argument("--all", action="store_true",
+                    help="every markdown file in the repo, not just the notes.md files")
     ap.add_argument("--quiet", action="store_true", help="summary only")
     args = ap.parse_args()
 
-    files = [p.resolve() for p in args.paths] or sorted(ROOT.glob("*/*/notes.md"))
-    total = 0
+    if args.paths:
+        files = [p.resolve() for p in args.paths]
+    elif args.all:
+        skip = {".git", "node_modules", "__pycache__", ".obsidian"}
+        files = sorted(f for f in ROOT.rglob("*.md") if not skip & set(f.parts))
+    else:
+        files = sorted(ROOT.glob("*/*/notes.md"))
+    by_file, total, dirty = {}, 0, 0
     for f in files:
         if not f.exists():
             print("no such file: %s" % f, file=sys.stderr)
             return 2
-        findings = check_file(f)
+        findings = check_file(f, chapter=not args.all or f.name == "notes.md")
+        by_file[f] = findings
         total += len(findings)
-        if findings:
+        dirty += bool(findings)
+    if not args.quiet:
+        for f, findings in by_file.items():
+            if not findings:
+                continue
             print("%s" % f.relative_to(ROOT) if ROOT in f.parents else f)
             for rule, _, msg in sorted(findings):
                 print("    %-4s %s" % (rule, msg))
-    if args.quiet and total:
-        pass
-    clean = len(files) - sum(1 for f in files if check_file(f))
-    print("\n%d file(s) checked, %d clean, %d finding(s)." % (len(files), clean, total))
+    print("\n%d file(s) checked, %d clean, %d finding(s)." % (len(files), len(files) - dirty, total))
     return 1 if total else 0
 
 

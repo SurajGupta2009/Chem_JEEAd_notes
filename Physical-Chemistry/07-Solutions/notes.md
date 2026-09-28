@@ -8,7 +8,7 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [lech101.pdf]
 status: written
-words: 4641
+words: 4653
 updated: 2026-09-28
 tags: [chemistry/physical, jee/main, jee/advanced, solutions, colligative, raoult, henry, vanthoff]
 ---

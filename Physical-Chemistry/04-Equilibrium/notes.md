@@ -2,7 +2,7 @@
 branch: "Physical Chemistry"
 chapter: "Equilibrium"
 status: written
-words: 16433
+words: 16436
 updated: 2026-09-26
 class: "11"
 ncert_unit: "Unit 6 (Class 11)"

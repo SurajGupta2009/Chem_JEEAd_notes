@@ -8,7 +8,7 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [kech101.pdf]
 status: written
-words: 5176
+words: 5186
 updated: 2026-09-28
 tags: [chemistry/physical, jee/main, jee/advanced, mole-concept, stoichiometry]
 ---

@@ -45,8 +45,9 @@ Source table (extra columns are ignored; the first table whose header has SMILES
 
 Oxidation states are computed the textbook way: every bond's electrons go to the more
 electronegative atom (Pauling values), bonds between like atoms count 0, and the formal
-charge is added. Two JEE conventions are built in: N is treated as more electronegative than
-Cl (NCl3: N -3, Cl +1), and P as more electronegative than H (PH3: P -3; H3PO2: P +1).
+charge is added. Three JEE conventions override Pauling (see MORE_EN): the non-metal wins
+against H for P and Si (so SiH4 is Si -4 and H3PO2 is P +1), and N wins against Cl
+(NCl3: N -3, Cl +1).
 
 Usage:
     python scripts/render_structures.py <structures.md> [...] [--size 240x170]
@@ -69,15 +70,29 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 MARK = {k: ("<!-- %s:begin -->" % k, "<!-- %s:end -->" % k) for k in ("gallery", "smiles")}
 
-# Pauling electronegativities, with the two JEE conventions described in the docstring.
+# Pauling electronegativities, the real published values.
 EN = {"H": 2.20, "Li": 0.98, "Be": 1.57, "B": 2.04, "C": 2.55, "N": 3.04, "O": 3.44, "F": 3.98,
       "Na": 0.93, "Mg": 1.31, "Al": 1.61, "Si": 1.90, "P": 2.19, "S": 2.58, "Cl": 3.16,
       "K": 0.82, "Ca": 1.00, "Ti": 1.54, "V": 1.63, "Cr": 1.66, "Mn": 1.55, "Fe": 1.83,
       "Co": 1.88, "Ni": 1.91, "Cu": 1.90, "Zn": 1.65, "As": 2.18, "Se": 2.55, "Br": 2.96,
       "Ag": 1.93, "Sn": 1.96, "I": 2.66, "Xe": 2.60, "Ba": 0.89, "Hg": 2.00, "Pb": 2.33}
-EN["N"] = 3.20   # convention: N > Cl
-EN["P"] = 2.21   # convention: P > H
+
+# Pairs the JEE syllabus teaches the other way round from Pauling. They are listed as
+# pairs rather than as fudged EN values so the table above stays the published data.
+# Each value is the element that wins the bond: the non-metal keeps the bonding pair
+# against H, which is what makes SiH4 Si -4 and PH3 P -3 rather than the Pauling +4 / +3.
+MORE_EN = {frozenset(("P", "H")): "P",     # PH3 is P -3; H3PO2 is P +1
+           frozenset(("Si", "H")): "Si",   # SiH4 is Si -4 (molecular hydride of a non-metal)
+           frozenset(("N", "Cl")): "N"}    # NCl3 is N -3, Cl +1
 SPECTATORS = {"Li", "Na", "K", "Rb", "Cs", "Mg", "Ca", "Sr", "Ba"}
+
+
+def more_en(hi, lo):
+    """Is `hi` the more electronegative of the pair? A JEE convention overrides Pauling."""
+    win = MORE_EN.get(frozenset((hi, lo)))
+    if win is not None:
+        return win == hi
+    return EN.get(hi, 1.5) > EN.get(lo, 1.5)
 
 
 def fmt(v, unicode_minus=True):
@@ -120,20 +135,25 @@ def parse_table(md):
 def oxidation_states(mol):
     from rdkit import Chem
     m = Chem.Mol(mol)
-    Chem.Kekulize(m, clearAromaticFlags=True)
+    if any(b.GetIsAromatic() for b in m.GetBonds()):
+        # Kekulize() also recomputes the implicit hydrogens, and on a relaxed (never fully
+        # validated) molecule that hands a phantom H to every double-bonded oxygen. Only
+        # call it when there is actually something aromatic to kekulise.
+        Chem.Kekulize(m, clearAromaticFlags=True)
     out = []
     for a in m.GetAtoms():
-        sym, ea = a.GetSymbol(), EN.get(a.GetSymbol(), 1.5)
+        sym = a.GetSymbol()
         v = Fraction(a.GetFormalCharge())
         for b in a.GetBonds():
             o = b.GetOtherAtom(a)
-            if o.GetSymbol() == sym:
+            osym = o.GetSymbol()
+            if osym == sym:
                 continue
-            eo, order = EN.get(o.GetSymbol(), 1.5), Fraction(b.GetBondTypeAsDouble())
-            v += order if eo > ea else (-order if eo < ea else 0)
+            order = Fraction(b.GetBondTypeAsDouble())
+            v += order if more_en(osym, sym) else (-order if more_en(sym, osym) else 0)
         if sym != "H":
             h = a.GetTotalNumHs()
-            v += h if EN["H"] > ea else (-h if EN["H"] < ea else 0)
+            v += h if more_en("H", sym) else (-h if more_en(sym, "H") else 0)
         out.append(v)
     return out
 
@@ -142,9 +162,9 @@ def implicit_h_sum(mol):
     """Total O.S. carried by implicit hydrogens (+1 each on atoms more EN than H, −1 otherwise)."""
     s = 0
     for a in mol.GetAtoms():
-        if a.GetSymbol() != "H":
-            ea = EN.get(a.GetSymbol(), 1.5)
-            s += a.GetTotalNumHs() * (1 if ea > EN["H"] else (-1 if ea < EN["H"] else 0))
+        sym = a.GetSymbol()
+        if sym != "H":
+            s += a.GetTotalNumHs() * (1 if more_en(sym, "H") else (-1 if more_en("H", sym) else 0))
     return s
 
 
@@ -264,21 +284,62 @@ def parse_smiles(smi):
     are real and are exactly the ones the bonding chapter needs. Dropping only
     SANITIZE_PROPERTIES keeps ring perception, aromaticity and the bond graph, which
     is all the drawing and the oxidation-state calculation need.
+
+    SANITIZE_CLEANUP cannot be skipped, and it is the step that repairs a hypervalent
+    atom by rewriting the molecule: `O[Cl](=O)(=O)=O` comes back as Cl3+ on four single
+    bonds. So whichever sanitisation succeeds, the molecule gets its charges and bond
+    orders copied back from an untouched copy, which is what the table actually spells.
     """
     from rdkit import Chem
+    from rdkit import RDLogger
+    RDLogger.DisableLog("rdApp.*")   # the first attempt failing below is expected, not a warning
     ps = Chem.SmilesParserParams()
     ps.removeHs = False
+    ref = Chem.MolFromSmiles(smi, raw_ps())        # exactly what the row spells, never validated
     mol = Chem.MolFromSmiles(smi, ps)
-    if mol is not None:
+    if mol is not None and charges_agree(mol, ref):
         return mol
-    relaxed_ps = Chem.SmilesParserParams()
-    relaxed_ps.sanitize = False
-    relaxed_ps.removeHs = False
-    relaxed = Chem.MolFromSmiles(smi, relaxed_ps)
-    if relaxed is None:
+    if ref is None:
         return None
-    Chem.SanitizeMol(relaxed, Chem.SANITIZE_ALL ^ Chem.SANITIZE_PROPERTIES)
-    return relaxed
+    for ops in (Chem.SANITIZE_ALL, Chem.SANITIZE_ALL ^ Chem.SANITIZE_PROPERTIES):
+        mol, written = Chem.Mol(ref), Chem.Mol(ref)
+        RDLogger.DisableLog("rdApp.*")
+        try:
+            Chem.SanitizeMol(mol, ops)
+        except Exception:                          # still hypervalent: try the relaxed set
+            continue
+        RDLogger.EnableLog("rdApp.*")
+        for a, w in zip(list(mol.GetAtoms()), list(written.GetAtoms())):
+            a.SetFormalCharge(w.GetFormalCharge())
+        for b, w in zip(list(mol.GetBonds()), list(written.GetBonds())):
+            b.SetBondType(w.GetBondType())
+        # and re-derive the implicit hydrogens, which were counted against the bond orders
+        # sanitisation had just rewritten: otherwise HO-Cl(=O)3 gets drawn as Cl(OH)4.
+        mol.UpdatePropertyCache(False)
+        return mol
+    return None
+
+
+def charges_agree(mol, ref):
+    """Did RDKit leave the formal charges the way the table wrote them?
+
+    If it did, the fully validated molecule is the one to use. If it did not, RDKit has
+    been editing the charges to make a hypervalent atom legal, and the unvalidated parse
+    is the faithful reading of the row.
+    """
+    if ref is None:
+        return True
+    return [a.GetFormalCharge() for a in mol.GetAtoms()] == \
+           [a.GetFormalCharge() for a in ref.GetAtoms()]
+
+
+def raw_ps():
+    """Parser settings for a molecule RDKit has not validated yet."""
+    from rdkit import Chem
+    ps = Chem.SmilesParserParams()
+    ps.sanitize = False
+    ps.removeHs = False
+    return ps
 
 
 def validate(src):

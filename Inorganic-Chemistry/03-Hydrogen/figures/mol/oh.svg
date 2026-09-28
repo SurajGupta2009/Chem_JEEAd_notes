@@ -1,7 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
-  <rect width="100%" height="100%" fill="white" stroke="black"/>
-  <text x="150" y="80" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">Hydroxide OH⁻</text>
-  <text x="150" y="105" text-anchor="middle" font-family="Arial" font-size="14">[OH-]</text>
-  <text x="150" y="130" text-anchor="middle" font-family="Arial" font-size="12" fill="gray">-</text>
-  <desc id="ketcher-data" data-format="mol">CiAgICAgUkRLaXQgICAgICAgICAgMkQKCiAgMSAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMDk5OSBWMjAwMAogICAgMC4wMDAwICAgIDAuMDAwMCAgICAwLjAwMDAgTyAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKTSAgQ0hHICAxICAgMSAgLTEKTSAgRU5ECg==</desc>
+<?xml version='1.0' encoding='iso-8859-1'?>
+<svg version='1.1' baseProfile='full'
+              xmlns='http://www.w3.org/2000/svg'
+                      xmlns:rdkit='http://www.rdkit.org/xml'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                  xml:space='preserve'
+width='240px' height='170px' viewBox='0 0 240 170'>
+<desc id="ketcher-data" data-format="mol">CiAgICAgUkRLaXQgICAgICAgICAgMkQKCiAgMSAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMDk5OSBWMjAwMAogICAgMC4wMDAwICAgIDAuMDAwMCAgICAwLjAwMDAgTyAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKTSAgQ0hHICAxICAgMSAgLTEKTSAgRU5ECg==</desc>
+
+<!-- END OF HEADER -->
+<rect style='opacity:1.0;fill:#FFFFFF;stroke:none' width='240.0' height='170.0' x='0.0' y='0.0'> </rect>
+<path class='atom-0' d='M 101.6 77.2
+L 103.7 77.2
+L 103.7 83.7
+L 111.5 83.7
+L 111.5 77.2
+L 113.6 77.2
+L 113.6 92.5
+L 111.5 92.5
+L 111.5 85.5
+L 103.7 85.5
+L 103.7 92.5
+L 101.6 92.5
+L 101.6 77.2
+' fill='#000000'/>
+<path class='atom-0' d='M 116.5 84.8
+Q 116.5 81.2, 118.3 79.1
+Q 120.2 77.0, 123.5 77.0
+Q 126.9 77.0, 128.8 79.1
+Q 130.6 81.2, 130.6 84.8
+Q 130.6 88.5, 128.7 90.7
+Q 126.9 92.8, 123.5 92.8
+Q 120.2 92.8, 118.3 90.7
+Q 116.5 88.6, 116.5 84.8
+M 123.5 91.0
+Q 125.9 91.0, 127.1 89.5
+Q 128.4 87.9, 128.4 84.8
+Q 128.4 81.8, 127.1 80.3
+Q 125.9 78.8, 123.5 78.8
+Q 121.2 78.8, 119.9 80.3
+Q 118.7 81.8, 118.7 84.8
+Q 118.7 87.9, 119.9 89.5
+Q 121.2 91.0, 123.5 91.0
+' fill='#000000'/>
+<path class='atom-0' d='M 132.8 79.5
+L 138.0 79.5
+L 138.0 80.7
+L 132.8 80.7
+L 132.8 79.5
+' fill='#000000'/>
 </svg>

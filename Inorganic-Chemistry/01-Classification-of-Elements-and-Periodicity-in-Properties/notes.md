@@ -8,7 +8,7 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [kech103.pdf]
 status: written
-words: 5433
+words: 5415
 updated: 2026-09-27
 tags: [chemistry/inorganic, jee/main, jee/advanced, periodic-table, periodicity]
 ---

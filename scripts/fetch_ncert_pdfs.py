@@ -530,21 +530,23 @@ def write_index():
             "uploaded, and `notes.md` once written. Chapters are numbered in this branch's",
             "own order (Class XI first, then Class XII, by NCERT unit).",
             "",
-            "| # | Chapter | Class | NCERT unit | Code | Edition | Needed for | Notes |",
-            "|---|---|---|---|---|---|---|---|",
+            "| # | Chapter | Class, unit | Code, edition | Needed for | Notes |",
+            "|---|---|---|---|---|---|",
         ]
         for c in rows:
             edition = "rationalised" if c["edition"] == "rationalised" else "legacy 2018-19"
             exams = "Main + Advanced" if "JEE Main" in c["exams"] else "**Advanced only**"
             has_notes = (c["dir"] / "notes.md").exists()
             notes = "[\u2705 notes.md](%s/notes.md)" % c["folder"] if has_notes else "\u23f3 pending"
-            lines.append("| %s | [%s](%s) | %d | %d | `%s` | %s | %s | %s |"
+            # R14 caps a table at six columns so it still reads on a phone: class and unit
+            # are one fact about the chapter, and so are its code and its edition.
+            lines.append("| %s | [%s](%s) | %d, unit %d | `%s`, %s | %s | %s |"
                          % (c["folder"][:2], c["title"], c["folder"], c["class"], c["num"],
                             c["code"].split("-")[0], edition, exams, notes))
         lines += [
             "",
             "The `#` column is this branch's own order. The NCERT unit number keeps its own",
-            "column because that is what the NCERT codes mean: `kech1xx` = Class XI Part I,",
+            "cell because that is what the NCERT codes mean: `kech1xx` = Class XI Part I,",
             "`kech2xx` = Class XI Part II, `lech1xx` / `lech2xx` likewise for Class XII.",
             "The rationalised books are shorter, so NCERT reused codes \u2014 `kech105` was",
             "*States of Matter* and is now *Thermodynamics*; `lech101` was *The Solid State*",

@@ -81,13 +81,14 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [kech106.pdf]          # add the module PDF filename once uploaded
 status: written                 # draft | written | reviewed
-words: 15206
+words: 16436
 updated: 2026-09-24
 tags: [chemistry/physical, jee/main, jee/advanced]
 ---
 ```
 
-Frontmatter is what makes Dataview, Bases and the progress dashboard work — see the vault plan.
+Frontmatter is what makes Dataview and the progress dashboard work — see
+[`meta/Progress.md`](../meta/Progress.md).
 It renders as a properties panel in Obsidian and is invisible on GitHub.
 
 ### R4 — Names and attachments
@@ -148,7 +149,8 @@ re-checkable with a script (see R33).
 > request, not a setting. **Keep the GitHub slugs anyway** — GitHub is the published surface —
 > and navigate in Obsidian with the core **Outline** pane (auto-built from headings, always
 > correct). Never "fix" the Contents block with `[[#Heading]]` links: that breaks GitHub.
-> The vault plan (Phase 5) specifies a small vault-local plugin that makes slug links clickable.
+> The dashboard at [`meta/Progress.md`](../meta/Progress.md) is the other half of the vault:
+> Dataview turns the frontmatter below into a live table of the whole course.
 
 ---
 
@@ -387,6 +389,7 @@ flowchart TD
     B -->|"colourless, burns blue"| D["CO₃²⁻ carbonate"]
     B -->|"no gas"| E["→ Group B: conc. H₂SO₄"]
 ```
+*A decision tree with quoted edge labels: the reader never has to guess what an arrow means.*
 
 | Rule | Detail |
 |---|---|
@@ -432,7 +435,7 @@ inventory. What each rung is currently used for:
 | **Table** (R13–R15) | every chapter: order lists, trend tables, master data tables, reagent and group tables. The d- and f-block electronic-configuration tables are transposed to one element per row so no table exceeds six columns (R14) |
 | **Flowchart** (R20) | 157 diagrams: process flows (Solvay, borax, metallurgy, K₂Cr₂O₇/KMnO₄ prep), decision trees (VSEPR, buffer, group scheme, E° questions), and energy/level diagrams (MO, crystal field, Latimer) |
 | **Outline** (R22) | optional only — a chapter may add `figures/<chapter>-map.md` when the structure genuinely helps |
-| **Structure** (R18) | 135 SVGs across Chemical Bonding, Hydrogen, s-Block, p-Block (13–14), p-Block (15–18) and Redox |
+| **Structure** (R18) | 133 SVGs across Chemical Bonding, Hydrogen, s-Block, p-Block (13–14), p-Block (15–18) and Redox |
 | **ASCII** (R21) | none — banned. Every former ASCII diagram is now Mermaid, a table or prose |
 
 Three diagrams were originally over the 14-node limit and were split rather than shrunk: the
@@ -570,8 +573,8 @@ verifies, for every `notes.md`, and exits non-zero with a per-file, per-rule rep
 | R3 | YAML frontmatter closes; `branch` `chapter` `class` `ncert_unit` `ncert_code` `edition` `exams` `status` `words` present; `words:` within 5 % of the real count |
 | R5 | one `# Title` H1 (plus any `# Part …` dividers), a `## Contents` block, a `*Cross-links:*` footer |
 | R6 | `## N.` numbering runs 1..n with no gaps or duplicates |
-| R7 | every `](#…)` Contents anchor matches the GitHub slug of a real heading, and every cross-file `#anchor` resolves in the target file |
-| R12, R19 | every relative link and image target exists on disk |
+| R7 | every `](#…)` Contents anchor matches the GitHub slug of a real heading |
+| R12, R19 | every relative link and image target exists on disk, and every `#fragment` it carries is a real heading in the file it points at |
 | R14 | tables have ≤ 6 columns, consistent cell counts (escaped `\|` is content, not a break), and no empty cell — use `—` |
 | R20 | Mermaid is `flowchart TD`/`LR` only, ≤ 14 nodes, every node/edge/subgraph label quoted, every diagram followed by an italic caption |
 | R21 | no box-drawing or ASCII art inside a diagram |

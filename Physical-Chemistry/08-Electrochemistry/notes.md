@@ -2,7 +2,7 @@
 branch: "Physical Chemistry"
 chapter: "Electrochemistry"
 status: written
-words: 10725
+words: 10732
 updated: 2026-09-26
 class: "12"
 ncert_unit: "Unit 2 (Class 12)"

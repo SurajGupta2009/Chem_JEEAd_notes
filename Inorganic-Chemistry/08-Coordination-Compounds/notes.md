@@ -2,7 +2,7 @@
 branch: "Inorganic Chemistry"
 chapter: "Coordination Compounds"
 status: written
-words: 5375
+words: 5541
 updated: 2026-09-26
 class: "12"
 ncert_unit: "Unit 5 (Class 12)"

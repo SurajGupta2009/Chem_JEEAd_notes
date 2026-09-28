@@ -10,13 +10,13 @@ vault. One format spec governs every file:
 
 ## Status
 
-**22 of 31 chapters written — 147,000 words, 159 Mermaid diagrams, 135 chemical structures.**
+**22 of 31 chapters written — 147,300 words, 157 Mermaid diagrams, 133 chemical structures.**
 
 | Branch | Written | Total chapters | Words |
 |---|---:|---:|---:|
-| Physical Chemistry | 12 | 12 | 78,600 |
-| Inorganic Chemistry | 9 | 9 | 55,600 |
-| Practical Chemistry | 1 | 1 | 7,100 |
+| Physical Chemistry | 12 | 12 | 89,620 |
+| Inorganic Chemistry | 9 | 9 | 50,551 |
+| Practical Chemistry | 1 | 1 | 7,129 |
 | Organic Chemistry | 0 | 9 | — |
 | **Total** | **22** | **31** | **147,300** |
 
@@ -35,10 +35,10 @@ vault. One format spec governs every file:
 | Physical | [11 Surface Chemistry](Physical-Chemistry/11-Surface-Chemistry/notes.md) | 6,542 | 7 | — | — |
 | Physical | [12 Isolation of Elements (Metallurgy)](Physical-Chemistry/12-General-Principles-and-Processes-of-Isolation-of-Elements/notes.md) | 5,508 | 7 | — | ✅ |
 | Inorganic | [01 Classification & Periodicity](Inorganic-Chemistry/01-Classification-of-Elements-and-Periodicity-in-Properties/notes.md) | 5,415 | 9 | — | — |
-| Inorganic | [02 Chemical Bonding & Structure](Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/notes.md) | 6,693 | 17 | 33 | ✅ |
+| Inorganic | [02 Chemical Bonding & Structure](Inorganic-Chemistry/02-Chemical-Bonding-and-Molecular-Structure/notes.md) | 6,693 | 17 | 32 | ✅ |
 | Inorganic | [03 Hydrogen](Inorganic-Chemistry/03-Hydrogen/notes.md) | 5,032 | 11 | 6 | ✅ |
 | Inorganic | [04 s-Block Elements](Inorganic-Chemistry/04-The-s-Block-Elements/notes.md) | 4,672 | 8 | 15 | ✅ |
-| Inorganic | [05 p-Block (Groups 13–14)](Inorganic-Chemistry/05-The-p-Block-Elements/notes.md) | 4,896 | 8 | 17 | ✅ |
+| Inorganic | [05 p-Block (Groups 13–14)](Inorganic-Chemistry/05-The-p-Block-Elements/notes.md) | 4,864 | 8 | 16 | ✅ |
 | Inorganic | [06 Environmental Chemistry](Inorganic-Chemistry/06-Environmental-Chemistry/notes.md) | 2,615 | 6 | — | ✅ |
 | Inorganic | [07 d- and f-Block](Inorganic-Chemistry/07-The-d-and-f-Block-Elements/notes.md) | 10,730 | 9 | — | ✅ |
 | Inorganic | [08 Coordination Compounds](Inorganic-Chemistry/08-Coordination-Compounds/notes.md) | 5,541 | 6 | — | ✅ |
@@ -113,12 +113,14 @@ Practical-Chemistry/
 ## Quality gate
 
 `scripts/check_notes.py` is the linter the rulebook's R33 asks for. It checks frontmatter
-and `words:`, H1/H2 numbering, Contents anchors against GitHub's slug algorithm, internal
-links, table integrity, Mermaid house style, and the Quick Revision Sheet. **All 22 written
-chapters pass with zero findings.**
+and `words:`, H1/H2 numbering, Contents anchors and every `#fragment` against GitHub's slug
+algorithm, relative link and image targets, table integrity, Mermaid house style, and the
+Quick Revision Sheet. **All 72 markdown files pass with zero findings** — 22 of them are
+the written chapters, which additionally get the chapter-shaped rules.
 
 ```bash
 python3 scripts/check_notes.py             # every notes.md
+python3 scripts/check_notes.py --all       # every markdown file, rules that fit it
 python3 scripts/check_notes.py Inorganic-Chemistry/02-*/notes.md   # just one
 ```
 
@@ -128,6 +130,14 @@ every unquoted node, edge and subgraph label, and is safe to re-run.
 ```bash
 python3 scripts/quote_mermaid_labels.py           # rewrite
 python3 scripts/quote_mermaid_labels.py --check   # dry run
+```
+
+The linter checks Mermaid *house style*; it does not run the Mermaid parser. To prove every
+diagram actually parses, run the harness in `mermaid-tools/` (jsdom + the real `mermaid`
+package, one directory beside the repository):
+
+```bash
+cd mermaid-tools && npm install && node check.mjs /path/to/this/repo
 ```
 
 ## Chemical structures
@@ -144,8 +154,11 @@ python3 scripts/render_structures.py --all --validate   # check SMILES and SVGs,
 python3 scripts/render_structures.py --all --library docs/COMPOUND-LIBRARY.md
 ```
 
-`--validate` needs no RDKit and reports a missing or stale SVG next to a bad SMILES string,
-so it is the cheap way to confirm a chapter is in sync.
+`--validate` draws nothing, so it needs only RDKit's chemistry core and not the Cairo/X11
+drawing backend; it reports a missing or stale SVG next to a bad SMILES string, and it
+exits non-zero if any O.S. assertion in the table fails. That makes it the cheap way to
+confirm a chapter is in sync, and it doubles as the check that the drawings agree with the
+notes rather than merely looking plausible.
 
 ## Refreshing the NCERT PDFs
 
