@@ -8,7 +8,7 @@ edition: pre-rationalised
 exams: [JEE Advanced]
 sources: [kech202-legacy.pdf, Hydrogen _ Its Compounds_Theory_26.pdf]
 status: written
-words: 9500
+words: 5032
 updated: 2026-09-27
 tags: [chemistry/inorganic, jee/advanced, hydrogen]
 ---
@@ -45,8 +45,8 @@ tags: [chemistry/inorganic, jee/advanced, hydrogen]
   14. [Structure of Water & Ice (9.6)](#14-structure-of-water--ice-96)
   15. [Chemical Properties of Water (9.6)](#15-chemical-properties-of-water-96)
   16. [Hard & Soft Water — Types & Softening (9.6)](#16-hard--soft-water--types--softening-96)
-  17. [Heavy Water D₂O (9.7)](#17-heavy-water-d2o-97)
-  18. [Hydrogen Peroxide H₂O₂ (9.8) — Structure & Properties](#18-hydrogen-peroxide-h2o2-98--structure--properties)
+  17. [Heavy Water D₂O (9.7)](#17-heavy-water-d₂o-97)
+  18. [Hydrogen Peroxide H₂O₂ (9.8) — Structure & Properties](#18-hydrogen-peroxide-h₂o₂-98--structure--properties)
   19. [Dihydrogen as Fuel & Hydrogen Economy (9.9)](#19-dihydrogen-as-fuel--hydrogen-economy-99)
   20. [Quick Revision Sheet](#20-quick-revision-sheet)
 
@@ -117,6 +117,7 @@ flowchart LR
     Nas --> At["Atomic H<br>simple dissociation<br>3000-5000 K<br>most reactive"]
     At --> Ad["Adsorbed / Occluded H<br>on metal surface<br>concentration ↑"]
 ```
+*Four forms of hydrogen in order of reactivity — molecular, adsorbed, nascent and atomic.*
 
 | Type | How formed | Example |
 |---|---|---|
@@ -135,6 +136,7 @@ flowchart TD
     Ortho --> HighT["High T: 75% ortho, 25% para<br>more stable ortho at high T"]
     Para --> LowT["Low T: para more stable<br>At 0 K: 100% para"]
 ```
+*Ortho and para H₂ differ only in nuclear spin, and the ratio shifts with temperature.*
 
 - At absolute zero: 0% ortho, 100% para. At high T: 75% ortho, 25% para.
 - 🅰 **Important:** 100% para can be obtained at low T, but 100% ortho cannot be obtained because at high T para dissociates to atomic H.
@@ -371,6 +373,7 @@ flowchart TD
     Gas["Water gas<br>bent 104.5°<br>O-H 95.7 pm<br>dipole<br>sp³ O"] --> Liq["Liquid<br>associated via H-bonds<br>high b.p., high ΔHvap"]
     Liq --> Ice["Ice<br>hexagonal at 1 atm<br>cubic at very low T<br>each O tetrahedral 4 O at 276 pm<br>open structure with holes<br>density ice < water → floats<br>insulates lake"]
 ```
+*Water in three states: the bent gas molecule, the H-bonded liquid, and the open cage structure that makes ice float.*
 
 *Water structure progression: bent gas → H-bonded liquid → open tetrahedral ice.*
 
@@ -541,6 +544,7 @@ flowchart TD
     H2O2 --> Acid["Weak acid<br>H2O2 ⇌ H+ + HO2-"]
     H2O2 --> Decomp["Decomposition<br>2H2O2 → 2H2O + O2<br>catalysed MnO2"]
 ```
+*H₂O₂ sits at oxygen oxidation state −1, so it acts as both an oxidising and a reducing agent.*
 
 ## 19. Dihydrogen as Fuel & Hydrogen Economy (9.9)
 

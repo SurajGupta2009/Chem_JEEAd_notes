@@ -8,7 +8,7 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [kech201.pdf]
 status: written
-words: 14886
+words: 15279
 updated: 2026-09-26
 tags: [chemistry/physical, jee/main, jee/advanced]
 ---
@@ -150,39 +150,25 @@ This electron book-keeping powers every titration calculation in §12.
 
 NCERT's experiment (Fig. 7.1), the **origin of the electrochemical series**:
 
-```mermaid
-flowchart TD
-    N0["Beaker A: Zn strip in Cu(NO₃)₂(aq)      Beaker B: Cu strip in Zn²⁺(aq)"]
-    N1["┌──────────────────────────────┐        ┌──────────────────────────────┐"]
-    N2["│ blue colour fades            │        │ no change                    │"]
-    N3["│ Zn dissolves, red Cu coats   │        │ Cu cannot push e⁻ onto Zn²⁺  │"]
-    N4["│ the strip (redox occurs)     │        │                              │"]
-    N5["└──────────────────────────────┘        └──────────────────────────────┘"]
-    N6["Zn + Cu²⁺ → Zn²⁺ + Cu      ✔ spontaneous  (Zn is the better reductant)   NCERT eq. 7.15"]
-    N7["Cu + Zn²⁺ → no reaction    ✘"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
-    N6 --> N7
-```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+| | **Beaker A** — Zn strip in Cu(NO₃)₂(aq) | **Beaker B** — Cu strip in Zn²⁺(aq) |
+|---|---|---|
+| Result | `Zn + Cu²⁺ → Zn²⁺ + Cu` ✔ spontaneous | `Cu + Zn²⁺ → no reaction` ✘ |
+| Visual | blue colour fades; Zn dissolves; red Cu coats the strip | no change |
+| Why | Zn gives up electrons more readily than Cu | Cu cannot push e⁻ back onto Zn²⁺ |
+
+*One reaction ranks two metals. NCERT eq. 7.15 — Zn is the better reductant, Cu the better
+oxidant. Doing this for every pair is what builds the activity series.*
 
 
 General form: $\ce{M1 + N^{2+}  ->  M1^{2+} + N}$ occurs **only if M₁ loses electrons more readily than N**.
 One reaction ranks two metals; pairwise tests build the activity series:
 
-```mermaid
-flowchart TD
-    N0["reducing strength (tendency to lose e⁻) falls  ───────────────────────────────►"]
-    N1["Li &gt; K &gt; Ba &gt; Ca &gt; Na &gt; Mg &gt; Al &gt; Mn &gt; Zn &gt; Cr &gt; Fe &gt; Co &gt; Ni &gt; Sn &gt; Pb &gt; ("]
-    N2["&gt; Cu &gt; Ag ≈ Hg &gt; Pt &gt; Au"]
-    N0 --> N1
-    N1 --> N2
-```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+**Reducing strength (tendency to lose e⁻) falls left → right:**
+
+`Li > K > Ba > Ca > Na > Mg > Al > Mn > Zn > Cr > Fe > Co > Ni > Sn > Pb > (H₂) > Cu > Ag ≈ Hg > Pt > Au`
+
+*Each `>` is one pairwise experiment of the kind in the table above. Everything to the left of
+hydrogen liberates H₂ from dilute non-oxidising acids; everything to the right does not (§16).*
 
 
 Same logic for **non-metals**, the halogens:
@@ -1008,28 +994,26 @@ A **redox couple** is the oxidised and reduced form of the same species, written
 (oxidised form first): `Zn²⁺/Zn`, `Cu²⁺/Cu`, `Fe³⁺/Fe²⁺`, `MnO₄⁻/Mn²⁺`, `Cl₂/Cl⁻`, `H⁺/H₂`.
 
 ```mermaid
-flowchart TD
-    N0["┌───────────────┐   salt bridge   ┌───────────────┐"]
-    N1["│ Zn rod in     │   (U-tube, KCl  │ Cu rod in     │"]
-    N2["│ ZnSO₄(aq)     │   or NH₄NO₃     │ CuSO₄(aq)     │"]
-    N3["│               │   set in agar)  │               │"]
-    N4["│ Zn → Zn²⁺+2e⁻ │   ~~~~~‖~~~~~   │ Cu²⁺+2e⁻ → Cu │"]
-    N5["│ OXIDATION     │   ions migrate  │ REDUCTION     │"]
-    N6["│ ANODE (−)     │   to close the  │ CATHODE (+)   │"]
-    N7["└───────┬───────┘   circuit       └───────┬───────┘"]
-    N8["└──── e⁻ ───► (V) ───► ───────────┘        E°cell = 1.10 V"]
-    N9["electrons flow Zn → Cu through the wire;"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
-    N6 --> N7
-    N7 --> N8
-    N8 --> N9
+flowchart LR
+    subgraph Anode["ANODE (−) · oxidation"]
+        direction TB
+        Zn["Zn rod in ZnSO₄(aq)<br>Zn → Zn²⁺ + 2e⁻"]
+    end
+    subgraph Bridge["SALT BRIDGE<br>U-tube of KCl or NH₄NO₃ in agar"]
+        direction TB
+        SB["ions migrate to close the circuit<br>anions to the anode, cations to the cathode"]
+    end
+    subgraph Cathode["CATHODE (+) · reduction"]
+        direction TB
+        Cu["Cu rod in CuSO₄(aq)<br>Cu²⁺ + 2e⁻ → Cu"]
+    end
+    Zn -->|"e⁻ through the wire"| Cu
+    Cu -.->|"salt bridge"| Zn
+    Zn --- Bridge
+    Bridge --- Cu
 ```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+*Electrons travel Zn → Cu through the wire and do useful work there; ions travel through the
+bridge so the circuit is complete and neither half-cell builds up a charge. E°cell = 1.10 V.*
 
 
 **Anode vs cathode: the only definition that never fails**
@@ -1234,26 +1218,30 @@ A **Latimer diagram** lists one element's species in **decreasing oxidation stat
 right, with the standard **reduction** potential of each step written on the link.
 
 ```mermaid
-flowchart TD
-    N0["ACID (pH 0), E° / V"]
-    N1["chlorine:  ClO₄⁻ ─1.20─ ClO₃⁻ ─1.18─ HClO₂ ─1.65─ HOCl ─1.63─ Cl₂ ─1.36─ Cl⁻"]
-    N2["+7           +5           +3           +1         0         −1"]
-    N3["manganese: MnO₄⁻ ─0.56─ MnO₄²⁻ ─2.26─ MnO₂ ─0.95─ Mn³⁺ ─1.51─ Mn²⁺ ─(−1.18)─ Mn"]
-    N4["iron:      FeO₄²⁻ ─≈2.20─ Fe³⁺ ─0.77─ Fe²⁺ ─(−0.44)─ Fe"]
-    N5["copper:    Cu²⁺ ─0.153─ Cu⁺ ─0.521─ Cu"]
-    N6["oxygen:    O₂ ─0.68─ H₂O₂ ─1.78─ H₂O"]
-    N7["BASE (pH 14), E° / V"]
-    N8["chlorine:  ClO₄⁻ ─0.37─ ClO₃⁻ ─0.30─ ClO₂⁻ ─0.68─ ClO⁻ ─0.42─ Cl₂ ─1.36─ Cl⁻"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
-    N6 --> N7
-    N7 --> N8
+flowchart LR
+    subgraph ACID["ACID, pH 0 — E° / V on each link"]
+        direction LR
+        a1["ClO₄⁻<br>+7"] -->|"−1.20"| a2["ClO₃⁻<br>+5"] -->|"−1.18"| a3["HClO₂<br>+3"]
+        a3 -->|"−1.65"| a4["HOCl<br>+1"] -->|"−1.63"| a5["Cl₂<br>0"] -->|"−1.36"| a6["Cl⁻<br>−1"]
+    end
+    subgraph BASE["BASE, pH 14 — the same element"]
+        direction LR
+        b1["ClO₄⁻<br>+7"] -->|"−0.37"| b2["ClO₃⁻<br>+5"] -->|"−0.30"| b3["ClO₂⁻<br>+3"]
+        b3 -->|"−0.68"| b4["ClO⁻<br>+1"] -->|"−0.42"| b5["Cl₂<br>0"] -->|"−1.36"| b6["Cl⁻<br>−1"]
+    end
+    ACID -.->|"the medium decides<br>whether Cl₂ is stable"| BASE
 ```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+*A Latimer diagram: the standard potentials on each link, and the test for whether an intermediate will disproportionate.*
+
+| Element | Chain, left (high O.S.) → right (low O.S.), with E° / V in acid |
+|---|---|
+| **Manganese** | `MnO₄⁻` −0.56→ `MnO₄²⁻` −2.26→ `MnO₂` −0.95→ `Mn³⁺` −1.51→ `Mn²⁺` −1.18→ `Mn` |
+| **Iron** | `FeO₄²⁻` ≈2.20→ `Fe³⁺` −0.77→ `Fe²⁺` −0.44→ `Fe` |
+| **Copper** | `Cu²⁺` −0.153→ `Cu⁺` −0.521→ `Cu` |
+| **Oxygen** | `O₂` −0.68→ `H₂O₂` −1.78→ `H₂O` |
+
+*Each link is one standard **reduction** half-reaction, written for the couple to its right.
+The reading rules that follow all depend only on which side of a link is bigger than which.*
 
 
 ### Test A — will the middle species disproportionate?

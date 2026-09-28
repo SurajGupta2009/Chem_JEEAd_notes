@@ -2,11 +2,13 @@
 branch: "Physical Chemistry"
 chapter: "Electrochemistry"
 status: written
-words: 10450
+words: 10725
 updated: 2026-09-26
 class: "12"
 ncert_unit: "Unit 2 (Class 12)"
 ncert_code: "lech102"
+edition: rationalised
+exams: [JEE Advanced, JEE Main]
 sources: ["lech102.pdf"]
 tags: [chemistry, jee]
 ---
@@ -130,7 +132,7 @@ anode becomes the cathode.
 
 ```mermaid
 flowchart LR
-    Zn["Zn(s) anode (-)<br>Zn → Zn²⁺ + 2e⁻<br>E° = -0.76 V"] -->|e⁻ through wire| Cu["Cu(s) cathode (+)<br>Cu²⁺ + 2e⁻ → Cu<br>E° = +0.34 V"]
+    Zn["Zn(s) anode (-)<br>Zn → Zn²⁺ + 2e⁻<br>E° = -0.76 V"] -->|"e⁻ through wire"| Cu["Cu(s) cathode (+)<br>Cu²⁺ + 2e⁻ → Cu<br>E° = +0.34 V"]
     Zn --- SB["Salt bridge<br>KCl / NH₄NO₃ in agar<br>maintains neutrality"]
     SB --- Cu
 ```
@@ -314,26 +316,25 @@ flowchart TD
     Q1 -->|"is it feasible?"| S7["E > 0 ⇔ ΔG < 0 ⇔ Q < K"]
     S4 --> S8["E°cell > 0 ⇔ K > 1 ⇔ spontaneous at standard state"]
 ```
+*A decision procedure for any E° question: split into reduction halves, subtract, then correct for non-standard concentrations with Nernst.*
 
 ## 5. Emf, ΔG and K: the three-way conversion (2.3.1)
 
-```mermaid
-flowchart TD
-    N0["electrical work = −ΔG   (reversible cell at constant T, p)"]
-    N1["───────────────────────────────────────────────────────────"]
-    N2["ΔG  = −nF E_cell                       (any state)"]
-    N3["ΔG° = −nF E°_cell                      (standard state)"]
-    N4["ΔG° = −RT lnK   ⇒   lnK = nFE°/RT   ⇒   log K = n E°_cell / 0.0591   (298 K)"]
-    N5["───────────────────────────────────────────────────────────"]
-    N6["at equilibrium: E_cell = 0 and Q = K  (a dead battery is an equilibrated cell)"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
-```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+| Relation | Expression | Applies to |
+|---|---|---|
+| Electrical work done by the cell | `w = −ΔG` | a **reversible** cell at constant T, p |
+| Gibbs energy of the cell | `ΔG = −nF E_cell` | any state |
+| Standard Gibbs energy | `ΔG° = −nF E°_cell` | standard state only |
+| Equilibrium constant | `ΔG° = −RT ln K` | standard state |
+| The bridge between them | `log K = n E°_cell / 0.0591` | **298 K only** |
+| At equilibrium | `E_cell = 0` **and** `Q = K` | — |
+
+> **⚠ A dead battery is an equilibrated cell.** Once a cell is spent, E_cell = 0 and Q = K —
+> that is why a flat cell has no driving force left, not because it is "broken".
+
+*The 0.0591 constant is `2.303RT/F` at 298 K; at any other temperature use `2.303RT/F`, and
+remember ΔG° is a **state-function** difference, which is why E° may be combined but never
+added (§17 of Redox).*
 
 
 Handy magnitudes at 298 K (memorise the scale, not the formula):
@@ -511,21 +512,13 @@ $\ce{(Ostwald: α = √(Ka/c)); the curve is very steep near c -> 0 and CANNOT b
 extrapolated — hence Kohlrausch's law is the only way to Λ°m (§10).
 
 
-```mermaid
-flowchart TD
-    N0["Λm                                Λm"]
-    N1["│        strong: KCl, HCl          │            weak: CH₃COOH"]
-    N2["│      ___________________─ Λ°m    │                     ／"]
-    N3["│   ／‾‾                    (linear│                  ／"]
-    N4["│ ／  in √c, small slope)          │                ／  steep, never reaches"]
-    N5["└──────────── √c                    └──────────── √c   Λ°m by extrapolation"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+| Plot of Λm against √c | Strong electrolyte (KCl, HCl) | Weak electrolyte (CH₃COOH) |
+|---|---|---|
+| Shape | linear, small slope, straight down | steeply curved |
+| Extrapolation to √c = 0 | hits the intercept **Λ°m** | misses it — Λ°m is found by Kohlrausch's law instead |
+| Why | ions move independently, so Λm falls only through inter-ionic attraction | a small fraction ionises, so the ion population itself rises with dilution |
+| At √c = 0 | `Λm = Λ°m` | `Λm → Λ°m` as a limit, not an intercept |
+| Use | read Λ°m directly off the graph | compute Λ°m indirectly (Kohlrausch, §10) |
 
 
 **NCERT's two factor lists (asked as "what does the conductivity depend on?"):**
@@ -663,6 +656,7 @@ flowchart TD
     D -->|"metal above H₂ (Na⁺, K⁺, Mg²⁺, Al³⁺, Ca²⁺)"| D2["H₂ evolves from water; metal stays in solution<br>→ get the metal only from the MOLTEN salt"]
     D -->|"molten salt, no water"| D3["metal deposits even for Na, Mg, Al"]
 ```
+*What actually comes off the electrodes — the discharge rules, and why overvoltage decides O₂ versus Cl⁻.*
 
 **The two working rules (say them like this in a subjective answer):**
 
@@ -720,25 +714,19 @@ at the cathode potential used).
 
 ## 13. Faraday's laws and the quantitative machinery 🆇
 
-```mermaid
-flowchart TD
-    N0["FIRST LAW:   mass deposited/liberated  w ∝ Q = It"]
-    N1["SECOND LAW:  for the same Q, masses of different substances ∝ their equivalent weights"]
-    N2["─────────────────────────────────────────────────────────────"]
-    N3["w = (E/F) Q = (M/(n F)) I t      [E = equivalent weight, n = e⁻ per formula unit]"]
-    N4["Q(coulomb) = I(A) × t(s)  ;  1 F = 96487 C = 1 mole of electrons"]
-    N5["moles of e⁻ = Q/F  →  moles of product = (Q/F)/n        ← the modern, safest route"]
-    N6["faradaic (current) efficiency = (mass actually obtained / mass predicted by Faraday) × 100"]
-    N7["= (Q theoretically required / Q actually passed) × 100"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
-    N6 --> N7
-```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+- **First law:** the mass deposited or liberated is proportional to the charge passed,
+  `w ∝ Q = It`.
+- **Second law:** for the same charge, the masses of different substances are proportional to
+  their equivalent weights.
+
+| Quantity | Expression | Note |
+|---|---|---|
+| Mass from charge | `w = (E/F)·Q = (M/nF)·I·t` | E = equivalent weight, n = e⁻ per formula unit |
+| Charge | `Q = I × t` | A and s → coulomb |
+| Faraday | `1 F = 96 487 C` = one mole of electrons | NCERT's value; solutions often use 96 500 |
+| Moles of electrons | `Q / F` | the modern, safest route |
+| Moles of product | `(Q / F) / n` | count e⁻ first, then divide by n |
+| Faradaic efficiency | `(mass obtained / mass predicted) × 100` = `(Q required / Q passed) × 100` | always ≤ 100 % |
 
 
 **The four standard problem shapes** (more worked ones in §20):
@@ -965,28 +953,15 @@ energy in than you get back from any real cycle.
 ## 17. Corrosion: rusting as a short-circuited galvanic cell (2.8)
 
 ```mermaid
-flowchart TD
-    N0["(anodic spot)                          (cathodic spot)"]
-    N1["Fe → Fe²⁺ + 2e⁻   ──── e⁻ travel through the metal ────►  O₂ + 4H⁺ + 4e⁻ → 2H₂O"]
-    N2["E°(Fe²⁺/Fe) = −0.44 V                                     E°(O₂/H₂O) = +1.23 V"]
-    N3["──────────────────────────────────────────────────────────────────────────"]
-    N4["overall: 2Fe(s) + O₂(g) + 4H⁺(aq) → 2Fe²⁺(aq) + 2H₂O(l)   E°cell = 1.67 V"]
-    N5["then atmospheric oxidation of Fe²⁺ (NCERT's equation):"]
-    N6["2Fe²⁺(aq) + 2H₂O(l) + ½O₂(g) → Fe₂O₃(s) + 4H⁺(aq)"]
-    N7["and the rust itself is the HYDRATED oxide, Fe₂O₃·xH₂O — porous, so it does NOT protect"]
-    N8["the metal underneath (unlike the adherent Al₂O₃ film on aluminium, which does:"]
-    N9["that contrast is the classic 'why doesn't Al rust away?' question)."]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
-    N6 --> N7
-    N7 --> N8
-    N8 --> N9
+flowchart LR
+    A["Anodic spot on the iron<br>Fe → Fe²⁺ + 2e⁻<br>E°(Fe²⁺/Fe) = −0.44 V"] -->|"electrons travel<br>through the metal"| B["Cathodic spot<br>O₂ + 4H⁺ + 4e⁻ → 2H₂O<br>E°(O₂/H₂O) = +1.23 V"]
+    A --> C["Overall: 2Fe + O₂ + 4H⁺ → 2Fe²⁺ + 2H₂O<br>E°cell = 1.67 V"]
+    C --> D["Atmospheric oxidation (NCERT):<br>2Fe²⁺ + 2H₂O + ½O₂ → Fe₂O₃ + 4H⁺"]
+    D --> E["Rust = hydrated Fe₂O₃·xH₂O<br>porous — it does NOT protect the metal"]
 ```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+*Rusting is a short-circuited galvanic cell spread over the surface. Compare aluminium, whose
+adherent Al₂O₃ film **does** protect it — that contrast is the classic "why doesn't Al rust
+away?" question.*
 
 
 **Factors and prevention (each maps onto one line of the mechanism above):**
@@ -1088,29 +1063,18 @@ compartment removes Cu²⁺, so Q rises and **E falls** ⚠ — one Nernst line 
 
 ## 19. E–pH (Pourbaix), Latimer and Frost diagrams 🆇
 
-```mermaid
-flowchart TD
-    N0["E–pH DIAGRAMS (potential vs pH at 25 °C, 1 M-ish species):"]
-    N1["axes: E (vertical, vs SHE) × pH (horizontal). Above the water lines water is oxidised,"]
-    N2["below them water is reduced:"]
-    N3["O₂ + 4H⁺ + 4e⁻ → 2H₂O    E = 1.23 − 0.0591 pH     (upper stability line)"]
-    N4["2H⁺ + 2e⁻ → H₂           E = 0.00 − 0.0591 pH     (lower stability line)"]
-    N5["⇒ any couple above the O₂ line oxidises water (F₂ 2.87 V, MnO₄⁻ 1.51 V in acid — so neither can"]
-    N6["be used in aqueous solution),"]
-    N7["any BELOW −0.0591pH reduces it (all the alkali metals, hence 'Na metal in water')."]
-    N8["SLOPE of a line = −(m/n) × 0.0591 V per pH unit (m = H⁺ consumed, n = e⁻ transferred)."]
-    N9["Fe³⁺/Fe²⁺: m = 0 ⇒ horizontal (pH-independent). MnO₄⁻/Mn²⁺: 8/5 ⇒ −0.0945 V per pH."]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
-    N6 --> N7
-    N7 --> N8
-    N8 --> N9
-```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+| Reading an E–pH (Pourbaix) line | What it tells you |
+|---|---|
+| A line's **height** at a given pH | the electrode potential of that couple there |
+| A line's **slope** | `−(m/n) × 0.0591` V per pH unit, where m = H⁺ consumed and n = e⁻ transferred |
+| `Fe³⁺/Fe²⁺` line | m = 0 ⇒ **horizontal**, pH-independent |
+| `MnO₄⁻/Mn²⁺` line | m/n = 8/5 ⇒ falls 0.0945 V per pH unit |
+| Anything **above** the `2H⁺ + 2e⁻ → H₂` line | oxidises water — F₂ (2.87 V) and MnO₄⁻ (1.51 V) cannot be used in aqueous solution |
+| Anything **below** the `O₂ + 4H⁺ + 4e⁻ → 2H₂O` line | reduces water — every alkali metal, hence "Na metal in water" |
+
+*Water's own two lines bound the diagram: the upper one (`O₂ + 4H⁺ + 4e⁻ → 2H₂O`) is the
+oxidation limit and the lower one (`2H⁺ + 2e⁻ → H₂`) the reduction limit. A couple that would
+cross either line cannot exist in aqueous solution at that pH.*
 
 
 ⚠ These maps are the *thermodynamic* reason for statements NCERT makes separately:

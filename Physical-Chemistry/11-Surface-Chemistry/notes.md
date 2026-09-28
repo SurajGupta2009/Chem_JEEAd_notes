@@ -8,7 +8,7 @@ edition: legacy
 exams: [JEE Advanced]
 sources: [lech105-legacy.pdf]
 status: written
-words: 16500
+words: 6542
 updated: 2026-09-28
 tags: [chemistry/physical, jee/advanced, surface-chemistry, adsorption, catalysis, colloids, emulsions]
 ---
@@ -33,7 +33,7 @@ tags: [chemistry/physical, jee/advanced, surface-chemistry, adsorption, catalysi
   5. [Factors affecting adsorption of gases on solids (5.1.4)](#5-factors-affecting-adsorption-of-gases-on-solids-514)
 - [Part B — Adsorption Isotherms and from Solutions](#part-b--adsorption-isotherms-and-from-solutions)
   6. [Freundlich adsorption isotherm $x/m = k p^{1/n}$ (5.1.5)](#6-freundlich-adsorption-isotherm-xm--k-p1n-515)
-  7. [Langmuir adsorption isotherm 🆇 — $θ = Kp/(1+Kp)$](#7-langmuir-adsorption-isotherm----θ--kp1kp-)
+  7. [Langmuir adsorption isotherm 🆇 — $θ = Kp/(1+Kp)$](#7-langmuir-adsorption-isotherm---θ--kp1kp)
   8. [Adsorption from solutions — Freundlich for solutions (5.1.6)](#8-adsorption-from-solutions--freundlich-for-solutions-516)
 - [Part C — Catalysis](#part-c--catalysis)
   9. [Catalysis — homogeneous vs heterogeneous (5.2)](#9-catalysis--homogeneous-vs-heterogeneous-52)
@@ -48,7 +48,7 @@ tags: [chemistry/physical, jee/advanced, surface-chemistry, adsorption, catalysi
   17. [Properties of colloidal solutions — colligative, Tyndall, colour, Brownian, charge (5.4.6)](#17-properties-of-colloidal-solutions--colligative-tyndall-colour-brownian-charge-546)
   18. [Electrophoresis, electroosmosis, coagulation — Hardy-Schulze rule (5.4.6)](#18-electrophoresis-electroosmosis-coagulation--hardy-schulze-rule-546)
   19. [Emulsions — types o/w and w/o, emulsifiers, de-emulsification (5.5)](#19-emulsions--types-ow-and-wo-emulsifiers-de-emulsification-55)
-  20. [Gels and applications of colloids (5.6–5.7)](#20-gels-and-applications-of-colloids-56-57)
+  20. [Gels and applications of colloids (5.6–5.7)](#20-gels-and-applications-of-colloids-5657)
 - [Part E — Advanced Corner, Patterns and Revision](#part-e--advanced-corner-patterns-and-revision)
   21. [Master formula bank (print this)](#21-master-formula-bank-print-this)
   22. [Worked problem patterns — JEE Advanced favourites](#22-worked-problem-patterns--jee-advanced-favourites)
@@ -93,17 +93,18 @@ Examples in action:
 **Sorption**: Both adsorption and absorption simultaneously.
 
 ```mermaid
-flowchart TB
-    Ads[Adsorption<br>accumulation at surface only<br>concentration ↑ at surface<br>e.g. dye on charcoal<br>O2 on charcoal<br>silica gel + H2O]
-    Abs[Absorption<br>uniform throughout bulk<br>penetrates<br>e.g. ink solvent in chalk<br>H2O in CaCl2<br>sponge water]
-    Sorp[Sorption<br>both adsorption+absorption<br>simultaneous]
-    Adsorbate[Adsorbate<br>species accumulated<br>e.g. gas molecules dye]
-    Adsorbent[Adsorbent<br>surface where adsorption<br>e.g. charcoal silica gel metals]
+flowchart TD
+    Ads["Adsorption<br>accumulation at surface only<br>concentration ↑ at surface<br>e.g. dye on charcoal<br>O2 on charcoal<br>silica gel + H2O"]
+    Abs["Absorption<br>uniform throughout bulk<br>penetrates<br>e.g. ink solvent in chalk<br>H2O in CaCl2<br>sponge water"]
+    Sorp["Sorption<br>both adsorption+absorption<br>simultaneous"]
+    Adsorbate["Adsorbate<br>species accumulated<br>e.g. gas molecules dye"]
+    Adsorbent["Adsorbent<br>surface where adsorption<br>e.g. charcoal silica gel metals"]
     Adsorbate --> Ads
     Adsorbent --> Ads
     Ads --> Sorp
     Abs --> Sorp
 ```
+*Adsorption stops at the surface, absorption goes all the way through, and sorption means both at once.*
 
 ## 3. Mechanism of adsorption — residual forces and heat of adsorption (5.1.2)
 
@@ -134,12 +135,13 @@ If accumulation due to weak van der Waals forces → **physical adsorption or ph
 | Temperature | Low T favoured, decreases with T increase | High T initially increases then decreases, needs activation |
 
 ```mermaid
-flowchart TB
-    AdsTypes[Adsorption Types] --> Phys[Physisorption<br>van der Waals weak<br>20-40 kJ/mol<br>reversible<br>multilayer<br>low T favoured<br>non-specific<br>e.g. O2 on charcoal]
-    AdsTypes --> Chem[Chemisorption<br>chemical bonds strong<br>80-240 kJ/mol<br>irreversible<br>monolayer<br>high Ea<br>specific<br>e.g. H atoms on Ni<br>O2 on Pt]
-    Phys --> LowT[Low T → more physisorption]
-    Chem --> HighT[High T → more chemisorption<br>needs activation]
+flowchart TD
+    AdsTypes["Adsorption Types"] --> Phys["Physisorption<br>van der Waals weak<br>20-40 kJ/mol<br>reversible<br>multilayer<br>low T favoured<br>non-specific<br>e.g. O2 on charcoal"]
+    AdsTypes --> Chem["Chemisorption<br>chemical bonds strong<br>80-240 kJ/mol<br>irreversible<br>monolayer<br>high Ea<br>specific<br>e.g. H atoms on Ni<br>O2 on Pt"]
+    Phys --> LowT["Low T → more physisorption"]
+    Chem --> HighT["High T → more chemisorption<br>needs activation"]
 ```
+*Physisorption is weak, reversible and multilayer; chemisorption is strong, irreversible and monolayer.*
 
 ## 5. Factors affecting adsorption of gases on solids (5.1.4)
 
@@ -169,13 +171,14 @@ For solutions: $x/m = k C^{1/n}$ where $C$ concentration, $log(x/m)=logk+1/n log
 Limitations: Fails at high pressure, no saturation limit theoretically but experimentally saturation observed.
 
 ```mermaid
-flowchart TB
-    LowP[Low pressure<br>x/m = k p<br>linear<br>1/n=1]
-    MidP[Intermediate<br>x/m = k p^1/n<br>0<1/n<1<br>curve]
-    HighP[High pressure<br>x/m = k constant<br>saturation<br>1/n=0]
+flowchart TD
+    LowP["Low pressure<br>x/m = k p<br>linear<br>1/n = 1"]
+    MidP["Intermediate<br>x/m = k p^(1/n)<br>0 &lt; 1/n &lt; 1<br>curve"]
+    HighP["High pressure<br>x/m = k constant<br>saturation<br>1/n = 0"]
     LowP --> MidP --> HighP
-    LogPlot[log(x/m) vs log p<br>straight line<br>slope 1/n<br>intercept log k]
+    LogPlot["log(x/m) vs log p<br>straight line<br>slope 1/n<br>intercept log k"]
 ```
+*Freundlich's isotherm: linear at low pressure, saturating at high, and a straight line on a log–log plot.*
 
 ## 7. Langmuir adsorption isotherm 🆇 — $θ = Kp/(1+Kp)$
 
@@ -232,11 +235,12 @@ Catalyst = substance that increases rate without being consumed, provides altern
 **Heterogeneous catalysis**: Reactants and catalyst different phases, usually solid catalyst, reactants gases/liquids. Example: $\ce{2SO2(g) + O2(g) ->[Pt(s)] 2SO3(g)}$ contact process Pt solid, $\ce{N2(g) + 3H2(g) ->[Fe(s)] 2NH3(g)}$ Haber Fe solid, $\ce{4NH3(g) + 5O2(g) ->[Pt(s)] 4NO(g) + 6H2O(g)}$ Ostwald.
 
 ```mermaid
-flowchart TB
-    Homo[Homo catalysis<br>same phase<br>e.g. 2SO2+O2 --NO(g)--> 2SO3<br>ester hydrolysis H+ aq]
-    Hetero[Hetero catalysis<br>different phases<br>solid catalyst<br>e.g. 2SO2+O2 --Pt(s)--> 2SO3<br>N2+3H2 --Fe(s)--> NH3]
-    Catalyst[Catalyst<br>lowers Ea<br>alternative path<br>not consumed<br>regenerated<br>does not affect ΔG K]
+flowchart TD
+    Homo["Homo catalysis<br>same phase<br>e.g. 2SO₂ + O₂ —(NO gas)→ 2SO₃<br>ester hydrolysis, H⁺ aq"]
+    Hetero["Hetero catalysis<br>different phases<br>solid catalyst<br>e.g. 2SO₂ + O₂ —(Pt s)→ 2SO₃<br>N₂ + 3H₂ —(Fe s)→ NH₃"]
+    Catalyst["Catalyst<br>lowers Eₐ<br>alternative path<br>not consumed<br>regenerated<br>does not affect ΔG or K"]
 ```
+*Homogeneous versus heterogeneous catalysis — the phase is the only difference; neither changes ΔG or K.*
 
 ## 10. Characteristics and mechanism of heterogeneous catalysis (5.2)
 
@@ -340,12 +344,13 @@ CMC: concentration above which micelle formation starts, e.g., soap CMC ~$10^{-3
 Kraft temperature $T_k$: Temperature above which micelles form.
 
 ```mermaid
-flowchart TB
-    Colloids[Colloids<br>1-1000 nm] --> TypesA[Based on physical state<br>8 types<br>solid sol, sol, aerosol, gel, emulsion, foam]
-    Colloids --> TypesB[Based on interaction<br>Lyophilic solvent loving<br>stable reversible<br>e.g. gum gelatin starch<br>Lyophobic solvent hating<br>unstable irreversible<br>e.g. Au FeOH3 As2S3]
-    Colloids --> TypesC[Based on particle type<br>Multimolecular<br>Au S8 aggregate<br>Macromolecular<br>starch protein<br>Associated micelles<br>soap detergent CMC]
-    Micelle[Micelle<br>soap RCOONa<br>hydrophobic tail inside<br>hydrophilic head outside<br>CMC ~10^-4 to 10^-3 M<br>Kraft temp Tk]
+flowchart TD
+    Colloids["Colloids<br>1-1000 nm"] --> TypesA["Based on physical state<br>8 types<br>solid sol, sol, aerosol, gel, emulsion, foam"]
+    Colloids --> TypesB["Based on interaction<br>Lyophilic solvent loving<br>stable reversible<br>e.g. gum gelatin starch<br>Lyophobic solvent hating<br>unstable irreversible<br>e.g. Au FeOH3 As2S3"]
+    Colloids --> TypesC["Based on particle type<br>Multimolecular<br>Au S8 aggregate<br>Macromolecular<br>starch protein<br>Associated micelles<br>soap detergent CMC"]
+    Micelle["Micelle<br>soap RCOONa<br>hydrophobic tail inside<br>hydrophilic head outside<br>CMC ~10^-4 to 10^-3 M<br>Kraft temp Tk"]
 ```
+*Colloids classified three ways: by the state of the two phases, by solvent affinity, and by particle size.*
 
 ## 15. Preparation of colloids — chemical, Bredig arc, peptization (5.4.4)
 
@@ -397,13 +402,14 @@ Negatively charged sols: Metals Cu Ag Au sols, metallic sulphides $\ce{As2S3 Sb2
 Charge due to preferential adsorption of ions from solution or electron capture.
 
 ```mermaid
-flowchart TB
-    Props[Colloidal Properties] --> Collig[Colligative<br>small due to few particles<br>osmotic etc low]
-    Props --> Tyndall[Tyndall effect<br>scattering light<br>Tyndall cone<br>distinguish colloid vs true<br>ultramicroscope]
-    Props --> Colour[Colour<br>depends on size<br>wavelength scattered<br>Au red→purple→blue→gold]
-    Props --> Brownian[Brownian movement<br>zig-zag<br>unbalanced bombardment<br>prevents settling<br>stability]
-    Props --> Charge[Charge<br>same charge all particles<br>positive e.g. Fe2O3·xH2O<br>negative e.g. Au As2S3]
+flowchart TD
+    Props["Colloidal Properties"] --> Collig["Colligative<br>small due to few particles<br>osmotic etc low"]
+    Props --> Tyndall["Tyndall effect<br>scattering light<br>Tyndall cone<br>distinguish colloid vs true<br>ultramicroscope"]
+    Props --> Colour["Colour<br>depends on size<br>wavelength scattered<br>Au red→purple→blue→gold"]
+    Props --> Brownian["Brownian movement<br>zig-zag<br>unbalanced bombardment<br>prevents settling<br>stability"]
+    Props --> Charge["Charge<br>same charge all particles<br>positive e.g. Fe2O3·xH2O<br>negative e.g. Au As2S3"]
 ```
+*The properties that identify a colloid: Tyndall scattering, the colour of gold sols, Brownian movement and the charge on the particles.*
 
 ## 18. Electrophoresis, electroosmosis, coagulation — Hardy-Schulze rule (5.4.6)
 
@@ -466,13 +472,14 @@ Applications: Milk, digestion of fats in intestine via bile (emulsifier), concen
 - **Blue colour of sky**: Tyndall effect due to dust colloidal particles scattering blue light.
 
 ```mermaid
-flowchart TB
-    Emulsion[Emulsion<br>liquid-liquid colloid] --> OW[o/w<br>oil in water<br>e.g. milk vanishing cream<br>emulsifier soap]
-    Emulsion --> WO[w/o<br>water in oil<br>e.g. butter cold cream<br>emulsifier protein]
-    Emulsion --> DeEmul[De-emulsification<br>heating freezing centrifuging]
-    Gel[Gel<br>liquid in solid<br>e.g. cheese butter jelly] --> Thixo[Thixotropy<br>gel → sol on shaking<br>sol → gel on standing<br>e.g. paint FeOH3]
-    Applications[Applications<br>food milk butter<br>medicine argyrol<br>water purification alum<br>smoke Cottrell<br>soap cleansing micelle<br>rubber plating<br>tanning<br>sky blue Tyndall]
+flowchart TD
+    Emulsion["Emulsion<br>liquid-liquid colloid"] --> OW["o/w<br>oil in water<br>e.g. milk vanishing cream<br>emulsifier soap"]
+    Emulsion --> WO["w/o<br>water in oil<br>e.g. butter cold cream<br>emulsifier protein"]
+    Emulsion --> DeEmul["De-emulsification<br>heating freezing centrifuging"]
+    Gel["Gel<br>liquid in solid<br>e.g. cheese butter jelly"] --> Thixo["Thixotropy<br>gel → sol on shaking<br>sol → gel on standing<br>e.g. paint FeOH3"]
+    Applications["Applications<br>food milk butter<br>medicine argyrol<br>water purification alum<br>smoke Cottrell<br>soap cleansing micelle<br>rubber plating<br>tanning<br>sky blue Tyndall"]
 ```
+*Emulsions and gels, and the thixotropy that makes toothpaste and ketchup behave as they do.*
 
 ---
 

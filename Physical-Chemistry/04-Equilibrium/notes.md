@@ -2,11 +2,13 @@
 branch: "Physical Chemistry"
 chapter: "Equilibrium"
 status: written
-words: 16303
+words: 16433
 updated: 2026-09-26
 class: "11"
 ncert_unit: "Unit 6 (Class 11)"
 ncert_code: "kech106"
+edition: rationalised
+exams: [JEE Advanced, JEE Main]
 sources: ["kech106.pdf"]
 tags: [chemistry, jee]
 ---
@@ -315,27 +317,23 @@ three runs, three different starting ratios, and [HI]²/([H₂][I₂]) comes out
 
 ```mermaid
 flowchart TD
-    N0["ideal gas:  p_i V = n_i RT   ⇒  p_i = (n_i/V)RT = [i]·RT"]
-    N1["Kp = Π p_i^ν  = Π ([i]RT)^ν  = Kc · (RT)^Σν"]
-    N2["─────────────────────────────────────────────────────────"]
-    N3["Kp = Kc (RT)^Δn            Δn = Σν(products) − Σν(reactants)   (gases only!)"]
-    N4["─────────────────────────────────────────────────────────"]
-    N5["R = 0.0821 L atm mol⁻¹ K⁻¹ when Kp is expressed in atm"]
-    N6["R = 0.08314 L bar mol⁻¹ K⁻¹ when Kp is expressed in bar  (NCERT's newer exercises use bar)"]
-    N7["⚠ 1 bar vs 1 atm: if p° = 1 bar, use R = 0.08314 L bar mol⁻¹ K⁻¹  (NCERT uses bar in"]
-    N8["some exercises — e.g. 'Kp = 2.0×10¹⁰/bar'; the number changes with the unit chosen.)"]
-    N9["Δn = 0  ⇒  Kp = Kc      (H₂+I₂⇌2HI, CO+H₂O⇌CO₂+H₂, esterification, FeO+CO⇌Fe+CO₂)"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
-    N6 --> N7
-    N7 --> N8
-    N8 --> N9
+    A["Ideal gas: pᵢV = nᵢRT<br>⇒ pᵢ = (nᵢ/V)·RT = [i]·RT"] --> B["Kp = Π pᵢ^ν = Π ([i]·RT)^ν"]
+    B --> C["Kp = Kc · (RT)^Σν<br>Σν = Δn = Σν(products) − Σν(reactants)<br>gases only"]
+    C --> D{"Δn = 0 ?"}
+    D -->|"yes"| E["Kp = Kc<br>H₂ + I₂ ⇌ 2HI · CO + H₂O ⇌ CO₂ + H₂<br>esterification · FeO + CO ⇌ Fe + CO₂"]
+    D -->|"no"| F["Kp ≠ Kc — the ratio (RT)^Δn<br>carries every difference between them"]
 ```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+*The whole of Kp ↔ Kc comes from one substitution, pᵢ = [i]RT. Count Δn from the
+stoichiometric coefficients of the **gases** only.*
+
+| Kp quoted in | R to use | Source |
+|---|---|---|
+| atm | `0.0821 L atm mol⁻¹ K⁻¹` | classic NCERT exercises |
+| bar | `0.08314 L bar mol⁻¹ K⁻¹` | NCERT's newer exercises |
+
+> **⚠ 1 bar vs 1 atm:** if the standard pressure is 1 bar, the standard state is 1 bar and
+> R = 0.08314 L bar mol⁻¹ K⁻¹. A question printed as "Kp = 2.0 × 10¹⁰ / bar" is telling you
+> which convention to use — the number itself changes with the unit.
 
 
 **The other two constants people write** (🆇 — appear in Advanced "express Kp in terms of…"):
@@ -448,6 +446,7 @@ flowchart TD
     D --> G["ΔG = 0"]
     E --> H["ΔG = RT ln(Q/K) > 0"]
 ```
+*Q versus K is the whole direction question: compare Q with K and the sign of ΔG follows.*
 
 The single-line version to remember:
 
@@ -565,21 +564,15 @@ d(ln K)/dT = ΔH°/(RT²)                     (differential form)
      direction", which is Le Chatelier's T-rule in formula form.
 
 
-```mermaid
-flowchart TD
-    N0["ln K                            ln K"]
-    N1["│  ΔH°&gt;0 (K rises with T)        │  ΔH°&lt;0 (K falls with T)"]
-    N2["│      ／                        │        ＼"]
-    N3["│   ／                           │           ＼"]
-    N4["└──────── 1/T                    └──────── 1/T"]
-    N5["slope = −ΔH°/R &lt; 0              slope = −ΔH°/R &gt; 0"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+| Plot of ln K against 1/T | Endothermic (ΔH° > 0) | Exothermic (ΔH° < 0) |
+|---|---|---|
+| Shape | straight line **falling** as 1/T rises | straight line **rising** as 1/T rises |
+| Slope | `−ΔH°/R` < 0 | `−ΔH°/R` > 0 |
+| Reading | K **increases** as T rises | K **decreases** as T rises |
+| Le Chatelier restated | heat is a product, so adding it drives the reaction forward | heat is a reactant, so adding it drives the reaction backward |
+
+*The intercept carries the integration constant; the slope is the only experimental route to
+ΔH° from a K-versus-T study (Advanced 2019-style).*
 
 
 **Two-way use in problems:** (i) given ΔH° and K at one T, find K at another;
@@ -750,29 +743,21 @@ $\ce{salt present -> removing a product drives the reaction}$
 
 The **dissociation** trio (write the ICE row, then use the relation you are given):
 
-```mermaid
-flowchart TD
-    N0["A  ⇌  products, starting with 1 mol, degree of dissociation α, stoichiometric"]
-    N1["factor m (moles of gas after dissociation per mole before, e.g. PCl₅→PCl₃+Cl₂: m = 2)"]
-    N2["total moles at equilibrium = 1 − α + mα = 1 + α(m − 1)"]
-    N3["───────────────────────────────────────────────────────────────"]
-    N4["(i) VAPOUR DENSITY at fixed T and p:  D ∝ M, so"]
-    N5["α = (D_initial/D_equilibrium − 1)/(m − 1) = (D_i − D_e)/(D_e(m − 1))"]
-    N6["for m = 2 (PCl₅, N₂O₄, NH₄Cl, SO₂Cl₂):   α = D_i/D_e − 1"]
-    N7["(ii) AVERAGE MOLAR MASS  M_avg = M_initial/(1 + α(m − 1))"]
-    N8["⇒  α = (M_initial/M_avg − 1)/(m − 1)"]
-    N9["(iii) TOTAL PRESSURE at fixed V, T: P_eq/P_initial = 1 + α(m − 1)"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
-    N6 --> N7
-    N7 --> N8
-    N8 --> N9
-```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+**Set-up.** Start from 1 mol of `A ⇌ products`; let **α** be the degree of dissociation and
+**m** the stoichiometric factor (moles of gas after dissociation per mole before —
+`PCl₅ → PCl₃ + Cl₂` gives m = 2). Then the total moles at equilibrium are
+`1 − α + mα = 1 + α(m − 1)`, and that single expression is what the three measurements below
+read off.
+
+| What the question gives | Held constant | Formula for α |
+|---|---|---|
+| **Vapour density** D (D ∝ M) | T, p | `α = (Dᵢ/Dₑ − 1)/(m − 1)`; for m = 2 → `α = Dᵢ/Dₑ − 1` |
+| **Average molar mass** M_avg | — | `α = (M_initial/M_avg − 1)/(m − 1)` |
+| **Total pressure** P | V, T | `P_eq/P_initial = 1 + α(m − 1)` |
+
+> **⚠ m = 2, so α simplifies.** `PCl₅`, `N₂O₄`, `NH₄Cl`, `SO₂Cl₂` and `PCI₅`-type dissociations
+> are the common m = 2 cases; `2SO₂ ⇌ 2SO₂ + O₂`-type reactions are m = 1.5. Always count the
+> moles, never assume.
 
 
 **Association** (the reverse trick — dimerisation of benzoic acid in benzene, NO → N₂O₄,
@@ -958,25 +943,17 @@ about the non-protonic cases).
 
 ## 14. Kw, the pH scale, and when water's own ions matter (6.11.1–6.11.2)
 
-```mermaid
-flowchart TD
-    N0["2H₂O(l) ⇌ H₃O⁺(aq) + OH⁻(aq)          (auto-/self-ionisation; water is amphiprotic)"]
-    N1["K = [H₃O⁺][OH⁻]/[H₂O] ; [H₂O] folded into the constant (pure liquid, activity = 1)"]
-    N2["─────────────────────────────────────────────────────────────────"]
-    N3["Kw = [H⁺][OH⁻] = 1.0×10⁻¹⁴ at 298 K    (6.27/6.28)"]
-    N4["─────────────────────────────────────────────────────────────────"]
-    N5["neutral ⟺ [H⁺] = [OH⁻] (NOT pH = 7 in general!)"]
-    N6["Kw is an EQUILIBRIUM constant → it applies to pure water, dilute acids, dilute bases"]
-    N7["and salt solutions alike. That single sentence solves a dozen questions."]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
-    N6 --> N7
-```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+$$\ce{2H2O(l) <=> H3O+(aq) + OH-(aq)}$$
+
+`K = [H₃O⁺][OH⁻]/[H₂O]`, and because `[H₂O]` is a pure liquid its activity is 1, so it folds
+into the constant:
+
+$$\ce{Kw = [H+][OH-] = 1.0 x 10^{-14}}\ \text{at 298 K}$$
+
+- **Neutral ⟺ [H⁺] = [OH⁻]** — which is pH 7 *only* at 298 K. At 333 K, neutral water is
+  pH ≈ 6.13.
+- `Kw` is an **equilibrium constant**, so it holds in pure water, in dilute acids, in dilute
+  bases and in salt solutions alike. That one sentence answers a dozen questions.
 
 
 **Kw rises steeply with T** (auto-ionisation is endothermic, ΔH° ≈ +55.8 kJ mol⁻¹ →
@@ -1126,17 +1103,17 @@ strong acid**, and **increases on dilution or on adding base**. Both directions 
 
 **NCERT's own data — Table 6.6 (Ka of weak acids, 298 K):**
 
-| Acid | Ka | | Base | Kb |
-|---|---|---|---|---|
-| HF | 3.5×10⁻⁴ | | (CH₃)₂NH | 5.4×10⁻⁴ |
-| HNO₂ | 4.5×10⁻⁴ | | (C₂H₅)₃N | 6.45×10⁻⁵ |
-| HCOOH | 1.8×10⁻⁴ | | NH₃ / NH₄OH | 1.77×10⁻⁵ |
-| niacin | 1.5×10⁻⁵ | | quinine | 1.10×10⁻⁶ |
-| CH₃COOH | 1.74×10⁻⁵ | | pyridine | 1.77×10⁻⁹ |
-| C₆H₅COOH | 6.5×10⁻⁵ | | C₆H₅NH₂ (aniline) | 4.27×10⁻¹⁰ |
-| HClO | 3.0×10⁻⁸ | | urea | 1.3×10⁻¹⁴ (a *very* weak base) |
-| HCN | 4.9×10⁻¹⁰ | | | |
-| C₆H₅OH (phenol) | 1.3×10⁻¹⁰ | | | |
+| Weak acid | Ka | Weak base | Kb |
+|---|---|---|---|
+| HF | 3.5×10⁻⁴ | (CH₃)₂NH | 5.4×10⁻⁴ |
+| HNO₂ | 4.5×10⁻⁴ | (C₂H₅)₃N | 6.45×10⁻⁵ |
+| HCOOH | 1.8×10⁻⁴ | NH₃ / NH₄OH | 1.77×10⁻⁵ |
+| niacin | 1.5×10⁻⁵ | quinine | 1.10×10⁻⁶ |
+| CH₃COOH | 1.74×10⁻⁵ | pyridine | 1.77×10⁻⁹ |
+| C₆H₅COOH | 6.5×10⁻⁵ | C₆H₅NH₂ (aniline) | 4.27×10⁻¹⁰ |
+| HClO | 3.0×10⁻⁸ | urea | 1.3×10⁻¹⁴ (a *very* weak base) |
+| HCN | 4.9×10⁻¹⁰ | — | — |
+| C₆H₅OH (phenol) | 1.3×10⁻¹⁰ | — | — |
 
 Acidity order read off Table 6.6 (larger Ka = stronger acid):
 `HNO₂ (4.5×10⁻⁴) > HF (3.5×10⁻⁴) > HCOOH (1.8×10⁻⁴) > C₆H₅COOH (6.5×10⁻⁵) > CH₃COOH
@@ -1492,29 +1469,26 @@ acidic: CH₃COOH + CH₃COONa (pH ≈ 4.7 range)     H₂CO₃ + NaHCO₃ (pH 6
 
 **Henderson–Hasselbalch equation (derive it in 30 seconds):**
 
-```mermaid
-flowchart TD
-    N0["HA ⇌ H⁺ + A⁻;   Ka = [H⁺][A⁻]/[HA]"]
-    N1["→ [H⁺] = Ka [HA]/[A⁻] = Ka · (n_acid/n_salt)   (same volume → moles may be used!)"]
-    N2["────────────────────────────────────────────────────────────────"]
-    N3["pH = pKa + log([salt]/[acid]) = pKa + log(n_A⁻/n_HA)"]
-    N4["pOH = pKb + log([salt]/[base])   for the basic type"]
-    N5["────────────────────────────────────────────────────────────────"]
-    N6["· pH = pKa when [salt] = [acid]           (the 'half-neutralisation point')"]
-    N7["· useful range = pKa ± 1  (ratio 10 : 1 → 1 : 10)"]
-    N8["· the equation is meaningless for a STRONG acid (Ka huge → pKa « 0 → ratio irrelevant)"]
-    N9["· it uses equilibrium concentrations but they ≈ the analytical ones, because"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
-    N6 --> N7
-    N7 --> N8
-    N8 --> N9
-```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+$$\ce{HA <=> H+ + A-}\qquad K_a = \frac{[H^+][A^-]}{[HA]}
+\;\Longrightarrow\; [H^+] = K_a\frac{[HA]}{[A^-]} = K_a\cdot\frac{n_{\text{acid}}}{n_{\text{salt}}}$$
+
+(the same volume means moles may be used directly)
+
+$$\text{pH} = \text{p}K_a + \log\frac{[\text{salt}]}{[\text{acid}]}
+= \text{p}K_a + \log\frac{n_{A^-}}{n_{HA}}
+\qquad\qquad
+\text{pOH} = \text{p}K_b + \log\frac{[\text{salt}]}{[\text{base}]}$$
+
+- **pH = pKa when [salt] = [acid]** — the half-neutralisation point, the best pH to read pKa from.
+- **Useful range = pKa ± 1**, i.e. a ratio of 10 : 1 down to 1 : 10. Outside that the log term
+  swamps the constant.
+- The equation uses *equilibrium* concentrations, but those ≈ the analytical ones because the
+  buffer resists change — which is precisely what makes it a buffer.
+- For the **basic type** (weak base + its salt) the same equation holds with pOH and pKb.
+
+> **⚠ The Henderson–Hasselbalch equation is meaningless for a strong acid.** Ka is enormous, so
+> pKa is far below 0 and the ratio term cannot rescue it: a strong acid is not buffered by its
+> own salt.
 
 
 **How a buffer actually works (NCERT asks the mechanism, both directions):**
@@ -1545,6 +1519,7 @@ flowchart LR
     E --> G["pH = pKa + log(ratio)<br>almost unchanged"]
     F --> G
 ```
+*Buffer action — added acid and added base are both mopped up by whichever component is present in excess.*
 
 **Buffer capacity β and maximum buffering:**
 
@@ -1640,29 +1615,17 @@ TRANSITION INTERVAL (that is why no indicator changes colour at exactly one pH).
 
 **Titration-curve logic (0.1 M vs 0.1 M, 25 mL acid start):**
 
-```mermaid
-flowchart TD
-    N0["pH"]
-    N1["13│                          ┌────────  SB vs SA: after 50 mL, excess OH⁻ dominates"]
-    N2["│                    ┌───┘"]
-    N3["10│─ ─ ─ ─ ─ ─ ─ ─ ─ ┌─┘─ ─ ─ ─ ─ ─ ─ ─ ─   phenolphthalein range (WA↔SB endpoint ~8.7)"]
-    N4["9│                 ┌─┘"]
-    N5["7│─ ─ ─ ─ ─ ─ ┌────●   SA↔SB equivalence pH = 7, vertical jump spans 4→10"]
-    N6["5│            │  ┌─ ─  methyl red range"]
-    N7["3│───┐        │  │"]
-    N8["2│   └────────┴──┴──┐        weak-acid curve starts higher (2.87) and has a"]
-    N9["1│  SA↔SB start 1.00 │       BUFFER REGION (flat, pH = pKa at half-neutralisation)"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
-    N6 --> N7
-    N7 --> N8
-    N8 --> N9
-```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+| Point on the curve | Strong acid (SA) vs strong base | Weak acid (WA) vs strong base |
+|---|---|---|
+| Start (before base) | pH ≈ 1.00 | pH ≈ 2.87 (the acid's own pH) |
+| Buffer region | **absent** — no buffer is formed | wide flat region, pH = pKa at half-neutralisation |
+| Equivalence point | pH = 7 (neutral salt) | pH > 7 (basic salt) |
+| Steepness of the jump | smaller | much larger — this is what makes titration accurate |
+| Endpoint range | methyl orange / methyl red | phenolphthalein (≈ 8.7) |
+
+*The two curves cross only in the middle. Read the graph the way a question asks: the pH at
+the **start** tells you acid strength, the **buffer plateau** tells you pKa, and the
+**equivalence-point pH** tells you which salt formed.*
 
 
 strong acid + strong base     : eq pt pH 7.0 ; jump 4–10 ; ANY of MR/BTB/PP works

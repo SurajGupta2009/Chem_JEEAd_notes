@@ -1,17 +1,15 @@
 # Notes Formatting Rulebook — v1.2
 
-**Authority.** This file is the single specification for every `notes.md` in this repo. Where it
-and habit disagree, this wins. The six finished notes
-([Equilibrium](../Physical-Chemistry/04-Equilibrium/notes.md),
-[Redox](../Physical-Chemistry/05-Redox-Reactions/notes.md),
-[Electrochemistry](../Physical-Chemistry/08-Electrochemistry/notes.md),
-[d- and f-block](../Inorganic-Chemistry/07-The-d-and-f-Block-Elements/notes.md),
-[Coordination](../Inorganic-Chemistry/08-Coordination-Compounds/notes.md),
-[Salt Analysis](../Practical-Chemistry/Salt-Analysis/notes.md)) are the **reference
-implementation** — every rule below was extracted from what they already do.
+**Authority.** This file is the single specification for every `notes.md` in this repo. Where
+it and habit disagree, this wins. It is enforced mechanically: all 22 written notes pass
+[`scripts/check_notes.py`](../scripts/check_notes.py) with zero findings, and
+[`scripts/quote_mermaid_labels.py`](../scripts/quote_mermaid_labels.py) applies the
+mechanical half of R20.
 
-**Companion docs:** [`OBSIDIAN-SETUP.md`](OBSIDIAN-SETUP.md) (full plugin catalogue) ·
-[`OBSIDIAN-VAULT-PLAN.md`](OBSIDIAN-VAULT-PLAN.md) (repo → vault conversion).
+**Companion docs:** [`OBSIDIAN-SETUP.md`](OBSIDIAN-SETUP.md) (open the vault, plugins, Git
+settings) · [`../README.md`](../README.md) (layout, status, scripts) ·
+[`../meta/templates/chapter-notes.md`](../meta/templates/chapter-notes.md) (the skeleton to
+start a note from).
 
 **The prime directive:**
 
@@ -95,7 +93,8 @@ It renders as a properties panel in Obsidian and is invisible on GitHub.
 ### R4 — Names and attachments
 
 - New files: `lowercase-hyphen.md`, no spaces. (The Allen PDFs already in the repo have spaces —
-  keep them, but **URL-encode** every link: `[`Salt Analysis_Theory_26.pdf`](Salt%20Analysis_Theory_26.pdf)`.)
+  keep them, but **URL-encode** every link, e.g. from a chapter folder
+  `[Salt Analysis_Theory_26.pdf](../Practical-Chemistry/Salt-Analysis/Salt%20Analysis_Theory_26.pdf)`.)
 - Images/diagrams go in the chapter's `figures/`. Commit **SVG**, not PNG (text, smaller, and it
   keeps the repo inside the artifact-size budget).
 - One attachment folder per chapter, never a global `assets/` — attachments must travel with the
@@ -274,21 +273,19 @@ KMnO₄/K₂Cr₂O₇ preparations behind §12.
 
 The **Quick Revision Sheet is never a table** — bullets only (R30).
 
-### R16 — Table plugins and where each is used
+### R16 — Table plugins
 
-| Job | Plugin | ID | Used for |
-|---|---|---|---|
-| ⭐ Author/edit every committed table | **Advanced Tables** | `table-editor-obsidian` | Tab between cells, auto-align pipes, sort rows, insert/delete rows, CSV export. This keeps the raw markdown diff-clean |
-| Paste from Excel/Sheets | **Excel to Markdown Table** | *(search by name)* | Converting a spreadsheet of bond enthalpies / electrode potentials |
-| Large reference datasets | **CSV Table** | `obsidian-csv-table` | A `figures/data.csv` (e.g. all of NCERT Table 7.1) rendered with sorting/filtering. **Keep a markdown copy in the note** — CSV blocks don't render on GitHub |
-| Cell merging, vertical headers, styled study sheets | **Sheets Extended** | `sheets` | Private `cards.md` / revision sheets only — merged cells are Obsidian-only |
-| List ⇄ table conversion | **Any Block** | `any-block` | Turning an existing bullet list into a table when revising a chapter |
-| Quick empty table | **Table Generator** | `obsidian-table-generator` | Scaffolding |
-| Clickable checkboxes in tables | **Markdown table checkboxes** | `table-checkboxes` | A "have I revised this?" checklist in `meta/Progress.md` |
-| JSON ⇄ table | **JSON table** | `json-table` | Rare |
-| **Live** tables computed from the vault | **Dataview** / core **Bases** | `dataview` | Progress dashboards in `meta/` only — never inside `notes.md` |
-| ❌ **Do not use** | Notion-Like Tables / **DataLoom** | `notion-like-tables` | Stores row/column IDs in frontmatter and a separate definition file; unreadable on GitHub, unmaintained upstream, hostile to diffs. Violates N2 |
+A committed table is **plain GFM markdown** — that is the whole point: it renders on GitHub
+with no plugin and diffs cleanly. The plugin layer is editing convenience only.
 
+| Rule | Detail |
+|---|---|
+| Authoring | **Advanced Tables** `table-editor-obsidian` — tab between cells, auto-align pipes, sort, insert rows. Keeps the raw markdown intact |
+| Never | **DataLoom** / Notion-Like Tables — they store row and column IDs in frontmatter plus a separate definition file, so the table is unreadable on GitHub and unreadable in a diff. Violates N2 |
+| Never | a table that exists **only** as a Dataview or CSV block — the values must be readable in the committed markdown |
+| Private only | **Sheets Extended** `sheets` (merged cells, styled sheets) may be used in `cards.md` and other study files, never in `notes.md` |
+
+`docs/OBSIDIAN-SETUP.md` carries the rest of the plugin catalogue.
 ---
 
 ## Part 5 — Diagrams: tables, mindmaps, flowcharts, structures
@@ -420,39 +417,39 @@ so the `## Contents` block and the Quick Revision Sheet *become* a mindmap for f
   outline** in `figures/<chapter>-map.md`. Outlines render on GitHub *and* preview as a mindmap.
 - Export to SVG only when printing.
 
-| Plugin | ID | Fit |
-|---|---|---|
-| ⭐ **Mindmap Nextgen** | `obsidian-mindmap-nextgen` | markmap rendering of a note's outline, pin/unpin, collapse-all, LaTeX + checkboxes, per-note frontmatter settings |
-| Markmind | `obsidian-markmind` | Rich maps (summaries, boundaries, linked nodes), embeds in markdown, outline → table, PDF annotation, image/PDF export |
-| Enhancing Mindmap | `obsidian-enhancing-mindmap` | Editable maps with a mindmap ⇄ markdown toggle |
-| Canvas Mindmap | `canvas-mindmap` | Mindmaps on the core Canvas with auto-layout |
-| Mindmap | `mindmap` | vue3-mindmap based, right-click "new mindmap" |
-| ExcaliBrain | `excalibrain` | Auto map of the **vault** from links/tags/frontmatter — parents, children, friends, siblings |
-| ASCII Tree Generator | `ascii-tree-generator` | Indented outline → box-drawing ASCII tree in a code block. **GitHub-safe**, so it is the fallback for every mindmap |
+Recommended: **Mindmap Nextgen** `obsidian-mindmap-nextgen`. Richer alternative:
+Markmind `obsidian-markmind`. The **fallback that always works** is the nested outline
+itself, or ASCII Tree Generator `ascii-tree-generator`, whose output is GitHub-safe — so it
+is what any committed outline should degrade to.
 
-### R23 — Where each visual system is used, chapter by chapter
+### R23 — Where each visual system is used
 
-| Chapter | Tables | Flowchart (Mermaid) | Mindmap | ASCII (deprecated → Mermaid/SVG) | Structures |
-|---|---|---|---|---|---|
-| **Equilibrium** | K-conversion bank, Le Chatelier 5-factor table, pH/salt-hydrolysis table, formula bank §23 | ✅ Mermaid for ICE logic, K-choice tree, Le Chatelier flow, pH vs dilution | Parts A/B/C outline → revision map | ❌ → Mermaid: titration curves, Ostwald dilution, buffer action as flowcharts | — |
-| **Redox** | ✅ 10 rules, fixed-value ions, n-factor bank, species bank | ✅ Mermaid for balancing chooser + oxidation-state map | Oxidation-state map §18 as an outline tree | ❌ → Mermaid: Latimer & Frost, Daniell cell as flowchart + $\ce{}$ | `CrO₅`, `H₂S₂O₈` ChemEdit SVGs ✅ |
-| **Electrochemistry** | Cell-notation rules, battery comparison, Kohlrausch applications, trap list | ✅ Mermaid for Nernst forms + discharge rules | Conductance family tree | ❌ → Mermaid: Galvanic cell, salt bridge, conductance cell, Pourbaix as flowchart | — |
-| **d- and f-block** | ✅ trends, oxidation states, halide/oxide stability | ✅ Mermaid for K₂Cr₂O₇/KMnO₄ prep flowsheets + CFT splitting | Lanthanoid vs actinoid comparison as a map | ❌ → Mermaid: crystal-field splitting, lanthanide contraction as flowcharts | — |
-| **Coordination** | ✅ ligand classification, VBT hybridisation, nomenclature order | Mermaid for isomer-counting + CFT strong/weak-field split | ⭐ **Isomerism taxonomy** mindmap | ❌ → Mermaid: octahedral/tetrahedral/square-planar splitting, Jahn–Teller | Complexes as SMILES/`chemedit` |
-| **Salt Analysis** | ✅ group reagents, flame colours, borax bead, anion summary | ⭐ Mermaid for entire anion Groups A/B/C + cation Groups 0–VI flowsheet | Group scheme as an outline | ❌ → Mermaid + $\ce{}$: charcoal cavity, borax bead, flame zones as flowchart | Precipitate colours + $\ce{}$ |
-| **Organic (when written)** | Named-reaction banks, reagent → product matrices, acidity/basicity orders, isomer counts | ⭐ **Functional-group interconversion maps**, reaction-mechanism decision trees (SN1 vs SN2 vs E1 vs E2), electrophile/Markovnikov prediction | Conversion ladders per chapter | Newman/sawhorse, chair conformations, energy profiles, resonance contributors | ⭐ **SMILES + ChemEdit** for every structure; Excalidraw for curved-arrow mechanisms |
-| **Metallurgy — Physical 12 (module uploaded, notes pending)** | Concentration-method choice, reduction-temperature table | ⭐ Extraction flowsheets (Fe, Cu, Al, Zn, Ag/Au) — natural Mermaid | Ellingham-diagram reading order | Blast furnace, Bessemer, Hall–Héroult, electrolytic refining | — |
+The rule is the same in every chapter, so this is the pattern rather than a per-chapter
+inventory. What each rung is currently used for:
+
+| Rung | Used in this repo for |
+|---|---|
+| **Table** (R13–R15) | every chapter: order lists, trend tables, master data tables, reagent and group tables. The d- and f-block electronic-configuration tables are transposed to one element per row so no table exceeds six columns (R14) |
+| **Flowchart** (R20) | 157 diagrams: process flows (Solvay, borax, metallurgy, K₂Cr₂O₇/KMnO₄ prep), decision trees (VSEPR, buffer, group scheme, E° questions), and energy/level diagrams (MO, crystal field, Latimer) |
+| **Outline** (R22) | optional only — a chapter may add `figures/<chapter>-map.md` when the structure genuinely helps |
+| **Structure** (R18) | 135 SVGs across Chemical Bonding, Hydrogen, s-Block, p-Block (13–14), p-Block (15–18) and Redox |
+| **ASCII** (R21) | none — banned. Every former ASCII diagram is now Mermaid, a table or prose |
+
+Three diagrams were originally over the 14-node limit and were split rather than shrunk: the
+VSEPR decision tree (SN 2–4 / SN 5–6), the isomerism taxonomy (stereo / structural), and the
+six-group cation scheme (Groups I–II / III–VI).
 
 ### R24 — Plugin summary for the four visual systems
 
-| System | Best plugin | ID | Second choice | Fallback that keeps GitHub working |
-|---|---|---|---|---|
-| **Tables** | Advanced Tables | `table-editor-obsidian` | Sheets Extended `sheets` (private only) | Plain GFM markdown — always works |
-| **Mindmaps** | Mindmap Nextgen | `obsidian-mindmap-nextgen` | Markmind `obsidian-markmind` | The nested outline itself, or ASCII Tree Generator `ascii-tree-generator` |
-| **Flowcharts** | Mermaid (**core**) + Mermaid Tools | `mermaid-tools` | PlantUML `obsidian-plantuml` (private), draw.io `drawio`, Excalidraw | Mermaid renders natively on GitHub; Excalidraw → committed SVG |
-| **Chemical structures** | ChemEdit (Ketcher SVGs in `notes.md`, compound library) + Chem (`smiles` galleries, inline in cards), split as in R18 | `chemedit` + `chem` | Ketcher `ketcher`, Chemical Structure Renderer `chemical-structure-renderer`, TikZJax `tikzjax` | The generated SVG itself (it renders on GitHub), plus Unicode formulas / ASCII (rungs 1 & 3) |
-| *(support)* PDFs beside notes | PDF++ | `pdf-plus` | Annotator `obsidian-annotator` | — |
-| *(support)* Module PDF → text for Arena AI | Marker PDF to MD | `marker-api` | Text Extractor `text-extractor` | — |
+| System | Best plugin | ID | Fallback that keeps GitHub working |
+|---|---|---|---|
+| **Tables** | Advanced Tables | `table-editor-obsidian` | Plain GFM markdown — always works |
+| **Mindmaps** | Mindmap Nextgen | `obsidian-mindmap-nextgen` | The nested outline, or ASCII Tree Generator `ascii-tree-generator` |
+| **Flowcharts** | Mermaid (**core**) | built in | Mermaid renders natively on GitHub — this is why R20 is a house style and not a preference |
+| **Chemical structures** | ChemEdit (Ketcher SVGs) + Chem (`smiles` galleries) | `chemedit` + `chem` | The generated SVG itself, which renders on GitHub, plus Unicode formulas (rungs 1 and 3) |
+
+`docs/OBSIDIAN-SETUP.md` has the full catalogue, the Git settings and the one portability
+rule that keeps `\ce{}` and `[[wikilinks]]` out of committed notes.
 
 ---
 
@@ -534,10 +531,12 @@ number, exception or trap should be cut.
 |---|---|---|
 | Chapter card `## Notes` | sentence linking `notes.md`, or the HTML placeholder comment | the script |
 | Branch index `Notes` column | `✅ notes.md` / `⏳ pending` | the script |
-| Root README *Notes status* table | ✅/⏳ + what was covered | you |
-| `meta/Progress.md` (optional) | Dataview queries | you |
+| `meta/Progress.md` | a Dataview query over the frontmatter — always live, never hand-maintained | you |
+| Root `README.md` *Status* | the per-chapter table, with word/diagram/structure counts | you |
 
-Never hand-write ✅ into a script-owned file.
+The README table is the one place a human writes status, and it is the first thing to
+update when a chapter is finished. Never hand-write ✅ into a script-owned file; never
+hand-edit a generated chapter `README.md`.
 
 ---
 
@@ -563,12 +562,33 @@ Never hand-write ✅ into a script-owned file.
 
 ### R33 — Automation
 
-The checklist is mechanical enough to script. A `scripts/check_notes.py` should verify, for every
-`notes.md`: single H1, continuous H2 numbering, Contents anchors resolving against generated
-slugs, presence of `Quick Revision Sheet`, absence of `[[`, `> [!`, bare ` ``` ` fences (N6), `dataview`, table
-pipe-count consistency per block, Mermaid node counts, and word-count bands — exiting non-zero
-with a per-file report. Run it before committing and, ideally, in a GitHub Action on pull
-requests. *(Not yet written — spec only.)*
+The checklist is mechanical, so it is scripted. [`scripts/check_notes.py`](../scripts/check_notes.py)
+verifies, for every `notes.md`, and exits non-zero with a per-file, per-rule report:
+
+| Rule | What it checks |
+|---|---|
+| R3 | YAML frontmatter closes; `branch` `chapter` `class` `ncert_unit` `ncert_code` `edition` `exams` `status` `words` present; `words:` within 5 % of the real count |
+| R5 | one `# Title` H1 (plus any `# Part …` dividers), a `## Contents` block, a `*Cross-links:*` footer |
+| R6 | `## N.` numbering runs 1..n with no gaps or duplicates |
+| R7 | every `](#…)` Contents anchor matches the GitHub slug of a real heading, and every cross-file `#anchor` resolves in the target file |
+| R12, R19 | every relative link and image target exists on disk |
+| R14 | tables have ≤ 6 columns, consistent cell counts (escaped `\|` is content, not a break), and no empty cell — use `—` |
+| R20 | Mermaid is `flowchart TD`/`LR` only, ≤ 14 nodes, every node/edge/subgraph label quoted, every diagram followed by an italic caption |
+| R21 | no box-drawing or ASCII art inside a diagram |
+| R30 | the Quick Revision Sheet is the last numbered H2, bullets only, ≤ 30 of them |
+
+```bash
+python3 scripts/check_notes.py                          # every notes.md
+python3 scripts/check_notes.py Inorganic-Chemistry/*/notes.md
+```
+
+[`scripts/quote_mermaid_labels.py`](../scripts/quote_mermaid_labels.py) is the mechanical half
+of R20: it quotes every unquoted node, edge and subgraph label in place, is idempotent, and
+takes `--check` for a dry run. Run it after writing a diagram, then the linter to confirm.
+
+Both scripts are stdlib-only, so they run in CI and in a pre-commit hook. Wire `check_notes.py`
+into a GitHub Action on pull requests; **all 22 written chapters currently pass with zero
+findings.**
 
 ---
 

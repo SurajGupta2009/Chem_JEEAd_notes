@@ -8,7 +8,7 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [lech101.pdf]
 status: written
-words: 16500
+words: 4641
 updated: 2026-09-28
 tags: [chemistry/physical, jee/main, jee/advanced, solutions, colligative, raoult, henry, vanthoff]
 ---
@@ -31,7 +31,7 @@ tags: [chemistry/physical, jee/main, jee/advanced, solutions, colligative, raoul
   3. [Interconversions of concentration terms 🆇](#3-interconversions-of-concentration-terms-)
 - [Part B — Solubility and Henry's Law](#part-b--solubility-and-henrys-law)
   4. [Solubility of solid in liquid — factors (1.3.1)](#4-solubility-of-solid-in-liquid--factors-131)
-  5. [Solubility of gas in liquid — Henry's law $p = K_H x$ (1.3.2)](#5-solubility-of-gas-in-liquid--henrys-law-p--k_h-x-132)
+  5. [Solubility of gas in liquid — Henry's law $p = K_H x$ (1.3.2)](#5-solubility-of-gas-in-liquid--henrys-law-p--kh-x-132)
   6. [Applications of Henry's law — scuba, soda, anoxia 🆇 (1.3.2)](#6-applications-of-henrys-law--scuba-soda-anoxia--132)
 - [Part C — Vapour Pressure of Liquid Solutions](#part-c--vapour-pressure-of-liquid-solutions)
   7. [Vapour pressure of liquid-liquid solutions — Raoult's law (1.4.1)](#7-vapour-pressure-of-liquid-liquid-solutions--raoults-law-141)
@@ -41,10 +41,10 @@ tags: [chemistry/physical, jee/main, jee/advanced, solutions, colligative, raoul
   11. [Vapour pressure of solutions of solids in liquids — Raoult's law for non-volatile solute (1.4.3)](#11-vapour-pressure-of-solutions-of-solids-in-liquids--raoults-law-for-non-volatile-solute-143)
 - [Part D — Colligative Properties](#part-d--colligative-properties)
   12. [Colligative properties — introduction and relative lowering vapour pressure (1.5.1)](#12-colligative-properties--introduction-and-relative-lowering-vapour-pressure-151)
-  13. [Elevation of boiling point $ΔT_b = K_b m$ (1.5.2)](#13-elevation-of-boiling-point-δt_b--k_b-m-152)
-  14. [Depression of freezing point $ΔT_f = K_f m$ (1.5.3)](#14-depression-of-freezing-point-δt_f--k_f-m-153)
-  15. [Osmotic pressure $π = CRT$ — van't Hoff law, isotonic, reverse osmosis (1.5.4)](#15-osmotic-pressure-π--crt--vanthoff-law-isotonic-reverse-osmosis-154)
-  16. [Abnormal colligative properties — van't Hoff factor $i$ (1.6)](#16-abnormal-colligative-properties--vanthoff-factor-i-16)
+  13. [Elevation of boiling point $ΔT_b = K_b m$ (1.5.2)](#13-elevation-of-boiling-point-δtb--kb-m-152)
+  14. [Depression of freezing point $ΔT_f = K_f m$ (1.5.3)](#14-depression-of-freezing-point-δtf--kf-m-153)
+  15. [Osmotic pressure $π = CRT$ — van't Hoff law, isotonic, reverse osmosis (1.5.4)](#15-osmotic-pressure-π--crt--vant-hoff-law-isotonic-reverse-osmosis-154)
+  16. [Abnormal colligative properties — van't Hoff factor $i$ (1.6)](#16-abnormal-colligative-properties--vant-hoff-factor-i-16)
   17. [Degree of dissociation and association from $i$ 🆇 (1.6)](#17-degree-of-dissociation-and-association-from-i--16)
 - [Part E — Advanced Corner, Patterns and Revision](#part-e--advanced-corner-patterns-and-revision)
   18. [Master formula bank (print this)](#18-master-formula-bank-print-this)
@@ -67,24 +67,25 @@ Types (Table 1.1 NCERT):
 | Type | Solute | Solvent | Example |
 |---|---|---|---|
 | Gaseous solutions | Gas | Gas | Mixture $\ce{O2 + N2}$ air |
-|  | Liquid | Gas | Chloroform mixed with $\ce{N2}$ gas |
-|  | Solid | Gas | Camphor in $\ce{N2}$ gas |
+| Gaseous solutions | Liquid | Gas | Chloroform mixed with $\ce{N2}$ gas |
+| Gaseous solutions | Solid | Gas | Camphor in $\ce{N2}$ gas |
 | Liquid solutions | Gas | Liquid | $\ce{O2}$ dissolved in water |
-|  | Liquid | Liquid | Ethanol dissolved in water |
-|  | Solid | Liquid | Glucose dissolved in water |
+| Liquid solutions | Liquid | Liquid | Ethanol dissolved in water |
+| Liquid solutions | Solid | Liquid | Glucose dissolved in water |
 | Solid solutions | Gas | Solid | $\ce{H2}$ in Pd (hydrogen storage) |
-|  | Liquid | Solid | Amalgam Hg with Na |
-|  | Solid | Solid | Cu dissolved in Au (alloys), brass Cu+Zn, bronze Cu+Sn |
+| Solid solutions | Liquid | Solid | Amalgam Hg with Na |
+| Solid solutions | Solid | Solid | Cu dissolved in Au (alloys), brass Cu+Zn, bronze Cu+Sn |
 
 ```mermaid
-flowchart TB
-    Solution[Solution<br>homogeneous mixture] --> Solvent[Solvent<br>largest quantity<br>determines physical state]
-    Solution --> Solute[Solute<br>other components<br>smaller quantity]
-    Solution --> Types[Types by state<br>9 combinations]
-    Types --> GasSol[Gas solvent<br>e.g. air O2+N2]
-    Types --> LiqSol[Liquid solvent<br>most common<br>O2 in water<br>ethanol in water<br>glucose in water]
-    Types --> SolidSol[Solid solvent<br>alloys<br>H2 in Pd<br>amalgam<br>brass bronze]
+flowchart TD
+    Solution["Solution<br>homogeneous mixture"] --> Solvent["Solvent<br>largest quantity<br>determines physical state"]
+    Solution --> Solute["Solute<br>other components<br>smaller quantity"]
+    Solution --> Types["Types by state<br>9 combinations"]
+    Types --> GasSol["Gas solvent<br>e.g. air O2+N2"]
+    Types --> LiqSol["Liquid solvent<br>most common<br>O2 in water<br>ethanol in water<br>glucose in water"]
+    Types --> SolidSol["Solid solvent<br>alloys<br>H2 in Pd<br>amalgam<br>brass bronze"]
 ```
+*Solvent is the component that decides the physical state; the nine state combinations follow from that.*
 
 ## 2. Expressing concentration — mass %, volume %, ppm, mole fraction, molarity, molality (1.2)
 
@@ -171,12 +172,13 @@ $K_H$ increases with T → solubility decreases with T (dissolution exothermic).
 
 ```mermaid
 flowchart LR
-    Gas[Gas above solution<br>p] -->|dissolves| Solution[Gas in solution<br>x]
-    Solution -->|evaporates| Gas
-    Pressure[Increase p<br>more collisions] --> SolIncrease[Solubility x ↑<br>until new equilibrium]
-    Temp[Increase T] --> SolDecrease[Solubility ↓<br>exothermic dissolution<br>Le Chatelier]
-    KH[KH = p/x<br>higher KH = lower solubility<br>KH ↑ with T]
+    Gas["Gas above solution<br>p"] -->|"dissolves"| Solution["Gas in solution<br>x"]
+    Solution -->|"evaporates"| Gas
+    Pressure["Increase p<br>more collisions"] --> SolIncrease["Solubility x ↑<br>until new equilibrium"]
+    Temp["Increase T"] --> SolDecrease["Solubility ↓<br>exothermic dissolution<br>Le Chatelier"]
+    KH["KH = p/x<br>higher KH = lower solubility<br>KH ↑ with T"]
 ```
+*Henry's law: gas solubility is proportional to partial pressure and falls with temperature.*
 
 ## 6. Applications of Henry's law — scuba, soda, anoxia 🆇 (1.3.2)
 
@@ -239,11 +241,12 @@ Examples: Ethanol + acetone (ethanol H-bonds, acetone breaks H-bonds, weaker), $
 Examples: Chloroform + acetone (H-bond $\ce{CHCl3}$ H with acetone $\ce{C=O}$), $\ce{CHCl3 + C6H6}$, $\ce{H2O + HCl}$, $\ce{H2O + HNO3}$, $\ce{CH3COOH + pyridine}$, phenol + aniline.
 
 ```mermaid
-flowchart TB
-    Ideal[Ideal solution<br>p_i = p_i° x_i<br>ΔmixH=0 ΔmixV=0<br>A-A = B-B = A-B<br>e.g. benzene+toluene] --> NonIdeal[Non-ideal<br>p_i ≠ p_i° x_i]
-    NonIdeal --> Positive[Positive deviation<br>p_i > p_i° x_i<br>p_total > ideal<br>ΔmixH>0 ΔmixV>0<br>A-B < A-A B-B<br>weaker forces<br>e.g. ethanol+acetone<br>CS2+acetone]
-    NonIdeal --> Negative[Negative deviation<br>p_i < p_i° x_i<br>p_total < ideal<br>ΔmixH<0 ΔmixV<0<br>A-B > A-A B-B<br>stronger forces H-bond<br>e.g. CHCl3+acetone<br>H2O+HCl]
+flowchart TD
+    Ideal["Ideal solution<br>p_i = p_i° x_i<br>ΔmixH=0 ΔmixV=0<br>A-A = B-B = A-B<br>e.g. benzene+toluene"] --> NonIdeal["Non-ideal<br>p_i ≠ p_i° x_i"]
+    NonIdeal --> Positive["Positive deviation<br>p_i > p_i° x_i<br>p_total > ideal<br>ΔmixH>0 ΔmixV>0<br>A-B < A-A B-B<br>weaker forces<br>e.g. ethanol+acetone<br>CS2+acetone"]
+    NonIdeal --> Negative["Negative deviation<br>p_i < p_i° x_i<br>p_total < ideal<br>ΔmixH<0 ΔmixV<0<br>A-B > A-A B-B<br>stronger forces H-bond<br>e.g. CHCl3+acetone<br>H2O+HCl"]
 ```
+*Positive and negative deviations from Raoult's law, read straight off the total vapour pressure curve.*
 
 ## 10. Azeotropes — minimum and maximum boiling (1.4.2)
 
@@ -337,13 +340,14 @@ Molar mass from $π$: $M_2 = \frac{w_2 RT}{π V}$.
 Advantage: $π$ large even for dilute, measurable at room T, useful for macromolecules proteins polymers.
 
 ```mermaid
-flowchart TB
-    Osmosis[Osmosis<br>solvent low conc → high conc<br>through SPM<br>spontaneous] --> OP[Osmotic pressure π<br>excess pressure to stop osmosis<br>πV=nRT π=CRT]
-    OP --> Isotonic[Isotonic<br>same π same molarity<br>0.9% NaCl saline<br>blood plasma]
-    OP --> Hyper[Hypertonic<br>higher π<br>water leaves cell<br>crenation]
-    OP --> Hypo[Hypotonic<br>lower π<br>water enters cell<br>hemolysis]
-    OP --> RO[Reverse osmosis<br>p > π applied<br>solvent solution → pure<br>desalination]
+flowchart TD
+    Osmosis["Osmosis<br>solvent low conc → high conc<br>through SPM<br>spontaneous"] --> OP["Osmotic pressure π<br>excess pressure to stop osmosis<br>πV=nRT π=CRT"]
+    OP --> Isotonic["Isotonic<br>same π same molarity<br>0.9% NaCl saline<br>blood plasma"]
+    OP --> Hyper["Hypertonic<br>higher π<br>water leaves cell<br>crenation"]
+    OP --> Hypo["Hypotonic<br>lower π<br>water enters cell<br>hemolysis"]
+    OP --> RO["Reverse osmosis<br>p > π applied<br>solvent solution → pure<br>desalination"]
 ```
+*Osmotic pressure, the three tonicity cases for a cell, and reverse osmosis as the desalination route.*
 
 ## 16. Abnormal colligative properties — van't Hoff factor $i$ (1.6)
 

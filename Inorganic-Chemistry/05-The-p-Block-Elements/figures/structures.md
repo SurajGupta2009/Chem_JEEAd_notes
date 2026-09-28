@@ -9,23 +9,23 @@ python scripts/render_structures.py Inorganic-Chemistry/05-The-p-Block-Elements/
 
 | Label | SMILES | ID | O.S. | Check | Note |
 |---|---|---|---|---|---|
-| Boron trifluoride BF₃ | FB(F)F | bf3 | auto | B=+3 | trigonal planar, Lewis acid |
-| Boron trichloride BCl₃ | ClB(Cl)Cl | bcl3 | auto | B=+3 | trigonal planar |
-| Aluminium chloride dimer Al₂Cl₆ | Cl[Al](Cl)Cl[Al](Cl)Cl | al2cl6 | auto | Al=+3 | halogen bridged dimer tetrahedral |
-| Diborane B₂H₆ | [BH2]1[H][BH2][H]1 | b2h6 | auto | B=+3 | banana bonds 2c-2e + 3c-2e |
-| Boric acid H₃BO₃ | OB(O)O | h3bo3 | auto | B=+3 | layered H-bonded BO3 triangles |
-| Borax anion [B₄O₅(OH)₄]²⁻ | O[B-]1OB2OB(O)OB(O2)O1 | borax | auto | B=+3 | tetranuclear actual borax |
-| Borazine B₃N₃H₆ | B1NBNBN1 | borazine | auto | B=+3 N=-3 | inorganic benzene planar |
-| Boron nitride BN | B#N | bn | auto | B=+3 N=-3 | hexagonal graphite-like |
-| Carbon monoxide CO | [C-]#[O+] | co | auto | C=+2 | :C≡O: 112.8 pm toxic |
-| Carbon dioxide CO₂ | O=C=O | co2 | auto | C=+4 | linear 115 pm |
-| Silicon dioxide SiO₂ | O=[Si]=O | sio2 | auto | Si=+4 | 3D tetrahedral network quartz |
-| Silicon tetrachloride SiCl₄ | [Si](Cl)(Cl)(Cl)Cl | sicl4 | auto | Si=+4 | tetrahedral hydrolysed |
-| Silicate tetrahedron SiO₄⁴⁻ | [Si]([O-])([O-])([O-])[O-] | sio4 | auto | Si=+4 | basic unit |
-| Methane CH₄ | C | ch4 | auto | C=-4 | tetrahedral |
-| Silane SiH₄ | [SiH4] | sih4 | auto | Si=-4 | tetrahedral |
-| Graphite fragment C₆ | c1ccccc1 | benzene | - | - | sp2 hexagonal layer model |
-| Fullerene C60 fragment | c1ccccc1 | c60frag | - | - | truncated icosahedron model |
+| Boron trifluoride BF₃ | `FB(F)F` | bf3 | auto | B=+3 | trigonal planar, Lewis acid |
+| Boron trichloride BCl₃ | `ClB(Cl)Cl` | bcl3 | auto | B=+3 | trigonal planar |
+| Aluminium chloride dimer Al₂Cl₆ | `Cl[Al](Cl)Cl[Al](Cl)Cl` | al2cl6 | auto | Al=+3 | halogen bridged dimer tetrahedral |
+| Diborane B₂H₆ | `[BH2]1[H][BH2][H]1` | b2h6 | auto | B=+3 | banana bonds 2c-2e + 3c-2e |
+| Boric acid H₃BO₃ | `OB(O)O` | h3bo3 | auto | B=+3 | layered H-bonded BO3 triangles |
+| Borax anion [B₄O₅(OH)₄]²⁻ | `O[B-]1OB2OB(O)OB(O2)O1` | borax | auto | B=+3 | tetranuclear actual borax |
+| Borazine B₃N₃H₆ | `B1NBNBN1` | borazine | auto | B=+3 N=-3 | inorganic benzene planar |
+| Boron nitride BN | `B#N` | bn | auto | B=+3 N=-3 | hexagonal graphite-like |
+| Carbon monoxide CO | `[C-]#[O+]` | co | auto | C=+2 | :C≡O: 112.8 pm toxic |
+| Carbon dioxide CO₂ | `O=C=O` | co2 | auto | C=+4 | linear 115 pm |
+| Silicon dioxide SiO₂ | `O=[Si]=O` | sio2 | auto | Si=+4 | 3D tetrahedral network quartz |
+| Silicon tetrachloride SiCl₄ | `[Si](Cl)(Cl)(Cl)Cl` | sicl4 | auto | Si=+4 | tetrahedral hydrolysed |
+| Silicate tetrahedron SiO₄⁴⁻ | `[Si]([O-])([O-])([O-])[O-]` | sio4 | auto | Si=+4 | basic unit |
+| Methane CH₄ | `C` | ch4 | auto | C=-4 | tetrahedral |
+| Silane SiH₄ | `[SiH4]` | sih4 | auto | Si=-4 | tetrahedral |
+| Graphite fragment C₆ | `c1ccccc1` | benzene | - | - | sp2 hexagonal layer model |
+| Fullerene C60 fragment | `c1ccccc1` | c60frag | - | - | truncated icosahedron model |
 
 <!-- gallery:begin -->
 | ID | Structure | Label |

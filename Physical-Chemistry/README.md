@@ -6,18 +6,18 @@ own order (Class XI first, then Class XII, by NCERT unit).
 
 | # | Chapter | Class | NCERT unit | Code | Edition | Needed for | Notes |
 |---|---|---|---|---|---|---|---|
-| 01 | [Some Basic Concepts of Chemistry](01-Some-Basic-Concepts-of-Chemistry) | 11 | 1 | `kech101` | rationalised | Main + Advanced | ⏳ pending |
-| 02 | [Structure of Atom](02-Structure-of-Atom) | 11 | 2 | `kech102` | rationalised | Main + Advanced | ⏳ pending |
-| 03 | [Thermodynamics](03-Thermodynamics) | 11 | 5 | `kech105` | rationalised | Main + Advanced | ⏳ pending |
+| 01 | [Some Basic Concepts of Chemistry](01-Some-Basic-Concepts-of-Chemistry) | 11 | 1 | `kech101` | rationalised | Main + Advanced | [✅ notes.md](01-Some-Basic-Concepts-of-Chemistry/notes.md) |
+| 02 | [Structure of Atom](02-Structure-of-Atom) | 11 | 2 | `kech102` | rationalised | Main + Advanced | [✅ notes.md](02-Structure-of-Atom/notes.md) |
+| 03 | [Thermodynamics](03-Thermodynamics) | 11 | 5 | `kech105` | rationalised | Main + Advanced | [✅ notes.md](03-Thermodynamics/notes.md) |
 | 04 | [Equilibrium](04-Equilibrium) | 11 | 6 | `kech106` | rationalised | Main + Advanced | [✅ notes.md](04-Equilibrium/notes.md) |
 | 05 | [Redox Reactions](05-Redox-Reactions) | 11 | 7 | `kech201` | rationalised | Main + Advanced | [✅ notes.md](05-Redox-Reactions/notes.md) |
-| 06 | [States of Matter](06-States-of-Matter) | 11 | 10 | `kech105` | legacy 2018-19 | **Advanced only** | ⏳ pending |
-| 07 | [Solutions](07-Solutions) | 12 | 1 | `lech101` | rationalised | Main + Advanced | ⏳ pending |
+| 06 | [States of Matter](06-States-of-Matter) | 11 | 10 | `kech105` | legacy 2018-19 | **Advanced only** | [✅ notes.md](06-States-of-Matter/notes.md) |
+| 07 | [Solutions](07-Solutions) | 12 | 1 | `lech101` | rationalised | Main + Advanced | [✅ notes.md](07-Solutions/notes.md) |
 | 08 | [Electrochemistry](08-Electrochemistry) | 12 | 2 | `lech102` | rationalised | Main + Advanced | [✅ notes.md](08-Electrochemistry/notes.md) |
-| 09 | [Chemical Kinetics](09-Chemical-Kinetics) | 12 | 3 | `lech103` | rationalised | Main + Advanced | ⏳ pending |
-| 10 | [The Solid State](10-The-Solid-State) | 12 | 11 | `lech101` | legacy 2018-19 | **Advanced only** | ⏳ pending |
-| 11 | [Surface Chemistry](11-Surface-Chemistry) | 12 | 12 | `lech105` | legacy 2018-19 | **Advanced only** | ⏳ pending |
-| 12 | [General Principles and Processes of Isolation of Elements (Metallurgy)](12-General-Principles-and-Processes-of-Isolation-of-Elements) | 12 | 13 | `lech106` | legacy 2018-19 | **Advanced only** | ⏳ pending |
+| 09 | [Chemical Kinetics](09-Chemical-Kinetics) | 12 | 3 | `lech103` | rationalised | Main + Advanced | [✅ notes.md](09-Chemical-Kinetics/notes.md) |
+| 10 | [The Solid State](10-The-Solid-State) | 12 | 11 | `lech101` | legacy 2018-19 | **Advanced only** | [✅ notes.md](10-The-Solid-State/notes.md) |
+| 11 | [Surface Chemistry](11-Surface-Chemistry) | 12 | 12 | `lech105` | legacy 2018-19 | **Advanced only** | [✅ notes.md](11-Surface-Chemistry/notes.md) |
+| 12 | [General Principles and Processes of Isolation of Elements (Metallurgy)](12-General-Principles-and-Processes-of-Isolation-of-Elements) | 12 | 13 | `lech106` | legacy 2018-19 | **Advanced only** | [✅ notes.md](12-General-Principles-and-Processes-of-Isolation-of-Elements/notes.md) |
 
 The `#` column is this branch's own order. The NCERT unit number keeps its own
 column because that is what the NCERT codes mean: `kech1xx` = Class XI Part I,

@@ -8,7 +8,7 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [kech105.pdf]
 status: written
-words: 15000
+words: 5487
 updated: 2026-09-28
 tags: [chemistry/physical, jee/main, jee/advanced, thermodynamics, enthalpy, entropy, gibbs]
 ---
@@ -26,7 +26,7 @@ tags: [chemistry/physical, jee/main, jee/advanced, thermodynamics, enthalpy, ent
 ## Contents
 
 - [Part A — Fundamental Terms and First Law](#part-a--fundamental-terms-and-first-law)
-  1. [System, surroundings, boundary, universe and types of systems (5.1.1–5.1.2)](#1-system-surroundings-boundary-universe-and-types-of-systems-511-512)
+  1. [System, surroundings, boundary, universe and types of systems (5.1.1–5.1.2)](#1-system-surroundings-boundary-universe-and-types-of-systems-511512)
   2. [State of system, state functions vs path functions (5.1.3)](#2-state-of-system-state-functions-vs-path-functions-513)
   3. [Internal energy U as state function and adiabatic work (5.1.4)](#3-internal-energy-u-as-state-function-and-adiabatic-work-514)
   4. [Work — pressure-volume work and sign conventions (5.1.4a)](#4-work--pressure-volume-work-and-sign-conventions-514a)
@@ -40,13 +40,13 @@ tags: [chemistry/physical, jee/main, jee/advanced, thermodynamics, enthalpy, ent
   10. [Enthalpy of phase transformation — fusion, vaporisation, sublimation (5.5)](#10-enthalpy-of-phase-transformation--fusion-vaporisation-sublimation-55)
   11. [Standard enthalpy of formation ΔfH°, thermochemical equations (5.5)](#11-standard-enthalpy-of-formation-δfh-thermochemical-equations-55)
   12. [Hess's law of constant heat summation (5.6)](#12-hesss-law-of-constant-heat-summation-56)
-  13. [Enthalpy of combustion, atomisation, bond enthalpy, lattice, hydration 🆇 (5.5–5.6)](#13-enthalpy-of-combustion-atomisation-bond-enthalpy-lattice-hydration--55-56)
+  13. [Enthalpy of combustion, atomisation, bond enthalpy, lattice, hydration 🆇 (5.5–5.6)](#13-enthalpy-of-combustion-atomisation-bond-enthalpy-lattice-hydration--5556)
   14. [Extensive vs intensive properties (5.7 intro)](#14-extensive-vs-intensive-properties-57-intro)
 - [Part D — Spontaneity, Entropy and Gibbs Energy](#part-d--spontaneity-entropy-and-gibbs-energy)
   15. [Spontaneous and non-spontaneous processes (5.7)](#15-spontaneous-and-non-spontaneous-processes-57)
-  16. [Entropy S — second law, ΔS = q_rev/T, entropy change calculations (5.7)](#16-entropy-s--second-law-δs--q_revT-entropy-change-calculations-57)
+  16. [Entropy S — second law, ΔS = q_rev/T, entropy change calculations (5.7)](#16-entropy-s--second-law-δs--qrevt-entropy-change-calculations-57)
   17. [Gibbs energy G = H - TS, ΔG = ΔH - TΔS and spontaneity (5.7)](#17-gibbs-energy-g--h---ts-δg--δh---tδs-and-spontaneity-57)
-  18. [ΔG and equilibrium constant ΔG° = -RT ln K (5.7)](#18-δg-and-equilibrium-constant-δg--rt-ln-k-57)
+  18. [ΔG and equilibrium constant ΔG° = -RT ln K (5.7)](#18-δg-and-equilibrium-constant-δg---rt-ln-k-57)
   19. [Third law and absolute entropy 🆇](#19-third-law-and-absolute-entropy-)
 - [Part E — Advanced Corner, Patterns and Revision](#part-e--advanced-corner-patterns-and-revision)
   20. [Master formula bank (print this)](#20-master-formula-bank-print-this)
@@ -68,12 +68,13 @@ Thermodynamics = study of energy transformations between different forms, macros
 - **Universe** = System + Surroundings.
 
 ```mermaid
-flowchart TB
-    U[Universe] --> S[System<br>under study<br>e.g. beaker + reaction mixture]
-    U --> Sur[Surroundings<br>everything else that can interact<br>room, air, bench]
-    S --- B[Boundary<br>real or imaginary wall<br>controls matter/energy exchange]
+flowchart TD
+    U["Universe"] --> S["System<br>under study<br>e.g. beaker + reaction mixture"]
+    U --> Sur["Surroundings<br>everything else that can interact<br>room, air, bench"]
+    S --- B["Boundary<br>real or imaginary wall<br>controls matter/energy exchange"]
     B --- Sur
 ```
+*System, surroundings and boundary — the boundary you draw decides which of the three types of system you have.*
 
 Types of systems by matter and energy exchange:
 
@@ -138,11 +139,12 @@ Other types of work: electrical work $w = -nFE$, etc.
 
 ```mermaid
 flowchart LR
-    Exp[Expansion<br>V2>V1<br>system does work] --> Wneg[w = -p_ext ΔV <0]
-    Comp[Compression<br>V2<V1<br>work done on system] --> Wpos[w = -p_ext ΔV >0]
-    Free[Free expansion<br>p_ext=0 vacuum] --> Wzero[w=0]
-    Reversible[Reversible isothermal<br>ideal gas] --> Wrev[w = -nRT ln V2/V1]
+    Exp["Expansion<br>V2>V1<br>system does work"] --> Wneg["w = -p_ext ΔV <0"]
+    Comp["Compression<br>V2<V1<br>work done on system"] --> Wpos["w = -p_ext ΔV >0"]
+    Free["Free expansion<br>p_ext=0 vacuum"] --> Wzero["w=0"]
+    Reversible["Reversible isothermal<br>ideal gas"] --> Wrev["w = -nRT ln V2/V1"]
 ```
+*Sign convention for w = −p_ext ΔV, and the one case (free expansion into vacuum) where w is exactly zero.*
 
 - Irreversible work: $w_{irr} = -p_{ext} (V_2 - V_1)$.
 - Reversible work (max work): $w_{rev} = -nRT \ln(V_2/V_1) = -2.303 nRT \log(V_2/V_1)$.
@@ -219,11 +221,12 @@ $C_P$ always > $C_V$ because at constant pressure, heat used for expansion work 
 For solids/liquids, $C_P \approx C_V$ because $\Delta V$ small.
 
 ```mermaid
-flowchart TB
-    U[U - function of T only for ideal gas] --> Cv[Cv = dU/dT at V<br>qv = ΔU = n Cv ΔT]
-    H[H = U + pV] --> Cp[Cp = dH/dT at P<br>qp = ΔH = n Cp ΔT]
-    Cp --> Diff[Cp - Cv = R per mole<br>for ideal gas]
+flowchart TD
+    U["U - function of T only for ideal gas"] --> Cv["Cv = dU/dT at V<br>qv = ΔU = n Cv ΔT"]
+    H["H = U + pV"] --> Cp["Cp = dH/dT at P<br>qp = ΔH = n Cp ΔT"]
+    Cp --> Diff["Cp - Cv = R per mole<br>for ideal gas"]
 ```
+*C_v and C_p are each other's difference by R for one mole of ideal gas; everything else follows from the chemistry-of-signs rule.*
 
 JEE Advanced: $C_P/C_V = \gamma$ = adiabatic exponent. For monoatomic ideal gas $C_V = 3/2 R$, $C_P=5/2 R$, $\gamma=5/3=1.66$. Diatomic at room T $C_V=5/2 R$, $C_P=7/2 R$, $\gamma=1.4$.
 
@@ -331,15 +334,16 @@ Beyond NCERT, JEE Advanced needs:
 - **Enthalpy of neutralisation**: $\ce{H+ + OH- -> H2O}$, $\Delta_n H° = -55.84 kJ mol^{-1}$ for strong acid-strong base. Less negative for weak acid/base due to dissociation energy.
 
 ```mermaid
-flowchart TB
-    Elements[Elements in stable states] -->|ΔfH| Compound[Compound]
-    Compound -->|ΔcH| Combustion[CO2 + H2O]
-    Compound -->|ΔaH| Atoms[Gaseous atoms]
-    Atoms -->|Bond energy| Molecules
-    IonsGas[Gaseous ions] -->|Δlattice| Solid[Ionic solid]
-    IonsGas -->|Δhyd| IonsAq[Aqueous ions]
-    Solid -->|Δsol = lattice + hyd| Solution
+flowchart TD
+    Elements["Elements in stable states"] -->|"ΔfH"| Compound["Compound"]
+    Compound -->|"ΔcH"| Combustion["CO2 + H2O"]
+    Compound -->|"ΔaH"| Atoms["Gaseous atoms"]
+    Atoms -->|"Bond energy"| Molecules
+    IonsGas["Gaseous ions"] -->|"Δlattice"| Solid["Ionic solid"]
+    IonsGas -->|"Δhyd"| IonsAq["Aqueous ions"]
+    Solid -->|"Δsol = lattice + hyd"| Solution
 ```
+*The six reference states behind every thermochemical cycle — start from elements, go via gaseous atoms or ions, never in between.*
 
 
 ### Kirchhoff's law — temperature dependence of ΔH and ΔS 🆇
@@ -453,10 +457,11 @@ Entropy increases when:
 
 ```mermaid
 flowchart LR
-    Solid[Solid<br>low S<br>ordered] --> Liquid[Liquid<br>medium S] --> Gas[Gas<br>high S<br>disordered]
-    Gas1[Gas at low T low V] --> Gas2[Gas at high T high V<br>higher S]
-    Pure[Pure substances] --> Mix[Mixture<br>higher S]
+    Solid["Solid<br>low S<br>ordered"] --> Liquid["Liquid<br>medium S"] --> Gas["Gas<br>high S<br>disordered"]
+    Gas1["Gas at low T low V"] --> Gas2["Gas at high T high V<br>higher S"]
+    Pure["Pure substances"] --> Mix["Mixture<br>higher S"]
 ```
+*Entropy rises from solid to liquid to gas, with temperature and with mixing.*
 
 Third law (see §19) gives absolute $S$.
 

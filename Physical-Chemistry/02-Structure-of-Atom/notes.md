@@ -8,7 +8,7 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [kech102.pdf]
 status: written
-words: 14500
+words: 5313
 updated: 2026-09-28
 tags: [chemistry/physical, jee/main, jee/advanced, atomic-structure, quantum-numbers]
 ---
@@ -35,7 +35,7 @@ tags: [chemistry/physical, jee/main, jee/advanced, atomic-structure, quantum-num
   6. [Photoelectric effect — Einstein equation and work function (2.3.3)](#6-photoelectric-effect--einstein-equation-and-work-function-233)
   7. [Line spectra — hydrogen spectrum and Rydberg formula (2.3.4)](#7-line-spectra--hydrogen-spectrum-and-rydberg-formula-234)
   8. [Bohr's model for H-atom — postulates, radius, energy, velocity (2.4)](#8-bohrs-model-for-h-atom--postulates-radius-energy-velocity-24)
-  9. [Bohr's explanation of H-spectrum and limitations (2.4.1–2.4.2)](#9-bohrs-explanation-of-h-spectrum-and-limitations-241-242)
+  9. [Bohr's explanation of H-spectrum and limitations (2.4.1–2.4.2)](#9-bohrs-explanation-of-h-spectrum-and-limitations-241242)
 - [Part C — Towards Quantum Mechanical Model](#part-c--towards-quantum-mechanical-model)
   10. [de Broglie relation — λ = h/mv and experimental verification (2.5)](#10-de-broglie-relation--λ--hmv-and-experimental-verification-25)
   11. [Heisenberg uncertainty principle — Δx·Δp ≥ h/4π (2.5)](#11-heisenberg-uncertainty-principle--δxδp--h4π-25)
@@ -74,11 +74,12 @@ Properties:
 
 ```mermaid
 flowchart LR
-    Cathode[ Cathode -ve] -->|e- stream| Anode[ Anode +ve with hole]
-    Anode --> ZnS[ZnS screen - fluorescence]
-    EField[Electric field] -.->|deflect to +ve| Ray[Cathode ray]
-    BField[Magnetic field] -.->|deflect| Ray
+    Cathode[" Cathode -ve"] -->|"e- stream"| Anode[" Anode +ve with hole"]
+    Anode --> ZnS["ZnS screen - fluorescence"]
+    EField["Electric field"] -.->|"deflect to +ve"| Ray["Cathode ray"]
+    BField["Magnetic field"] -.->|"deflect"| Ray
 ```
+*Discharge tube: cathode rays travel from the negative electrode, are deflected by both fields, and light up the ZnS screen.*
 
 **Charge to mass ratio — J.J. Thomson 1897**: Using perpendicular E and B fields. When only E → hit at A, only B → at C, balanced E+B → at B (straight). $e/m_e = 1.758820 \times 10^{11} C kg^{-1}$.
 
@@ -117,14 +118,15 @@ Observations:
 - ~1 in 20000 deflected by >90°, some bounced back → positive charge and mass concentrated in tiny centre.
 
 ```mermaid
-flowchart TB
-    Source[α source] --> Slit[Lead slit]
-    Slit --> Foil[Au foil ~100 nm]
-    Foil -->|Most pass| Screen1[Screen behind - no deflection]
-    Foil -->|Few small angle| Screen2[Screen at small angle]
-    Foil -->|1 in 20000 large| Screen3[Screen backward - 180°]
-    Foil --> Nucleus[ Nucleus - tiny, dense, +ve<br>radius ~10^-15 m vs atom 10^-10 m]
+flowchart TD
+    Source["α source"] --> Slit["Lead slit"]
+    Slit --> Foil["Au foil ~100 nm"]
+    Foil -->|"Most pass"| Screen1["Screen behind - no deflection"]
+    Foil -->|"Few small angle"| Screen2["Screen at small angle"]
+    Foil -->|"1 in 20000 large"| Screen3["Screen backward - 180°"]
+    Foil --> Nucleus[" Nucleus - tiny, dense, +ve<br>radius ~10^-15 m vs atom 10^-10 m"]
 ```
+*Rutherford's α-scattering — almost every α went straight through, a few deflected, and a very few bounced back.*
 
 **Rutherford nuclear model**:
 
@@ -193,8 +195,9 @@ Visible: Violet 380-450 nm, Blue 450-495, Green 495-570, Yellow 570-590, Orange 
 
 ```mermaid
 flowchart LR
-    Gamma[γ rays<br>10^-12 m<br>highest ν] --> X[X-rays<br>10^-10 m] --> UV[UV<br>10^-8 m] --> Vis[Visible<br>380-750 nm] --> IR[IR<br>10^-5 m] --> Micro[Microwave<br>10^-2 m] --> Radio[Radio<br>10^2 m<br>lowest ν]
+    Gamma["γ rays<br>10^-12 m<br>highest ν"] --> X["X-rays<br>10^-10 m"] --> UV["UV<br>10^-8 m"] --> Vis["Visible<br>380-750 nm"] --> IR["IR<br>10^-5 m"] --> Micro["Microwave<br>10^-2 m"] --> Radio["Radio<br>10^2 m<br>lowest ν"]
 ```
+*The electromagnetic spectrum in order of wavelength and frequency; visible light is the narrow slice we can actually detect.*
 
 ⚠ Trap: Energy ∝ $\nu$ ∝ $1/\lambda$ ∝ $\bar{\nu}$.
 
@@ -236,14 +239,15 @@ If $\nu < \nu_0$, $KE$ negative → no emission.
 Threshold wavelength $\lambda_0 = hc / \phi$.
 
 ```mermaid
-flowchart TB
-    Photon[Photon hν] --> Metal[Metal surface]
-    Metal --> Work[Work function φ = hν0<br>energy to eject e-]
-    Photon --> KE[KE_max = hν - φ]
-    KE --> Electron[Ejected e- with v]
-    Intensity[Higher intensity<br>more photons] --> Number[More e- ejected<br>same KE if ν same]
-    Frequency[Higher ν] --> KE2[Higher KE]
+flowchart TD
+    Photon["Photon hν"] --> Metal["Metal surface"]
+    Metal --> Work["Work function φ = hν0<br>energy to eject e-"]
+    Photon --> KE["KE_max = hν - φ"]
+    KE --> Electron["Ejected e- with v"]
+    Intensity["Higher intensity<br>more photons"] --> Number["More e- ejected<br>same KE if ν same"]
+    Frequency["Higher ν"] --> KE2["Higher KE"]
 ```
+*The photoelectric effect: intensity changes the number of photons ejected, frequency alone changes their kinetic energy.*
 
 Graphs for JEE:
 
@@ -300,13 +304,14 @@ Ionization energy = energy needed to go from $n=1$ to $n=\infty$ ($E_\infty=0$):
 Hydrogen-like ions: $\ce{He+}$ $Z=2$, $\ce{Li^{2+}}$ $Z=3$, $\ce{Be^{3+}}$ $Z=4$.
 
 ```mermaid
-flowchart TB
-    Nucleus[Nucleus +Ze] --> Orbit1[n=1<br>r=a0/Z<br>E=-13.6 Z2 eV<br>ground]
-    Nucleus --> Orbit2[n=2<br>r=4a0/Z<br>E=-3.4 Z2 eV]
-    Nucleus --> Orbit3[n=3<br>r=9a0/Z<br>E=-1.51 Z2 eV]
-    Orbit3 -->|Emits hν<br>ΔE = E2-E1| Orbit1
-    Orbit2 -->|Absorbs hν| Orbit3
+flowchart TD
+    Nucleus["Nucleus +Ze"] --> Orbit1["n=1<br>r=a0/Z<br>E=-13.6 Z2 eV<br>ground"]
+    Nucleus --> Orbit2["n=2<br>r=4a0/Z<br>E=-3.4 Z2 eV"]
+    Nucleus --> Orbit3["n=3<br>r=9a0/Z<br>E=-1.51 Z2 eV"]
+    Orbit3 -->|"Emits hν<br>ΔE = E2-E1"| Orbit1
+    Orbit2 -->|"Absorbs hν"| Orbit3
 ```
+*Bohr's postulates turned hydrogen into a solvable problem — r scales with n², E scales with −1/n².*
 
 Negative sign meaning: energy of electron in atom lower than free electron at rest (zero at $n=\infty$). More negative = more stable, closer to nucleus.
 
@@ -379,11 +384,12 @@ Implications:
 Example: If $\Delta x = 1 \mathring{A} = 1e-10 m$ for electron, $\Delta v \ge h/(4\pi m \Delta x) \approx 5.8e5 m/s$ — large.
 
 ```mermaid
-flowchart TB
-    Classical[Classical - exact orbit<br>Bohr] -->|fails for small| Quantum[Quantum - probability<br>Schrödinger]
-    DeBroglie[de Broglie λ=h/mv<br>wave nature] --> Quantum
-    Heisenberg[Heisenberg Δx·Δp ≥ h/4π<br>no exact trajectory] --> Quantum
+flowchart TD
+    Classical["Classical - exact orbit<br>Bohr"] -->|"fails for small"| Quantum["Quantum - probability<br>Schrödinger"]
+    DeBroglie["de Broglie λ=h/mv<br>wave nature"] --> Quantum
+    Heisenberg["Heisenberg Δx·Δp ≥ h/4π<br>no exact trajectory"] --> Quantum
 ```
+*Why the Bohr orbit had to go — and what replaced it.*
 
 ## 12. Quantum mechanical model — Schrodinger equation, ψ and |ψ|² (2.6)
 
@@ -414,14 +420,15 @@ Four quantum numbers needed to describe electron in atom:
 **4. Spin $m_s$**: $m_s = +1/2$ or $-1/2$. Electron spin clockwise/anticlockwise, spin angular momentum $= \sqrt{s(s+1)} h/2\pi$, $s=1/2$. Two electrons in same orbital must have opposite spin (Pauli).
 
 ```mermaid
-flowchart TB
-    n[n - principal<br>1,2,3...<br>size & energy] --> l[l - azimuthal<br>0 to n-1<br>shape: s=0 p=1 d=2 f=3]
-    l --> ml[ml - magnetic<br>-l to +l<br>orientation<br>2l+1 values]
-    ml --> ms[ms - spin<br>+1/2 -1/2<br>spin orientation]
-    n --> Shell[Shell K L M N...]
-    l --> Subshell[Subshell s p d f]
-    ml --> Orbital[Orbital px py pz etc]
+flowchart TD
+    n["n - principal<br>1,2,3...<br>size & energy"] --> l["l - azimuthal<br>0 to n-1<br>shape: s=0 p=1 d=2 f=3"]
+    l --> ml["ml - magnetic<br>-l to +l<br>orientation<br>2l+1 values"]
+    ml --> ms["ms - spin<br>+1/2 -1/2<br>spin orientation"]
+    n --> Shell["Shell K L M N..."]
+    l --> Subshell["Subshell s p d f"]
+    ml --> Orbital["Orbital px py pz etc"]
 ```
+*The four quantum numbers: what each one controls, and the values it is allowed to take.*
 
 Allowed combinations:
 
@@ -444,12 +451,13 @@ JEE trap ⚠: $l$ cannot be ≥ $n$. e.g., 1p, 2d, 3f not allowed.
 
 ```mermaid
 flowchart LR
-    s[s orbital l=0<br>spherical<br>0 angular nodes<br>radial = n-1]
-    p[p orbital l=1<br>dumbbell<br>1 angular node plane<br>2 lobes]
-    d[d orbital l=2<br>4 lobes or 2+torus<br>2 angular nodes]
-    f[f orbital l=3<br>complex<br>3 angular nodes]
+    s["s orbital l=0<br>spherical<br>0 angular nodes<br>radial = n-1"]
+    p["p orbital l=1<br>dumbbell<br>1 angular node plane<br>2 lobes"]
+    d["d orbital l=2<br>4 lobes or 2+torus<br>2 angular nodes"]
+    f["f orbital l=3<br>complex<br>3 angular nodes"]
     s --> p --> d --> f
 ```
+*Orbital shapes and the two kinds of node, radial (n − l − 1) and angular (l).*
 
 **Nodes**:
 

@@ -8,7 +8,7 @@ edition: legacy
 exams: [JEE Advanced]
 sources: [lech106-legacy.pdf, 5-JAEIC-Metallurgy_Eng.pdf.pdf]
 status: written
-words: 17000
+words: 5499
 updated: 2026-09-28
 tags: [chemistry/physical, jee/advanced, metallurgy, ellingham, concentration, refining, extraction]
 ---
@@ -27,7 +27,7 @@ tags: [chemistry/physical, jee/advanced, metallurgy, ellingham, concentration, r
 
 - [Part A — Minerals, Ores and Concentration](#part-a--minerals-ores-and-concentration)
   1. [Minerals, ores, gangue and occurrence of metals (6.1)](#1-minerals-ores-gangue-and-occurrence-of-metals-61)
-  2. [Concentration — hydraulic washing, magnetic separation, froth floatation (6.2.1–6.2.3)](#2-concentration--hydraulic-washing-magnetic-separation-froth-floatation-621-623)
+  2. [Concentration — hydraulic washing, magnetic separation, froth floatation (6.2.1–6.2.3)](#2-concentration--hydraulic-washing-magnetic-separation-froth-floatation-621623)
   3. [Leaching — alumina from bauxite, Ag and Au (6.2.4)](#3-leaching--alumina-from-bauxite-ag-and-au-624)
 - [Part B — Conversion to Oxide and Thermodynamic Principles](#part-b--conversion-to-oxide-and-thermodynamic-principles)
   4. [Calcination and roasting — conversion to oxide (6.3)](#4-calcination-and-roasting--conversion-to-oxide-63)
@@ -72,18 +72,18 @@ Abundance: Al most abundant metal 3rd most abundant element in crust 8.3% by wei
 | Metal | Ores | Composition |
 |---|---|---|
 | Al | Bauxite | $\ce{AlO_x(OH)_{3-2x}}$ 0<x<1 |
-|  | Kaolinite clay | $\ce{Al2(OH)4Si2O5}$ |
+| Al | Kaolinite clay | $\ce{Al2(OH)4Si2O5}$ |
 | Fe | Haematite | $\ce{Fe2O3}$ |
-|  | Magnetite | $\ce{Fe3O4}$ |
-|  | Siderite | $\ce{FeCO3}$ |
-|  | Iron pyrites | $\ce{FeS2}$ |
+| Fe | Magnetite | $\ce{Fe3O4}$ |
+| Fe | Siderite | $\ce{FeCO3}$ |
+| Fe | Iron pyrites | $\ce{FeS2}$ |
 | Cu | Copper pyrites | $\ce{CuFeS2}$ |
-|  | Malachite | $\ce{CuCO3·Cu(OH)2}$ |
-|  | Cuprite | $\ce{Cu2O}$ |
-|  | Copper glance | $\ce{Cu2S}$ |
+| Cu | Malachite | $\ce{CuCO3·Cu(OH)2}$ |
+| Cu | Cuprite | $\ce{Cu2O}$ |
+| Cu | Copper glance | $\ce{Cu2S}$ |
 | Zn | Zinc blende sphalerite | $\ce{ZnS}$ |
-|  | Calamine | $\ce{ZnCO3}$ |
-|  | Zincite | $\ce{ZnO}$ |
+| Zn | Calamine | $\ce{ZnCO3}$ |
+| Zn | Zincite | $\ce{ZnO}$ |
 
 For extraction: bauxite chosen for Al, oxide ores for Fe (abundant no polluting $\ce{SO2}$ like pyrites), for Cu Zn any ore depending availability.
 
@@ -110,14 +110,15 @@ Depressants used to separate two sulphide ores: e.g., ore containing $\ce{ZnS}$ 
 Washerwoman story: Mrs. Carrie Everson invented froth floatation observing copper compounds caught in soapsuds while sand fell to bottom.
 
 ```mermaid
-flowchart TB
-    Ore[Powdered ore + gangue] --> Methods[Concentration methods]
-    Methods --> Hydraulic[Hydraulic washing<br>gravity separation<br>lighter gangue washed away<br>heavier ore left<br>e.g. oxide ores Fe2O3]
-    Methods --> Magnetic[Magnetic separation<br>magnetic properties diff<br>magnetic roller<br>e.g. Fe3O4 chromite]
-    Methods --> Froth[Froth floatation<br>sulphide ores<br>collectors pine oil xanthate<br>froth stabilisers cresol aniline<br>mineral wet by oil gangue by water<br>froth carries mineral<br>e.g. CuFeS2 ZnS]
-    Methods --> Leaching[Leaching<br>soluble ore in solvent]
-    Froth --> Depressant[Depressants<br>NaCN prevents ZnS<br>allows PbS<br>separate ZnS+PbS]
+flowchart TD
+    Ore["Powdered ore + gangue"] --> Methods["Concentration methods"]
+    Methods --> Hydraulic["Hydraulic washing<br>gravity separation<br>lighter gangue washed away<br>heavier ore left<br>e.g. oxide ores Fe2O3"]
+    Methods --> Magnetic["Magnetic separation<br>magnetic properties diff<br>magnetic roller<br>e.g. Fe3O4 chromite"]
+    Methods --> Froth["Froth floatation<br>sulphide ores<br>collectors pine oil xanthate<br>froth stabilisers cresol aniline<br>mineral wet by oil gangue by water<br>froth carries mineral<br>e.g. CuFeS2 ZnS"]
+    Methods --> Leaching["Leaching<br>soluble ore in solvent"]
+    Froth --> Depressant["Depressants<br>NaCN prevents ZnS<br>allows PbS<br>separate ZnS+PbS"]
 ```
+*Three concentration methods, each exploiting a different difference between ore and gangue.*
 
 ## 3. Leaching — alumina from bauxite, Ag and Au (6.2.4)
 
@@ -215,14 +216,15 @@ Applications:
 - For $\ce{Al2O3}$ very negative, lies below C line up to high T, so C cannot reduce $\ce{Al2O3}$, need electrolysis.
 
 ```mermaid
-flowchart TB
-    Ellingham[Ellingham Diagram<br>ΔG° vs T<br>for oxide formation<br>per mol O2] --> SlopeUp[Slope upwards<br>ΔS negative<br>gas used up<br>ΔG ↑ with T]
-    Ellingham --> Cross[Cross ΔG=0<br>below stable oxide<br>above unstable decomposes]
-    Ellingham --> Reduce[Reduction feasibility<br>metal below can reduce oxide above<br>ΔG more negative]
-    Ellingham --> CLine[C + O2 → CO2<br>slope up<br>2C+O2→2CO slope down<br>entropy ↑<br>CO better at high T]
-    CLine --> Al[Al2O3 very negative<br>below C line<br>C cannot reduce<br>needs electrolysis]
-    CLine --> Cu[Cu2O high<br>easily reduced by C]
+flowchart TD
+    Ellingham["Ellingham Diagram<br>ΔG° vs T<br>for oxide formation<br>per mol O2"] --> SlopeUp["Slope upwards<br>ΔS negative<br>gas used up<br>ΔG ↑ with T"]
+    Ellingham --> Cross["Cross ΔG=0<br>below stable oxide<br>above unstable decomposes"]
+    Ellingham --> Reduce["Reduction feasibility<br>metal below can reduce oxide above<br>ΔG more negative"]
+    Ellingham --> CLine["C + O2 → CO2<br>slope up<br>2C+O2→2CO slope down<br>entropy ↑<br>CO better at high T"]
+    CLine --> Al["Al2O3 very negative<br>below C line<br>C cannot reduce<br>needs electrolysis"]
+    CLine --> Cu["Cu2O high<br>easily reduced by C"]
 ```
+*Reading an Ellingham diagram: the slope, the crossover, and which metal can reduce which oxide.*
 
 ## 7. Limitations of Ellingham and choice of reducing agent — C vs CO vs H2 🆇 (6.3)
 
@@ -480,46 +482,51 @@ Refining via cupellation, etc.
 
 
 ```mermaid
-flowchart TB
-    Calcination[Calcination<br>heating absence/limited air<br>below mp<br>expels H2O CO2<br>e.g. CaCO3->CaO+CO2<br>Al2O3·2H2O->Al2O3+2H2O]
-    Roasting[Roasting<br>heating excess air<br>removes S as SO2<br>e.g. 2ZnS+3O2->2ZnO+2SO2<br>2Cu2S+3O2->2Cu2O+2SO2]
-    Calcination --> Oxide[Oxide form<br>easier to reduce]
+flowchart TD
+    Calcination["Calcination<br>heating absence/limited air<br>below mp<br>expels H2O CO2<br>e.g. CaCO3->CaO+CO2<br>Al2O3·2H2O->Al2O3+2H2O"]
+    Roasting["Roasting<br>heating excess air<br>removes S as SO2<br>e.g. 2ZnS+3O2->2ZnO+2SO2<br>2Cu2S+3O2->2Cu2O+2SO2"]
+    Calcination --> Oxide["Oxide form<br>easier to reduce"]
     Roasting --> Oxide
 ```
+*Calcination and roasting — the two preliminary steps that turn a raw ore into something reducible.*
 
 ```mermaid
 flowchart LR
-    Reduction[Reduction to metal] --> Carbon[Carbon smelting<br>ore+gangue+C+flux→metal+slag<br>PbO+C->Pb+CO<br>Fe2O3+3C->Fe+CO]
-    Reduction --> Self[Self reduction<br>sulphides Cu Pb Hg<br>PbS+2PbO->3Pb+SO2<br>Cu2S+2Cu2O->6Cu+SO2]
-    Reduction --> Displacement[Metal displacement<br>more reactive displaces less<br>2NaAuCN2+Zn->Au<br>TiCl4+2Mg->Ti Kroll]
-    Reduction --> Thermite[Thermite<br>Al reducing<br>Cr2O3+2Al->Cr+Al2O3<br>Fe2O3+2Al->Fe welding]
-    Reduction --> Electrolytic[Electrolytic<br>highly electropositive<br>Na K Mg Ca Al<br>fused chlorides<br>Hall-Heroult Al2O3+cryolite]
+    Reduction["Reduction to metal"] --> Carbon["Carbon smelting<br>ore+gangue+C+flux→metal+slag<br>PbO+C->Pb+CO<br>Fe2O3+3C->Fe+CO"]
+    Reduction --> Self["Self reduction<br>sulphides Cu Pb Hg<br>PbS+2PbO->3Pb+SO2<br>Cu2S+2Cu2O->6Cu+SO2"]
+    Reduction --> Displacement["Metal displacement<br>more reactive displaces less<br>2NaAuCN2+Zn->Au<br>TiCl4+2Mg->Ti Kroll"]
+    Reduction --> Thermite["Thermite<br>Al reducing<br>Cr2O3+2Al->Cr+Al2O3<br>Fe2O3+2Al->Fe welding"]
+    Reduction --> Electrolytic["Electrolytic<br>highly electropositive<br>Na K Mg Ca Al<br>fused chlorides<br>Hall-Heroult Al2O3+cryolite"]
 ```
+*The four routes from oxide to metal: carbon smelting, self-reduction, displacement and the thermite reaction.*
 
 ```mermaid
-flowchart TB
-    Refining[Refining] --> Thermal[Thermal<br>poling Cu Sn<br>liquation Sn Pb Bi<br>distillation Zn Hg<br>vapour phase Van Arkel ZrI4 Mond NiCO4<br>zone refining Ge Si<br>oxidation Bessemer cupellation]
-    Refining --> Electro[Electro-refining<br>impure anode pure cathode<br>CuSO4 electrolyte<br>anode mud Ag Au Pt]
-    Refining --> Chrom[Chromatographic<br>different adsorption Al2O3 column<br>eluted solvent]
+flowchart TD
+    Refining["Refining"] --> Thermal["Thermal<br>poling Cu Sn<br>liquation Sn Pb Bi<br>distillation Zn Hg<br>vapour phase Van Arkel ZrI4 Mond NiCO4<br>zone refining Ge Si<br>oxidation Bessemer cupellation"]
+    Refining --> Electro["Electro-refining<br>impure anode pure cathode<br>CuSO4 electrolyte<br>anode mud Ag Au Pt"]
+    Refining --> Chrom["Chromatographic<br>different adsorption Al2O3 column<br>eluted solvent"]
 ```
+*Refining methods matched to the metal, ending with electrorefining and the anode mud.*
 
 ```mermaid
-flowchart TB
-    Bauxite[Bauxite Al2O3·xH2O<br>+SiO2 Fe2O3 TiO2] --> Bayer[Bayer leaching<br>NaOH 473-523K 35-36bar<br>Al2O3+2NaOH+3H2O->NaAlOH4]
-    Bayer --> CO2[CO2 precipitation<br>seeded Al2O3·xH2O]
-    CO2 --> Alumina[Alumina Al2O3<br>1470K]
-    Alumina --> Hall[Hall-Heroult<br>Al2O3 + cryolite Na3AlF6<br>~900°C electrolysis<br>Al3+ +3e- -> Al<br>C+2O2- -> CO2]
-    Hall --> AlMetal[Al metal]
+flowchart TD
+    Bauxite["Bauxite Al2O3·xH2O<br>+SiO2 Fe2O3 TiO2"] --> Bayer["Bayer leaching<br>NaOH 473-523K 35-36bar<br>Al2O3+2NaOH+3H2O->NaAlOH4"]
+    Bayer --> CO2["CO2 precipitation<br>seeded Al2O3·xH2O"]
+    CO2 --> Alumina["Alumina Al2O3<br>1470K"]
+    Alumina --> Hall["Hall-Heroult<br>Al2O3 + cryolite Na3AlF6<br>~900°C electrolysis<br>Al3+ +3e- -> Al<br>C+2O2- -> CO2"]
+    Hall --> AlMetal["Al metal"]
 ```
+*Extraction of aluminium: Bayer leaching, then Hall–Héroult electrolysis in molten cryolite.*
 
 ```mermaid
-flowchart TB
-    CuPyrites[CuFeS2 pyrites] --> Froth[Froth floatation]
-    Froth --> Roast[Roasting<br>S+O2->SO2<br>2CuFeS2+O2->Cu2S+2FeS+SO2]
-    Roast --> Smelt[Smelting<br>sand flux<br>FeO+SiO2->FeSiO3 slag<br>matte Cu2S+FeS]
-    Smelt --> Bessemer[Bessemerisation<br>blister copper<br>Cu2S+2Cu2O->6Cu+SO2<br>98%]
-    Bessemer --> ElectroRef[Electro-refining<br>anode mud Ag Au Pt]
+flowchart TD
+    CuPyrites["CuFeS2 pyrites"] --> Froth["Froth floatation"]
+    Froth --> Roast["Roasting<br>S+O2->SO2<br>2CuFeS2+O2->Cu2S+2FeS+SO2"]
+    Roast --> Smelt["Smelting<br>sand flux<br>FeO+SiO2->FeSiO3 slag<br>matte Cu2S+FeS"]
+    Smelt --> Bessemer["Bessemerisation<br>blister copper<br>Cu2S+2Cu2O->6Cu+SO2<br>98%"]
+    Bessemer --> ElectroRef["Electro-refining<br>anode mud Ag Au Pt"]
 ```
+*Extraction of copper from pyrites — floatation, roasting, smelting, Bessemerisation, then electrorefining.*
 
 
 # Part F — Advanced Corner, Patterns and Revision

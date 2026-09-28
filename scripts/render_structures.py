@@ -38,6 +38,7 @@ Source table (extra columns are ignored; the first table whose header has SMILES
            S=+6          every S atom is +6
            S=+5,0        the set of distinct S values is exactly {+5, 0}
            S~+5/2        the average over S atoms is +5/2
+           -             nothing to assert (the O.S. is the point of the drawing, not a number)
          The script exits non-zero on any failed check, so the drawings cannot silently
          disagree with the notes.
   Note   free text, shown in the gallery.
@@ -50,9 +51,12 @@ Cl (NCl3: N -3, Cl +1), and P as more electronegative than H (PH3: P -3; H3PO2: 
 Usage:
     python scripts/render_structures.py <structures.md> [...] [--size 240x170]
     python scripts/render_structures.py --all [--library docs/COMPOUND-LIBRARY.md]
+    python scripts/render_structures.py --all --validate     # no drawing, works anywhere
 
 Requires RDKit (`pip install rdkit`), a dev-only dependency: readers of the notes never need
-it, and scripts/fetch_ncert_pdfs.py does not use it.
+it, and scripts/fetch_ncert_pdfs.py does not use it. Drawing additionally needs RDKit's
+Cairo/X11 backend; `--validate` deliberately uses only the chemistry core so the tables can be
+checked on a machine (or in CI) where the drawing libraries are unavailable.
 """
 import argparse
 import base64
@@ -178,6 +182,8 @@ def run_checks(mol, values, check):
     for a in mol.GetAtoms():
         by_el.setdefault(a.GetSymbol(), []).append(values[a.GetIdx()])
     for tok in check.split():
+        if tok in ("-", "—", "n/a", "N/A"):   # "nothing to assert" is a valid cell
+            continue
         m = re.fullmatch(r"([A-Z][a-z]?)([=~])(.+)", tok)
         if not m:
             errors.append("bad check token %r" % tok)
@@ -250,11 +256,67 @@ def replace_block(md, key, body):
 
 
 def parse_smiles(smi):
-    """Keep explicit [H] atoms (e.g. the P–H bonds of H3PO3 are the point of the drawing)."""
+    """Keep explicit [H] atoms (e.g. the P–H bonds of H3PO3 are the point of the drawing).
+
+    Falls back to a relaxed sanitisation for the genuinely hypervalent species this repo
+    draws — ClF3, BrF5, IF7, HClO4 and B2H6. RDKit's default model allows a maximum
+    valence of 7 for iodine and 6 for chlorine, so it rejects them, but the molecules
+    are real and are exactly the ones the bonding chapter needs. Dropping only
+    SANITIZE_PROPERTIES keeps ring perception, aromaticity and the bond graph, which
+    is all the drawing and the oxidation-state calculation need.
+    """
     from rdkit import Chem
     ps = Chem.SmilesParserParams()
     ps.removeHs = False
-    return Chem.MolFromSmiles(smi, ps)
+    mol = Chem.MolFromSmiles(smi, ps)
+    if mol is not None:
+        return mol
+    relaxed_ps = Chem.SmilesParserParams()
+    relaxed_ps.sanitize = False
+    relaxed_ps.removeHs = False
+    relaxed = Chem.MolFromSmiles(smi, relaxed_ps)
+    if relaxed is None:
+        return None
+    Chem.SanitizeMol(relaxed, Chem.SANITIZE_ALL ^ Chem.SANITIZE_PROPERTIES)
+    return relaxed
+
+
+def validate(src):
+    """Check every row's SMILES and O.S. assertions without drawing anything.
+
+    Needs RDKit's chemistry core only (no X11 / Cairo), so it runs on any machine and in
+    CI even where the SVG backend cannot be loaded.
+    """
+    from rdkit import Chem
+    rows = parse_table(src.read_text(encoding="utf-8"))
+    if not rows:
+        return ["no table with a SMILES column"], 0
+    errors, svgdir = [], src.parent / "mol"
+    have = {p.stem for p in svgdir.glob("*.svg")} if svgdir.is_dir() else set()
+    for r in rows:
+        mol = parse_smiles(r["smiles"])
+        if mol is None:
+            errors.append("%s: RDKit rejects the SMILES %r (explicit valence?)" % (r["label"], r["smiles"]))
+            continue
+        if not re.fullmatch(r"[a-z0-9][a-z0-9\-]*", r["id"] or ""):
+            errors.append("%s: ID must be lowercase ASCII, got %r" % (r["label"], r["id"]))
+        if r["id"] not in have:
+            errors.append("%s: no drawing at mol/%s.svg — run the renderer" % (r["label"], r["id"]))
+        if "H" in r["os"].split():
+            mol = Chem.AddHs(mol)
+        try:
+            values, _ = apply_spec(mol, r["os"], oxidation_states(mol))
+        except ValueError as exc:
+            errors.append("%s: %s" % (r["label"], exc))
+            continue
+        total = sum(values) + implicit_h_sum(mol)
+        charge = sum(a.GetFormalCharge() for a in mol.GetAtoms())
+        if total != charge:
+            errors.append("%s: O.S. sum %s ≠ charge %d" % (r["label"], fmt(total), charge))
+        errors += ["%s: %s" % (r["label"], e) for e in run_checks(mol, values, r["check"])]
+    for stale in sorted(have - {r["id"] for r in rows}):
+        errors.append("mol/%s.svg is not in the table (stale drawing)" % stale)
+    return errors, len(rows)
 
 
 def process(src, size):
@@ -323,9 +385,31 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("sources", nargs="*", type=Path)
     ap.add_argument("--all", action="store_true", help="every */figures/structures.md in the repo")
+    ap.add_argument("--validate", action="store_true",
+                    help="check the tables' SMILES and O.S. assertions only; draw nothing")
     ap.add_argument("--size", default="240x170", help="WxH of each drawing in px")
     ap.add_argument("--library", type=Path, help="also write the combined compound library here")
     args = ap.parse_args()
+
+    if args.validate:
+        srcs = [p.resolve() for p in args.sources]
+        if args.all or not srcs:
+            srcs += sorted(p for p in ROOT.glob("*/*/figures/structures.md") if p not in srcs)
+        if not srcs:
+            ap.error("give a structures.md path or --all")
+        bad, total = [], 0
+        for s in srcs:
+            errs, n = validate(s)
+            total += n
+            print("%-62s %3d structures  %s"
+                  % (s.relative_to(ROOT), n, "OK" if not errs else f"{len(errs)} PROBLEM(S)"))
+            bad += ["  %s: %s" % (s.relative_to(ROOT), e) for e in errs]
+        if bad:
+            print("\nFAILED CHECKS:\n" + "\n".join(bad), file=sys.stderr)
+            sys.exit(1)
+        print("\n%d structures validated, all SMILES parse and every assertion holds" % total)
+        return
+
     try:
         from rdkit.Chem import rdDepictor
         from rdkit.Chem.Draw import rdMolDraw2D  # noqa: F401  (fails early if drawing is broken)

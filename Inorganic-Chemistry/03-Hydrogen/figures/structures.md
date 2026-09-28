@@ -13,12 +13,12 @@ That rewrites `mol/<ID>.svg` (one Ketcher SVG per row: plain image on GitHub, an
 
 | Label | SMILES | ID | O.S. | Check | Note |
 |---|---|---|---|---|---|
-| Water H₂O | O | h2o | auto | O=-2 | bent 104.5°, O-H 95.7 pm |
-| Heavy water D₂O | [2H]O[2H] | d2o | auto | O=-2 | moderator, same bent |
-| Hydrogen peroxide H₂O₂ | OO | h2o2 | auto | O=-1 | open book, dihedral 111.5° gas, 90.2° solid, O-O 148 pm |
-| Dihydrogen H₂ | [H][H] | h2 | - | - | H-H 74.14 pm, BDE 435.88 kJ/mol |
-| Hydronium H₃O⁺ | [OH3+] | h3o | auto | O=-2 | H+ as H3O+ in water |
-| Hydroxide OH⁻ | [OH-] | oh | auto | O=-2 | - |
+| Water H₂O | `O` | h2o | auto | O=-2 | bent 104.5°, O-H 95.7 pm |
+| Heavy water D₂O | `[2H]O[2H]` | d2o | auto | O=-2 | moderator, same bent |
+| Hydrogen peroxide H₂O₂ | `OO` | h2o2 | auto | O=-1 | open book, dihedral 111.5° gas, 90.2° solid, O-O 148 pm |
+| Dihydrogen H₂ | `[H][H]` | h2 | - | - | H-H 74.14 pm, BDE 435.88 kJ/mol |
+| Hydronium H₃O⁺ | `[OH3+]` | h3o | auto | O=-2 | H+ as H3O+ in water |
+| Hydroxide OH⁻ | `[OH-]` | oh | auto | O=-2 | - |
 
 <!-- gallery:begin -->
 | ID | Structure | Label |

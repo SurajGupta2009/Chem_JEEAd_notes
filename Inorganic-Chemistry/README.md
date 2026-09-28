@@ -6,15 +6,15 @@ own order (Class XI first, then Class XII, by NCERT unit).
 
 | # | Chapter | Class | NCERT unit | Code | Edition | Needed for | Notes |
 |---|---|---|---|---|---|---|---|
-| 01 | [Classification of Elements and Periodicity in Properties](01-Classification-of-Elements-and-Periodicity-in-Properties) | 11 | 3 | `kech103` | rationalised | Main + Advanced | ⏳ pending |
+| 01 | [Classification of Elements and Periodicity in Properties](01-Classification-of-Elements-and-Periodicity-in-Properties) | 11 | 3 | `kech103` | rationalised | Main + Advanced | [✅ notes.md](01-Classification-of-Elements-and-Periodicity-in-Properties/notes.md) |
 | 02 | [Chemical Bonding and Molecular Structure](02-Chemical-Bonding-and-Molecular-Structure) | 11 | 4 | `kech104` | rationalised | Main + Advanced | [✅ notes.md](02-Chemical-Bonding-and-Molecular-Structure/notes.md) |
-| 03 | [Hydrogen](03-Hydrogen) | 11 | 11 | `kech202` | legacy 2018-19 | **Advanced only** | ⏳ pending |
-| 04 | [The s-Block Elements (Alkali and Alkaline Earth Metals)](04-The-s-Block-Elements) | 11 | 12 | `kech203` | legacy 2018-19 | **Advanced only** | ⏳ pending |
-| 05 | [The p-Block Elements (Groups 13 and 14)](05-The-p-Block-Elements) | 11 | 13 | `kech204` | legacy 2018-19 | **Advanced only** | ⏳ pending |
-| 06 | [Environmental Chemistry](06-Environmental-Chemistry) | 11 | 14 | `kech207` | legacy 2018-19 | **Advanced only** | ⏳ pending |
+| 03 | [Hydrogen](03-Hydrogen) | 11 | 11 | `kech202` | legacy 2018-19 | **Advanced only** | [✅ notes.md](03-Hydrogen/notes.md) |
+| 04 | [The s-Block Elements (Alkali and Alkaline Earth Metals)](04-The-s-Block-Elements) | 11 | 12 | `kech203` | legacy 2018-19 | **Advanced only** | [✅ notes.md](04-The-s-Block-Elements/notes.md) |
+| 05 | [The p-Block Elements (Groups 13 and 14)](05-The-p-Block-Elements) | 11 | 13 | `kech204` | legacy 2018-19 | **Advanced only** | [✅ notes.md](05-The-p-Block-Elements/notes.md) |
+| 06 | [Environmental Chemistry](06-Environmental-Chemistry) | 11 | 14 | `kech207` | legacy 2018-19 | **Advanced only** | [✅ notes.md](06-Environmental-Chemistry/notes.md) |
 | 07 | [The d- and f-Block Elements](07-The-d-and-f-Block-Elements) | 12 | 4 | `lech104` | rationalised | Main + Advanced | [✅ notes.md](07-The-d-and-f-Block-Elements/notes.md) |
 | 08 | [Coordination Compounds](08-Coordination-Compounds) | 12 | 5 | `lech105` | rationalised | Main + Advanced | [✅ notes.md](08-Coordination-Compounds/notes.md) |
-| 09 | [The p-Block Elements (Groups 15 to 18)](09-The-p-Block-Elements) | 12 | 14 | `lech107` | legacy 2018-19 | **Advanced only** | ⏳ pending |
+| 09 | [The p-Block Elements (Groups 15 to 18)](09-The-p-Block-Elements) | 12 | 14 | `lech107` | legacy 2018-19 | **Advanced only** | [✅ notes.md](09-The-p-Block-Elements/notes.md) |
 
 The `#` column is this branch's own order. The NCERT unit number keeps its own
 column because that is what the NCERT codes mean: `kech1xx` = Class XI Part I,
