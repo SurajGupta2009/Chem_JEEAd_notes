@@ -281,17 +281,13 @@ $\ce{CaCO3 + CO2 + H2O -> Ca(HCO3)2}$  (excess CO2: milkiness DISAPPEARS — sol
 ### NO₂⁻ — nitrite
 
 - With dil. H₂SO₄ + warming: reddish-brown NO₂ fumes via disproportionation:
-  ```
-  2 NaNO2 + H2SO4 → Na2SO4 + 2 HNO2
-  3 HNO2 → HNO3 + 2 NO + H2O        (disproportionation)
-  2 NO + O2 → 2 NO2                  (brown fumes)
-  ```
+- $\ce{2NaNO2 + H2SO4 -> Na2SO4 + 2HNO2}$
+- $\ce{3HNO2 -> HNO3 + 2NO + H2O}$ (disproportionation)
+- $\ce{2NO + O2 -> 2NO2}$ (brown fumes)
 - **KI + starch + CH₃COOH → blue** (liberated I₂–starch complex):
-  ```
-  NO2- + CH3COOH → HNO2 + CH3COO-
-  2 HNO2 + 2 KI + 2 CH3COOH → 2 CH3COOK + 2 H2O + 2 NO + I2
-  I2 + starch → blue
-  ```
+- $\ce{NO2- + CH3COOH -> HNO2 + CH3COO-}$
+- $\ce{2HNO2 + 2KI + 2CH3COOH -> 2CH3COOK + 2H2O + 2NO + I2}$
+- $\ce{I2 + starch -> blue}$
 - **Griess–Ilosvay test:** acidified extract + sulphanilic acid (diazotised by HNO₂)
   + 1-naphthylamine → **red azo-dye**. Solution must be very dilute, otherwise the
   reaction stops at diazotisation.
@@ -300,10 +296,8 @@ $\ce{CaCO3 + CO2 + H2O -> Ca(HCO3)2}$  (excess CO2: milkiness DISAPPEARS — sol
 
 - Vinegar smell with dil. H₂SO₄. **Ester test:** salt + ethanol + conc. H₂SO₄, warm →
   **fruity odour** of ethyl acetate:
-  ```
-  2 CH3COONa + H2SO4 → Na2SO4 + 2 CH3COOH
-  CH3COOH + C2H5OH → CH3COOC2H5 (fruity) + H2O
-  ```
+- $\ce{2CH3COONa + H2SO4 -> Na2SO4 + 2CH3COOH}$
+- $\ce{CH3COOH + C2H5OH -> CH3COOC2H5 (fruity) + H2O}$
 - **Neutral FeCl₃ test:** **deep red** colour (complex
   [Fe₃(OH)₂(CH₃COO)₆]⁺), which on **boiling disappears with a brown-red precipitate**
   of iron(III) dihydroxyacetate, Fe(OH)₂(CH₃COO).
@@ -333,20 +327,19 @@ $\ce{CaCO3 + CO2 + H2O -> Ca(HCO3)2}$  (excess CO2: milkiness DISAPPEARS — sol
    - + CH₃COOH + lead acetate → **yellow PbCrO₄** confirms Cl⁻.
    - + dil. H₂SO₄ + amyl alcohol + H₂O₂, shake → organic layer turns **blue**
      (CrO₅ dissolves in amyl alcohol).
-   ```
-   4 NaCl + K2Cr2O7 + 6 H2SO4 → 2 KHSO4 + 4 NaHSO4 + 2 CrO2Cl2↑ + 3 H2O
-   CrO2Cl2 + 4 NaOH → Na2CrO4 (yellow) + 2 NaCl + 2 H2O
-   (CH3COO)2Pb + Na2CrO4 → PbCrO4↓ (yellow) + 2 CH3COONa
-   CrO4^2- + 2 H+ + 2 H2O2 → CrO5 + 3 H2O
-   ```
-   ```
-   CrO5 ("butterfly" — one Cr=O, four peroxo O's):
-             O
-            ║
-        O — Cr — O     each wing-O pair is a peroxide (–O–O–)
-        |   |          oxidation state of Cr is still +6
-        O   O
-   ```
+- $\ce{4NaCl + K2Cr2O7 + 6H2SO4 -> 2KHSO4 + 4NaHSO4 + 2CrO2Cl2↑ + 3H2O}$
+- $\ce{CrO2Cl2 + 4NaOH -> Na2CrO4 (yellow) + 2NaCl + 2H2O}$
+- $\ce{(CH3COO)2Pb + Na2CrO4 -> PbCrO4↓ (yellow) + 2CH3COONa}$
+- $\ce{CrO4^{2-} + 2H+ + 2H2O2 -> CrO5 + 3H2O}$
+```mermaid
+flowchart TB
+    Cr[Cr central +6] --> O1[O double bond =O]
+    Cr --> O2[O - O peroxo wing 1]
+    Cr --> O3[O - O peroxo wing 2]
+    Cr --> O4[O peroxo]
+    Cr --> O5[O peroxo]
+    Note[CrO5 butterfly<br>1 Cr=O, 4 peroxo O's<br>each wing -O-O-<br>Cr +6 still]
+```
    🆇 Br⁻/I⁻ give **no** chromyl-chloride-type test because HBr/HI are oxidised to
    Br₂/I₂ by the dichromate instead of forming volatile oxyhalides. CrO₂Cl₂ hydrolyses
    to chromate in water → it is an **acidic** oxide-chloride.
@@ -364,12 +357,10 @@ $\ce{CaCO3 + CO2 + H2O -> Ca(HCO3)2}$  (excess CO2: milkiness DISAPPEARS — sol
 
 - conc. H₂SO₄ gives violet I₂ (starch → **blue**), plus HI, SO₂, H₂S, S from side
   reactions:
-  ```
-  NaI + H2SO4 → NaHSO4 + HI
-  2 HI + H2SO4 → I2 + SO2 + 2 H2O
-  6 NaI + 4 H2SO4 → 3 I2 + S + 3 Na2SO4 + 4 H2O
-  8 NaI + 5 H2SO4 → 4 I2 + H2S + 4 Na2SO4 + 4 H2O
-  ```
+- $\ce{NaI + H2SO4 -> NaHSO4 + HI}$
+- $\ce{2HI + H2SO4 -> I2 + SO2 + 2H2O}$
+- $\ce{6NaI + 4H2SO4 -> 3I2 + S + 3Na2SO4 + 4H2O}$
+- $\ce{8NaI + 5H2SO4 -> 4I2 + H2S + 4Na2SO4 + 4H2O}$
   With MnO₂: `2 NaI + MnO2 + 2 H2SO4 → I2 + MnSO4 + Na2SO4 + 2 H2O`.
 - **Layer test** as for Br⁻ → **violet organic layer** (`2 NaI + Cl2 → 2 NaCl + I2`).
   🆇 With *excess* chlorine water the violet colour **disappears again** — I₂ is
@@ -380,17 +371,13 @@ $\ce{CaCO3 + CO2 + H2O -> Ca(HCO3)2}$  (excess CO2: milkiness DISAPPEARS — sol
 ### NO₃⁻ — nitrate
 
 - **Cu turnings + conc. H₂SO₄:** brown fumes intensify, solution turns blue:
-  ```
-  NaNO3 + H2SO4 → NaHSO4 + HNO3 ;  4 HNO3 → 4 NO2 + O2 + 2 H2O
-  2 NaNO3 + 4 H2SO4 + 3 Cu → 3 CuSO4 (blue) + Na2SO4 + 4 H2O + 2 NO ;  2 NO + O2 → 2 NO2
-  ```
+- $\ce{NaNO3 + H2SO4 -> NaHSO4 + HNO3}$; $\ce{4HNO3 -> 4NO2 + O2 + 2H2O}$
+- $\ce{2NaNO3 + 4H2SO4 + 3Cu -> 3CuSO4 (blue) + Na2SO4 + 4H2O + 2NO}$; $\ce{2NO + O2 -> 2NO2}$
 - **Brown ring test:** salt solution + freshly prepared FeSO₄ + conc. H₂SO₄ added
   carefully down the side → **dark brown ring at the junction**:
-  ```
-  NaNO3 + H2SO4 → NaHSO4 + HNO3
-  6 FeSO4 + 3 H2SO4 + 2 HNO3 → 3 Fe2(SO4)3 + 4 H2O + 2 NO
-  FeSO4 + NO → [Fe(NO)]SO4   (nitroso ferrous sulphate — the brown ring)
-  ```
+- $\ce{NaNO3 + H2SO4 -> NaHSO4 + HNO3}$
+- $\ce{6FeSO4 + 3H2SO4 + 2HNO3 -> 3Fe2(SO4)3 + 4H2O + 2NO}$
+- $\ce{FeSO4 + NO -> [Fe(NO)]SO4}$ (nitroso ferrous sulphate — brown ring)
   🆇 Modern notation of the ring complex: **[Fe(H₂O)₅(NO)]²⁺** — an Fe(I) nitrosyl;
   it is paramagnetic. NO₂⁻ interferes (it too gives NO); destroy nitrite with urea /
   NH₄Cl before the test. AgNO₃ solution is stored in dark bottles because light
@@ -514,10 +501,8 @@ flowchart TD
 
 - Salt + NaOH, heat → smell of NH₃; glass rod dipped in HCl held at the mouth →
   **dense white fumes** of NH₄Cl:
-  ```
-  (NH4)2SO4 + 2 NaOH → Na2SO4 + 2 NH3↑ + 2 H2O
-  NH3 + HCl → NH4Cl (white fumes)
-  ```
+- $\ce{(NH4)2SO4 + 2NaOH -> Na2SO4 + 2NH3↑ + 2H2O}$
+- $\ce{NH3 + HCl -> NH4Cl}$ (white fumes)
 - **Nessler's reagent** (K₂[HgI₄] in KOH) → **brown precipitate** of basic mercury(II)
   amido-iodide:
   `2 K2[HgI4] + NH3 + 3 KOH → HgO·Hg(NH2)I↓ (brown) + 7 KI + 2 H2O`

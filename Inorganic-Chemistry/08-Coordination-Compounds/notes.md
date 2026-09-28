@@ -127,6 +127,26 @@ The last two have the same empirical formula but different properties → **isom
   data: PdCl₂·4NH₃ → 2, NiCl₂·6H₂O → 2, PtCl₄·2HCl → 0, CoCl₃·4NH₃ → 1,
   PtCl₂·2NH₃ → 0.
 
+
+```mermaid
+flowchart TB
+    Primary[Primary valency<br>ionisable<br>= oxidation state<br>satisfied by anions]
+    Secondary[Secondary valency<br>non-ionisable<br>= coordination number<br>fixed for metal<br>directional]
+    Primary --> Example1[[Co(NH3)6]Cl3<br>primary 3 Cl- ionisable<br>secondary 6 NH3 fixed octahedral]
+    Secondary --> Example1
+    Example1 --> Test[AgNO3 test<br>count ionisable Cl-]
+```
+
+```mermaid
+flowchart LR
+    Octa[Octahedral CN6<br>[Co(NH3)6]3+<br>[CoCl2(NH3)4]+]
+    Tetra[Tetrahedral CN4<br>[Ni(CO)4]<br>[ZnCl4]2-]
+    SqPlan[Square planar CN4<br>[PtCl4]2-<br>[Ni(CN)4]2-]
+    Linear[Linear CN2<br>[Ag(NH3)2]+]
+    Octa --> Tetra --> SqPlan --> Linear
+```
+
+
 ## 3. Essential Terminology
 
 | Term | Meaning | Example |
@@ -517,6 +537,30 @@ strong ligands (Ni²⁺/Pd²⁺/Pt²⁺ + CN⁻) go square planar and diamagneti
 sit at the weak end of the spectrochemical series; ignores covalent character — both
 resolved by Ligand Field Theory / MOT.
 
+
+```mermaid
+flowchart TB
+    Free[Free ion<br>5 d degenerate] --> Oct[Octahedral field<br>eg dx2-y2 dz2 up +0.6Δo<br>t2g dxy dxz dyz down -0.4Δo<br>Δo large for strong field]
+    Free --> TetraM[Tetrahedral field<br>e dz2 dx2-y2 down -0.6Δt<br>t2 dxy dxz dyz up +0.4Δt<br>Δt=4/9 Δo inverted small]
+    Free --> SqM[Square planar<br>dx2-y2 highest<br>dxy next<br>dz2<br>dxz dyz lowest<br>Δsp≈1.3Δo]
+```
+
+```mermaid
+flowchart LR
+    Weak[Weak field<br>Δo < P<br>high spin<br>max unpaired<br>e.g. [CoF6]3- 4 unpaired<br>sp3d2 outer]
+    Strong[Strong field<br>Δo > P<br>low spin<br>pairing<br>e.g. [Co(NH3)6]3+ diamag<br>d2sp3 inner]
+    Weak -->|Δo vs P decides| Strong
+```
+
+```mermaid
+flowchart TB
+    VBT[VBT Hybridisation] --> sp3[sp3 tetrahedral<br>[NiCl4]2- para<br>[Ni(CO)4] dia]
+    VBT --> dsp2[dsp2 square planar<br>[Ni(CN)4]2- dia<br>[PtCl4]2-]
+    VBT --> d2sp3[d2sp3 inner octahedral<br>[Co(NH3)6]3+ dia<br>low spin]
+    VBT --> sp3d2[sp3d2 outer octahedral<br>[CoF6]3- para 4 unp<br>high spin]
+```
+
+
 ## 12. Colour in Coordination Compounds
 
 - d–d transitions: an electron is promoted t₂g → eg; absorbed frequency lies in the
@@ -666,6 +710,21 @@ Fixing with hypo (sodium thiosulphate) dissolves unexposed AgBr as
   toxicity, Wilson's disease, haemosiderosis).
 - **EDTA** — lead poisoning (Pb²⁺ removal).
 - **cis-platin [Pt(NH₃)₂Cl₂]** — anti-cancer (the *trans* isomer is inactive).
+
+
+- $\ce{[Ti(H2O)6]^{3+} + h\nu (498 nm blue-green) -> [Ti(H2O)6]^{3+}*}$ absorbs blue-green appears violet
+- $\ce{[Cu(H2O)4]^{2+} absorbs red 600 nm -> observed blue}$
+- $\ce{Ni(CO)4: Ni(0) 3d^8 4s^2 + 4CO -> [Ni(CO)4] sp3 tetrahedral diamagnetic}$
+- $\ce{Fe(CO)5: dsp3 trigonal bipyramidal}$
+- $\ce{Cr(CO)6: d2sp3 octahedral}$
+- $\ce{Mn2(CO)10: 2 square pyramids Mn-Mn bond}$
+- $\ce{Co2(CO)8: Co-Co + 2 bridging CO}$
+- $\ce{M -> CO sigma donation C lone pair -> empty metal hybrid}$
+- $\ce{M d\pi -> CO \pi* back donation}$ synergic weakens C-O strengthens M-C
+- $\ce{[Ag(NH3)2]+ + e- -> Ag}$ electroplating bath $\ce{[Ag(CN)2]-}$ slows deposition
+- $\ce{AgBr + 2Na2S2O3 -> Na3[Ag(S2O3)2] + NaBr}$ photography fixing
+- $\ce{[Rh(PPh3)3Cl] + H2 + alkene -> alkane}$ Wilkinson's catalyst hydrogenation
+
 
 ## 17. Solved-Example Patterns & JEE Pointers
 

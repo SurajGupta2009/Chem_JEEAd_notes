@@ -297,6 +297,32 @@ flowchart LR
     SC --> BCC --> CCP
 ```
 
+
+### Bragg's law — X-ray diffraction for crystal structure 🆇
+
+W.L. Bragg 1913: X-rays reflected from crystal lattice planes interfere.
+
+**Bragg's law**: $n\lambda = 2d \sin\theta$
+
+- $n$ = order of diffraction (1,2,3...), integer
+- $\lambda$ = wavelength of X-ray
+- $d$ = interplanar spacing between parallel lattice planes (e.g., $d_{100}$, $d_{110}$)
+- $\theta$ = glancing angle (angle between incident ray and crystal plane, not normal; complement of angle of incidence in optics)
+
+Derivation: Path difference between rays reflected from two successive planes = $2d\sin\theta$, constructive interference when path difference = $n\lambda$.
+
+**Uses**:
+- Determine $d$ from known $\lambda$, $\theta$: $d = n\lambda/(2\sin\theta)$
+- Determine crystal structure, $a$ for cubic: $d_{hkl} = a/\sqrt{h^2+k^2+l^2}$
+- Determine Avogadro's number: from $a$ via $d=zM/a^3N_A$
+
+**Example**: First order ($n=1$) reflection from $d=200$ pm planes at $\theta=15°$, $\lambda=2d\sin\theta=2*200*\sin15°=103.5$ pm.
+
+**Powder method**: Debye-Scherrer, Laue.
+
+JEE Advanced often asks: Given $\lambda=154$ pm (Cu Kα), $\theta=14.2°$ for $\ce{NaCl}$ (200) planes, find $a$ etc.
+
+
 ## 12. Calculations involving unit cell dimensions $d=zM/a^3N_A$ (1.8)
 
 Density of unit cell = density of substance.

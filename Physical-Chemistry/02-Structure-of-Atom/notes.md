@@ -140,6 +140,22 @@ Drawbacks:
 ## 3. Atomic number, mass number, isotopes, isobars, isotones (2.2)
 
 - **Atomic number $Z$** = number of protons in nucleus = number of electrons in neutral atom. Moseley showed $Z$ is fundamental. All atoms of same element same $Z$.
+
+### Moseley's law 🆇 — $\sqrt{\nu} = a(Z-b)$
+
+Henry Moseley 1913 studied characteristic X-ray spectra (Kα, Kβ) of elements bombarded by electrons. Found frequency $\nu$ of Kα X-ray ∝ $(Z-1)^2$.
+
+**Moseley's law**: $\sqrt{\nu} = a(Z-b)$ where $a$ = proportionality constant (Rydberg-like), $b$ = screening constant (~1 for Kα, ~7.4 for Lα).
+
+For Kα: $\nu = R_\infty c (Z-1)^2 (1/1^2 - 1/2^2) = \frac{3}{4} R_\infty c (Z-1)^2$ → $\sqrt{\nu} \propto (Z-1)$.
+
+**Importance**: Established $Z$ (not atomic weight) as basis of periodic table, predicted missing elements (43,61,72,75). Used to determine $Z$ from X-ray frequency.
+
+**JEE Advanced use**: Given $\nu_{K\alpha}$ for two elements, find $Z$ ratio: $\frac{\sqrt{\nu_1}}{\sqrt{\nu_2}} = \frac{Z_1-1}{Z_2-1}$.
+
+**X-ray notation**: K series (n=2→1), L series (n=3→1,3→2), etc. $K_{\alpha}$ is $2→1$, $K_{\beta}$ $3→1$.
+
+**Example**: $\nu_{K\alpha}$ for $Z=20$ is $3.0\times10^{18}$ Hz, find $Z$ for $\nu=6.8\times10^{18}$ Hz: $\sqrt{6.8/3.0} = (Z-1)/19$ → $Z≈30$.
 - **Mass number $A$** = protons + neutrons = $Z + N$.
 - Notation: $\ce{^A_Z X}$ e.g., $\ce{^12_6 C}$, often $\ce{^12C}$.
 

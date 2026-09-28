@@ -774,6 +774,27 @@ E = 158/5 = 31.6; for H₂: 2 e⁻ per mole, so "11.2 L of H₂ at STP per farad
 ---
 # Part D — Batteries, Fuel Cells and Corrosion (2.6–2.8)
 
+
+### Overpotential and overvoltage 🆇
+
+Theoretical decomposition voltage from Nernst = $E°$ cell, but actual voltage needed for electrolysis > theoretical due to kinetic barriers.
+
+**Overpotential** $\eta = E_{actual} - E_{theoretical}$ (extra voltage needed to drive electrode reaction at appreciable rate).
+
+Causes:
+- Activation overpotential — slow electron transfer at electrode
+- Concentration overpotential — depletion of ions near electrode, diffusion limit
+- Resistance overpotential — IR drop
+
+**Important examples**:
+- $\ce{O2}$ evolution at Pt: $\eta$ ~0.4 V, so $\ce{O2}$ evolution requires higher $E$ than predicted → allows $\ce{Cl2}$ evolution in brine electrolysis (chlor-alkali) even though $E°(O2/H2O)=1.23$ V < $E°(Cl2/Cl-)=1.36$ V, but due to overpotential of $O2$, $Cl2$ evolves preferentially.
+- $\ce{H2}$ evolution at Hg: high overpotential ~0.8 V, allows deposition of Na at Hg cathode in Castner-Kellner (Na+ reduces instead of $H2$).
+
+**JEE Advanced trap**: During electrolysis of aqueous NaCl, $Cl2$ at anode not $O2$ due to overpotential, despite $E°$ suggesting $O2$. Similarly, $H2$ at cathode but Na amalgam formation due to overpotential.
+
+**Tafel equation**: $\eta = a + b \log i$, $i$ = current density.
+
+
 ## 14. Primary batteries: dry cell, mercury cell, lithium (2.6.1)
 
 > **Primary cell** = the redox reaction runs **once**; after it the battery is dead and cannot

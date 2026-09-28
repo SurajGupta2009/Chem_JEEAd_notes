@@ -497,6 +497,25 @@ Mixing two solutions same solute: $M_{final} = \frac{M_1 V_1 + M_2 V_2}{V_1+V_2}
 
 # Part E — Advanced Corner, Patterns and Revision
 
+
+### Oleum labelling and ppb/ppt 🆇
+
+**Oleum** = $\ce{H2SO4 + x SO3}$ = $\ce{H2S2O7}$ (pyrosulphuric) + excess $\ce{SO3}$. Labelled as % oleum = % free $\ce{SO3}$ in oleum.
+
+- $100\%$ oleum = $104.5\%$ $\ce{H2SO4}$ equivalent? Actually 100 g oleum contains $x$ g free $\ce{SO3}$ + $(100-x)$ g $\ce{H2SO4}$.
+- On adding water: $\ce{SO3 + H2O -> H2SO4}$, free $\ce{SO3}$ converts to $\ce{H2SO4}$.
+- Total $\ce{H2SO4}$ after dilution: mass = $(100-x) + x * (98/80)$ because 80 g $\ce{SO3}$ → 98 g $\ce{H2SO4}$.
+- % $\ce{H2SO4}$ strength = $\%~\ce{H2SO4} = (100-x) + 98x/80 = 100 + 18x/80$ over 100 g → e.g., $20\%$ oleum (20 g free $\ce{SO3}$) → $100 + 18*20/80 = 104.5\%$ $\ce{H2SO4}$ equivalent.
+
+Formula: If oleum is $y\%$ free $\ce{SO3}$, total $\ce{H2SO4}$ obtained from 100 g oleum on complete hydrolysis = $100 + \frac{18y}{80}$ g.
+
+**Example JEE Advanced**: 20% oleum, 100 g → free $\ce{SO3}$ = 20 g = 0.25 mol, gives 0.25 mol $\ce{H2SO4}$ = 24.5 g, plus 80 g existing → 104.5 g $\ce{H2SO4}$.
+
+**ppb / ppt**: $\text{ppb} = \frac{\text{mass solute}}{\text{mass solution}} \times 10^9$, $\text{ppt} = \times 10^{12}$. For dilute aqueous, $1~\text{ppb} \approx 1~\mu g/L$. Used for trace impurities, water hardness trace metals.
+
+**Water hardness**: Temporary hardness $\ce{Ca(HCO3)2}$, $\ce{Mg(HCO3)2}$ removed by boiling $\ce{Ca(HCO3)2 -> CaCO3↓ + CO2 + H2O}$, permanent hardness $\ce{CaCl2}$, $\ce{CaSO4}$, $\ce{MgCl2}$, $\ce{MgSO4}$ removed by Clark's method $\ce{Ca(OH)2}$ or zeolite. Hardness expressed as ppm $\ce{CaCO3}$ equivalent: $\text{ppm CaCO3} = \frac{\text{mass hardness salt} \times 100}{\text{molar mass salt}} \times \frac{1000}{\text{L solution}}$.
+
+
 ## 18. Master formula bank (print this)
 
 **Mole conversions**:

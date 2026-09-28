@@ -356,6 +356,53 @@ And $Δ_r G$ temperature dependence via Gibbs-Helmholtz: $(∂(ΔG/T)/∂T)_P = 
 
 Example: $Δ_r H°_{298}= -100 kJ$, $Δ_r C_P = -50 J/K$, find $Δ_r H°_{400}= -100kJ + (-0.05 kJ/K)(102K)= -105.1 kJ$.
 
+
+### Carnot cycle and second law efficiency 🆇
+
+**Carnot cycle** = ideal reversible heat engine with 4 steps between hot reservoir $T_H$ and cold $T_C$ ($T_H>T_C$):
+
+1. Isothermal reversible expansion at $T_H$: $q_H$ absorbed, $w_1 = -nR T_H \ln(V_2/V_1)$, $\Delta U=0$, $\Delta S = q_H/T_H = nR \ln(V_2/V_1)$.
+2. Adiabatic reversible expansion: $T_H \to T_C$, $q=0$, $w_2 = \Delta U = nC_V (T_C-T_H)$, $\Delta S=0$.
+3. Isothermal reversible compression at $T_C$: $q_C$ released (negative), $w_3 = -nR T_C \ln(V_4/V_3)$, $\Delta S = q_C/T_C$.
+4. Adiabatic reversible compression: $T_C \to T_H$, $q=0$, $w_4 = nC_V (T_H-T_C)$, $\Delta S=0$.
+
+Net $w = q_H + q_C$, efficiency $\eta = \frac{|w|}{q_H} = 1 - \frac{T_C}{T_H}$ (Kelvin scale). Maximum possible efficiency for any engine operating between $T_H$, $T_C$ (Carnot theorem). $\eta=100\%$ only if $T_C=0$ K impossible.
+
+$\Delta S_{total}=0$ for reversible Carnot, $>0$ for irreversible.
+
+**Example**: $T_H=500$ K, $T_C=300$ K → $\eta=1-300/500=0.4=40\%$ max.
+
+### Polytropic process 🆇 — $pV^x = constant$
+
+General process $pV^x = C$ where $x$ = polytropic exponent.
+
+- $x=0$ → $p=const$ isobaric
+- $x=1$ → $pV=const$ isothermal (ideal gas, $T$ const)
+- $x=\gamma=C_P/C_V$ → adiabatic reversible $pV^{\gamma}=const$
+- $x=\infty$ → $V=const$ isochoric
+
+Work: $w = \frac{p_2V_2 - p_1V_1}{1-x}$ for $x\neq1$, $w=-nRT\ln(V_2/V_1)$ for $x=1$.
+
+Molar heat capacity in polytropic: $C = C_V + \frac{R}{1-x}$ (for ideal gas). For adiabatic $x=\gamma$, $C=0$ (no heat).
+
+### Joule-Thomson effect 🆇
+
+Free expansion of real gas through porous plug/throttle valve at constant enthalpy (isoenthalpic, $H=const$).
+
+- Ideal gas: $T$ unchanged on free expansion ($Joule's law$, $U$ depends only on $T$).
+- Real gas: $T$ may decrease (cooling) or increase (heating) depending on inversion temperature $T_i$.
+
+Joule-Thomson coefficient $\mu_{JT} = (\partial T/\partial p)_H$.
+
+- $\mu_{JT}>0$ → cooling on expansion ($T$ drops), occurs when $T<T_i$
+- $\mu_{JT}<0$ → heating, $T>T_i$
+- $\mu_{JT}=0$ at inversion temperature $T_i = 2a/Rb$ for van der Waals gas (approx).
+
+$T_i$ max = $2a/Rb$, $T_{i,lower}$ relation. For $H_2$ and He, $T_i$ very low (~40 K for $H_2$, ~20 K for He) → at room T they heat on expansion (used in liquefaction after pre-cooling).
+
+Liquefaction methods: Linde's process uses JT cooling with regenerative heat exchange.
+
+
 ## 14. Extensive vs intensive properties (5.7 intro)
 
 - **Extensive**: depends on amount of substance, additive when system divided. Examples: mass, volume, $U, H, S, G, n, C_P, q, w$.

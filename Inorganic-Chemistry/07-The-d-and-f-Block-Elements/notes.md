@@ -1002,10 +1002,8 @@ chapter does not cover but JEE Main/Advanced does ask.
 ### 18.1 Double salts — potash alum and Mohr's salt
 
 - Equimolar components crystallise together:
-  ```
-  K2SO4 + Al2(SO4)3 + 24 H2O → K2SO4·Al2(SO4)3·24H2O  = 2KAl(SO4)2·12H2O (potash alum)
-  FeSO4 + (NH4)2SO4 + 6 H2O → FeSO4·(NH4)2SO4·6H2O    (Mohr's salt, light green)
-  ```
+- $\ce{K2SO4 + Al2(SO4)3 + 24H2O -> K2SO4.Al2(SO4)3.24H2O = 2KAl(SO4)2.12H2O}$ (potash alum)
+- $\ce{FeSO4 + (NH4)2SO4 + 6H2O -> FeSO4.(NH4)2SO4.6H2O}$ (Mohr's salt, light green)
 - Fe²⁺ and Al³⁺ hydrolyse, so **2–3 mL dil. H₂SO₄** is added while making the solutions.
 - Cool slowly (good crystals); for Mohr's salt avoid prolonged heating (Fe²⁺ → Fe³⁺
   would change stoichiometry). 🆇 Mohr's salt is a **primary standard for KMnO₄
@@ -1263,13 +1261,11 @@ flowchart TD
 - Solution is **acidic (hydrolysis):** FeCl₃ + 3 H₂O ⇌ Fe(OH)₃ + 3 HCl.
 - Adduct: `FeCl3 + 6 NH3 → FeCl3·6NH3`.
 - **Oxidising reactions (memorise):**
-  ```
-  2 FeCl3 + SnCl2 → 2 FeCl2 + SnCl4
-  2 FeCl3 + SO2 + 2 H2O → 2 FeCl2 + H2SO4 + 2 HCl
-  2 FeCl3 + H2S → 2 FeCl2 + 2 HCl + S
-  2 FeCl3 + 2 KI → 2 FeCl2 + 2 KCl + I2
-  FeCl3 + [H] → FeCl2 + HCl
-  ```
+- $\ce{2FeCl3 + SnCl2 -> 2FeCl2 + SnCl4}$
+- $\ce{2FeCl3 + SO2 + 2H2O -> 2FeCl2 + H2SO4 + 2HCl}$
+- $\ce{2FeCl3 + H2S -> 2FeCl2 + 2HCl + S}$
+- $\ce{2FeCl3 + 2KI -> 2FeCl2 + 2KCl + I2}$
+- $\ce{FeCl3 + [H] -> FeCl2 + HCl}$
 - Tests: `FeCl3 + 3 NH4OH → Fe(OH)3↓ + 3 NH4Cl`;
   `FeCl3 + 3 NH4SCN → Fe(SCN)3 (blood red) + 3 NH4Cl`;
   **Prussian blue:** `4 FeCl3 + 3 K4[Fe(CN)6] → Fe4[Fe(CN)6]3 + 12 KCl`
