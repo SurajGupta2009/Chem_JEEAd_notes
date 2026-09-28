@@ -341,6 +341,21 @@ flowchart TB
     Solid -->|Δsol = lattice + hyd| Solution
 ```
 
+
+### Kirchhoff's law — temperature dependence of ΔH and ΔS 🆇
+
+**Kirchhoff's law**: Enthalpy change varies with temperature due to difference in heat capacities.
+
+$Δ_r H_{T2} = Δ_r H_{T1} + ∫_{T1}^{T2} Δ_r C_P dT$ ≈ $Δ_r H_{T1} + Δ_r C_P (T2-T1)$ if $Δ_r C_P$ constant.
+
+Where $Δ_r C_P = ∑ν C_P(products) - ∑ν C_P(reactants)$.
+
+Similarly $Δ_r S_{T2} = Δ_r S_{T1} + ∫_{T1}^{T2} Δ_r C_P / T dT$ ≈ $Δ_r S_{T1} + Δ_r C_P ln(T2/T1)$.
+
+And $Δ_r G$ temperature dependence via Gibbs-Helmholtz: $(∂(ΔG/T)/∂T)_P = -ΔH/T^2$.
+
+Example: $Δ_r H°_{298}= -100 kJ$, $Δ_r C_P = -50 J/K$, find $Δ_r H°_{400}= -100kJ + (-0.05 kJ/K)(102K)= -105.1 kJ$.
+
 ## 14. Extensive vs intensive properties (5.7 intro)
 
 - **Extensive**: depends on amount of substance, additive when system divided. Examples: mass, volume, $U, H, S, G, n, C_P, q, w$.

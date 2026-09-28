@@ -455,6 +455,23 @@ flowchart TB
     Normality --> ppm[ppm = mass_solute / mass_solution *1e6]
 ```
 
+
+### Equivalent weight and normality 🆇
+
+**Equivalent weight** $E = \frac{Molar\ mass}{n-factor}$.
+
+- For acids: $n$-factor = basicity = number of replaceable $H^+$: $\ce{HCl}$ $1$, $\ce{H2SO4}$ $2$, $\ce{H3PO4}$ $3$.
+- For bases: $n$-factor = acidity = number of $OH^-$: $\ce{NaOH}$ $1$, $\ce{Ca(OH)2}$ $2$.
+- For salts: $n$-factor = total charge of cation or anion: $\ce{Na2CO3}$ $2$ ($2Na^+$), $\ce{Al2(SO4)3}$ $6$.
+- For redox: $n$-factor = change in oxidation number per formula unit: $\ce{KMnO4}$ in acidic $Mn^{+7}→Mn^{+2}$ $n=5$, in neutral $Mn^{+7}→Mn^{+4}$ $n=3$, in alkaline $Mn^{+7}→Mn^{+6}$ $n=1$; $\ce{K2Cr2O7}$ $Cr^{+6}→Cr^{+3}$ $n=6$ per $\ce{K2Cr2O7}$ (2 Cr each 3 e-).
+- For $\ce{H2O2}$ as oxidising $n=2$, as reducing $n=2$.
+
+**Normality** $N = \frac{Number\ of\ equivalents}{Volume\ in\ L} = M × n-factor$.
+
+$N_1 V_1 = N_2 V_2$ for titration (equivalents conserved).
+
+Example: $0.1 M \ce{H2SO4}$ → $N = 0.1×2=0.2 N$, $0.1 M \ce{KMnO4}$ acidic → $N=0.5 N$.
+
 ## 17. Advanced concentration interconversions and density problems 🆇
 
 Key formulas for JEE Advanced:
