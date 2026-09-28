@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <rect width="100%" height="100%" fill="white" stroke="black"/>
+  <text x="150" y="80" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold">Aluminium chloride dimer Al₂Cl₆</text>
+  <text x="150" y="105" text-anchor="middle" font-family="Arial" font-size="11">Cl[Al](Cl)Cl[Al](Cl)Cl</text>
+  <text x="150" y="130" text-anchor="middle" font-family="Arial" font-size="9" fill="gray">halogen bridged dimer tetrahedral</text>
+  <desc id="ketcher-data" data-format="mol">CiAgICAgUkRLaXQgICAgICAgICAgMkQKCiAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMDk5OSBWMzAwMApNICBWMzAgQkVHSU4gQ1RBQgpNICBWMzAgQ09VTlRTIDcgNiAwIDAgMApNICBWMzAgQkVHSU4gQVRPTQpNICBWMzAgMSBDbCAxLjI5OTAzOCAwLjc1MDAwMCAwLjAwMDAwMCAwCk0gIFYzMCAyIEFsIDAuMDAwMDAwIDAuMDAwMDAwIDAuMDAwMDAwIDAgVkFMPTMKTSAgVjMwIDMgQ2wgLTEuMjk5MDM4IDAuNzUwMDAwIDAuMDAwMDAwIDAKTSAgVjMwIDQgQ2wgLTAuMDAwMDAwIC0xLjUwMDAwMCAwLjAwMDAwMCAwCk0gIFYzMCA1IEFsIC0xLjI5OTAzOCAtMi4yNTAwMDAgMC4wMDAwMDAgMCBWQUw9MwpNICBWMzAgNiBDbCAtMS4yOTkwMzggLTMuNzUwMDAwIDAuMDAwMDAwIDAKTSAgVjMwIDcgQ2wgLTIuNTk4MDc2IC0xLjUwMDAwMCAwLjAwMDAwMCAwCk0gIFYzMCBFTkQgQVRPTQpNICBWMzAgQkVHSU4gQk9ORApNICBWMzAgMSAxIDEgMgpNICBWMzAgMiAxIDIgMwpNICBWMzAgMyAxIDIgNApNICBWMzAgNCA5IDQgNQpNICBWMzAgNSAxIDUgNgpNICBWMzAgNiAxIDUgNwpNICBWMzAgRU5EIEJPTkQKTSAgVjMwIEVORCBDVEFCCk0gIEVORAo=</desc>
+</svg>

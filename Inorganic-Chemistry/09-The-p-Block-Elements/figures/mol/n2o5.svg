@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <rect width="100%" height="100%" fill="white" stroke="black"/>
+  <text x="150" y="80" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold">Dinitrogen pentoxide N₂O₅</text>
+  <text x="150" y="105" text-anchor="middle" font-family="Arial" font-size="11">O=[N+]([O-])O[N+](=O)[O-]</text>
+  <text x="150" y="130" text-anchor="middle" font-family="Arial" font-size="9" fill="gray">O2N-O-NO2</text>
+  <desc id="ketcher-data" data-format="mol">CiAgICAgUkRLaXQgICAgICAgICAgMkQKCiAgNyAgNiAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMDk5OSBWMjAwMAogICAtMS4yOTkwICAgIDAuNzUwMCAgICAwLjAwMDAgTyAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKICAgIDAuMDAwMCAgICAwLjAwMDAgICAgMC4wMDAwIE4gICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwCiAgICAxLjI5OTAgICAgMC43NTAwICAgIDAuMDAwMCBPICAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMAogICAtMC4wMDAwICAgLTEuNTAwMCAgICAwLjAwMDAgTyAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKICAgLTEuMjk5MCAgIC0yLjI1MDAgICAgMC4wMDAwIE4gICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwCiAgIC0yLjU5ODEgICAtMS41MDAwICAgIDAuMDAwMCBPICAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMAogICAtMS4yOTkwICAgLTMuNzUwMCAgICAwLjAwMDAgTyAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKICAxICAyICAyICAwCiAgMiAgMyAgMSAgMAogIDIgIDQgIDEgIDAKICA0ICA1ICAxICAwCiAgNSAgNiAgMiAgMAogIDUgIDcgIDEgIDAKTSAgQ0hHICA0ICAgMiAgIDEgICAzICAtMSAgIDUgICAxICAgNyAgLTEKTSAgRU5ECg==</desc>
+</svg>

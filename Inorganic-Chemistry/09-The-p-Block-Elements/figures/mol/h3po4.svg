@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <rect width="100%" height="100%" fill="white" stroke="black"/>
+  <text x="150" y="80" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold">Phosphoric acid H₃PO₄</text>
+  <text x="150" y="105" text-anchor="middle" font-family="Arial" font-size="11">OP(O)(O)O</text>
+  <text x="150" y="130" text-anchor="middle" font-family="Arial" font-size="9" fill="gray">tribasic PO(OH)3</text>
+  <desc id="ketcher-data" data-format="mol">CiAgICAgUkRLaXQgICAgICAgICAgMkQKCiAgNSAgNCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMDk5OSBWMjAwMAogICAgMC4wMDAwICAgIDAuMDAwMCAgICAwLjAwMDAgTyAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKICAgIDEuMjk5MCAgICAwLjc1MDAgICAgMC4wMDAwIFAgICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwCiAgICAyLjU5ODEgICAgMS41MDAwICAgIDAuMDAwMCBPICAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMAogICAgMi4wNDkwICAgLTAuNTQ5MCAgICAwLjAwMDAgTyAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKICAgIDAuNTQ5MCAgICAyLjA0OTAgICAgMC4wMDAwIE8gICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwCiAgMSAgMiAgMSAgMAogIDIgIDMgIDEgIDAKICAyICA0ICAxICAwCiAgMiAgNSAgMSAgMApNICBFTkQK</desc>
+</svg>

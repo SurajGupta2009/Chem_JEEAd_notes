@@ -9,7 +9,7 @@
 | NCERT edition | Rationalised NCERT (2023 onwards) |
 | Needed for | JEE Main, JEE Advanced |
 | PDF | [`kech104.pdf`](kech104.pdf) |
-| Module PDF | _not uploaded yet_ |
+| Module PDF | [`CHEMICAL BONDING- Theory.pdf`](CHEMICAL%20BONDING-%20Theory.pdf) |
 | Official URL | https://ncert.nic.in/textbook/pdf/kech104.pdf |
 | Mirror used | `AnonymousCoder-hub/NCERT-Textbooks-Physics-Chemistry-Biology` -> `Chemistry_11_Part1/Chapter_04.pdf` |
 
@@ -19,4 +19,4 @@ This chapter is in the current (rationalised) NCERT textbook, which is what the 
 
 ## Notes
 
-<!-- Add your notes for this chapter below (notes.md). -->
+Combined NCERT + Allen notes for JEE Main + Advanced are in [`notes.md`](notes.md). Filed under Inorganic Chemistry — see the [branch index](../README.md).

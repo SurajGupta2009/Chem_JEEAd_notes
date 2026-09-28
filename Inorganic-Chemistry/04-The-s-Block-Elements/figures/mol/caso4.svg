@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <rect width="100%" height="100%" fill="white" stroke="black"/>
+  <text x="150" y="80" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold">Calcium sulphate CaSO₄</text>
+  <text x="150" y="105" text-anchor="middle" font-family="Arial" font-size="11">[Ca+2].[O-]S([O-])(=O)=O</text>
+  <text x="150" y="130" text-anchor="middle" font-family="Arial" font-size="9" fill="gray">gypsum</text>
+  <desc id="ketcher-data" data-format="mol">CiAgICAgUkRLaXQgICAgICAgICAgMkQKCiAgNiAgNCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMDk5OSBWMjAwMAogICAgMy41OTgxICAgIDAuMDAwMCAgICAwLjAwMDAgQ2EgIDAgIDAgIDAgIDAgIDAgMTUgIDAgIDAgIDAgIDAgIDAgIDAKICAgIDAuMDAwMCAgICAwLjAwMDAgICAgMC4wMDAwIE8gICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwCiAgICAxLjI5OTAgICAgMC43NTAwICAgIDAuMDAwMCBTICAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMAogICAgMi41OTgxICAgIDEuNTAwMCAgICAwLjAwMDAgTyAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKICAgIDIuMDQ5MCAgIC0wLjU0OTAgICAgMC4wMDAwIE8gICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwCiAgICAwLjU0OTAgICAgMi4wNDkwICAgIDAuMDAwMCBPICAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMAogIDIgIDMgIDEgIDAKICAzICA0ICAxICAwCiAgMyAgNSAgMiAgMAogIDMgIDYgIDIgIDAKTSAgQ0hHICAzICAgMSAgIDIgICAyICAtMSAgIDQgIC0xCk0gIEVORAo=</desc>
+</svg>

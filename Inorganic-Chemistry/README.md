@@ -7,7 +7,7 @@ own order (Class XI first, then Class XII, by NCERT unit).
 | # | Chapter | Class | NCERT unit | Code | Edition | Needed for | Notes |
 |---|---|---|---|---|---|---|---|
 | 01 | [Classification of Elements and Periodicity in Properties](01-Classification-of-Elements-and-Periodicity-in-Properties) | 11 | 3 | `kech103` | rationalised | Main + Advanced | ⏳ pending |
-| 02 | [Chemical Bonding and Molecular Structure](02-Chemical-Bonding-and-Molecular-Structure) | 11 | 4 | `kech104` | rationalised | Main + Advanced | ⏳ pending |
+| 02 | [Chemical Bonding and Molecular Structure](02-Chemical-Bonding-and-Molecular-Structure) | 11 | 4 | `kech104` | rationalised | Main + Advanced | [✅ notes.md](02-Chemical-Bonding-and-Molecular-Structure/notes.md) |
 | 03 | [Hydrogen](03-Hydrogen) | 11 | 11 | `kech202` | legacy 2018-19 | **Advanced only** | ⏳ pending |
 | 04 | [The s-Block Elements (Alkali and Alkaline Earth Metals)](04-The-s-Block-Elements) | 11 | 12 | `kech203` | legacy 2018-19 | **Advanced only** | ⏳ pending |
 | 05 | [The p-Block Elements (Groups 13 and 14)](05-The-p-Block-Elements) | 11 | 13 | `kech204` | legacy 2018-19 | **Advanced only** | ⏳ pending |

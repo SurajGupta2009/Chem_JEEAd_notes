@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <rect width="100%" height="100%" fill="white" stroke="black"/>
+  <text x="150" y="80" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold">Xenon hexafluoride XeF₆</text>
+  <text x="150" y="105" text-anchor="middle" font-family="Arial" font-size="11">F[Xe](F)(F)(F)(F)F</text>
+  <text x="150" y="130" text-anchor="middle" font-family="Arial" font-size="9" fill="gray">distorted octahedral sp3d3 1lp</text>
+  <desc id="ketcher-data" data-format="mol">CiAgICAgUkRLaXQgICAgICAgICAgMkQKCiAgNyAgNiAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMDk5OSBWMjAwMAogICAgMC4wMDAwICAgIDAuMDAwMCAgICAwLjAwMDAgRiAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKICAgIDEuMjk5MCAgICAwLjc1MDAgICAgMC4wMDAwIFhlICAwICAwICAwICAwICAwICA2ICAwICAwICAwICAwICAwICAwCiAgICAyLjU5ODEgICAtMC4wMDAwICAgIDAuMDAwMCBGICAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMAogICAgMi43MjU2ICAgIDEuMjEzNSAgICAwLjAwMDAgRiAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKICAgIDAuNjg4OSAgICAyLjEyMDMgICAgMC4wMDAwIEYgICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwCiAgICAxLjkwOTEgICAgMi4xMjAzICAgIDAuMDAwMCBGICAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMAogICAtMC4xMjc1ICAgIDEuMjEzNSAgICAwLjAwMDAgRiAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKICAxICAyICAxICAwCiAgMiAgMyAgMSAgMAogIDIgIDQgIDEgIDAKICAyICA1ICAxICAwCiAgMiAgNiAgMSAgMAogIDIgIDcgIDEgIDAKTSAgRU5ECg==</desc>
+</svg>

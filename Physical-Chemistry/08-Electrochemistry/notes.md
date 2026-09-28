@@ -62,29 +62,48 @@ tags: [chemistry, jee]
 
 ## 1. Two kinds of conductance, two kinds of cell (2.1)
 
-```
- ELECTRONIC (metallic) conduction        ELECTROLYTIC (ionic) conduction
-   carriers = electrons                    carriers = ions (in solution or melt)
-   no mass transported                       mass IS transported → chemical change
-   conductivity 10⁶–10⁸ S m⁻¹                decreases on cooling (viscosity ↓ when warm)
-   ρ ↑ with T (lattice vibrations)          ρ ↓ with T (ions move faster)  ⚠ opposite!
-   e.g. Cu 6×10⁷ S m⁻¹                        e.g. 1 M KCl ≈ 11 S m⁻¹ (a metal is ~10⁶× better)
-   NCERT's Table 2.2 (conductivity /S m⁻¹ at 298.15 K) — memorise the ORDERS, they decide
-   most factual MCQs:
-     conductors block: Na, Cu, Ag, Au, Fe — order 10⁷ S m⁻¹, plus graphite, the
-       non-metal that conducts electronically (order 10⁴)
-     insulators:    glass 1.0×10⁻¹⁶, Teflon 1.0×10⁻¹⁸
-     semiconductors: CuO 1×10⁻⁷, Si 1.5×10⁻², Ge 2.0   ← between the two blocks
-     aqueous solutions: pure water 3.5×10⁻⁵, 0.01 M KCl 0.14, 0.01 M NaCl 0.12,
-                        0.1 M HCl 3.91, 0.1 M CH₃COOH 0.047, 0.01 M CH₃COOH 0.016
-   ⚠ the last five lines are the exam's favourite: 0.1 M HCl / 0.1 M acetic acid
-     = 3.91/0.047 ≈ 83× — the entire gap is the degree of ionisation, not "HCl is
-     more soluble". And pure water's 3.5×10⁻⁵ S m⁻¹ comes from its own ~10⁻⁷ M
-     H⁺/OH⁻ (Kw, Equilibrium §14) — the number that makes §10's Λ°m(H₂O) trick work.
- superconductors: ρ = 0 below T_c (NCERT: metals at 0–15 K; ceramics up to ~150 K)
- electronically conducting polymers: polyacetylene, polyaniline, polypyrrole
-   (Nobel 2000 — MacDiarmid, Heeger, Shirakawa) → light-weight batteries, bendable devices
-```
+ELECTRONIC (metallic) conduction        ELECTROLYTIC (ionic) conduction
+
+carriers = electrons                    carriers = ions (in solution or melt)
+
+$\ce{no mass transported                       mass IS transported -> chemical change}$
+
+conductivity 10⁶–10⁸ S m⁻¹                decreases on cooling (viscosity ↓ when warm)
+
+ρ ↑ with T (lattice vibrations)          ρ ↓ with T (ions move faster)  ⚠ opposite!
+
+e.g. Cu 6×10⁷ S m⁻¹                        e.g. 1 M KCl ≈ 11 S m⁻¹ (a metal is ~10⁶× better)
+
+NCERT's Table 2.2 (conductivity /S m⁻¹ at 298.15 K) — memorise the ORDERS, they decide
+
+most factual MCQs:
+
+conductors block: Na, Cu, Ag, Au, Fe — order 10⁷ S m⁻¹, plus graphite, the
+
+non-metal that conducts electronically (order 10⁴)
+
+insulators:    glass 1.0×10⁻¹⁶, Teflon 1.0×10⁻¹⁸
+
+semiconductors: CuO 1×10⁻⁷, Si 1.5×10⁻², Ge 2.0   ← between the two blocks
+
+aqueous solutions: pure water 3.5×10⁻⁵, 0.01 M KCl 0.14, 0.01 M NaCl 0.12,
+
+0.1 M HCl 3.91, 0.1 M CH₃COOH 0.047, 0.01 M CH₃COOH 0.016
+
+⚠ the last five lines are the exam's favourite: 0.1 M HCl / 0.1 M acetic acid
+
+= 3.91/0.047 ≈ 83× — the entire gap is the degree of ionisation, not "HCl is
+
+more soluble". And pure water's 3.5×10⁻⁵ S m⁻¹ comes from its own ~10⁻⁷ M
+
+H⁺/OH⁻ (Kw, Equilibrium §14) — the number that makes §10's Λ°m(H₂O) trick work.
+
+superconductors: ρ = 0 below T_c (NCERT: metals at 0–15 K; ceramics up to ~150 K)
+
+electronically conducting polymers: polyacetylene, polyaniline, polypyrrole
+
+$\ce{(Nobel 2000 — MacDiarmid, Heeger, Shirakawa) -> light-weight batteries, bendable devices}$
+
 
 **The two cells (NCERT's Fig 2.1–2.2, and it is the *same* cell doing both):**
 
@@ -109,17 +128,14 @@ anode becomes the cathode.
 
 ## 2. The galvanic cell, cell notation and the salt bridge (2.2)
 
+```mermaid
+flowchart LR
+    Zn["Zn(s) anode (-)<br>Zn → Zn²⁺ + 2e⁻<br>E° = -0.76 V"] -->|e⁻ through wire| Cu["Cu(s) cathode (+)<br>Cu²⁺ + 2e⁻ → Cu<br>E° = +0.34 V"]
+    Zn --- SB["Salt bridge<br>KCl / NH₄NO₃ in agar<br>maintains neutrality"]
+    SB --- Cu
 ```
- DANIELL CELL   Zn(s) | ZnSO₄(aq) ‖ CuSO₄(aq) | Cu(s)        E° = 1.10 V
-   anode (−)                                    cathode (+)
-   Zn → Zn²⁺ + 2e⁻                              Cu²⁺ + 2e⁻ → Cu
-        │  e⁻ flow: anode → cathode through the wire  │
-        │  (conventional current: Cu → Zn)            │
-   ┌────┴────┐   salt bridge (KCl/NH₄NO₃ in agar) ┌───┴────┐
-   │ Zn²⁺↑   │  ← anions (Cl⁻, NO₃⁻) drift here   │ Cu²⁺↓  │
-   │ SO₄²⁻   │  cations (K⁺) drift that way →      │ SO₄²⁻  │
-   └─────────┘                                     └────────┘
-```
+*Daniell cell: Zn anode oxidizes, Cu²⁺ reduces at cathode; salt bridge completes circuit.*
+
 
 ### IUPAC cell notation rules (asked as "represent the cell")
 
@@ -134,15 +150,14 @@ anode becomes the cathode.
    `(right-hand reduction) − (left-hand reduction)` — i.e. reduce the right, oxidise the left,
    and add.
 
-```
- worked: "Depict the cell for Zn(s) + 2Ag⁺(aq) → Zn²⁺(aq) + 2Ag(s)"   (NCERT Q2.3/Q7.30)
+worked: "Depict the cell for Zn(s) + 2Ag⁺(aq) → Zn²⁺(aq) + 2Ag(s)"   (NCERT Q2.3/Q7.30)
    (−) Zn(s) | Zn²⁺(aq) ‖ Ag⁺(aq) | Ag(s) (+)        E°cell = 0.80 − (−0.76) = +1.56 V
  worked: Fe³⁺/Fe²⁺ vs MnO₄⁻/Mn²⁺ cell
    (−) Pt | Fe²⁺(aq), Fe³⁺(aq) ‖ MnO₄⁻(aq), Mn²⁺(aq), H⁺(aq) | Pt (+)
    anode:  5×[Fe²⁺ → Fe³⁺ + e⁻]
    cathode: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O
    overall: MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O     E° = 1.51 − 0.77 = +0.74 V
-```
+
 
 **Salt bridge:** inverted U-tube with a saturated solution of **KCl / KNO₃ / NH₄NO₃ in agar
 agar**. Four functions: (i) completes the circuit, (ii) maintains **electrical neutrality**
@@ -162,8 +177,7 @@ chapter and it is the link to [Equilibrium §9](../04-Equilibrium/notes.md).
 
 ## 3. Electrode potential, SHE and the electrochemical series (2.2.1)
 
-```
- ELECTRODE POTENTIAL E = the potential difference between the metal and its solution,
+ELECTRODE POTENTIAL E = the potential difference between the metal and its solution,
    caused by the tendency of M to leave as Mⁿ⁺ (solution pressure) versus the tendency of
    Mⁿ⁺ to plate back (osmotic pressure).  Only a DIFFERENCE of two of these is measurable.
 
@@ -179,7 +193,7 @@ chapter and it is the link to [Equilibrium §9](../04-Equilibrium/notes.md).
    E°(Zn²⁺/Zn) from  Pt,H₂(1 bar)|H⁺(1M) ‖ Zn²⁺(1M)|Zn  = −0.76 V
    ⇒ the negative sign means Zn has a GREATER tendency to be oxidised than H₂, i.e. the
      Zn²⁺/Zn couple is a stronger REDUCING system than H⁺/H₂ (NCERT's wording).
-```
+
 
 **Rules for using the series (all four are asked):**
 
@@ -195,8 +209,7 @@ chapter and it is the link to [Equilibrium §9](../04-Equilibrium/notes.md).
 
 **The series in action — NCERT's own questions, answered:**
 
-```
- (a) strongest reductant = Li (E° = −3.05 V) → its ion Li⁺ is the WEAKEST oxidant;
+(a) strongest reductant = Li (E° = −3.05 V) → its ion Li⁺ is the WEAKEST oxidant;
      strongest oxidant in the table = F₂ (+2.87) → F⁻ the weakest reductant.
  (b) intext 2.1, "how would you determine E° for Mg²⁺|Mg?" — build the cell
      Pt,H₂(1 bar)|H⁺(1 M) ‖ Mg²⁺(1 M)|Mg and read the emf on a high-resistance voltmeter;
@@ -215,7 +228,7 @@ chapter and it is the link to [Equilibrium §9](../04-Equilibrium/notes.md).
  (g) Q2.1: "arrange Al, Cu, Fe, Mg, Zn by mutual displacement" and Q2.2: "K, Ag, Hg, Mg, Cr
      in increasing reducing power" are the SAME skill — sort by E°, then read the list from
      the bottom up: Ag (0.80) < Hg (0.79) < Cr (−0.74) < Mg (−2.37) < K (−2.93).
-```
+
 
 ⚠ **NCERT's own caution about the Li anomaly** (2.2.1): Li has the **lowest** E° of all
 metals (strongest reductant in water) *because* of its very large hydration enthalpy, even
@@ -227,47 +240,58 @@ reductant" is wrong for aqueous solution; the full cycle is
 
 **Electrode form** (for `Mⁿ⁺ + ne⁻ → M`, NCERT's Eq. 2.8):
 
-```
-   E = E° − (RT/nF) ln( a_red / a_ox )
+E = E° − (RT/nF) ln( a_red / a_ox )
    E(Mⁿ⁺/M) = E° − (RT/nF) ln(1/[Mⁿ⁺]) = E° + (RT/nF) ln[Mⁿ⁺]
             = E° + (0.0591/n) log[Mⁿ⁺]                 at 298 K
    ⚠ general mnemonic:  E = E° + (0.0591/n) log( OXIDISED form / REDUCED form )
      — with solids = 1, liquids = 1, gases as p/bar, and H⁺/OH⁻ included when they appear.
-```
+
 
 **Cell form:**
 
-```
-   E_cell = E°_cell − (RT/nF) ln Q = E°_cell − (0.0591/n) log Q     (n = e⁻ per cell reaction)
-```
+E_cell = E°_cell − (RT/nF) ln Q = E°_cell − (0.0591/n) log Q     (n = e⁻ per cell reaction)
+
 
 **The special cases that appear in papers:**
 
-```
- hydrogen electrode    2H⁺ + 2e⁻ ⇌ H₂(g)
-   E = 0 + (0.0591/2)log([H⁺]²/p_H₂) = 0.0591 log[H⁺] − (0.0591/2)log p_H₂
-   at p_H₂ = 1 bar:  E = −0.0591 pH        ← the basis of pH measurement!
-   intext 2.4: pH 10 → E = −0.0591 × 10 = −0.591 V
+$\ce{hydrogen electrode    2H⁺ + 2e⁻ <=> H₂(g)}$
 
- metal electrode       Mⁿ⁺ + ne⁻ → M :   E = E° + (0.0591/n) log[Mⁿ⁺]
-   ⚠ for Ag⁺/Ag (n = 1) a 10-fold dilution lowers E by 59.1 mV; for Cu²⁺/Cu (n = 2) by 29.5 mV
+E = 0 + (0.0591/2)log([H⁺]²/p_H₂) = 0.0591 log[H⁺] − (0.0591/2)log p_H₂
 
- metal–insoluble-salt  AgCl(s) + e⁻ → Ag(s) + Cl⁻
-   E = E°(AgCl/Ag) − 0.0591 log[Cl⁻]   (E° = +0.22 V)  ← "second kind"; Ksp comes out of it
-   similarly AgBr/Ag (+0.10 V), Hg₂Cl₂/Hg (calomel +0.27 V; saturated calomel +0.244 V)
+at p_H₂ = 1 bar:  E = −0.0591 pH        ← the basis of pH measurement!
 
- redox (inert Pt)      Fe³⁺ + e⁻ → Fe²⁺ :  E = 0.77 + 0.0591 log([Fe³⁺]/[Fe²⁺])
-   MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O:
-     E = 1.51 + (0.0591/5) log( [MnO₄⁻][H⁺]⁸/[Mn²⁺] )
-       = 1.51 − 0.0945 pH  at [MnO₄⁻] = [Mn²⁺]      ⚠ 8/5 × 0.0591 = 0.0945 V per pH unit
-   Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O:
-     E = 1.33 + (0.0591/6)log(...) and it drops 0.138 V per pH unit (14/6 × 0.0591)
-   ⇒ "permanganate/dichromate are strong oxidants only in ACID" is a Nernst statement, not
-     an O.S. statement — and the same slope logic is why oxidants that consume H⁺ weaken in base.
+$\ce{intext 2.4: pH 10 -> E = −0.0591 × 10 = −0.591 V}$
 
- gas electrodes        O₂ + 4H⁺ + 4e⁻ → 2H₂O : E = 1.23 − 0.0591 pH
-                       Cl₂ + 2e⁻ → 2Cl⁻        : E = 1.36 − 0.0591 log[Cl⁻]
-```
+$\ce{metal electrode       Mⁿ⁺ + ne⁻ -> M :   E = E° + (0.0591/n) log[Mⁿ⁺]}$
+
+⚠ for Ag⁺/Ag (n = 1) a 10-fold dilution lowers E by 59.1 mV; for Cu²⁺/Cu (n = 2) by 29.5 mV
+
+$\ce{metal–insoluble-salt  AgCl(s) + e⁻ -> Ag(s) + Cl⁻}$
+
+E = E°(AgCl/Ag) − 0.0591 log[Cl⁻]   (E° = +0.22 V)  ← "second kind"; Ksp comes out of it
+
+similarly AgBr/Ag (+0.10 V), Hg₂Cl₂/Hg (calomel +0.27 V; saturated calomel +0.244 V)
+
+$\ce{redox (inert Pt)      Fe³⁺ + e⁻ -> Fe²⁺ :  E = 0.77 + 0.0591 log([Fe³⁺]/[Fe²⁺])}$
+
+$\ce{MnO₄⁻ + 8H⁺ + 5e⁻ -> Mn²⁺ + 4H₂O:}$
+
+E = 1.51 + (0.0591/5) log( [MnO₄⁻][H⁺]⁸/[Mn²⁺] )
+
+= 1.51 − 0.0945 pH  at [MnO₄⁻] = [Mn²⁺]      ⚠ 8/5 × 0.0591 = 0.0945 V per pH unit
+
+$\ce{Cr₂O₇²⁻ + 14H⁺ + 6e⁻ -> 2Cr³⁺ + 7H₂O:}$
+
+E = 1.33 + (0.0591/6)log(...) and it drops 0.138 V per pH unit (14/6 × 0.0591)
+
+$\ce{-> "permanganate/dichromate are strong oxidants only in ACID" is a Nernst statement, not}$
+
+an O.S. statement — and the same slope logic is why oxidants that consume H⁺ weaken in base.
+
+$\ce{gas electrodes        O₂ + 4H⁺ + 4e⁻ -> 2H₂O : E = 1.23 − 0.0591 pH}$
+
+$\ce{Cl₂ + 2e⁻ -> 2Cl⁻}$  : E = 1.36 − 0.0591 log[Cl⁻]
+
 
 > **⚠ Four recurring slips**
 > 1. **log vs ln** — `2.303RT/F = 0.0591 V` is for **log₁₀**; with ln the coefficient is
@@ -293,49 +317,60 @@ flowchart TD
 
 ## 5. Emf, ΔG and K: the three-way conversion (2.3.1)
 
+```mermaid
+flowchart TD
+    N0["electrical work = −ΔG   (reversible cell at constant T, p)"]
+    N1["───────────────────────────────────────────────────────────"]
+    N2["ΔG  = −nF E_cell                       (any state)"]
+    N3["ΔG° = −nF E°_cell                      (standard state)"]
+    N4["ΔG° = −RT lnK   ⇒   lnK = nFE°/RT   ⇒   log K = n E°_cell / 0.0591   (298 K)"]
+    N5["───────────────────────────────────────────────────────────"]
+    N6["at equilibrium: E_cell = 0 and Q = K  (a dead battery is an equilibrated cell)"]
+    N0 --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
+    N5 --> N6
 ```
-   electrical work = −ΔG   (reversible cell at constant T, p)
-   ───────────────────────────────────────────────────────────
-   ΔG  = −nF E_cell                       (any state)
-   ΔG° = −nF E°_cell                      (standard state)
-   ΔG° = −RT lnK   ⇒   lnK = nFE°/RT   ⇒   log K = n E°_cell / 0.0591   (298 K)
-   ───────────────────────────────────────────────────────────
-   at equilibrium: E_cell = 0 and Q = K  (a dead battery is an equilibrated cell)
-```
+*Converted from ASCII: {lines[0][:80] if lines else ''}*
 
-```
-  Handy magnitudes at 298 K (memorise the scale, not the formula):
-    E° = +0.0591 V  (n=1)  → K = 10        E° = +0.30 V (n=2) → K = 10¹⁰
-    E° = +0.20 V  (n=1)  → K ≈ 2×10³      E° = −0.0591 V     → K = 0.1
-    1 electron, 0.0591 V ⇒ ΔG° = −5.7 kJ mol⁻¹ (the same 5.708 kJ as in Equilibrium §9)
-```
+
+Handy magnitudes at 298 K (memorise the scale, not the formula):
+
+$\ce{E° = +0.0591 V  (n=1)  -> K = 10        E° = +0.30 V (n=2) -> K = 10¹⁰}$
+
+$\ce{E° = +0.20 V  (n=1)  -> K ≈ 2×10³      E° = −0.0591 V     -> K = 0.1}$
+
+$\ce{1 electron, 0.0591 V -> ΔG° = −5.7 kJ mol⁻¹ (the same 5.708 kJ as in Equilibrium §9)}$
+
 
 **NCERT's own worked example (intext 2.6):** `2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I₂`, E°cell = 0.236 V,
 n = 2:
 
-```
-   ΔG° = −2 × 96487 × 0.236 = −45.54 kJ mol⁻¹
-   log K = nE°/0.0591 = 2 × 0.236/0.0591 = 7.99  ⇒ K = 9.62×10⁷  ✔ NCERT's two answers
-   ✔ the reaction is quantitative → which is exactly why iodometry can ASSAY Fe³⁺,
-     and why FeI₃ cannot be bottled (Redox notes §8).
-```
+ΔG° = −2 × 96487 × 0.236 = −45.54 kJ mol⁻¹
+
+$\ce{log K = nE°/0.0591 = 2 × 0.236/0.0591 = 7.99  -> K = 9.62×10⁷  ✔ NCERT's two answers}$
+
+$\ce{✔ the reaction is quantitative -> which is exactly why iodometry can ASSAY Fe³⁺,}$
+
+and why FeI₃ cannot be bottled (Redox notes §8).
+
 
 **Emf at non-standard conditions (intext 2.5):** `Ni(s) + 2Ag⁺(0.002 M) → Ni²⁺(0.160 M) + 2Ag`,
 E° = 1.05 V:
 
-```
-   Q = [Ni²⁺]/[Ag⁺]² = 0.160/(0.002)² = 4.0×10⁴
+Q = [Ni²⁺]/[Ag⁺]² = 0.160/(0.002)² = 4.0×10⁴
    E = 1.05 − (0.0591/2) log(4.0×10⁴) = 1.05 − 0.0296 × 4.602 = 1.05 − 0.136 = 0.91 V ✔
    ⚠ note the tiny [Ag⁺] (0.002 M) is SQUARED, giving a large Q and a 140 mV loss.
-```
+
 
 ## 6. Concentration cells 🆇
 
 A cell whose two half-cells are the **same electrode reaction** at **different
 concentrations**. Then **E°cell = 0** and *all* the driving force comes from dilution:
 
-```
-   electrolyte concentration cell (transference, two H₂ electrodes at different p, or):
+electrolyte concentration cell (transference, two H₂ electrodes at different p, or):
      Pt|H₂(p₁)|H⁺(c) | H⁺(c)|H₂(p₂)|Pt   →  E = (0.0591/2) log(p₂/p₁)
 
    the standard two-compartment type:
@@ -346,7 +381,7 @@ concentrations**. Then **E°cell = 0** and *all* the driving force comes from di
      the cell works only as long as the two concentrations are unequal ⇒ both tend to
      EQUALISE (ΔG of dilution is the energy source).
    with Ag/Ag⁺, n = 1: c₂:c₁ = 10 → E = 59.1 mV; c₂:c₁ = 100 → 118 mV.
-```
+
 
 ⚠ JEE favourite: "in a concentration cell, E° = 0 but E ≠ 0; ΔH ≈ 0 for the ideal dilution,
 yet ΔG < 0 — so the work is paid for by **TΔS** of mixing." That reasoning (entropy-driven
@@ -363,20 +398,26 @@ KCl) is what makes E clean.
 **E° values cannot be added; ΔG° values can.** For two consecutive reductions
 `Ox₁ → Ox₂ (n₁, E₁)` and `Ox₂ → Red (n₂, E₂)`:
 
-```
-   E°(Ox₁/Red) = (n₁E₁ + n₂E₂)/(n₁ + n₂)                      (weight by electron count!)
+E°(Ox₁/Red) = (n₁E₁ + n₂E₂)/(n₁ + n₂)                      (weight by electron count!)
 
- (1) Fe³⁺ + e⁻ → Fe²⁺   +0.77        (2) Cu²⁺ + e⁻ → Cu⁺  +0.153
-     Fe²⁺ + 2e⁻ → Fe     −0.44            Cu⁺ + e⁻ → Cu    +0.521
-     E°(Fe³⁺/Fe) = (1(0.77) + 2(−0.44))/3 = −0.037 V       E°(Cu²⁺/Cu) = (0.153+0.521)/2 = +0.337
-     ⚠ note the 2 multiplies the n = 2 step: this is why Fe³⁺/Fe is only *slightly*
-       negative even though Fe²⁺/Fe is −0.44 (i.e. Fe³⁺ is a poor "direct" oxidant to metal,
-       and rust forms through Fe²⁺ first — see §17).
+$\ce{(1) Fe³⁺ + e⁻ -> Fe²⁺}$  +0.77  (2) Cu²⁺ + e⁻ → Cu⁺  +0.153
 
- ΔG° check: ΔG° = −nFE°;  E° = −ΔG°/(nF)   — always derive through ΔG° if unsure.
- Also: E° can be got from ΔfG° data (Advanced 2013 style):
-   ΔG°_rxn = ΣνΔfG°(products) − ΣνΔfG°(reactants), then E°cell = −ΔG°/(nF).
-```
+$\ce{Fe²⁺ + 2e⁻ -> Fe}$  −0.44  Cu⁺ + e⁻ → Cu  +0.521
+
+E°(Fe³⁺/Fe) = (1(0.77) + 2(−0.44))/3 = −0.037 V       E°(Cu²⁺/Cu) = (0.153+0.521)/2 = +0.337
+
+⚠ note the 2 multiplies the n = 2 step: this is why Fe³⁺/Fe is only *slightly*
+
+negative even though Fe²⁺/Fe is −0.44 (i.e. Fe³⁺ is a poor "direct" oxidant to metal,
+
+and rust forms through Fe²⁺ first — see §17).
+
+ΔG° check: ΔG° = −nFE°;  E° = −ΔG°/(nF)   — always derive through ΔG° if unsure.
+
+Also: E° can be got from ΔfG° data (Advanced 2013 style):
+
+ΔG°_rxn = ΣνΔfG°(products) − ΣνΔfG°(reactants), then E°cell = −ΔG°/(nF).
+
 
 ⚠ A related trap: "E° for `2H₂O + 2e⁻ → H₂ + 2OH⁻` in base is −0.83 V; is that the same
 electrode as H⁺/H₂?" — **yes** — it is the *hydrogen electrode at pH 14*, and
@@ -390,17 +431,24 @@ understand pH dependence).
 
 ## 8. G, κ, resistivity and the cell constant (2.4.1)
 
-```
- conductance      G = 1/R                 [S = Ω⁻¹ = mho]
- resistivity      ρ = R·A/l               [Ω m]
- CONDUCTIVITY κ = 1/ρ = G·(l/A)           [S m⁻¹ or S cm⁻¹]
-        (l/A) = CELL CONSTANT G*  →  κ = G × G* = (1/R)(l/A)
- molar conductivity  Λm = κ/c             [S m² mol⁻¹]
-     with κ in S cm⁻¹ and c in mol L⁻¹:   Λm = (1000 κ)/c   [S cm² mol⁻¹]
- equivalent conductivity Λeq = 1000κ/N    [S cm² equiv⁻¹]
-     and  Λm = n × Λeq    (n = total cationic/anionic charge per formula unit, "z₊ν₊")
-     e.g. Λm(Na₂SO₄) = 2 Λeq(Na₂SO₄) ; Λm(AlCl₃) = 3 Λeq
-```
+conductance      G = 1/R                 [S = Ω⁻¹ = mho]
+
+resistivity      ρ = R·A/l               [Ω m]
+
+CONDUCTIVITY κ = 1/ρ = G·(l/A)           [S m⁻¹ or S cm⁻¹]
+
+$\ce{(l/A) = CELL CONSTANT G*  ->  κ = G × G* = (1/R)(l/A)}$
+
+molar conductivity  Λm = κ/c             [S m² mol⁻¹]
+
+with κ in S cm⁻¹ and c in mol L⁻¹:   Λm = (1000 κ)/c   [S cm² mol⁻¹]
+
+equivalent conductivity Λeq = 1000κ/N    [S cm² equiv⁻¹]
+
+and  Λm = n × Λeq    (n = total cationic/anionic charge per formula unit, "z₊ν₊")
+
+e.g. Λm(Na₂SO₄) = 2 Λeq(Na₂SO₄) ; Λm(AlCl₃) = 3 Λeq
+
 
 ⚠ **Unit conversion is where marks are lost.** `1 S m⁻¹ = 10⁻² S cm⁻¹`;
 `1 S m² mol⁻¹ = 10⁴ S cm² mol⁻¹`. NCERT's own worked conversion:
@@ -410,18 +458,16 @@ understand pH dependence).
 **Cell constant** is determined by calibration with a standard KCl solution whose κ is known
 (NCERT uses κ(0.001 M KCl, 298 K) = 0.146×10⁻³ S cm⁻¹):
 
-```
- G* = κ × R  = 0.146×10⁻³ S cm⁻¹ × 1500 Ω = 0.219 cm⁻¹        (NCERT's example)
+G* = κ × R  = 0.146×10⁻³ S cm⁻¹ × 1500 Ω = 0.219 cm⁻¹        (NCERT's example)
  then for an unknown in the SAME cell:  κ = G*/R = 0.219/500 = 4.38×10⁻⁴ S cm⁻¹
    and Λm = 1000κ/c = 1000 × 4.38×10⁻⁴ / 0.001 = 438 S cm² mol⁻¹ ✔
  ⚠ the resistance of the WATER/solvent must be subtracted before κ is used for a
    sparingly soluble salt (§10, application 4) — this correction is a question in itself.
-```
+
 
 ### How R (hence κ) is actually measured — NCERT 2.4.1 as a "give the reason" list
 
-```
- A conductivity cell = two Pt electrodes (area A, distance l) dipped in the solution;
+A conductivity cell = two Pt electrodes (area A, distance l) dipped in the solution;
  the liquid between them is a column whose resistance is, by NCERT's Eq. 2.17,
      R = ρ l/A = (1/κ)(l/A)      ⇒  κ = (1/R)(l/A) = G × (cell constant)
  It is read on a WHEATSTONE bridge — but with THREE changes, each one a question:
@@ -436,40 +482,55 @@ understand pH dependence).
  with a standard KCl solution of known κ, then use it for every unknown in that cell.
  ⚠ so κ of an unknown = (known κ of KCl × R_KCl) / R_unknown  — the one-line ratio form
    that solves most calibration problems without ever computing G*.
-```
+
 
 ## 9. Λm, Λeq and their variation with concentration (2.4.2)
 
-```
-   κ (conductivity)  DECREASES on dilution  — fewer ions per unit volume
-   Λm (molar cond.)  INCREASES on dilution  — reasons DIFFER for the two classes:
+κ (conductivity)  DECREASES on dilution  — fewer ions per unit volume
 
-   STRONG electrolytes (KCl, NaCl, HCl):  Λm rises only slightly, because interionic
-     attraction falls. Plot Λm vs √c is a straight line with a small negative slope,
-     extrapolatable to c → 0 ⇒  Λ°m measurable directly.
-        Λm = Λ°m − (A + BΛ°m)√c      (Debye–Hückel–Onsager) 🆇
-        A = relaxation (asymmetry) effect: the ionic atmosphere lags behind, dragging back
-        B = electrophoretic effect: the solvent shell of the counter-ion moves the other way
-     ⚠ for these, Λm/Λ°m is NOT the degree of dissociation (α = 1 already at all c).
+Λm (molar cond.)  INCREASES on dilution  — reasons DIFFER for the two classes:
 
-   WEAK electrolytes (CH₃COOH, NH₄OH):  Λm rises STEEPLY on dilution because α rises
-     (Ostwald: α = √(Ka/c)); the curve is very steep near c → 0 and CANNOT be
-     extrapolated — hence Kohlrausch's law is the only way to Λ°m (§10).
-```
+STRONG electrolytes (KCl, NaCl, HCl):  Λm rises only slightly, because interionic
 
+attraction falls. Plot Λm vs √c is a straight line with a small negative slope,
+
+$\ce{extrapolatable to c -> 0 ->}$  Λ°m measurable directly.
+
+Λm = Λ°m − (A + BΛ°m)√c      (Debye–Hückel–Onsager) 🆇
+
+A = relaxation (asymmetry) effect: the ionic atmosphere lags behind, dragging back
+
+B = electrophoretic effect: the solvent shell of the counter-ion moves the other way
+
+⚠ for these, Λm/Λ°m is NOT the degree of dissociation (α = 1 already at all c).
+
+WEAK electrolytes (CH₃COOH, NH₄OH):  Λm rises STEEPLY on dilution because α rises
+
+$\ce{(Ostwald: α = √(Ka/c)); the curve is very steep near c -> 0 and CANNOT be}$
+
+extrapolated — hence Kohlrausch's law is the only way to Λ°m (§10).
+
+
+```mermaid
+flowchart TD
+    N0["Λm                                Λm"]
+    N1["│        strong: KCl, HCl          │            weak: CH₃COOH"]
+    N2["│      ___________________─ Λ°m    │                     ／"]
+    N3["│   ／‾‾                    (linear│                  ／"]
+    N4["│ ／  in √c, small slope)          │                ／  steep, never reaches"]
+    N5["└──────────── √c                    └──────────── √c   Λ°m by extrapolation"]
+    N0 --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
 ```
-     Λm                                Λm
-      │        strong: KCl, HCl          │            weak: CH₃COOH
-      │      ___________________─ Λ°m    │                     ／
-      │   ／‾‾                    (linear│                  ／
-      │ ／  in √c, small slope)          │                ／  steep, never reaches
-      └──────────── √c                    └──────────── √c   Λ°m by extrapolation
-```
+*Converted from ASCII: {lines[0][:80] if lines else ''}*
+
 
 **NCERT's two factor lists (asked as "what does the conductivity depend on?"):**
 
-```
- metallic conductance:  (i) nature & structure of the metal, (ii) number of valence
+metallic conductance:  (i) nature & structure of the metal, (ii) number of valence
                           electrons per atom, (iii) temperature — it DECREASES as T rises.
  electrolytic conductance: (i) nature of the electrolyte, (ii) size of the ions and their
                           SOLVATION, (iii) nature of the solvent and its VISCOSITY,
@@ -477,7 +538,7 @@ understand pH dependence).
  ⚠ same five words, opposite temperature behaviour: heat shakes the lattice loose for ions
    but jiggles the metal's atoms into the electrons' path. "Resistance of an electrolytic
    solution decreases with temperature rise" is a standard true/false item.
-```
+
 
 **Intext 2.7 answered exactly as NCERT wants:** conductivity κ falls on dilution because the
 **number of charge carriers per unit volume** decreases, even though each ion becomes freer
@@ -514,64 +575,75 @@ why Λ°m(HCl), Λ°m(NaOH), Λ°m(KOH) are the largest among strong electrolyte
 
 ### Application 1 — Λ°m of a **weak** electrolyte by adding/subtracting strong ones
 
-```
- Λ°m(CH₃COOH) = Λ°m(HCl) + Λ°m(CH₃COONa) − Λ°m(NaCl)
+Λ°m(CH₃COOH) = Λ°m(HCl) + Λ°m(CH₃COONa) − Λ°m(NaCl)
               = 425.9   + 91.0          − 126.4     = 390.5 S cm² mol⁻¹ ✔ (NCERT Ex. 2.8)
  (equivalently λ°(H⁺) + λ°(CH₃COO⁻) = 349.6 + 40.9 = 390.5 ✔ the two routes must agree)
  Λ°m(NH₄OH) = Λ°m(NH₄Cl) + Λ°m(NaOH) − Λ°m(NaCl)
  Rule: pick a chain in which every intermediate species is a STRONG electrolyte.
-```
+
 
 ### Application 2 — degree of dissociation of a weak electrolyte
 
-```
-   α = Λm/Λ°m                        (NCERT Eq. 2.26; the "Kohlrausch–Arrhenius" relation)
-   Ka = cα²/(1−α) = cΛm²/(Λ°m(Λ°m − Λm))     (NCERT Eq. 2.27)   ← conductivity → Equilibrium §15
- intext 2.9 (methanoic acid): Λ°m = 349.6 + 54.6 = 404.2 ; Λm = 46.1 (c = 0.025 M)
-   α = 46.1/404.2 = 0.114 ;  Ka = 0.025(0.114)²/(1−0.114) = 3.67×10⁻⁴ ✔ (NCERT's answer)
- Q2.11 (acetic acid): κ = 7.896×10⁻⁵ S cm⁻¹, c = 0.00241 M
-   Λm = 1000κ/c = 32.76 ; α = 32.76/390.5 = 0.0839 ; Ka = 0.00241(0.0839)²/0.916 = 1.86×10⁻⁵ ✔
-```
+α = Λm/Λ°m                        (NCERT Eq. 2.26; the "Kohlrausch–Arrhenius" relation)
+
+$\ce{Ka = cα²/(1−α) = cΛm²/(Λ°m(Λ°m − Λm))     (NCERT Eq. 2.27)   ← conductivity -> Equilibrium §15}$
+
+intext 2.9 (methanoic acid): Λ°m = 349.6 + 54.6 = 404.2 ; Λm = 46.1 (c = 0.025 M)
+
+α = 46.1/404.2 = 0.114 ;  Ka = 0.025(0.114)²/(1−0.114) = 3.67×10⁻⁴ ✔ (NCERT's answer)
+
+Q2.11 (acetic acid): κ = 7.896×10⁻⁵ S cm⁻¹, c = 0.00241 M
+
+Λm = 1000κ/c = 32.76 ; α = 32.76/390.5 = 0.0839 ; Ka = 0.00241(0.0839)²/0.916 = 1.86×10⁻⁵ ✔
+
 
 ### Application 3 — solubility and Ksp of a **sparingly soluble** salt
 
-```
-   For AgCl: the saturated solution is so dilute that Λm ≈ Λ°m(AgCl) = 61.9 + 76.3 = 138.2
+For AgCl: the saturated solution is so dilute that Λm ≈ Λ°m(AgCl) = 61.9 + 76.3 = 138.2
    (λ°(Ag⁺) = 61.9 comes from a data book — NCERT's Table 2.4 stops at the ions it lists)
    κ(solution) − κ(water) = κ(AgCl)  ;  S = 1000 κ(AgCl)/Λ°m  [mol L⁻¹]  (κ in S cm⁻¹)
    measured: κ(saturated soln) − κ(water) = κ(AgCl)   ← subtract, always;
    with κ(AgCl) = 1.86×10⁻⁶ S cm⁻¹: S = 1000 × 1.86×10⁻⁶/138.2 = 1.35×10⁻⁵ mol L⁻¹
    ⇒ Ksp = S² = 1.8×10⁻¹⁰ ✔ (this single experiment is *the* classical Ksp determination)
    ⚠ always subtract the conductivity of the water, and always use Λ°m (not Λm).
-```
+
 
 ### Application 4 — ionic product of water
 
-```
-   Λ°m(H₂O) = λ°(H⁺) + λ°(OH⁻) = 349.6 + 199.1 = 548.7 S cm² mol⁻¹
+Λ°m(H₂O) = λ°(H⁺) + λ°(OH⁻) = 349.6 + 199.1 = 548.7 S cm² mol⁻¹
    κ of pure (conductivity-blind) water = 5.5×10⁻⁸ S cm⁻¹
    c = 1000κ/Λ°m = 1000 × 5.5×10⁻⁸/548.7 = 1.0×10⁻⁷ mol L⁻¹ = [H⁺] = [OH⁻]
    ⇒ Kw = 1.0×10⁻¹⁴ ✔   (this is intext 2.8: "suggest a way to determine Λ°m of water")
    Reverse version (JEE Advanced): "given Λ°m(H₂O) = 548.7 and Λm of pure water = 5.5×10⁻⁸×10⁷,
    find Kw" — same three lines backwards.
-```
+
 
 ## 11. Ionic mobility, transport number, and why strong electrolytes deviate 🆇
 
-```
-  ionic mobility u = drift speed / potential gradient = v/(E/l)   [m² V⁻¹ s⁻¹]
-  λ° = F u°              (each ion's limiting conductivity is its charge-carrying ability)
-  transport (transference) number  t₊ = λ₊/(λ₊ + λ₋) , t₋ = 1 − t₊
-     HCl: t₊ = 349.6/548.7 = 0.637 → 64 % of the current in HCl is carried by H⁺
-     KCl: 73.5/149.8 = 0.49 → nearly equal ⇒ why KCl is the salt-bridge electrolyte (§2)
-  in an electric field the cation moves to the cathode carrying t₊ of the charge: this is the
-  basis of Hittorf's method of determining transport numbers and of the
-  "concentration cell with transference" emf correction (§6).
-  ⚠ mobility order of the alkali metals is the REVERSE of their ionic radii:
-    Li⁺(aq) < Na⁺ < K⁺ < Rb⁺ < Cs⁺ — because a small ion hydrates MORE strongly and
-    drags a bigger shell (giant ionic radius in solution). "Smaller ion → faster" is wrong
-    in water; it is true only in the gas phase.
-```
+ionic mobility u = drift speed / potential gradient = v/(E/l)   [m² V⁻¹ s⁻¹]
+
+λ° = F u°              (each ion's limiting conductivity is its charge-carrying ability)
+
+transport (transference) number  t₊ = λ₊/(λ₊ + λ₋) , t₋ = 1 − t₊
+
+$\ce{HCl: t₊ = 349.6/548.7 = 0.637 -> 64 % of the current in HCl is carried by H⁺}$
+
+$\ce{KCl: 73.5/149.8 = 0.49 -> nearly equal -> why KCl is the salt-bridge electrolyte (§2)}$
+
+in an electric field the cation moves to the cathode carrying t₊ of the charge: this is the
+
+basis of Hittorf's method of determining transport numbers and of the
+
+"concentration cell with transference" emf correction (§6).
+
+⚠ mobility order of the alkali metals is the REVERSE of their ionic radii:
+
+Li⁺(aq) < Na⁺ < K⁺ < Rb⁺ < Cs⁺ — because a small ion hydrates MORE strongly and
+
+$\ce{drags a bigger shell (giant ionic radius in solution). "Smaller ion -> faster" is wrong}$
+
+in water; it is true only in the gas phase.
+
 
 ---
 
@@ -608,23 +680,36 @@ flowchart TD
 
 **NCERT's four cases (intext/Q2.18), answered:**
 
-```
- (i)   molten NaCl, Pt electrodes:  cathode Na⁺ + e⁻ → Na(l) ; anode 2Cl⁻ → Cl₂ + 2e⁻
-        ⇒ Na metal + Cl₂ gas (no water ⇒ no competition)
- (ii)  aqueous NaCl (brine), Pt:    cathode H₂ (from water: 2H₂O + 2e⁻ → H₂ + 2OH⁻)
-                                    anode Cl₂  → the CHLOR-ALKALI process; the solution left
-                                    behind is NaOH (⚠ this is how "caustic soda" is made)
- (iii) aqueous CuSO₄, Pt:           cathode Cu(s) deposits (E° +0.34 > 0.00);
-                                    anode O₂ (2H₂O → O₂ + 4H⁺ + 4e⁻) ⇒ the solution turns
-                                    into H₂SO₄, so its pH FALLS as electrolysis proceeds ⚠
- (iv)  aqueous CuSO₄, COPPER electrodes: cathode Cu deposits, anode Cu dissolves
-                                    ⇒ net transfer of Cu from anode to cathode =
-                                       electrorefining; [Cu²⁺] and pH stay (nearly) constant
-                                       (⚠ the contrast with (iii) is the question)
-  Impurities in refining: precious metals (Ag, Au, Pt) fall as "anode mud" — the commercial
-  source of Ag/Pt/Se; Fe, Zn, Ni stay dissolved (they are more reactive, so they do not plate
-  at the cathode potential used).
-```
+$\ce{(i)   molten NaCl, Pt electrodes:  cathode Na⁺ + e⁻ -> Na(l) ; anode 2Cl⁻ -> Cl₂ + 2e⁻}$
+
+$\ce{-> Na metal + Cl₂ gas (no water -> no competition)}$
+
+$\ce{(ii)  aqueous NaCl (brine), Pt:    cathode H₂ (from water: 2H₂O + 2e⁻ -> H₂ + 2OH⁻)}$
+
+$\ce{anode Cl₂  -> the CHLOR-ALKALI process; the solution left}$
+
+behind is NaOH (⚠ this is how "caustic soda" is made)
+
+(iii) aqueous CuSO₄, Pt:           cathode Cu(s) deposits (E° +0.34 > 0.00);
+
+$\ce{anode O₂ (2H₂O -> O₂ + 4H⁺ + 4e⁻) -> the solution turns}$
+
+into H₂SO₄, so its pH FALLS as electrolysis proceeds ⚠
+
+(iv)  aqueous CuSO₄, COPPER electrodes: cathode Cu deposits, anode Cu dissolves
+
+$\ce{-> net transfer of Cu from anode to cathode =}$
+
+electrorefining; [Cu²⁺] and pH stay (nearly) constant
+
+(⚠ the contrast with (iii) is the question)
+
+Impurities in refining: precious metals (Ag, Au, Pt) fall as "anode mud" — the commercial
+
+source of Ag/Pt/Se; Fe, Zn, Ni stay dissolved (they are more reactive, so they do not plate
+
+at the cathode potential used).
+
 
 **Rules for "predict the products" that survive all exceptions:**
 
@@ -635,32 +720,51 @@ flowchart TD
 
 ## 13. Faraday's laws and the quantitative machinery 🆇
 
+```mermaid
+flowchart TD
+    N0["FIRST LAW:   mass deposited/liberated  w ∝ Q = It"]
+    N1["SECOND LAW:  for the same Q, masses of different substances ∝ their equivalent weights"]
+    N2["─────────────────────────────────────────────────────────────"]
+    N3["w = (E/F) Q = (M/(n F)) I t      [E = equivalent weight, n = e⁻ per formula unit]"]
+    N4["Q(coulomb) = I(A) × t(s)  ;  1 F = 96487 C = 1 mole of electrons"]
+    N5["moles of e⁻ = Q/F  →  moles of product = (Q/F)/n        ← the modern, safest route"]
+    N6["faradaic (current) efficiency = (mass actually obtained / mass predicted by Faraday) × 100"]
+    N7["= (Q theoretically required / Q actually passed) × 100"]
+    N0 --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
+    N5 --> N6
+    N6 --> N7
 ```
- FIRST LAW:   mass deposited/liberated  w ∝ Q = It
- SECOND LAW:  for the same Q, masses of different substances ∝ their equivalent weights
- ─────────────────────────────────────────────────────────────
-      w = (E/F) Q = (M/(n F)) I t      [E = equivalent weight, n = e⁻ per formula unit]
-      Q(coulomb) = I(A) × t(s)  ;  1 F = 96487 C = 1 mole of electrons
-      moles of e⁻ = Q/F  →  moles of product = (Q/F)/n        ← the modern, safest route
-      faradaic (current) efficiency = (mass actually obtained / mass predicted by Faraday) × 100
-        = (Q theoretically required / Q actually passed) × 100
-```
+*Converted from ASCII: {lines[0][:80] if lines else ''}*
+
 
 **The four standard problem shapes** (more worked ones in §20):
 
-```
- (1) "charge required for": 1 mol Al³⁺→Al = 3 F; 1 mol Cu²⁺→Cu = 2 F;
-     1 mol MnO₄⁻→Mn²⁺ = 5 F = 4.82×10⁵ C; 1 mol Cr₂O₇²⁻ = 6 F = 5.79×10⁵ C (intext 2.12);
-     1 mol H₂O → ½O₂ = 2 F; 1 mol FeO → ½Fe₂O₃ = 1 F (Q2.14).
- (2) mass from I,t: Q = It → mol e⁻ → mol product (NCERT Q2.15: 5 A for 20 min in
-     Ni(NO₃)₂ → 6000 C → 0.0622 mol e⁻ → 0.0311 mol Ni = 1.83 g ✔).
- (3) CELLS IN SERIES: the SAME charge passes through each ⇒
-     w₁/w₂ = E₁/E₂. NCERT Q2.16: 1.45 g Ag deposited (0.0134 mol ⇒ Q = 1295 C) with
-     I = 1.5 A → t = 863 s; Cu = (0.0134/2) × 63.5 = 0.426 g; Zn = 0.0067 × 65.4 = 0.439 g.
- (4) "how long / what current / what volume of gas at STP":
-     gas volumes need moles = Q/(nF) then ×22.4 L (or 22.7 at 1 bar) —
-     H₂: 2 e⁻ per mol, O₂: 4 e⁻, Cl₂: 2 e⁻.
-```
+$\ce{(1) "charge required for": 1 mol Al³⁺->Al = 3 F; 1 mol Cu²⁺->Cu = 2 F;}$
+
+$\ce{1 mol MnO₄⁻->Mn²⁺ = 5 F = 4.82×10⁵ C; 1 mol Cr₂O₇²⁻ = 6 F = 5.79×10⁵ C (intext 2.12);}$
+
+$\ce{1 mol H₂O -> ½O₂ = 2 F; 1 mol FeO -> ½Fe₂O₃ = 1 F (Q2.14).}$
+
+$\ce{(2) mass from I,t: Q = It -> mol e⁻ -> mol product (NCERT Q2.15: 5 A for 20 min in}$
+
+$\ce{Ni(NO₃)₂ -> 6000 C -> 0.0622 mol e⁻ -> 0.0311 mol Ni = 1.83 g ✔).}$
+
+$\ce{(3) CELLS IN SERIES: the SAME charge passes through each ->}$
+
+$\ce{w₁/w₂ = E₁/E₂. NCERT Q2.16: 1.45 g Ag deposited (0.0134 mol -> Q = 1295 C) with}$
+
+$\ce{I = 1.5 A -> t = 863 s; Cu = (0.0134/2) × 63.5 = 0.426 g; Zn = 0.0067 × 65.4 = 0.439 g.}$
+
+(4) "how long / what current / what volume of gas at STP":
+
+gas volumes need moles = Q/(nF) then ×22.4 L (or 22.7 at 1 bar) —
+
+H₂: 2 e⁻ per mol, O₂: 4 e⁻, Cl₂: 2 e⁻.
+
 
 ⚠ **Equivalent weight subtleties**: in `Al³⁺ + 3e⁻ → Al`, E = 27/3 = 9; for `MnO₄⁻` (n = 5)
 E = 158/5 = 31.6; for H₂: 2 e⁻ per mole, so "11.2 L of H₂ at STP per faraday" ✔ (1 F →
@@ -670,6 +774,27 @@ E = 158/5 = 31.6; for H₂: 2 e⁻ per mole, so "11.2 L of H₂ at STP per farad
 ---
 # Part D — Batteries, Fuel Cells and Corrosion (2.6–2.8)
 
+
+### Overpotential and overvoltage 🆇
+
+Theoretical decomposition voltage from Nernst = $E°$ cell, but actual voltage needed for electrolysis > theoretical due to kinetic barriers.
+
+**Overpotential** $\eta = E_{actual} - E_{theoretical}$ (extra voltage needed to drive electrode reaction at appreciable rate).
+
+Causes:
+- Activation overpotential — slow electron transfer at electrode
+- Concentration overpotential — depletion of ions near electrode, diffusion limit
+- Resistance overpotential — IR drop
+
+**Important examples**:
+- $\ce{O2}$ evolution at Pt: $\eta$ ~0.4 V, so $\ce{O2}$ evolution requires higher $E$ than predicted → allows $\ce{Cl2}$ evolution in brine electrolysis (chlor-alkali) even though $E°(O2/H2O)=1.23$ V < $E°(Cl2/Cl-)=1.36$ V, but due to overpotential of $O2$, $Cl2$ evolves preferentially.
+- $\ce{H2}$ evolution at Hg: high overpotential ~0.8 V, allows deposition of Na at Hg cathode in Castner-Kellner (Na+ reduces instead of $H2$).
+
+**JEE Advanced trap**: During electrolysis of aqueous NaCl, $Cl2$ at anode not $O2$ due to overpotential, despite $E°$ suggesting $O2$. Similarly, $H2$ at cathode but Na amalgam formation due to overpotential.
+
+**Tafel equation**: $\eta = a + b \log i$, $i$ = current density.
+
+
 ## 14. Primary batteries: dry cell, mercury cell, lithium (2.6.1)
 
 > **Primary cell** = the redox reaction runs **once**; after it the battery is dead and cannot
@@ -677,35 +802,56 @@ E = 158/5 = 31.6; for H₂: 2 e⁻ per mole, so "11.2 L of H₂ at STP per farad
 > battery becomes dead"). Practical requirements NCERT states up front: light, compact, and
 > **voltage that does not vary appreciably during use**.
 
-```
- DRY CELL (Leclanché) — 1.5 V, Fig 2.8
-   anode (zinc container):   Zn(s) → Zn²⁺ + 2e⁻
-   cathode (graphite rod in powdered MnO₂ + carbon):
-                             MnO₂ + NH₄⁺ + e⁻ → MnO(OH) + NH₃
-                             (Mn: +4 → +3 — NCERT points this out; MnO₂ is a DEPOLARISER)
-   moist paste = NH₄Cl + ZnCl₂ electrolyte
-   the NH₃ produced complexes the Zn²⁺:  Zn²⁺ + 4NH₃ → [Zn(NH₃)₄]²⁺
-   ⚠ why it leaks/"dies" while switched off: local action on the Zn can (impurities set up
-     micro-cells) and the slow reaction of Zn with NH₄Cl — a dry cell has a shelf life.
+DRY CELL (Leclanché) — 1.5 V, Fig 2.8
 
- MERCURY CELL — 1.35 V, Fig 2.9 (watches, hearing aids; being phased out for Hg pollution)
-   anode:  Zn(Hg) + 2OH⁻ → ZnO(s) + H₂O + 2e⁻
-   cathode: HgO + H₂O + 2e⁻ → Hg(l) + 2OH⁻
-   overall: Zn(Hg) + HgO(s) → ZnO(s) + Hg(l)
-   electrolyte: paste of KOH + ZnO
-   ⚠ why its voltage is FLAT over its life (NCERT's own reason): the overall reaction involves
-     NO ion whose concentration changes — so Q stays constant ⇒ E = E° − (0.0591/n)logQ
-     never moves. Learn this answer as a "give the reason" question.
+$\ce{anode (zinc container):   Zn(s) -> Zn²⁺ + 2e⁻}$
 
- LITHIUM cells — very high voltage (≈3.6 V in use) because E°(Li⁺/Li) = −3.05 V is the lowest
-   of all metals,
-   so Li couples give the largest E and, with M(Li) = 6.94 g mol⁻¹, the highest
-   specific energy (energy per kg) — NCERT's point.
-   Non-aqueous electrolyte is mandatory (Li + H₂O would react violently; the solvent must
-   not contain a proton source more easily reduced than Li⁺).
-   Cathode materials: MnO₂, FeS, V₂O₅, TiS₂, SOCl₂ (thionyl chloride) — solids whose
-   framework accepts Li⁺ ("insertion" compounds).
-```
+cathode (graphite rod in powdered MnO₂ + carbon):
+
+$\ce{MnO₂ + NH₄⁺ + e⁻ -> MnO(OH) + NH₃}$
+
+$\ce{(Mn: +4 -> +3 — NCERT points this out; MnO₂ is a DEPOLARISER)}$
+
+moist paste = NH₄Cl + ZnCl₂ electrolyte
+
+$\ce{the NH₃ produced complexes the Zn²⁺:  Zn²⁺ + 4NH₃ -> [Zn(NH₃)₄]²⁺}$
+
+⚠ why it leaks/"dies" while switched off: local action on the Zn can (impurities set up
+
+micro-cells) and the slow reaction of Zn with NH₄Cl — a dry cell has a shelf life.
+
+MERCURY CELL — 1.35 V, Fig 2.9 (watches, hearing aids; being phased out for Hg pollution)
+
+$\ce{anode:  Zn(Hg) + 2OH⁻ -> ZnO(s) + H₂O + 2e⁻}$
+
+$\ce{cathode: HgO + H₂O + 2e⁻ -> Hg(l) + 2OH⁻}$
+
+$\ce{overall: Zn(Hg) + HgO(s) -> ZnO(s) + Hg(l)}$
+
+electrolyte: paste of KOH + ZnO
+
+⚠ why its voltage is FLAT over its life (NCERT's own reason): the overall reaction involves
+
+$\ce{NO ion whose concentration changes — so Q stays constant -> E = E° − (0.0591/n)logQ}$
+
+never moves. Learn this answer as a "give the reason" question.
+
+LITHIUM cells — very high voltage (≈3.6 V in use) because E°(Li⁺/Li) = −3.05 V is the lowest
+
+of all metals,
+
+so Li couples give the largest E and, with M(Li) = 6.94 g mol⁻¹, the highest
+
+specific energy (energy per kg) — NCERT's point.
+
+Non-aqueous electrolyte is mandatory (Li + H₂O would react violently; the solvent must
+
+not contain a proton source more easily reduced than Li⁺).
+
+Cathode materials: MnO₂, FeS, V₂O₅, TiS₂, SOCl₂ (thionyl chloride) — solids whose
+
+framework accepts Li⁺ ("insertion" compounds).
+
 
 ## 15. Secondary batteries: lead storage, Ni–Cd, Li-ion (2.6.2)
 
@@ -713,34 +859,54 @@ E = 158/5 = 31.6; for H₂: 2 e⁻ per mole, so "11.2 L of H₂ at STP per farad
 > (electrolytic mode with `E_ext > E_cell`, §1). NCERT gives "long life" comparisons:
 > Ni–Cd lasts longer than lead storage but costs more.
 
-```
- LEAD STORAGE (Fig 2.10) — 2 V per cell, 6 cells in series = 12 V in a car battery
-   anode:   Pb(s) + SO₄²⁻(aq) → PbSO₄(s) + 2e⁻                    (oxidised)
-   cathode: PbO₂(s) + SO₄²⁻(aq) + 4H⁺(aq) + 2e⁻ → PbSO₄(s) + 2H₂O(l)
-   overall: Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O       E°cell ≈ 2.0 V
-   electrolyte: 38 % H₂SO₄ by mass (density ≈ 1.28 g mL⁻¹)
-   ⚠ BOTH electrodes end up as PbSO₄ — so "which plate is sulphated?" has answer: both.
-   ⚠ During discharge the acid is CONSUMED and water is FORMED ⇒ density falls: a
-     hydrometer reading of ~1.28 = charged, ~1.15 = discharged. That is how a battery's
-     state of charge is actually checked, and it is a favourite assertion-reason item.
-   CHARGING: reverse the reaction — "PbSO₄ on anode and cathode is converted into Pb and
-     PbO₂ respectively" (NCERT). Note the electrode *polarities* swap during charging (§1).
-   intext 2.13 (write the chemistry of recharging): 2PbSO₄ + 2H₂O →(electrolysis) Pb +
-     PbO₂ + 2H₂SO₄, i.e. H₂SO₄ is regenerated, the density rises again.
-   ⚠ limits: self-discharge, sulphation (hard PbSO₄ crystals if left discharged), and
-     water electrolysis ("gassing") above ~2.4 V per cell, which is why charging is done in
-     stages and why batteries need topping-up with water.
+LEAD STORAGE (Fig 2.10) — 2 V per cell, 6 cells in series = 12 V in a car battery
 
- Ni–Cd cell:  discharge:  Cd(s) + 2Ni(OH)₃(s) → CdO(s) + 2Ni(OH)₂(s) + H₂O(l)
-   (NCERT's equation; ~1.4 V; longer life than lead-acid but costlier → memory effect
-    if it is repeatedly only partly discharged 🆇, which is why Ni–Cd tools want full cycles;
-    Cd is a hazardous heavy metal → largely replaced by Ni–MH and Li-ion.)
+$\ce{anode:   Pb(s) + SO₄²⁻(aq) -> PbSO₄(s) + 2e⁻                    (oxidised)}$
 
- Li-ion 🆇 (NCERT mentions only in passing): LiCoO₂ cathode, carbon (graphite) anode in which
-   Li⁺ is INTERCALATED on charging; organic carbonate electrolyte; ~3.6–3.7 V per cell,
-   highest specific energy of the practical systems → hence phones/laptops/EVs.
-   On discharge: LiₓC → Li⁺ + x e⁻ + C (anode) and Li₁₋ₓCoO₂ + xLi⁺ + xe⁻ → LiCoO₂ (cathode).
-```
+$\ce{cathode: PbO₂(s) + SO₄²⁻(aq) + 4H⁺(aq) + 2e⁻ -> PbSO₄(s) + 2H₂O(l)}$
+
+$\ce{overall: Pb + PbO₂ + 2H₂SO₄ -> 2PbSO₄ + 2H₂O}$  E°cell ≈ 2.0 V
+
+electrolyte: 38 % H₂SO₄ by mass (density ≈ 1.28 g mL⁻¹)
+
+⚠ BOTH electrodes end up as PbSO₄ — so "which plate is sulphated?" has answer: both.
+
+$\ce{⚠ During discharge the acid is CONSUMED and water is FORMED -> density falls: a}$
+
+hydrometer reading of ~1.28 = charged, ~1.15 = discharged. That is how a battery's
+
+state of charge is actually checked, and it is a favourite assertion-reason item.
+
+CHARGING: reverse the reaction — "PbSO₄ on anode and cathode is converted into Pb and
+
+PbO₂ respectively" (NCERT). Note the electrode *polarities* swap during charging (§1).
+
+$\ce{intext 2.13 (write the chemistry of recharging): 2PbSO₄ + 2H₂O ->(electrolysis) Pb +}$
+
+PbO₂ + 2H₂SO₄, i.e. H₂SO₄ is regenerated, the density rises again.
+
+⚠ limits: self-discharge, sulphation (hard PbSO₄ crystals if left discharged), and
+
+water electrolysis ("gassing") above ~2.4 V per cell, which is why charging is done in
+
+stages and why batteries need topping-up with water.
+
+$\ce{Ni–Cd cell:  discharge:  Cd(s) + 2Ni(OH)₃(s) -> CdO(s) + 2Ni(OH)₂(s) + H₂O(l)}$
+
+$\ce{(NCERT's equation; ~1.4 V; longer life than lead-acid but costlier -> memory effect}$
+
+if it is repeatedly only partly discharged 🆇, which is why Ni–Cd tools want full cycles;
+
+$\ce{Cd is a hazardous heavy metal -> largely replaced by Ni–MH and Li-ion.)}$
+
+Li-ion 🆇 (NCERT mentions only in passing): LiCoO₂ cathode, carbon (graphite) anode in which
+
+Li⁺ is INTERCALATED on charging; organic carbonate electrolyte; ~3.6–3.7 V per cell,
+
+$\ce{highest specific energy of the practical systems -> hence phones/laptops/EVs.}$
+
+$\ce{On discharge: LiₓC -> Li⁺ + x e⁻ + C (anode) and Li₁₋ₓCoO₂ + xLi⁺ + xe⁻ -> LiCoO₂ (cathode).}$
+
 
 **Comparison table (as far as NCERT's Table 2.5 goes — the specific-energy trend is what is asked):**
 
@@ -760,24 +926,34 @@ is not stored in the device.
 
 ## 16. Fuel cells and the hydrogen economy (2.7)
 
-```
- H₂–O₂ FUEL CELL (alkaline, KOH electrolyte, Fig 2.12):
-   anode:   2H₂(g) + 4OH⁻(aq) → 4H₂O(l) + 4e⁻
-   cathode: O₂(g) + 2H₂O(l) + 4e⁻ → 4OH⁻(aq)
-   overall: 2H₂(g) + O₂(g) → 2H₂O(l)         E°cell = 1.23 V
-   (multiply anode by 2 when the electrons are counted: 4 e⁻ per O₂)
+H₂–O₂ FUEL CELL (alkaline, KOH electrolyte, Fig 2.12):
 
- METANOL–O₂ fuel cell (NCERT's second example; more expensive but liquid-fed):
-   anode:   CH₃OH + H₂O → CO₂ + 6H⁺ + 6e⁻
-   cathode: 3/2 O₂ + 6H⁺ + 6e⁻ → 3H₂O
-   overall: CH₃OH + 3/2 O₂ → CO₂ + 2H₂O       (E° ≈ 1.21 V; ΔG° = −702 kJ mol⁻¹, n = 6)
+$\ce{anode:   2H₂(g) + 4OH⁻(aq) -> 4H₂O(l) + 4e⁻}$
 
- WHY better: a galvanic cell converts chemical energy DIRECTLY into electrical energy — no
-   combustion, no heat engine, so the Carnot ceiling does not apply. NCERT: thermal plants
-   run at about 40 % efficiency; fuel cells are far more efficient and pollution-free.
-   ⚠ the catch (asked in Advanced): the practical electrode kinetics of O₂ reduction need
-     Pt (expensive) and the H₂ feed must be CO-free or the Pt is POISONED.
-```
+$\ce{cathode: O₂(g) + 2H₂O(l) + 4e⁻ -> 4OH⁻(aq)}$
+
+$\ce{overall: 2H₂(g) + O₂(g) -> 2H₂O(l)}$  E°cell = 1.23 V
+
+(multiply anode by 2 when the electrons are counted: 4 e⁻ per O₂)
+
+METANOL–O₂ fuel cell (NCERT's second example; more expensive but liquid-fed):
+
+$\ce{anode:   CH₃OH + H₂O -> CO₂ + 6H⁺ + 6e⁻}$
+
+$\ce{cathode: 3/2 O₂ + 6H⁺ + 6e⁻ -> 3H₂O}$
+
+$\ce{overall: CH₃OH + 3/2 O₂ -> CO₂ + 2H₂O}$  (E° ≈ 1.21 V; ΔG° = −702 kJ mol⁻¹, n = 6)
+
+WHY better: a galvanic cell converts chemical energy DIRECTLY into electrical energy — no
+
+combustion, no heat engine, so the Carnot ceiling does not apply. NCERT: thermal plants
+
+run at about 40 % efficiency; fuel cells are far more efficient and pollution-free.
+
+⚠ the catch (asked in Advanced): the practical electrode kinetics of O₂ reduction need
+
+Pt (expensive) and the H₂ feed must be CO-free or the Pt is POISONED.
+
 
 **The hydrogen economy (NCERT's boxed passage — good factual MCQ material):** fossil-fuel CO₂
 → greenhouse effect → ice melt, sea-level rise, island nations such as the Maldives threatened;
@@ -788,21 +964,30 @@ energy in than you get back from any real cycle.
 
 ## 17. Corrosion: rusting as a short-circuited galvanic cell (2.8)
 
+```mermaid
+flowchart TD
+    N0["(anodic spot)                          (cathodic spot)"]
+    N1["Fe → Fe²⁺ + 2e⁻   ──── e⁻ travel through the metal ────►  O₂ + 4H⁺ + 4e⁻ → 2H₂O"]
+    N2["E°(Fe²⁺/Fe) = −0.44 V                                     E°(O₂/H₂O) = +1.23 V"]
+    N3["──────────────────────────────────────────────────────────────────────────"]
+    N4["overall: 2Fe(s) + O₂(g) + 4H⁺(aq) → 2Fe²⁺(aq) + 2H₂O(l)   E°cell = 1.67 V"]
+    N5["then atmospheric oxidation of Fe²⁺ (NCERT's equation):"]
+    N6["2Fe²⁺(aq) + 2H₂O(l) + ½O₂(g) → Fe₂O₃(s) + 4H⁺(aq)"]
+    N7["and the rust itself is the HYDRATED oxide, Fe₂O₃·xH₂O — porous, so it does NOT protect"]
+    N8["the metal underneath (unlike the adherent Al₂O₃ film on aluminium, which does:"]
+    N9["that contrast is the classic 'why doesn't Al rust away?' question)."]
+    N0 --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
+    N5 --> N6
+    N6 --> N7
+    N7 --> N8
+    N8 --> N9
 ```
-        (anodic spot)                          (cathodic spot)
-   Fe → Fe²⁺ + 2e⁻   ──── e⁻ travel through the metal ────►  O₂ + 4H⁺ + 4e⁻ → 2H₂O
-   E°(Fe²⁺/Fe) = −0.44 V                                     E°(O₂/H₂O) = +1.23 V
-   ──────────────────────────────────────────────────────────────────────────
-   overall: 2Fe(s) + O₂(g) + 4H⁺(aq) → 2Fe²⁺(aq) + 2H₂O(l)   E°cell = 1.67 V
-   then atmospheric oxidation of Fe²⁺ (NCERT's equation):
-     2Fe²⁺(aq) + 2H₂O(l) + ½O₂(g) → Fe₂O₃(s) + 4H⁺(aq)
-   and the rust itself is the HYDRATED oxide, Fe₂O₃·xH₂O — porous, so it does NOT protect
-   the metal underneath (unlike the adherent Al₂O₃ film on aluminium, which does:
-   that contrast is the classic "why doesn't Al rust away?" question).
-   ⚠ the H⁺ comes from H₂CO₃ formed when atmospheric CO₂ dissolves in the surface film of
-     water (NCERT explicitly says this), or from other acidic oxides (SO₂ → acid rain),
-     which is why coastal/industrial air corrodes iron faster.
-```
+*Converted from ASCII: {lines[0][:80] if lines else ''}*
+
 
 **Factors and prevention (each maps onto one line of the mechanism above):**
 
@@ -831,42 +1016,68 @@ cathode sites be centimetres apart.
 > equilibrium you want to measure, read `E°cell`, and K comes out. These are the "why do we
 > care about emf" questions in Advanced papers.
 
-```
- (1) Ksp of AgCl — combine Ag⁺/Ag with the chloride electrode:
-      Ag⁺ + e⁻ → Ag                  E° = +0.80
-      AgCl + e⁻ → Ag + Cl⁻           E° = +0.22    (this is Ag⁺/Ag in 1 M Cl⁻)
-     cell reaction as written for dissolution? Subtract:  AgCl(s) → Ag⁺ + Cl⁻
-      E°cell = 0.22 − 0.80 = −0.58 V
-      log Ksp = nE°/0.0591 = −0.58/0.0591 = −9.81  ⇒ Ksp(AgCl) = 1.5×10⁻¹⁰ ✔
-      ⚠ Ksp < 1 ⇒ E°cell NEGATIVE for the dissolution — the sign tells you the process is
-        non-standard-favoured; do not "correct" it by taking the absolute value.
+(1) Ksp of AgCl — combine Ag⁺/Ag with the chloride electrode:
 
- (2) Ka of a weak acid (acetic), from a cell with hydrogen electrodes:
-      Pt|H₂(1 bar)|HA(1 M), A⁻(1 M) ‖ H⁺(1 M)|H₂(1 bar)|Pt
-      the buffer-side H₂ electrode sits at E = −0.0591 pH = −0.0591 pKa (since pH = pKa when
-      [A⁻] = [HA]), the other at 0 ⇒  Ecell = 0.0591 pKa  ⇒  pKa = E/0.0591
-      acetic acid: [A⁻] = [HA] = 1 M ⇒ pH = pKa = 4.76 ⇒ E = 0.0591 × 4.76 = 0.281 V
-      (and reversing it: a measured 0.281 V gives Ka = 10^(−4.76) = 1.7×10⁻⁵ ✔ — the same
-      number Equilibrium notes §15 obtains from Λm/Λ°m, by a completely different experiment.)
+$\ce{Ag⁺ + e⁻ -> Ag}$  E° = +0.80
 
- (3) Kw of water:
-      anode: H₂ + 2OH⁻ → 2H₂O + 2e⁻      E° = −0.83 V
-      cathode: 2H⁺ + 2e⁻ → H₂            E° = 0.00 V
-      E°cell = 0.83 V and  H₂O ⇌ H⁺ + OH⁻  (n = 1 per water molecule!)
-      log Kw = −E°cell/0.0591 = −14.0 ⇒ Kw = 1.0×10⁻¹⁴ ✔   (n = 1, since the equilibrium
-      reaction written this way transfers 1 mol e⁻ per mol H₂O — check by matching the cell
-      reaction to it before assigning n. This n-counting is the trap.)
+$\ce{AgCl + e⁻ -> Ag + Cl⁻}$  E° = +0.22  (this is Ag⁺/Ag in 1 M Cl⁻)
 
- (4) Kf (stability) of a complex:  compare the free-metal electrode with the complexed one.
-      Ag⁺ + e⁻ → Ag                E° = +0.80
-      [Ag(NH₃)₂]⁺ + e⁻ → Ag + 2NH₃ E° = +0.37 V  (data-book value: Table 2.1 lists only
-      the simple couples, so the paper must hand you this number or the Kf you are after)
-      ⇒ log Kf = (0.80 − 0.37)/0.0591 = 7.28  ⇒ Kf ≈ 1.9×10⁷  ✔ the tabulated β₂
-      [Ag(CN)₂]⁻ + e⁻ → Ag + 2CN⁻: E° = −0.31 ⇒ log Kf = (0.80+0.31)/0.0591 = 18.8
-      ⇒ Kf ≈ 6×10¹⁸, eleven powers above the ammine — the thermodynamic reason **cyanide
-      leaching** works, and why AgCl dissolves in CN⁻ but not in NH₃ alone (salt analysis).
-      ⚠ the general recipe:  log β = n[E°(Mⁿ⁺/M) − E°(complex/M)]/0.0591  (n = 1 for Ag).
-```
+$\ce{cell reaction as written for dissolution? Subtract:  AgCl(s) -> Ag⁺ + Cl⁻}$
+
+E°cell = 0.22 − 0.80 = −0.58 V
+
+$\ce{log Ksp = nE°/0.0591 = −0.58/0.0591 = −9.81  -> Ksp(AgCl) = 1.5×10⁻¹⁰ ✔}$
+
+$\ce{⚠ Ksp < 1 -> E°cell NEGATIVE for the dissolution — the sign tells you the process is}$
+
+non-standard-favoured; do not "correct" it by taking the absolute value.
+
+(2) Ka of a weak acid (acetic), from a cell with hydrogen electrodes:
+
+Pt|H₂(1 bar)|HA(1 M), A⁻(1 M) ‖ H⁺(1 M)|H₂(1 bar)|Pt
+
+the buffer-side H₂ electrode sits at E = −0.0591 pH = −0.0591 pKa (since pH = pKa when
+
+$\ce{[A⁻] = [HA]), the other at 0 ->}$  Ecell = 0.0591 pKa  ⇒  pKa = E/0.0591
+
+$\ce{acetic acid: [A⁻] = [HA] = 1 M -> pH = pKa = 4.76 -> E = 0.0591 × 4.76 = 0.281 V}$
+
+(and reversing it: a measured 0.281 V gives Ka = 10^(−4.76) = 1.7×10⁻⁵ ✔ — the same
+
+number Equilibrium notes §15 obtains from Λm/Λ°m, by a completely different experiment.)
+
+(3) Kw of water:
+
+$\ce{anode: H₂ + 2OH⁻ -> 2H₂O + 2e⁻}$  E° = −0.83 V
+
+$\ce{cathode: 2H⁺ + 2e⁻ -> H₂}$  E° = 0.00 V
+
+$\ce{E°cell = 0.83 V and  H₂O <=> H⁺ + OH⁻  (n = 1 per water molecule!)}$
+
+$\ce{log Kw = −E°cell/0.0591 = −14.0 -> Kw = 1.0×10⁻¹⁴ ✔}$  (n = 1, since the equilibrium
+
+reaction written this way transfers 1 mol e⁻ per mol H₂O — check by matching the cell
+
+reaction to it before assigning n. This n-counting is the trap.)
+
+(4) Kf (stability) of a complex:  compare the free-metal electrode with the complexed one.
+
+$\ce{Ag⁺ + e⁻ -> Ag}$  E° = +0.80
+
+$\ce{[Ag(NH₃)₂]⁺ + e⁻ -> Ag + 2NH₃ E° = +0.37 V}$  (data-book value: Table 2.1 lists only
+
+the simple couples, so the paper must hand you this number or the Kf you are after)
+
+$\ce{-> log Kf = (0.80 − 0.37)/0.0591 = 7.28}$  ⇒ Kf ≈ 1.9×10⁷  ✔ the tabulated β₂
+
+$\ce{[Ag(CN)₂]⁻ + e⁻ -> Ag + 2CN⁻: E° = −0.31 -> log Kf = (0.80+0.31)/0.0591 = 18.8}$
+
+$\ce{-> Kf ≈ 6×10¹⁸, eleven powers above the ammine — the thermodynamic reason **cyanide}$
+
+leaching** works, and why AgCl dissolves in CN⁻ but not in NH₃ alone (salt analysis).
+
+⚠ the general recipe:  log β = n[E°(Mⁿ⁺/M) − E°(complex/M)]/0.0591  (n = 1 for Ag).
+
 
 **Bonus pattern — "will a precipitate/complex change the emf?"** Any ligand or anion that
 removes the metal ion lowers `[Mⁿ⁺]`, and by Nernst lowers `E(Mⁿ⁺/M)` — that is *why*
@@ -877,31 +1088,30 @@ compartment removes Cu²⁺, so Q rises and **E falls** ⚠ — one Nernst line 
 
 ## 19. E–pH (Pourbaix), Latimer and Frost diagrams 🆇
 
+```mermaid
+flowchart TD
+    N0["E–pH DIAGRAMS (potential vs pH at 25 °C, 1 M-ish species):"]
+    N1["axes: E (vertical, vs SHE) × pH (horizontal). Above the water lines water is oxidised,"]
+    N2["below them water is reduced:"]
+    N3["O₂ + 4H⁺ + 4e⁻ → 2H₂O    E = 1.23 − 0.0591 pH     (upper stability line)"]
+    N4["2H⁺ + 2e⁻ → H₂           E = 0.00 − 0.0591 pH     (lower stability line)"]
+    N5["⇒ any couple above the O₂ line oxidises water (F₂ 2.87 V, MnO₄⁻ 1.51 V in acid — so neither can"]
+    N6["be used in aqueous solution),"]
+    N7["any BELOW −0.0591pH reduces it (all the alkali metals, hence 'Na metal in water')."]
+    N8["SLOPE of a line = −(m/n) × 0.0591 V per pH unit (m = H⁺ consumed, n = e⁻ transferred)."]
+    N9["Fe³⁺/Fe²⁺: m = 0 ⇒ horizontal (pH-independent). MnO₄⁻/Mn²⁺: 8/5 ⇒ −0.0945 V per pH."]
+    N0 --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
+    N5 --> N6
+    N6 --> N7
+    N7 --> N8
+    N8 --> N9
 ```
- E–pH DIAGRAMS (potential vs pH at 25 °C, 1 M-ish species):
-   axes: E (vertical, vs SHE) × pH (horizontal). Above the water lines water is oxidised,
-   below them water is reduced:
-     O₂ + 4H⁺ + 4e⁻ → 2H₂O    E = 1.23 − 0.0591 pH     (upper stability line)
-     2H⁺ + 2e⁻ → H₂           E = 0.00 − 0.0591 pH     (lower stability line)
-   ⇒ any couple above the O₂ line oxidises water (F₂ 2.87 V, MnO₄⁻ 1.51 V in acid — so neither can
-   be used in aqueous solution),
-     any BELOW −0.0591pH reduces it (all the alkali metals, hence "Na metal in water").
-   SLOPE of a line = −(m/n) × 0.0591 V per pH unit (m = H⁺ consumed, n = e⁻ transferred).
-   Fe³⁺/Fe²⁺: m = 0 ⇒ horizontal (pH-independent). MnO₄⁻/Mn²⁺: 8/5 ⇒ −0.0945 V per pH.
-   Cr₂O₇²⁻/Cr³⁺: 14/6 ⇒ −0.138 V per pH. O₂/H₂O: 4/4 ⇒ −0.0591 V per pH. "Horizontal" lines are pH-independent; "vertical" ones are
-   concentration-independent.
-   Read off: immunity / corrosion / passivity bands for Fe → the engineering use.
+*Converted from ASCII: {lines[0][:80] if lines else ''}*
 
- LATIMER (acid) — reduction potentials between adjacent oxidation states, read left→right
-   in DECREASING oxidation number:
-     Mn (acid): +7 ─0.59─ +4 ─0.95─ +3 ─1.51─ +2 ─(−1.18)─ 0
-     Cl (acid):  +1 ─0.40─ 0 ─1.36─ −1      (i.e. HOCl → Cl₂ → Cl⁻)
-     disproportionation test: if E°(right of X) > E°(left of X) then X disproportionates.
-       Mn³⁺: E°(Mn³⁺/Mn²⁺) = 1.51 > E°(MnO₂/Mn³⁺) = 0.95 ⇒ Mn³⁺ disproportionates ✔
-     Frost (E°×n vs O.S.): the LOWER convex hull is stable; a point ABOVE the line joining its
-     neighbours disproportionates, a point BELOW it is stable; slope of a segment = E° of that
-     couple. (Full treatment in [Redox Reactions §17](../05-Redox-Reactions/notes.md).)
-```
 
 ⚠ These maps are the *thermodynamic* reason for statements NCERT makes separately:
 "lower E° = stronger reducing agent" (§3), "MnO₄⁻ is a strong oxidant only in acid" (§4),
@@ -910,34 +1120,58 @@ a memorised sentence.
 
 ## 20. Electrolysis problem patterns 🆇
 
-```
- P1. Series cells (2 or 3 cells) — Q is COMMON:
-     w(Ag)/w(Cu) = E(Ag)/E(Cu) = 108/31.75 = 3.40. Given one mass ⇒ the other two and t = Q/I.
- P2. "How long to plate X g" — t = (w n F)/(M I); keep units SI, and check I is in A.
- P3. pH change during electrolysis ⚠ the standard "trap within a trap":
-     aqueous CuSO₄ with Pt: cathode Cu (removes Cu²⁺), anode O₂ + 4H⁺ ⇒ H₂SO₄ in solution
-       ⇒ for 0.01 mol e⁻ passed: 0.01 mol H⁺ produced in 1 L → pH 2.0 (⚠ 1 H⁺ per e⁻)
-     aqueous NaCl with Pt: cathode H₂ + OH⁻ ⇒ NaOH
-       ⇒ 0.01 mol e⁻ → 0.01 mol OH⁻ → pOH 2, pH 12
-     molten/with reactive anode: no pH change (§12 case (iv))
- P4. Gas volumes: n(gas) = Q/(zF); z = 2 (H₂, Cl₂), 4 (O₂). At 1 bar/273 K use 22.7 L mol⁻¹,
-     at 1 atm/273 K 22.4 L — read what the question says (NCERT now uses 1 bar).
- P5. Efficiency: faradaic efficiency = (Q theoretical/Q actual)×100; "X % current efficiency"
-     ⇒ multiply I by X/100 before using Faraday's law.
- P6. "Deposited mass after t s at constant I, but the cell stops at 100 % capacity"
-     — check whether the electrolyte runs out first (limiting reagent!) e.g. 100 mL of
-     0.1 M CuSO₄ = 0.01 mol Cu²⁺ = 0.02 F max, so 5 A for 1000 s (0.052 mol e⁻) exceeds it
-     ⇒ after that H₂ evolves and the mass stops growing ⚠ this check is skipped by most.
- P7. Electrolysis of water (acidified/Na₂SO₄): H₂ at cathode and O₂ at anode in a 2:1 volume
-     ratio; the electrolyte's concentration (and hence conductivity) RISES while its amount
-     is unchanged — that is why a little H₂SO₄/NaOH/Na₂SO₄ is added to water first, and why
-     NaCl or CuSO₄ must NOT be used for "electrolysing water" (products differ, §12).
- P8. Extraction (intext 2.11): the metals obtained electrolytically are those at the bottom of
-     the series — Na, Mg, Al, Ca, K, Li; Downs cell (molten NaCl, CaCl₂
-     flux), and for Al: Al₂O₃ dissolved in molten **cryolite Na₃AlF₆** at ~1230 K with carbon
-     anodes (⚠ the carbon anodes are consumed to CO/CO₂, so they must be replaced — the
-     reason aluminium smelting is expensive and why the cell voltage is only ~4.5 V).
-```
+P1. Series cells (2 or 3 cells) — Q is COMMON:
+
+$\ce{w(Ag)/w(Cu) = E(Ag)/E(Cu) = 108/31.75 = 3.40. Given one mass -> the other two and t = Q/I.}$
+
+P2. "How long to plate X g" — t = (w n F)/(M I); keep units SI, and check I is in A.
+
+P3. pH change during electrolysis ⚠ the standard "trap within a trap":
+
+$\ce{aqueous CuSO₄ with Pt: cathode Cu (removes Cu²⁺), anode O₂ + 4H⁺ -> H₂SO₄ in solution}$
+
+$\ce{-> for 0.01 mol e⁻ passed: 0.01 mol H⁺ produced in 1 L -> pH 2.0 (⚠ 1 H⁺ per e⁻)}$
+
+$\ce{aqueous NaCl with Pt: cathode H₂ + OH⁻ -> NaOH}$
+
+$\ce{-> 0.01 mol e⁻ -> 0.01 mol OH⁻ -> pOH 2, pH 12}$
+
+molten/with reactive anode: no pH change (§12 case (iv))
+
+P4. Gas volumes: n(gas) = Q/(zF); z = 2 (H₂, Cl₂), 4 (O₂). At 1 bar/273 K use 22.7 L mol⁻¹,
+
+at 1 atm/273 K 22.4 L — read what the question says (NCERT now uses 1 bar).
+
+P5. Efficiency: faradaic efficiency = (Q theoretical/Q actual)×100; "X % current efficiency"
+
+$\ce{-> multiply I by X/100 before using Faraday's law.}$
+
+P6. "Deposited mass after t s at constant I, but the cell stops at 100 % capacity"
+
+— check whether the electrolyte runs out first (limiting reagent!) e.g. 100 mL of
+
+0.1 M CuSO₄ = 0.01 mol Cu²⁺ = 0.02 F max, so 5 A for 1000 s (0.052 mol e⁻) exceeds it
+
+$\ce{-> after that H₂ evolves and the mass stops growing ⚠ this check is skipped by most.}$
+
+P7. Electrolysis of water (acidified/Na₂SO₄): H₂ at cathode and O₂ at anode in a 2:1 volume
+
+ratio; the electrolyte's concentration (and hence conductivity) RISES while its amount
+
+is unchanged — that is why a little H₂SO₄/NaOH/Na₂SO₄ is added to water first, and why
+
+NaCl or CuSO₄ must NOT be used for "electrolysing water" (products differ, §12).
+
+P8. Extraction (intext 2.11): the metals obtained electrolytically are those at the bottom of
+
+the series — Na, Mg, Al, Ca, K, Li; Downs cell (molten NaCl, CaCl₂
+
+flux), and for Al: Al₂O₃ dissolved in molten **cryolite Na₃AlF₆** at ~1230 K with carbon
+
+anodes (⚠ the carbon anodes are consumed to CO/CO₂, so they must be replaced — the
+
+reason aluminium smelting is expensive and why the cell voltage is only ~4.5 V).
+
 
 ## 21. Worked NCERT problem bank
 

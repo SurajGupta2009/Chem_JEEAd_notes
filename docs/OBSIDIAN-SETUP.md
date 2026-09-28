@@ -30,7 +30,7 @@ Everything else below is optional or special-purpose.
 
 ## 1. The authoring loop this vault is built for
 
-```
+```dataview
 Arena AI ──writes──▶ notes.md · README.md · cards.md   (markdown in the repo, on this branch)
                             │
                             │  git pull   ← obsidian-git (auto, every N minutes)
@@ -141,8 +141,8 @@ Obsidian core already renders the entire convention used in these notes:
 ````markdown
 ```smiles
 CC(=O)O
+```text
 ```
-````
 → acetic acid drawn properly. For organic chapters this beats ASCII structures every time —
 and it is plain text, so Arena AI can write it and git can diff it.
 
@@ -246,7 +246,7 @@ This vault keeps ~40 PDFs next to the notes, so this category matters more than 
 **Recommended pattern for this repo** — keep cards in a sibling file so the fetch script, the
 GitHub view and Arena AI's notes stay clean:
 
-```
+```text
 Organic-Chemistry/02-Hydrocarbons/
 ├── notes.md      ← the notes (Arena AI writes these)
 ├── cards.md      ← your flashcards (Spaced Repetition / Aosr read these)
@@ -348,11 +348,11 @@ TABLE WITHOUT ID
 FROM ""
 WHERE file.name = "notes"
 SORT file.folder ASC
-```
+```text
 
 **Chapters still pending:**
 
-```dataviewjs
+```
 // DQL has no file.content field, so this needs DataviewJS (enable it in Dataview settings)
 const cards = dv.pages('"Physical-Chemistry" or "Inorganic-Chemistry" or "Organic-Chemistry"')
   .where(p => p.file.name === "README" && p.file.folder.split("/").length === 2)
@@ -364,8 +364,8 @@ for (const p of cards) {
 }
 dv.header(4, `${pending.length} chapters pending`);
 dv.list(pending);
+```text
 ```
-````
 
 The second query keys off the exact placeholder that `scripts/fetch_ncert_pdfs.py` writes into a
 chapter card when `notes.md` does not exist — so the list is derived from the same fact the

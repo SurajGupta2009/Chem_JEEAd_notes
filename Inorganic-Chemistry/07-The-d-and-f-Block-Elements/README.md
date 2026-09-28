@@ -10,6 +10,7 @@
 | Needed for | JEE Main, JEE Advanced |
 | PDF | [`lech104.pdf`](lech104.pdf) |
 | Module PDF | [`d-Block_Theory_26.pdf`](d-Block_Theory_26.pdf) |
+| Module PDF | [`f-Block_Theory_26.pdf`](f-Block_Theory_26.pdf) |
 | Official URL | https://ncert.nic.in/textbook/pdf/lech104.pdf |
 | Mirror used | `AnonymousCoder-hub/NCERT-Textbooks-Physics-Chemistry-Biology` -> `Chemistry_12_Part1/Chapter_04.pdf` |
 

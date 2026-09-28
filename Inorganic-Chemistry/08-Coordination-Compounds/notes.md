@@ -64,10 +64,10 @@ tags: [chemistry, jee]
 **Addition compounds** form when solutions of two or more salts in simple molecular
 proportion are evaporated and new crystals separate:
 
-```
-K2SO4 + Al2(SO4)3 + 24 H2O → K2SO4·Al2(SO4)3·24H2O   (potash alum)
-CuSO4 + 4 NH3 + H2O → [Cu(NH3)4]SO4·H2O
-```
+$\ce{K2SO4 + Al2(SO4)3 + 24 H2O -> K2SO4·Al2(SO4)3·24H2O}$  (potash alum)
+
+$\ce{CuSO4 + 4 NH3 + H2O -> [Cu(NH3)4]SO4·H2O}$
+
 
 They divide into two classes:
 
@@ -126,6 +126,26 @@ The last two have the same empirical formula but different properties → **isom
 - 🆇 **Secondary-valence worked examples (NCERT Ex. 5.1):** from AgCl-precipitation
   data: PdCl₂·4NH₃ → 2, NiCl₂·6H₂O → 2, PtCl₄·2HCl → 0, CoCl₃·4NH₃ → 1,
   PtCl₂·2NH₃ → 0.
+
+
+```mermaid
+flowchart TB
+    Primary[Primary valency<br>ionisable<br>= oxidation state<br>satisfied by anions]
+    Secondary[Secondary valency<br>non-ionisable<br>= coordination number<br>fixed for metal<br>directional]
+    Primary --> Example1[[Co(NH3)6]Cl3<br>primary 3 Cl- ionisable<br>secondary 6 NH3 fixed octahedral]
+    Secondary --> Example1
+    Example1 --> Test[AgNO3 test<br>count ionisable Cl-]
+```
+
+```mermaid
+flowchart LR
+    Octa[Octahedral CN6<br>[Co(NH3)6]3+<br>[CoCl2(NH3)4]+]
+    Tetra[Tetrahedral CN4<br>[Ni(CO)4]<br>[ZnCl4]2-]
+    SqPlan[Square planar CN4<br>[PtCl4]2-<br>[Ni(CN)4]2-]
+    Linear[Linear CN2<br>[Ag(NH3)2]+]
+    Octa --> Tetra --> SqPlan --> Linear
+```
+
 
 ## 3. Essential Terminology
 
@@ -329,11 +349,10 @@ Same **empirical** formula, different molecular weight — *not true isomerism*:
 - **Ma₃b₃** → **fac** (three identical ligands on one octahedral face) and **mer**
   (around the meridian) — e.g. [Co(NH₃)₃(NO₂)₃].
 
-```
 octahedral Ma4b2:                 octahedral Ma3b3:
    cis: b's at 90°                 fac: a-a-a on one face
    trans: b's at 180°              mer: a's around a meridian
-```
+
 
 ## 8. Stereoisomerism — Optical & Isomer Counting
 
@@ -392,9 +411,8 @@ NCERT.)
 🅰 **EAN** = total electrons on the central metal **after** receiving ligand lone
 pairs:
 
-```
 EAN = (Z of metal − oxidation state) + 2 × (coordination number)
-```
+
 
 Stable complexes tend to reach the **atomic number of the next noble gas**:
 - K₄[Fe(CN)₆]: Fe²⁺ → 26 − 2 + 12 = **36 (Kr)** ✓
@@ -464,12 +482,11 @@ asymmetric ligand field lifts the degeneracy → **crystal field splitting**.
 Ligands approach along the axes → **dx²−y², dz² (eg set)** are raised; **dxy, dyz,
 dxz (t2g set)** are lowered relative to the barycentre:
 
-```
-                        eg (dx2-y2, dz2)     +0.6 Δo  (= +3/5 Δo)
+eg (dx2-y2, dz2)     +0.6 Δo  (= +3/5 Δo)
  free ion      ---- barycentre ----
  d (degenerate)                     split by 6L
                         t2g (dxy, dxz, dyz)  -0.4 Δo  (= -2/5 Δo)
-```
+
 
 - Δo depends on the ligand field and metal charge.
 - **Spectrochemical series** (experimental; increasing field strength):
@@ -498,12 +515,11 @@ dxz (t2g set)** are lowered relative to the barycentre:
 
 Remove the two trans (z-axis) ligands from an octahedron:
 
-```
 dx2-y2   (highest — ligands approach along x, y)
 dxy
 dz2
 dxz, dyz (lowest — no ligand on z-axis)
-```
+
 
 Δsp = Δ₁ + Δ₂ + Δ₃ > Δo; experimentally **Δsp ≈ 1.3 Δo**. This is why d⁸ metals with
 strong ligands (Ni²⁺/Pd²⁺/Pt²⁺ + CN⁻) go square planar and diamagnetic.
@@ -520,6 +536,30 @@ strong ligands (Ni²⁺/Pd²⁺/Pt²⁺ + CN⁻) go square planar and diamagneti
 **Limitations of CFT:** anionic ligands ought to split most (point-charge logic) yet
 sit at the weak end of the spectrochemical series; ignores covalent character — both
 resolved by Ligand Field Theory / MOT.
+
+
+```mermaid
+flowchart TB
+    Free[Free ion<br>5 d degenerate] --> Oct[Octahedral field<br>eg dx2-y2 dz2 up +0.6Δo<br>t2g dxy dxz dyz down -0.4Δo<br>Δo large for strong field]
+    Free --> TetraM[Tetrahedral field<br>e dz2 dx2-y2 down -0.6Δt<br>t2 dxy dxz dyz up +0.4Δt<br>Δt=4/9 Δo inverted small]
+    Free --> SqM[Square planar<br>dx2-y2 highest<br>dxy next<br>dz2<br>dxz dyz lowest<br>Δsp≈1.3Δo]
+```
+
+```mermaid
+flowchart LR
+    Weak[Weak field<br>Δo < P<br>high spin<br>max unpaired<br>e.g. [CoF6]3- 4 unpaired<br>sp3d2 outer]
+    Strong[Strong field<br>Δo > P<br>low spin<br>pairing<br>e.g. [Co(NH3)6]3+ diamag<br>d2sp3 inner]
+    Weak -->|Δo vs P decides| Strong
+```
+
+```mermaid
+flowchart TB
+    VBT[VBT Hybridisation] --> sp3[sp3 tetrahedral<br>[NiCl4]2- para<br>[Ni(CO)4] dia]
+    VBT --> dsp2[dsp2 square planar<br>[Ni(CN)4]2- dia<br>[PtCl4]2-]
+    VBT --> d2sp3[d2sp3 inner octahedral<br>[Co(NH3)6]3+ dia<br>low spin]
+    VBT --> sp3d2[sp3d2 outer octahedral<br>[CoF6]3- para 4 unp<br>high spin]
+```
+
 
 ## 12. Colour in Coordination Compounds
 
@@ -578,13 +618,16 @@ resolved by Ligand Field Theory / MOT.
 
 🅰 Stepwise formation of an aquo-metal complex (ignoring charges):
 
-```
-[M(H2O)6] + L ⇌ [M(H2O)5L] + H2O        K1
-[M(H2O)5L] + L ⇌ [M(H2O)4L2] + H2O      K2
+$\ce{[M(H2O)6] + L <=> [M(H2O)5L] + H2O}$  K1
+
+$\ce{[M(H2O)5L] + L <=> [M(H2O)4L2] + H2O}$  K2
+
 ...
-[M(H2O)Ln-1] + L ⇌ [MLn] + H2O          Kn
+
+$\ce{[M(H2O)Ln-1] + L <=> [MLn] + H2O}$  Kn
+
 Overall stability constant:  βn = K1 × K2 × ... × Kn
-```
+
 
 - **Thermodynamic stability** — magnitude of βn at equilibrium; larger βn = more
   product. Measured from aqueous solutions (ligand displaces water from the aqua
@@ -613,10 +656,10 @@ missing electron in Mn and Co).
 
 **Synergic (σ + π) bonding:**
 
-```
-M  —σ donate→  CO   (lone pair on C → empty metal hybrid)
-M  ←π back—   CO    (filled metal dπ → empty π* antibonding of CO)
-```
+$\ce{M  —σ donate->  CO   (lone pair on C -> empty metal hybrid)}$
+
+$\ce{M  ←π back—   CO    (filled metal dπ -> empty π* antibonding of CO)}$
+
 
 - The metal→CO π back-donation strengthens the M–C σ bond **and** weakens the C≡O
   bond (C–O stretch frequency in IR is diagnostic — bridging CO absorbs at lower ν).
@@ -667,6 +710,21 @@ Fixing with hypo (sodium thiosulphate) dissolves unexposed AgBr as
   toxicity, Wilson's disease, haemosiderosis).
 - **EDTA** — lead poisoning (Pb²⁺ removal).
 - **cis-platin [Pt(NH₃)₂Cl₂]** — anti-cancer (the *trans* isomer is inactive).
+
+
+- $\ce{[Ti(H2O)6]^{3+} + h\nu (498 nm blue-green) -> [Ti(H2O)6]^{3+}*}$ absorbs blue-green appears violet
+- $\ce{[Cu(H2O)4]^{2+} absorbs red 600 nm -> observed blue}$
+- $\ce{Ni(CO)4: Ni(0) 3d^8 4s^2 + 4CO -> [Ni(CO)4] sp3 tetrahedral diamagnetic}$
+- $\ce{Fe(CO)5: dsp3 trigonal bipyramidal}$
+- $\ce{Cr(CO)6: d2sp3 octahedral}$
+- $\ce{Mn2(CO)10: 2 square pyramids Mn-Mn bond}$
+- $\ce{Co2(CO)8: Co-Co + 2 bridging CO}$
+- $\ce{M -> CO sigma donation C lone pair -> empty metal hybrid}$
+- $\ce{M d\pi -> CO \pi* back donation}$ synergic weakens C-O strengthens M-C
+- $\ce{[Ag(NH3)2]+ + e- -> Ag}$ electroplating bath $\ce{[Ag(CN)2]-}$ slows deposition
+- $\ce{AgBr + 2Na2S2O3 -> Na3[Ag(S2O3)2] + NaBr}$ photography fixing
+- $\ce{[Rh(PPh3)3Cl] + H2 + alkene -> alkane}$ Wilkinson's catalyst hydrogenation
+
 
 ## 17. Solved-Example Patterns & JEE Pointers
 
@@ -728,4 +786,3 @@ Fixing with hypo (sodium thiosulphate) dissolves unexposed AgBr as
 (complexes used as reagents and precipitates — K₄[Fe(CN)₆], DMG, K₃[Co(NO₂)₆]).
 *Sources:* NCERT Class XII rationalised ed. (lech105) · Allen Coordination Compound
 module (Enthusiast, JEE Main + Advanced).
-

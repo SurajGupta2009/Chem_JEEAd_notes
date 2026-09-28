@@ -9,7 +9,7 @@
 | NCERT edition | Pre-rationalisation NCERT (2018-19 edition) |
 | Needed for | JEE Advanced |
 | PDF | [`kech207-legacy.pdf`](kech207-legacy.pdf) |
-| Module PDF | _not uploaded yet_ |
+| Module PDF | [`Environmental Chemistry_Theory_26.pdf`](Environmental%20Chemistry_Theory_26.pdf) |
 | Official URL | no longer published - removed in the 2023 rationalisation, and the code `kech207` no longer exists in the current book |
 | Mirror used | `palhiman/ncert` -> `XI/Chemistry-2/kech207.pdf` |
 
