@@ -2,11 +2,13 @@
 branch: "Inorganic Chemistry"
 chapter: "The d and f Block Elements"
 status: written
-words: 10451
+words: 10730
 updated: 2026-09-26
 class: "12"
 ncert_unit: "Unit 4 (Class 12)"
 ncert_code: "lech104"
+edition: rationalised
+exams: [JEE Advanced]
 sources: ["d-Block_Theory_26.pdf", "lech104.pdf"]
 tags: [chemistry, jee]
 ---
@@ -116,44 +118,78 @@ Cr (Z = 24):  [Ar] 3d⁵ 4s¹   (not 3d⁴4s²)  ← half-filled d⁵ stability
 
 **1st series (3d)**
 
-| Element | Sc | Ti | V | Cr | Mn | Fe | Co | Ni | Cu | Zn |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Z | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 |
-| 4s | 2 | 2 | 2 | **1** | 2 | 2 | 2 | 2 | **1** | 2 |
-| 3d | 1 | 2 | 3 | **5** | 5 | 6 | 7 | 8 | **10** | 10 |
+| Element | Z  | 4s    | 3d     |
+|---------|----|-------|--------|
+| Sc      | 21 | 2     | 1      |
+| Ti      | 22 | 2     | 2      |
+| V       | 23 | 2     | 3      |
+| Cr      | 24 | **1** | **5**  |
+| Mn      | 25 | 2     | 5      |
+| Fe      | 26 | 2     | 6      |
+| Co      | 27 | 2     | 7      |
+| Ni      | 28 | 2     | 8      |
+| Cu      | 29 | **1** | **10** |
+| Zn      | 30 | 2     | 10     |
 
 **2nd series (4d)** — note Nb, Mo, Ru, Rh and especially **Pd (4d¹⁰5s⁰)**
 
-| Element | Y | Zr | Nb | Mo | Tc | Ru | Rh | Pd | Ag | Cd |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Z | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 |
-| 5s | 2 | 2 | 1 | 1 | 2 | 1 | 1 | **0** | 1 | 2 |
-| 4d | 1 | 2 | 4 | 5 | 5 | 7 | 8 | **10** | 10 | 10 |
+| Element | Z  | 5s    | 4d     |
+|---------|----|-------|--------|
+| Y       | 39 | 2     | 1      |
+| Zr      | 40 | 2     | 2      |
+| Nb      | 41 | 1     | 4      |
+| Mo      | 42 | 1     | 5      |
+| Tc      | 43 | 2     | 5      |
+| Ru      | 44 | 1     | 7      |
+| Rh      | 45 | 1     | 8      |
+| Pd      | 46 | **0** | **10** |
+| Ag      | 47 | 1     | 10     |
+| Cd      | 48 | 2     | 10     |
 
 **3rd series (5d)**
 
-| Element | La | Hf | Ta | W | Re | Os | Ir | Pt | Au | Hg |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Z | 57 | 72 | 73 | 74 | 75 | 76 | 77 | 78 | 79 | 80 |
-| 6s | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 1 | 2 |
-| 5d | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 9 | 10 | 10 |
+| Element | Z  | 6s | 5d |
+|---------|----|----|----|
+| La      | 57 | 2  | 1  |
+| Hf      | 72 | 2  | 2  |
+| Ta      | 73 | 2  | 3  |
+| W       | 74 | 2  | 4  |
+| Re      | 75 | 2  | 5  |
+| Os      | 76 | 2  | 6  |
+| Ir      | 77 | 2  | 7  |
+| Pt      | 78 | 1  | 9  |
+| Au      | 79 | 1  | 10 |
+| Hg      | 80 | 2  | 10 |
 
 **4th series (6d)**
 
-| Element | Ac | Rf | Db | Sg | Bh | Hs | Mt | Ds | Rg | Cn |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Z | 89 | 104 | 105 | 106 | 107 | 108 | 109 | 110 | 111 | 112 |
-| 7s | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 2 |
-| 6d | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 10 | 10 |
+| Element | Z   | 7s | 6d |
+|---------|-----|----|----|
+| Ac      | 89  | 2  | 1  |
+| Rf      | 104 | 2  | 2  |
+| Db      | 105 | 2  | 3  |
+| Sg      | 106 | 2  | 4  |
+| Bh      | 107 | 2  | 5  |
+| Hs      | 108 | 2  | 6  |
+| Mt      | 109 | 2  | 7  |
+| Ds      | 110 | 2  | 8  |
+| Rg      | 111 | 1  | 10 |
+| Cn      | 112 | 2  | 10 |
 
 ### Configurations of 3d ions — *ns electrons are lost BEFORE (n−1)d* 🅰
 
-| | Sc | Ti | V | Cr | Mn | Fe | Co | Ni | Cu | Zn |
-|---|---|---|---|---|---|---|---|---|---|---|
-| M | 3d¹4s² | 3d²4s² | 3d³4s² | 3d⁵4s¹ | 3d⁵4s² | 3d⁶4s² | 3d⁷4s² | 3d⁸4s² | 3d¹⁰4s¹ | 3d¹⁰4s² |
-| M⁺ | 3d¹4s¹ | 3d²4s¹ | 3d³4s¹ | 3d⁵ | 3d⁵4s¹ | 3d⁶4s¹ | 3d⁷4s¹ | 3d⁸4s¹ | 3d¹⁰ | 3d¹⁰4s¹ |
-| M²⁺ | 3d¹ | 3d² | 3d³ | 3d⁴ | 3d⁵ | 3d⁶ | 3d⁷ | 3d⁸ | 3d⁹ | 3d¹⁰ |
-| M³⁺ | [Ar] | 3d¹ | 3d² | 3d³ | 3d⁴ | 3d⁵ | 3d⁶ | 3d⁷ | — | — |
+| Element | M       | M⁺      | M²⁺  | M³⁺  |
+|---------|---------|---------|------|------|
+| Sc      | 3d¹4s²  | 3d¹4s¹  | 3d¹  | [Ar] |
+| Ti      | 3d²4s²  | 3d²4s¹  | 3d²  | 3d¹  |
+| V       | 3d³4s²  | 3d³4s¹  | 3d³  | 3d²  |
+| Cr      | 3d⁵4s¹  | 3d⁵     | 3d⁴  | 3d³  |
+| Mn      | 3d⁵4s²  | 3d⁵4s¹  | 3d⁵  | 3d⁴  |
+| Fe      | 3d⁶4s²  | 3d⁶4s¹  | 3d⁶  | 3d⁵  |
+| Co      | 3d⁷4s²  | 3d⁷4s¹  | 3d⁷  | 3d⁶  |
+| Ni      | 3d⁸4s²  | 3d⁸4s¹  | 3d⁸  | 3d⁷  |
+| Cu      | 3d¹⁰4s¹ | 3d¹⁰    | 3d⁹  | —    |
+| Zn      | 3d¹⁰4s² | 3d¹⁰4s¹ | 3d¹⁰ | —    |
 
 > **Rule of thumb for JEE:** while forming ions the **s-electrons go first**; stability
 > bonuses at **d⁰, d⁵, d¹⁰** control which oxidation states survive
@@ -206,9 +242,17 @@ flowchart LR
 
 **ΔaH° of the 3d series (kJ mol⁻¹):**
 
-| Sc | Ti | V | Cr | Mn | Fe | Co | Ni | Cu | Zn |
-|---|---|---|---|---|---|---|---|---|---|
-| 326 | 473 | 515 | 397 | 281 | 416 | 425 | 430 | 339 | **126** |
+| Element | 326     |
+|---------|---------|
+| Ti      | 473     |
+| V       | 515     |
+| Cr      | 397     |
+| Mn      | 281     |
+| Fe      | 416     |
+| Co      | 425     |
+| Ni      | 430     |
+| Cu      | 339     |
+| Zn      | **126** |
 
 ### 3.4 Atomic and ionic radii
 
@@ -243,9 +287,18 @@ flowchart LR
   (mass ↑ but radii stay similar — lanthanoid contraction). e.g. Ti < Zr ≪ Hf.
 - 🅰 Useful orders: **Fe < Ni < Cu**; **Fe < Cu < Au**; **Fe < Hg < Au**.
 
-| 3d element | Sc | Ti | V | Cr | Mn | Fe | Co | Ni | Cu | Zn |
-|---|---|---|---|---|---|---|---|---|---|---|
-| ρ / g cm⁻³ | 3.43 | 4.1 | 6.07 | 7.19 | 7.21 | 7.8 | 8.7 | 8.9 | **8.9** | 7.1 |
+| Element | ρ / g cm⁻³ |
+|---------|------------|
+| Sc      | 3.43       |
+| Ti      | 4.1        |
+| V       | 6.07       |
+| Cr      | 7.19       |
+| Mn      | 7.21       |
+| Fe      | 7.8        |
+| Co      | 8.7        |
+| Ni      | 8.9        |
+| Cu      | **8.9**    |
+| Zn      | 7.1        |
 
 ### 3.6 Ionisation enthalpies
 
@@ -269,24 +322,50 @@ flowchart LR
 
 **Ionisation enthalpies of the 3d series (kJ mol⁻¹):**
 
-| | Sc | Ti | V | Cr | Mn | Fe | Co | Ni | Cu | Zn |
-|---|---|---|---|---|---|---|---|---|---|---|
-| IE₁ | 631 | 656 | 650 | 653 | 717 | 762 | 758 | 736 | 745 | **906** |
-| IE₂ | 1235 | 1309 | 1414 | **1592** | 1509 | 1561 | 1644 | 1752 | **1958** | 1734 |
-| IE₃ | 2393 | 2657 | 2833 | 2990 | **3260** | 2962 | 3243 | 3402 | 3556 | **3837** |
+| Element | IE₁     | IE₂      | IE₃      |
+|---------|---------|----------|----------|
+| Sc      | 631     | 1235     | 2393     |
+| Ti      | 656     | 1309     | 2657     |
+| V       | 650     | 1414     | 2833     |
+| Cr      | 653     | **1592** | 2990     |
+| Mn      | 717     | 1509     | **3260** |
+| Fe      | 762     | 1561     | 2962     |
+| Co      | 758     | 1644     | 3243     |
+| Ni      | 736     | 1752     | 3402     |
+| Cu      | 745     | **1958** | 3556     |
+| Zn      | **906** | 1734     | **3837** |
 
 ### 3.7 Master data table for the 3d series (NCERT Table 4.2)
 
-| Property | Sc | Ti | V | Cr | Mn | Fe | Co | Ni | Cu | Zn |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Configuration | 3d¹4s² | 3d²4s² | 3d³4s² | 3d⁵4s¹ | 3d⁵4s² | 3d⁶4s² | 3d⁷4s² | 3d⁸4s² | 3d¹⁰4s¹ | 3d¹⁰4s² |
-| ΔaH° / kJ mol⁻¹ | 326 | 473 | 515 | 397 | 281 | 416 | 425 | 430 | 339 | 126 |
-| Metallic radius / pm | 164 | 147 | 135 | 129 | 137 | 126 | 125 | 125 | 128 | 137 |
-| M²⁺ radius / pm | – | – | 79 | 82 | 82 | 77 | 74 | 70 | 73 | 75 |
-| M³⁺ radius / pm | 73 | 67 | 64 | 62 | 65 | 65 | 61 | 60 | – | – |
-| E°(M²⁺/M) / V | – | −1.63 | −1.18 | −0.90 | −1.18 | −0.44 | −0.28 | −0.25 | **+0.34** | −0.76 |
-| E°(M³⁺/M²⁺) / V | – | −0.37 | −0.26 | −0.41 | **+1.57** | +0.77 | **+1.97** | – | – | – |
-| Density / g cm⁻³ | 3.43 | 4.1 | 6.07 | 7.19 | 7.21 | 7.8 | 8.7 | 8.9 | 8.9 | 7.1 |
+*Configuration, radii and densities (NCERT Table 4.2):*
+
+| Element | Configuration | Metallic r / pm | M²⁺ r / pm | M³⁺ r / pm |
+|---|---|---|---|---|
+| Sc | 3d¹4s² | 164 | – | 73 |
+| Ti | 3d²4s² | 147 | – | 67 |
+| V | 3d³4s² | 135 | 79 | 64 |
+| Cr | 3d⁵4s¹ | 129 | 82 | 62 |
+| Mn | 3d⁵4s² | 137 | 82 | 65 |
+| Fe | 3d⁶4s² | 126 | 77 | 65 |
+| Co | 3d⁷4s² | 125 | 74 | 61 |
+| Ni | 3d⁸4s² | 125 | 70 | 60 |
+| Cu | 3d¹⁰4s¹ | 128 | 73 | – |
+| Zn | 3d¹⁰4s² | 137 | 75 | – |
+
+*Thermochemical and electrochemical data:*
+
+| Element | ΔaH° / kJ mol⁻¹ | ρ / g cm⁻³ | E°(M²⁺/M) / V | E°(M³⁺/M²⁺) / V |
+|---|---|---|---|---|
+| Sc | 326 | 3.43 | – | – |
+| Ti | 473 | 4.1 | −1.63 | −0.37 |
+| V | 515 | 6.07 | −1.18 | −0.26 |
+| Cr | 397 | 7.19 | −0.90 | −0.41 |
+| Mn | 281 | 7.21 | −1.18 | **+1.57** |
+| Fe | 416 | 7.8 | −0.44 | +0.77 |
+| Co | 425 | 8.7 | −0.28 | **+1.97** |
+| Ni | 430 | 8.9 | −0.25 | – |
+| Cu | 339 | 8.9 | **+0.34** | – |
+| Zn | 126 | 7.1 | −0.76 | – |
 
 ## 4. Oxidation States
 
@@ -302,15 +381,21 @@ flowchart LR
 
 **Oxidation states of the 3d series** (*bold* = most common):
 
-| | Sc | Ti | V | Cr | Mn | Fe | Co | Ni | Cu | Zn |
-|---|---|---|---|---|---|---|---|---|---|---|
-| +1 | | | | | | | | | **1** | |
-| +2 | | 2 | 2 | 2 | **2** | **2** | **2** | **2** | **2** | **2** |
-| +3 | **3** | 3 | 3 | **3** | 3 | **3** | 3 | 3 | | |
-| +4 | | **4** | 4 | 4 | 4 | 4 | 4 | 4 | | |
-| +5 | | | **5** | 5 | 5 | | | | | |
-| +6 | | | | **6** | 6 | 6 | | | | |
-| +7 | | | | | **7** | | | | | |
+| Element | Oxidation states observed | Most common / stable |
+|---|---|---|
+| Sc | +3 | +3 |
+| Ti | +2, +3, +4 | +4 |
+| V | +2, +3, +4, +5 | +5 |
+| Cr | +2, +3, +6 | +3, +6 |
+| Mn | +2, +3, +4, +5, +6, +7 | +2, +4, +7 |
+| Fe | +2, +3 | +3 |
+| Co | +2, +3 | +2, +3 |
+| Ni | +2 | +2 |
+| Cu | +1, +2 | +2 |
+| Zn | +2 | +2 |
+
+Cu⁺ is real but unstable in water — it disproportionates, 2Cu⁺ → Cu²⁺ + Cu, so Cu(I)
+survives only in insoluble CuCl/CuI and in complexes.
 
 - **Variability differs from p-block:** d-block states differ by **one unit**
   (V²⁺, V³⁺, V⁴⁺, V⁵⁺); p-block states normally differ by **two units** (inert pair).
@@ -357,9 +442,15 @@ M(s) → M²⁺(aq) costs **ΔaH° + IE₁ + IE₂** and is repaid by **ΔhydH°
 
 ### 5.2 E°(M³⁺/M²⁺)
 
-| Couple | Sc³⁺/Sc²⁺ | Ti³⁺/Ti²⁺ | V³⁺/V²⁺ | Cr³⁺/Cr²⁺ | Mn³⁺/Mn²⁺ | Fe³⁺/Fe²⁺ | Co³⁺/Co²⁺ |
-|---|---|---|---|---|---|---|---|
-| E° / V | very low (Sc³⁺ noble-gas stable) | −0.37 | −0.26 | −0.41 | **+1.57** | +0.77 | **+1.97** |
+| Element   | E° / V                           |
+|-----------|----------------------------------|
+| Sc³⁺/Sc²⁺ | very low (Sc³⁺ noble-gas stable) |
+| Ti³⁺/Ti²⁺ | −0.37                            |
+| V³⁺/V²⁺   | −0.26                            |
+| Cr³⁺/Cr²⁺ | −0.41                            |
+| Mn³⁺/Mn²⁺ | **+1.57**                        |
+| Fe³⁺/Fe²⁺ | +0.77                            |
+| Co³⁺/Co²⁺ | **+1.97**                        |
 
 - Low value for Sc → stability of **Sc³⁺ (noble-gas configuration)**.
 - Highest value for Zn (not shown in table; Zn³⁺ would strip an e⁻ from d¹⁰).
@@ -487,16 +578,19 @@ $\ce{1 unpaired e⁻  -> 1.73 BM}$
   Cu⁺.
 - Colours of aquated 3d ions:
 
-| Config | Ion | Colour | | Config | Ion | Colour |
-|---|---|---|---|---|---|---|
-| d⁰ | Sc³⁺, Ti⁴⁺ | colourless | | d⁵ | Mn²⁺ | (light) pink |
-| d¹ | Ti³⁺ | purple | | d⁵ | Fe³⁺ | yellow |
-| d¹ | V⁴⁺ | blue | | d⁶ | Fe²⁺ | light green |
-| d² | V³⁺ | green | | d⁷ | Co²⁺ | pink |
-| d³ | V²⁺ | violet | | d⁸ | Ni²⁺ | green |
-| d³ | Cr³⁺ | violet | | d⁹ | Cu²⁺ | blue |
-| d⁴ | Cr²⁺ | blue | | d¹⁰ | Zn²⁺ | colourless |
-| d⁴ | Mn³⁺ | violet | | | | |
+| d count | Aquated ion | Colour |
+|---|---|---|
+| d⁰ | Sc³⁺, Ti⁴⁺ | colourless |
+| d¹ | Ti³⁺, V⁴⁺ | purple, blue |
+| d² | V³⁺ | green |
+| d³ | V²⁺, Cr³⁺ | violet, violet |
+| d⁴ | Cr²⁺, Mn³⁺ | blue, violet |
+| d⁵ | Mn²⁺, Fe³⁺ | (light) pink, yellow |
+| d⁶ | Fe²⁺ | light green |
+| d⁷ | Co²⁺ | pink |
+| d⁸ | Ni²⁺ | green |
+| d⁹ | Cu²⁺ | blue |
+| d¹⁰ | Zn²⁺ | colourless |
 
 ## 10. Complex Formation
 
@@ -571,6 +665,7 @@ flowchart TD
     D -->|"evaporate"| E["Na2Cr2O7 · 2H2O (red crystals)"]
     E -->|"+ 2 KCl (hot conc.), double decomposition<br>NaCl crystallises out first, then cool"| F["K2Cr2O7<br>orange crystals"]
 ```
+*K₂Cr₂O₇ from chromite ore: alkaline fusion, acidification, and the solubility trick that separates the sulphate out.*
 
 Key equations:
 
@@ -603,22 +698,19 @@ $\ce{Cr2O7^2- + 2 OH-   <=>   2 CrO4^2- + H2O     (base / pH ↑ : yellow chroma
 **Structures:**
 
 ```mermaid
-flowchart TD
-    N0["Chromate, CrO4^2-                      Dichromate, Cr2O7^2-"]
-    N1["(tetrahedral)                          (two corner-sharing tetrahedra)"]
-    N2["O                                      O      O     O"]
-    N3["╱│╲                                     ║      ║     ║"]
-    N4["O–Cr–O    2-                          O–Cr–O–Cr–O   2-"]
-    N5["│                                         ║     (bridge O)"]
-    N6["O                                    Cr–O–Cr angle ≈ 126°"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
-    N5 --> N6
+flowchart LR
+    subgraph Chromate["Chromate CrO₄²⁻"]
+        direction TB
+        c1["tetrahedral<br>one Cr, four O<br>Cr in +6 state"]
+    end
+    subgraph Dichromate["Dichromate Cr₂O₇²⁻"]
+        direction TB
+        d1["two corner-sharing CrO₄ tetrahedra<br>one bridging O<br>Cr–O–Cr angle ≈ 126°"]
+    end
+    Chromate -->|"2 CrO₄²⁻ + 2H⁺ ⇌ Cr₂O₇²⁻ + H₂O<br>pH ↑ (alkaline) ⇌ pH ↓ (acidic)"| Dichromate
 ```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+*Chromate and dichromate are the same oxidation state in two geometries; only pH moves the
+balance (see the K₂Cr₂O₇ preparation flowsheet below).*
 
 
 **Oxidising action** (in acid):
@@ -657,7 +749,7 @@ the hypo solution.
 |---|---|---|
 | Acidic oxide | SO₃ | CrO₃ |
 | Oxoanions | SO₄²⁻, S₂O₇²⁻ | CrO₄²⁻, Cr₂O₇²⁻ |
-| Isomorphism | SO₄²⁻ ↔ CrO₄²⁻ (isomorphous) | |
+| Isomorphism | SO₄²⁻ ↔ CrO₄²⁻ (isomorphous) | CrO₄²⁻ ↔ SO₄²⁻ — K₂CrO₄ and K₂SO₄ form mixed crystals |
 | Chloride → chromyl/sulfuryl | SO₂Cl₂ | **CrO₂Cl₂** |
 | Anion + OH⁻ | SO₃Cl⁻ → SO₄²⁻ | CrO₃Cl⁻ → CrO₄²⁻ |
 | Polymer structure | β-SO₃ | CrO₃ has the **same chain structure** as β-SO₃ |
@@ -677,6 +769,7 @@ flowchart TD
     B -->|"better: Cl2 / O3 / CO2 / electrolysis<br>(no Mn lost as MnO2)"| C
     C --> D["KMnO4 crystals (dark purple,<br>isostructural with KClO4)"]
 ```
+*KMnO₄ from pyrolusite: fusion gives green manganate, and the trick is to drive the disproportionation to completion.*
 
 Key equations:
 
@@ -715,20 +808,12 @@ temperature-dependent paramagnetism) are explained by MO theory.
   O p-orbitals with Mn d-orbitals.
 
 ```mermaid
-flowchart TD
-    N0["Manganate MnO4^2- (green, 1 unpaired e-)     Permanganate MnO4^- (purple, d0)"]
-    N1["O-                                         O"]
-    N2["╱│╲                                        ╱│╲"]
-    N3["O–Mn–O                                    O–Mn–O   -"]
-    N4["│                                         │"]
-    N5["O                                         O"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
-    N4 --> N5
+flowchart LR
+    M["MnO₄²⁻ manganate<br>green · Mn +6 · 1 unpaired e⁻<br>paramagnetic"] -->|"2 MnO₄²⁻ + 4H⁺ ⇌ 3 MnO₄⁻ + MnO₂ + 2H₂O<br>acid, or oxidised by any stronger oxidant"| P["MnO₄⁻ permanganate<br>purple · Mn +7 · d⁰<br>diamagnetic"]
 ```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+*Manganate and permanganate are both Mn(VI)/(VII) oxo-ions: the green one has the unpaired
+electron, the purple one does not. Passing from one to the other is a one-electron step, which
+is what makes the disproportionation in acid so easy to spot.*
 
 
 **Effect of heating 🅰:**
@@ -882,15 +967,16 @@ wide range of oxidation states and by **radioactivity**.
 
 ```mermaid
 flowchart LR
-    Ln["Ln metal"] -->|H2, heat| LnH3["LnH3"]
-    Ln -->|N2, heat| LnN["LnN"]
-    Ln -->|O2, burns| Ln2O3["Ln2O3"]
-    Ln -->|halogens| LnX3["LnX3"]
-    Ln -->|S, heat| Ln2S3["Ln2S3"]
-    Ln -->|C, heat| LnC["Ln3C / Ln2C3 / LnC2"]
-    Ln -->|dil. acids| Ln3["Ln3+ + H2"]
-    Ln -->|H2O| LnOH["Ln(OH)3 + H2"]
+    Ln["Ln metal"] -->|"H2, heat"| LnH3["LnH3"]
+    Ln -->|"N2, heat"| LnN["LnN"]
+    Ln -->|"O2, burns"| Ln2O3["Ln2O3"]
+    Ln -->|"halogens"| LnX3["LnX3"]
+    Ln -->|"S, heat"| Ln2S3["Ln2S3"]
+    Ln -->|"C, heat"| LnC["Ln3C / Ln2C3 / LnC2"]
+    Ln -->|"dil. acids"| Ln3["Ln3+ + H2"]
+    Ln -->|"H2O"| LnOH["Ln(OH)3 + H2"]
 ```
+*Lanthanoid reactivity is almost uniform — the same hydride, nitride, oxide, halide, sulphide and carbide pattern for every Ln.*
 
 - Oxides **Ln₂O₃** and hydroxides **Ln(OH)₃** are definite compounds (not just hydrated
   oxides), **basic** like alkaline-earth oxides/hydroxides.
@@ -1245,17 +1331,12 @@ $\ce{Hydrated: Fe2O3 / Fe(OH)3 + HCl -> FeCl3·6H2O (yellow crystals)}$
 
 ```mermaid
 flowchart TD
-    N0["Cl     Cl"]
-    N1["╱ ╲   ╱ ╲"]
-    N2["Cl–Fe   Fe–Cl        ⇌  at 750 °C  ⇌  2 FeCl3"]
-    N3["╲ ╱   ╲ ╱        above 750 °C: 2 FeCl3 ⇌ 2 FeCl2 + Cl2"]
-    N4["Cl     Cl"]
-    N0 --> N1
-    N1 --> N2
-    N2 --> N3
-    N3 --> N4
+    D["Anhydrous FeCl₃ is a **dimer Fe₂Cl₆**<br>two FeCl₄ tetrahedra sharing two chloride bridges"]
+    D -->|"heat above 750 °C"| M["2 FeCl₃ — monomeric, gas phase"]
+    M -->|"further heating"| D2["2 FeCl₃ ⇌ 2 FeCl₂ + Cl₂<br>Fe(III) is reduced by its own chloride"]
 ```
-*Converted from ASCII: {lines[0][:80] if lines else ''}*
+*The bridging chlorides are what make the vapour density of the vapour correspond to Fe₂Cl₆
+rather than FeCl₃; the dimer breaks down above 750 °C.*
 
 
 - Solution is **acidic (hydrolysis):** FeCl₃ + 3 H₂O ⇌ Fe(OH)₃ + 3 HCl.
@@ -1354,6 +1435,12 @@ flowchart TD
 
 ---
 
-*Next chapters to receive the same treatment (in folder order): Coordination Compounds
-(module uploaded), Metallurgy (module uploaded), Salt Analysis (module uploaded), then
-the remaining 26 chapters from NCERT.*
+
+*Cross-links:*
+
+- [Coordination Compounds (Unit 5)](../08-Coordination-Compounds/notes.md) — d-d splitting, CFSE, colour and magnetic moments all continue from the d-electron counts established here.
+- [Environmental Chemistry (Unit 14)](../06-Environmental-Chemistry/notes.md) — the industrial use of K₂Cr₂O₇ and KMnO₄, and what they do to the water they are discharged into.
+- [Metallurgy (Class XII Unit 6)](../../Physical-Chemistry/12-General-Principles-and-Processes-of-Isolation-of-Elements/notes.md) — how the Ellingham diagram built on the oxide stability of these same metals is actually used to extract them.
+- [Salt Analysis (Practical)](../../Practical-Chemistry/Salt-Analysis/notes.md) — the transition-metal cations and the confirmatory reagents (NH₄OH, K₄Fe(CN)₆, KSCN) used on them.
+
+*Sources:* NCERT Class XII rationalised ed. (lech104) · Allen d-Block module (Enthusiast, JEE Main + Advanced).

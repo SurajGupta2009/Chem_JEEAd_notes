@@ -8,7 +8,7 @@ edition: pre-rationalised
 exams: [JEE Advanced]
 sources: [kech204-legacy.pdf, p-block_Theory_26.pdf]
 status: written
-words: 14500
+words: 4864
 updated: 2026-09-27
 tags: [chemistry/inorganic, jee/advanced, p-block, boron, aluminium, carbon, silicon]
 ---
@@ -28,7 +28,7 @@ tags: [chemistry/inorganic, jee/advanced, p-block, boron, aluminium, carbon, sil
 - [Part A — General Trends of p-Block](#part-a--general-trends-of-p-block)
   1. [Introduction & Electronic Configuration](#1-introduction--electronic-configuration)
   2. [Oxidation States & Inert Pair Effect](#2-oxidation-states--inert-pair-effect)
-  3. [Anomalous Behaviour of First Member & pπ-pπ Bonding](#3-anomalous-behaviour-of-first-member--pp-pp-bonding)
+  3. [Anomalous Behaviour of First Member & pπ-pπ Bonding](#3-anomalous-behaviour-of-first-member--pπ-pπ-bonding)
 - [Part B — Group 13: Boron Family](#part-b--group-13-boron-family)
   4. [Occurrence & Electronic Config (11.1)](#4-occurrence--electronic-config-111)
   5. [Atomic Radii, Ionic Radii, IE, Electronegativity](#5-atomic-radii-ionic-radii-ie-electronegativity)
@@ -37,14 +37,14 @@ tags: [chemistry/inorganic, jee/advanced, p-block, boron, aluminium, carbon, sil
   8. [Reactivity Towards Air, Water, Acids, Alkalis, Halogens](#8-reactivity-towards-air-water-acids-alkalis-halogens)
   9. [Preparation of Boron & Aluminium](#9-preparation-of-boron--aluminium)
   10. [Important Compounds of Boron — Borax, Boric Acid, Diborane, Borazine, BN](#10-important-compounds-of-boron--borax-boric-acid-diborane-borazine-bn)
-  11. [Compounds of Aluminium — Al₂O₃, AlCl₃, Alums](#11-compounds-of-aluminium--al2o3-alcl3-alums)
+  11. [Compounds of Aluminium — Al₂O₃, AlCl₃, Alums](#11-compounds-of-aluminium--al₂o₃-alcl₃-alums)
 - [Part C — Group 14: Carbon Family](#part-c--group-14-carbon-family)
   12. [Occurrence & Electronic Config (11.2)](#12-occurrence--electronic-config-112)
   13. [Atomic Radii, IE, Electronegativity, Physical Properties](#13-atomic-radii-ie-electronegativity-physical-properties)
   14. [Chemical Properties — Catenation, Oxidation States, Reactivity](#14-chemical-properties--catenation-oxidation-states-reactivity)
   15. [Allotropes of Carbon — Diamond, Graphite, Fullerenes, Graphene](#15-allotropes-of-carbon--diamond-graphite-fullerenes-graphene)
-  16. [Important Compounds of Carbon — CO, CO₂, Carbonates](#16-important-compounds-of-carbon--co-co2-carbonates)
-  17. [Silicon & Its Compounds — SiO₂, Silicates, Silicones, SiCl₄, Zeolites](#17-silicon--its-compounds--sio2-silicates-silicones-sicl4-zeolites)
+  16. [Important Compounds of Carbon — CO, CO₂, Carbonates](#16-important-compounds-of-carbon--co-co₂-carbonates)
+  17. [Silicon & Its Compounds — SiO₂, Silicates, Silicones, SiCl₄, Zeolites](#17-silicon--its-compounds--sio₂-silicates-silicones-sicl₄-zeolites)
   18. [Anomalous Behaviour & Diagonal Relationship](#18-anomalous-behaviour--diagonal-relationship)
   19. [Uses of Group 13 & 14 Elements](#19-uses-of-group-13--14-elements)
   20. [Quick Revision Sheet](#20-quick-revision-sheet)
@@ -75,6 +75,7 @@ flowchart LR
     B --> C["Other O.S. = group O.S. - 2n<br>inert pair effect<br>heavier → lower O.S. more stable"]
     A --> D["Inner core<br>B,Al noble gas<br>Ga,In noble gas + d10<br>Tl noble gas + f14 d10<br>poor shielding → anomalies"]
 ```
+*Group 13–18 in one picture: the maximum oxidation state, the inert-pair effect, and the inner-core configurations behind the anomalies.*
 
 ## 2. Oxidation States & Inert Pair Effect
 
@@ -146,6 +147,7 @@ flowchart TD
     B --> Radius["Atomic radii<br>B < Ga < Al < In < Tl<br>Ga < Al due d10 poor shielding"]
     B --> IE["IE<br>B > Tl > Ga > Al > In<br>discontinuity d/f shielding"]
 ```
+*The Group 13 physical properties do not decrease smoothly — the d¹⁰ contraction makes Ga smaller and Tl heavier than expected.*
 
 ## 7. Chemical Properties — Oxidation States, Lewis Acidity, Hydrolysis
 
@@ -194,6 +196,7 @@ flowchart LR
     Al --> Acid2["HCl → AlCl3+H2<br>HNO3 80% passive Al2O3"]
     Al --> Alkali2["NaOH → NaAlO2+H2"]
 ```
+*Boron and aluminium against air, water, acids and alkalis — the amphoterism that defines the group.*
 
 ## 9. Preparation of Boron & Aluminium
 
@@ -230,11 +233,12 @@ Filtered $\ce{CaCO3}$ residue, $\ce{NaBO2}$ in filtrate concentrated, crystallis
 
 ```mermaid
 flowchart TD
-    Colemanite["Colemanite<br>2CaO·3B2O3"] --> Na2CO3["+ Na2CO3"] --> Filtrate["Filtrate NaBO2 + Na2B4O7<br>Residue CaCO3"]
-    Filtrate --> CO2["CO2 passed"] --> Borax["Borax Na2B4O7·10H2O"]
-    Borax --> Alkaline["H2O → 2NaOH + 4H3BO3<br>alkaline"]
-    Borax --> Bead["Δ → Na2B4O7 → 2NaBO2 + B2O3<br>borax bead test<br>CoO → blue Co(BO2)2"]
+    Colemanite["Colemanite<br>2CaO·3B2O3"] -->|"Na₂CO₃ added<br>blow CO₂ out"| Filtrate["Filtrate NaBO₂ + Na₂B₄O₇<br>Residue CaCO₃"]
+    Filtrate -->|"CO₂ stream"| Borax["Borax Na₂B₄O₇·10H₂O"]
+    Borax -->|"hydrolysis"| Alkaline["H₂O → 2NaOH + 4H₃BO₃<br>alkaline"]
+    Borax -->|"heated in blowpipe"| Bead["Na₂B₄O₇ → 2NaBO₂ + B₂O₃<br>borax bead test<br>CoO → blue Co(BO₂)₂"]
 ```
+*Borax from colemanite, and the borax bead test that identifies a metal by the colour of its metaborate.*
 
 ### Orthoboric acid $\ce{H3BO3}$ / $\ce{B(OH)3}$
 
@@ -289,6 +293,10 @@ Structure: planar hexagonal ring alternating B-N, B-N 144 pm, isoelectronic with
 
 ![Borazine](figures/mol/borazine.svg)
 *Borazine B₃N₃H₆ — inorganic benzene, planar.*
+
+![Benzene](figures/mol/benzene.svg)
+*The benzene ring it is isoelectronic with — the B–N ring of borazine has the same skeleton, but
+the polar B–N bonds delocalise the π electrons less evenly, so it is much less aromatic.*
 
 ### Boron Nitride BN
 
@@ -350,6 +358,7 @@ flowchart TD
     Sn --> Pb["Pb<br>metal<br>inert pair +2 stable"]
     C --> Prop["Catenation<br>C >> Si > Ge ≈ Sn > Pb<br>MP C > Si > Ge > Pb > Sn"]
 ```
+*Group 14 down the table: catenation and melting point both peak at carbon and collapse by lead.*
 
 ## 14. Chemical Properties — Catenation, Oxidation States, Reactivity
 
@@ -383,6 +392,7 @@ flowchart TD
     C --> Full["Fullerene C60<br>20 hex + 12 pent<br>soccer ball<br>truncated icosahedron"]
     C --> Graphene["Graphene<br>single layer graphite<br>2D, strong, conductor"]
 ```
+*The four carbon allotropes side by side — bonding, bond length, and what that does to hardness and conductivity.*
 
 ## 16. Important Compounds of Carbon — CO, CO₂, Carbonates
 
@@ -437,6 +447,7 @@ flowchart TD
     SiO4 --> Sheet["Sheet<br>(Si2O5^2-)n share 3 O<br>micas clays"]
     SiO4 --> ThreeD["3D<br>share 4 O<br>SiO2 quartz<br>feldspar KAlSi3O8"]
 ```
+*Silicate structures classified purely by how many corners of the SiO₄ tetrahedron are shared.*
 
 **Silicones:** Organosilicon polymers $\ce{(R2SiO)n}$ where R alkyl/aryl, general $\ce{R2SiCl2}$ hydrolysis → $\ce{R2Si(OH)2}$ → condensation → silicone. Properties: water repellent, high thermal stability, chemically inert, used as sealant, grease, electrical insulator, water-proofing.
 
@@ -466,6 +477,7 @@ flowchart LR
     B["B<br>small<br>high IE<br>no d<br>max cov 4<br>pπ-pπ"] -- "Diagonal<br>similar charge/radius<br>EN B2.0 Si1.8" --> Si["Si<br>covalent<br>oxides acidic<br>hydrides<br>halides hydrolysed"]
     C["C<br>small<br>catenation max<br>pπ-pπ multiple<br>max cov 4"] -- "Similar?" --> Si2["Si<br>limited catenation<br>dπ-pπ weak"]
 ```
+*Why boron and carbon both differ from silicon, and why silicon nevertheless shows a diagonal relationship to both.*
 
 ## 19. Uses of Group 13 & 14 Elements
 

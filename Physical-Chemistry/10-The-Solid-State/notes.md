@@ -8,7 +8,7 @@ edition: legacy
 exams: [JEE Advanced]
 sources: [lech101-legacy.pdf]
 status: written
-words: 16000
+words: 5215
 updated: 2026-09-28
 tags: [chemistry/physical, jee/advanced, solid-state, crystal-lattice, unit-cell, packing-efficiency, voids, defects, band-theory]
 ---
@@ -30,7 +30,7 @@ tags: [chemistry/physical, jee/advanced, solid-state, crystal-lattice, unit-cell
   2. [Amorphous vs crystalline solids — long vs short range order (1.2)](#2-amorphous-vs-crystalline-solids--long-vs-short-range-order-12)
   3. [Classification of crystalline solids — molecular, ionic, metallic, covalent (1.3)](#3-classification-of-crystalline-solids--molecular-ionic-metallic-covalent-13)
 - [Part B — Crystal Lattice and Unit Cell](#part-b--crystal-lattice-and-unit-cell)
-  4. [Crystal lattice and unit cell — parameters (1.4–1.5)](#4-crystal-lattice-and-unit-cell--parameters-14-15)
+  4. [Crystal lattice and unit cell — parameters (1.4–1.5)](#4-crystal-lattice-and-unit-cell--parameters-1415)
   5. [Seven crystal systems and 14 Bravais lattices (1.5)](#5-seven-crystal-systems-and-14-bravais-lattices-15)
   6. [Number of atoms per unit cell — primitive, bcc, fcc, end-centred (1.6)](#6-number-of-atoms-per-unit-cell--primitive-bcc-fcc-end-centred-16)
 - [Part C — Close Packing and Voids](#part-c--close-packing-and-voids)
@@ -39,7 +39,7 @@ tags: [chemistry/physical, jee/advanced, solid-state, crystal-lattice, unit-cell
   9. [Tetrahedral and octahedral voids — location and number (1.6.1)](#9-tetrahedral-and-octahedral-voids--location-and-number-161)
   10. [Radius ratio rules and formula of compound from voids 🆇 (1.6.1)](#10-radius-ratio-rules-and-formula-of-compound-from-voids--161)
   11. [Packing efficiency — simple cubic 52.4%, bcc 68%, hcp/ccp 74% (1.7)](#11-packing-efficiency--simple-cubic-524-bcc-68-hcpccp-74-17)
-  12. [Calculations involving unit cell dimensions $d=zM/a^3N_A$ (1.8)](#12-calculations-involving-unit-cell-dimensions-dzm-a3na-18)
+  12. [Calculations involving unit cell dimensions $d=zM/a^3N_A$ (1.8)](#12-calculations-involving-unit-cell-dimensions-dzma3na-18)
 - [Part D — Imperfections and Properties](#part-d--imperfections-and-properties)
   13. [Imperfections in solids — point defects vacancy interstitial (1.9)](#13-imperfections-in-solids--point-defects-vacancy-interstitial-19)
   14. [Frenkel and Schottky defects — comparison (1.9)](#14-frenkel-and-schottky-defects--comparison-19)
@@ -72,12 +72,13 @@ Characteristics:
 - High density.
 
 ```mermaid
-flowchart TB
-    Matter[Matter] --> Fluid[Fluids - liquids & gases<br>free to move<br>flow]
-    Matter --> Solid[Solids<br>fixed positions<br>oscillate only<br>rigid incompressible<br>definite shape volume]
-    Solid --> Crystalline[Crystalline<br>long range order<br>regular periodic]
-    Solid --> Amorphous[Amorphous<br>short range order<br>irregular]
+flowchart TD
+    Matter["Matter"] --> Fluid["Fluids - liquids & gases<br>free to move<br>flow"]
+    Matter --> Solid["Solids<br>fixed positions<br>oscillate only<br>rigid incompressible<br>definite shape volume"]
+    Solid --> Crystalline["Crystalline<br>long range order<br>regular periodic"]
+    Solid --> Amorphous["Amorphous<br>short range order<br>irregular"]
 ```
+*Fluids flow, solids do not; and solids split into crystalline (long-range order) and amorphous (short-range only).*
 
 ## 2. Amorphous vs crystalline solids — long vs short range order (1.2)
 
@@ -89,14 +90,15 @@ Quartz vs quartz glass: quartz crystalline long range order, quartz glass amorph
 
 ```mermaid
 flowchart LR
-    subgraph Crystalline[Crystalline]
-        C1[Long range order<br>regular periodic<br>sharp mp<br>anisotropic<br>true solid<br>e.g. NaCl quartz diamond]
+    subgraph Crystalline["Crystalline"]
+        C1["Long range order<br>regular periodic<br>sharp mp<br>anisotropic<br>true solid<br>e.g. NaCl quartz diamond"]
     end
-    subgraph Amorphous[Amorphous]
-        A1[Short range order only<br>irregular<br>soften over range<br>isotropic<br>pseudo solid supercooled liquid<br>e.g. glass rubber plastic]
+    subgraph Amorphous["Amorphous"]
+        A1["Short range order only<br>irregular<br>soften over range<br>isotropic<br>pseudo solid supercooled liquid<br>e.g. glass rubber plastic"]
     end
-    Crystalline -->|Differences| Amorphous
+    Crystalline -->|"Differences"| Amorphous
 ```
+*The crystalline/amorphous distinction, and why a glass is really a supercooled liquid.*
 
 ## 3. Classification of crystalline solids — molecular, ionic, metallic, covalent (1.3)
 
@@ -117,15 +119,16 @@ Based on nature of intermolecular forces / binding forces:
 Diamond: $sp^3$ each C bonded to 4 C tetrahedral network hard, graphite: $sp^2$ layers hexagonal sheets with delocalised pi electrons conducting within layers, soft.
 
 ```mermaid
-flowchart TB
-    Cryst[Crystalline Solids] --> Mol[Molecular<br>molecules<br>London/dipole/H-bond<br>soft low mp<br>non-conductor<br>e.g. Ar HCl ice]
-    Cryst --> Ionic[Ionic<br>ions<br>Coulombic strong<br>hard brittle high mp<br>conduct molten/aq<br>e.g. NaCl MgO]
-    Cryst --> Metallic[Metallic<br>kernels + e- sea<br>metallic bond<br>hard to soft<br>conduct solid & molten<br>malleable ductile<br>e.g. Fe Cu]
-    Cryst --> Covalent[Covalent network<br>atoms covalent giant<br>very hard very high mp<br>insulator/semiconductor<br>e.g. diamond graphite Si SiO2]
-    Mol --> NonPolar[Non-polar<br>London<br>e.g. H2 I2]
-    Mol --> Polar[Polar<br>dipole-dipole<br>e.g. HCl SO2]
-    Mol --> HBond[H-bonded<br>H-bond<br>e.g. H2O ice]
+flowchart TD
+    Cryst["Crystalline Solids"] --> Mol["Molecular<br>molecules<br>London/dipole/H-bond<br>soft low mp<br>non-conductor<br>e.g. Ar HCl ice"]
+    Cryst --> Ionic["Ionic<br>ions<br>Coulombic strong<br>hard brittle high mp<br>conduct molten/aq<br>e.g. NaCl MgO"]
+    Cryst --> Metallic["Metallic<br>kernels + e- sea<br>metallic bond<br>hard to soft<br>conduct solid & molten<br>malleable ductile<br>e.g. Fe Cu"]
+    Cryst --> Covalent["Covalent network<br>atoms covalent giant<br>very hard very high mp<br>insulator/semiconductor<br>e.g. diamond graphite Si SiO2"]
+    Mol --> NonPolar["Non-polar<br>London<br>e.g. H2 I2"]
+    Mol --> Polar["Polar<br>dipole-dipole<br>e.g. HCl SO2"]
+    Mol --> HBond["H-bonded<br>H-bond<br>e.g. H2O ice"]
 ```
+*Four classes of crystalline solid, each with its bonding, its mechanical behaviour and its conductivity.*
 
 ---
 
@@ -170,16 +173,17 @@ Centering types:
 Distribution among 7 systems gives 14 Bravais lattices: Cubic 3 (P,I,F), Tetragonal 2 (P,I), Orthorhombic 4 (P,C,I,F), Rhombohedral 1 (P), Hexagonal 1 (P), Monoclinic 2 (P,C), Triclinic 1 (P).
 
 ```mermaid
-flowchart TB
-    Cubic[Cubic<br>a=b=c α=β=γ=90°<br>3 lattices P I F<br>e.g. NaCl Cu]
-    Tetra[Tetragonal<br>a=b≠c α=β=γ=90°<br>2 lattices P I<br>e.g. SnO2]
-    Ortho[Orthorhombic<br>a≠b≠c α=β=γ=90°<br>4 lattices P C I F<br>e.g. KNO3]
-    Rhombo[Rhombohedral<br>a=b=c α=β=γ≠90°<br>1 lattice P<br>e.g. CaCO3]
-    Hexa[Hexagonal<br>a=b≠c α=β=90° γ=120°<br>1 lattice P<br>e.g. graphite Zn]
-    Mono[Monoclinic<br>a≠b≠c α=γ=90° β≠90°<br>2 lattices P C<br>e.g. Na2SO4·10H2O]
-    Tri[Triclinic<br>a≠b≠c α≠β≠γ≠90°<br>1 lattice P<br>e.g. K2Cr2O7]
+flowchart TD
+    Cubic["Cubic<br>a=b=c α=β=γ=90°<br>3 lattices P I F<br>e.g. NaCl Cu"]
+    Tetra["Tetragonal<br>a=b≠c α=β=γ=90°<br>2 lattices P I<br>e.g. SnO2"]
+    Ortho["Orthorhombic<br>a≠b≠c α=β=γ=90°<br>4 lattices P C I F<br>e.g. KNO3"]
+    Rhombo["Rhombohedral<br>a=b=c α=β=γ≠90°<br>1 lattice P<br>e.g. CaCO3"]
+    Hexa["Hexagonal<br>a=b≠c α=β=90° γ=120°<br>1 lattice P<br>e.g. graphite Zn"]
+    Mono["Monoclinic<br>a≠b≠c α=γ=90° β≠90°<br>2 lattices P C<br>e.g. Na2SO4·10H2O"]
+    Tri["Triclinic<br>a≠b≠c α≠β≠γ≠90°<br>1 lattice P<br>e.g. K2Cr2O7"]
     Cubic --> Tetra --> Ortho --> Rhombo --> Hexa --> Mono --> Tri
 ```
+*The seven crystal systems with their lattice parameters, and the 14 Bravais lattices they generate.*
 
 ## 6. Number of atoms per unit cell — primitive, bcc, fcc, end-centred (1.6)
 
@@ -220,14 +224,15 @@ Two 2D hexagonal layers stacked in 3D:
 Both hcp and ccp have 74% space filled, 26% voids.
 
 ```mermaid
-flowchart TB
-    OneD[1D close packing<br>row touching<br>CN 2]
-    TwoD[2D close packing] --> Square[Square<br>aligned<br>CN 4<br>less efficient]
-    TwoD --> Hex[Hexagonal<br>depressions<br>CN 6<br>more efficient]
-    Hex --> ThreeD[3D stacking of 2D hex layers]
-    ThreeD --> HCP[hcp ABAB<br>3rd layer above 1st<br>Mg Zn<br>CN 12<br>74% packing]
-    ThreeD --> CCP[ccp ABCABC fcc<br>3rd layer not above 1st<br>4th above 1st<br>Cu Ag<br>CN 12<br>74% packing]
+flowchart TD
+    OneD["1D close packing<br>row touching<br>CN 2"]
+    TwoD["2D close packing"] --> Square["Square<br>aligned<br>CN 4<br>less efficient"]
+    TwoD --> Hex["Hexagonal<br>depressions<br>CN 6<br>more efficient"]
+    Hex --> ThreeD["3D stacking of 2D hex layers"]
+    ThreeD --> HCP["hcp ABAB<br>3rd layer above 1st<br>Mg Zn<br>CN 12<br>74% packing"]
+    ThreeD --> CCP["ccp ABCABC fcc<br>3rd layer not above 1st<br>4th above 1st<br>Cu Ag<br>CN 12<br>74% packing"]
 ```
+*Close packing built up in three stages, ending in hcp ABAB and ccp ABCABC — both 74% and both CN 12.*
 
 ## 9. Tetrahedral and octahedral voids — location and number (1.6.1)
 
@@ -291,11 +296,12 @@ Thus ccp/hcp > bcc > sc in packing efficiency.
 
 ```mermaid
 flowchart LR
-    SC[Simple cubic<br>1 atom<br>a=2r<br>52.4%<br>least efficient]
-    BCC[bcc<br>2 atoms<br>body diagonal 4r<br>√3 a=4r<br>68%]
-    CCP[ccp/fcc & hcp<br>4 atoms fcc<br>face diagonal 4r<br>√2 a=4r<br>74% max efficient<br>CN 12]
+    SC["Simple cubic<br>1 atom<br>a=2r<br>52.4%<br>least efficient"]
+    BCC["bcc<br>2 atoms<br>body diagonal 4r<br>√3 a=4r<br>68%"]
+    CCP["ccp/fcc & hcp<br>4 atoms fcc<br>face diagonal 4r<br>√2 a=4r<br>74% max efficient<br>CN 12"]
     SC --> BCC --> CCP
 ```
+*Packing efficiency from the unit-cell geometry: 52.4%, 68% and 74%.*
 
 
 ### Bragg's law — X-ray diffraction for crystal structure 🆇
@@ -374,12 +380,13 @@ Comparison table:
 $\ce{AgBr}$ shows both Frenkel and Schottky.
 
 ```mermaid
-flowchart TB
-    PointDefect[Point Defects] --> Vacancy[Vacancy<br>missing particle<br>density ↓]
-    PointDefect --> Interstitial[Interstitial<br>extra in void<br>density ↑]
-    PointDefect --> Frenkel[Frenkel<br>small ion displaced<br>normal → interstitial<br>vacancy + interstitial<br>density same<br>large size diff<br>e.g. ZnS AgCl]
-    PointDefect --> Schottky[Schottky<br>equal cations+anions missing<br>vacancies<br>density ↓<br>similar sizes<br>high coordination<br>e.g. NaCl KCl]
+flowchart TD
+    PointDefect["Point Defects"] --> Vacancy["Vacancy<br>missing particle<br>density ↓"]
+    PointDefect --> Interstitial["Interstitial<br>extra in void<br>density ↑"]
+    PointDefect --> Frenkel["Frenkel<br>small ion displaced<br>normal → interstitial<br>vacancy + interstitial<br>density same<br>large size diff<br>e.g. ZnS AgCl"]
+    PointDefect --> Schottky["Schottky<br>equal cations+anions missing<br>vacancies<br>density ↓<br>similar sizes<br>high coordination<br>e.g. NaCl KCl"]
 ```
+*Frenkel versus Schottky defects — whether density changes is the quickest way to tell them apart.*
 
 ## 15. Impurity defects and non-stoichiometric defects 🆇 (1.9)
 
@@ -418,13 +425,14 @@ Band theory: Valence band filled, conduction band empty, gap = band gap.
 $n$-type and $p$-type used in diodes, transistors.
 
 ```mermaid
-flowchart TB
-    Band[Band Theory] --> Conductor[Conductor<br>VB and CB overlap<br>or CB partially filled<br>e- free<br>e.g. metals]
-    Band --> Insulator[Insulator<br>large gap >3eV<br>VB full CB empty<br>no conduction<br>e.g. diamond glass]
-    Band --> Semi[Semiconductor<br>small gap 1-2eV<br>thermal excitation<br>conductivity ↑ with T<br>e.g. Si Ge]
-    Semi --> Ntype[n-type<br>doped group 15 P As<br>extra e- in CB<br>negative carriers]
-    Semi --> Ptype[p-type<br>doped group 13 B Al<br>hole in VB<br>positive carriers]
+flowchart TD
+    Band["Band Theory"] --> Conductor["Conductor<br>VB and CB overlap<br>or CB partially filled<br>e- free<br>e.g. metals"]
+    Band --> Insulator["Insulator<br>large gap >3eV<br>VB full CB empty<br>no conduction<br>e.g. diamond glass"]
+    Band --> Semi["Semiconductor<br>small gap 1-2eV<br>thermal excitation<br>conductivity ↑ with T<br>e.g. Si Ge"]
+    Semi --> Ntype["n-type<br>doped group 15 P As<br>extra e- in CB<br>negative carriers"]
+    Semi --> Ptype["p-type<br>doped group 13 B Al<br>hole in VB<br>positive carriers"]
 ```
+*Band theory in one diagram: overlap gives conductors, a small gap gives semiconductors, a large gap gives insulators.*
 
 ## 17. Magnetic properties — dia, para, ferro, antiferro, ferri 🆇 (1.11)
 
@@ -439,14 +447,15 @@ Magnetic properties due to electrons.
 Transition: Ferromagnetic and ferrimagnetic become paramagnetic on heating above Curie temperature.
 
 ```mermaid
-flowchart TB
-    Mag[Magnetic Properties] --> Dia[Dia<br>all paired<br>repelled<br>e.g. NaCl H2O]
-    Mag --> Para[Para<br>unpaired<br>attracted<br>e.g. O2 Cu2+]
-    Mag --> Ferro[Ferro<br>spontaneous alignment same dir<br>domains<br>strongly attracted<br>permanent magnet<br>e.g. Fe Co Ni CrO2]
-    Mag --> Antiferro[Antiferro<br>antiparallel equal<br>net zero<br>e.g. MnO]
-    Mag --> Ferri[Ferri<br>antiparallel unequal<br>net non-zero<br>e.g. Fe3O4 MgFe2O4]
-    Ferro --> Curie[Above Curie temp<br>ferro → para]
+flowchart TD
+    Mag["Magnetic Properties"] --> Dia["Dia<br>all paired<br>repelled<br>e.g. NaCl H2O"]
+    Mag --> Para["Para<br>unpaired<br>attracted<br>e.g. O2 Cu2+"]
+    Mag --> Ferro["Ferro<br>spontaneous alignment same dir<br>domains<br>strongly attracted<br>permanent magnet<br>e.g. Fe Co Ni CrO2"]
+    Mag --> Antiferro["Antiferro<br>antiparallel equal<br>net zero<br>e.g. MnO"]
+    Mag --> Ferri["Ferri<br>antiparallel unequal<br>net non-zero<br>e.g. Fe3O4 MgFe2O4"]
+    Ferro --> Curie["Above Curie temp<br>ferro → para"]
 ```
+*Five magnetic behaviours distinguished by what the unpaired electrons do with each other.*
 
 ---
 

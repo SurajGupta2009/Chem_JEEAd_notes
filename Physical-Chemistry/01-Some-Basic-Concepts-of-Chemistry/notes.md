@@ -8,7 +8,7 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [kech101.pdf]
 status: written
-words: 13500
+words: 5186
 updated: 2026-09-28
 tags: [chemistry/physical, jee/main, jee/advanced, mole-concept, stoichiometry]
 ---
@@ -26,17 +26,17 @@ tags: [chemistry/physical, jee/main, jee/advanced, mole-concept, stoichiometry]
 ## Contents
 
 - [Part A — Matter, Properties, Units and Measurements](#part-a--matter-properties-units-and-measurements)
-  1. [Importance of chemistry and nature of matter (1.1–1.3)](#1-importance-of-chemistry-and-nature-of-matter-11-13)
-  2. [Properties of matter and measurement, SI base units (1.4–1.5)](#2-properties-of-matter-and-measurement-si-base-units-14-15)
+  1. [Importance of chemistry and nature of matter (1.1–1.3)](#1-importance-of-chemistry-and-nature-of-matter-1113)
+  2. [Properties of matter and measurement, SI base units (1.4–1.5)](#2-properties-of-matter-and-measurement-si-base-units-1415)
   3. [Uncertainty, scientific notation, significant figures, precision vs accuracy (1.5)](#3-uncertainty-scientific-notation-significant-figures-precision-vs-accuracy-15)
   4. [Dimensional analysis and interconversion of units (1.5)](#4-dimensional-analysis-and-interconversion-of-units-15)
 - [Part B — Laws of Chemical Combination and Dalton's Atomic Theory](#part-b--laws-of-chemical-combination-and-daltons-atomic-theory)
-  5. [Law of conservation of mass and definite proportions (1.6.1–1.6.2)](#5-law-of-conservation-of-mass-and-definite-proportions-161-162)
-  6. [Law of multiple proportions and Gay-Lussac's gaseous volumes (1.6.3–1.6.4)](#6-law-of-multiple-proportions-and-gay-lussacs-gaseous-volumes-163-164)
-  7. [Avogadro's law and Dalton's atomic theory (1.6.5–1.7)](#7-avogadros-law-and-daltons-atomic-theory-165-17)
+  5. [Law of conservation of mass and definite proportions (1.6.1–1.6.2)](#5-law-of-conservation-of-mass-and-definite-proportions-161162)
+  6. [Law of multiple proportions and Gay-Lussac's gaseous volumes (1.6.3–1.6.4)](#6-law-of-multiple-proportions-and-gay-lussacs-gaseous-volumes-163164)
+  7. [Avogadro's law and Dalton's atomic theory (1.6.5–1.7)](#7-avogadros-law-and-daltons-atomic-theory-16517)
 - [Part C — Atomic Mass, Molecular Mass, Mole Concept](#part-c--atomic-mass-molecular-mass-mole-concept)
-  8. [Atomic mass, average atomic mass, isotopic abundance (1.7.1–1.7.2)](#8-atomic-mass-average-atomic-mass-isotopic-abundance-171-172)
-  9. [Molecular mass and formula mass (1.7.3–1.7.4)](#9-molecular-mass-and-formula-mass-173-174)
+  8. [Atomic mass, average atomic mass, isotopic abundance (1.7.1–1.7.2)](#8-atomic-mass-average-atomic-mass-isotopic-abundance-171172)
+  9. [Molecular mass and formula mass (1.7.3–1.7.4)](#9-molecular-mass-and-formula-mass-173174)
   10. [Mole concept and molar masses — Avogadro constant (1.8)](#10-mole-concept-and-molar-masses--avogadro-constant-18)
   11. [Mole map and advanced mole calculations 🆇](#11-mole-map-and-advanced-mole-calculations-)
 - [Part D — Percentage, Empirical Formula, Stoichiometry](#part-d--percentage-empirical-formula-stoichiometry)
@@ -61,19 +61,20 @@ tags: [chemistry/physical, jee/main, jee/advanced, mole-concept, stoichiometry]
 Chemistry = study of preparation, properties, structure, reactions of material substances. NCERT opens with history: philosopher's stone (paras) converting base metals to gold, elixir of life for immortality — led to Alchemy and Iatrochemistry 1300–1600 CE, modern chemistry 18th century Europe. Indian contribution: Rasayan Shastra — Mohenjodaro/Harappa baked bricks, glazed pottery, gypsum cement containing lime + sand + traces of $\ce{CaCO3}$, faience glass, metallurgy Cu, Sn, As for hardness, Nagarjuna Rasratnakar mercury compounds, extraction of Au Ag Sn Cu, Chakrapani $\ce{HgS}$ and soap from mustard oil + alkalies.
 
 ```mermaid
-flowchart TB
-    M[Matter - anything with mass & volume] --> P[Physical Classification]
-    P --> S[Solid - definite shape & volume<br>particles close, strong forces]
-    P --> L[Liquid - definite volume, no shape<br>intermediate forces]
-    P --> G[Gas - neither definite<br>weak forces, highly compressible]
-    M --> C[Chemical Classification]
-    C --> Pure[Pure Substance - fixed composition]
-    Pure --> E[Element - one type atom<br>e.g. Na, Cu, O2]
-    Pure --> Comp[Compound - 2+ elements fixed ratio<br>e.g. H2O, NaCl]
-    C --> Mix[Mixture - variable composition]
-    Mix --> Homo[Homogeneous - uniform<br>e.g. salt solution, air]
-    Mix --> Hetero[Heterogeneous - non-uniform<br>e.g. sand+iron, oil+water]
+flowchart TD
+    M["Matter - anything with mass & volume"] --> P["Physical Classification"]
+    P --> S["Solid - definite shape & volume<br>particles close, strong forces"]
+    P --> L["Liquid - definite volume, no shape<br>intermediate forces"]
+    P --> G["Gas - neither definite<br>weak forces, highly compressible"]
+    M --> C["Chemical Classification"]
+    C --> Pure["Pure Substance - fixed composition"]
+    Pure --> E["Element - one type atom<br>e.g. Na, Cu, O2"]
+    Pure --> Comp["Compound - 2+ elements fixed ratio<br>e.g. H2O, NaCl"]
+    C --> Mix["Mixture - variable composition"]
+    Mix --> Homo["Homogeneous - uniform<br>e.g. salt solution, air"]
+    Mix --> Hetero["Heterogeneous - non-uniform<br>e.g. sand+iron, oil+water"]
 ```
+*Two ways to classify matter — by physical state and by chemical composition — and the terms each one gives you.*
 
 Matter = anything that has mass and occupies space. Three physical states due to different particle arrangements.
 
@@ -98,17 +99,18 @@ Measurement = comparison with standard. Two systems historically: English (FPS) 
 
 ```mermaid
 flowchart LR
-    subgraph Base[SI Base Units - 7]
-        L[Length - metre m]
-        M[Mass - kilogram kg]
-        T[Time - second s]
-        I[Current - ampere A]
-        Th[Temperature - kelvin K]
-        Lum[Luminous - candela cd]
-        Mol[Amount - mole mol]
+    subgraph Base["SI Base Units - 7"]
+        L["Length - metre m"]
+        M["Mass - kilogram kg"]
+        T["Time - second s"]
+        I["Current - ampere A"]
+        Th["Temperature - kelvin K"]
+        Lum["Luminous - candela cd"]
+        Mol["Amount - mole mol"]
     end
-    Base --> Derived[Derived Units<br>Volume m3, Density kg m-3<br>Force N = kg m s-2<br>Pressure Pa = N m-2<br>Energy J = N m]
+    Base --> Derived["Derived Units<br>Volume m3, Density kg m-3<br>Force N = kg m s-2<br>Pressure Pa = N m-2<br>Energy J = N m"]
 ```
+*The seven SI base units; everything else in chemistry is derived from them.*
 
 | Physical quantity | Symbol | SI unit | Definition |
 |---|---|---|---|
@@ -118,7 +120,7 @@ flowchart LR
 | Temperature | $T$ | kelvin $K$ | triple point of water 273.16 K → Boltzmann constant |
 | Amount | $n$ | mole $mol$ | $6.02214076e23$ entities |
 | Current | $I$ | ampere $A$ | charge flow |
-| Luminous intensity | $I_v$ | candela $cd$ | |
+| Luminous intensity | $I_v$ | candela $cd$ | luminous power of 1/683 W at 540 THz monochromatic radiation |
 
 Derived: Volume $m^3$, $1 L = 1 dm^3 = 10^{-3} m^3 = 1000 mL$, $1 cm^3 = 1 mL$. Density $kg m^{-3}$ but common $g cm^{-3}$; $1 g cm^{-3} = 1000 kg m^{-3}$.
 
@@ -162,19 +164,20 @@ Rounding:
 Precision vs accuracy (NCERT Fig 1.5):
 
 ```mermaid
-flowchart TB
-    subgraph HighPrecLowAcc[High Precision Low Accuracy]
-        A1[Clustered shots<br>away from bullseye]
+flowchart TD
+    subgraph HighPrecLowAcc["High Precision Low Accuracy"]
+        A1["Clustered shots<br>away from bullseye"]
     end
-    subgraph LowPrecHighAcc[Low Precision High Accuracy]
-        A2[Scattered around bullseye<br>average correct]
+    subgraph LowPrecHighAcc["Low Precision High Accuracy"]
+        A2["Scattered around bullseye<br>average correct"]
     end
-    subgraph HighBoth[High Precision High Accuracy]
-        A3[Clustered at bullseye]
+    subgraph HighBoth["High Precision High Accuracy"]
+        A3["Clustered at bullseye"]
     end
-    Prec[Precision = reproducibility<br>closeness of repeated values] --> Rep[Depends on instrument least count]
-    Acc[Accuracy = closeness to true value] --> True[Depends on calibration + technique]
+    Prec["Precision = reproducibility<br>closeness of repeated values"] --> Rep["Depends on instrument least count"]
+    Acc["Accuracy = closeness to true value"] --> True["Depends on calibration + technique"]
 ```
+*Precision and accuracy are independent — the four target diagrams every measurement question can be asked about.*
 
 - Precision = how close repeated measurements are to each other. High precision = low random error.
 - Accuracy = how close to true value. High accuracy = low systematic error.
@@ -290,13 +293,14 @@ Molar mass = mass of 1 mol substance in g/mol, numerically equal to atomic/molec
 Relation: $mass = moles \times molar\ mass$, $moles = \frac{mass}{M} = \frac{N}{N_A} = \frac{V}{22.4 L}$ (STP gas).
 
 ```mermaid
-flowchart TB
-    Mass[g] <-->|/M| Moles[mol]
-    Moles <-->|*NA| Number[N entities]
-    Moles <-->|*22.4 L at STP| Volume[Gas Volume]
-    Mass -->|/density| VolLiquid[Liquid Volume]
-    Moles -->|*molarity| ConcMolarity[Molarity * V]
+flowchart TD
+    Mass["g"] <-->|"/M"| Moles["mol"]
+    Moles <-->|"*NA"| Number["N entities"]
+    Moles <-->|"*22.4 L at STP"| Volume["Gas Volume"]
+    Mass -->|"/density"| VolLiquid["Liquid Volume"]
+    Moles -->|"*molarity"| ConcMolarity["Molarity * V"]
 ```
+*The mole is the bridge between mass, number of particles and volume of gas.*
 
 Important: $1 u = 1.6605e-24 g$, $N_A \times 1 u = 1 g$.
 
@@ -325,12 +329,13 @@ Example: $x$ mol $\ce{CaCO3}$ → $y$ mol $\ce{CaO}$: Ca atoms conserved → $x 
 
 ```mermaid
 flowchart LR
-    A[Given: mass/volume/number] --> B{Convert to moles}
-    B --> C[Write balanced equation or POAC]
-    C --> D[Mole ratio from coefficients]
-    D --> E[Find required moles]
-    E --> F[Convert back to mass/volume/number]
+    A["Given: mass/volume/number"] --> B{"Convert to moles"}
+    B --> C["Write balanced equation or POAC"]
+    C --> D["Mole ratio from coefficients"]
+    D --> E["Find required moles"]
+    E --> F["Convert back to mass/volume/number"]
 ```
+*A five-step procedure that solves any mole calculation, from the given quantity back to the asked one.*
 
 ⚠ Trap: STP vs SATP, use correct volume. JEE 2020+ often uses $22.7 L$ at 1 bar. Read question.
 
@@ -447,13 +452,14 @@ Other terms 🆇:
 - **g/L**: mass per litre.
 
 ```mermaid
-flowchart TB
-    MassP[Mass % w/w<br>mass solute / mass solution] --> MoleF[Mole fraction<br>nA / n_total]
-    MoleF --> Molarity[Molarity M<br>n / V_solution L<br>T dependent]
-    Molarity --> Molality[Molality m<br>n / mass_solvent kg<br>T independent]
-    Molality --> Normality[Normality N<br>M * n-factor]
-    Normality --> ppm[ppm = mass_solute / mass_solution *1e6]
+flowchart TD
+    MassP["Mass % w/w<br>mass solute / mass solution"] --> MoleF["Mole fraction<br>nA / n_total"]
+    MoleF --> Molarity["Molarity M<br>n / V_solution L<br>T dependent"]
+    Molarity --> Molality["Molality m<br>n / mass_solvent kg<br>T independent"]
+    Molality --> Normality["Normality N<br>M * n-factor"]
+    Normality --> ppm["ppm = mass_solute / mass_solution *1e6"]
 ```
+*Six concentration terms and the denominator each one actually uses — the single most common source of lost marks.*
 
 
 ### Equivalent weight and normality 🆇

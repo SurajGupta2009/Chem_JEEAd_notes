@@ -8,7 +8,7 @@ edition: pre-rationalised
 exams: [JEE Advanced]
 sources: [kech203-legacy.pdf, s-Block_Theory_26.pdf]
 status: written
-words: 13500
+words: 4672
 updated: 2026-09-27
 tags: [chemistry/inorganic, jee/advanced, s-block, alkali, alkaline-earth]
 ---
@@ -29,15 +29,15 @@ tags: [chemistry/inorganic, jee/advanced, s-block, alkali, alkaline-earth]
   1. [General Characteristics of s-Block (10.1)](#1-general-characteristics-of-s-block-101)
   2. [Group 1 — Occurrence, Config, Atomic Properties (10.2)](#2-group-1--occurrence-config-atomic-properties-102)
   3. [Physical Properties — Radii, IE, Hydration, MP/BP, Density](#3-physical-properties--radii-ie-hydration-mpbp-density)
-  4. [Chemical Properties — Air, Water, H₂, Halogens, Diagonal Li-Mg](#4-chemical-properties--air-water-h2-halogens-diagonal-li-mg)
+  4. [Chemical Properties — Air, Water, H₂, Halogens, Diagonal Li-Mg](#4-chemical-properties--air-water-h₂-halogens-diagonal-li-mg)
   5. [Oxides, Hydroxides, Halides, Carbonates — Trends](#5-oxides-hydroxides-halides-carbonates--trends)
-  6. [Important Compounds of Na & K — Na₂CO₃ Solvay, NaCl, NaOH, NaHCO₃, KCl](#6-important-compounds-of-na--k--na2co3-solvay-nacl-naoh-nahco3-kcl)
+  6. [Important Compounds of Na & K — Na₂CO₃ Solvay, NaCl, NaOH, NaHCO₃, KCl](#6-important-compounds-of-na--k--na₂co₃-solvay-nacl-naoh-nahco₃-kcl)
 - [Part B — Group 2 Alkaline Earth Metals](#part-b--group-2-alkaline-earth-metals)
   7. [Group 2 — Occurrence, Config, Atomic Properties (10.3)](#7-group-2--occurrence-config-atomic-properties-103)
   8. [Physical Properties — Radii, IE, Hydration, MP/BP](#8-physical-properties--radii-ie-hydration-mpbp)
   9. [Chemical Properties — Air, Water, Halogens, Diagonal Be-Al, Anomalous Be](#9-chemical-properties--air-water-halogens-diagonal-be-al-anomalous-be)
   10. [Oxides, Hydroxides, Halides, Carbonates, Sulphates — Trends](#10-oxides-hydroxides-halides-carbonates-sulphates--trends)
-  11. [Important Compounds of Ca & Mg — CaO, Ca(OH)₂, CaCO₃, CaSO₄, MgCl₂, Cement](#11-important-compounds-of-ca--mg--cao-caoh2-caco3-caso4-mgcl2-cement)
+  11. [Important Compounds of Ca & Mg — CaO, Ca(OH)₂, CaCO₃, CaSO₄, MgCl₂, Cement](#11-important-compounds-of-ca--mg--cao-caoh₂-caco₃-caso₄-mgcl₂-cement)
   12. [Biological Significance of Na, K, Mg, Ca (10.5)](#12-biological-significance-of-na-k-mg-ca-105)
   13. [Quick Revision Sheet](#13-quick-revision-sheet)
 
@@ -61,6 +61,7 @@ flowchart LR
     G1 --> Diag1["Diagonal Li-Mg<br>similar charge/radius<br>ionic size"]
     G2 --> Diag2["Diagonal Be-Al<br>similar"]
 ```
+*The s-block is just two groups — plus the two diagonal pairs, Li–Mg and Be–Al, that the rest of the chapter keeps referring back to.*
 
 ## 2. Group 1 — Occurrence, Config, Atomic Properties (10.2)
 
@@ -70,19 +71,23 @@ flowchart LR
 
 ## 3. Physical Properties — Radii, IE, Hydration, MP/BP, Density
 
-| Property | Li | Na | K | Rb | Cs | Trend |
-|---|---|---|---|---|---|---|
-| Atomic number | 3 | 11 | 19 | 37 | 55 | ↑ |
-| Atomic mass g/mol | 6.94 | 22.99 | 39.10 | 85.47 | 132.91 | ↑ |
-| Config | [He]2s¹ | [Ne]3s¹ | [Ar]4s¹ | [Kr]5s¹ | [Xe]6s¹ | — |
-| IE kJ/mol | 520 | 496 | 419 | 403 | 376 | ↓ down size ↑, Fr ~375 |
-| Hydration enthalpy kJ/mol | -506 | -406 | -330 | -310 | -276 | ↓ magnitude ↓ size ↑ |
-| Metallic radius pm | 152 | 186 | 227 | 248 | 265 | ↑ |
-| Ionic radius M⁺ pm | 76 | 102 | 138 | 152 | 167 (180 Fr) | ↑ |
-| m.p. K | 454 | 371 | 336 | 312 | 302 | ↓ |
-| b.p. K | 1615 | 1156 | 1032 | 961 | 944 | ↓ |
-| Density g/cm³ | 0.53 | 0.97 | 0.86 | 1.53 | 1.90 | ↑ but K < Na anomalous |
-| Standard potential E° M⁺/M V | -3.04 | -2.71 | -2.92 | -2.92 | -2.92 | Li most negative due high hydration |
+| Property | Li | Na | K | Rb | Cs |
+|---|---|---|---|---|---|
+| Atomic number | 3 | 11 | 19 | 37 | 55 |
+| Atomic mass g/mol | 6.94 | 22.99 | 39.10 | 85.47 | 132.91 |
+| Config | [He]2s¹ | [Ne]3s¹ | [Ar]4s¹ | [Kr]5s¹ | [Xe]6s¹ |
+| IE kJ/mol | 520 | 496 | 419 | 403 | 376 |
+| Hydration enthalpy kJ/mol | −506 | −406 | −330 | −310 | −276 |
+| Metallic radius pm | 152 | 186 | 227 | 248 | 265 |
+| Ionic radius M⁺ pm | 76 | 102 | 138 | 152 | 167 (180 Fr) |
+| m.p. K | 454 | 371 | 336 | 312 | 302 |
+| b.p. K | 1615 | 1156 | 1032 | 961 | 944 |
+| Density g/cm³ | 0.53 | 0.97 | 0.86 | 1.53 | 1.90 |
+| E° M⁺/M V | −3.04 | −2.71 | −2.92 | −2.92 | −2.92 |
+
+**Trend down the group:** Z, mass, radii ↑; IE, m.p., b.p., |ΔhydH| ↓. Density rises
+except K < Na. Li is the strongest reducing agent (most negative E°) because its very
+small M⁺ is the most strongly hydrated.
 
 - **IE decreases down** due size increase, outer electron farther, easier to remove.
 - **Hydration enthalpy decreases down** magnitude decreases as size increases, Li⁺ most hydrated.
@@ -100,6 +105,7 @@ flowchart TD
     Rb --> Cs["Cs<br>IE 376<br>Hyd -276<br>r 167 pm<br>MP 302K<br>blue flame<br>density 1.90"]
     Li --> Trend["Trend down<br>IE ↓<br>Hyd ↓ magnitude<br>Radii ↑<br>MP/BP ↓<br>Density generally ↑"]
 ```
+*Group 1 down the table: radius up, ionisation enthalpy down, hydration enthalpy collapsing, yet melting point taking its odd Li → Be → B → C zigzag.*
 
 ## 4. Chemical Properties — Air, Water, H₂, Halogens, Diagonal Li-Mg
 
@@ -178,6 +184,7 @@ flowchart TD
     Hydroxides --> Halides["Halides MX<br>ionic high MP<br>LiF less soluble high lattice<br>LiCl soluble organic partial covalent"]
     Halides --> Carbonates["Carbonates M2CO3<br>stable to heat except Li2CO3→Li2O+CO2<br>bicarbonates MHCO3<br>LiHCO3 only solution<br>2NaHCO3→Na2CO3+H2O+CO2"]
 ```
+*Down group 1 the oxide changes identity — Li₂O, then Na₂O₂, then the superoxides — because the cation is no longer small enough to stabilise O²⁻.*
 
 ## 6. Important Compounds of Na & K — Na₂CO₃ Solvay, NaCl, NaOH, NaHCO₃, KCl
 
@@ -236,6 +243,7 @@ flowchart TD
     Step4 --> Note["K2CO3 not by Solvay<br>KHCO3 too soluble no ppt"]
     NaOH["NaOH<br>Castner-Kellner Hg cathode<br>Na+ + e- → Na/Hg<br>Na/Hg+H2O→NaOH+H2+Hg<br>Modern membrane cell<br>2Cl-→Cl2 anode<br>2H2O+2e-→H2+2OH- cathode<br>Na+ through membrane"] --> Uses["Uses soap paper rayon Al extraction"]
 ```
+*Solvay process step by step, and why NH₃ is recycled rather than replaced by lime.*
 
 ---
 
@@ -249,19 +257,23 @@ flowchart TD
 
 ## 8. Physical Properties — Radii, IE, Hydration, MP/BP
 
-| Property | Be | Mg | Ca | Sr | Ba | Trend |
-|---|---|---|---|---|---|---|
-| Atomic number | 4 | 12 | 20 | 38 | 56 | ↑ |
-| Atomic mass | 9.01 | 24.31 | 40.08 | 87.62 | 137.33 | ↑ |
-| Metallic radius pm | 112 | 160 | 197 | 215 | 222 | ↑ |
-| Ionic radius M²⁺ pm | 45 | 72 | 100 | 118 | 135 | ↑ |
-| IE1 kJ/mol | 899 | 737 | 590 | 549 | 503 | ↓ but Be>Mg |
-| IE2 kJ/mol | 1757 | 1450 | 1145 | 1064 | 965 | ↓ |
-| Hydration enthalpy kJ/mol (M²⁺) | -1650 | -1926 | -1577 | -1443 | -1305 | ↓ magnitude after Mg? Actually Be -2494? Different tables, but generally ↓ magnitude down, Mg highest? |
-| MP K | 1560 | 923 | 1115 | 1050 | 1000 | No regular, Be high due small size |
-| BP K | 2745 | 1363 | 1757 | 1655 | 2143 | — |
-| Density g/cm³ | 1.84 | 1.74 | 1.55 | 2.63 | 3.59 | ↑ after Ca |
-| E° M²⁺/M V | -1.97 | -2.36 | -2.84 | -2.89 | -2.91 | More negative down, Be least negative |
+| Property | Be | Mg | Ca | Sr | Ba |
+|---|---|---|---|---|---|
+| Atomic number | 4 | 12 | 20 | 38 | 56 |
+| Atomic mass | 9.01 | 24.31 | 40.08 | 87.62 | 137.33 |
+| Metallic radius pm | 112 | 160 | 197 | 215 | 222 |
+| Ionic radius M²⁺ pm | 45 | 72 | 100 | 118 | 135 |
+| IE1 kJ/mol | 899 | 737 | 590 | 549 | 503 |
+| IE2 kJ/mol | 1757 | 1450 | 1145 | 1064 | 965 |
+| Hydration enthalpy kJ/mol (M²⁺) | −2494 | −1921 | −1577 | −1443 | −1305 |
+| MP K | 1560 | 923 | 1115 | 1050 | 1000 |
+| BP K | 2745 | 1363 | 1757 | 1655 | 2143 |
+| Density g/cm³ | 1.84 | 1.74 | 1.55 | 2.63 | 3.59 |
+| E° M²⁺/M V | −1.97 | −2.36 | −2.84 | −2.89 | −2.91 |
+
+**Trend down the group:** Z, mass, radii ↑; IE, |ΔhydH| ↓. Be is the exception
+everywhere — its tiny size gives the highest m.p. (1560 K), the only amphoteric oxide
+and the only covalent halides. Ba is the strongest reducing agent (most negative E°).
 
 - IE1 decreases down size ↑, but Be>Mg due small size, IE2 also.
 - Hydration enthalpy magnitude decreases down, Be²⁺ highly hydrated due small size, but Mg²⁺ often highest in some tables due size vs charge? Actually hydration $\ce{Be^{2+} > Mg^{2+} > Ca^{2+} > Sr^{2+} > Ba^{2+}}$ generally.
@@ -321,6 +333,7 @@ flowchart LR
     Be["Be<br>small 45 pm<br>high IE 899<br>hard high MP<br>no flame<br>covalent<br>CN4<br>amphoteric BeO Be(OH)2<br>BeCl2 covalent Lewis acid"] -- "Diagonal<br>charge/radius similar<br>Be2+ 45 Al3+ 53" --> Al["Al<br>amphoteric Al2O3 Al(OH)3<br>AlCl3 covalent dimer<br>Al4C3→CH4<br>reacts alkali"]
     Be --> Prop["Anomalous Be<br>smallest<br>highest IE EN<br>hard<br>high MP/BP<br>no flame<br>covalent<br>amphoteric<br>no peroxide<br>CN4"]
 ```
+*Be and Al: the same charge-to-radius ratio puts them on the same diagonal.*
 
 ## 10. Oxides, Hydroxides, Halides, Carbonates, Sulphates — Trends
 
@@ -354,6 +367,7 @@ flowchart TD
     Hal --> CO3["Carbonates MCO3<br>insoluble<br>thermal stability ↑ down<br>BeCO3→BeO+CO2 low T<br>BaCO3 high T"]
     CO3 --> SO4["Sulphates MSO4<br>solubility<br>BeSO4 MgSO4 soluble<br>CaSO4 sparingly<br>SrSO4 BaSO4 insoluble"]
 ```
+*Every Group 2 compound in one table — oxides, hydroxides, halides, carbonates, sulphates — and how the trends run down the group.*
 
 ## 11. Important Compounds of Ca & Mg — CaO, Ca(OH)₂, CaCO₃, CaSO₄, MgCl₂, Cement
 
@@ -415,6 +429,7 @@ flowchart TD
     POP --> Set["Setting<br>CaSO4·1/2H2O+3/2H2O→CaSO4·2H2O hard"]
     Cement["Portland cement<br>2CaO·SiO2 dicalcium silicate<br>3CaO·SiO2 tricalcium silicate<br>3CaO·Al2O3<br>4CaO·Al2O3·Fe2O3<br>1400-1500°C limestone+clay→clinker+2-3% gypsum retard setting"]
 ```
+*Limestone to whitewash: the lime cycle, and why excess CO₂ makes the milkiness disappear.*
 
 ## 12. Biological Significance of Na, K, Mg, Ca (10.5)
 
@@ -429,6 +444,7 @@ flowchart LR
     K --> Mg["Mg2+<br>200-300 enzymes cofactor<br>chlorophyll centre<br>25% bones"]
     Mg --> Ca["Ca2+<br>bones teeth hydroxyapatite Ca5(PO4)3OH<br>blood clotting<br>muscle contraction<br>99% bones"]
 ```
+*Where Na, K, Mg and Ca actually live in the body, and what happens when the gradients collapse.*
 
 ---
 

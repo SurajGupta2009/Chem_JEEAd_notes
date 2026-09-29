@@ -8,7 +8,7 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [kech103.pdf]
 status: written
-words: 12500
+words: 5415
 updated: 2026-09-27
 tags: [chemistry/inorganic, jee/main, jee/advanced, periodic-table, periodicity]
 ---
@@ -34,7 +34,7 @@ tags: [chemistry/inorganic, jee/main, jee/advanced, periodic-table, periodicity]
 - [Part C — Periodic Trends — Physical Properties](#part-c--periodic-trends--physical-properties)
   6. [Atomic Radius — Covalent, Metallic, van der Waals (3.6.1)](#6-atomic-radius--covalent-metallic-van-der-waals-361)
   7. [Ionic Radius (3.6.2)](#7-ionic-radius-362)
-  8. [Ionization Enthalpy — IE₁, IE₂, Trends & Exceptions (3.6.3)](#8-ionization-enthalpy--ie1-ie2-trends--exceptions-363)
+  8. [Ionization Enthalpy — IE₁, IE₂, Trends & Exceptions (3.6.3)](#8-ionization-enthalpy--ie₁-ie₂-trends--exceptions-363)
   9. [Electron Gain Enthalpy / Electron Affinity (3.6.4)](#9-electron-gain-enthalpy--electron-affinity-364)
   10. [Electronegativity — Pauling, Mulliken, Allred-Rochow (3.6.5)](#10-electronegativity--pauling-mulliken-allred-rochow-365)
 - [Part D — Periodic Trends — Chemical Properties & Advanced Applications](#part-d--periodic-trends--chemical-properties--advanced-applications)
@@ -53,19 +53,22 @@ Answer-first: Classification evolved from grouping by similar properties → Per
 
 **Dobereiner triads (early 1800s, Johann Dobereiner):** Groups of three elements with similar physical/chemical properties, middle element atomic weight about halfway between other two, properties in between.
 
-| Triad | At. wt. | Triad | At. wt. | Triad | At. wt. |
-|---|---|---|---|---|---|
-| Li 7, Na 23, K 39 → Na ~ (Li+K)/2 | Ca 40, Sr 88, Ba 137 → Sr ~ (Ca+Ba)/2 | Cl 35.5, Br 80, I 127 → Br ~ (Cl+I)/2 |
+| Triad | Atomic weights | Middle element |
+|---|---|---|
+| Li, Na, K | 7, 23, 39 | Na ≈ (7 + 39)/2 = 23 ✔ |
+| Ca, Sr, Ba | 40, 88, 137 | Sr ≈ (40 + 137)/2 ≈ 88 ✔ |
+| Cl, Br, I | 35.5, 80, 127 | Br ≈ (35.5 + 127)/2 ≈ 81 ✔ |
+
+*Dobereiner also required the middle element's **properties** to be intermediate — which is why
+his triads never became a full periodic law.*
 
 **Newlands Law of Octaves (1865, John Alexander Newlands):** Arranged elements increasing atomic weights, every eighth element had properties similar to first, like eighth note resembles first in octaves of music. True only up to Ca. Awarded Davy Medal 1887 by Royal Society.
 
-| Element | Li | Be | B | C | N | O | F |
-|---|---|---|---|---|---|---|---|
-| At. wt. | 7 | 9 | 11 | 12 | 14 | 16 | 19 |
-| Element | Na | Mg | Al | Si | P | S | Cl |
-| At. wt. | 23 | 24 | 27 | 29 | 31 | 32 | 35.5 |
-| Element | K | Ca | | | | | |
-| At. wt. | 39 | 40 | | | | | |
+| Row | Elements (atomic weights) | Property repeats after |
+|---|---|---|
+| 1 | Li 7, Be 9, B 11, C 12, N 14, O 16, F 19 | 8th element — F ≈ the 1st |
+| 2 | Na 23, Mg 24, Al 27, Si 29, P 31, S 32, Cl 35.5 | 8th element — Cl ≈ Li |
+| 3 | K 39, Ca 40 | only 2 known at the time |
 
 **Mendeleev Periodic Law (Russian Dmitri Mendeleev 1834-1907 & German Lothar Meyer 1830-1895):**
 
@@ -84,6 +87,7 @@ flowchart TD
     Mendeleev --> Meyer["Lothar Meyer 1868<br>Similar table<br>Change in length of repeating pattern<br>Published after Mendeleev"]
     Mendeleev --> Limitations["Limitations<br>H position<br>Isotopes<br>Te-I, Ar-K, Co-Ni anomalous<br>Lanthanoids/actinoids"]
 ```
+*From Dobereiner's triads to Mendeleev's table — each attempt fixes part of the puzzle and leaves a new set of exceptions.*
 
 ## 2. Modern Periodic Law — Moseley & Atomic Number (3.3)
 
@@ -137,6 +141,7 @@ flowchart LR
     Periods["7 Periods<br>Period = n outermost<br>1:2 H He<br>2:8 Li-Ne<br>3:8 Na-Ar<br>4:18 K-Kr 3d<br>5:18 Rb-Xe 4d<br>6:32 Cs-Rn 4f5d<br>7:32 Fr-Og 5f6d"] --> Groups["18 Groups<br>Similar outer config<br>Similar properties"]
     Groups --> IUPAC["IUPAC Z>100<br>0 nil 1 un 2 bi 3 tri 4 quad<br>5 pent 6 hex 7 sept 8 oct 9 enn<br>104 Unq→Rf 113 Uut→Nh 118 Uuo→Og"]
 ```
+*The modern long-form table: 7 periods × 18 groups, with the pre-2016 systematic names next to the current IUPAC symbols for Z > 100.*
 
 ---
 
@@ -204,6 +209,7 @@ flowchart TD
     Zeff --> Down["Down group<br>Z ↑, n ↑<br>shielding ↑ much<br>Z_eff ~ same<br>distance ↑<br>radius ↑<br>IE ↓"]
     Zeff --> Penetration["Penetration<br>s > p > d > f<br>s more near nucleus<br>less shielded<br>higher Z_eff"]
 ```
+*Slater's rules turn $Z$ into a usable $Z_{eff}$; the same number then explains every across-a-period and down-a-group trend at once.*
 
 > **⚠ Trap:** $\ce{Z_eff}$ for same period increases left→right, but not strictly due d/f poor shielding leads to anomalies Ga, etc.
 
@@ -232,6 +238,7 @@ flowchart LR
     A --> C["Down group<br>Li→Cs ↑<br>new shell<br>Li 152→Cs 265 pm"]
     A --> D["Exceptions<br>Ga 135 < Al 143 d10 poor shielding<br>Zr 160 ≈ Hf 159 lanthanoid contraction f14 poor shielding"]
 ```
+*The three radii are measured differently and are never equal — pick the right one for the question being asked.*
 
 ## 7. Ionic Radius (3.6.2)
 
@@ -269,6 +276,7 @@ flowchart TD
     Def --> Down["Down group ↓<br>Li 520→Cs 376<br>size ↑ distance ↑<br>Anomalies Ga>Al Tl>In d/f poor shielding"]
     Def --> Factors["Factors<br>size ↓ IE ↑<br>Z_eff ↑ IE ↑<br>penetration s>p>d>f<br>stable config ↑ IE"]
 ```
+*Ionisation enthalpy climbs across a period and falls down a group, with the filled- and half-filled-subshell exceptions that examiners love.*
 
 > **⚠ Trap:** IE₂ of alkali metals very high because $\ce{M+}$ has noble gas config, e.g., Na IE₁ 496, IE₂ 4562 kJ/mol. Similarly Mg IE₂ 1450 but IE₃ 7732 due $\ce{Mg2+}$ Ne config.
 
@@ -299,6 +307,7 @@ flowchart LR
     A --> C["Down group<br>less negative generally<br>size ↑<br>Exceptions F -333 < Cl -349<br>O -141 < S -200<br>small size e-e repulsion"]
     A --> D["Second ΔegH always positive<br>O- + e- → O2- +780<br>repulsion<br>Overall O+2e-→O2- +639 endothermic<br>lattice energy compensates"]
 ```
+*Electron gain enthalpy is most negative for the halogens, and both the noble gases and N break the naive trend.*
 
 ## 10. Electronegativity — Pauling, Mulliken, Allred-Rochow (3.6.5)
 
@@ -326,6 +335,7 @@ flowchart TD
     Def --> Allred["Allred-Rochow<br>Z_eff/r²<br>electrostatic<br>χ=0.359 Z_eff/r²+0.744"]
     Def --> Trends["Trends<br>Across ↑ left→right<br>Li1.0→F4.0 Z_eff↑ size↓<br>Down ↓ F4.0→At2.2 size↑<br>Not much among heavier d/f poor shielding"]
 ```
+*Three scales, one idea: electronegativity measures how hard an atom pulls shared electrons.*
 
 ---
 
@@ -355,6 +365,7 @@ flowchart LR
     Be["Be<br>45 pm"] -- "Diagonal<br>Be2+ 45 Al3+ 53" --> Al["Al<br>Be-Al similar<br>amphoteric oxides<br>covalent halides<br>carbides→CH4"]
     B["B<br>EN 2.0"] -- "Diagonal<br>EN similar" --> Si["Si<br>EN 1.8<br>B-Si similar<br>covalent oxides acidic<br>hydrides halides hydrolysed<br>carbides hard"]
 ```
+*Diagonal relationship — why Li–Mg and Be–Al behave alike even though they sit in different groups.*
 
 ## 12. Metallic & Non-Metallic Character, Nature of Oxides, Reactivity (3.7)
 
@@ -400,6 +411,7 @@ flowchart TD
     Zeff --> Inert["Inert pair<br>ns2 inert poor shielding d/f<br>Z_eff holds ns2 tightly<br>lower O.S. stable down<br>Group13 +1 Al<Ga<In<Tl<br>Group14 +2 Ge<Sn<Pb<br>Group15 +3 N<P<As<Sb<Bi"]
     Zeff --> Second["Second period anomalous<br>small high charge density<br>high polarising<br>no d max cov4<br>pπ-pπ multiple<br>Li Be B C N O F differ"]
 ```
+*Periodic trends for reactivity, plus the lanthanoid contraction and the inert-pair effect that bend the rules.*
 
 > **Example (JEE Advanced):** Why $\ce{Zr}$ and $\ce{Hf}$ have almost same atomic radii? Due lanthanoid contraction 4f poor shielding $\ce{Z_eff}$ ↑.
 

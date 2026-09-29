@@ -1,7 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
-  <rect width="100%" height="100%" fill="white" stroke="black"/>
-  <text x="150" y="80" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold">Methane CH₄</text>
-  <text x="150" y="105" text-anchor="middle" font-family="Arial" font-size="11">C</text>
-  <text x="150" y="130" text-anchor="middle" font-family="Arial" font-size="9" fill="gray">tetrahedral</text>
-  <desc id="ketcher-data" data-format="mol">CiAgICAgUkRLaXQgICAgICAgICAgMkQKCiAgMSAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMDk5OSBWMjAwMAogICAgMC4wMDAwICAgIDAuMDAwMCAgICAwLjAwMDAgQyAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKTSAgRU5ECg==</desc>
+<?xml version='1.0' encoding='iso-8859-1'?>
+<svg version='1.1' baseProfile='full'
+              xmlns='http://www.w3.org/2000/svg'
+                      xmlns:rdkit='http://www.rdkit.org/xml'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                  xml:space='preserve'
+width='240px' height='170px' viewBox='0 0 240 170'>
+<desc id="ketcher-data" data-format="mol">CiAgICAgUkRLaXQgICAgICAgICAgMkQKCiAgMSAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMCAgMDk5OSBWMjAwMAogICAgMC4wMDAwICAgIDAuMDAwMCAgICAwLjAwMDAgQyAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAgIDAKTSAgRU5ECg==</desc>
+
+<!-- END OF HEADER -->
+<rect style='opacity:1.0;fill:#FFFFFF;stroke:none' width='240.0' height='170.0' x='0.0' y='0.0'> </rect>
+<path class='atom-0' d='M 102.9 76.8
+Q 102.9 73.0, 104.7 71.0
+Q 106.5 69.0, 109.9 69.0
+Q 113.0 69.0, 114.7 71.2
+L 113.3 72.4
+Q 112.0 70.7, 109.9 70.7
+Q 107.5 70.7, 106.3 72.3
+Q 105.1 73.8, 105.1 76.8
+Q 105.1 79.8, 106.4 81.4
+Q 107.6 82.9, 110.1 82.9
+Q 111.8 82.9, 113.7 81.9
+L 114.4 83.5
+Q 113.6 84.0, 112.3 84.3
+Q 111.1 84.6, 109.8 84.6
+Q 106.5 84.6, 104.7 82.6
+Q 102.9 80.6, 102.9 76.8
+' fill='#000000'/>
+<path class='atom-0' d='M 116.7 69.1
+L 118.8 69.1
+L 118.8 75.6
+L 126.6 75.6
+L 126.6 69.1
+L 128.7 69.1
+L 128.7 84.4
+L 126.6 84.4
+L 126.6 77.4
+L 118.8 77.4
+L 118.8 84.4
+L 116.7 84.4
+L 116.7 69.1
+' fill='#000000'/>
+<path class='atom-0' d='M 138.3 88.6
+L 139.5 88.6
+L 139.5 89.8
+L 138.3 89.8
+L 138.3 92.1
+L 137.0 92.1
+L 137.0 89.8
+L 131.7 89.8
+L 131.7 88.9
+L 136.2 82.0
+L 138.3 82.0
+L 138.3 88.6
+M 133.4 88.6
+L 137.0 88.6
+L 137.0 82.9
+L 133.4 88.6
+' fill='#000000'/>
+<path class='note' d='M 100.1 94.6
+L 106.4 94.6
+L 106.4 96.0
+L 100.1 96.0
+L 100.1 94.6
+' fill='#C61414'/>
+<path class='note' d='M 116.0 96.6
+L 117.5 96.6
+L 117.5 98.0
+L 116.0 98.0
+L 116.0 100.8
+L 114.4 100.8
+L 114.4 98.0
+L 108.1 98.0
+L 108.1 96.9
+L 113.4 88.6
+L 116.0 88.6
+L 116.0 96.6
+M 110.1 96.6
+L 114.4 96.6
+L 114.4 89.7
+L 110.1 96.6
+' fill='#C61414'/>
 </svg>

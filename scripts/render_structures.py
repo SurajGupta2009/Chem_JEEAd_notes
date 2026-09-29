@@ -38,21 +38,26 @@ Source table (extra columns are ignored; the first table whose header has SMILES
            S=+6          every S atom is +6
            S=+5,0        the set of distinct S values is exactly {+5, 0}
            S~+5/2        the average over S atoms is +5/2
+           -             nothing to assert (the O.S. is the point of the drawing, not a number)
          The script exits non-zero on any failed check, so the drawings cannot silently
          disagree with the notes.
   Note   free text, shown in the gallery.
 
 Oxidation states are computed the textbook way: every bond's electrons go to the more
 electronegative atom (Pauling values), bonds between like atoms count 0, and the formal
-charge is added. Two JEE conventions are built in: N is treated as more electronegative than
-Cl (NCl3: N -3, Cl +1), and P as more electronegative than H (PH3: P -3; H3PO2: P +1).
+charge is added. Three JEE conventions override Pauling (see MORE_EN): the non-metal wins
+against H for P and Si (so SiH4 is Si -4 and H3PO2 is P +1), and N wins against Cl
+(NCl3: N -3, Cl +1).
 
 Usage:
     python scripts/render_structures.py <structures.md> [...] [--size 240x170]
     python scripts/render_structures.py --all [--library docs/COMPOUND-LIBRARY.md]
+    python scripts/render_structures.py --all --validate     # no drawing, works anywhere
 
 Requires RDKit (`pip install rdkit`), a dev-only dependency: readers of the notes never need
-it, and scripts/fetch_ncert_pdfs.py does not use it.
+it, and scripts/fetch_ncert_pdfs.py does not use it. Drawing additionally needs RDKit's
+Cairo/X11 backend; `--validate` deliberately uses only the chemistry core so the tables can be
+checked on a machine (or in CI) where the drawing libraries are unavailable.
 """
 import argparse
 import base64
@@ -65,15 +70,29 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 MARK = {k: ("<!-- %s:begin -->" % k, "<!-- %s:end -->" % k) for k in ("gallery", "smiles")}
 
-# Pauling electronegativities, with the two JEE conventions described in the docstring.
+# Pauling electronegativities, the real published values.
 EN = {"H": 2.20, "Li": 0.98, "Be": 1.57, "B": 2.04, "C": 2.55, "N": 3.04, "O": 3.44, "F": 3.98,
       "Na": 0.93, "Mg": 1.31, "Al": 1.61, "Si": 1.90, "P": 2.19, "S": 2.58, "Cl": 3.16,
       "K": 0.82, "Ca": 1.00, "Ti": 1.54, "V": 1.63, "Cr": 1.66, "Mn": 1.55, "Fe": 1.83,
       "Co": 1.88, "Ni": 1.91, "Cu": 1.90, "Zn": 1.65, "As": 2.18, "Se": 2.55, "Br": 2.96,
       "Ag": 1.93, "Sn": 1.96, "I": 2.66, "Xe": 2.60, "Ba": 0.89, "Hg": 2.00, "Pb": 2.33}
-EN["N"] = 3.20   # convention: N > Cl
-EN["P"] = 2.21   # convention: P > H
+
+# Pairs the JEE syllabus teaches the other way round from Pauling. They are listed as
+# pairs rather than as fudged EN values so the table above stays the published data.
+# Each value is the element that wins the bond: the non-metal keeps the bonding pair
+# against H, which is what makes SiH4 Si -4 and PH3 P -3 rather than the Pauling +4 / +3.
+MORE_EN = {frozenset(("P", "H")): "P",     # PH3 is P -3; H3PO2 is P +1
+           frozenset(("Si", "H")): "Si",   # SiH4 is Si -4 (molecular hydride of a non-metal)
+           frozenset(("N", "Cl")): "N"}    # NCl3 is N -3, Cl +1
 SPECTATORS = {"Li", "Na", "K", "Rb", "Cs", "Mg", "Ca", "Sr", "Ba"}
+
+
+def more_en(hi, lo):
+    """Is `hi` the more electronegative of the pair? A JEE convention overrides Pauling."""
+    win = MORE_EN.get(frozenset((hi, lo)))
+    if win is not None:
+        return win == hi
+    return EN.get(hi, 1.5) > EN.get(lo, 1.5)
 
 
 def fmt(v, unicode_minus=True):
@@ -116,20 +135,25 @@ def parse_table(md):
 def oxidation_states(mol):
     from rdkit import Chem
     m = Chem.Mol(mol)
-    Chem.Kekulize(m, clearAromaticFlags=True)
+    if any(b.GetIsAromatic() for b in m.GetBonds()):
+        # Kekulize() also recomputes the implicit hydrogens, and on a relaxed (never fully
+        # validated) molecule that hands a phantom H to every double-bonded oxygen. Only
+        # call it when there is actually something aromatic to kekulise.
+        Chem.Kekulize(m, clearAromaticFlags=True)
     out = []
     for a in m.GetAtoms():
-        sym, ea = a.GetSymbol(), EN.get(a.GetSymbol(), 1.5)
+        sym = a.GetSymbol()
         v = Fraction(a.GetFormalCharge())
         for b in a.GetBonds():
             o = b.GetOtherAtom(a)
-            if o.GetSymbol() == sym:
+            osym = o.GetSymbol()
+            if osym == sym:
                 continue
-            eo, order = EN.get(o.GetSymbol(), 1.5), Fraction(b.GetBondTypeAsDouble())
-            v += order if eo > ea else (-order if eo < ea else 0)
+            order = Fraction(b.GetBondTypeAsDouble())
+            v += order if more_en(osym, sym) else (-order if more_en(sym, osym) else 0)
         if sym != "H":
             h = a.GetTotalNumHs()
-            v += h if EN["H"] > ea else (-h if EN["H"] < ea else 0)
+            v += h if more_en("H", sym) else (-h if more_en(sym, "H") else 0)
         out.append(v)
     return out
 
@@ -138,9 +162,9 @@ def implicit_h_sum(mol):
     """Total O.S. carried by implicit hydrogens (+1 each on atoms more EN than H, −1 otherwise)."""
     s = 0
     for a in mol.GetAtoms():
-        if a.GetSymbol() != "H":
-            ea = EN.get(a.GetSymbol(), 1.5)
-            s += a.GetTotalNumHs() * (1 if ea > EN["H"] else (-1 if ea < EN["H"] else 0))
+        sym = a.GetSymbol()
+        if sym != "H":
+            s += a.GetTotalNumHs() * (1 if more_en(sym, "H") else (-1 if more_en("H", sym) else 0))
     return s
 
 
@@ -178,6 +202,8 @@ def run_checks(mol, values, check):
     for a in mol.GetAtoms():
         by_el.setdefault(a.GetSymbol(), []).append(values[a.GetIdx()])
     for tok in check.split():
+        if tok in ("-", "—", "n/a", "N/A"):   # "nothing to assert" is a valid cell
+            continue
         m = re.fullmatch(r"([A-Z][a-z]?)([=~])(.+)", tok)
         if not m:
             errors.append("bad check token %r" % tok)
@@ -250,11 +276,108 @@ def replace_block(md, key, body):
 
 
 def parse_smiles(smi):
-    """Keep explicit [H] atoms (e.g. the P–H bonds of H3PO3 are the point of the drawing)."""
+    """Keep explicit [H] atoms (e.g. the P–H bonds of H3PO3 are the point of the drawing).
+
+    Falls back to a relaxed sanitisation for the genuinely hypervalent species this repo
+    draws — ClF3, BrF5, IF7, HClO4 and B2H6. RDKit's default model allows a maximum
+    valence of 7 for iodine and 6 for chlorine, so it rejects them, but the molecules
+    are real and are exactly the ones the bonding chapter needs. Dropping only
+    SANITIZE_PROPERTIES keeps ring perception, aromaticity and the bond graph, which
+    is all the drawing and the oxidation-state calculation need.
+
+    SANITIZE_CLEANUP cannot be skipped, and it is the step that repairs a hypervalent
+    atom by rewriting the molecule: `O[Cl](=O)(=O)=O` comes back as Cl3+ on four single
+    bonds. So whichever sanitisation succeeds, the molecule gets its charges and bond
+    orders copied back from an untouched copy, which is what the table actually spells.
+    """
     from rdkit import Chem
+    from rdkit import RDLogger
+    RDLogger.DisableLog("rdApp.*")   # the first attempt failing below is expected, not a warning
     ps = Chem.SmilesParserParams()
     ps.removeHs = False
-    return Chem.MolFromSmiles(smi, ps)
+    ref = Chem.MolFromSmiles(smi, raw_ps())        # exactly what the row spells, never validated
+    mol = Chem.MolFromSmiles(smi, ps)
+    if mol is not None and charges_agree(mol, ref):
+        return mol
+    if ref is None:
+        return None
+    for ops in (Chem.SANITIZE_ALL, Chem.SANITIZE_ALL ^ Chem.SANITIZE_PROPERTIES):
+        mol, written = Chem.Mol(ref), Chem.Mol(ref)
+        RDLogger.DisableLog("rdApp.*")
+        try:
+            Chem.SanitizeMol(mol, ops)
+        except Exception:                          # still hypervalent: try the relaxed set
+            continue
+        RDLogger.EnableLog("rdApp.*")
+        for a, w in zip(list(mol.GetAtoms()), list(written.GetAtoms())):
+            a.SetFormalCharge(w.GetFormalCharge())
+        for b, w in zip(list(mol.GetBonds()), list(written.GetBonds())):
+            b.SetBondType(w.GetBondType())
+        # and re-derive the implicit hydrogens, which were counted against the bond orders
+        # sanitisation had just rewritten: otherwise HO-Cl(=O)3 gets drawn as Cl(OH)4.
+        mol.UpdatePropertyCache(False)
+        return mol
+    return None
+
+
+def charges_agree(mol, ref):
+    """Did RDKit leave the formal charges the way the table wrote them?
+
+    If it did, the fully validated molecule is the one to use. If it did not, RDKit has
+    been editing the charges to make a hypervalent atom legal, and the unvalidated parse
+    is the faithful reading of the row.
+    """
+    if ref is None:
+        return True
+    return [a.GetFormalCharge() for a in mol.GetAtoms()] == \
+           [a.GetFormalCharge() for a in ref.GetAtoms()]
+
+
+def raw_ps():
+    """Parser settings for a molecule RDKit has not validated yet."""
+    from rdkit import Chem
+    ps = Chem.SmilesParserParams()
+    ps.sanitize = False
+    ps.removeHs = False
+    return ps
+
+
+def validate(src):
+    """Check every row's SMILES and O.S. assertions without drawing anything.
+
+    Needs RDKit's chemistry core only (no X11 / Cairo), so it runs on any machine and in
+    CI even where the SVG backend cannot be loaded.
+    """
+    from rdkit import Chem
+    rows = parse_table(src.read_text(encoding="utf-8"))
+    if not rows:
+        return ["no table with a SMILES column"], 0
+    errors, svgdir = [], src.parent / "mol"
+    have = {p.stem for p in svgdir.glob("*.svg")} if svgdir.is_dir() else set()
+    for r in rows:
+        mol = parse_smiles(r["smiles"])
+        if mol is None:
+            errors.append("%s: RDKit rejects the SMILES %r (explicit valence?)" % (r["label"], r["smiles"]))
+            continue
+        if not re.fullmatch(r"[a-z0-9][a-z0-9\-]*", r["id"] or ""):
+            errors.append("%s: ID must be lowercase ASCII, got %r" % (r["label"], r["id"]))
+        if r["id"] not in have:
+            errors.append("%s: no drawing at mol/%s.svg — run the renderer" % (r["label"], r["id"]))
+        if "H" in r["os"].split():
+            mol = Chem.AddHs(mol)
+        try:
+            values, _ = apply_spec(mol, r["os"], oxidation_states(mol))
+        except ValueError as exc:
+            errors.append("%s: %s" % (r["label"], exc))
+            continue
+        total = sum(values) + implicit_h_sum(mol)
+        charge = sum(a.GetFormalCharge() for a in mol.GetAtoms())
+        if total != charge:
+            errors.append("%s: O.S. sum %s ≠ charge %d" % (r["label"], fmt(total), charge))
+        errors += ["%s: %s" % (r["label"], e) for e in run_checks(mol, values, r["check"])]
+    for stale in sorted(have - {r["id"] for r in rows}):
+        errors.append("mol/%s.svg is not in the table (stale drawing)" % stale)
+    return errors, len(rows)
 
 
 def process(src, size):
@@ -323,9 +446,31 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("sources", nargs="*", type=Path)
     ap.add_argument("--all", action="store_true", help="every */figures/structures.md in the repo")
+    ap.add_argument("--validate", action="store_true",
+                    help="check the tables' SMILES and O.S. assertions only; draw nothing")
     ap.add_argument("--size", default="240x170", help="WxH of each drawing in px")
     ap.add_argument("--library", type=Path, help="also write the combined compound library here")
     args = ap.parse_args()
+
+    if args.validate:
+        srcs = [p.resolve() for p in args.sources]
+        if args.all or not srcs:
+            srcs += sorted(p for p in ROOT.glob("*/*/figures/structures.md") if p not in srcs)
+        if not srcs:
+            ap.error("give a structures.md path or --all")
+        bad, total = [], 0
+        for s in srcs:
+            errs, n = validate(s)
+            total += n
+            print("%-62s %3d structures  %s"
+                  % (s.relative_to(ROOT), n, "OK" if not errs else f"{len(errs)} PROBLEM(S)"))
+            bad += ["  %s: %s" % (s.relative_to(ROOT), e) for e in errs]
+        if bad:
+            print("\nFAILED CHECKS:\n" + "\n".join(bad), file=sys.stderr)
+            sys.exit(1)
+        print("\n%d structures validated, all SMILES parse and every assertion holds" % total)
+        return
+
     try:
         from rdkit.Chem import rdDepictor
         from rdkit.Chem.Draw import rdMolDraw2D  # noqa: F401  (fails early if drawing is broken)

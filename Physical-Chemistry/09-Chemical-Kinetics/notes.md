@@ -8,7 +8,7 @@ edition: rationalised
 exams: [JEE Main, JEE Advanced]
 sources: [lech103.pdf]
 status: written
-words: 16000
+words: 3661
 updated: 2026-09-28
 tags: [chemistry/physical, jee/main, jee/advanced, chemical-kinetics, rate-law, arrhenius, activation-energy]
 ---
@@ -36,10 +36,10 @@ tags: [chemistry/physical, jee/main, jee/advanced, chemical-kinetics, rate-law, 
   7. [Second order and nth order reactions 🆇](#7-second-order-and-nth-order-reactions-)
   8. [Pseudo first order reactions (3.3)](#8-pseudo-first-order-reactions-33)
 - [Part C — Temperature Dependence and Collision Theory](#part-c--temperature-dependence-and-collision-theory)
-  9. [Temperature dependence — Arrhenius equation $k = A e^{-E_a/RT}$ (3.4)](#9-temperature-dependence--arrhenius-equation-k--a-e-e_art-34)
+  9. [Temperature dependence — Arrhenius equation $k = A e^{-E_a/RT}$ (3.4)](#9-temperature-dependence--arrhenius-equation-k--a-e-eart-34)
   10. [Activation energy and Arrhenius plot $ln k$ vs $1/T$ (3.4)](#10-activation-energy-and-arrhenius-plot-ln-k-vs-1t-34)
   11. [Collision theory — threshold energy, orientation, effective collisions (3.5)](#11-collision-theory--threshold-energy-orientation-effective-collisions-35)
-  12. [Effect of catalyst on rate and $E_a$ 🆇](#12-effect-of-catalyst-on-rate-and-e_a-)
+  12. [Effect of catalyst on rate and $E_a$ 🆇](#12-effect-of-catalyst-on-rate-and-ea-)
   13. [Reaction mechanisms — rate determining step and steady state 🆇](#13-reaction-mechanisms--rate-determining-step-and-steady-state-)
 - [Part D — Advanced Corner, Patterns and Revision](#part-d--advanced-corner-patterns-and-revision)
   14. [Master formula bank (print this)](#14-master-formula-bank-print-this)
@@ -78,12 +78,13 @@ General: For $aA + bB → cC + dD$, Rate = $-1/a d[A]/dt = -1/b d[B]/dt = +1/c d
 For gaseous at constant T, concentration ∝ partial pressure, so rate can be expressed as rate of change in partial pressure.
 
 ```mermaid
-flowchart TB
-    Conc[Concentration vs time curve] --> Avg[Average rate<br>ΔC/Δt<br>secant slope<br>between t1 and t2]
-    Conc --> Inst[Instantaneous rate<br>dC/dt<br>tangent slope<br>at time t]
-    Avg --> Decrease[Decreases with time<br>as reactants consumed]
-    Inst --> Graphical[Graphical method<br>draw tangent<br>calculate slope]
+flowchart TD
+    Conc["Concentration vs time curve"] --> Avg["Average rate<br>ΔC/Δt<br>secant slope<br>between t1 and t2"]
+    Conc --> Inst["Instantaneous rate<br>dC/dt<br>tangent slope<br>at time t"]
+    Avg --> Decrease["Decreases with time<br>as reactants consumed"]
+    Inst --> Graphical["Graphical method<br>draw tangent<br>calculate slope"]
 ```
+*Average rate is a secant, instantaneous rate is a tangent, and both fall as the reaction runs.*
 
 ## 2. Factors influencing rate of reaction (3.2)
 
@@ -138,13 +139,14 @@ Difference table:
 | Determined from rate law | From mechanism |
 
 ```mermaid
-flowchart TB
-    Reaction[Reaction] --> Elem[Elementary<br>single step<br>order = molecularity<br>rate from stoichiometry]
-    Reaction --> Complex[Complex<br>multiple steps<br>mechanism<br>intermediates<br>RDS slowest]
-    Complex --> RDS[Rate = rate of RDS<br>using intermediates<br>steady state approximation]
-    Order[Order<br>experimental<br>0,1,2, fractional] --> RateLaw[Rate law<br>Rate = k [A]^x [B]^y]
-    Mol[Molecularity<br>theoretical<br>1 unimolecular<br>2 bimolecular<br>3 trimolecular] --> Elem
+flowchart TD
+    Reaction["Reaction"] --> Elem["Elementary<br>single step<br>order = molecularity<br>rate from stoichiometry"]
+    Reaction --> Complex["Complex<br>multiple steps<br>mechanism<br>intermediates<br>RDS slowest"]
+    Complex --> RDS["Rate = rate of RDS<br>using intermediates<br>steady state approximation"]
+    Order["Order<br>experimental<br>0, 1, 2, fractional"] --> RateLaw["Rate law<br>Rate = k [A]^x [B]^y"]
+    Mol["Molecularity<br>theoretical<br>1 unimolecular<br>2 bimolecular<br>3 trimolecular"] --> Elem
 ```
+*Order is experimental and molecularity is theoretical — they coincide only for a single-step reaction.*
 
 ## 5. Zero order reactions — integrated law and half-life (3.3)
 
@@ -265,14 +267,15 @@ Maxwell-Boltzmann distribution: Fraction of molecules with energy $E$ vs $E$, pe
 Temperature coefficient: $k_{T+10}/k_T ≈ 2-3$ for many reactions.
 
 ```mermaid
-flowchart TB
-    Reactants[Reactants<br>low energy] -->|Absorb Ea| AC[Activated Complex<br>Transition State<br>peak energy<br>unstable]
-    AC -->|Release energy| Products[Products]
-    EaF[Ea forward] --> AC
-    EaB[Ea backward] --> AC
-    DeltaH[ΔH = Ea_f - Ea_b] --> Products
-    Temp[Increase T] --> MoreFrac[More molecules with E≥Ea<br>fraction = e^-Ea/RT ↑<br>k ↑ exponentially]
+flowchart TD
+    Reactants["Reactants<br>low energy"] -->|"Absorb Ea"| AC["Activated Complex<br>Transition State<br>peak energy<br>unstable"]
+    AC -->|"Release energy"| Products["Products"]
+    EaF["Ea forward"] --> AC
+    EaB["Ea backward"] --> AC
+    DeltaH["ΔH = Ea_f - Ea_b"] --> Products
+    Temp["Increase T"] --> MoreFrac["More molecules with E≥Ea<br>fraction = e^-Ea/RT ↑<br>k ↑ exponentially"]
 ```
+*The Arrhenius picture: the transition state barrier, and why ΔH = Ea,f − Ea,b.*
 
 ## 11. Collision theory — threshold energy, orientation, effective collisions (3.5)
 
@@ -310,11 +313,12 @@ Energy profile: Without catalyst high peak $E_a$, with catalyst lower peak(s) vi
 Example: $\ce{2H2O2 -> 2H2O + O2}$ uncatalysed $E_a=75 kJ/mol$, with $I^-$ catalyst $E_a=56 kJ/mol$, with catalase enzyme $E_a=8 kJ/mol$ — huge rate increase.
 
 ```mermaid
-flowchart TB
-    R[Reactants] -->|Ea high<br>without catalyst<br>slow| P[Products]
-    R -->|Ea low<br>with catalyst<br>fast via intermediate| P
-    Cat[Catalyst<br>regenerated] -.->|lowers Ea<br>provides alternative path| R
+flowchart TD
+    R["Reactants"] -->|"Ea high<br>without catalyst<br>slow"| P["Products"]
+    R -->|"Ea low<br>with catalyst<br>fast via intermediate"| P
+    Cat["Catalyst<br>regenerated"] -.->|"lowers Ea<br>provides alternative path"| R
 ```
+*A catalyst opens a lower-E_a path to the same products and comes out unchanged.*
 
 ## 13. Reaction mechanisms — rate determining step and steady state 🆇
 

@@ -2,11 +2,13 @@
 branch: "Inorganic Chemistry"
 chapter: "Coordination Compounds"
 status: written
-words: 4988
+words: 5541
 updated: 2026-09-26
 class: "12"
 ncert_unit: "Unit 5 (Class 12)"
 ncert_code: "lech105"
+edition: rationalised
+exams: [JEE Advanced]
 sources: ["3-JAEIC-Coordination Compound_Eng.pdf.pdf", "lech105.pdf"]
 tags: [chemistry, jee]
 ---
@@ -39,7 +41,7 @@ tags: [chemistry, jee]
   10. [Valence Bond Theory](#10-valence-bond-theory)
   11. [Crystal Field Theory](#11-crystal-field-theory)
   12. [Colour in Coordination Compounds](#12-colour-in-coordination-compounds)
-  13. [Jahn–Teller Distortion](#13-jahnteller-distortion)
+  13. [Jahn–Teller Distortion 🅰 (JEE Advanced special)](#13-jahnteller-distortion--jee-advanced-special)
 - [Part D — Stability, Carbonyls & Applications](#part-d--stability-carbonyls--applications)
   14. [Stability of Complexes](#14-stability-of-complexes)
   15. [Bonding in Metal Carbonyls](#15-bonding-in-metal-carbonyls)
@@ -129,22 +131,24 @@ The last two have the same empirical formula but different properties → **isom
 
 
 ```mermaid
-flowchart TB
-    Primary[Primary valency<br>ionisable<br>= oxidation state<br>satisfied by anions]
-    Secondary[Secondary valency<br>non-ionisable<br>= coordination number<br>fixed for metal<br>directional]
-    Primary --> Example1[[Co(NH3)6]Cl3<br>primary 3 Cl- ionisable<br>secondary 6 NH3 fixed octahedral]
+flowchart TD
+    Primary["Primary valency<br>ionisable<br>= oxidation state<br>satisfied by anions"]
+    Secondary["Secondary valency<br>non-ionisable<br>= coordination number<br>fixed for metal<br>directional"]
+    Primary --> Example1["[Co(NH₃)₆]Cl₃<br>primary 3 Cl⁻ ionisable<br>secondary 6 NH₃ fixed octahedral"]
     Secondary --> Example1
-    Example1 --> Test[AgNO3 test<br>count ionisable Cl-]
+    Example1 --> Test["AgNO₃ test<br>count ionisable Cl⁻"]
 ```
+*Werner's primary and secondary valency, tested with the AgNO₃ reaction.*
 
 ```mermaid
 flowchart LR
-    Octa[Octahedral CN6<br>[Co(NH3)6]3+<br>[CoCl2(NH3)4]+]
-    Tetra[Tetrahedral CN4<br>[Ni(CO)4]<br>[ZnCl4]2-]
-    SqPlan[Square planar CN4<br>[PtCl4]2-<br>[Ni(CN)4]2-]
-    Linear[Linear CN2<br>[Ag(NH3)2]+]
+    Octa["Octahedral CN 6<br>[Co(NH₃)₆]³⁺<br>[CoCl₂(NH₃)₄]⁺"]
+    Tetra["Tetrahedral CN 4<br>[Ni(CO)₄]<br>[ZnCl₄]²⁻"]
+    SqPlan["Square planar CN 4<br>[PtCl₄]²⁻<br>[Ni(CN)₄]²⁻"]
+    Linear["Linear CN 2<br>[Ag(NH₃)₂]⁺"]
     Octa --> Tetra --> SqPlan --> Linear
 ```
+*Coordination number 6 or 4, and how the ligand decides octahedral, tetrahedral or square planar.*
 
 
 ## 3. Essential Terminology
@@ -163,12 +167,12 @@ flowchart LR
 
 🅰 **Common coordination numbers of important metals (memorise):**
 
-| Metal | CN | | Metal | CN |
-|---|---|---|---|---|
-| Cu⁺, Au⁺ | 2, 4 | | Ni²⁺, Fe²⁺, Co²⁺ | 4, 6 |
-| Ag⁺ | 2 | | Fe³⁺, Co³⁺, Al³⁺, Sc³⁺ | 6 |
-| Hg₂²⁺ | 2 | | Pt²⁺, Pd²⁺, Cu²⁺, Ag²⁺ | 4 |
-| Mg²⁺ | 6 | | Pt⁴⁺, Pd⁴⁺ | 6 |
+| Metal ion | Usual CN | Metal ion | Usual CN |
+|---|---|---|---|
+| Cu⁺, Au⁺ | 2, 4 | Ni²⁺, Fe²⁺, Co²⁺ | 4, 6 |
+| Ag⁺ | 2 | Fe³⁺, Co³⁺, Al³⁺, Sc³⁺ | 6 |
+| Hg₂²⁺ | 2 | Pt²⁺, Pd²⁺, Cu²⁺, Ag²⁺ | 4 |
+| Mg²⁺ | 6 | Pt⁴⁺, Pd⁴⁺ | 6 |
 
 ## 4. Ligands — Complete Classification
 
@@ -267,25 +271,36 @@ trioxalatoaluminate(III) → K₃[Al(C₂O₄)₃]; dichloridobis(ethane-1,2-dia
 
 🅰 **Polynuclear complexes & bridging ligands:** a ligand linking two metal ions is a
 **bridging ligand**, prefixed by Greek **µ-** for each bridge —
-e.g. [(H₂O)₄Fe(µ-NH₂)(µ-OH)Fe(H₂O)₄](SO₄)₂ =
+e.g. `[(H₂O)₄Fe(µ-NH₂)(µ-OH)Fe(H₂O)₄](SO₄)₂` =
 tetraaquairon(III)-µ-amido-µ-hydroxotetraaquairon(III) sulphate.
 
 # Part B — Isomerism
 
+**The top-level split — does anything about the bonding change, or only the geometry?**
+
 ```mermaid
 flowchart TD
-    I["ISOMERISM in complexes"] --> S["Stereoisomerism<br>(same bonds, different space arrangement)"]
-    I --> T["Structural isomerism<br>(different bonds/distribution)"]
-    S --> G["Geometrical (cis/trans, fac/mer)"]
-    S --> O["Optical (d/l enantiomers)"]
-    T --> ION["Ionisation"]
-    T --> HYD["Solvate / Hydrate"]
-    T --> COO["Coordination"]
-    T --> LIN["Linkage (ambidentate)"]
-    T --> LIG["Ligand isomerism"]
-    T --> POS["Coordination-position (polynuclear)"]
-    T --> POL["Polymerisation (not true isomerism)"]
+    I["ISOMERISM in complexes"] --> S["Stereoisomerism<br>same bonds,<br>different 3-D arrangement"]
+    I --> T["Structural isomerism<br>different bonds<br>or different distribution"]
+    S --> G["Geometrical<br>cis/trans, fac/mer"]
+    S --> O["Optical<br>d/l enantiomers"]
 ```
+*Two families only: if the connectivity is identical it is stereoisomerism, if it is not it is structural.*
+
+**Structural isomerism — seven kinds, all of them ligand-swap variants:**
+
+| Type | What changes | Example |
+|---|---|---|
+| Ionisation | counter-ion swaps with a ligand | [Co(NH₃)₅(SO₄)]Br vs [Co(NH₃)₅Br]SO₄ |
+| Solvate / hydrate | lattice solvent becomes a ligand | CrCl₃·6H₂O vs [Cr(H₂O)₆]Cl₃ |
+| Coordination | which ligand is inside the sphere | [Co(NH₃)₅(NO₂)]Cl₂ vs [Co(NH₃)₅Cl]NO₂Cl |
+| Linkage (ambidentate) | which atom of the ligand binds | [Co(NH₃)₅(NO₂)]Cl₂ vs [Co(NH₃)₅(ONO)]Cl₂ |
+| Ligand isomerism | ligand is itself isomeric | [Co(NH₃)₅(ONO)] vs [Co(NH₃)₅(NO₂)] |
+| Coordination-position | ligand sits at a different site | cis-/trans-[Co(NH₃)₄Cl₂] |
+| Polymerisation | formula multiplies | [Co(NH₃)₅Cl]Cl₂ vs [Co(NH₃)₅Cl]₂Cl₃ |
+
+Polymerisation (nuclear oligomerisation) is conventionally listed here but is not true
+isomerism — the molecular formula itself changes.
 
 ## 6. Structural Isomerism
 
@@ -293,7 +308,7 @@ flowchart TD
 Counter ion is itself a potential ligand and swaps places with a ligand:
 - **[Co(NH₃)₅(SO₄)]Br** vs **[Co(NH₃)₅Br]SO₄**
 - 🅰 [Co(NH₃)₄Br₂]SO₄ (red-violet) vs [Co(NH₃)₄SO₄]Br₂ (red);
-  [Pt(NH₃)₄Cl₂]Br₂ vs [Pt(NH₃)₄Br₂]Cl₂; [Co(NH₃)₄(NO₃)₂]SO₄ vs [Co(NH₃)₄SO₄](NO₃)₂.
+  `[Pt(NH₃)₄Cl₂]Br₂` vs `[Pt(NH₃)₄Br₂]Cl₂`; `[Co(NH₃)₄(NO₃)₂]SO₄` vs `[Co(NH₃)₄SO₄](NO₃)₂`.
 - **Distinguishing test (NCERT Intext 5.4):** with Ba²⁺ only the sulphate-outside form
   gives BaSO₄; with Ag⁺ only the bromide-outside form gives AgBr.
 
@@ -539,26 +554,29 @@ resolved by Ligand Field Theory / MOT.
 
 
 ```mermaid
-flowchart TB
-    Free[Free ion<br>5 d degenerate] --> Oct[Octahedral field<br>eg dx2-y2 dz2 up +0.6Δo<br>t2g dxy dxz dyz down -0.4Δo<br>Δo large for strong field]
-    Free --> TetraM[Tetrahedral field<br>e dz2 dx2-y2 down -0.6Δt<br>t2 dxy dxz dyz up +0.4Δt<br>Δt=4/9 Δo inverted small]
-    Free --> SqM[Square planar<br>dx2-y2 highest<br>dxy next<br>dz2<br>dxz dyz lowest<br>Δsp≈1.3Δo]
+flowchart TD
+    Free["Free ion<br>5 d degenerate"] --> Oct["Octahedral field<br>eg dx2-y2 dz2 up +0.6Δo<br>t2g dxy dxz dyz down -0.4Δo<br>Δo large for strong field"]
+    Free --> TetraM["Tetrahedral field<br>e dz2 dx2-y2 down -0.6Δt<br>t2 dxy dxz dyz up +0.4Δt<br>Δt=4/9 Δo inverted small"]
+    Free --> SqM["Square planar<br>dx2-y2 highest<br>dxy next<br>dz2<br>dxz dyz lowest<br>Δsp≈1.3Δo"]
 ```
+*d-orbital splitting in octahedral, tetrahedral and square-planar fields, and the resulting CFSE.*
 
 ```mermaid
 flowchart LR
-    Weak[Weak field<br>Δo < P<br>high spin<br>max unpaired<br>e.g. [CoF6]3- 4 unpaired<br>sp3d2 outer]
-    Strong[Strong field<br>Δo > P<br>low spin<br>pairing<br>e.g. [Co(NH3)6]3+ diamag<br>d2sp3 inner]
-    Weak -->|Δo vs P decides| Strong
+    Weak["Weak field<br>Δₒ &lt; P<br>high spin<br>max unpaired<br>e.g. [CoF₆]³⁻ 4 unpaired<br>sp³d² outer"]
+    Strong["Strong field<br>Δₒ &gt; P<br>low spin<br>pairing<br>e.g. [Co(NH₃)₆]³⁺ diamag<br>d²sp³ inner"]
+    Weak -->|"Δₒ vs P decides"| Strong
 ```
+*Strong field versus weak field decides high spin versus low spin, and therefore how many unpaired electrons.*
 
 ```mermaid
-flowchart TB
-    VBT[VBT Hybridisation] --> sp3[sp3 tetrahedral<br>[NiCl4]2- para<br>[Ni(CO)4] dia]
-    VBT --> dsp2[dsp2 square planar<br>[Ni(CN)4]2- dia<br>[PtCl4]2-]
-    VBT --> d2sp3[d2sp3 inner octahedral<br>[Co(NH3)6]3+ dia<br>low spin]
-    VBT --> sp3d2[sp3d2 outer octahedral<br>[CoF6]3- para 4 unp<br>high spin]
+flowchart TD
+    VBT["VBT Hybridisation"] --> sp3["sp³ tetrahedral<br>[NiCl₄]²⁻ para<br>[Ni(CO)₄] dia"]
+    VBT --> dsp2["dsp² square planar<br>[Ni(CN)₄]²⁻ dia<br>[PtCl₄]²⁻"]
+    VBT --> d2sp3["d²sp³ inner octahedral<br>[Co(NH₃)₆]³⁺ dia<br>low spin"]
+    VBT --> sp3d2["sp³d² outer octahedral<br>[CoF₆]³⁻ para, 4 unpaired<br>high spin"]
 ```
+*VBT hybridisation table — the same four geometries with the inner- and outer-orbital assignments JEE asks for.*
 
 
 ## 12. Colour in Coordination Compounds
@@ -780,9 +798,11 @@ Fixing with hypo (sodium thiosulphate) dissolves unexposed AgBr as
   penicillamine/desferrioxime/EDTA therapy, cis-platin.
 
 ---
-*Cross-chapter links:* [`../07-The-d-and-f-Block-Elements/notes.md`](../07-The-d-and-f-Block-Elements/notes.md)
-(transition-metal context, K₂Cr₂O₇/KMnO₄) ·
-[`../../../Practical-Chemistry/Salt-Analysis/notes.md`](../../Practical-Chemistry/Salt-Analysis/notes.md)
-(complexes used as reagents and precipitates — K₄[Fe(CN)₆], DMG, K₃[Co(NO₂)₆]).
+*Cross-links:*
+
+- [d- and f-Block Elements (Unit 4)](../07-The-d-and-f-Block-Elements/notes.md) — the transition-metal context behind K₂Cr₂O₇, KMnO₄, and every colour and magnetic moment in this chapter.
+- [Salt Analysis (Practical)](../../Practical-Chemistry/Salt-Analysis/notes.md) — complexes used as reagents and precipitates: K₄[Fe(CN)₆], dimethylglyoxime, K₃[Co(NO₂)₆].
+- [The p-Block Elements (Unit 13, Class XI)](../09-The-p-Block-Elements/notes.md) — the ligands drawn from N, P, S and the halogens that supply the lone pairs.
+
 *Sources:* NCERT Class XII rationalised ed. (lech105) · Allen Coordination Compound
 module (Enthusiast, JEE Main + Advanced).

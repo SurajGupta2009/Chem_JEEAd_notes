@@ -8,7 +8,7 @@ edition: legacy
 exams: [JEE Advanced]
 sources: [kech105-legacy.pdf]
 status: written
-words: 15500
+words: 5608
 updated: 2026-09-28
 tags: [chemistry/physical, jee/advanced, states-of-matter, gaseous-state, ktg, kinetic-theory, real-gas, van-der-waals, critical-constants]
 ---
@@ -27,7 +27,7 @@ tags: [chemistry/physical, jee/advanced, states-of-matter, gaseous-state, ktg, k
 
 - [Part A — Intermolecular Forces vs Thermal Energy](#part-a--intermolecular-forces-vs-thermal-energy)
   1. [Intermolecular forces — London, dipole-dipole, dipole-induced, ion-dipole, H-bond (5.1)](#1-intermolecular-forces--london-dipole-dipole-dipole-induced-ion-dipole-h-bond-51)
-  2. [Thermal energy and balance determining physical state (5.2–5.3)](#2-thermal-energy-and-balance-determining-physical-state-52-53)
+  2. [Thermal energy and balance determining physical state (5.2–5.3)](#2-thermal-energy-and-balance-determining-physical-state-5253)
 - [Part B — Gaseous State — Gas Laws and Ideal Gas](#part-b--gaseous-state--gas-laws-and-ideal-gas)
   3. [Boyle's law — pV = constant at constant T,n — isotherms (5.5.1)](#3-boyles-law--pv--constant-at-constant-tn--isotherms-551)
   4. [Charles' law — V/T = constant at constant p,n — absolute zero (5.5.2)](#4-charles-law--vt--constant-at-constant-pn--absolute-zero-552)
@@ -97,16 +97,17 @@ Species like Cl can also show weak H-bonding but NCERT limits to N,O,F.
 **Repulsive forces**: At very close distances, electron clouds and nuclei repel. Magnitude rises very rapidly as distance decreases. Reason liquids/solids hard to compress — molecules already close, further compression increases repulsion sharply.
 
 ```mermaid
-flowchart TB
-    IMF[Intermolecular Forces<br>0.1-100 kJ/mol] --> VDW[van der Waals]
-    VDW --> London[London dispersion<br>all molecules<br>1/r6<br>0.1-5 kJ/mol<br>size ↑ strength ↑]
-    VDW --> DD[Dipole-dipole<br>polar molecules<br>stationary 1/r3<br>rotating 1/r6<br>2-15 kJ/mol]
-    VDW --> DI[Dipole-induced<br>polar + non-polar<br>1/r6<br>2-10 kJ/mol]
-    IMF --> IonD[Ion-dipole<br>ion + polar<br>40-600 kJ/mol<br>hydration]
-    IMF --> HB[H-bond<br>N-H O-H F-H + lone pair N/O/F<br>10-100 kJ/mol<br>special strong]
-    London --> Trend[Trend: F2 gas Cl2 gas Br2 liquid I2 solid<br>London ↑ down group]
-    DD --> Trend2[HCl b.p. -85°C > F2 -188°C<br>dipole-dipole extra]
+flowchart TD
+    IMF["Intermolecular Forces<br>0.1-100 kJ/mol"] --> VDW["van der Waals"]
+    VDW --> London["London dispersion<br>all molecules<br>1/r6<br>0.1-5 kJ/mol<br>size ↑ strength ↑"]
+    VDW --> DD["Dipole-dipole<br>polar molecules<br>stationary 1/r3<br>rotating 1/r6<br>2-15 kJ/mol"]
+    VDW --> DI["Dipole-induced<br>polar + non-polar<br>1/r6<br>2-10 kJ/mol"]
+    IMF --> IonD["Ion-dipole<br>ion + polar<br>40-600 kJ/mol<br>hydration"]
+    IMF --> HB["H-bond<br>N-H O-H F-H + lone pair N/O/F<br>10-100 kJ/mol<br>special strong"]
+    London --> Trend["Trend: F2 gas Cl2 gas Br2 liquid I2 solid<br>London ↑ down group"]
+    DD --> Trend2["HCl b.p. -85°C > F2 -188°C<br>dipole-dipole extra"]
 ```
+*The intermolecular force hierarchy — dispersion is always present, the rest depend on whether the molecule is polar or charged.*
 
 ## 2. Thermal energy and balance determining physical state (5.2–5.3)
 
@@ -208,12 +209,13 @@ If $T,p,n$ known, $V$ can be calculated.
 
 ```mermaid
 flowchart LR
-    Boyle[Boyle<br>pV=k<br>T,n const<br>isotherm p-V hyperbola] --> Combined[Combined<br>pV/T = k<br>n const]
-    Charles[Charles<br>V/T=k<br>p,n const<br>isobar V-T line] --> Combined
-    GayLussac[Gay-Lussac<br>p/T=k<br>V,n const<br>isochore p-T line] --> Combined
-    Avogadro[Avogadro<br>V/n=k<br>T,p const] --> Ideal[Ideal gas<br>pV=nRT<br>equation of state]
+    Boyle["Boyle<br>pV=k<br>T,n const<br>isotherm p-V hyperbola"] --> Combined["Combined<br>pV/T = k<br>n const"]
+    Charles["Charles<br>V/T=k<br>p,n const<br>isobar V-T line"] --> Combined
+    GayLussac["Gay-Lussac<br>p/T=k<br>V,n const<br>isochore p-T line"] --> Combined
+    Avogadro["Avogadro<br>V/n=k<br>T,p const"] --> Ideal["Ideal gas<br>pV=nRT<br>equation of state"]
     Combined --> Ideal
 ```
+*The four gas laws are four special cases of pV = nRT; each holds one more variable constant.*
 
 ## 8. Dalton's law of partial pressures and aqueous tension (5.7)
 
@@ -307,12 +309,13 @@ $KE_{avg}$ same for all gases at same $T$, but speeds inversely proportional to 
 Example: $\ce{O2}$ at 27°C (300 K) $M=0.032 kg/mol$, $c_{rms}=√{3×8.314×300/0.032}=483 m/s$, $\ce{H2}$ $M=0.002 kg/mol$ $c_{rms}=1930 m/s$ 4 times faster.
 
 ```mermaid
-flowchart TB
-    Postulates[KTG Postulates<br>point masses<br>no forces<br>elastic collisions<br>random motion] --> Pressure[p = 1/3 mN c^2 / V]
-    Pressure --> KE[KE_avg = 3/2 kT per molecule<br>3/2 RT per mole]
-    KE --> Speeds[Speeds<br>c_rms=√3RT/M<br>c_av=√8RT/πM<br>c_mp=√2RT/M<br>c_rms>c_av>c_mp]
-    Speeds --> Dist[Maxwell distribution<br>peak at c_mp]
+flowchart TD
+    Postulates["KTG Postulates<br>point masses<br>no forces<br>elastic collisions<br>random motion"] --> Pressure["p = 1/3 mN c^2 / V"]
+    Pressure --> KE["KE_avg = 3/2 kT per molecule<br>3/2 RT per mole"]
+    KE --> Speeds["Speeds<br>c_rms=√3RT/M<br>c_av=√8RT/πM<br>c_mp=√2RT/M<br>c_rms>c_av>c_mp"]
+    Speeds --> Dist["Maxwell distribution<br>peak at c_mp"]
 ```
+*Kinetic theory gives p = ⅓ mNc̄² and the mean kinetic energy 3/2 kT, and from there the three characteristic speeds.*
 
 ## 13. Maxwell-Boltzmann distribution of speeds 🆇 (5.8)
 
@@ -336,15 +339,16 @@ $KE_{avg}$ same for all gases at same $T$, but speeds inversely proportional to 
 
 ```mermaid
 flowchart LR
-    subgraph LowT[Low T]
-        L1[Peak low c<br>narrow<br>few high-speed]
+    subgraph LowT["Low T"]
+        L1["Peak low c<br>narrow<br>few high-speed"]
     end
-    subgraph HighT[High T]
-        H1[Peak high c<br>broad<br>many high-speed<br>lower height]
+    subgraph HighT["High T"]
+        H1["Peak high c<br>broad<br>many high-speed<br>lower height"]
     end
-    LowT -->|Increase T| HighT
-    Heavy[Heavy gas M large<br>slow<br>narrow peak low c] -->|Decrease M| Light[Light gas M small<br>fast<br>broad peak high c]
+    LowT -->|"Increase T"| HighT
+    Heavy["Heavy gas M large<br>slow<br>narrow peak low c"] -->|"Decrease M"| Light["Light gas M small<br>fast<br>broad peak high c"]
 ```
+*The Maxwell–Boltzmann curve: higher T shifts the peak right and flattens it; heavier gas shifts it left.*
 
 ## 14. Collision parameters — mean free path, collision frequency, collision number 🆇
 
@@ -419,10 +423,11 @@ At high $p$, $V$ small, $b$ significant, $Z>1$.
 
 ```mermaid
 flowchart LR
-    Ideal[pV=nRT<br>no forces<br>point masses<br>Z=1] -->|Correct for attraction<br>p_ideal = p_real + a n2/V2| Pcorr[(p + a n2/V2)]
-    Ideal -->|Correct for volume<br>V_ideal = V_real - nb| Vcorr[(V - nb)]
-    Pcorr & Vcorr --> VDW[(p + a n2/V2)(V - nb)=nRT<br>real gas<br>Z≠1]
+    Ideal["pV = nRT<br>no forces<br>point masses<br>Z = 1"] -->|"Correct for attraction<br>p_ideal = p_real + a n²/V²"| Pcorr["p + a n²/V²"]
+    Ideal -->|"Correct for volume<br>V_ideal = V_real − nb"| Vcorr["V − nb"]
+    Pcorr & Vcorr --> VDW["(p + a n²/V²)(V − nb) = nRT<br>real gas<br>Z ≠ 1"]
 ```
+*van der Waals corrects the ideal equation for molecular size (b) and for attractions (a) — both of which push Z away from 1.*
 
 ## 17. Boyle temperature and inversion temperature 🆇
 
@@ -463,19 +468,20 @@ Continuity of state: gaseous and liquid states continuous, no sharp boundary abo
 Vapour vs gas: Vapour = gas below $T_c$, can be liquefied by compression alone at that $T$. Gas = above $T_c$, cannot be liquefied by compression alone.
 
 ```mermaid
-flowchart TB
-    subgraph HighT[Above Tc]
-        H1[Isotherm hyperbola<br>no liquefaction<br>gas only<br>Z>1 at high p]
+flowchart TD
+    subgraph HighT["Above Tc"]
+        H1["Isotherm hyperbola<br>no liquefaction<br>gas only<br>Z>1 at high p"]
     end
-    subgraph Tc[At Tc]
-        C1[Inflection point<br>critical point<br>p_c V_c T_c<br>horizontal tangent]
+    subgraph Tc["At Tc"]
+        C1["Inflection point<br>critical point<br>p_c V_c T_c<br>horizontal tangent"]
     end
-    subgraph LowT[Below Tc]
-        L1[Isotherm with horizontal<br>gas + liquid coexistence<br>vapour pressure constant<br>liquefaction possible]
+    subgraph LowT["Below Tc"]
+        L1["Isotherm with horizontal<br>gas + liquid coexistence<br>vapour pressure constant<br>liquefaction possible"]
     end
     HighT --> Tc --> LowT
-    Vapour[Vapour = gas below Tc<br>can liquefy by compression] --> Gas[Gas = above Tc<br>cannot liquefy by pressure alone]
+    Vapour["Vapour = gas below Tc<br>can liquefy by compression"] --> Gas["Gas = above Tc<br>cannot liquefy by pressure alone"]
 ```
+*Andrews isotherms above, at and below T_c: the horizontal part of the curve is where gas and liquid coexist.*
 
 ## 19. Joule-Thomson effect and methods of liquefaction 🆇
 

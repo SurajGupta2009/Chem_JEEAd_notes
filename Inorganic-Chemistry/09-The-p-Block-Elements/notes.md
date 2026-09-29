@@ -8,7 +8,7 @@ edition: pre-rationalised
 exams: [JEE Advanced]
 sources: [lech107-legacy.pdf, p-block_Theory_26.pdf]
 status: written
-words: 18000
+words: 4989
 updated: 2026-09-27
 tags: [chemistry/inorganic, jee/advanced, p-block, nitrogen, phosphorus, oxygen, sulphur, halogens, noble-gases]
 ---
@@ -29,21 +29,21 @@ tags: [chemistry/inorganic, jee/advanced, p-block, nitrogen, phosphorus, oxygen,
   1. [Occurrence, Config, Atomic Properties (7.1)](#1-occurrence-config-atomic-properties-71)
   2. [Physical Properties — Allotropy, Catenation, MP/BP](#2-physical-properties--allotropy-catenation-mpbp)
   3. [Chemical Properties — Oxidation States, Inert Pair, Anomalous N](#3-chemical-properties--oxidation-states-inert-pair-anomalous-n)
-  4. [Hydrides EH₃ — Trends (7.2)](#4-hydrides-eh3--trends-72)
-  5. [Oxides — E₂O₃, E₂O₅, N-oxides (7.3)](#5-oxides--e2o3-e2o5-n-oxides-73)
-  6. [Halides — EX₃, EX₅ (7.4)](#6-halides--ex3-ex5-74)
-  7. [Important Compounds — N₂, NH₃, HNO₃, P₄, PH₃, PCl₃, PCl₅, Oxoacids of P](#7-important-compounds--n2-nh3-hno3-p4-ph3-pcl3-pcl5-oxoacids-of-p)
+  4. [Hydrides EH₃ — Trends (7.2)](#4-hydrides-eh₃--trends-72)
+  5. [Oxides — E₂O₃, E₂O₅, N-oxides (7.3)](#5-oxides--e₂o₃-e₂o₅-n-oxides-73)
+  6. [Halides — EX₃, EX₅ (7.4)](#6-halides--ex₃-ex₅-74)
+  7. [Important Compounds — N₂, NH₃, HNO₃, P₄, PH₃, PCl₃, PCl₅, Oxoacids of P](#7-important-compounds--n₂-nh₃-hno₃-p₄-ph₃-pcl₃-pcl₅-oxoacids-of-p)
 - [Part B — Group 16: Oxygen Family (Chalcogens)](#part-b--group-16-oxygen-family-chalcogens)
   8. [Occurrence, Config, Atomic Properties (7.5)](#8-occurrence-config-atomic-properties-75)
-  9. [Physical & Chemical Properties — Oxidation States, Hydrides H₂E, Oxides, Halides](#9-physical--chemical-properties--oxidation-states-hydrides-h2e-oxides-halides)
-  10. [Important Compounds — O₂, O₃, SO₂, SO₃, H₂SO₄ Contact Process, Oxoacids of S](#10-important-compounds--o2-o3-so2-so3-h2so4-contact-process-oxoacids-of-s)
+  9. [Physical & Chemical Properties — Oxidation States, Hydrides H₂E, Oxides, Halides](#9-physical--chemical-properties--oxidation-states-hydrides-h₂e-oxides-halides)
+  10. [Important Compounds — O₂, O₃, SO₂, SO₃, H₂SO₄ Contact Process, Oxoacids of S](#10-important-compounds--o₂-o₃-so₂-so₃-h₂so₄-contact-process-oxoacids-of-s)
 - [Part C — Group 17: Halogen Family](#part-c--group-17-halogen-family)
   11. [Occurrence, Config, Atomic Properties (7.6)](#11-occurrence-config-atomic-properties-76)
   12. [Physical & Chemical Properties — Oxidation States, Anomalous F, Reactivity](#12-physical--chemical-properties--oxidation-states-anomalous-f-reactivity)
   13. [Hydrides HX, Oxides, Oxoacids of Cl, Interhalogens, Pseudohalogens](#13-hydrides-hx-oxides-oxoacids-of-cl-interhalogens-pseudohalogens)
 - [Part D — Group 18: Noble Gases](#part-d--group-18-noble-gases)
   14. [Occurrence, Config, Properties, Uses (7.7)](#14-occurrence-config-properties-uses-77)
-  15. [Xenon Compounds — XeF₂, XeF₄, XeF₆, XeO₃, XeOF₄ Structures (7.8)](#15-xenon-compounds--xef2-xef4-xef6-xeo3-xeof4-structures-78)
+  15. [Xenon Compounds — XeF₂, XeF₄, XeF₆, XeO₃, XeOF₄ Structures (7.8)](#15-xenon-compounds--xef₂-xef₄-xef₆-xeo₃-xeof₄-structures-78)
   16. [Quick Revision Sheet](#16-quick-revision-sheet)
 
 ---
@@ -84,6 +84,7 @@ flowchart TD
     Sb --> Bi["Bi<br>metal<br>αβγδ allotropes<br>metallic bonds"]
     N --> Prop["Radii N<P<As<Sb<Bi<br>IE N>P>As>Sb>Bi<br>EN N>P>As>Sb=Bi<br>MP ↑ to As then ↓<br>BP generally ↑"]
 ```
+*Group 15 from nitrogen to bismuth: catenation and metallic character both rise, N₂'s triple bond anchors the top of the group.*
 
 ## 3. Chemical Properties — Oxidation States, Inert Pair, Anomalous N
 
@@ -130,6 +131,7 @@ flowchart LR
     AsH3 --> SbH3["SbH3<br>91.3°<br>170.7 pm<br>ΔfH +145.1"]
     SbH3 --> BiH3["BiH3<br>290K b.p.<br>ΔfH +278<br>least stable<br>strongest reducing<br>basic weakest"]
 ```
+*The EH₃ hydrides — bond angle, bond length and thermal stability all fall down the group while basicity and reducing power rise.*
 
 *Hydrides: bond angle decreases, E-H distance increases, stability decreases, reducing character increases down.*
 
@@ -166,6 +168,7 @@ All elements form two types: $\ce{E2O3}$ and $\ce{E2O5}$, higher O.S. oxide more
 flowchart TD
     EX3["EX3<br>NCl3 explosive<br>PCl3 + 3H2O → H3PO3 + 3HCl<br>pyramidal"] --> EX5["EX5<br>PCl5, AsCl5, SbCl5 exist<br>NCl5, BiCl5 no<br>trigonal bipyramidal<br>3 eq + 2 ax not equivalent"]
 ```
+*EX₃ versus EX₅: why the +5 state exists for P, As and Sb but not for N or Bi.*
 
 ## 7. Important Compounds — N₂, NH₃, HNO₃, P₄, PH₃, PCl₃, PCl₅, Oxoacids of P
 
@@ -239,6 +242,7 @@ flowchart TD
     H3PO3 --> H3PO4["H3PO4<br>+5<br>3 basic<br>PO(OH)3<br>0 P-H<br>non-reducing"]
     H3PO4 --> H4P2O7["H4P2O7<br>pyro<br>+5<br>4 basic"]
 ```
+*Oxoacids of phosphorus — the number of P–H bonds sets basicity and reducing power, and the P–H count is the JEE favourite.*
 
 *Oxoacids of P: basicity = P-OH count, P-H = reducing.*
 
@@ -340,6 +344,12 @@ Structure: Tetrahedral S, $\ce{(HO)2SO2}$, S-O 157 pm and S=O 142 pm.
 | Peroxodisulphuric (Marshall) | $\ce{H2S2O8}$ | +6 | $\ce{(HO)SO2-O-O-SO2(OH)}$ O-O |
 | Dithionic | $\ce{H2S2O6}$ | +5 | — |
 
+![Thiosulphuric acid](figures/mol/h2s2o3.svg)
+![Marshall's acid](figures/mol/h2s2o8.svg)
+*Both are "sulphuric acid with one O swapped": in thiosulphuric acid an **O is replaced by S**
+(S +5 and −2, average +2), in Marshall's acid an **O is replaced by an O–O peroxide bridge**
+(both S stay +6). Only the second is a true peroxide — which is the whole point of the pair.*
+
 ---
 
 # Part C — Group 17: Halogen Family
@@ -403,6 +413,21 @@ Structure: Tetrahedral S, $\ce{(HO)2SO2}$, S-O 157 pm and S=O 142 pm.
 - $\ce{ClF3, BrF3, IF3}$ — T-shaped
 - $\ce{ClF5, BrF5, IF5}$ — square pyramidal
 - $\ce{IF7}$ — pentagonal bipyramidal
+
+| Interhalogen | Shape | Hybridisation of the central atom |
+|---|---|---|
+| $\ce{ClF}$ | linear | sp |
+| $\ce{ClF3}$ | T-shaped (2 lone pairs) | sp³d |
+| $\ce{BrF5}$ | square pyramidal (1 lone pair) | sp³d² |
+| $\ce{IF7}$ | pentagonal bipyramidal | sp³d³ |
+
+![ClF](figures/mol/clf.svg)
+![ClF3](figures/mol/clf3.svg)
+![BrF5](figures/mol/brf5.svg)
+![IF7](figures/mol/if7.svg)
+*The four interhalogen shapes of the rule, drawn: the lone pairs on the central halogen are what
+turn a straight AX₂ into a T, a square pyramid or a pentagonal bipyramid. A halogen can never
+expand its octet beyond 14 electrons, which is why the series stops at IF₇.*
 
 Preparation: $\ce{Cl2 + F2 ->[473K] 2ClF}$, $\ce{Cl2 + 3F2 ->[573K] 2ClF3}$, etc.
 
@@ -481,6 +506,7 @@ flowchart TD
     XeF6 --> XeO3["XeO3<br>XeF6+3H2O→XeO3+6HF<br>pyramidal<br>sp3<br>3bp+1lp"]
     XeF6 --> XeOF4["XeOF4<br>XeF6+H2O→XeOF4+2HF<br>square pyramidal<br>sp3d2"]
 ```
+*Xenon fluorides and oxyfluorides: the conditions, the hybridisation, and the lone-pair count that fixes the shape.*
 
 *Xenon fluorides preparation and structures via VSEPR.*
 

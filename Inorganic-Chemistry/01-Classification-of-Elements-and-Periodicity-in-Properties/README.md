@@ -19,4 +19,4 @@ This chapter is in the current (rationalised) NCERT textbook, which is what the 
 
 ## Notes
 
-<!-- Add your notes for this chapter below (notes.md). -->
+Combined NCERT + Allen notes for JEE Main + Advanced are in [`notes.md`](notes.md). Filed under Inorganic Chemistry — see the [branch index](../README.md).

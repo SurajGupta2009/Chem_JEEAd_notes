@@ -8,7 +8,7 @@ edition: pre-rationalised
 exams: [JEE Advanced]
 sources: [kech207-legacy.pdf, Environmental Chemistry_Theory_26.pdf]
 status: written
-words: 8500
+words: 2615
 updated: 2026-09-27
 tags: [chemistry/inorganic, jee/advanced, environmental, pollution, green-chemistry]
 ---
@@ -59,6 +59,7 @@ flowchart TD
     Atm --> Thermo["Thermosphere<br>85-640 km"]
     Pollutant["Pollutant<br>substance causing pollution<br>> natural abundance<br>human or natural<br>solid liquid gaseous"] --> Tropo
 ```
+*The atmospheric layers, where each one sits, and which pollutants matter where.*
 
 ## 2. Tropospheric Pollution — Gaseous Pollutants (14.2)
 
@@ -110,6 +111,7 @@ flowchart TD
     Gaseous --> CO2["CO2<br>respiration fossil fuels limestone cement volcano<br>troposphere only 0.03% but increasing<br>greenhouse effect traps IR → global warming<br>sea level rise polar ice melting<br>greenhouse gases CO2 CH4 O3 CFCs H2O vapour"]
     Gaseous --> HC["Hydrocarbons<br>H and C only<br>incomplete combustion automobiles<br>carcinogenic cancer<br>ageing breakdown tissues shedding"]
 ```
+*The oxides of carbon and nitrogen: where they come from, what they do to the lungs, and how NO₂ drives photochemical smog and ozone loss.*
 
 ## 3. Particulate Pollutants & Smog (14.2)
 
@@ -147,6 +149,7 @@ flowchart TD
     Smog --> Classical["Classical smog<br>London smog<br>cool humid<br>smoke+fog+SO2<br>reducing smog<br>morning winter"]
     Smog --> Photo["Photochemical smog<br>Los Angeles<br>warm dry sunny<br>NO2+O2+HC+hv→O3 PAN NO2<br>oxidising smog<br>daytime<br>NO2 hv→NO+O<br>O+O2→O3<br>HC+O3→PAN aldehydes<br>eye irritation respiratory<br>O3 cracks rubber<br>PAN eye irritant"]
 ```
+*Particulates by size and origin, then the two smogs — reducing London type and oxidising Los Angeles type.*
 
 ## 4. Stratospheric Pollution — Ozone Formation & Depletion (14.3)
 
@@ -183,6 +186,7 @@ flowchart TD
     Hole --> Effects["Effects more UV-B 280-320nm<br>skin cancer cataract<br>damages plants phytoplankton<br>global warming"]
     Effects --> Control["Control<br>Montreal Protocol 1987<br>ban CFCs<br>replace HFCs"]
 ```
+*Ozone forms by photolysis and is destroyed by the ClO dimer cycle over Antarctica; the Montreal Protocol is the control measure.*
 
 ---
 
@@ -227,6 +231,7 @@ flowchart TD
     WaterPoll --> Eutro["Eutrophication<br>N P enrichment fertilizers runoff<br>excessive algae growth algal bloom<br>O2 depletes when die decomposition<br>fish die<br>natural slow cultural fast human"]
     WaterPoll --> Effects["Effects<br>Hg Minamata<br>Cd Itai-itai<br>Pb nervous<br>As black foot<br>NO3- blue baby methaemoglobinemia<br>F- fluorosis<br>Bioaccumulation biomagnification DDT ↑ food chain"]
 ```
+*Water pollution sources, the BOD/COD test pair, and how eutrophication kills a lake.*
 
 ## 6. Soil Pollution — Pesticides, Wastes (14.5)
 
@@ -287,6 +292,7 @@ flowchart TD
     Green --> Principles["Principles<br>prevention waste<br>atom economy = mass desired/mass all reactants*100<br>less hazardous synthesis<br>safer chemicals<br>safer solvents<br>energy efficiency<br>renewable feedstocks<br>reduce derivatives<br>catalysis<br>design degradation<br>real-time analysis<br>safer chemistry accident prevention"]
     Principles --> Examples["Examples<br>Ibuprofen atom economy improved<br>C6H6+CH3COCl AlCl3 vs (CH3CO)2O atom economy<br>Dry cleaning CO2 supercritical vs tetrachloroethene<br>Bleaching H2O2 vs Cl2"]
 ```
+*Industrial waste streams, how they are managed, and what green chemistry asks instead.*
 
 ---
 

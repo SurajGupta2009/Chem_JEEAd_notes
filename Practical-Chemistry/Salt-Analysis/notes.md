@@ -1,8 +1,13 @@
 ---
 branch: "Practical Chemistry"
 chapter: "Analysis"
+class: 12
+ncert_unit: 0
+ncert_code: none
+edition: "2026"
+exams: [JEE Advanced, "Board Practical"]
 status: written
-words: 6995
+words: 7129
 updated: 2026-09-26
 sources: ["Salt Analysis_Theory_26.pdf", "Reaction of Salt Analysis_Theory_26.pdf"]
 tags: [chemistry, jee]
@@ -36,13 +41,13 @@ tags: [chemistry, jee]
   10. [Anion Summary Chart](#10-anion-summary-chart)
 - [Part 3 — Cations (Basic Radicals)](#part-3--cations-basic-radicals)
   11. [Original Solution & Group Scheme](#11-original-solution--group-scheme)
-  12. [Group 0 — NH₄⁺](#12-group-0--nh₄⁺)
-  13. [Group I — Pb²⁺](#13-group-i--pb²⁺)
-  14. [Group II — Cu²⁺, Pb²⁺, As³⁺](#14-group-ii--cu²⁺-pb²⁺-as³⁺)
-  15. [Group III — Al³⁺, Fe³⁺](#15-group-iii--al³⁺-fe³⁺)
-  16. [Group IV — Zn²⁺, Mn²⁺, Ni²⁺, Co²⁺](#16-group-iv--zn²⁺-mn²⁺-ni²⁺-co²⁺)
-  17. [Group V — Ba²⁺, Sr²⁺, Ca²⁺](#17-group-v--ba²⁺-sr²⁺-ca²⁺)
-  18. [Group VI — Mg²⁺](#18-group-vi--mg²⁺)
+  12. [Group 0 — NH₄⁺](#12-group-0--nh₄)
+  13. [Group I — Pb²⁺](#13-group-i--pb²)
+  14. [Group II — Cu²⁺, Pb²⁺, As³⁺](#14-group-ii--cu²-pb²-as³)
+  15. [Group III — Al³⁺, Fe³⁺](#15-group-iii--al³-fe³)
+  16. [Group IV — Zn²⁺, Mn²⁺, Ni²⁺, Co²⁺](#16-group-iv--zn²-mn²-ni²-co²)
+  17. [Group V — Ba²⁺, Sr²⁺, Ca²⁺](#17-group-v--ba²-sr²-ca²)
+  18. [Group VI — Mg²⁺](#18-group-vi--mg²)
 - [Part 4 — Reagent-wise Reaction Tables (from the Reactions module)](#part-4--reagent-wise-reaction-tables)
   19. [Group-wise reagent tables](#19-group-wise-reagent-tables)
   20. [One reagent, many cations — K₄[Fe(CN)₆] and Na₂HPO₄](#20-one-reagent-many-cations)
@@ -332,14 +337,15 @@ $\ce{CaCO3 + CO2 + H2O -> Ca(HCO3)2}$  (excess CO2: milkiness DISAPPEARS — sol
 - $\ce{(CH3COO)2Pb + Na2CrO4 -> PbCrO4↓ (yellow) + 2CH3COONa}$
 - $\ce{CrO4^{2-} + 2H+ + 2H2O2 -> CrO5 + 3H2O}$
 ```mermaid
-flowchart TB
-    Cr[Cr central +6] --> O1[O double bond =O]
-    Cr --> O2[O - O peroxo wing 1]
-    Cr --> O3[O - O peroxo wing 2]
-    Cr --> O4[O peroxo]
-    Cr --> O5[O peroxo]
-    Note[CrO5 butterfly<br>1 Cr=O, 4 peroxo O's<br>each wing -O-O-<br>Cr +6 still]
+flowchart TD
+    Cr["Cr central +6"] --> O1["O double bond =O"]
+    Cr --> O2["O - O peroxo wing 1"]
+    Cr --> O3["O - O peroxo wing 2"]
+    Cr --> O4["O peroxo"]
+    Cr --> O5["O peroxo"]
+    Note["CrO5 butterfly<br>1 Cr=O, 4 peroxo O's<br>each wing -O-O-<br>Cr +6 still"]
 ```
+*The CrO₅ butterfly test: peroxide in the salt builds a blue peroxo complex, and chromium stays at +6.*
    🆇 Br⁻/I⁻ give **no** chromyl-chloride-type test because HBr/HI are oxidised to
    Br₂/I₂ by the dichromate instead of forming volatile oxyhalides. CrO₂Cl₂ hydrolyses
    to chromate in water → it is an **acidic** oxide-chloride.
@@ -465,24 +471,35 @@ acid suppresses later group precipitations.
 | V | Ba²⁺, Sr²⁺, Ca²⁺ | **(NH₄)₂CO₃ in presence of NH₄OH** | carbonates |
 | VI | Mg²⁺ | none (no group reagent) | tested directly |
 
+**Groups I–II — the acidic, chloride-and-sulphide steps.**
+
 ```mermaid
 flowchart TD
     OS["Original Solution (O.S.)"] -->|"+ dil. HCl"| G1{"white ppt?"}
-    G1 -->|yes| G1P["GROUP I ppt: PbCl2 (white)"]
-    G1 -->|no| G2["dilute + pass H2S gas"]
+    G1 -->|"yes"| G1P["GROUP I ppt: PbCl2 (white)"]
+    G1 -->|"no"| G2["dilute + pass H2S gas"]
     G2 --> G2Q{"ppt?"}
-    G2Q -->|yes| G2P["GROUP II sulphides:<br>black = CuS/PbS ; yellow = As2S3"]
-    G2Q -->|no| G3["boil off H2S, add conc. HNO3 (oxidise Fe2+ to Fe3+),<br>cool, add solid NH4Cl + excess NH4OH"]
-    G3 --> G3Q{"ppt?"}
-    G3Q -->|yes| G3P["GROUP III hydroxides:<br>white gelatinous Al(OH)3 ; reddish-brown Fe(OH)3"]
-    G3Q -->|no| G4["pass H2S (now in ammoniacal medium)"]
-    G4 --> G4Q{"ppt?"}
-    G4Q -->|yes| G4P["GROUP IV sulphides:<br>white ZnS ; flesh MnS ; black NiS/CoS"]
-    G4Q -->|no| G5["add NH4OH + solid (NH4)2CO3"]
-    G5 --> G5Q{"ppt?"}
-    G5Q -->|yes| G5P["GROUP V carbonates: BaCO3, SrCO3, CaCO3 (white)"]
-    G5Q -->|no| G6["GROUP VI: test for Mg2+ with Na2HPO4"]
+    G2Q -->|"yes"| G2P["GROUP II sulphides:<br>black = CuS/PbS ; yellow = As2S3"]
+    G2Q -->|"no"| G3["proceed to Group III →"]
 ```
+*Nothing precipitates until the solution is made acidic with dilute HCl, and the first
+two groups are separated simply by whether H₂S finds anything left to precipitate.*
+
+**Groups III–VI — the ammoniacal steps, each one gated by a pH or [S²⁻] change.**
+
+```mermaid
+flowchart TD
+    G3["Group III: boil off H2S, add conc. HNO3,<br>cool, add solid NH4Cl + excess NH4OH"] --> G3Q{"ppt?"}
+    G3Q -->|"yes"| G3P["GROUP III hydroxides:<br>white gelatinous Al(OH)3 ;<br>reddish-brown Fe(OH)3"]
+    G3Q -->|"no"| G4["pass H2S in ammoniacal medium"]
+    G4 --> G4Q{"ppt?"}
+    G4Q -->|"no"| G5["add NH4OH + solid (NH4)2CO3"]
+    G5Q{"ppt?"} --> G5 -->|"yes"| G5P["GROUP V carbonates:<br>BaCO3, SrCO3, CaCO3 (white)"]
+    G5Q -->|"no"| G6["GROUP VI: test Mg2+ with Na2HPO4"]
+```
+*Each group reagent is added only after the previous one is complete, and each is
+designed to precipitate exactly one Ksp band — raise [OH⁻], then [S²⁻] in basic medium,
+then [CO₃²⁻]. Group VI has no reagent because Mg(OH)₂ is soluble in excess NH₄OH.**The full six-group cation scheme, from the original solution down to Group VI, with the reagent and the colour at every step.*
 
 **Key procedural rules** (all asked as reasoning questions):
 - **Boil off H₂S before Group III** — leftover H₂S would reduce Fe³⁺ back to Fe²⁺ and
@@ -865,6 +882,11 @@ the on/off mechanism is a favourite one-liner.
 
 ---
 
-*This file covers both Allen modules completely; coordination-compound theory used
-above (Ni–dmg, cyano-complexes, Prussian blue) is developed in
-[`Inorganic-Chemistry/08-Coordination-Compounds/notes.md`](../../Inorganic-Chemistry/08-Coordination-Compounds/notes.md).*
+*Cross-links:*
+
+- [Coordination Compounds (Unit 5)](../../Inorganic-Chemistry/08-Coordination-Compounds/notes.md) — the theory behind the complexes used above (Ni–DMG, cyano-complexes, Prussian blue).
+- [d- and f-Block Elements (Unit 4)](../../Inorganic-Chemistry/07-The-d-and-f-Block-Elements/notes.md) — why the Group III cations precipitate as hydroxides and sulphides here but behave differently in Group IV.
+- [The p-Block Elements (Class XI Unit 13)](../../Inorganic-Chemistry/05-The-p-Block-Elements/notes.md) — the amphoterism of Al and Zn that decides the NaOH branch of Groups III and IV.
+- [Metallurgy (Class XII Unit 6)](../../Physical-Chemistry/12-General-Principles-and-Processes-of-Isolation-of-Elements/notes.md) — the same Ksp and complex-formation chemistry on an industrial scale.
+
+*Sources:* both Allen modules (Enthusiast '26) covered completely — theory and the full Group I–VI reaction tables.
