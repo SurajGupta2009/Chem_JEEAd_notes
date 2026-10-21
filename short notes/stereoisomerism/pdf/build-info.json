@@ -1,0 +1,66 @@
+{
+ "part": "Part II \u00b7 JEE Advanced extensions",
+ "sheets": [
+  {
+   "id": "X-01",
+   "title": "Symmetry, rigorously",
+   "pages": 2
+  },
+  {
+   "id": "X-02",
+   "title": "Axial chirality: allenes, spiro and biphenyls",
+   "pages": 2
+  },
+  {
+   "id": "X-03",
+   "title": "Ring stereochemistry: junctions, trans-cycloalkenes, steroids",
+   "pages": 1
+  },
+  {
+   "id": "X-04",
+   "title": "Conformational analysis quantitatively",
+   "pages": 1
+  },
+  {
+   "id": "X-05",
+   "title": "Cyclohexane dynamics and fused systems",
+   "pages": 1
+  },
+  {
+   "id": "X-06",
+   "title": "Stereospecific, stereoselective, and reaction design",
+   "pages": 2
+  },
+  {
+   "id": "X-07",
+   "title": "General enumeration: counting without guessing",
+   "pages": 2
+  },
+  {
+   "id": "X-08",
+   "title": "Prochirality and enantiotopic groups",
+   "pages": 1
+  },
+  {
+   "id": "X-09",
+   "title": "Optical purity, resolution engineering and chiroptical methods",
+   "pages": 1
+  },
+  {
+   "id": "X-10",
+   "title": "Advanced problem set (with full solutions)",
+   "pages": 1
+  },
+  {
+   "id": "X-11",
+   "title": "Where stereochemistry meets the rest of chemistry",
+   "pages": 1
+  },
+  {
+   "id": "X-12",
+   "title": "Extension pitfalls and a final checklist",
+   "pages": 1
+  }
+ ],
+ "pages": 16
+}

@@ -1,0 +1,8 @@
+# Generated rasters and archives are build products, not sources: ~100 MB of PNGs and
+# ZIPs that `python3 build/package.py` recreates byte-for-byte from content/ + build/.
+# The PDFs ARE tracked (they are small and are the readable artifact).
+jee/
+extensions/
+downloads/
+thumbs/
+__pycache__/

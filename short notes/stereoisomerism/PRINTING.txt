@@ -1,0 +1,51 @@
+STEREOSOMERISM — SHORT NOTES · PRINTING INSTRUCTIONS
+====================================================
+
+Paper size .......... A4 PORTRAIT (210 x 297 mm). The files are already A4; nothing
+                      needs to be resized.
+Sheets per page ..... ONE. Do not print 2-up, 4-up or booklet. The handwriting is set
+                      at roughly 11 pt and the tables need the full width.
+Scaling ............. "Fit" (fit to printable area). Do NOT choose "Fill" and do NOT
+                      choose "Crop". "Actual size / 100%" is also acceptable on printers
+                      whose unprintable margin is under 10 mm.
+Margins ............. About 10 mm of safe area is built into every page. If the printer
+                      needs more, choose "Fit"; do not shift or crop the page.
+Duplex .............. Optional. If you duplex, use "flip on long edge" so that page 2 of a
+                      sheet sits behind page 1.
+Colour .............. Needed. Navy prose, teal headings, yellow key results and red
+                      warnings all carry meaning. On a mono printer the yellow boxes turn
+                      light grey; the text is still readable but the colour coding is lost.
+Background .......... Print backgrounds ON (the paper tone and the faint ruling are part
+                      of the look). If backgrounds are off, everything still reads, in pure
+                      white.
+
+WHICH FILE TO PRINT
+-------------------
+pdf/stereoisomerism-complete.pdf ....... Part I then Part II, one bookmark per sheet.
+                                        Total 67 pages.
+pdf/stereoisomerism-jee.pdf ............ Part I only, 51 pages (J-01 … J-29).
+pdf/stereoisomerism-extensions.pdf ..... Part II only, 16 pages (X-01 … X-12).
+
+The PNGs in jee/ and extensions/ are byte-for-byte the same pages at 2480 x 3508 px,
+nominal 300 dpi. Print them at "Fit" with backgrounds on. The ZIPs in downloads/ are just
+those PNGs collected, plus the PDFs in the complete ZIP.
+
+READING ORDER
+-------------
+Part I is written to be read straight through: J-01 (cover and legend), J-02 (the map),
+then J-03 … J-09 geometrical, J-10 … J-20 optical, J-21 … J-24 conformational,
+J-25 … J-27 reaction stereochemistry and enumeration, J-28 traps, J-29 recall.
+
+Part II is not a second textbook: each sheet assumes the core sheet named in its first
+paragraph. Read X-01 after J-12, X-02 after J-18, X-03 after J-07, X-04/X-05 after J-23,
+X-06 after J-26, X-07 after J-19, X-08 after J-19, X-09 after J-14, and X-10 … X-12 last.
+
+BINDING
+-------
+A single staple in the top-left corner or a bulldog clip is enough; the pages are meant to
+be shuffled and re-sorted by sheet id. If you bind, put Part I first — the combined PDF is
+already in that order.
+
+If something looks wrong on paper (a clipped table, a missing page), check the same page in
+the PDF first. The PDF and the PNGs come from the same build, so a difference between them
+is a printer setting, not a missing page.

@@ -97,6 +97,20 @@ Practical-Chemistry/
 > codes — `kech105` was *States of Matter* and is now *Thermodynamics*; `lech101` was
 > *The Solid State* and is now *Solutions*. Legacy PDFs are therefore `<code>-legacy.pdf`.
 
+## Short-note image sets
+
+Alongside the Markdown chapters there are printable, handwritten-style **short-note image
+sets** — one folder per chapter, each with individually numbered PNG sheets, bookmarked A4
+PDFs, a gallery page and a reproducible build.
+
+| Chapter | Sheets | Pages | Open |
+|---|---:|---:|---|
+| Stereoisomerism | 41 (JEE core 29 + extensions 12) | 67 | [gallery](short%20notes/stereoisomerism/index.html) · [README](short%20notes/stereoisomerism/README.md) · [scope](short%20notes/stereoisomerism/SCOPE.md) |
+
+These are separate editions, not replacements for `notes.md`: the Markdown chapters remain
+the reference text, while the image sets are the dense, teacher-style revision pass. The
+chemistry chapters stop at JEE Advanced — there is no Olympiad section.
+
 ## Reading and writing these notes
 
 - [`docs/NOTE-FORMATTING-RULEBOOK.md`](docs/NOTE-FORMATTING-RULEBOOK.md) — **the spec**:
