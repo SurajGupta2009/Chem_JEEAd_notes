@@ -1,0 +1,101 @@
+{
+ "part": "Redox Reactions & Equivalent Concept",
+ "sheets": [
+  {
+   "id": "RD-01",
+   "title": "The Three Tiers of Redox: Classical, Electronic & Oxidation Number",
+   "pages": 1
+  },
+  {
+   "id": "RD-02",
+   "title": "Rules for Assigning Oxidation Numbers & Periodic Trends",
+   "pages": 1
+  },
+  {
+   "id": "RD-03",
+   "title": "The Peroxide Traps: CrO5, Caro's Acid & Marshall's Acid",
+   "pages": 1
+  },
+  {
+   "id": "RD-04",
+   "title": "Mixed Oxides & Fractional Oxidation States: Fe3O4, Pb3O4, C3O2, Br3O8",
+   "pages": 1
+  },
+  {
+   "id": "RD-05",
+   "title": "Chemical Significance: Oxidation Number vs Formal Charge vs Real Charge",
+   "pages": 1
+  },
+  {
+   "id": "RD-06",
+   "title": "Classification of Redox Reactions: Combination, Decomposition, Displacement",
+   "pages": 1
+  },
+  {
+   "id": "RD-07",
+   "title": "Disproportionation, Comproportionation & Non-Redox Traps",
+   "pages": 1
+  },
+  {
+   "id": "RD-08",
+   "title": "Balancing Redox Reactions: The Oxidation Number Method",
+   "pages": 1
+  },
+  {
+   "id": "RD-09",
+   "title": "Balancing Redox Reactions: The Ion-Electron (Half-Reaction) Method",
+   "pages": 1
+  },
+  {
+   "id": "RD-10",
+   "title": "The Concept of n-factor: Acids, Bases, Salts & Non-Redox Systems",
+   "pages": 1
+  },
+  {
+   "id": "RD-11",
+   "title": "n-factor in Redox Systems: KMnO4, K2Cr2O7, Oxalates & Ferrous Salts",
+   "pages": 1
+  },
+  {
+   "id": "RD-12",
+   "title": "n-factor in Disproportionation & Complex Mixed Oxidation Systems",
+   "pages": 1
+  },
+  {
+   "id": "RD-13",
+   "title": "The Law of Chemical Equivalence: Gram Equivalents & Normality",
+   "pages": 1
+  },
+  {
+   "id": "RD-14",
+   "title": "Redox Titrations: Permanganometry, Dichromatometry & Iodometry",
+   "pages": 1
+  },
+  {
+   "id": "RD-15",
+   "title": "Electrochemical Cells: The Daniell Cell, Half-Cells & Salt Bridge",
+   "pages": 1
+  },
+  {
+   "id": "RD-16",
+   "title": "Standard Reduction Potentials & The Electrochemical Series",
+   "pages": 1
+  },
+  {
+   "id": "RD-17",
+   "title": "Feasibility, Spontaneity, Disproportionation & E\u00b0 Predictions",
+   "pages": 1
+  },
+  {
+   "id": "RD-18",
+   "title": "Thermodynamics of Redox: \u0394G\u00b0, Equilibrium Constant K & Cell Potentials",
+   "pages": 1
+  },
+  {
+   "id": "RD-19",
+   "title": "Master Synthesis & Quick-Revision Matrix for JEE Advanced",
+   "pages": 1
+  }
+ ],
+ "pages": 19
+}
