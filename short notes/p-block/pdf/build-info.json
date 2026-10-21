@@ -1,0 +1,256 @@
+{
+ "part": "The p-Block Elements (Groups 13 to 18)",
+ "sheets": [
+  {
+   "id": "G13-01",
+   "title": "Group 13 Trends, Anomalies, Inert Pair & Boron Extraction",
+   "pages": 1
+  },
+  {
+   "id": "G13-02",
+   "title": "Diborane B2H6: 3c-2e Banana Bonds, Reactions & Cleavage",
+   "pages": 1
+  },
+  {
+   "id": "G13-03",
+   "title": "Higher Boranes, Borohydrides & Organoboranes",
+   "pages": 1
+  },
+  {
+   "id": "G13-04",
+   "title": "Boron Trihalides, Lewis Acidity & Back-Bonding",
+   "pages": 1
+  },
+  {
+   "id": "G13-05",
+   "title": "Boric Acid H3BO3 & Borax Na2B4O7\u00b710H2O",
+   "pages": 1
+  },
+  {
+   "id": "G13-06",
+   "title": "Borax Bead Test, Borate Minerals & Fluoboric Acid",
+   "pages": 1
+  },
+  {
+   "id": "G13-07",
+   "title": "Boron Nitride (Inorganic Graphite) & B-N vs C-C",
+   "pages": 1
+  },
+  {
+   "id": "G13-08",
+   "title": "Aluminium Chemistry, Al2Cl6, Alums & Industrial Uses",
+   "pages": 1
+  },
+  {
+   "id": "G14-01",
+   "title": "Group 14 Trends, Catenation, Allotropy & Inert Pair",
+   "pages": 1
+  },
+  {
+   "id": "G14-02",
+   "title": "Allotropes of Carbon: Diamond, Graphite & Fullerenes",
+   "pages": 1
+  },
+  {
+   "id": "G14-03",
+   "title": "Carbides Classification: Ionic, Covalent & Interstitial",
+   "pages": 1
+  },
+  {
+   "id": "G14-04",
+   "title": "Oxides of Carbon: CO, CO2, C3O2 & Carbonates",
+   "pages": 1
+  },
+  {
+   "id": "G14-05",
+   "title": "Oxides & Hydrides of Silicon: SiO2, Quartz & Silanes",
+   "pages": 1
+  },
+  {
+   "id": "G14-06",
+   "title": "Silicates: Ortho, Pyro, Cyclic, Chain, Sheet & 3D Network",
+   "pages": 1
+  },
+  {
+   "id": "G14-07",
+   "title": "Silicones & Zeolites: Synthesis, Structure & Catalysis",
+   "pages": 1
+  },
+  {
+   "id": "G14-08",
+   "title": "Halides & Low-Valent Chemistry of Si, Ge, Sn, Pb",
+   "pages": 1
+  },
+  {
+   "id": "G15-01",
+   "title": "Group 15 Trends, Anomalous N, Catenation & Allotropy",
+   "pages": 1
+  },
+  {
+   "id": "G15-02",
+   "title": "Dinitrogen N2 & Active Nitrogen",
+   "pages": 1
+  },
+  {
+   "id": "G15-03",
+   "title": "Ammonia NH3 & Liquid Ammonia as Non-Aqueous Solvent",
+   "pages": 1
+  },
+  {
+   "id": "G15-04",
+   "title": "Hydrazine N2H4, Hydroxylamine NH2OH & Hydrazoic Acid HN3",
+   "pages": 1
+  },
+  {
+   "id": "G15-05",
+   "title": "Oxides of Nitrogen (N2O, NO, N2O3, NO2, N2O4, N2O5)",
+   "pages": 1
+  },
+  {
+   "id": "G15-06",
+   "title": "Oxoacids of Nitrogen: HNO2, HNO3 & Brown Ring Test",
+   "pages": 1
+  },
+  {
+   "id": "G15-07",
+   "title": "Phosphorus Allotropes (White, Red, Black) & PH3",
+   "pages": 1
+  },
+  {
+   "id": "G15-08",
+   "title": "Halides of Phosphorus: PCl3 & PCl5 (Gas vs Solid)",
+   "pages": 1
+  },
+  {
+   "id": "G15-09",
+   "title": "Oxides of Phosphorus: P4O6 & P4O10",
+   "pages": 1
+  },
+  {
+   "id": "G15-10",
+   "title": "Oxoacids of Phosphorus: H3PO2, H3PO3, H3PO4, Polyphosphoric",
+   "pages": 1
+  },
+  {
+   "id": "G16-01",
+   "title": "Group 16 Trends, Allotropy & p\u03c0-d\u03c0 Bonding",
+   "pages": 1
+  },
+  {
+   "id": "G16-02",
+   "title": "Dioxygen O2 & Ozone O3: Structure, Resonance & Oxidation",
+   "pages": 1
+  },
+  {
+   "id": "G16-03",
+   "title": "Allotropes of Sulphur: Rhombic (\u03b1), Monoclinic (\u03b2), Plastic, S6/S8/S2",
+   "pages": 1
+  },
+  {
+   "id": "G16-04",
+   "title": "Hydrides of G16: H2O, H2S, H2Se, H2Te & Anomalous H2O",
+   "pages": 1
+  },
+  {
+   "id": "G16-05",
+   "title": "Oxides of Sulphur: SO2, SO3 & Bleaching Action",
+   "pages": 1
+  },
+  {
+   "id": "G16-06",
+   "title": "Oxoacids of Sulphur I: Sulphurous, Sulphuric & Contact Process",
+   "pages": 1
+  },
+  {
+   "id": "G16-07",
+   "title": "Oxoacids of Sulphur II: Thionic & Peroxo Acids (Caro, Marshall)",
+   "pages": 1
+  },
+  {
+   "id": "G16-08",
+   "title": "Halides & Oxohalides of Sulphur: SF4, SF6, SOCl2, SO2Cl2",
+   "pages": 1
+  },
+  {
+   "id": "G17-01",
+   "title": "Group 17 Trends, Anomalous F, Bond Dissociation Anomaly",
+   "pages": 1
+  },
+  {
+   "id": "G17-02",
+   "title": "Preparation & Industrial Extraction of F2, Cl2, Br2, I2",
+   "pages": 1
+  },
+  {
+   "id": "G17-03",
+   "title": "Hydrogen Halides HX: Thermal Stability, Acidity & Reducing Power",
+   "pages": 1
+  },
+  {
+   "id": "G17-04",
+   "title": "Halogen Oxides: OF2, O2F2, Cl2O, ClO2, Cl2O6, Cl2O7, I2O5",
+   "pages": 1
+  },
+  {
+   "id": "G17-05",
+   "title": "Oxoacids of Halogens: Acid Strength, Redox & Anion Stability",
+   "pages": 1
+  },
+  {
+   "id": "G17-06",
+   "title": "Interhalogen Compounds: AX, AX3, AX5, AX7 (Structures & VSEPR)",
+   "pages": 1
+  },
+  {
+   "id": "G17-07",
+   "title": "Polyhalide Ions: I3-, I5-, ICl2-, ICl4- & Bonding",
+   "pages": 1
+  },
+  {
+   "id": "G17-08",
+   "title": "Pseudohalogens & Pseudohalides (CN-, SCN-, N3-)",
+   "pages": 1
+  },
+  {
+   "id": "G17-09",
+   "title": "Bleaching Powder, Hypochlorites & Disproportionation Reactions",
+   "pages": 1
+  },
+  {
+   "id": "G18-01",
+   "title": "G18 Trends, Isolation, Liquid Helium & Clathrate Compounds",
+   "pages": 1
+  },
+  {
+   "id": "G18-02",
+   "title": "Xenon Fluorides: XeF2, XeF4, XeF6 Synthesis, Structure & Hydrolysis",
+   "pages": 1
+  },
+  {
+   "id": "G18-03",
+   "title": "Xenon Oxides & Oxofluorides: XeO3, XeO4, XeOF4, XeO2F2",
+   "pages": 1
+  },
+  {
+   "id": "G18-04",
+   "title": "Xenon Complexes, Fluoro-cations/anions & Bartlett Reaction",
+   "pages": 1
+  },
+  {
+   "id": "G18-05",
+   "title": "Noble Gas Compounds of Kr, Rn & Applications in JEE",
+   "pages": 1
+  },
+  {
+   "id": "REV-01",
+   "title": "Master Cross-Group Comparison: Trends, Inert Pair, Lewis Acidity",
+   "pages": 1
+  },
+  {
+   "id": "REV-02",
+   "title": "Complete Hydrolysis Map: p-Block Halides, Oxides & Oxychlorides",
+   "pages": 1
+  }
+ ],
+ "pages": 50
+}
