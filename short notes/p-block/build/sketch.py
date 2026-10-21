@@ -591,3 +591,57 @@ REGISTRY.update({
     "sulfur": (fig_sulfur_crown, 0.22),
     "xenon": (fig_xenon_fluorides, 0.22),
 })
+
+def fig_interhalogens(page, x, y, w, h):
+    """Interhalogen Geometries: ClF3 (T-shaped), BrF5 (Square Pyramidal), IF7 (PBP)."""
+    g = Pen(page, x, y, w, h, 538, 120)
+    # (a) ClF3 T-Shaped at left
+    g.circle((90, 55), 11, fill=PAPER, color=TEAL); g.text(90, 58, "Cl", color=TEAL, size=8.0)
+    # 2 Axial F atoms (175° angle)
+    g.circle((90, 24), 8, fill=PAPER, color=NAVY); g.text(90, 26.5, "F_ax", color=NAVY, size=6.5)
+    g.circle((90, 86), 8, fill=PAPER, color=NAVY); g.text(90, 88.5, "F_ax", color=NAVY, size=6.5)
+    g.bond((90, 55), (90, 24)); g.bond((90, 55), (90, 86))
+    # 1 Equatorial F atom
+    g.circle((130, 55), 8, fill=PAPER, color=NAVY); g.text(130, 57.5, "F_eq", color=NAVY, size=6.5)
+    g.bond((90, 55), (130, 55))
+    # 2 Equatorial lone pairs (repelling axial bonds inward to 87.5°)
+    g.circle((65, 42), 4, fill=(1.0, 0.95, 0.8), color=GOLD); g.text(65, 44, "••", color=GOLD, size=6.0)
+    g.circle((65, 68), 4, fill=(1.0, 0.95, 0.8), color=GOLD); g.text(65, 70, "••", color=GOLD, size=6.0)
+    g.text(90, 104, "ClF~3~ (T-Shaped, sp^3^d)", color=TEAL, size=7.5)
+    g.text(90, 115, "2 lp equatorial (87.5° bend)", color=NAVY, size=6.2)
+
+    # (b) BrF5 Square Pyramidal at center
+    g.circle((265, 55), 11, fill=PAPER, color=RED); g.text(265, 58, "Br", color=RED, size=8.0)
+    # 1 Axial F atom
+    g.circle((265, 20), 8, fill=PAPER, color=NAVY); g.text(265, 22.5, "F", color=NAVY, size=6.5)
+    g.bond((265, 55), (265, 20))
+    # 4 Basal F atoms
+    pts_f = [(235, 45), (295, 45), (305, 68), (225, 68)]
+    for pt in pts_f:
+        g.circle(pt, 7, fill=PAPER, color=NAVY); g.text(pt[0], pt[1]+2.5, "F", size=6.0)
+        g.bond((265, 55), pt)
+    # 1 Axial lone pair at bottom
+    g.circle((265, 82), 4.5, fill=(1.0, 0.95, 0.8), color=GOLD); g.text(265, 84, "••", color=GOLD, size=6.0)
+    g.text(265, 104, "BrF~5~ (Sq. Pyramidal, sp^3^d^2^)", color=RED, size=7.5)
+    g.text(265, 115, "1 lp axial; F-Br-F angle 84.8°", color=NAVY, size=6.2)
+
+    # (c) IF7 Pentagonal Bipyramidal at right
+    g.circle((440, 52), 12, fill=PAPER, color=NAVY); g.text(440, 55, "I", color=NAVY, size=8.0)
+    # 2 Axial F atoms (90° to plane, 180° to each other)
+    g.circle((440, 18), 8, fill=PAPER, color=TEAL); g.text(440, 20.5, "F_ax", color=TEAL, size=6.0)
+    g.circle((440, 86), 8, fill=PAPER, color=TEAL); g.text(440, 88.5, "F_ax", color=TEAL, size=6.0)
+    g.bond((440, 52), (440, 18)); g.bond((440, 52), (440, 86))
+    # 5 Equatorial F atoms (72° angle)
+    for ang in [0, 72, 144, 216, 288]:
+        rad = math.radians(ang)
+        fx = 440 + 32 * math.cos(rad)
+        fy = 52 + 16 * math.sin(rad)
+        g.circle((fx, fy), 6.5, fill=PAPER, color=NAVY); g.text(fx, fy+2.0, "F", size=5.5)
+        g.bond((440, 52), (fx, fy))
+    g.text(440, 104, "IF~7~ (Pentagonal Bipyramidal, sp^3^d^3^)", color=NAVY, size=7.5)
+    g.text(440, 115, "Axial (90°): 179 pm; Eq (72°): 186 pm", color=NAVY, size=6.2)
+
+
+REGISTRY.update({
+    "interhalogens": (fig_interhalogens, 0.23),
+})

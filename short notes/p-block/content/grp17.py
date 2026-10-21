@@ -159,6 +159,7 @@ SHEETS = [
             ("p", "Formed when two different halogens react. General formula XX'_n where X is the larger halogen and "
                   "X' is the smaller, more electronegative halogen; n = 1, 3, 5, 7."),
             ("h2", "1. Comprehensive VSEPR Geometries of Interhalogens"),
+            ("fig", "interhalogens", "Fig. 17.1 — Interhalogen geometries: ClF3 (T-Shaped), BrF5 (Square Pyramidal), and IF7 (Pentagonal Bipyramidal)."),
             ("table", ["Type", "Example", "Hybridization", "Lone Pairs on X", "VSEPR Geometry", "Physical State"], [
                 ["XX'", "ClF, BrF, ICl", "sp^3", "3 lone pairs", "**Linear**", "ClF (gas), ICl (ruby red solid)"],
                 ["XX'_3", "ClF3, BrF3, ICl3", "sp^3d", "2 equatorial lp", "**T-Shaped** (bent T)", "ClF3 (gas), BrF3 (liquid), ICl3 (dimer solid)"],
