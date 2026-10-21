@@ -1,0 +1,20 @@
+PRINTING INSTRUCTIONS — Chemical Bonding & Molecular Structure
+=============================================================
+
+1. Paper Format:
+   - Size: Standard A4 (210 x 297 mm / 8.27 x 11.69 inches)
+   - Orientation: Portrait
+   - Safe Margin: ~10 mm on all edges (built into the layouts)
+
+2. Scaling & Printer Driver Settings:
+   - Scaling Mode: Select "FIT TO PRINTABLE AREA" or "FIT" (100% scale).
+   - DO NOT select "Fill Entire Page", "Crop", or "Stretch", as this will clip margins.
+   - Quality: High Quality / Best / 300 DPI or 600 DPI.
+
+3. Duplex (Double-Sided) Printing:
+   - Flip Option: "Flip on Long Edge" (Long-Edge Binding).
+   - Paper Recommendation: 80 GSM or 100 GSM Bond/Bright White paper.
+
+4. Source Formats Available:
+   - PDF: pdf/chemical-bonding-complete.pdf (Vector text + vector chemical structures).
+   - PNG: png/CB_p01.png to CB_p24.png (Full 2480 x 3508 px raster images at nominal 300 DPI).

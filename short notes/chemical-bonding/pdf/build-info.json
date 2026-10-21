@@ -1,0 +1,126 @@
+{
+ "part": "Chemical Bonding & Molecular Structure",
+ "sheets": [
+  {
+   "id": "CB-01",
+   "title": "Octet Rule, Lewis Structures, Formal Charge & Resonance",
+   "pages": 1
+  },
+  {
+   "id": "CB-02",
+   "title": "The Ionic Bond: Born-Haber Cycle, Lattice Energy & Hydration",
+   "pages": 1
+  },
+  {
+   "id": "CB-03",
+   "title": "Fajans' Rules: Covalent Character in Ionic Compounds",
+   "pages": 1
+  },
+  {
+   "id": "CB-04",
+   "title": "Solubility & Thermal Stability Trends of Ionic Salts",
+   "pages": 1
+  },
+  {
+   "id": "CB-05",
+   "title": "Valence Bond Theory: Overlap, Sigma & Pi Bonds",
+   "pages": 1
+  },
+  {
+   "id": "CB-06",
+   "title": "Hybridization Master Rules: sp, sp2, sp3, sp3d, sp3d2, sp3d3",
+   "pages": 1
+  },
+  {
+   "id": "CB-07",
+   "title": "Bent's Rule & Energetic Partitioning of Orbitals",
+   "pages": 1
+  },
+  {
+   "id": "CB-08",
+   "title": "Drago's Rule & Non-Hybridization in Heavy Hydrides",
+   "pages": 1
+  },
+  {
+   "id": "CB-09",
+   "title": "VSEPR Theory: Electron Pair Repulsions & Molecular Geometries",
+   "pages": 1
+  },
+  {
+   "id": "CB-10",
+   "title": "Bond Parameters: Order, Length, Energy & Angle Influences",
+   "pages": 1
+  },
+  {
+   "id": "CB-11",
+   "title": "Dipole Moment: Vector Addition, Percentage Ionic Character & Symmetry",
+   "pages": 1
+  },
+  {
+   "id": "CB-12",
+   "title": "Back-Bonding: p\u03c0-p\u03c0, p\u03c0-d\u03c0, Lewis Acidity & Geometry Changes",
+   "pages": 1
+  },
+  {
+   "id": "CB-13",
+   "title": "Bridge Bonding: 3c-2e Banana Bonds vs 3c-4e Halogen Bridges",
+   "pages": 1
+  },
+  {
+   "id": "CB-14",
+   "title": "Molecular Orbital Theory: LCAO Principles & s-p Mixing",
+   "pages": 1
+  },
+  {
+   "id": "CB-15",
+   "title": "Homonuclear Diatomics: H2 to Ne2 MO Diagrams & Paramagnetism",
+   "pages": 1
+  },
+  {
+   "id": "CB-16",
+   "title": "Heteronuclear Diatomics: CO, NO, CN- & Isoelectronic Species",
+   "pages": 1
+  },
+  {
+   "id": "CB-17",
+   "title": "Hydrogen Bonding: Intermolecular vs Intramolecular Chelation",
+   "pages": 1
+  },
+  {
+   "id": "CB-18",
+   "title": "Symmetrical H-Bonds [F-H-F]-, KHF2 & Clathrate Cages",
+   "pages": 1
+  },
+  {
+   "id": "CB-19",
+   "title": "Intermolecular Forces: Keesom, Debye, London Dispersion Forces",
+   "pages": 1
+  },
+  {
+   "id": "CB-20",
+   "title": "Metallic Bonding: Electron Sea Model & Band Theory",
+   "pages": 1
+  },
+  {
+   "id": "CB-21",
+   "title": "Radius Ratio Rules & Coordination Number in Ionic Crystals",
+   "pages": 1
+  },
+  {
+   "id": "CB-22",
+   "title": "Classic Crystal Structures: NaCl, CsCl, ZnS, CaF2, Na2O",
+   "pages": 1
+  },
+  {
+   "id": "CB-23",
+   "title": "Crystal Defects: Schottky, Frenkel & Non-Stoichiometric",
+   "pages": 1
+  },
+  {
+   "id": "CB-24",
+   "title": "Master Synthesis & Review: Predicting Bond Type & Geometry",
+   "pages": 1
+  }
+ ],
+ "pages": 24
+}
