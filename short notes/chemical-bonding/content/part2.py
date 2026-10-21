@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-"""Chemical Bonding Part 2: VSEPR Geometries, Back-Bonding, Bridge Bonds & MOT (CB-09 to CB-16)."""
+# -*- coding: utf-8 -*-\n"""Chemical Bonding Part 2: VSEPR Geometries, Back-Bonding, Bridge Bonds & MOT (CB-09 to CB-16)."""
 
 SHEETS = [
     # ------------------------------------------------------------------ CB-09
@@ -11,7 +10,7 @@ SHEETS = [
             ("p", "Valence Shell Electron Pair Repulsion (VSEPR) predicts molecular geometry by minimizing electrostatic "
                   "repulsions between electron pairs (bonding pairs and lone pairs) surrounding the central atom."),
             ("key", "**Repulsion Hierarchy:**\n"
-                    "$$\\text{Lone Pair - Lone Pair (lp - lp)} > \\text{Lone Pair - Bond Pair (lp - bp)} > \\text{Bond Pair - Bond Pair (bp - bp)}$$\n"
+                    "**lp − lp > lp − bp > bp − bp**\n"
                     "• Lone pairs occupy more space because they are attracted by only one positive nucleus, whereas bond pairs are shared between two nuclei."),
             ("fig", "vsepr", "Fig. 2.1 — Key distorted VSEPR geometries: Bent (H2O), Pyramidal (NH3), See-Saw (SF4), T-Shaped (ClF3)."),
             ("h2", "1. Comprehensive VSEPR Geometries Table"),
@@ -44,15 +43,15 @@ SHEETS = [
                   "Bond Order, Bond Length, Bond Dissociation Enthalpy, and Bond Angle."),
             ("h2", "1. Bond Order vs Length vs Dissociation Enthalpy"),
             ("key", "General Interrelationships:\n"
-                    "• **Bond Order $\\propto$ Bond Strength $\\propto$ Force Constant $\\propto$ Bond Energy**\n"
-                    "• **Bond Order $\\propto \\frac{1}{\\text{Bond Length}}$**\n"
-                    "• E.g. Carbon-Carbon bonds: $C-C$ (154 pm, 348 kJ) -> $C=C$ (134 pm, 614 kJ) -> $C\\equiv C$ (120 pm, 839 kJ)."),
+                    "• **Bond Order ∝ Bond Strength ∝ Force Constant ∝ Bond Energy**\n"
+                    "• **Bond Order ∝ 1 / (Bond Length)**\n"
+                    "• E.g. Carbon-Carbon bonds: C-C (154 pm, 348 kJ) -> C=C (134 pm, 614 kJ) -> C≡ C (120 pm, 839 kJ)."),
             ("h2", "2. Master Rules Governing Bond Angles in Chemistry"),
             ("table", ["Determinant Factor", "Governing Rule / Trend", "Classic Comparative Examples"], [
-                ["1. Hybridization State", "Higher s-character opens the angle: $sp (180°) > sp^2 (120°) > sp^3 (109.5°)$", "BeCl2 (180°) > BCl3 (120°) > CH4 (109.5°)"],
+                ["1. Hybridization State", "Higher s-character opens the angle: sp (180°) > sp^2^^ (120°) > sp^3^^ (109.5°)", "BeCl2 (180°) > BCl3 (120°) > CH4 (109.5°)"],
                 ["2. Number of Lone Pairs", "Each additional lone pair compresses bond angle by ~2° to 2.5°", "CH4 (0 lp, 109.5°) > NH3 (1 lp, 107.8°) > H2O (2 lp, 104.5°)"],
-                ["3. Central Atom Electronegativity (Same Halogen/Terminal)", "When terminal atoms are identical, **higher central atom EN increases bond angle** (electron pairs pulled closer to center -> greater mutual repulsion)", "NH3 (107.8°) > PH3 (93.5°) > AsH3 (91.8°)\nH2O (104.5°) > H2S (92.1°) > H2Se (91.0°)"],
-                ["4. Terminal Atom Electronegativity (Same Central Atom)", "When central atom is identical, **higher terminal atom EN decreases bond angle** (electron pairs pulled away from center -> lesser mutual repulsion)", "PI3 (102°) > PBr3 (101.5°) > PCl3 (100°) > PF3 (97.8°)\nOF2 (103.2°) < H2O (104.5°) < Cl2O (111°!)"],
+                ["3. Central Atom Electronegativity (Same Halogen/Terminal)", "When terminal atoms are identical, **higher central atom EN increases bond angle** (electron pairs pulled closer to center -> greater mutual repulsion)", "NH3 (107.8°) > PH3 (93.5°) > AsH3 (91.8°)nH2O (104.5°) > H2S (92.1°) > H2Se (91.0°)"],
+                ["4. Terminal Atom Electronegativity (Same Central Atom)", "When central atom is identical, **higher terminal atom EN decreases bond angle** (electron pairs pulled away from center -> lesser mutual repulsion)", "PI3 (102°) > PBr3 (101.5°) > PCl3 (100°) > PF3 (97.8°)nOF2 (103.2°) < H2O (104.5°) < Cl2O (111°!)"],
                 ["5. Steric Crowding of Bulky Groups", "Bulky ligands force angles wide open to relieve van der Waals clash", "O(CH3)2 (111.7°) > H2O (104.5°); O(SiH3)2 (144°!)"],
             ], [22, 38, 40], "Table 2.2 — Systematic hierarchy determining bond angle variations."),
         ],
@@ -64,11 +63,12 @@ SHEETS = [
         "blocks": [
             ("lead", "**Dipole Moment (μ)** — Polar Bonds, Molecular Geometry & % Ionic Character"),
             ("p", "A bond between two atoms of different electronegativity is polar. The electric dipole moment measures "
-                  "the extent of charge separation: $\\vec{\\mu} = q \\times d$ (units: Debye, $1\\text{ D} = 3.33564 \\times 10^{-30}\\text{ C m}$)."),
+                  "the extent of charge separation: {μ} = q × d (units: Debye, 1 D = 3.33564 × 10^-30 C·m)."),
             ("h2", "1. Molecular Dipole Moment as a Vector Sum"),
+            ("fig", "dipole", "Fig. 2.2 — Dipole moment vector analysis: NH3 vs NF3 and planar symmetrical cancellation."),
             ("p", "Molecular dipole moment is the **vector resultant** of all individual bond dipole moments and lone pair moments:\n"
-                  "$$\\mu_{\\text{net}} = \\sqrt{\\mu_1^2 + \\mu_2^2 + 2\\mu_1\\mu_2 \\cos \\theta}$$\n"
-                  "• Symmetrical molecules with identical surrounding atoms have **$\\mu = 0$** (vectors cancel): "
+                  "**μ_{net} = √{μ~1~^2 + μ~2~^2 + 2μ~1~μ~2~ cos θ}**\n"
+                  "• Symmetrical molecules with identical surrounding atoms have **μ = 0** (vectors cancel): "
                   "Linear (CO2, BeF2), Trigonal planar (BF3), Tetrahedral (CCl4, CH4), Octahedral (SF6), Square planar (XeF4)."),
             ("h2", "2. The Classic NH3 vs NF3 Comparison (JEE Favorite)"),
             ("table", ["Feature", "Ammonia (NH3)", "Nitrogen Trifluoride (NF3)"], [
@@ -78,9 +78,9 @@ SHEETS = [
                 ["Experimental Net Dipole (μ)", "**1.47 D (High)**", "**0.24 D (Very Low!)**"],
             ], [20, 40, 40], "Table 2.3 — Why Ammonia has a six-fold higher dipole moment than Nitrogen Trifluoride."),
             ("h2", "3. Percentage Ionic Character (Hannay-Smith Equation)"),
-            ("key", "$$\\text{Percentage Ionic Character} = 16 |\\chi_A - \\chi_B| + 3.5 (\\chi_A - \\chi_B)^2$$\n"
+            ("key", "**% Ionic Character = 16 |χ~A~ - χ~B~| + 3.5 (χ~A~ - χ~B~)^2**\n"
                     "Alternatively, from dipole measurements:\n"
-                    "$$\\%\\text{ Ionic Character} = \\frac{\\mu_{\\text{observed}}}{\\mu_{\\text{theoretical pure ionic}}} \\times 100\\%$$"),
+                    "**%% Ionic Character = {μ_obs}{μ_calc} × 100%**"),
         ],
     },
     # ------------------------------------------------------------------ CB-12
@@ -89,18 +89,19 @@ SHEETS = [
         "title": "Back-Bonding: pπ-pπ, pπ-dπ, Lewis Acidity & Geometry Changes",
         "blocks": [
             ("lead", "**Back-Bonding (Dative π-Bonding)** — Lewis Acidity & Structural Reorganisation"),
-            ("p", "Back-bonding is an internal coordinate $\\pi$-bond formed when a filled p-orbital of a donor atom (with lone pairs) "
+            ("p", "Back-bonding is an internal coordinate π-bond formed when a filled p-orbital of a donor atom (with lone pairs) "
                   "overlaps sideways with a vacant unhybridized p- or d-orbital on an adjacent electron-deficient acceptor atom."),
             ("h2", "1. Types of Back-Bonding"),
+            ("fig", "backbonding", "Fig. 2.3 — Dative back-bonding: BF3 pπ-pπ backbond and N(SiH3)3 planarization via pπ-dπ."),
             ("table", ["Type of Back-Bonding", "Orbital Interaction", "Key Chemical Examples", "Major Observed Consequences"], [
                 ["pπ - pπ Back-Bonding", "Filled 2p (donor) -> Empty 2p (acceptor)", "BF3, B(OMe)3, B3N3H6", "B-F bond length drops to 130 pm (partial double bond); Inversion of BX3 Lewis acidity: **BF3 < BCl3 < BBr3 < BI3**"],
                 ["pπ - dπ Back-Bonding", "Filled 2p (donor) -> Empty 3d (acceptor)", "N(SiH3)3, O(SiH3)2, P4O10, SO2, SO3", "Planarization of amine, drastic decrease in basicity, bond angle widening"],
             ], [20, 26, 24, 30], "Table 2.4 — Classification and manifestations of back-bonding."),
             ("h2", "2. Trimethylamine N(CH3)3 vs Trisilylamine N(SiH3)3 (Classic JEE Topic)"),
             ("table", ["Property", "Trimethylamine N(CH3)3", "Trisilylamine N(SiH3)3"], [
-                ["Geometry around N", "**Trigonal Pyramidal** (sp^3 N)", "**Planar Trigonal** (sp^2 N)"],
+                ["Geometry around N", "**Trigonal Pyramidal** (sp^3^ N)", "**Planar Trigonal** (sp^2^ N)"],
                 ["Back-Bonding", "**None** (Carbon has no empty d-orbitals)", "**Extensive 2pπ(N) -> 3dπ(Si) back-bonding**"],
-                ["Hybridization of N", "sp^3 (lone pair resides in hybrid orbital)", "sp^2 (lone pair delocalised into 3d orbitals of 3 Si atoms)"],
+                ["Hybridization of N", "sp^3^ (lone pair resides in hybrid orbital)", "sp^2^ (lone pair delocalised into 3d orbitals of 3 Si atoms)"],
                 ["Lewis Basicity", "**Strong Lewis base** (donates available lone pair)", "**Weak / Non-basic** (lone pair is delocalised and unavailable)"],
                 ["Adduct with BMe3", "Forms stable adduct Me3N:BMe3", "Does not form adduct (sterically and electronically inert)"],
             ], [20, 40, 40], "Table 2.5 — Structural contrast caused by pπ-dπ back-bonding."),
@@ -119,12 +120,13 @@ SHEETS = [
             ("p", "When monomeric molecules have incomplete octets (electron-deficient) and cannot satisfy them by back-bonding, "
                   "they dimerise or polymerise through multicentre bridging bonds."),
             ("h2", "1. 3c-2e 'Banana' Bonds (Electron-Deficient Bridges)"),
+            ("fig", "diborane", "Fig. 2.4 — Bridge bonding modes: Diborane B2H6 3c-2e banana bond vs Al2Cl6 3c-4e dative bridge."),
             ("bul", [
                 "**Diborane (B2H6):** Two B atoms and four terminal H atoms are coplanar. Two bridging H atoms lie above and below this plane.\n"
                 "  Each B-Hb-B bridge is a **3-centre 2-electron (3c-2e)** bond sharing 2 electrons over 3 nuclei (B, H, B).\n"
-                "  Each Boron atom is **sp^3 hybridized** (12 valence electrons total).",
-                "**Beryllium Hydride (BeH2)_n:** Solid (BeH2)_n forms an infinite chain of Be atoms joined by 3c-2e Be-H-Be bridges (Be is sp^3 hybridized).",
-                "**Aluminium Alkyls [Al(CH3)3]2:** Dimerises via **3c-2e Al-C-Al bridges** where the methyl carbon uses an sp^3 orbital to bridge two Al atoms.",
+                "  Each Boron atom is **sp^3^ hybridized** (12 valence electrons total).",
+                "**Beryllium Hydride (BeH2)_n:** Solid (BeH2)_n forms an infinite chain of Be atoms joined by 3c-2e Be-H-Be bridges (Be is sp^3^ hybridized).",
+                "**Aluminium Alkyls [Al(CH3)3]2:** Dimerises via **3c-2e Al-C-Al bridges** where the methyl carbon uses an sp^3^ orbital to bridge two Al atoms.",
             ]),
             ("table", ["Feature", "3c-2e Bridge (e.g. B2H6, [AlMe3]2)", "3c-4e Bridge (e.g. Al2Cl6, I2Cl6)"], [
                 ["Bridging Atom", "Hydrogen (H) or Methyl (CH3) without lone pairs", "Halogen (Cl, Br, I) having lone pairs"],
@@ -134,8 +136,8 @@ SHEETS = [
             ], [20, 40, 40], "Table 2.6 — Comparison between 3c-2e and 3c-4e bridging architectures."),
             ("h2", "2. 3c-4e Halogen Bridges (Al2Cl6, BeCl2)"),
             ("p", "In **Al2Cl6**, each bridging chlorine atom donates a lone pair into the empty 3p/3d orbital of the adjacent Al atom. "
-                  "Each Al atom achieves an octet through two terminal covalent bonds and two bridging (one covalent, one dative) bonds (sp^3 Al).\n"
-                  "In **BeCl2(solid)**, an infinite linear chain is formed via Be-Cl: -> Be coordinate bridges (sp^3 Be, 4-coordinate). In vapor at 1200 K, it exists as linear monomer Cl-Be-Cl (sp Be)."),
+                  "Each Al atom achieves an octet through two terminal covalent bonds and two bridging (one covalent, one dative) bonds (sp^3^ Al).\n"
+                  "In **BeCl2(solid)**, an infinite linear chain is formed via Be-Cl: -> Be coordinate bridges (sp^3^ Be, 4-coordinate). In vapor at 1200 K, it exists as linear monomer Cl-Be-Cl (sp Be)."),
         ],
     },
     # ------------------------------------------------------------------ CB-14
@@ -155,10 +157,10 @@ SHEETS = [
             ("fig", "mot", "Fig. 2.2 — MO energy level crossover caused by s-p mixing: B2, C2, N2 (≤14 e-) vs O2, F2 (>14 e-)."),
             ("h2", "2. The s-p Mixing Phenomenon (The Crossover in Energy)"),
             ("p", "In homonuclear diatomics of Li, Be, B, C, N (≤ 14 electrons), the energy gap between 2s and 2p_z atomic orbitals "
-                  "is small (< 10 eV). Consequently, **2s and 2p_z orbitals mix**, pushing $\\sigma(2p_z)$ UP and $\\sigma^*(2s)$ DOWN:\n"
-                  "• Result for $\\le 14\\text{ e}^-$ (B2, C2, N2): **$\\pi(2p_x) = \\pi(2p_y)$ becomes LOWER in energy than $\\sigma(2p_z)$**!\n"
-                  "• For $> 14\\text{ e}^-$ (O2, F2): Large 2s-2p gap (> 15 eV) prevents mixing; normal order where $\\sigma(2p_z)$ is lower than $\\pi(2p)$.\n"
-                  "$$\\text{Bond Order (BO)} = \\frac{N_b - N_a}{2}$$"),
+                  "is small (< 10 eV). Consequently, **2s and 2p_z orbitals mix**, pushing σ(2p_z) UP and σ^*(2s) DOWN:\n"
+                  "• Result for ≤ 14e^−^ (B2, C2, N2): **π(2p_x) = π(2p_y) becomes LOWER in energy than σ(2p_z)**!\n"
+                  "• For > 14e^−^ (O2, F2): Large 2s-2p gap (> 15 eV) prevents mixing; normal order where σ(2p_z) is lower than π(2p).\n"
+                  "**Bond Order (BO) = (N~b~ − N~a~) / 2**"),
         ],
     },
     # ------------------------------------------------------------------ CB-15
@@ -185,10 +187,10 @@ SHEETS = [
                 ["Ne2", "20", "KK σ(2s)^2 σ*(2s)^2 σ(2p_z)^2 [π(2p)^4] [π*(2p)^4] σ*(2p_z)^2", "**0**", "Does NOT exist!"],
             ], [15, 8, 45, 12, 20], "Table 2.8 — Complete MO properties of homonuclear diatomics."),
             ("key", "Two Critical JEE Advanced Insights from MOT:\n"
-                    "1. **C2 molecule:** In gaseous C2, the double bond consists of **TWO PI (π) BONDS AND NO SIGMA BOND** because the last 4 electrons enter the degenerate $\\pi(2p_x)$ and $\\pi(2p_y)$ orbitals!\n"
+                    "1. **C2 molecule:** In gaseous C2, the double bond consists of **TWO PI (π) BONDS AND NO SIGMA BOND** because the last 4 electrons enter the degenerate π(2p_x) and π(2p_y) orbitals!\n"
                     "2. **Bond Length Order of Dioxygen species:**\n"
-                    "   Bond Order: $O_2^+ (2.5) > O_2 (2.0) > O_2^- (1.5) > O_2^{2-} (1.0)$\n"
-                    "   Bond Length: **$O_2^+ < O_2 < O_2^- < O_2^{2-}$** (Peroxide has longest bond, ~149 pm)."),
+                    "   Bond Order: O~2~^+^ (2.5) > O~2~ (2.0) > O~2~^−^ (1.5) > O~2~^2- (1.0)\n"
+                    "   Bond Length: **O~2~^+^ < O~2~ < O~2~^−^ < O~2~^2-** (Peroxide has longest bond, ~149 pm)."),
         ],
     },
     # ------------------------------------------------------------------ CB-16
@@ -202,18 +204,18 @@ SHEETS = [
             ("h2", "1. Carbon Monoxide (CO) — The HOMO/LUMO Anomaly"),
             ("bul", [
                 "**Isoelectronic with N2:** 14 valence electrons (10 outer). Ground state configuration:\n"
-                "  $$\\sigma(2s)^2 \\sigma^*(2s)^2 [\\pi(2p_x)^2 = \\pi(2p_y)^2] \\sigma(2p_z)^2$$\n"
-                "  Bond order = $(8 - 2)/2 = \\mathbf{3}$ (one $\\sigma$, two $\\pi$ bonds).",
+                "  **σ(2s)^2 σ^*(2s)^2 [π(2p_x)^2 = π(2p_y)^2] σ(2p_z)^2**\n"
+                "  Bond order = (8 - 2)/2 = 3 (one σ, two π bonds).",
                 "**The CO+ Ionization Anomaly (Classic JEE Advanced Question):**\n"
-                "  When CO is ionised to CO+, an electron is removed from the HOMO $\\sigma(2s)$. However, due to extensive s-p mixing and hybridization, this HOMO has **slight antibonding character**!\n"
+                "  When CO is ionised to CO+, an electron is removed from the HOMO σ(2s). However, due to extensive s-p mixing and hybridization, this HOMO has **slight antibonding character**!\n"
                 "  Consequently, upon removing this electron: **Bond Order of CO+ INCREASES to ~3.5**, and the C-O bond becomes **SHORTER AND STRONGER** (112.8 pm -> 111.5 pm)!",
             ]),
             ("h2", "2. Nitric Oxide (NO) — Odd-Electron Diatomic"),
             ("p", "Total valence electrons = 15. Electronic configuration:\n"
-                  "$$\\text{KK } \\sigma(2s)^2 \\sigma^*(2s)^2 \\sigma(2p_z)^2 [\\pi(2p_x)^2 = \\pi(2p_y)^2] [\\pi^*(2p_x)^1]$$\n"
-                  "• Bond Order = $(8 - 3)/2 = \\mathbf{2.5}$. Paramagnetic (1 unpaired electron in $\\pi^*$).\n"
-                  "• Oxidation to Nitrosonium ion **NO+**: Removing the antibonding $\\pi^*$ electron yields NO+ (isoelectronic with N2):\n"
-                  "  $$\\text{Bond Order: } NO^+ (3.0) > NO (2.5) > NO^- (2.0)$$\n"
+                  "**KK  σ(2s)^2 σ^*(2s)^2 σ(2p_z)^2 [π(2p_x)^2 = π(2p_y)^2] [π^*(2p_x)^1]**\n"
+                  "• Bond Order = (8 - 3)/2 = 2.5. Paramagnetic (1 unpaired electron in π^*).\n"
+                  "• Oxidation to Nitrosonium ion **NO+**: Removing the antibonding π^* electron yields NO+ (isoelectronic with N2):\n"
+                  "  **Bond Order: NO^+^ (3.0) > NO (2.5) > NO^−^ (2.0)**\n"
                   "  NO+ is diamagnetic and has a shorter, much stronger bond than neutral NO."),
         ],
     },

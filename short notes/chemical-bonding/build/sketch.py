@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import math
 
-from textkit import GOLD, NAVY, RED, TEAL, PAPER, draw_text, glyph_runs, width
+from textkit import GOLD, NAVY, RED, TEAL, PAPER, GRID, BOX, draw_text, glyph_runs, width
 
 
 class Pen:
@@ -72,13 +72,22 @@ class Pen:
     def dash(self, a, b, color=TEAL, pattern="[2.4 2.2] 0"):
         self.line(a, b, color=color, dash=pattern)
 
-    def circle(self, c, r, fill=None, color=None, stroke=NAVY, close=False):
+    def rect(self, r, fill=None, color=None, stroke=NAVY, width=None):
         if color is not None: stroke = color
-        self.p.draw_circle(self.P(*c), r * self.k, color=stroke, fill=fill, width=self.lw)
+        x, y, w, h = r
+        p1 = self.P(x, y)
+        p2 = self.P(x + w, y + h)
+        import pymupdf
+        rect = pymupdf.Rect(p1[0], p1[1], p2[0], p2[1])
+        self.p.draw_rect(rect, color=stroke, fill=fill, width=self.lw if width is None else width)
 
-    def arrow(self, a, b, color=NAVY, head=6.0):
+    def circle(self, c, r, fill=None, color=None, stroke=NAVY, close=False, width=None):
+        if color is not None: stroke = color
+        self.p.draw_circle(self.P(*c), r * self.k, color=stroke, fill=fill, width=self.lw if width is None else width)
+
+    def arrow(self, a, b, color=NAVY, head=6.0, width=None):
         p1, p2 = self.P(*a), self.P(*b)
-        self.p.draw_line(p1, p2, color=color, width=self.lw)
+        self.p.draw_line(p1, p2, color=color, width=self.lw if width is None else width)
         dx, dy = p2[0] - p1[0], p2[1] - p1[1]
         n = math.hypot(dx, dy) or 1.0
         ux, uy = dx / n, dy / n
@@ -771,4 +780,440 @@ REGISTRY.update({
     "vsepr": (fig_vsepr_shapes, 0.26),
     "mot": (fig_mot_o2_n2, 0.26),
     "hbonding": (fig_h_bonding, 0.24),
+})
+
+# ===========================================================================
+# ADDITIONAL CHEMICAL BONDING VECTOR DIAGRAMS
+# ===========================================================================
+
+def fig_orbital_overlap(page, x, y, w, h):
+    """Orbital Overlap Types: Axial s-s, s-p, p-p (sigma) vs Lateral p-p (pi)."""
+    g = Pen(page, x, y, w, h, 538, 120)
+    # (a) s-s overlap
+    g.circle((50, 45), 14, fill=(0.95, 0.98, 1.0), color=TEAL)
+    g.circle((70, 45), 14, fill=(0.95, 0.98, 1.0), color=TEAL)
+    g.text(60, 48, "+", color=NAVY, size=8.0)
+    g.text(60, 75, "s - s (σ bond)", color=TEAL, size=7.8)
+    g.text(60, 88, "Axial / Cylindrical", color=NAVY, size=6.8)
+
+    # (b) s - p_z overlap
+    g.circle((160, 45), 13, fill=(0.95, 0.98, 1.0), color=TEAL)
+    # p orbital lobes
+    g.rect((178, 38, 16, 14), fill=(1.0, 0.95, 0.95), stroke=RED)
+    g.rect((196, 38, 16, 14), fill=(0.95, 0.98, 1.0), stroke=TEAL)
+    g.text(186, 47, "+", color=RED, size=7.5)
+    g.text(204, 47, "−", color=NAVY, size=7.5)
+    g.text(185, 75, "s - p_z (σ bond)", color=TEAL, size=7.8)
+    g.text(185, 88, "Axial / Directional", color=NAVY, size=6.8)
+
+    # (c) p_z - p_z head-on overlap
+    g.rect((275, 38, 15, 14), fill=(0.95, 0.98, 1.0), stroke=TEAL)
+    g.rect((292, 38, 15, 14), fill=(1.0, 0.95, 0.95), stroke=RED)
+    g.rect((310, 38, 15, 14), fill=(1.0, 0.95, 0.95), stroke=RED)
+    g.rect((327, 38, 15, 14), fill=(0.95, 0.98, 1.0), stroke=TEAL)
+    g.text(301, 47, "+", color=RED, size=8.0)
+    g.text(305, 75, "p_z - p_z (σ bond)", color=TEAL, size=7.8)
+    g.text(305, 88, "Maximum Overlap", color=NAVY, size=6.8)
+
+    # (d) p_x - p_x lateral overlap (pi bond)
+    # Top lobes
+    g.rect((420, 22, 14, 18), fill=(1.0, 0.95, 0.95), stroke=RED)
+    g.rect((445, 22, 14, 18), fill=(1.0, 0.95, 0.95), stroke=RED)
+    g.dash((434, 30), (445, 30), color=RED)
+    g.text(427, 33, "+", color=RED, size=7.5); g.text(452, 33, "+", color=RED, size=7.5)
+    # Bottom lobes
+    g.rect((420, 48, 14, 18), fill=(0.95, 0.98, 1.0), stroke=TEAL)
+    g.rect((445, 48, 14, 18), fill=(0.95, 0.98, 1.0), stroke=TEAL)
+    g.dash((434, 58), (445, 58), color=TEAL)
+    g.text(427, 59, "−", color=NAVY, size=7.5); g.text(452, 59, "−", color=NAVY, size=7.5)
+    # Nodal plane line
+    g.dash((405, 44), (475, 44), color=GOLD)
+    g.text(440, 75, "p_x - p_x (π bond)", color=RED, size=7.8)
+    g.text(440, 88, "Sideways (1 nodal plane)", color=NAVY, size=6.8)
+    g.text(440, 100, "Overlap: p-p(σ) > s-p > s-s > p-p(π)", color=GOLD, size=6.8)
+
+
+def fig_backbonding(page, x, y, w, h):
+    """Back-bonding: BF3 pπ-pπ backbond & N(SiH3)3 planarization via pπ-dπ."""
+    g = Pen(page, x, y, w, h, 538, 120)
+    # (a) BF3 pπ-pπ dative back-donation at left
+    g.circle((110, 50), 12, fill=PAPER, color=TEAL); g.text(110, 53, "B", color=TEAL, size=8.5)
+    # F atoms
+    g.circle((65, 35), 9, fill=PAPER, color=NAVY); g.text(65, 38, "F", color=NAVY, size=7.5)
+    g.circle((65, 70), 9, fill=PAPER, color=NAVY); g.text(65, 73, "F", color=NAVY, size=7.5)
+    g.circle((160, 50), 9, fill=(1.0, 0.95, 0.95), color=RED); g.text(160, 53, "F", color=RED, size=7.5)
+    g.bond((110, 50), (74, 38)); g.bond((110, 50), (74, 67))
+    # Double/dative bond to F
+    g.line((122, 47), (151, 47), color=RED, width=1.4)
+    g.line((122, 53), (151, 53), color=NAVY, width=1.4)
+    # Arrow indicating back-donation F(2p) -> B(2p vacant)
+    g.arrow((155, 38), (120, 38), color=RED, width=1.2)
+    g.text(138, 30, "2p(F) → 2p(B) π", color=RED, size=6.8)
+    g.text(110, 88, "BF~3~: Planar (sp^2^)", color=TEAL, size=8.0)
+    g.text(110, 100, "B-F bond order = 1.33 (shorter/stronger)", color=NAVY, size=6.8)
+    g.text(110, 112, "Lewis Acidity: BF~3~ < BCl~3~ < BBr~3~ < BI~3~", color=RED, size=6.8)
+
+    # (b) N(CH3)3 Pyramidal vs N(SiH3)3 Planar at right
+    # N(CH3)3
+    g.circle((310, 42), 10, fill=PAPER, color=NAVY); g.text(310, 45, "N", size=8.0)
+    g.circle((310, 26), 4, fill=PAPER, color=GOLD); g.text(310, 28, "••", color=GOLD, size=6.5)
+    g.bond((310, 42), (290, 60)); g.text(285, 65, "CH~3~", size=6.8)
+    g.bond((310, 42), (310, 65)); g.text(310, 72, "CH~3~", size=6.8)
+    g.bond((310, 42), (330, 60)); g.text(335, 65, "CH~3~", size=6.8)
+    g.text(310, 90, "N(CH~3~)~3~: Pyramidal (sp^3^)", color=NAVY, size=7.5)
+    g.text(310, 102, "Basic lone pair localized", color=NAVY, size=6.5)
+
+    # N(SiH3)3 Planar
+    g.circle((440, 48), 10, fill=PAPER, color=TEAL); g.text(440, 51, "N", color=TEAL, size=8.0)
+    g.bond((440, 48), (405, 48)); g.text(395, 51, "SiH~3~", size=6.8)
+    g.bond((440, 48), (458, 32)); g.text(470, 30, "SiH~3~", size=6.8)
+    g.bond((440, 48), (458, 64)); g.text(470, 67, "SiH~3~", size=6.8)
+    # Delocalization arrows into vacant 3d of Si
+    g.arrow((434, 44), (410, 44), color=RED, width=1.1)
+    g.text(440, 90, "N(SiH~3~)~3~: Planar (sp^2^)", color=RED, size=7.8)
+    g.text(440, 102, "pπ - dπ delocalized into vacant 3d(Si)", color=RED, size=6.8)
+    g.text(440, 114, "Virtually non-basic! (μ = 0)", color=NAVY, size=6.8)
+
+
+def fig_diborane_bridge(page, x, y, w, h):
+    """Diborane B2H6 3c-2e banana bond vs Al2Cl6 3c-4e dative bridge."""
+    g = Pen(page, x, y, w, h, 538, 120)
+    # (a) B2H6 Banana Bond at left
+    g.circle((100, 50), 12, fill=PAPER, color=TEAL); g.text(100, 53, "B", color=TEAL, size=8.5)
+    g.circle((170, 50), 12, fill=PAPER, color=TEAL); g.text(170, 53, "B", color=TEAL, size=8.5)
+    # Terminal H
+    g.bond((100, 50), (70, 35)); g.text(64, 34, "H_t", size=7.0)
+    g.bond((100, 50), (70, 65)); g.text(64, 68, "H_t", size=7.0)
+    g.bond((170, 50), (200, 35)); g.text(206, 34, "H_t", size=7.0)
+    g.bond((170, 50), (200, 65)); g.text(206, 68, "H_t", size=7.0)
+    # Top Bridge H_b (curved banana)
+    g.circle((135, 28), 9, fill=(1.0, 0.95, 0.90), color=RED); g.text(135, 31, "H_b", color=RED, size=7.0)
+    g.line((100, 50), (135, 28), color=RED, width=1.5)
+    g.line((135, 28), (170, 50), color=RED, width=1.5)
+    # Bottom Bridge H_b
+    g.circle((135, 72), 9, fill=(1.0, 0.95, 0.90), color=RED); g.text(135, 75, "H_b", color=RED, size=7.0)
+    g.line((100, 50), (135, 72), color=RED, width=1.5)
+    g.line((135, 72), (170, 50), color=RED, width=1.5)
+    g.text(135, 95, "Diborane B~2~H~6~ (3c-2e Banana Bonds)", color=RED, size=7.8)
+    g.text(135, 108, "2 × (B-H-B) 3c-2e bridges + 4 × (B-H_t) 2c-2e", color=NAVY, size=6.8)
+
+    # (b) Al2Cl6 3c-4e dative bridge at right
+    g.circle((360, 50), 12, fill=PAPER, color=NAVY); g.text(360, 53, "Al", color=NAVY, size=8.5)
+    g.circle((440, 50), 12, fill=PAPER, color=NAVY); g.text(440, 53, "Al", color=NAVY, size=8.5)
+    # Terminal Cl
+    g.bond((360, 50), (330, 35)); g.text(322, 34, "Cl_t", size=7.0)
+    g.bond((360, 50), (330, 65)); g.text(322, 68, "Cl_t", size=7.0)
+    g.bond((440, 50), (470, 35)); g.text(478, 34, "Cl_t", size=7.0)
+    g.bond((440, 50), (470, 65)); g.text(478, 68, "Cl_t", size=7.0)
+    # Bridge Cl atoms with coordinate arrows
+    g.circle((400, 26), 9, fill=(0.95, 0.98, 1.0), color=TEAL); g.text(400, 29, "Cl_b", color=TEAL, size=6.8)
+    g.bond((360, 50), (400, 26))
+    g.arrow((400, 26), (440, 50), color=TEAL, width=1.3)
+    g.circle((400, 74), 9, fill=(0.95, 0.98, 1.0), color=TEAL); g.text(400, 77, "Cl_b", color=TEAL, size=6.8)
+    g.bond((440, 50), (400, 74))
+    g.arrow((400, 74), (360, 50), color=TEAL, width=1.3)
+    g.text(400, 95, "Al~2~Cl~6~ Bridge (3c-4e Coordinate Bonds)", color=TEAL, size=7.8)
+    g.text(400, 108, "Complete octets! Al is sp^3^ hybridized", color=NAVY, size=6.8)
+
+
+def fig_dipole_vectors(page, x, y, w, h):
+    """Dipole Moment Vector Resolution: NH3 vs NF3, and Symmetrical Cancellation."""
+    g = Pen(page, x, y, w, h, 538, 120)
+    # (a) NH3: vectors reinforce -> high dipole (1.47 D)
+    g.circle((80, 48), 11, fill=PAPER, color=TEAL); g.text(80, 51, "N", color=TEAL, size=8.5)
+    # Lone pair pointing UP
+    g.arrow((80, 37), (80, 18), color=RED, width=1.4); g.text(93, 25, "μ_lp ↑", color=RED, size=7.0)
+    # H bonds pointing TOWARDS N
+    g.bond((80, 48), (60, 68)); g.text(55, 74, "H", size=7.0)
+    g.arrow((60, 68), (73, 55), color=TEAL, width=1.2)
+    g.bond((80, 48), (80, 74)); g.text(80, 81, "H", size=7.0)
+    g.arrow((80, 74), (80, 59), color=TEAL, width=1.2)
+    g.bond((80, 48), (100, 68)); g.text(105, 74, "H", size=7.0)
+    g.arrow((100, 68), (87, 55), color=TEAL, width=1.2)
+    g.text(80, 96, "NH~3~: μ = 1.47 D", color=TEAL, size=8.0)
+    g.text(80, 108, "Bond dipoles REINFORCE lp", color=RED, size=6.8)
+
+    # (b) NF3: vectors oppose -> very small dipole (0.24 D)
+    g.circle((220, 48), 11, fill=PAPER, color=TEAL); g.text(220, 51, "N", color=TEAL, size=8.5)
+    # Lone pair pointing UP
+    g.arrow((220, 37), (220, 18), color=RED, width=1.4); g.text(233, 25, "μ_lp ↑", color=RED, size=7.0)
+    # F bonds pointing AWAY FROM N
+    g.bond((220, 48), (200, 68)); g.text(195, 74, "F", size=7.0)
+    g.arrow((213, 55), (200, 68), color=NAVY, width=1.2)
+    g.bond((220, 48), (220, 74)); g.text(220, 81, "F", size=7.0)
+    g.arrow((220, 59), (220, 74), color=NAVY, width=1.2)
+    g.bond((220, 48), (240, 68)); g.text(245, 74, "F", size=7.0)
+    g.arrow((227, 55), (240, 68), color=NAVY, width=1.2)
+    g.text(220, 96, "NF~3~: μ = 0.24 D", color=NAVY, size=8.0)
+    g.text(220, 108, "Bond dipoles OPPOSE lp", color=NAVY, size=6.8)
+
+    # (c) CO2 Linear: exact vector cancellation (μ = 0)
+    g.circle((350, 45), 10, fill=PAPER, color=NAVY); g.text(350, 48, "C", size=8.0)
+    g.circle((310, 45), 9, fill=PAPER, color=RED); g.text(310, 48, "O", color=RED, size=7.5)
+    g.circle((390, 45), 9, fill=PAPER, color=RED); g.text(390, 48, "O", color=RED, size=7.5)
+    g.line((320, 43), (340, 43)); g.line((320, 47), (340, 47))
+    g.line((360, 43), (380, 43)); g.line((360, 47), (380, 47))
+    g.arrow((345, 35), (315, 35), color=RED, width=1.2)
+    g.arrow((355, 35), (385, 35), color=RED, width=1.2)
+    g.text(350, 70, "CO~2~ (Linear): μ = 0", color=NAVY, size=7.8)
+    g.text(350, 82, "Equal & opposite vectors cancel", color=NAVY, size=6.5)
+
+    # (d) BF3 Trigonal Planar: 120° vector cancellation (μ = 0)
+    g.circle((470, 45), 10, fill=PAPER, color=TEAL); g.text(470, 48, "B", color=TEAL, size=8.0)
+    g.bond((470, 45), (470, 22)); g.text(470, 16, "F", size=7.0)
+    g.bond((470, 45), (448, 58)); g.text(442, 64, "F", size=7.0)
+    g.bond((470, 45), (492, 58)); g.text(498, 64, "F", size=7.0)
+    g.arrow((470, 40), (470, 24), color=RED, width=1.1)
+    g.arrow((464, 49), (450, 57), color=RED, width=1.1)
+    g.arrow((476, 49), (490, 57), color=RED, width=1.1)
+    g.text(470, 75, "BF~3~ (Planar): μ = 0", color=TEAL, size=7.8)
+    g.text(470, 87, "Sum of three 120° vectors = 0", color=NAVY, size=6.5)
+
+
+def fig_band_theory(page, x, y, w, h):
+    """Band Theory: Conductor, Semiconductor, and Insulator Energy Bands."""
+    g = Pen(page, x, y, w, h, 538, 120)
+    # Energy arrow on far left
+    g.arrow((30, 95), (30, 20), color=GOLD, width=1.5)
+    g.text(30, 15, "Energy", color=GOLD, size=7.0)
+
+    # (a) Conductor (Metal)
+    g.rect((70, 30, 80, 60), fill=(0.92, 0.96, 0.94), stroke=TEAL)
+    g.text(110, 45, "Conduction Band (CB)", color=TEAL, size=6.8)
+    g.rect((70, 55, 80, 40), fill=(0.95, 0.92, 0.85), stroke=GOLD)
+    g.text(110, 75, "Valence Band (VB)", color=GOLD, size=6.8)
+    g.text(110, 55, "OVERLAPPING BANDS", color=RED, size=6.5)
+    g.text(110, 105, "Conductor (E_g = 0)", color=TEAL, size=8.0)
+    g.text(110, 116, "High σ, decreases with T", color=NAVY, size=6.5)
+
+    # (b) Semiconductor (Si, Ge)
+    g.rect((215, 25, 80, 28), fill=(0.92, 0.96, 0.94), stroke=TEAL)
+    g.text(255, 39, "Empty CB", color=TEAL, size=7.0)
+    # Small gap
+    g.arrow((255, 62), (255, 54), color=RED, width=1.1)
+    g.arrow((255, 54), (255, 62), color=RED, width=1.1)
+    g.text(285, 58, "E_g < 3 eV", color=RED, size=7.0)
+    g.rect((215, 65, 80, 30), fill=(0.95, 0.92, 0.85), stroke=GOLD)
+    g.text(255, 80, "Filled VB", color=GOLD, size=7.0)
+    g.text(255, 105, "Semiconductor", color=RED, size=8.0)
+    g.text(255, 116, "σ increases with T (e^- jump)", color=NAVY, size=6.5)
+
+    # (c) Insulator (Diamond)
+    g.rect((370, 20, 80, 25), fill=(0.92, 0.96, 0.94), stroke=TEAL)
+    g.text(410, 32, "Empty CB", color=TEAL, size=7.0)
+    # Large gap
+    g.arrow((410, 70), (410, 46), color=NAVY, width=1.1)
+    g.arrow((410, 46), (410, 70), color=NAVY, width=1.1)
+    g.text(440, 58, "E_g > 5 eV (Large!)", color=NAVY, size=7.0)
+    g.rect((370, 72, 80, 25), fill=(0.95, 0.92, 0.85), stroke=GOLD)
+    g.text(410, 85, "Filled VB", color=GOLD, size=7.0)
+    g.text(410, 105, "Insulator", color=NAVY, size=8.0)
+    g.text(410, 116, "No thermal excitation to CB", color=NAVY, size=6.5)
+
+
+def fig_crystal_structures(page, x, y, w, h):
+    """Crystal Lattice Models: NaCl (6:6), CsCl (8:8), and ZnS (4:4)."""
+    g = Pen(page, x, y, w, h, 538, 120)
+    # (a) NaCl Rock Salt (Octahedral 6:6)
+    # FCC unit cell wireframe
+    p_f = [(60, 40), (100, 40), (100, 80), (60, 80)]
+    p_b = [(80, 25), (120, 25), (120, 65), (80, 65)]
+    for i in range(4):
+        g.line(p_f[i], p_f[(i+1)%4], color=GRID, width=1.0)
+        g.line(p_b[i], p_b[(i+1)%4], color=GRID, width=1.0)
+        g.line(p_f[i], p_b[i], color=GRID, width=1.0)
+    # Na+ (cation in octahedral void) at center
+    g.circle((90, 52), 6, fill=(1.0, 0.92, 0.92), color=RED); g.text(90, 54, "+", color=RED, size=7.0)
+    # Cl- at corners
+    for pt in [p_f[0], p_f[1], p_f[2], p_f[3], p_b[1]]:
+        g.circle(pt, 5, fill=(0.92, 0.96, 1.0), color=TEAL)
+    g.text(90, 95, "NaCl Lattice (6:6)", color=TEAL, size=7.8)
+    g.text(90, 107, "FCC Cl~−~ + Octahedral Na~+~ (Z = 4)", color=NAVY, size=6.5)
+
+    # (b) CsCl (Body-Centred Cubic 8:8)
+    p_f2 = [(220, 40), (260, 40), (260, 80), (220, 80)]
+    p_b2 = [(240, 25), (280, 25), (280, 65), (240, 65)]
+    for i in range(4):
+        g.line(p_f2[i], p_f2[(i+1)%4], color=GRID, width=1.0)
+        g.line(p_b2[i], p_b2[(i+1)%4], color=GRID, width=1.0)
+        g.line(p_f2[i], p_b2[i], color=GRID, width=1.0)
+    # Cs+ in body center
+    g.circle((250, 52), 7, fill=(1.0, 0.92, 0.92), color=RED); g.text(250, 55, "Cs+", color=RED, size=6.5)
+    # Cl- at 8 corners
+    for pt in p_f2 + p_b2:
+        g.circle(pt, 4, fill=(0.92, 0.96, 1.0), color=TEAL)
+    g.text(250, 95, "CsCl Lattice (8:8)", color=RED, size=7.8)
+    g.text(250, 107, "Simple Cubic Cl~−~ + Body Center Cs~+~ (Z = 1)", color=NAVY, size=6.5)
+
+    # (c) ZnS Zinc Blende (Tetrahedral 4:4)
+    p_f3 = [(380, 40), (420, 40), (420, 80), (380, 80)]
+    p_b3 = [(400, 25), (440, 25), (440, 65), (400, 65)]
+    for i in range(4):
+        g.line(p_f3[i], p_f3[(i+1)%4], color=GRID, width=1.0)
+        g.line(p_b3[i], p_b3[(i+1)%4], color=GRID, width=1.0)
+        g.line(p_f3[i], p_b3[i], color=GRID, width=1.0)
+    # Zn2+ occupying 50% alternate tetrahedral voids
+    g.circle((402, 45), 5, fill=(1.0, 0.92, 0.92), color=GOLD); g.text(402, 47, "Zn", color=GOLD, size=6.0)
+    g.circle((418, 62), 5, fill=(1.0, 0.92, 0.92), color=GOLD); g.text(418, 64, "Zn", color=GOLD, size=6.0)
+    for pt in [p_f3[0], p_f3[1], p_f3[2], p_f3[3]]:
+        g.circle(pt, 4.5, fill=(0.92, 0.96, 1.0), color=TEAL)
+    g.text(410, 95, "ZnS Zinc Blende (4:4)", color=GOLD, size=7.8)
+    g.text(410, 107, "FCC S^2−^ + Alternate Tetrahedral Zn^2+^ (Z = 4)", color=NAVY, size=6.5)
+
+
+def fig_crystal_defects(page, x, y, w, h):
+    """Crystal Defects: Schottky defect (vacancies) vs Frenkel defect (interstitial)."""
+    g = Pen(page, x, y, w, h, 538, 120)
+    # (a) Schottky Defect at left
+    # 4x3 lattice grid
+    for r in range(3):
+        for c in range(5):
+            px = 60 + c * 30
+            py = 30 + r * 25
+            is_cation = (r + c) % 2 == 0
+            # Miss cation at (r=1, c=1) and anion at (r=1, c=3)
+            if (r == 1 and c == 1):
+                g.circle((px, py), 9, fill=(1.0, 0.9, 0.9), color=RED, width=1.2)
+                g.dash((px-6, py), (px+6, py), color=RED)
+                g.dash((px, py-6), (px, py+6), color=RED)
+            elif (r == 1 and c == 3):
+                g.circle((px, py), 9, fill=(0.9, 0.95, 1.0), color=TEAL, width=1.2)
+                g.dash((px-6, py), (px+6, py), color=TEAL)
+                g.dash((px, py-6), (px, py+6), color=TEAL)
+            else:
+                if is_cation:
+                    g.circle((px, py), 8, fill=(1.0, 0.92, 0.92), color=RED)
+                    g.text(px, py+2.5, "+", color=RED, size=8.0)
+                else:
+                    g.circle((px, py), 9, fill=(0.92, 0.96, 1.0), color=TEAL)
+                    g.text(px, py+2.5, "−", color=TEAL, size=8.0)
+    g.text(120, 96, "Schottky Defect (Equal Pairs Missing)", color=RED, size=7.8)
+    g.text(120, 108, "Density DECREASES (NaCl, KCl, AgBr)", color=NAVY, size=6.8)
+
+    # (b) Frenkel Defect at right
+    for r in range(3):
+        for c in range(5):
+            px = 330 + c * 30
+            py = 30 + r * 25
+            is_cation = (r + c) % 2 == 0
+            if (r == 1 and c == 1):
+                # Vacancy circle
+                g.circle((px, py), 7, fill=PAPER, color=GOLD, width=1.2)
+                g.dash((px-5, py), (px+5, py), color=GOLD)
+            else:
+                if is_cation:
+                    g.circle((px, py), 8, fill=(1.0, 0.92, 0.92), color=RED)
+                    g.text(px, py+2.5, "+", color=RED, size=8.0)
+                else:
+                    g.circle((px, py), 9, fill=(0.92, 0.96, 1.0), color=TEAL)
+                    g.text(px, py+2.5, "−", color=TEAL, size=8.0)
+    # Displaced interstitial cation
+    g.circle((380, 43), 7, fill=(1.0, 0.92, 0.92), color=RED)
+    g.text(380, 45.5, "+", color=RED, size=7.5)
+    g.arrow((360, 55), (375, 47), color=GOLD, width=1.2)
+    g.text(390, 96, "Frenkel Defect (Dislocated Cation)", color=GOLD, size=7.8)
+    g.text(390, 108, "Density UNCHANGED (ZnS, AgCl, AgBr)", color=NAVY, size=6.8)
+
+
+# Update REGISTRY with all new diagrams
+REGISTRY.update({
+    "overlap": (fig_orbital_overlap, 0.24),
+    "backbonding": (fig_backbonding, 0.24),
+    "diborane": (fig_diborane_bridge, 0.24),
+    "dipole": (fig_dipole_vectors, 0.24),
+    "bandtheory": (fig_band_theory, 0.24),
+    "crystals": (fig_crystal_structures, 0.24),
+    "defects": (fig_crystal_defects, 0.24),
+})
+
+def fig_resonance_hybrids(page, x, y, w, h):
+    """Resonance in Ozone O3 and Carbonate CO3^2-."""
+    g = Pen(page, x, y, w, h, 538, 110)
+    # (a) Ozone O3 resonance hybrid at left
+    # Form 1: O=O-O
+    g.circle((50, 40), 9, fill=PAPER, color=TEAL); g.text(50, 42.5, "O", color=TEAL, size=7.5)
+    g.circle((30, 65), 8, fill=PAPER, color=NAVY); g.text(30, 67.5, "O", color=NAVY, size=7.0)
+    g.circle((70, 65), 8, fill=PAPER, color=NAVY); g.text(70, 67.5, "O", color=NAVY, size=7.0)
+    g.line((44, 46), (28, 60), color=NAVY, width=1.5); g.line((48, 49), (32, 63), color=NAVY, width=1.5)
+    g.line((55, 46), (66, 60), color=NAVY, width=1.2)
+    # Double-headed resonance arrow
+    g.arrow((85, 52), (105, 52), color=GOLD, head=5.0)
+    g.arrow((105, 52), (85, 52), color=GOLD, head=5.0)
+    # Form 2: O-O=O
+    g.circle((140, 40), 9, fill=PAPER, color=TEAL); g.text(140, 42.5, "O", color=TEAL, size=7.5)
+    g.circle((120, 65), 8, fill=PAPER, color=NAVY); g.text(120, 67.5, "O", color=NAVY, size=7.0)
+    g.circle((160, 65), 8, fill=PAPER, color=NAVY); g.text(160, 67.5, "O", color=NAVY, size=7.0)
+    g.line((135, 46), (124, 60), color=NAVY, width=1.2)
+    g.line((146, 46), (157, 60), color=NAVY, width=1.5); g.line((142, 49), (153, 63), color=NAVY, width=1.5)
+    # Resonance hybrid arrow
+    g.arrow((175, 52), (195, 52), color=GOLD, head=5.0)
+    # Hybrid structure
+    g.circle((225, 40), 9, fill=(1.0, 0.95, 0.95), color=RED); g.text(225, 42.5, "O", color=RED, size=7.5)
+    g.circle((205, 65), 8, fill=PAPER, color=NAVY); g.text(205, 67.5, "O", color=NAVY, size=7.0)
+    g.circle((245, 65), 8, fill=PAPER, color=NAVY); g.text(245, 67.5, "O", color=NAVY, size=7.0)
+    g.line((220, 46), (209, 60), color=NAVY, width=1.2)
+    g.dash((217, 49), (206, 63), color=RED)
+    g.line((230, 46), (241, 60), color=NAVY, width=1.2)
+    g.dash((233, 49), (244, 63), color=RED)
+    g.text(140, 88, "Ozone (O~3~) Hybrid: Bond Order = 1.5, Bond Angle = 117°", color=TEAL, size=7.5)
+    g.text(140, 99, "Both O-O bonds identical (128 pm), intermediate between single (148) and double (121)", color=NAVY, size=6.5)
+
+    # (b) Carbonate CO3^2- hybrid at right
+    g.circle((380, 50), 10, fill=PAPER, color=NAVY); g.text(380, 52.5, "C", size=8.0)
+    g.circle((380, 24), 8, fill=(0.95, 0.98, 1.0), color=TEAL); g.text(380, 26.5, "O", color=TEAL, size=7.0)
+    g.circle((355, 68), 8, fill=(0.95, 0.98, 1.0), color=TEAL); g.text(355, 70.5, "O", color=TEAL, size=7.0)
+    g.circle((405, 68), 8, fill=(0.95, 0.98, 1.0), color=TEAL); g.text(405, 70.5, "O", color=TEAL, size=7.0)
+    # Solid single bonds
+    g.line((380, 42), (380, 31), color=NAVY, width=1.2)
+    g.line((374, 55), (361, 64), color=NAVY, width=1.2)
+    g.line((386, 55), (399, 64), color=NAVY, width=1.2)
+    # Delocalized pi dashes
+    g.dash((377, 42), (377, 31), color=RED)
+    g.dash((371, 58), (358, 67), color=RED)
+    g.dash((389, 58), (402, 67), color=RED)
+    g.text(445, 45, "CO~3~^2−^ Hybrid", color=RED, size=8.0)
+    g.text(445, 58, "C-O Bond Order = 1.33 (4/3)", color=NAVY, size=7.0)
+    g.text(445, 70, "Formal charge on each O = −⅔", color=NAVY, size=6.8)
+    g.text(445, 82, "All 3 C-O bonds identical!", color=TEAL, size=6.8)
+
+
+def fig_radius_ratio_derivation(page, x, y, w, h):
+    """Geometric derivation of limiting radius ratios (Tetrahedral vs Octahedral)."""
+    g = Pen(page, x, y, w, h, 538, 110)
+    # (a) Octahedral Equatorial Square at left
+    # Square with 4 touching anions of radius r_a, and central cation r_c
+    sq = [(90, 25), (150, 25), (150, 85), (90, 85)]
+    g.poly(sq, color=GRID, width=1.0, close=True)
+    # 4 corner anions
+    for pt in sq:
+        g.circle(pt, 16, fill=(0.92, 0.96, 1.0), color=TEAL)
+    # Central cation
+    g.circle((120, 55), 7.5, fill=(1.0, 0.92, 0.92), color=RED); g.text(120, 57.5, "+", color=RED, size=7.5)
+    # Diagonal line
+    g.line(sq[0], sq[2], color=GOLD, width=1.2, dash="[2 2] 0")
+    g.text(120, 96, "Octahedral Limit (r_c / r_a = 0.414)", color=TEAL, size=7.8)
+    g.text(120, 106, "Diagonal: 2(r_c + r_a) = √2 · (2r_a) ⇒ r_c / r_a = √2 − 1 = 0.414", color=NAVY, size=6.2)
+
+    # (b) Body-Centred Cubic (CsCl) Body Diagonal at right
+    # Cube front and back
+    cf = [(340, 35), (390, 35), (390, 85), (340, 85)]
+    cb = [(365, 18), (415, 18), (415, 68), (365, 68)]
+    for i in range(4):
+        g.line(cf[i], cf[(i+1)%4], color=GRID, width=1.0)
+        g.line(cb[i], cb[(i+1)%4], color=GRID, width=1.0)
+        g.line(cf[i], cb[i], color=GRID, width=1.0)
+    # Central cation in body center
+    g.circle((377, 51), 9, fill=(1.0, 0.92, 0.92), color=RED); g.text(377, 53.5, "Cs+", color=RED, size=6.5)
+    # Corner anions
+    for pt in [cf[0], cf[1], cf[2], cf[3], cb[0], cb[1], cb[2]]:
+        g.circle(pt, 6, fill=(0.92, 0.96, 1.0), color=TEAL)
+    # Body diagonal line
+    g.line(cf[3], cb[1], color=RED, width=1.4, dash="[2.5 2] 0")
+    g.text(380, 96, "Cubic Limit (r_c / r_a = 0.732)", color=RED, size=7.8)
+    g.text(380, 106, "Body Diag: 2(r_c + r_a) = √3 · (2r_a) ⇒ r_c / r_a = √3 − 1 = 0.732", color=NAVY, size=6.2)
+
+
+REGISTRY.update({
+    "resonance": (fig_resonance_hybrids, 0.22),
+    "radiusratio": (fig_radius_ratio_derivation, 0.22),
 })
