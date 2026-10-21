@@ -1,6 +1,3 @@
-# Pre-rendered PNGs, gallery thumbnails, and PDFs are tracked in git so the
-# notes are viewable directly from GitHub.
-# The large ZIP downloads (65 MB total) remain build artifacts:
-# run `python3 build/package.py` to regenerate them from the tracked PNGs.
+# Generated ZIP archives remain build products:
 downloads/
 __pycache__/

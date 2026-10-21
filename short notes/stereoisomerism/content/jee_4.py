@@ -11,6 +11,7 @@ SHEETS = [
                   "Learn the four entries in this sheet and you can answer most reaction-stereochemistry questions without "
                   "memorising a list of reactions."),
             ("h2", "5.1  S~N~2: backside attack, clean inversion"),
+            ("fig", "sn2", "Fig. 5.1 — Walden inversion in S~N~2: backside nucleophilic attack via a pentacoordinate transition state.", 0.26),
             ("p", "The nucleophile attacks the carbon from the side opposite the leaving group, through a trigonal-bipyramidal "
                   "transition state, and the leaving group departs from the other side. The result is **inversion of "
                   "configuration** — the Walden inversion. If the starting material is (R), the product is (S) (unless the "
