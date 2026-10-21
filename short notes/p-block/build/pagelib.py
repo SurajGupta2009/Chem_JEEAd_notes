@@ -431,7 +431,7 @@ def draw_furniture(page, part_label, part_short, sid, title, sheet_idx, sheet_to
     for yy in range(72, 800, 15):
         page.draw_line((M, yy + 10.6), (PAGE_W - M, yy + 10.6), color=GRID, width=0.45)
     # header
-    draw_text(page, M, 41, "Stereoisomerism", "caveat", 21.5, TEAL)
+    draw_text(page, M, 41, "The p-Block Elements", "caveat", 21.5, TEAL)
     sub = "short notes  \u00b7  " + running
     draw_text(page, M, 55.5, _fit(sub, PAGE_W - M - 182 - M, "kalam", 8.2), "kalam", 8.2, NAVY)
     page.draw_line((M, 60), (PAGE_W - M, 60), color=TEAL, width=0.9)
@@ -451,7 +451,7 @@ def draw_furniture(page, part_label, part_short, sid, title, sheet_idx, sheet_to
     draw_text(page, M, 817, part_short, "kalam", 8.2, TEAL)
     mid = f"sheet {sheet_idx} of {sheet_total}  \u00b7  page {page_idx} of {page_total}"
     draw_text(page, (PAGE_W - width(mid, "kalam", 8.2)) / 2, 817, mid, "kalam", 8.2, NAVY)
-    right = f"stereoisomerism \u00b7 {sid}"
+    right = f"p-Block Elements \u00b7 {sid}"
     draw_text(page, PAGE_W - M - width(right, "kalam", 8.2), 817, right, "kalam", 8.2, TEAL)
 
 
