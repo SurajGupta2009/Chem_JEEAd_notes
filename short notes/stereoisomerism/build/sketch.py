@@ -383,3 +383,135 @@ REGISTRY = {
     "newman": (fig_newman, 0.28),
     "ringae": (fig_ring_ae, 0.34),
 }
+
+# ===========================================================================
+# Visual Enhancements: Stereoisomerism New Chemical Figures
+# ===========================================================================
+
+def fig_sawhorse(page, x, y, w, h):
+    """Sawhorse projection comparison: Staggered vs Eclipsed."""
+    g = Pen(page, x, y, w, h, 538, 140)
+    # Staggered (left, C1=(120, 100), C2=(200, 45))
+    g.bond((120, 100), (200, 45), color=NAVY, order=1)
+    # C1 bonds (pointing down, left-up, right-up)
+    g.bond((120, 100), (120, 130)); g.text(120, 137, "H", color=NAVY, size=7.8)
+    g.bond((120, 100), (80, 85)); g.text(72, 85, "H", color=NAVY, size=7.8)
+    g.bond((120, 100), (155, 115)); g.text(163, 118, "H", color=NAVY, size=7.8)
+    # C2 bonds (staggered: pointing up, left-down, right-down)
+    g.bond((200, 45), (200, 15)); g.text(200, 10, "H", color=NAVY, size=7.8)
+    g.bond((200, 45), (165, 30)); g.text(157, 30, "H", color=NAVY, size=7.8)
+    g.bond((200, 45), (240, 60)); g.text(248, 62, "H", color=NAVY, size=7.8)
+    g.text(160, 135, "Staggered Sawhorse (anti 180°)", color=TEAL, size=8.0)
+
+    # Eclipsed (right, C1=(340, 100), C2=(420, 45))
+    g.bond((340, 100), (420, 45), color=NAVY, order=1)
+    # C1 bonds (pointing up, left, right)
+    g.bond((340, 100), (340, 130)); g.text(340, 137, "H", color=NAVY, size=7.8)
+    g.bond((340, 100), (300, 85)); g.text(292, 85, "H", color=NAVY, size=7.8)
+    g.bond((340, 100), (375, 115)); g.text(383, 118, "H", color=NAVY, size=7.8)
+    # C2 bonds (parallel/eclipsed)
+    g.bond((420, 45), (420, 75)); g.text(420, 82, "H", color=NAVY, size=7.8)
+    g.bond((420, 45), (380, 30)); g.text(372, 30, "H", color=NAVY, size=7.8)
+    g.bond((420, 45), (455, 60)); g.text(463, 62, "H", color=NAVY, size=7.8)
+    g.text(380, 135, "Eclipsed Sawhorse (syn 0°)", color=RED, size=8.0)
+
+
+def fig_biphenyl(page, x, y, w, h):
+    """Substituted Biphenyl with restricted rotation (Atropisomerism)."""
+    g = Pen(page, x, y, w, h, 538, 140)
+    # Left ring (vertical plane, drawn as vertical ellipse / hexagon)
+    # Center (180, 70)
+    pts1 = [(150, 70), (165, 45), (195, 45), (210, 70), (195, 95), (165, 95)]
+    for i in range(6):
+        g.bond(pts1[i], pts1[(i+1)%6])
+    # Inner double bonds
+    g.circle((180, 70), 12, stroke=NAVY)
+
+    # Central pivot C-C single bond
+    g.bond((210, 70), (270, 70), color=NAVY, order=1)
+
+    # Right ring (perpendicular horizontal plane)
+    pts2 = [(270, 70), (295, 58), (325, 58), (345, 70), (325, 82), (295, 82)]
+    for i in range(6):
+        g.bond(pts2[i], pts2[(i+1)%6])
+    g.circle((310, 70), 8, stroke=NAVY)
+
+    # Bulky ortho substituents on left ring
+    g.bond((165, 45), (150, 25)); g.text(140, 22, "NO2", color=RED, size=8.0)
+    g.bond((165, 95), (150, 115)); g.text(140, 120, "COOH", color=TEAL, size=8.0)
+
+    # Bulky ortho substituents on right ring
+    g.bond((295, 58), (295, 30)); g.text(295, 24, "COOH", color=TEAL, size=8.0)
+    g.bond((295, 82), (295, 110)); g.text(295, 118, "NO2", color=RED, size=8.0)
+
+    # Annotations
+    g.text(440, 50, "Orthogonal Rings", color=TEAL, size=8.5)
+    g.text(440, 65, "Steric clash prevents", color=NAVY, size=7.5)
+    g.text(440, 77, "planar rotation (barrier", color=NAVY, size=7.5)
+    g.text(440, 89, "> 100 kJ/mol). Chiral!", color=RED, size=8.0)
+
+
+def fig_boat_chair(page, x, y, w, h):
+    """Cyclohexane: Chair vs Boat with Flagpole Interactions."""
+    g = Pen(page, x, y, w, h, 538, 140)
+    # Chair at left (130, 70)
+    pts_c = [(90, 65), (120, 45), (160, 60), (160, 95), (130, 115), (90, 100)]
+    for i in range(6):
+        g.bond(pts_c[i], pts_c[(i+1)%6])
+    g.text(125, 25, "Chair Form (staggered)", color=TEAL, size=8.2)
+    g.text(125, 132, "ΔG = 0 kJ/mol (Most stable)", color=NAVY, size=7.5)
+
+    # Boat at right (370, 70)
+    pts_b = [(320, 55), (350, 90), (390, 90), (420, 55), (380, 55), (360, 55)]
+    # Standard boat contour: C1(330, 50), C2(360, 85), C3(400, 85), C4(430, 50), C5(390, 50), C6(370, 50)
+    g.bond((330, 50), (360, 85)); g.bond((360, 85), (400, 85)); g.bond((400, 85), (430, 50))
+    g.bond((430, 50), (410, 35)); g.bond((410, 35), (350, 35)); g.bond((350, 35), (330, 50))
+    # Flagpole hydrogens at C1 and C4
+    g.bond((350, 35), (365, 18), color=RED); g.text(368, 14, "H (flagpole)", color=RED, size=7.2)
+    g.bond((410, 35), (395, 18), color=RED); g.text(392, 14, "H (flagpole)", color=RED, size=7.2)
+    g.dash((368, 18), (392, 18), color=RED)
+    g.text(380, 105, "Boat Form (eclipsed + flagpole clash)", color=RED, size=8.0)
+    g.text(380, 118, "ΔG ≈ +29 kJ/mol (Unstable)", color=NAVY, size=7.5)
+
+
+def fig_sn2_inversion(page, x, y, w, h):
+    """Walden Inversion in SN2 Reaction (Umbrella Inversion)."""
+    g = Pen(page, x, y, w, h, 538, 140)
+    # Reactant (R) at left (100, 70)
+    g.text(80, 35, "(R)-Substrate", color=NAVY, size=8.0)
+    g.circle((100, 70), 5, fill=NAVY)
+    g.bond((100, 70), (140, 70)); g.text(148, 73, "Br", color=RED, size=8.0)
+    g.bond((100, 70), (80, 45)); g.text(72, 43, "R1", color=NAVY, size=7.5)
+    g.bond((100, 70), (80, 95), stereo="wedge"); g.text(72, 100, "R2", color=NAVY, size=7.5)
+    g.bond((100, 70), (60, 70), stereo="hash"); g.text(50, 73, "H", color=NAVY, size=7.5)
+
+    # Incoming Nu- from backside
+    g.arrow((180, 70), (220, 70), color=TEAL)
+    g.text(200, 60, "Backside attack", color=TEAL, size=7.5)
+
+    # Transition State (270, 70)
+    g.text(270, 25, "Pentacoordinate T.S. [Nu...C...Br]", color=TEAL, size=8.0)
+    g.circle((270, 70), 4, fill=NAVY)
+    g.dash((235, 70), (266, 70), color=TEAL); g.text(225, 73, "OH-", color=TEAL, size=7.5)
+    g.dash((274, 70), (305, 70), color=RED); g.text(312, 73, "Br-", color=RED, size=7.5)
+    g.bond((270, 70), (270, 40)); g.text(270, 35, "R1", size=7.5)
+    g.bond((270, 70), (255, 95), stereo="wedge"); g.text(250, 102, "R2", size=7.5)
+    g.bond((270, 70), (285, 95), stereo="hash"); g.text(288, 102, "H", size=7.5)
+
+    # Inverted Product (S) at right (440, 70)
+    g.arrow((340, 70), (380, 70), color=TEAL)
+    g.text(440, 35, "(S)-Inverted Product (100% Inversion)", color=RED, size=8.0)
+    g.circle((440, 70), 5, fill=NAVY)
+    g.bond((440, 70), (400, 70), color=TEAL); g.text(390, 73, "HO", color=TEAL, size=8.0)
+    g.bond((440, 70), (460, 45)); g.text(468, 43, "R1", color=NAVY, size=7.5)
+    g.bond((440, 70), (460, 95), stereo="wedge"); g.text(468, 100, "R2", color=NAVY, size=7.5)
+    g.bond((440, 70), (480, 70), stereo="hash"); g.text(490, 73, "H", color=NAVY, size=7.5)
+
+
+# Update REGISTRY
+REGISTRY.update({
+    "sawhorse": (fig_sawhorse, 0.26),
+    "biphenyl": (fig_biphenyl, 0.26),
+    "boatchair": (fig_boat_chair, 0.26),
+    "sn2": (fig_sn2_inversion, 0.26),
+})

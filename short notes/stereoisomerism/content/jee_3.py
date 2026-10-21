@@ -25,6 +25,7 @@ SHEETS = [
                   "two identical ring paths on each side only if the rings are symmetric, but even when they are not, the "
                   "chirality is axial, not central."),
             ("h2", "3.37  Substituted biphenyls"),
+            ("fig", "biphenyl", "Fig. 3.2b — Atropisomerism in ortho-substituted biphenyls: steric hindrance prevents planar rotation.", 0.26),
             ("p", "Two benzene rings joined by a single bond can rotate about it. Bulky substituents in the ortho positions prevent "
                   "that rotation, and the rings lock at an angle to each other. With four different ortho substituents the two "
                   "locked arrangements are non-superimposable mirror images — **atropisomers** (axial chirality from restricted "
@@ -180,6 +181,7 @@ SHEETS = [
                 "**Ring constraints**: a bond inside a small ring cannot rotate without breaking the ring.",
             ]),
             ("h2", "4.3  Representing conformations"),
+            ("fig", "sawhorse", "Fig. 4.0 — Staggered vs Eclipsed conformations shown in Sawhorse projection.", 0.26),
             ("p", "Three representations are used, and each has a rule that must be respected. In a **Newman** projection you look "
                   "down the bond: front carbon as a point, back carbon as a circle. In a **sawhorse** drawing you look from the "
                   "side: both carbons visible, bonds drawn at an angle. In a **wedge–dash** drawing the chain is in the plane and "
@@ -276,6 +278,7 @@ SHEETS = [
                   "the twist-boat relieves that by twisting, but is still about 23 kJ mol^−1^ above the chair and is not a minimum "
                   "on the true path. The real flip goes chair → half-chair (≈ 45 kJ mol^−1^, the transition state) → twist-boat → "
                   "half-chair → chair."),
+            ("fig", "boatchair", "Fig. 4.4 — Chair vs Boat cyclohexane: Flagpole interactions and steric torsional strain.", 0.26),
             ("note", "The boat is often drawn as if it were an intermediate. It is not on the minimum-energy path; the twist-boat is the shallow minimum between the two chairs, and the half-chair is the barrier."),
             ("h2", "4.13  What NMR sees"),
             ("p", "At room temperature the ring flip is fast on the NMR timescale, so axial and equatorial hydrogens average and a "
