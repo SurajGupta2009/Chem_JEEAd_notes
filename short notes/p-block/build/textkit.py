@@ -111,6 +111,26 @@ def preprocess(markup):
     s = markup.replace("\n", " ").replace("&nbsp;", "\u00a0")
     for a, b in (("\u2010", "-"), ("\u2011", "-"), ("\u2013", "-"), ("\u2014", "\u2014")):
         s = s.replace(a, b)
+
+    # Convert ASCII chemical reaction arrows to unicode arrows
+    s = s.replace("<===>", "\u21cc").replace("<===", "\u2190").replace("===>", "\u2192").replace("->", "\u2192")
+
+    # Fix unbracketed superscripts like ^3+, ^2+, ^+, ^- into proper ^3+^, ^2+^, ^+^, ^-^
+    s = re.sub(r"\^([0-9]*[+-])(?!\^)", r"^\1^", s)
+
+    # Auto-subscript chemical formulas containing digits if not already subscripted
+    def _sub_formula(m):
+        raw = m.group(0)
+        if "~" in raw or "$" in raw or "^" in raw:
+            return raw
+        # Avoid years (e.g. 2026), element groups (e.g. G13), temperatures (e.g. 300K)
+        if raw.startswith("G") and raw[1:].isdigit():
+            return raw
+        # Convert digits after letters or closing parens into subscripts: B2H6 -> B~2~H~6~
+        return re.sub(r"([A-Za-z\)])(\d+)", r"\1~\2~", raw)
+
+    chem_pat = re.compile(r"\b(?:[A-Z][a-z]?(?:\d+|(?:\([A-Za-z0-9_]+\)\d*))+[A-Za-z0-9_()·+-]*)\b")
+    s = chem_pat.sub(_sub_formula, s)
     return s
 
 
