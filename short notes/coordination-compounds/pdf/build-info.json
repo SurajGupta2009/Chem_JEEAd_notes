@@ -1,0 +1,96 @@
+{
+ "part": "Coordination Compounds",
+ "sheets": [
+  {
+   "id": "CC-01",
+   "title": "Introduction to Coordination Compounds & Werner's Theory",
+   "pages": 1
+  },
+  {
+   "id": "CC-02",
+   "title": "Werner's Formulations, Electrical Conductance & AgCl Precipitation",
+   "pages": 1
+  },
+  {
+   "id": "CC-03",
+   "title": "Essential Terminology, Coordination Sphere & Oxidation State",
+   "pages": 1
+  },
+  {
+   "id": "CC-04",
+   "title": "Ligands: Denticity, Ambidentate Isomerism & Flexidentate Behavior",
+   "pages": 1
+  },
+  {
+   "id": "CC-05",
+   "title": "Chelate Effect, Macrocyclic Effect & Stability Energetics",
+   "pages": 1
+  },
+  {
+   "id": "CC-06",
+   "title": "IUPAC Nomenclature & Formula Writing of Coordination Entities",
+   "pages": 1
+  },
+  {
+   "id": "CC-07",
+   "title": "Structural Isomerism: Ionization, Solvate, Linkage & Coordination",
+   "pages": 1
+  },
+  {
+   "id": "CC-08",
+   "title": "Stereoisomerism: Geometrical (Cis-Trans & Fac-Mer) in CN = 4 and 6",
+   "pages": 1
+  },
+  {
+   "id": "CC-09",
+   "title": "Stereoisomerism: Optical Activity, Enantiomers & Master Counting Tables",
+   "pages": 1
+  },
+  {
+   "id": "CC-10",
+   "title": "Bonding Theories: Sidgwick's EAN Rule & Valence Bond Theory (VBT)",
+   "pages": 1
+  },
+  {
+   "id": "CC-11",
+   "title": "Crystal Field Theory (CFT): Octahedral Splitting, CFSE & High/Low Spin",
+   "pages": 1
+  },
+  {
+   "id": "CC-12",
+   "title": "CFT: Tetrahedral Splitting, The Spectrochemical Series & Factors Governing \u0394",
+   "pages": 1
+  },
+  {
+   "id": "CC-13",
+   "title": "CFT in Square Planar Complexes & Splitting Hierarchy",
+   "pages": 1
+  },
+  {
+   "id": "CC-14",
+   "title": "Jahn\u2013Teller Distortion & Tetragonal Elongation in d^9^ / High-Spin d^4^",
+   "pages": 1
+  },
+  {
+   "id": "CC-15",
+   "title": "Colour in Coordination Compounds & Absorption Spectroscopy",
+   "pages": 1
+  },
+  {
+   "id": "CC-16",
+   "title": "Bonding in Metal Carbonyls: Synergic Effect & IR \u03bd_CO Trends",
+   "pages": 1
+  },
+  {
+   "id": "CC-17",
+   "title": "Thermodynamic vs Kinetic Stability & Irving\u2013Williams Series",
+   "pages": 1
+  },
+  {
+   "id": "CC-18",
+   "title": "Applications of Coordination Compounds & JEE Advanced Master Sheet",
+   "pages": 1
+  }
+ ],
+ "pages": 18
+}
