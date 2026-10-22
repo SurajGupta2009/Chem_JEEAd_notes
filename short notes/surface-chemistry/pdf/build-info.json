@@ -1,0 +1,96 @@
+{
+ "part": "Redox Reactions & Equivalent Concept",
+ "sheets": [
+  {
+   "id": "SC-01",
+   "title": "Surface Phenomena: Adsorption vs Absorption, Sorption & Terminology",
+   "pages": 1
+  },
+  {
+   "id": "SC-02",
+   "title": "Thermodynamics of Adsorption: Enthalpy, Entropy & Spontaneity",
+   "pages": 1
+  },
+  {
+   "id": "SC-03",
+   "title": "Types of Adsorption: Physisorption vs Chemisorption Matrix",
+   "pages": 1
+  },
+  {
+   "id": "SC-04",
+   "title": "Factors Affecting Adsorption: Critical Temperature & Porosity",
+   "pages": 1
+  },
+  {
+   "id": "SC-05",
+   "title": "Adsorption Isotherms: The Freundlich Empirical Model",
+   "pages": 1
+  },
+  {
+   "id": "SC-06",
+   "title": "Langmuir Adsorption Isotherm & Adsorption from Solutions",
+   "pages": 1
+  },
+  {
+   "id": "SC-07",
+   "title": "Catalysis: Homogeneous vs Heterogeneous Systems & Promoters",
+   "pages": 1
+  },
+  {
+   "id": "SC-08",
+   "title": "Modern Adsorption Theory of Heterogeneous Catalysis",
+   "pages": 1
+  },
+  {
+   "id": "SC-09",
+   "title": "Shape-Selective Catalysis by Zeolites & ZSM-5 Architecture",
+   "pages": 1
+  },
+  {
+   "id": "SC-10",
+   "title": "Enzyme Catalysis: Biochemical Lock-and-Key Mechanics",
+   "pages": 1
+  },
+  {
+   "id": "SC-11",
+   "title": "Michaelis-Menten Kinetics: Lock-and-Key Mechanism & Rate Law",
+   "pages": 1
+  },
+  {
+   "id": "SC-12",
+   "title": "The Colloidal State: Classification by Physical States of Phases",
+   "pages": 1
+  },
+  {
+   "id": "SC-13",
+   "title": "Lyophilic vs Lyophobic Sols & Particle Architecture",
+   "pages": 1
+  },
+  {
+   "id": "SC-14",
+   "title": "Associated Colloids: Micelles, CMC, Kraft Temperature & Cleansing",
+   "pages": 1
+  },
+  {
+   "id": "SC-15",
+   "title": "Preparation & Purification of Colloids: Bredig's Arc & Peptization",
+   "pages": 1
+  },
+  {
+   "id": "SC-16",
+   "title": "Optical & Kinetic Properties: Tyndall Effect & Brownian Motion",
+   "pages": 1
+  },
+  {
+   "id": "SC-17",
+   "title": "Electrical Double Layer, Zeta Potential & Sol Charge Rules",
+   "pages": 1
+  },
+  {
+   "id": "SC-18",
+   "title": "Coagulation, Hardy-Schulze Rule, Flocculation & Gold Number",
+   "pages": 1
+  }
+ ],
+ "pages": 18
+}
