@@ -55,7 +55,7 @@ SHEETS = [
                 ["**4d Series**", "Niobium / Mo", "726 / 659 kJ/mol", "Cd (112 kJ/mol)", "Larger 4d radial extent enhances orbital overlap"],
                 ["**5d Series**", "Tungsten (W)", "**849 kJ/mol**", "Hg (61 kJ/mol)", "**5d > 4d > 3d**: Diffuse 5d orbitals yield powerful M-M bonding!"]
             ], [18, 20, 20, 20, 22], "Table 2.1 — Atomization enthalpies across transition series."),
-            ("trap", "EXAM TRAP: Group 6 metals have maximum atomization energies, but 5d series metals have systematically HIGHER atomization enthalpies than 3d and 4d congeners. This explains why 5d elements are chemically noble, hard, and form stable metal-metal cluster compounds (e.g. [Re~2~Cl~8~]^2−^, W~6~Cl~12~).")
+            ("trap", "EXAM TRAP: Group 5-6 metals have the maximum atomization energies (V/Nb peak in 3d/4d; W in 5d), and 5d series metals have systematically HIGHER atomization enthalpies than their 3d and 4d congeners. This explains why 5d elements are chemically noble, hard, and form stable metal-metal cluster compounds (e.g. [Re~2~Cl~8~]^2−^, W~6~Cl~12~).")
         ]
     },
 

@@ -20,7 +20,7 @@ SHEETS = [
                 ["Pb", '[Xe] 4f^14^ 5d^10^ 6s^2^ 6p^2^', "146", "715 (Pb > Sn!)", "327", "1.9"],
             ], [11, 25, 18, 15, 14, 17], "Table 14.1 — Periodic properties of Group 14 elements."),
             ("key", "Ionization Enthalpy: **C > Si > Ge > Pb > Sn** (Pb has higher IE than Sn due to poor 4f shielding).\n"
-                    "Catenation Order: **C >>> Si > Ge ≈ Sn >> Pb** (Directly follows E-E single bond strength: C-C 348 > Si-Si 297 > Ge-Ge 260 > Sn-Sn 240 kJ/mol)."),
+                    "Catenation Order: **C >>> Si > Ge ≈ Sn >> Pb** (Directly follows E-E single bond strength: C-C 348 > Si-Si 226 > Ge-Ge 188 > Sn-Sn 151 kJ/mol)."),
             ("h2", "2. Inert Pair Effect & Redox Behaviour of Sn and Pb"),
             ("bul", [
                 "**+4 Oxidation State:** C(+4), Si(+4), Ge(+4), Sn(+4) are stable. Pb(+4) is unstable and a **powerful oxidising agent** (PbO2 + 4 HCl → PbCl2 + Cl2 + 2 H2O).",
@@ -46,7 +46,7 @@ SHEETS = [
                 ["C-C Bond Length", "154 pm (all uniform single bonds)", "141.5 pm (in-plane), 340 pm (inter-layer)", "145 pm (single, 6-5 ring), 138 pm (double, 6-6 ring)"],
                 ["Conductivity", "Electrical insulator (bandgap 5.5 eV)", "Good electrical conductor along planes", "Semiconductor; K3C60 is a superconductor (18 K)"],
                 ["Density & Hardness", '3.51 g/cm^3^, Hardest natural substance', '2.22 g/cm^3^, Soft, slippery (solid lubricant)', '1.65 g/cm^3^, Molecular solid (soluble in toluene)'],
-                ["Standard Heat of Formation", "+1.90 kJ/mol (metastable at RTP)", "**0.00 kJ/mol (Thermodynamically MOST stable)**", "+38.1 kJ/mol"],
+                ["Standard Heat of Formation", "+1.90 kJ/mol (metastable at RTP)", "**0.00 kJ/mol (Thermodynamically MOST stable)**", "≈+38.1 kJ/mol per C atom"],
             ], [18, 22, 24, 20, 16], "Table 14.2 — Comparative crystallography and physics of Carbon allotropes."),
             ("key", '**Thermodynamic Stability:** Graphite is the standard state of carbon (ΔH°~f~ = 0). '
                     "Diamond conversion to graphite is thermodynamically favored (ΔG < 0) but kinetically dormant (huge activation energy)."),
@@ -167,10 +167,10 @@ SHEETS = [
             ], [20, 22, 25, 33], "Table 14.6 — Master classification of Silicate minerals (JEE Advanced core)."),
             ("fig", "silicates", "Fig. 14.1 — Structural polyhedra of Ortho, Pyro, and Cyclic silicates."),
             ("key", "General Charge Rule: Formula of a silicate sharing 'c' corners per tetrahedron is **[SiO~4 − c/2~]^(4−c)−^**.\n"
-                    '• c = 0 → [SiO4]^4-^ (Ortho)\n'
-                    '• c = 1 → [Si2O7]^6-^ (Pyro)\n'
-                    '• c = 2 → [SiO3]~n~^2^n- (Cyclic & Single Chain)\n'
-                    '• c = 3 → [Si2O5]~n~^2^n- (Sheet)\n'
+                    '• c = 0 → [SiO~4~]^4−^ (Ortho)\n'
+                    '• c = 1 → [Si~2~O~7~]^6−^ (Pyro)\n'
+                    '• c = 2 → ([SiO~3~]^2−^)~n~ (Cyclic & Single Chain)\n'
+                    '• c = 3 → ([Si~2~O~5~]^2−^)~n~ (Sheet)\n'
                     "• c = 4 → SiO2 (3D Framework)"),
         ],
     },

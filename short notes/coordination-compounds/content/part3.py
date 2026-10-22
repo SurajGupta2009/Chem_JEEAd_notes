@@ -90,7 +90,7 @@ SHEETS = [
                 '**Ruby:** Consists of colorless α-Al~2~O~3~ in which ≈ 0.5-1% of Al^3+^ sites are occupied by Cr^3+^ (d^3^). In the tight alumina lattice, Al-O distance is short, compressing Cr^3+^ ⇒ strong crystal field absorbs yellow-green light, transmitting **deep crimson red**!',
                 '**Emerald:** Cr^3+^ replaces Al^3+^ in beryl (Be~3~Al~2~Si~6~O~18~). Larger silicate cavities provide a slightly weaker crystal field, shifting absorption into the red/yellow region and transmitting **brilliant green**!'
             ]),
-            ("trap", 'WHY IS ANHYDROUS CuSO~4~ WHITE? When white anhydrous CuSO~4~ has no water ligands, the crystal field splitting is zero (Δ = 0). All 5 d-orbitals remain degenerate; no d-d transitions are possible ⇒ pure white!')
+            ("trap", 'WHY IS ANHYDROUS CuSO~4~ WHITE? Anhydrous CuSO~4~ has no water ligands: Cu^2+^ sits in a weak-field sulfate-O environment, so its d-d absorption shifts out of the visible region ⇒ no visible absorption — pure white! (Add water and the pale-blue [Cu(H~2~O)~6~]^2+^ colour returns.)')
         ]
     },
 
@@ -151,7 +151,7 @@ SHEETS = [
                   '  - **Labile Complexes:** Undergo ligand substitution very rapidly (t~1/2~ < 1 minute). E.g. [Cu(NH~3~)~4~]^2+^ exchanges with ^14^NH~3~ instantaneously.\n'
                   '  - **Inert Complexes:** Undergo ligand exchange very slowly (t~1/2~ > 1 minute). E.g. d^3^ (Cr^3+^) and low-spin d^6^ (Co^3+^) complexes are kinetically inert!'
             ]),
-            ("trap", 'CRITICAL TRAP: [Fe(CN)~6~]^4−^ is thermodynamically very stable (huge β), but kinetically labile. Conversely, [Co(NH~3~)~6~]^3+^ is thermodynamically unstable in acid (breaks down to Co^2+^), but kinetically so inert that it persists for days without decomposing!')
+            ("trap", 'CRITICAL TRAP: [Fe(CN)~6~]^4−^ is thermodynamically very stable (huge β) **and** kinetically inert (low-spin d^6^!). The classic **stable-yet-LABILE** case is [Ni(CN)~4~]^2−^ (huge β, yet ^14^CN^-^ exchanges instantly). Conversely, [Co(NH~3~)~6~]^3+^ is thermodynamically unstable in acid (breaks down to Co^2+^) but kinetically so inert that it persists for days! Thermodynamic and kinetic stability are completely independent!')
         ]
     },
 

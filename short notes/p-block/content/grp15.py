@@ -165,7 +165,7 @@ SHEETS = [
             ]),
             ("h2", "3. Oxidising Action of HNO3 on Metals"),
             ("table", ["Metal", "Concentration of HNO3", "Oxidation Product & Nitrogen Gas Evolved"], [
-                ["Copper (Cu)", 'Dilute HNO3 (≈20%)', "3 Cu + 8 HNO3 → 3 Cu(NO3)2 + 2 H2O + **2 NO↑** (Nitric oxide)"],
+                ["Copper (Cu)", 'Dilute HNO3 (≈20%)', "3 Cu + 8 HNO3 → 3 Cu(NO3)2 + 4 H2O + **2 NO↑** (Nitric oxide)"],
                 ["Copper (Cu)", 'Concentrated HNO3 (≈70%)', "Cu + 4 HNO3 → Cu(NO3)2 + 2 H2O + **2 NO2↑** (Brown gas)"],
                 ["Zinc (Zn)", 'Dilute HNO3 (≈20%)', "4 Zn + 10 HNO3 → 4 Zn(NO3)2 + 5 H2O + **N2O↑** (Nitrous oxide)"],
                 ["Zinc (Zn)", 'Concentrated HNO3 (≈70%)', "Zn + 4 HNO3 → Zn(NO3)2 + 2 H2O + **2 NO2↑** (Brown gas)"],

@@ -105,7 +105,7 @@ SHEETS = [
                 ["**Ni^2+^**", "3d^8^", "2", "**Bright Green**", "d-d transition in [Ni(H~2~O)~6~]^2+^"],
                 ["**Cu^2+^**", "3d^9^", "1", "**Blue**", "d-d transition in distorted octahedral [Cu(H~2~O)~6~]^2+^"]
             ], [12, 14, 12, 28, 34], "Table 9.1 — Standard colors of 3d transition metal ions in aqueous solution."),
-            ("trap", 'EXAM TRAP: Anhydrous CuSO~4~ is pure WHITE because in the absence of water ligands, there is no crystal field splitting (Δ = 0). Only hydrated CuSO~4~·5H~2~O is blue!')
+            ("trap", 'EXAM TRAP: Anhydrous CuSO~4~ is pure WHITE because with no water ligands, Cu^2+^ sits in a weak-field sulfate-O environment whose d-d absorption lies outside the visible region. Only hydrated CuSO~4~·5H~2~O (pale-blue [Cu(H~2~O)~6~]^2+^) is blue!')
         ]
     },
 

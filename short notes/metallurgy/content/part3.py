@@ -92,7 +92,7 @@ SHEETS = [
                 ["**1. Zone of Reduction**\n(Top of stack, 500 – 800 K)", "3 Fe~2~O~3~ + CO → 2 Fe~3~O~4~ + CO~2~\nFe~3~O~4~ + 4 CO → 3 Fe + 4 CO~2~\nFe~2~O~3~ + CO → 2 FeO + CO~2~", "Exothermic gas-solid reduction;\nCO is the primary reducing agent (Ellingham: CO → CO~2~ lies lower)"],
                 ["**2. Zone of Slag Formation**\n(Belly / Middle, 900 – 1200 K)", "CaCO~3~ —(Δ)→ CaO + CO~2~ ↑ (Calcination)\nCaO + SiO~2~ → CaSiO~3~ (Slag formation)\nFeO + CO → Fe + CO~2~", "Flux CaO captures quartz gangue SiO~2~;\nFusible molten CaSiO~3~ floats above molten iron"],
                 ["**3. Zone of Fusion & Carburization**\n(Bosh, 1200 – 1500 K)", 'Spongy iron absorbs carbon (lowering its m.p. from 1811 K to ≈1473 K) and melts;\nFeO + C → Fe + CO (Direct carbon reduction)', 'Endothermic direct reduction by coke;\nCarbon dissolution creates Pig Iron (≈4% C)'],
-                ["**4. Zone of Combustion**\n(Hearth / Tuyeres, 1500 – 2170 K)", 'C + O~2~ → CO~2~ (ΔH = −393.5 kJ, T ≈ 2170 K)\nC + CO~2~ → 2 CO (ΔH = +163.2 kJ, Boudouard)', "Blasts of preheated air burn coke to CO~2~, which immediately reduces to CO reducing gas"]
+                ["**4. Zone of Combustion**\n(Hearth / Tuyeres, 1500 – 2170 K)", 'C + O~2~ → CO~2~ (ΔH = −393.5 kJ, T ≈ 2170 K)\nC + CO~2~ → 2 CO (ΔH = +172.5 kJ, Boudouard)', "Blasts of preheated air burn coke to CO~2~, which immediately reduces to CO reducing gas"]
             ], [22, 44, 34], "Table 3.3 — Comprehensive thermal and chemical zones of the blast furnace."),
             ("trap", "TRAP: Does haematite get reduced directly to Fe in a single step? NO! Reduction proceeds strictly sequentially: Fe~2~O~3~ → Fe~3~O~4~ → FeO → Fe!")
         ]

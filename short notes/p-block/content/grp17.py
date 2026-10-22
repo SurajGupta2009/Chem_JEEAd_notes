@@ -76,7 +76,7 @@ SHEETS = [
                 ["Bond Length (pm)", "91.7", "127.4", "141.4", "**160.9**", "Increases down group with increasing halogen size"],
                 ["Bond Enthalpy (kJ/mol)", "**574**", "432", "363", "295", "Decreases sharply as overlap efficiency declines"],
                 ["Thermal Stability", "**Most Stable**", "Stable", "Decomposes >800 K", "**Decomposes readily**", "Parallels bond dissociation energy: **HF > HCl > HBr > HI**"],
-                ['Acidic Strength (K~a~)', 'Weak (3.5×10^-4^)', 'Strong (≈10^7^)', 'Very Strong (≈10^9^)', '**Strongest (≈10^10^)**', "Follows inverse of H-X bond strength: **HF < HCl < HBr < HI**"],
+                ['Acidic Strength (K~a~)', 'Weak (6.8×10^-4^)', 'Strong (≈10^7^)', 'Very Strong (≈10^9^)', '**Strongest (≈10^10^)**', "Follows inverse of H-X bond strength: **HF < HCl < HBr < HI**"],
                 ["Reducing Character", "Nil", "Very Weak", "Strong", "**Strongest**", "HI easily oxidises to I2: **HF < HCl < HBr < HI**"],
             ], [18, 10, 10, 10, 10, 42], "Table 17.3 — Master summary of Hydrogen Halide properties."),
             ("key", "Critical Sequences for JEE:\n"

@@ -82,7 +82,7 @@ SHEETS = [
                 ["**Lead (Pb)**", "Galena\n(PbS)", "2PbS + 3O~2~ —(Δ)→ 2PbO + 2SO~2~ ↑\nPbS + 2O~2~ —(Δ)→ PbSO~4~", "**2PbO + PbS —(Δ)→ 3Pb(l) + SO~2~ ↑**\n**PbSO~4~ + PbS —(Δ)→ 2Pb(l) + 2SO~2~ ↑**\nOccurs on the hearth of a reverberatory furnace."],
                 ["**Mercury (Hg)**", "Cinnabar\n(HgS)", "2HgS + 3O~2~ —(Δ)→ 2HgO + 2SO~2~ ↑", "**2HgO + HgS —(Δ)→ 3Hg(g) + SO~2~ ↑**\n(Also direct thermal decomposition: HgO —(Δ)→ Hg + ½O~2~; Hg boils at 630 K and is distilled)."]
             ], [15, 20, 32, 33], "Table 2.3 — Self-reduction stoichiometry for Cu, Pb, and Hg in JEE Advanced."),
-            ("trap", 'TRAP: Can Zinc or Iron undergo self-reduction? ABSOLUTELY NOT! The oxides ZnO and FeO are far too thermodynamically stable compared to ZnS and FeS (their Δ~f~ G° lines lie deep below the sulphide lines). Thus, ZnO + ZnS → 3Zn + SO~2~ has a heavily positive ΔG° and cannot occur under any metallurgical conditions!')
+            ("trap", 'TRAP: Can Zinc or Iron undergo self-reduction? ABSOLUTELY NOT! The oxides ZnO and FeO are far too thermodynamically stable compared to ZnS and FeS (their Δ~f~ G° lines lie deep below the sulphide lines). Thus, ZnO + ZnS → 2Zn + SO~2~ has a heavily positive ΔG° and cannot occur under any metallurgical conditions!')
         ]
     },
 
