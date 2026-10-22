@@ -489,8 +489,8 @@ def build_sheet(sheet, sheet_idx, sheet_total, part_label, part_short, running):
             t_pages, t_flows = attempt(tight=True)
             if len(t_pages) < len(pages):
                 pages, flows = t_pages, t_flows
-    elif len(pages) == 1:
-        # sparse one-pager: give the sheet room to breathe, then hand out any
+    if len(pages) == 1:
+        # sparse one-pager (also when compact/tight rescued a 2-page draft): give the sheet room to breathe, then hand out any
         # remaining slack evenly as inter-block stretch so pages end full
         if _fill(pages[0]) < 0.85:
             r_pages, r_flows = attempt(roomy=True)
@@ -529,7 +529,7 @@ def build_pdf(sheets, out_path, part_label, part_short, running, meta_title):
                 f.draw(page, M, y)
             end_text(page)
     doc.set_metadata({"title": meta_title, "author": "Arena short-notes build",
-                      "subject": "Stereoisomerism short notes",
+                      "subject": f"{running} short notes",
                       "keywords": part_label})
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     toc = []

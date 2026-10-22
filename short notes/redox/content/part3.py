@@ -128,7 +128,7 @@ SHEETS = [
                   '  **E°~right~ (E°~2~) > E°~left~ (E°~1~)**\n'
                   '• **Rationale:** In disproportionation: B is reduced to C (Potential = +E°~2~) and B is oxidised to A (Potential = −E°~1~). Net EMF = **E°~2~ − E°~1~ > 0**!\n'
                   "• **Example (Copper in aqueous solution):**\n"
-                  '  Cu^2+^ —(+0.15 V)→} Cu^+^ —(+0.52 V)→ Cu\n'
+                  '  Cu^2+^ —(+0.15 V)→ Cu^+^ —(+0.52 V)→ Cu\n'
                   '  Here, E°~right~ (+0.52 V) > E°~left~ (+0.15 V).\n'
                   '  Therefore, **Cu^+^ spontaneously disproportionates in water: 2 Cu^+^ → Cu^2+^ + Cu(s)** (E°~net~ = +0.37 V)!'),
         ],

@@ -120,7 +120,9 @@ def preprocess(markup):
           .replace("===>", "\u2192").replace("-->", "\u2192").replace("->", "\u2192"))
 
     # Fix unbracketed superscripts like ^3+, ^2+, ^+, ^- into proper ^3+^, ^2+^, ^+^, ^-^
-    s = re.sub(r"\^([0-9]*[+-])(?!\^)", r"^\1^", s)
+    # (do not touch already-bracketed scripts such as 10^-30^ or 10^7^: a charge is
+    # only ever a terminal mark, never the start of a longer body with digits/letters)
+    s = re.sub(r"\^([0-9]*[+-])(?![\^0-9A-Za-z])", r"^\1^", s)
 
     # Auto-subscript chemical formulas containing digits if not already subscripted
     def _sub_formula(m):
@@ -168,10 +170,25 @@ def parse(markup):
                 i += 2
                 continue
             if c == "*":
-                if buf:
-                    spans.append(_span(buf, bold, italic, mark))
-                    buf = ""
-                italic = not italic
+                prev = chunk[i - 1] if i else ""
+                nxt = chunk[i + 1] if i + 1 < len(chunk) else ""
+                is_close = (not nxt or not nxt.isalnum()) and (
+                    prev.isalnum() or prev in ":!?.-\u2014'\"\u2019\u201d")
+                is_open = (not prev or not (prev.isalnum() or prev in "~^*")) and (
+                    bool(nxt) and (nxt.isalnum() or nxt == "-"))
+                if italic and is_close:
+                    if buf:
+                        spans.append(_span(buf, bold, italic, mark))
+                        buf = ""
+                    italic = False
+                elif is_open and not italic and _italic_close_ahead(chunk, i + 1):
+                    if buf:
+                        spans.append(_span(buf, bold, italic, mark))
+                        buf = ""
+                    italic = True
+                else:
+                    # chemistry postfix stars (σ*, π*, Cl*) stay literal
+                    buf += c
                 i += 1
                 continue
             if c in "~^":
@@ -192,6 +209,19 @@ def parse(markup):
         if buf:
             spans.append(_span(buf, bold, italic, mark))
     return [s for s in spans if s.text]
+
+
+def _italic_close_ahead(chunk, start):
+    """A later single '*' able to close an italic run (word-end, never σ*/π*)."""
+    for j in range(start, len(chunk)):
+        if chunk[j] != "*":
+            continue
+        prev = chunk[j - 1]
+        nxt = chunk[j + 1] if j + 1 < len(chunk) else ""
+        if (prev.isalnum() or prev in ":!?.-\u2014'\"\u2019\u201d") and (
+                not nxt or not nxt.isalnum()):
+            return True
+    return False
 
 
 def _scripts(s):

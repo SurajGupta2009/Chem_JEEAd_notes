@@ -63,7 +63,7 @@ SHEETS = [
         "blocks": [
             ("lead", "**Dipole Moment (μ)** — Polar Bonds, Molecular Geometry & % Ionic Character"),
             ("p", "A bond between two atoms of different electronegativity is polar. The electric dipole moment measures "
-                  'the extent of charge separation: {μ} = q × d (units: Debye, 1 D = 3.33564 × 10^-30^ C·m).'),
+                  'the extent of charge separation: μ = q × d (units: Debye, 1 D = 3.33564 × 10^-30^ C·m).'),
             ("h2", "1. Molecular Dipole Moment as a Vector Sum"),
             ("fig", "dipole", "Fig. 2.2 — Dipole moment vector analysis: NH3 vs NF3 and planar symmetrical cancellation."),
             ("p", "Molecular dipole moment is the **vector resultant** of all individual bond dipole moments and lone pair moments:\n"
@@ -80,7 +80,7 @@ SHEETS = [
             ("h2", "3. Percentage Ionic Character (Hannay-Smith Equation)"),
             ("key", '**% Ionic Character = 16 |χ~A~ - χ~B~| + 3.5 (χ~A~ - χ~B~)^2^**\n'
                     "Alternatively, from dipole measurements:\n"
-                    '**%% Ionic Character = {μ~obs~}{μ~calc~} × 100%**'),
+                    '**% Ionic Character = (μ~obs~ / μ~calc~) × 100%**'),
         ],
     },
     # ------------------------------------------------------------------ CB-12
@@ -108,7 +108,7 @@ SHEETS = [
             ("key", "Inversion of Lewis Acidity in Boron Trihalides:\n"
                     "**BF3 < BCl3 < BBr3 < BI3**.\n"
                     "Reason: 2p(B) ← 2p(F) overlap is optimal (same size and energy), satisfying B's electron deficiency. "
-                    "In BI3, 2p(B) <--- 5p(I) overlap is ineffective due to size/energy mismatch, leaving B completely hungry for external electron pairs!"),
+                    "In BI3, 2p(B) ← 5p(I) overlap is ineffective due to size/energy mismatch, leaving B completely hungry for external electron pairs!"),
         ],
     },
     # ------------------------------------------------------------------ CB-13

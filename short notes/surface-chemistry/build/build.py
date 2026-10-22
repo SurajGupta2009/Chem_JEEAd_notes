@@ -1,4 +1,4 @@
-"""Build the complete Redox Reactions & Equivalent Concept short notes PDF (18 sheets = 18 pages)."""
+"""Build the complete Surface Chemistry short notes PDF (18 sheets = 18 pages)."""
 from __future__ import annotations
 
 import importlib
@@ -32,10 +32,10 @@ def main():
     pdf_out = os.path.join(ROOT, "pdf", "surface-chemistry-complete.pdf")
     os.makedirs(os.path.join(ROOT, "pdf"), exist_ok=True)
 
-    part_label = "Redox Reactions & Equivalent Concept"
-    part_short = "Redox Reactions · JEE Main + Advanced"
-    running = "Redox Reactions"
-    meta_title = "Redox Reactions & Equivalent Concept — Complete Explanatory Short Notes"
+    part_label = "Surface Chemistry"
+    part_short = "Surface Chemistry · JEE Main + Advanced"
+    running = "Surface Chemistry"
+    meta_title = "Surface Chemistry — Complete Explanatory Short Notes"
 
     n, info = pagelib.build_pdf(
         sheets,

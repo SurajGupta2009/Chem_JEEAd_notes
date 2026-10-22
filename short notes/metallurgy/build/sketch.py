@@ -266,9 +266,9 @@ def fig_blast_furnace(page, x, y, w, h):
     # Iron Forms Matrix Box at Right
     g.rect((270, 15, 255, 93), fill=PAPER, color=NAVY, width=1.0, radius=3)
     g.text(397, 25, "Forms of Iron — Composition & Traps", color=NAVY, size=7.2)
-    g.text(397, 37, "• Pig Iron: ~4% Carbon + S, P, Si, Mn impurities.", color=RED, size=6.2)
+    g.text(397, 37, "• Pig Iron: ≈4% Carbon + S, P, Si, Mn impurities.", color=RED, size=6.2)
     g.text(397, 46, "  Tapped directly from blast furnace; hard & brittle.", color=GRAY, size=5.5)
-    g.text(397, 57, "• Cast Iron: ~3% Carbon (Pig iron remelted with scrap).", color=GOLD, size=6.2)
+    g.text(397, 57, "• Cast Iron: ≈3% Carbon (Pig iron remelted with scrap).", color=GOLD, size=6.2)
     g.text(397, 66, "  Extremely hard, brittle, expands upon solidification.", color=GRAY, size=5.5)
     g.text(397, 77, "• Wrought Iron: Purest commercial iron (<0.2% C).", color=TEAL, size=6.2)
     g.text(397, 86, "  Made in reverberatory furnace lined with haematite:", color=NAVY, size=5.5)
@@ -303,11 +303,11 @@ def fig_hall_heroult(page, x, y, w, h):
     g.text(390, 34, "• Electrolyte: Molten Al~2~O~3~ (5%) + Cryolite (Na~3~AlF~6~, 85%)", color=NAVY, size=6.2)
     g.text(390, 43, "  + Fluorspar (CaF~2~, 5-10%).", color=NAVY, size=6.2)
     g.text(390, 53, "• Function of Cryolite / CaF~2~: (Crucial JEE Traps!)", color=RED, size=6.2)
-    g.text(390, 62, "  1. Lowers melting point from 2320 K to ~1170 K.", color=NAVY, size=5.8)
+    g.text(390, 62, "  1. Lowers melting point from 2320 K to ≈1170 K.", color=NAVY, size=5.8)
     g.text(390, 71, "  2. Increases electrical conductivity of the melt.", color=NAVY, size=5.8)
     g.text(390, 81, "• Anode Consumption Trap:", color=RED, size=6.2)
     g.text(390, 90, "  C + 2 O^2−^ → CO~2~ + 4 e^−^  (and C + O^2−^ → CO + 2 e^−^)", color=NAVY, size=5.8)
-    g.text(390, 100, "  ~0.5 kg of Carbon anode is burnt for EVERY 1 kg of Al produced!", color=RED, size=5.8)
+    g.text(390, 100, "  ≈0.5 kg of Carbon anode is burnt for EVERY 1 kg of Al produced!", color=RED, size=5.8)
 
 
 def fig_copper_bessemer(page, x, y, w, h):
@@ -353,7 +353,7 @@ def fig_copper_bessemer(page, x, y, w, h):
     # Step 4: Blister Copper
     g.rect((420, 20, 105, 75), fill=PAPER, color=TEAL, width=1.0, radius=3)
     g.text(472, 31, "4. BLISTER COPPER", color=TEAL, size=7.2)
-    g.text(472, 44, "~98-99% Pure Cu", color=NAVY, size=6.5)
+    g.text(472, 44, "≈98-99% Pure Cu", color=NAVY, size=6.5)
     g.text(472, 56, "Why 'Blister'?", color=RED, size=6.5)
     g.text(472, 67, "Bubbles of evolving", color=NAVY, size=5.8)
     g.text(472, 76, "SO~2~ gas burst on cooling,", color=NAVY, size=5.8)
