@@ -1,0 +1,20 @@
+PRINTING INSTRUCTIONS — The d- and f-Block Elements Short Notes
+=============================================================
+
+1. Paper Format:
+   - Paper Size: International A4 (210 mm x 297 mm / 8.27 in x 11.69 in).
+   - Orientation: Portrait.
+   - Layout: Exactly ONE sheet per page.
+
+2. Printer Scaling Setting:
+   - Choose: "Fit to Printable Area" or "Fit to Paper".
+   - DO NOT choose: "Actual Size", "Fill Entire Page", or "Crop".
+   - The PDF margins are engineered with a 24 pt safety border to prevent any clipping on standard home and office inkjet/laser printers.
+
+3. Color Recommendations:
+   - Full-color output is strongly advised.
+   - Semantic color coding:
+     * Navy (#0d2d44): Structural headings and primary principles
+     * Teal (#00796b): NCERT standard facts, mechanisms and equations
+     * Wine/Red (#8b1e2d): Critical exam traps, high oxidation states and oxidizing actions
+     * Gold/Amber (#b37400): Periodic tables, electron counts and comparative takeaways
