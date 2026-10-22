@@ -434,7 +434,7 @@ def draw_furniture(page, part_label, part_short, sid, title, sheet_idx, sheet_to
     for yy in range(72, 800, 15):
         page.draw_line((M, yy + 10.6), (PAGE_W - M, yy + 10.6), color=GRID, width=0.45)
     # header
-    draw_text(page, M, 41, "Redox Reactions & Equivalent Concept", "caveat", 20.0, TEAL)
+    draw_text(page, M, 41, part_label, "caveat", 20.0, TEAL)
     sub = "short notes  \u00b7  " + running
     draw_text(page, M, 55.5, _fit(sub, PAGE_W - M - 182 - M, "kalam", 8.2), "kalam", 8.2, NAVY)
     page.draw_line((M, 60), (PAGE_W - M, 60), color=TEAL, width=0.9)
@@ -454,7 +454,7 @@ def draw_furniture(page, part_label, part_short, sid, title, sheet_idx, sheet_to
     draw_text(page, M, 817, part_short, "kalam", 8.2, TEAL)
     mid = f"sheet {sheet_idx} of {sheet_total}  \u00b7  page {page_idx} of {page_total}"
     draw_text(page, (PAGE_W - width(mid, "kalam", 8.2)) / 2, 817, mid, "kalam", 8.2, NAVY)
-    right = f"Redox Reactions \u00b7 {sid}"
+    right = f"{running} \u00b7 {sid}"
     draw_text(page, PAGE_W - M - width(right, "kalam", 8.2), 817, right, "kalam", 8.2, TEAL)
 
 
@@ -489,8 +489,8 @@ def build_sheet(sheet, sheet_idx, sheet_total, part_label, part_short, running):
             t_pages, t_flows = attempt(tight=True)
             if len(t_pages) < len(pages):
                 pages, flows = t_pages, t_flows
-    elif len(pages) == 1:
-        # sparse one-pager: give the sheet room to breathe, then hand out any
+    if len(pages) == 1:
+        # sparse one-pager (also when compact/tight rescued a 2-page draft): give the sheet room to breathe, then hand out any
         # remaining slack evenly as inter-block stretch so pages end full
         if _fill(pages[0]) < 0.85:
             r_pages, r_flows = attempt(roomy=True)
@@ -529,7 +529,7 @@ def build_pdf(sheets, out_path, part_label, part_short, running, meta_title):
                 f.draw(page, M, y)
             end_text(page)
     doc.set_metadata({"title": meta_title, "author": "Arena short-notes build",
-                      "subject": "Stereoisomerism short notes",
+                      "subject": f"{running} short notes",
                       "keywords": part_label})
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     toc = []

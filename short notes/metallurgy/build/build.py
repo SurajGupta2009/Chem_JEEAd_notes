@@ -1,4 +1,4 @@
-"""Build the complete Redox Reactions & Equivalent Concept short notes PDF (18 sheets = 18 pages)."""
+"""Build the complete Metallurgy & Isolation of Elements short notes PDF (18 sheets = 18 pages)."""
 from __future__ import annotations
 
 import importlib
@@ -32,10 +32,10 @@ def main():
     pdf_out = os.path.join(ROOT, "pdf", "metallurgy-complete.pdf")
     os.makedirs(os.path.join(ROOT, "pdf"), exist_ok=True)
 
-    part_label = "Redox Reactions & Equivalent Concept"
-    part_short = "Redox Reactions · JEE Main + Advanced"
-    running = "Redox Reactions"
-    meta_title = "Redox Reactions & Equivalent Concept — Complete Explanatory Short Notes"
+    part_label = "Metallurgy & Isolation of Elements"
+    part_short = "Metallurgy · JEE Main + Advanced"
+    running = "Metallurgy"
+    meta_title = "Metallurgy & Isolation of Elements — Complete Explanatory Short Notes"
 
     n, info = pagelib.build_pdf(
         sheets,
