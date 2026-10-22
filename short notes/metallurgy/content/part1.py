@@ -24,7 +24,7 @@ SHEETS = [
                 ["**Zinc**", "Zinc Blende / Sphalerite\nCalamine\nZincite", "ZnS\nZnCO~3~\nZnO", "Sulphide\nCarbonate\nOxide", "Sphalerite crystallizes in ccp (Z=4); Wurtzite is the hcp polymorph"],
                 ["**Lead / Tin**", "Galena\nCassiterite (Tinstone)", "PbS\nSnO~2~", "Sulphide\nOxide", "Anglesite = PbSO~4~; Cerussite = PbCO~3~\nCassiterite contains magnetic wolframite impurity"]
             ], [15, 23, 27, 17, 18], "Table 1.1 — Comprehensive ore reference matrix for JEE Advanced."),
-            ("trap", "CRITICAL TRAP: Iron Pyrites (FeS~2~) is called 'Fool's Gold'. Even though it contains ~46.6% iron, it is strictly NEVER used as an ore of iron in commercial metallurgy because the sulphur cannot be completely eliminated, leaving brittle iron (hot shortness). Instead, it is burned exclusively to produce SO~2~ for sulphuric acid manufacture!")
+            ("trap", "CRITICAL TRAP: Iron Pyrites (FeS~2~) is called 'Fool's Gold'. Even though it contains ≈46.6% iron, it is strictly NEVER used as an ore of iron in commercial metallurgy because the sulphur cannot be completely eliminated, leaving brittle iron (hot shortness). Instead, it is burned exclusively to produce SO~2~ for sulphuric acid manufacture!")
         ]
     },
 
@@ -38,7 +38,7 @@ SHEETS = [
             ("h2", "1. Hydraulic Washing (Gravity Separation / Levigation)"),
             ("p", "• **Physical Principle:** Based on the difference in **specific gravities (densities)** between the heavier ore particles and lighter gangue.\n"
                   "• **Apparatus & Working:** An upward stream of running water flows over a vibrating inclined table with wooden corrugations (Wilfley table) or hydraulic classifiers. The lighter gangue particles are washed away by the water stream, while the heavier ore grains settle in the grooves.\n"
-                  "• **Applicability:** Heavily concentrated oxide and native ores: Haematite (Fe~2~O~3~, sp. gr. ~5.2), Cassiterite (SnO~2~, sp. gr. ~7.0), and native Gold/Platinum."),
+                  '• **Applicability:** Heavily concentrated oxide and native ores: Haematite (Fe~2~O~3~, sp. gr. ≈5.2), Cassiterite (SnO~2~, sp. gr. ≈7.0), and native Gold/Platinum.'),
             ("h2", "2. Magnetic Separation"),
             ("p", "• **Physical Principle:** Exploits differences in **magnetic susceptibility** between the ore and the contaminating gangue particles (either the ore is magnetic and gangue non-magnetic, or vice-versa).\n"
                   "• **Apparatus:** Pulverized ore is dropped onto a moving conveyor belt stretched across two rollers, one of which houses a powerful electromagnet. Non-magnetic particles drop straight down under gravity into the outer receptacle; magnetic particles cling to the belt until it leaves the magnetic field, dropping into an inner bin."),
@@ -47,7 +47,7 @@ SHEETS = [
                 ["**Silica from Haematite**", "Haematite: Fe~2~O~3~ / Fe~3~O~4~ (Ferromagnetic)", "Silica / Gangue: SiO~2~ (Diamagnetic)", "Upgrading low-grade iron ores"],
                 ["**Rutile from Ilmenite**", "Ilmenite: FeTiO~3~ (Magnetic)", "Rutile: TiO~2~ / Zircon (Non-magnetic)", "Processing monazite beach sands of Kerala"]
             ], [25, 25, 25, 25], "Table 1.2 — Commercial magnetic separation cases tested in JEE Advanced."),
-            ("key", "Key Formula for Specific Gravity Differential: Separation efficiency η ∝ (ρ_ore − ρ_fluid) / (ρ_gangue − ρ_fluid). If ρ_ore ≫ ρ_gangue, gravity separation gives rapid, near-quantitative recovery.")
+            ("key", 'Key Formula for Specific Gravity Differential: Separation efficiency η ∝ (ρ~ore~ − ρ~fluid~) / (ρ~gangue~ − ρ~fluid~). If ρ~ore~ ≫ ρ~gangue~, gravity separation gives rapid, near-quantitative recovery.')
         ]
     },
 
@@ -80,14 +80,14 @@ SHEETS = [
             ("fig", "bayer_process", "Fig. 1.2 — Bayer Process cycle: Digestion under pressure, red mud filtration, seeding neutralization, and calcination."),
             ("h2", "1. Leaching of Bauxite for Pure Alumina (Comparison of 3 Industrial Methods)"),
             ("table", ["Process Name", "Target Impurity in Bauxite", "Leaching Reagent & Reaction", "Precipitation & Calcination Steps"], [
-                ["**Bayer's Process**\n(Red Bauxite)", "Mainly Fe~2~O~3~ (red color)\n+ minor SiO~2~, TiO~2~", "Digested with conc. NaOH at 473-523 K, 35-36 bar:\nAl~2~O~3~·2H~2~O + 2NaOH + 3H~2~O → 2Na[Al(OH)~4~]\nSiO~2~ + 2NaOH → Na~2~SiO~3~ + H~2~O (Red mud filtered)", "Neutralized with CO~2~ gas and seeded with fresh Al(OH)~3~:\n2Na[Al(OH)~4~] + CO~2~ → Al~2~O~3~·xH~2~O ↓ + Na~2~CO~3~\nCalcinated at 1470 K: Al~2~O~3~·xH~2~O —(Δ)→ Al~2~O~3~ + xH~2~O"],
-                ["**Hall's Process**\n(Red Bauxite)", "Fe~2~O~3~, SiO~2~", "Fused with anhydrous Na~2~CO~3~ at ~1273 K:\nAl~2~O~3~ + Na~2~CO~3~ → 2NaAlO~2~ + CO~2~ ↑\nFe~2~O~3~ remains unreacted and filtered", "Leach extract bubbled with CO~2~ at 323-333 K:\n2NaAlO~2~ + CO~2~ + 3H~2~O → 2Al(OH)~3~ ↓ + Na~2~CO~3~\nFollowed by calcination to Al~2~O~3~ at 1470 K"],
-                ["**Serpeck's Process**\n(White Bauxite)", "Mainly **SiO~2~**\n(Silica-rich, iron-poor)", "Heated with Coke + N~2~ gas at ~2073 K:\nAl~2~O~3~ + 3C + N~2~ → 2AlN + 3CO ↑\nSiO~2~ + 2C → Si ↑ + 2CO ↑ (Si volatilizes)", "Hydrolysis of Aluminium Nitride:\nAlN + 3H~2~O → Al(OH)~3~ ↓ + NH~3~ ↑\n*Valuable byproduct: Ammonia gas!* Filtered & calcinated."]
+                ["**Bayer's Process**\n(Red Bauxite)", "Mainly Fe~2~O~3~ (red color)\n+ minor SiO~2~, TiO~2~", "Digested with conc. NaOH at 473-523 K, 35-36 bar:\nAl~2~O~3~·2H~2~O + 2NaOH + H~2~O → 2Na[Al(OH)~4~]\nSiO~2~ + 2NaOH → Na~2~SiO~3~ + H~2~O (Red mud filtered)", "Neutralized with CO~2~ gas and seeded with fresh Al(OH)~3~:\n2Na[Al(OH)~4~] + CO~2~ → 2Al(OH)~3~ ↓ + Na~2~CO~3~\nCalcinated at 1470 K: Al(OH)~3~ / Al~2~O~3~·xH~2~O —(Δ)→ Al~2~O~3~ + xH~2~O"],
+                ["**Hall's Process**\n(Red Bauxite)", "Fe~2~O~3~, SiO~2~", 'Fused with anhydrous Na~2~CO~3~ at ≈1273 K:\nAl~2~O~3~ + Na~2~CO~3~ → 2NaAlO~2~ + CO~2~ ↑\nFe~2~O~3~ remains unreacted and filtered', "Leach extract bubbled with CO~2~ at 323-333 K:\n2NaAlO~2~ + CO~2~ + 3H~2~O → 2Al(OH)~3~ ↓ + Na~2~CO~3~\nFollowed by calcination to Al~2~O~3~ at 1470 K"],
+                ["**Serpeck's Process**\n(White Bauxite)", "Mainly **SiO~2~**\n(Silica-rich, iron-poor)", 'Heated with Coke + N~2~ gas at ≈2073 K:\nAl~2~O~3~ + 3C + N~2~ → 2AlN + 3CO ↑\nSiO~2~ + 2C → Si ↑ + 2CO ↑ (Si volatilizes)', "Hydrolysis of Aluminium Nitride:\nAlN + 3H~2~O → Al(OH)~3~ ↓ + NH~3~ ↑\n*Valuable byproduct: Ammonia gas!* Filtered & calcinated."]
             ], [18, 20, 31, 31], "Table 1.3 — Complete comparative matrix of industrial bauxite leaching processes."),
             ("h2", "2. Mac-Arthur Forrest Cyanide Process for Gold & Silver"),
             ("p", "• **Dissolution (Oxidative Leaching):** Finely powdered native gold or argentite (Ag~2~S) is treated with dilute (0.1–0.2%) NaCN in the presence of air (O~2~ acts as the crucial oxidizing agent!):\n"
                   "  4 Au + 8 CN^−^ + 2 H~2~O + O~2~ → 4 [Au(CN)~2~]^−^ + 4 OH^−^\n"
-                  "  Ag~2~S + 4 CN^−^ ⇌ 2 [Ag(CN)~2~]^−^ + S^2−^   (O~2~ oxidizes S^2−^ to SO~4~^2−^ to drive equilibrium forward!)\n"
+                  '  Ag~2~S + 4 CN^−^ ⇌ 2 [Ag(CN)~2~]^−^ + S^2−^ (O~2~ oxidizes S^2−^ to SO~4~^2−^ to drive equilibrium forward!)\n'
                   "• **Precipitation (Displacement):** The metal is recovered by adding electropositive **Zinc dust**:\n"
                   "  2 [Au(CN)~2~]^−^ + Zn → [Zn(CN)~4~]^2−^ + 2 Au ↓")
         ]

@@ -48,7 +48,7 @@ SHEETS = [
             ("p", "The reversible adsorption equilibrium of a gas on a solid adsorbent is represented as:\n"
                   "  **Gas (Adsorbate) + Solid (Adsorbent) ⇌ Adsorption Complex + Heat (ΔH < 0)**\n"
                   "• **Effect of Temperature:** Because the forward reaction is exothermic, increasing temperature shifts the equilibrium in the reverse direction according to Le Chatelier's principle. Hence, **adsorption almost always decreases with rising temperature**!\n"
-                  "• **Effect of Pressure:** In the forward direction, gaseous molecules condense to a surface film (gas volume decreases, Δn_g < 0). Increasing pressure shifts the equilibrium forward: **adsorption increases with increasing gas pressure**!"),
+                  '• **Effect of Pressure:** In the forward direction, gaseous molecules condense to a surface film (gas volume decreases, Δn~g~ < 0). Increasing pressure shifts the equilibrium forward: **adsorption increases with increasing gas pressure**!'),
             ("key", "Thermodynamic Gold Rule for JEE: In all spontaneous adsorptions: ΔH < 0, ΔS < 0, and ΔG < 0. As adsorption approaches equilibrium, ΔG becomes less negative until ΔG = 0.")
         ]
     },
@@ -66,8 +66,8 @@ SHEETS = [
                 ["**Specificity**", "**Non-specific in nature**; any gas can be adsorbed on any solid to some degree", "**Highly specific**; occurs only if chemical bond formation is possible (e.g. O~2~ on metals)"],
                 ["**Reversibility**", "**Completely reversible**; desorbs upon decreasing P or heating", "**Irreversible**; desorption often yields a different compound (e.g. O~2~ on C desorbs as CO/CO~2~)"],
                 ["**Enthalpy of Adsorption (ΔH)**", "**Low: 20 to 40 kJ/mol** (comparable to heat of liquefaction)", "**High: 80 to 240 kJ/mol** (comparable to chemical bond dissociation energies)"],
-                ["**Activation Energy (E_a)**", "**Negligible or Zero**; occurs readily at low temperatures", "**Significant activation energy required**; often called *Activated Adsorption*"],
-                ["**Temperature Effect**", "**Decreases continuously** with rising temperature (isobar slopes down)", "**First increases** (acquires E_a), reaches a maximum, then **decreases** (exothermic desorption)"],
+                ['**Activation Energy (E~a~)**', "**Negligible or Zero**; occurs readily at low temperatures", "**Significant activation energy required**; often called *Activated Adsorption*"],
+                ["**Temperature Effect**", "**Decreases continuously** with rising temperature (isobar slopes down)", '**First increases** (acquires E~a~), reaches a maximum, then **decreases** (exothermic desorption)'],
                 ["**Surface Coverage Layers**", "**Forms multimolecular layers** at high gas pressure", "**Strictly unimolecular (monolayer)**; once valence sites are saturated, no further bonding occurs"],
                 ["**State of Adsorbate**", "Adsorbate molecules retain their chemical identity intact", "Adsorbate molecules dissociate into atoms or ions (e.g. H~2~ → 2 H atoms on Ni)"]
             ], [18, 41, 41], "Table 1.2 — Comprehensive Physisorption vs Chemisorption comparative matrix."),
@@ -82,11 +82,11 @@ SHEETS = [
         "blocks": [
             ("lead", "**Factors Governing Gas-Solid Adsorption** — Adsorbent Surface Area & Liquefaction Tendency"),
             ("p", "The extent of adsorption of a gas on a solid surface (x/m, mass of gas adsorbed per gram of adsorbent) is controlled by four macroscopic variables: nature of the gas, surface area of the adsorbent, temperature, and pressure."),
-            ("h2", "1. Nature of the Gas & Critical Temperature (T_c)"),
-            ("p", "• **Fundamental Rule:** Easily liquefiable gases (having higher critical temperatures T_c) possess stronger intermolecular van der Waals forces. Consequently, **gases with higher T_c are adsorbed much more readily and to a vastly greater extent**!\n"
+            ("h2", '1. Nature of the Gas & Critical Temperature (T~c~)'),
+            ("p", '• **Fundamental Rule:** Easily liquefiable gases (having higher critical temperatures T~c~) possess stronger intermolecular van der Waals forces. Consequently, **gases with higher T~c~ are adsorbed much more readily and to a vastly greater extent**!\n'
                   "• **Adsorption Sequence on Activated Charcoal (NCERT Data):**\n"
                   "  SO~2~ (430 K) > NH~3~ (406 K) > CO~2~ (304 K) > CH~4~ (190 K) > CO (134 K) > N~2~ (126 K) > H~2~ (33 K)"),
-            ("table", ["Gas", "Critical Temp T_c (K)", "Volume Adsorbed (mL per g of charcoal at 288 K)", "Reason for Relative Order"], [
+            ("table", ["Gas", 'Critical Temp T~c~ (K)', "Volume Adsorbed (mL per g of charcoal at 288 K)", "Reason for Relative Order"], [
                 ["**SO~2~**", "430 K", "380 mL", "High polarizability and permanent dipole moment"],
                 ["**NH~3~**", "406 K", "181 mL", "Strong hydrogen bonding and dipole interaction"],
                 ["**CO~2~**", "304 K", "21.6 mL", "Quadrupole moment and easily compressible"],
@@ -114,7 +114,7 @@ SHEETS = [
             ("fig", "isotherms", "Fig. 1.2 — Freundlich isotherm curve: three pressure regions and logarithmic linear plot."),
             ("h2", "1. Mathematical Formulation (NCERT §5.1.5)"),
             ("p", "In 1909, Herbert Freundlich proposed the classical empirical relationship:\n"
-                  "  **x/m = k · p^1/n^  (n > 1)**\n"
+                  '  **x/m = k · p^1/n^ (n > 1)**\n'
                   "where x = mass of gas adsorbed, m = mass of adsorbent, p = gas pressure, and k, n are empirical constants depending on the nature of the gas, adsorbent, and temperature (n > 1)."),
             ("h2", "2. Behavior in Three Distinct Pressure Domains"),
             ("bul", [
@@ -144,9 +144,9 @@ SHEETS = [
                 "**Fixed Elementary Sites:** Adsorbent surface contains a fixed number of equivalent active sites, each capable of holding exactly one adsorbate molecule.",
                 "**No Lateral Interactions:** Adsorbed molecules do not exert forces on neighbouring sites.",
                 "**Dynamic Equilibrium:** Rate of adsorption (condensation) = Rate of desorption (evaporation).\n"
-                "  - Rate of adsorption: R_a = k_a p (1 − θ), where θ is fractional surface coverage.\n"
-                "  - Rate of desorption: R_d = k_d θ.\n"
-                "  - At equilibrium: k_a p (1 − θ) = k_d θ ⇒ **θ = (K p) / (1 + K p)** where K = k_a / k_d is the adsorption coefficient.",
+                '  - Rate of adsorption: R~a~ = k~a~ p (1 − θ), where θ is fractional surface coverage.\n'
+                '  - Rate of desorption: R~d~ = k~d~ θ.\n'
+                '  - At equilibrium: k~a~ p (1 − θ) = k~d~ θ ⇒ **θ = (K p) / (1 + K p)** where K = k~a~ / k~d~ is the adsorption coefficient.',
                 "**Final Langmuir Isotherm:** Since x/m ∝ θ: **x/m = (a p) / (1 + b p)** ⇔ **p / (x/m) = (1/a) + (b/a) p**. Plotting p / (x/m) vs p gives a straight line with slope = b/a and intercept = 1/a across ALL pressures!"
             ]),
             ("h2", "2. Adsorption from Solution Phase (NCERT §5.1.6)"),

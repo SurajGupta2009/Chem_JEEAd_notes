@@ -15,7 +15,7 @@ SHEETS = [
                 ["proper axis", "rotate 360/n", "C~n~", "no"],
                 ["plane", "reflect", "σ", "yes"],
                 ["centre", "invert through a point", "i", "yes"],
-                ["alternating axis", "rotate 360/n, then reflect in the plane perpendicular to the axis", "S~n~", "yes (n even), no (n odd)"],
+                ["alternating axis", "rotate 360/n, then reflect in the plane perpendicular to the axis", "S~n~", "yes (any n)"],
             ], [18, 46, 18, 18], "Table 6.1 — the complete inventory for molecular symmetry."),
             ("p", "Only the **improper** operations (σ, i, S~n~) change the handedness of an object. A molecule is chiral if and only if it "
                   "has no improper operation. Proper rotations C~n~ preserve handedness, so a molecule with a C~3~ axis can be perfectly chiral."),
@@ -35,7 +35,7 @@ SHEETS = [
                 ["CHFClBr", "none (C~1~)", "yes"],
                 ["staggered ethane", "C~3~, 3 C~2~, i, S~6~", "no"],
                 ["chair cyclohexane", "C~3~, 3 C~2~, 3 σ~d~, i", "no"],
-                ["twist-boat cyclohexane", "C~2~, no σ, no i, S~n~", "yes (a pair)"],
+                ["twist-boat cyclohexane", "C~2~ (D~2~), no σ, no i, no S~n~", "yes (a pair)"],
             ], [28, 40, 32], "Table 6.2 — assignments to check your intuition against."),
             ("h2", "6.4  Asymmetric versus dissymmetric"),
             ("p", "A molecule with no element at all except the identity (point group C~1~) is **asymmetric** and also chiral. A molecule with "

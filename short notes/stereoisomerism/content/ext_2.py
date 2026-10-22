@@ -200,7 +200,7 @@ SHEETS = [
             ("h2", "6.44  Extension-level traps"),
             ("bul", [
                 "A twist-boat is chiral but a cyclohexane sample is not — the chiral conformation is not long-lived.",
-                "Two enantiomers of a biphenyl are atropisomers only if the barrier is above ~80 kJ mol^−1^.",
+                'Two enantiomers of a biphenyl are atropisomers only if the barrier is above ≈80 kJ mol^−1^.',
                 "trans-Cyclooctene is chiral; cis-cyclooctene is not. The double bond geometry, not the ring size, does the work.",
                 "Pseudoasymmetric centres (r/s) are not stereocentres but they change the stereoisomer count.",
                 "Burnside counting needs the *whole* symmetry group, not just the end exchange; for a ring the rotations matter.",

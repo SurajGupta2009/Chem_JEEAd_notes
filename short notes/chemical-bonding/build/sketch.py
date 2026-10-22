@@ -113,6 +113,9 @@ class Pen:
 
     def text(self, x, y, s, size=None, color=NAVY, align="c", kind="kalam-b"):
         size = self.fs if size is None else size
+        s = (s.replace("**", "")
+              .replace("-->", "\u2192").replace("->", "\u2192")
+              .replace("<===>", "\u21cc").replace("===>", "\u2192").replace("<===", "\u2190"))
         parts = []
         for txt, mode in self._runs(s):
             sz = size * (1.0 if mode == 0 else 0.64)
@@ -612,9 +615,9 @@ def fig_born_haber(page, x, y, w, h):
     # Ground elements at bottom left: Na(s) + 1/2 Cl2(g) -> (80, 110)
     g.text(100, 115, "Na(s) + 1/2 Cl2(g)", color=NAVY, size=8.5)
 
-    # Sublimation: Na(s) -> Na(g) (ΔH_sub = +108 kJ)
+    # Sublimation: Na(s) -> Na(g) (ΔH~sub~ = +108 kJ)
     g.arrow((100, 105), (100, 75), color=TEAL)
-    g.text(60, 90, "+ΔH_sub", color=TEAL, size=7.5)
+    g.text(60, 90, "+ΔH~sub~", color=TEAL, size=7.5)
     g.text(100, 70, "Na(g) + 1/2 Cl2(g)", color=NAVY, size=8.0)
 
     # Ionization: Na(g) -> Na+(g) (IE = +496 kJ)
@@ -622,26 +625,26 @@ def fig_born_haber(page, x, y, w, h):
     g.text(60, 42, "+IE", color=TEAL, size=7.5)
     g.text(100, 20, "Na+(g) + 1/2 Cl2(g)", color=NAVY, size=8.0)
 
-    # Bond Dissociation: 1/2 Cl2 -> Cl(g) (+1/2 ΔH_diss = +121 kJ)
+    # Bond Dissociation: 1/2 Cl2 -> Cl(g) (+1/2 ΔH~diss~ = +121 kJ)
     g.arrow((165, 20), (250, 20), color=TEAL)
-    g.text(205, 12, "+1/2 ΔH_diss", color=TEAL, size=7.5)
+    g.text(205, 12, "+1/2 ΔH~diss~", color=TEAL, size=7.5)
     g.text(300, 20, "Na+(g) + Cl(g)", color=NAVY, size=8.0)
 
-    # Electron Gain: Cl(g) -> Cl-(g) (ΔH_eg = -349 kJ)
+    # Electron Gain: Cl(g) -> Cl-(g) (ΔH~eg~ = -349 kJ)
     g.arrow((360, 20), (430, 45), color=RED)
-    g.text(410, 28, "ΔH_eg (exothermic)", color=RED, size=7.5)
+    g.text(410, 28, "ΔH~eg~ (exothermic)", color=RED, size=7.5)
     g.text(450, 50, "Na+(g) + Cl-(g)", color=NAVY, size=8.5)
 
     # Lattice Energy: Na+(g) + Cl-(g) -> NaCl(s) (U = -788 kJ)
     g.arrow((450, 60), (450, 105), color=RED)
-    g.text(475, 82, "U_lattice (-788 kJ)", color=RED, size=8.0)
+    g.text(475, 82, "U~lattice~ (-788 kJ)", color=RED, size=8.0)
 
     # Product at bottom right: NaCl(s)
     g.text(450, 115, "NaCl(s) [Lattice]", color=TEAL, size=8.5)
 
     # Direct formation enthalpy
     g.arrow((180, 115), (380, 115), color=NAVY)
-    g.text(280, 128, "ΔH°_f = ΔH_sub + IE + 1/2 D + ΔH_eg + U_latt = -411 kJ/mol", color=NAVY, size=7.8)
+    g.text(280, 128, "ΔH°~f~ = ΔH~sub~ + IE + 1/2 D + ΔH~eg~ + U~latt~ = -411 kJ/mol", color=NAVY, size=7.8)
 
 
 def fig_fajans_polarization(page, x, y, w, h):
@@ -796,26 +799,26 @@ def fig_orbital_overlap(page, x, y, w, h):
     g.text(60, 75, "s - s (σ bond)", color=TEAL, size=7.8)
     g.text(60, 88, "Axial / Cylindrical", color=NAVY, size=6.8)
 
-    # (b) s - p_z overlap
+    # (b) s - p~z~ overlap
     g.circle((160, 45), 13, fill=(0.95, 0.98, 1.0), color=TEAL)
     # p orbital lobes
     g.rect((178, 38, 16, 14), fill=(1.0, 0.95, 0.95), stroke=RED)
     g.rect((196, 38, 16, 14), fill=(0.95, 0.98, 1.0), stroke=TEAL)
     g.text(186, 47, "+", color=RED, size=7.5)
     g.text(204, 47, "−", color=NAVY, size=7.5)
-    g.text(185, 75, "s - p_z (σ bond)", color=TEAL, size=7.8)
+    g.text(185, 75, "s - p~z~ (σ bond)", color=TEAL, size=7.8)
     g.text(185, 88, "Axial / Directional", color=NAVY, size=6.8)
 
-    # (c) p_z - p_z head-on overlap
+    # (c) p~z~ - p~z~ head-on overlap
     g.rect((275, 38, 15, 14), fill=(0.95, 0.98, 1.0), stroke=TEAL)
     g.rect((292, 38, 15, 14), fill=(1.0, 0.95, 0.95), stroke=RED)
     g.rect((310, 38, 15, 14), fill=(1.0, 0.95, 0.95), stroke=RED)
     g.rect((327, 38, 15, 14), fill=(0.95, 0.98, 1.0), stroke=TEAL)
     g.text(301, 47, "+", color=RED, size=8.0)
-    g.text(305, 75, "p_z - p_z (σ bond)", color=TEAL, size=7.8)
+    g.text(305, 75, "p~z~ - p~z~ (σ bond)", color=TEAL, size=7.8)
     g.text(305, 88, "Maximum Overlap", color=NAVY, size=6.8)
 
-    # (d) p_x - p_x lateral overlap (pi bond)
+    # (d) p~x~ - p~x~ lateral overlap (pi bond)
     # Top lobes
     g.rect((420, 22, 14, 18), fill=(1.0, 0.95, 0.95), stroke=RED)
     g.rect((445, 22, 14, 18), fill=(1.0, 0.95, 0.95), stroke=RED)
@@ -828,7 +831,7 @@ def fig_orbital_overlap(page, x, y, w, h):
     g.text(427, 59, "−", color=NAVY, size=7.5); g.text(452, 59, "−", color=NAVY, size=7.5)
     # Nodal plane line
     g.dash((405, 44), (475, 44), color=GOLD)
-    g.text(440, 75, "p_x - p_x (π bond)", color=RED, size=7.8)
+    g.text(440, 75, "p~x~ - p~x~ (π bond)", color=RED, size=7.8)
     g.text(440, 88, "Sideways (1 nodal plane)", color=NAVY, size=6.8)
     g.text(440, 100, "Overlap: p-p(σ) > s-p > s-s > p-p(π)", color=GOLD, size=6.8)
 
@@ -882,34 +885,34 @@ def fig_diborane_bridge(page, x, y, w, h):
     g.circle((100, 50), 12, fill=PAPER, color=TEAL); g.text(100, 53, "B", color=TEAL, size=8.5)
     g.circle((170, 50), 12, fill=PAPER, color=TEAL); g.text(170, 53, "B", color=TEAL, size=8.5)
     # Terminal H
-    g.bond((100, 50), (70, 35)); g.text(64, 34, "H_t", size=7.0)
-    g.bond((100, 50), (70, 65)); g.text(64, 68, "H_t", size=7.0)
-    g.bond((170, 50), (200, 35)); g.text(206, 34, "H_t", size=7.0)
-    g.bond((170, 50), (200, 65)); g.text(206, 68, "H_t", size=7.0)
-    # Top Bridge H_b (curved banana)
-    g.circle((135, 28), 9, fill=(1.0, 0.95, 0.90), color=RED); g.text(135, 31, "H_b", color=RED, size=7.0)
+    g.bond((100, 50), (70, 35)); g.text(64, 34, "H~t~", size=7.0)
+    g.bond((100, 50), (70, 65)); g.text(64, 68, "H~t~", size=7.0)
+    g.bond((170, 50), (200, 35)); g.text(206, 34, "H~t~", size=7.0)
+    g.bond((170, 50), (200, 65)); g.text(206, 68, "H~t~", size=7.0)
+    # Top Bridge H~b~ (curved banana)
+    g.circle((135, 28), 9, fill=(1.0, 0.95, 0.90), color=RED); g.text(135, 31, "H~b~", color=RED, size=7.0)
     g.line((100, 50), (135, 28), color=RED, width=1.5)
     g.line((135, 28), (170, 50), color=RED, width=1.5)
-    # Bottom Bridge H_b
-    g.circle((135, 72), 9, fill=(1.0, 0.95, 0.90), color=RED); g.text(135, 75, "H_b", color=RED, size=7.0)
+    # Bottom Bridge H~b~
+    g.circle((135, 72), 9, fill=(1.0, 0.95, 0.90), color=RED); g.text(135, 75, "H~b~", color=RED, size=7.0)
     g.line((100, 50), (135, 72), color=RED, width=1.5)
     g.line((135, 72), (170, 50), color=RED, width=1.5)
     g.text(135, 95, "Diborane B~2~H~6~ (3c-2e Banana Bonds)", color=RED, size=7.8)
-    g.text(135, 108, "2 × (B-H-B) 3c-2e bridges + 4 × (B-H_t) 2c-2e", color=NAVY, size=6.8)
+    g.text(135, 108, "2 × (B-H-B) 3c-2e bridges + 4 × (B-H~t~) 2c-2e", color=NAVY, size=6.8)
 
     # (b) Al2Cl6 3c-4e dative bridge at right
     g.circle((360, 50), 12, fill=PAPER, color=NAVY); g.text(360, 53, "Al", color=NAVY, size=8.5)
     g.circle((440, 50), 12, fill=PAPER, color=NAVY); g.text(440, 53, "Al", color=NAVY, size=8.5)
     # Terminal Cl
-    g.bond((360, 50), (330, 35)); g.text(322, 34, "Cl_t", size=7.0)
-    g.bond((360, 50), (330, 65)); g.text(322, 68, "Cl_t", size=7.0)
-    g.bond((440, 50), (470, 35)); g.text(478, 34, "Cl_t", size=7.0)
-    g.bond((440, 50), (470, 65)); g.text(478, 68, "Cl_t", size=7.0)
+    g.bond((360, 50), (330, 35)); g.text(322, 34, "Cl~t~", size=7.0)
+    g.bond((360, 50), (330, 65)); g.text(322, 68, "Cl~t~", size=7.0)
+    g.bond((440, 50), (470, 35)); g.text(478, 34, "Cl~t~", size=7.0)
+    g.bond((440, 50), (470, 65)); g.text(478, 68, "Cl~t~", size=7.0)
     # Bridge Cl atoms with coordinate arrows
-    g.circle((400, 26), 9, fill=(0.95, 0.98, 1.0), color=TEAL); g.text(400, 29, "Cl_b", color=TEAL, size=6.8)
+    g.circle((400, 26), 9, fill=(0.95, 0.98, 1.0), color=TEAL); g.text(400, 29, "Cl~b~", color=TEAL, size=6.8)
     g.bond((360, 50), (400, 26))
     g.arrow((400, 26), (440, 50), color=TEAL, width=1.3)
-    g.circle((400, 74), 9, fill=(0.95, 0.98, 1.0), color=TEAL); g.text(400, 77, "Cl_b", color=TEAL, size=6.8)
+    g.circle((400, 74), 9, fill=(0.95, 0.98, 1.0), color=TEAL); g.text(400, 77, "Cl~b~", color=TEAL, size=6.8)
     g.bond((440, 50), (400, 74))
     g.arrow((400, 74), (360, 50), color=TEAL, width=1.3)
     g.text(400, 95, "Al~2~Cl~6~ Bridge (3c-4e Coordinate Bonds)", color=TEAL, size=7.8)
@@ -983,7 +986,7 @@ def fig_band_theory(page, x, y, w, h):
     g.rect((70, 55, 80, 40), fill=(0.95, 0.92, 0.85), stroke=GOLD)
     g.text(110, 75, "Valence Band (VB)", color=GOLD, size=6.8)
     g.text(110, 55, "OVERLAPPING BANDS", color=RED, size=6.5)
-    g.text(110, 105, "Conductor (E_g = 0)", color=TEAL, size=8.0)
+    g.text(110, 105, "Conductor (E~g~ = 0)", color=TEAL, size=8.0)
     g.text(110, 116, "High σ, decreases with T", color=NAVY, size=6.5)
 
     # (b) Semiconductor (Si, Ge)
@@ -992,7 +995,7 @@ def fig_band_theory(page, x, y, w, h):
     # Small gap
     g.arrow((255, 62), (255, 54), color=RED, width=1.1)
     g.arrow((255, 54), (255, 62), color=RED, width=1.1)
-    g.text(285, 58, "E_g < 3 eV", color=RED, size=7.0)
+    g.text(285, 58, "E~g~ < 3 eV", color=RED, size=7.0)
     g.rect((215, 65, 80, 30), fill=(0.95, 0.92, 0.85), stroke=GOLD)
     g.text(255, 80, "Filled VB", color=GOLD, size=7.0)
     g.text(255, 105, "Semiconductor", color=RED, size=8.0)
@@ -1004,7 +1007,7 @@ def fig_band_theory(page, x, y, w, h):
     # Large gap
     g.arrow((410, 70), (410, 46), color=NAVY, width=1.1)
     g.arrow((410, 46), (410, 70), color=NAVY, width=1.1)
-    g.text(440, 58, "E_g > 5 eV (Large!)", color=NAVY, size=7.0)
+    g.text(440, 58, "E~g~ > 5 eV (Large!)", color=NAVY, size=7.0)
     g.rect((370, 72, 80, 25), fill=(0.95, 0.92, 0.85), stroke=GOLD)
     g.text(410, 85, "Filled VB", color=GOLD, size=7.0)
     g.text(410, 105, "Insulator", color=NAVY, size=8.0)
@@ -1191,8 +1194,8 @@ def fig_radius_ratio_derivation(page, x, y, w, h):
     g.circle((120, 55), 7.5, fill=(1.0, 0.92, 0.92), color=RED); g.text(120, 57.5, "+", color=RED, size=7.5)
     # Diagonal line
     g.line(sq[0], sq[2], color=GOLD, width=1.2, dash="[2 2] 0")
-    g.text(120, 96, "Octahedral Limit (r_c / r_a = 0.414)", color=TEAL, size=7.8)
-    g.text(120, 106, "Diagonal: 2(r_c + r_a) = √2 · (2r_a) ⇒ r_c / r_a = √2 − 1 = 0.414", color=NAVY, size=6.2)
+    g.text(120, 96, "Octahedral Limit (r~c~ / r~a~ = 0.414)", color=TEAL, size=7.8)
+    g.text(120, 106, "Diagonal: 2(r~c~ + r~a~) = √2 · (2r~a~) ⇒ r~c~ / r~a~ = √2 − 1 = 0.414", color=NAVY, size=6.2)
 
     # (b) Body-Centred Cubic (CsCl) Body Diagonal at right
     # Cube front and back
@@ -1209,8 +1212,8 @@ def fig_radius_ratio_derivation(page, x, y, w, h):
         g.circle(pt, 6, fill=(0.92, 0.96, 1.0), color=TEAL)
     # Body diagonal line
     g.line(cf[3], cb[1], color=RED, width=1.4, dash="[2.5 2] 0")
-    g.text(380, 96, "Cubic Limit (r_c / r_a = 0.732)", color=RED, size=7.8)
-    g.text(380, 106, "Body Diag: 2(r_c + r_a) = √3 · (2r_a) ⇒ r_c / r_a = √3 − 1 = 0.732", color=NAVY, size=6.2)
+    g.text(380, 96, "Cubic Limit (r~c~ / r~a~ = 0.732)", color=RED, size=7.8)
+    g.text(380, 106, "Body Diag: 2(r~c~ + r~a~) = √3 · (2r~a~) ⇒ r~c~ / r~a~ = √3 − 1 = 0.732", color=NAVY, size=6.2)
 
 
 REGISTRY.update({

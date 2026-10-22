@@ -148,9 +148,9 @@ SHEETS = [
                   "question “how many isomers?” is identical for all four."),
             ("table", ["Reagent", "Product", "C=N formed", "Stereoisomers for RCHO"], [
                 ["NH~2~OH", "oxime  RCH=N–OH", "yes", "2 (syn/anti, or E/Z)"],
-                ["NH~2~NH~2~", "hydrazone  RCH=N–NH~2~", "yes", "2"],
+                ["NH~2~NH~2~", 'hydrazone RCH=N–NH~2~', "yes", "2"],
                 ["NH~2~NHR", "substituted hydrazone", "yes", "2"],
-                ["NH~2~CONH~2~", "semicarbazone  RCH=N–NHCONH~2~", "yes", "2"],
+                ["NH~2~NHCONH~2~", 'semicarbazone RCH=N–NHCONH~2~', "yes", "2"],
                 ["NH~2~C(=NH)NH~2~", "guanidine condensate", "yes", "2"],
             ], [22, 36, 18, 24], "Table 2.3 — all five families create the same kind of centre, so the counting rule is shared."),
             ("p", "For a ketone R~1~COR~2~ the count depends on whether the two groups differ: R~1~ ≠ R~2~ gives two "
@@ -192,7 +192,7 @@ SHEETS = [
                 ["–CHO", "C", "O, O, H (one O phantom)", "beats –CH~2~OH"],
                 ["–COOH", "C", "O, O, O (one O phantom, one OH)", "beats –CHO"],
                 ["–C≡N", "C", "N, N, N (two phantom N)", "below –COOH (O beats N at layer 2)"],
-                ["–C≡CH", "C", "C, C, H (two phantom C)", "ties with –CH=CH~2~ (same expansion)"],
+                ["–C≡CH", "C", "C, C, C (two phantom C)", "beats –CH=CH~2~ (C beats H at layer 2)"],
             ], [16, 14, 34, 36], "Table 2.4 — expand multiple bonds before comparing anything to the right."),
             ("warn", "The commonest E/Z error is comparing the second atom of a group before checking the first atom of a multiple bond. Expand every multiple bond into phantom atoms **first**, then compare layer by layer."),
             ("h2", "2.9  Worked examples"),
@@ -233,8 +233,8 @@ SHEETS = [
                 ["–CH~2~Cl vs –CH~3~", "2", "–CH~2~Cl"],
                 ["–CH(CH~3~)~2~ vs –CH~2~CH~2~Br", "2", "–CH(CH~3~)~2~"],
                 ["–CHO vs –CH~2~OH", "2", "–CHO"],
-                ["–COOH vs –CHO", "3", "–COOH"],
-                ["–C≡N vs –C≡CH", "3", "–C≡N (N beats C)"],
+                ["–COOH vs –CHO", "2", "–COOH"],
+                ["–C≡N vs –C≡CH", "2", "–C≡N (N beats C)"],
                 ["–D vs –H", "mass", "–D"],
             ], [34, 20, 46], "Table 2.6 — check which layer settles each comparison before comparing further."),
             ("warn", "The single most expensive mistake in this table is comparing a later atom of one group with an earlier atom of the other. Compare layer by layer, position by position; a bromine three bonds away never beats an oxygen one bond away."),
@@ -260,10 +260,10 @@ SHEETS = [
             ]),
             ("table", ["Ring compound", "Geometrical isomers", "Total stereoisomers", "Which are chiral"], [
                 ["1,2-dimethylcyclopropane", "2 (cis, trans)", "3", "trans (pair); cis is meso"],
-                ["1,2-dimethylcyclobutane", "2 (all-cis, one trans)", "4", "the one trans form (pair)"],
-                ["1,3-dimethylcyclobutane (different groups)", "3", "6", "the Br-trans form (pair)"],
-                ["1,2-dimethylcyclopentane", "3 (cis, trans, cis′)", "4", "cis′ is meso; trans has a pair"],
-                ["1,3-dimethylcyclopentane", "3", "4", "trans′ (pair), cis has σ"],
+                ["1,2-dimethylcyclobutane", "2 (cis, trans)", "3", "trans (pair); cis is meso"],
+                ["1,3-dimethylcyclobutane", "2 (cis, trans)", "2", "both achiral (each has a σ through C1, C3)"],
+                ["1,2-dimethylcyclopentane", "2 (cis, trans)", "3", "trans (pair); cis is meso"],
+                ["1,3-dimethylcyclopentane", "2 (cis, trans)", "3", "trans (pair); cis is meso"],
                 ["1,2-dimethylcyclohexane", "2", "3", "trans (pair); cis — both have σ"],
             ], [32, 26, 20, 22], "Table 2.8 — patterns worth recognising. Count geometrical isomers first, then split the chiral ones into pairs."),
             ("h2", "2.14  Worked enumeration: 1,2-dibromo-3-methylcyclopropane"),
@@ -276,7 +276,7 @@ SHEETS = [
                 "**both Br on one face, CH~3~ on the other** — again a mirror plane bisecting the Br–Br bond → achiral, 1 compound.",
                 "**the two Br on opposite faces, CH~3~ either up or down** — no plane, no centre → chiral, a pair, 2 compounds.",
             ]),
-            ("key", "Three geometrical isomers become four stereoisomers: 1 + 1 + 2. Always report both numbers if the question allows it, and say which are optically active."),
+            ("key", "For a symmetric 1,2-disubstituted ring, two geometrical isomers become three stereoisomers: 1 meso + 2 enantiomers. Always report both numbers if the question allows it, and say which are optically active."),
             ("h2", "2.15  Double bonds inside small rings"),
             ("p", "A C=C built into a ring is forced to be *cis*: the ring chain leaves the two sp^2^ carbons on the same "
                   "side. A trans-cycloalkene would need the chain to cross to the other face of the double bond, which is "
@@ -323,7 +323,7 @@ SHEETS = [
                   "double bonds lie between them."),
             ("fig", "cumulene", "Fig. 2.3 — in an allene the two end planes are perpendicular. Substituting both ends with two different groups each removes every mirror plane and leaves a chiral axis.", 0.30),
             ("table", ["Consecutive C=C", "Example", "End planes", "Result (both ends unsymmetrical)"], [
-                ["2 (even)", "allene, CH~2~=C=CHCH~3~", "perpendicular", "no cis/trans; chiral (a pair of enantiomers)"],
+                ["2 (even)", "2,3-pentadiene, CH~3~CH=C=CHCH~3~", "perpendicular", "no cis/trans; chiral (a pair of enantiomers)"],
                 ["3 (odd)", "butatriene, CH~3~CH=C=C=CHCH~3~", "coplanar", "cis/trans (E/Z) pair; achiral"],
                 ["4 (even)", "pentatetraene", "perpendicular", "chiral if both ends differ"],
             ], [24, 36, 18, 22], "Table 2.11 — the odd/even rule. Count the double bonds between the two end carbons, not the atoms."),
@@ -406,7 +406,7 @@ SHEETS = [
             ("h2", "2.25  The basic count"),
             ("p", "If a molecule has n independent geometrical centres and its two ends are constitutionally different, "
                   "every centre doubles the number of arrangements and no two arrangements are related by symmetry:"),
-            ("eq", "N~geo~ = 2^n^    (dissimilar ends; n = number of qualifying centres)"),
+            ("eq", 'N~geo~ = 2^n^ (dissimilar ends; n = number of qualifying centres)'),
             ("p", "The formula fails in three situations, and each has its own treatment: symmetric (similar-ended) chains, "
                   "centres that cannot give two isomers (C=C in a small ring), and centres that are coupled (cumulenes, "
                   "where the whole chain counts as one)."),
@@ -414,9 +414,9 @@ SHEETS = [
             ("p", "For a chain whose two ends are identical, the sequence of cis/trans descriptors read from left to right is "
                   "the same molecule as the sequence read from right to left. Patterns therefore merge. Counting the "
                   "distinct sequences is a symmetry problem, and the result is:"),
-            ("eq", ["n odd:   N = 2^(n−1)^ + 2^((n−1)/2)^",
-                    "n even:  N = 2^(n−1)^ + 2^(n/2 − 1)^",
-                    "both:    N = (2^n^ + 2^ceil(n/2)^) / 2"]),
+            ("eq", ['n odd: N = 2^(n−1)^ + 2^((n−1)/2)^',
+                    'n even: N = 2^(n−1)^ + 2^(n/2 − 1)^',
+                    'both: N = (2^n^ + 2^ceil(n/2)^) / 2']),
             ("table", ["n", "Raw 2^n^", "Distinct (similar ends)", "Formula check"], [
                 ["1", "2", "2", "2^0^ + 2^0^ = 2 (but-2-ene: cis and trans)"],
                 ["2", "4", "3", "2^1^ + 2^0^ = 3"],

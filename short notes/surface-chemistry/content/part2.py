@@ -19,7 +19,7 @@ SHEETS = [
                 "**Promoters:** Substances that are not catalysts themselves, but whose presence **increases the catalytic activity** of the catalyst. *Example:* In Haber's process, **Molybdenum (Mo)** acts as a promoter for the **Iron (Fe)** catalyst, expanding the iron lattice and increasing active site spacing. Modern catalysts use **K~2~O and Al~2~O~3~** as structural promoters.",
                 "**Catalytic Poisons (Inhibitors):** Substances that destroy or diminish catalytic activity by competing for active sites or forming unreactive surface complexes. *Examples:* Trace **CO or H~2~S** poisons the iron catalyst in Haber's synthesis; **Arsenic (As~2~O~3~)** poisons platinum in the Contact process."
             ]),
-            ("trap", "TRAP: Does a catalyst alter the equilibrium constant (K_eq) or standard Gibbs free energy (ΔG°)? ABSOLUTELY NOT! A catalyst accelerates the forward and reverse reactions by the exact same factor, helping attain equilibrium faster without changing equilibrium composition!")
+            ("trap", 'TRAP: Does a catalyst alter the equilibrium constant (K~eq~) or standard Gibbs free energy (ΔG°)? ABSOLUTELY NOT! A catalyst accelerates the forward and reverse reactions by the exact same factor, helping attain equilibrium faster without changing equilibrium composition!')
         ]
     },
 
@@ -29,7 +29,7 @@ SHEETS = [
         "title": "Modern Adsorption Theory of Heterogeneous Catalysis",
         "blocks": [
             ("lead", "**Modern Surface Adsorption Theory** — Intermediate Compound + Adsorption Mechanics (NCERT §5.2.2)"),
-            ("p", "Explains the mechanism of heterogeneous catalysis on solid surfaces. The catalyst functions by providing localized **active sites (free valencies)** that adsorb reactant molecules, weaken their internal bonds, form an activated complex with lower activation energy (E_a), and desorb products."),
+            ("p", 'Explains the mechanism of heterogeneous catalysis on solid surfaces. The catalyst functions by providing localized **active sites (free valencies)** that adsorb reactant molecules, weaken their internal bonds, form an activated complex with lower activation energy (E~a~), and desorb products.'),
             ("fig", "catalysis_cycle", "Fig. 2.1 — The 5-step cycle of heterogeneous catalysis: Diffusion, chemisorption, reaction, desorption, and product diffusion."),
             ("h2", "1. The 5-Step Catalytic Cycle (NCERT Sequence)"),
             ("bul", [
@@ -42,7 +42,7 @@ SHEETS = [
             ("h2", "2. Two Cardinal Features of Solid Catalysts (NCERT §5.2.3)"),
             ("table", ["Feature", "Definition & Scientific Principle", "Industrial Chemical Proof"], [
                 ["**1. Activity**", "The capacity of a catalyst to accelerate the reaction rate. Some catalysts increase rates by **up to 10^10^ times**! The chemisorption must be strong enough to be active, but not so strong that products cannot desorb (volcano curve).", "Mixture of H~2~ and O~2~ does not react for centuries at 298 K; adding trace finely divided **Platinum** causes instantaneous explosive reaction to form H~2~O!"],
-                ["**2. Selectivity**", "The ability of a catalyst to **direct a reaction to yield particular products**, excluding other possible thermodynamic pathways. A given set of reactants yields totally different products depending on the catalyst used!", "Reactants CO + H~2~ (Synthesis Gas):\n• CO + 3 H~2~ —(Ni)→ CH~4~ + H~2~O  (Methanation)\n• CO + 2 H~2~ —(Cu/ZnO-Cr~2~O~3~)→ CH~3~OH  (Methanol)\n• CO + H~2~ —(Cu)→ HCHO  (Methanal)"]
+                ["**2. Selectivity**", "The ability of a catalyst to **direct a reaction to yield particular products**, excluding other possible thermodynamic pathways. A given set of reactants yields totally different products depending on the catalyst used!", 'Reactants CO + H~2~ (Synthesis Gas):\n• CO + 3 H~2~ —(Ni)→ CH~4~ + H~2~O (Methanation)\n• CO + 2 H~2~ —(Cu/ZnO-Cr~2~O~3~)→ CH~3~OH (Methanol)\n• CO + H~2~ —(Cu)→ HCHO (Methanal)']
             ], [20, 42, 38], "Table 2.2 — Activity vs Selectivity of heterogeneous catalysts."),
             ("key", "Sabatier Principle: Catalytic activity peaks at an intermediate heat of chemisorption (Volcano plot). Group 7 to 11 metals show maximum catalytic activity (Group 8, 9, 10 peak for hydrogenation).")
         ]
@@ -59,11 +59,11 @@ SHEETS = [
             ("bul", [
                 "**Chemical Nature:** Microporous aluminosilicates with general formula: M~x/n~[(AlO~2~)~x~(SiO~2~)~y~]·mH~2~O, where M is a metal cation of valence n.",
                 "**Honeycomb Network:** Formed by a 3-dimensional infinite network of rigid **SiO~4~ and AlO~4~^−^ tetrahedra** linked by sharing oxygen vertices, forming a **three-dimensional Al—O—Si framework**.",
-                "**Molecular Sieve Action:** Because Al^3+^ replaces Si^4+^ in the framework, each Al atom imparts a net negative charge, balanced by exchangeable cations (Na^+^, H^+^, Ca^2+^). The framework encloses regular channels, tunnels, and cages of molecular dimensions (aperture size ~260 to 740 pm).",
+                '**Molecular Sieve Action:** Because Al^3+^ replaces Si^4+^ in the framework, each Al atom imparts a net negative charge, balanced by exchangeable cations (Na^+^, H^+^, Ca^2+^). The framework encloses regular channels, tunnels, and cages of molecular dimensions (aperture size ≈260 to 740 pm).',
                 "**Reactivity Constraint:** Only those reactant molecules whose kinetic diameters are **smaller than the zeolite pore apertures** can enter the interior cages to react; and only products smaller than the pores can diffuse out!"
             ]),
             ("h2", "2. ZSM-5 in Petrochemical Refining (NCERT Landmark)"),
-            ("p", "• **ZSM-5 (Zeolite Socony Mobil-5):** An acidic aluminosilicate zeolite possessing a pore size of ~550 pm.\n"
+            ("p", '• **ZSM-5 (Zeolite Socony Mobil-5):** An acidic aluminosilicate zeolite possessing a pore size of ≈550 pm.\n'
                   "• **Gasoline Synthesis:** Directly converts aliphatic alcohols into synthetic gasoline (hydrocarbons) by dehydrating them inside its rigid channels:\n"
                   "  x CH~3~OH —(ZSM-5, 673 K)→ Gasoline (Mixture of branched hydrocarbons + Aromatics) + x H~2~O\n"
                   "• Also used for shape-selective isomerization of xylenes (selectively producing p-xylene over bulky o- and m-xylenes)."),
@@ -106,19 +106,19 @@ SHEETS = [
             ("p", "In 1894, Emil Fischer proposed the **Lock-and-Key hypothesis**: the enzyme surface possesses specific active cavities with functional groups (−COOH, −NH~2~, −SH, −OH) that complementary substrate molecules fit into, analogous to a key fitting into a lock."),
             ("h2", "1. Two-Step Kinetic Mechanism"),
             ("p", "• **Step 1: Rapid, reversible binding of Substrate (S) to Enzyme (E):**\n"
-                  "  E + S ⇌ ES   (Enzyme-Substrate Complex, rate constants k~1~, k~−1~)\n"
+                  '  E + S ⇌ ES (Enzyme-Substrate Complex, rate constants k~1~, k~−1~)\n'
                   "• **Step 2: Slow, rate-determining decomposition of complex into Product (P):**\n"
                   "  ES —(k~2~)→ E + P\n"
                   "• Rate of product formation: r = k~2~ [ES]. Applying steady-state approximation (d[ES]/dt = 0):\n"
-                  "  **r = (V_max [S]) / (K_m + [S])**\n"
-                  "where V_max = k~2~ [E]~0~ is the maximum achievable velocity, and K_m = (k~−1~ + k~2~) / k~1~ is the **Michaelis Constant**."),
-            ("h2", "2. Physical Significance of K_m and Limiting Kinetic Orders"),
+                  '  **r = (V~max~ [S]) / (K~m~ + [S])**\n'
+                  'where V~max~ = k~2~ [E]~0~ is the maximum achievable velocity, and K~m~ = (k~−1~ + k~2~) / k~1~ is the **Michaelis Constant**.'),
+            ("h2", '2. Physical Significance of K~m~ and Limiting Kinetic Orders'),
             ("table", ["Substrate Concentration", "Kinetic Condition", "Resulting Rate Law", "Reaction Order"], [
-                ["**Very Low: [S] ≪ K_m**", "K_m + [S] ≈ K_m", "r = (V_max / K_m) [S]", "**First Order** with respect to substrate"],
-                ["**Very High: [S] ≫ K_m**", "K_m + [S] ≈ [S]", "r = V_max = constant", "**Zero Order** (Enzyme is completely saturated!)"],
-                ["**Equimolar: [S] = K_m**", "r = (V_max [S]) / (2[S]) = ½ V_max", "K_m equals the substrate conc at which r = ½ V_max", "Half-maximal velocity benchmark"]
+                ['**Very Low: [S] ≪ K~m~**', 'K~m~ + [S] ≈ K~m~', 'r = (V~max~ / K~m~) [S]', "**First Order** with respect to substrate"],
+                ['**Very High: [S] ≫ K~m~**', 'K~m~ + [S] ≈ [S]', 'r = V~max~ = constant', "**Zero Order** (Enzyme is completely saturated!)"],
+                ['**Equimolar: [S] = K~m~**', 'r = (V~max~ [S]) / (2[S]) = ½ V~max~', 'K~m~ equals the substrate conc at which r = ½ V~max~', "Half-maximal velocity benchmark"]
             ], [22, 24, 34, 20], "Table 2.4 — Kinetic regimes of the Michaelis-Menten equation."),
-            ("key", "Lineweaver-Burk Double Reciprocal Plot: Taking reciprocals of the rate equation gives: 1/r = (K_m / V_max) · (1/[S]) + (1 / V_max). Plotting 1/r vs 1/[S] gives a straight line with slope = K_m / V_max and Y-intercept = 1 / V_max!")
+            ("key", 'Lineweaver-Burk Double Reciprocal Plot: Taking reciprocals of the rate equation gives: 1/r = (K~m~ / V~max~) · (1/[S]) + (1 / V~max~). Plotting 1/r vs 1/[S] gives a straight line with slope = K~m~ / V~max~ and Y-intercept = 1 / V~max~!')
         ]
     }
 ]

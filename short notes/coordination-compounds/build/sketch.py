@@ -50,11 +50,41 @@ class Pen:
         c_t = fitz.Point(self.tx(c[0]), self.ty(c[1]))
         self.p.draw_circle(c_t, r * self.sx, fill=fill, color=color, width=width)
 
+    def _runs(self, s):
+        out, buf, mode = [], "", 0
+        for ch in s:
+            if ch in "~^":
+                if buf:
+                    out.append((buf, mode))
+                    buf = ""
+                mode = 0 if mode else (-1 if ch == "~" else 1)
+            else:
+                buf += ch
+        if buf:
+            out.append((buf, mode))
+        return out
+
     def text(self, x, y, txt, font="kalam-bold", size=7.5, color=NAVY, align="center"):
-        import fitz
-        ox = len(txt) * size * 0.25 if align == "center" else (len(txt) * size * 0.5 if align == "right" else 0)
-        pt = fitz.Point(self.tx(x) - ox, self.ty(y))
-        self.p.insert_text(pt, txt, fontsize=size, color=color)
+        from textkit import draw_text, glyph_runs, width
+        s = (txt.replace("**", "")
+                .replace("-->", "→").replace("->", "→")
+                .replace("<===>", "⇌").replace("===>", "→").replace("<===", "←"))
+        parts = []
+        for t, mode in self._runs(s):
+            sz = size * (1.0 if mode == 0 else 0.64)
+            dy = 0.0 if mode == 0 else (0.20 * size if mode == -1 else -0.40 * size)
+            for k, seg in glyph_runs(t, "kalam-b"):
+                parts.append((k, seg, sz, dy))
+        total = sum(width(seg, k, sz) for k, seg, sz, _ in parts)
+        cx = self.tx(x)
+        if align == "center":
+            cx -= total / 2
+        elif align == "right":
+            cx -= total
+        by = self.ty(y)
+        for k, seg, sz, dy in parts:
+            draw_text(self.p, cx, by + dy * self.sy, seg, k, sz, color)
+            cx += width(seg, k, sz)
 
 
 def fig_werner_structures(page, x, y, w, h):
@@ -102,7 +132,7 @@ def fig_werner_structures(page, x, y, w, h):
     g.text(425, 64, "• **Secondary Valency (Coordination Number):**", color=TEAL, size=6.2)
     g.text(425, 74, "  Non-ionizable, directional in space (solid lines);", color=NAVY, size=5.8)
     g.text(425, 83, "  determines stereochemistry / geometry!", color=NAVY, size=5.8)
-    g.text(425, 94, "• Dual Ligand (Cl^*): Satisfies BOTH primary &", color=GOLD, size=5.8)
+    g.text(425, 94, "• Dual Ligand (Cl*): Satisfies BOTH primary &", color=GOLD, size=5.8)
     g.text(425, 103, "  secondary valency → non-ionizable in solution!", color=RED, size=5.5)
 
 
@@ -127,14 +157,14 @@ def fig_cft_octahedral(page, x, y, w, h):
     # eg (top): +0.6 Δ_o
     g.rect((170, 25, 10, 12), fill=PAPER, color=RED, width=1.2)
     g.rect((185, 25, 10, 12), fill=PAPER, color=RED, width=1.2)
-    g.text(182, 20, "e_g (d_x²-y², d_z²)", color=RED, size=6.0)
+    g.text(182, 20, "e~g~ (d~x²−y²~, d~z²~)", color=RED, size=6.0)
     g.text(182, 42, "+0.6 Δ_o (+3/5)", color=RED, size=5.5)
 
     # t2g (bottom): -0.4 Δ_o
     g.rect((160, 68, 10, 12), fill=PAPER, color=TEAL, width=1.2)
     g.rect((175, 68, 10, 12), fill=PAPER, color=TEAL, width=1.2)
     g.rect((190, 68, 10, 12), fill=PAPER, color=TEAL, width=1.2)
-    g.text(180, 88, "t_2g (d_xy, d_yz, d_zx)", color=TEAL, size=6.0)
+    g.text(180, 88, "t~2g~ (d~xy~, d~yz~, d~zx~)", color=TEAL, size=6.0)
     g.text(180, 97, "−0.4 Δ_o (−2/5)", color=TEAL, size=5.5)
 
     # Energy arrow Δ_o
@@ -142,27 +172,27 @@ def fig_cft_octahedral(page, x, y, w, h):
     g.text(225, 53, "Δ_o", color=GOLD, size=8.0)
 
     # Center: Tetrahedral Field Splitting
-    g.text(320, 16, "Tetrahedral Field (Δ_t)", color=RED, size=7.5)
+    g.text(320, 16, "Tetrahedral Field (Δ~t~)", color=RED, size=7.5)
     # Inverted: e (bottom 2) and t2 (top 3)
     g.rect((280, 30, 10, 12), fill=PAPER, color=TEAL, width=1.2)
     g.rect((295, 30, 10, 12), fill=PAPER, color=TEAL, width=1.2)
     g.rect((310, 30, 10, 12), fill=PAPER, color=TEAL, width=1.2)
-    g.text(300, 24, "t_2 (+0.4 Δ_t)", color=TEAL, size=5.8)
+    g.text(300, 24, "t~2~ (+0.4 Δ~t~)", color=TEAL, size=5.8)
 
     g.rect((290, 72, 10, 12), fill=PAPER, color=RED, width=1.2)
     g.rect((305, 72, 10, 12), fill=PAPER, color=RED, width=1.2)
-    g.text(302, 92, "e (−0.6 Δ_t)", color=RED, size=5.8)
+    g.text(302, 92, "e (−0.6 Δ~t~)", color=RED, size=5.8)
 
     # Right Explanatory Box
     g.rect((350, 12, 175, 96), fill=PAPER, color=TEAL, width=1.0)
     g.text(437, 22, "CFT Governing Principles", color=TEAL, size=6.8)
     g.text(437, 34, "• **Octahedral Field (Oh):** Ligands approach", color=NAVY, size=5.5)
-    g.text(437, 43, "  along axes (x, y, z) → axial orbitals (e_g)", color=NAVY, size=5.5)
+    g.text(437, 43, "  along axes (x, y, z) → axial orbitals (e~g~)", color=NAVY, size=5.5)
     g.text(437, 52, "  experience maximal repulsion and rise!", color=RED, size=5.5)
     g.text(437, 63, "• **Tetrahedral Field (Td):** Ligands approach", color=NAVY, size=5.5)
-    g.text(437, 72, "  between axes → t_2 rises, e falls.", color=NAVY, size=5.5)
-    g.text(437, 83, "• **The 4/9 Relation:** **Δ_t = (4/9) Δ_o**!", color=GOLD, size=6.5)
-    g.text(437, 93, "  Because Δ_t is small, pairing energy P > Δ_t:", color=NAVY, size=5.5)
+    g.text(437, 72, "  between axes → t~2~ rises, e falls.", color=NAVY, size=5.5)
+    g.text(437, 83, "• **The 4/9 Relation:** **Δ~t~ = (4/9) Δ_o**!", color=GOLD, size=6.5)
+    g.text(437, 93, "  Because Δ~t~ is small, pairing energy P > Δ~t~:", color=NAVY, size=5.5)
     g.text(437, 102, "  **ALL Td complexes are HIGH SPIN!**", color=RED, size=5.8)
 
 
@@ -172,42 +202,42 @@ def fig_square_planar_splitting(page, x, y, w, h):
     g.rect((5, 5, 528, 110), fill=LIGHT_BG, color=TEAL, width=1.0)
 
     # Progressive evolution from Octahedral -> Tetragonal (z-out) -> Square Planar
-    g.text(70, 18, "Octahedral (O_h)", color=GRAY, size=6.5)
+    g.text(70, 18, "Octahedral (O~h~)", color=GRAY, size=6.5)
     g.rect((60, 35, 10, 10), fill=PAPER, color=RED); g.rect((75, 35, 10, 10), fill=PAPER, color=RED)
-    g.text(72, 30, "e_g", color=RED, size=5.5)
+    g.text(72, 30, "e~g~", color=RED, size=5.5)
     g.rect((55, 75, 10, 10), fill=PAPER, color=TEAL); g.rect((70, 75, 10, 10), fill=PAPER, color=TEAL); g.rect((85, 75, 10, 10), fill=PAPER, color=TEAL)
-    g.text(72, 92, "t_2g", color=TEAL, size=5.5)
+    g.text(72, 92, "t~2g~", color=TEAL, size=5.5)
 
     g.line((105, 55), (145, 55), color=NAVY, width=1.2)
     g.text(125, 48, "z-elongation", color=NAVY, size=5.5)
 
     # Square Planar (D4h): z-ligands completely removed!
-    g.text(230, 16, "Square Planar (D_4h)", color=TEAL, size=7.2)
+    g.text(230, 16, "Square Planar (D~4h~)", color=TEAL, size=7.2)
     # Highest: d_x2-y2 (directly facing 4 in-plane ligands)
     g.rect((220, 22, 14, 10), fill=PAPER, color=RED, width=1.2)
-    g.text(227, 16, "d_x²-y² (Extreme Repulsion!)", color=RED, size=6.0)
+    g.text(227, 16, "d~x²−y²~ (Extreme Repulsion!)", color=RED, size=6.0)
 
-    # Second: d_xy
+    # Second: d~xy~
     g.rect((220, 45, 14, 10), fill=PAPER, color=GOLD, width=1.2)
-    g.text(227, 40, "d_xy (in-plane non-axial)", color=GOLD, size=5.8)
+    g.text(227, 40, "d~xy~ (in-plane non-axial)", color=GOLD, size=5.8)
 
     # Third: d_z2 (stabilized due to absence of z-ligands)
     g.rect((220, 68, 14, 10), fill=PAPER, color=TEAL, width=1.2)
-    g.text(227, 63, "d_z² (axial, low repulsion)", color=TEAL, size=5.8)
+    g.text(227, 63, "d~z²~ (axial, low repulsion)", color=TEAL, size=5.8)
 
-    # Lowest: degenerate d_xz, d_yz
+    # Lowest: degenerate d~xz~, d~yz~
     g.rect((212, 90, 14, 10), fill=PAPER, color=NAVY, width=1.2)
     g.rect((230, 90, 14, 10), fill=PAPER, color=NAVY, width=1.2)
-    g.text(227, 105, "d_xz, d_yz (strictly off-plane)", color=NAVY, size=5.8)
+    g.text(227, 105, "d~xz~, d~yz~ (strictly off-plane)", color=NAVY, size=5.8)
 
     # Right Explanatory Box
     g.rect((320, 12, 205, 96), fill=PAPER, color=TEAL, width=1.0)
     g.text(422, 22, "Square Planar & d^8^ Systems", color=TEAL, size=6.8)
-    g.text(422, 34, "• **Energy Hierarchy in D_4h:**", color=RED, size=6.0)
-    g.text(422, 44, "  **d_x²-y² >> d_xy > d_z² > (d_xz = d_yz)**", color=RED, size=6.0)
+    g.text(422, 34, "• **Energy Hierarchy in D~4h~:**", color=RED, size=6.0)
+    g.text(422, 44, "  **d~x²−y²~ >> d~xy~ > d~z²~ > (d~xz~ = d~yz~)**", color=RED, size=6.0)
     g.text(422, 55, "• **Why d^8^ Metals Love Square Planar?**", color=NAVY, size=6.0)
     g.text(422, 65, "  8 electrons occupy the bottom 4 orbitals paired,", color=NAVY, size=5.5)
-    g.text(422, 74, "  leaving empty the highly destabilized d_x²-y²!", color=NAVY, size=5.5)
+    g.text(422, 74, "  leaving empty the highly destabilized d~x²−y²~!", color=NAVY, size=5.5)
     g.text(422, 85, "• **Universally Square Planar:** All **4d^8^ (Pd^2+^)** and", color=TEAL, size=5.5)
     g.text(422, 94, "  **5d^8^ (Pt^2+^, Au^3+^)** complexes are square planar &", color=TEAL, size=5.5)
     g.text(422, 103, "  **DIAMAGNETIC**, even with weak-field Cl^−^ ligands!", color=RED, size=5.5)

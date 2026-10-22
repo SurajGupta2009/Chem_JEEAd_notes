@@ -10,7 +10,7 @@ SHEETS = [
             ("p", "Every substitution changes the configuration at the reacting carbon in a way that is fixed by the mechanism. "
                   "Learn the four entries in this sheet and you can answer most reaction-stereochemistry questions without "
                   "memorising a list of reactions."),
-            ("h2", "5.1  S~N~2: backside attack, clean inversion"),
+            ("h2", '5.1 S~N~2: backside attack, clean inversion'),
             ("fig", "sn2", "Fig. 5.1 — Walden inversion in S~N~2: backside nucleophilic attack via a pentacoordinate transition state.", 0.26),
             ("p", "The nucleophile attacks the carbon from the side opposite the leaving group, through a trigonal-bipyramidal "
                   "transition state, and the leaving group departs from the other side. The result is **inversion of "
@@ -23,7 +23,7 @@ SHEETS = [
                 "Retardation by β-branching: neopentyl halides react very slowly.",
                 "A chiral secondary halide gives a chiral product with clean inversion; a racemic starting material gives a racemic product.",
             ]),
-            ("h2", "5.2  S~N~1: planar carbocation, racemisation"),
+            ("h2", '5.2 S~N~1: planar carbocation, racemisation'),
             ("p", "The leaving group departs first, giving a planar carbocation; the nucleophile can then attack either face. If the "
                   "two faces are equally accessible, the product is racemic; in practice there is often slight inversion bias "
                   "because the leaving group blocks one face for a moment. The result is **racemisation with partial inversion**, "
@@ -44,7 +44,7 @@ SHEETS = [
             ("eq", "retention = two inversions (double displacement)"),
             ("h2", "5.4  Elimination"),
             ("p", "E2 is a concerted anti-periplanar elimination: the base removes a β-H while the leaving group departs from the "
-                  "opposite side. The requirement is that H and L ~anti~ to each other, which fixes the stereochemistry of the "
+                  "opposite side. The requirement is that H and L *anti* to each other, which fixes the stereochemistry of the "
                   "alkene: the two groups that were anti in the conformer end up on opposite sides (trans) of the new double bond."),
             ("p", "E1 goes through the same carbocation as S~N~1, so it loses stereochemical information at the reacting carbon and "
                   "gives the more substituted (Zaitsev) alkene. In a rigid ring, E2 needs a trans-diaxial arrangement of H and L; "
@@ -124,7 +124,7 @@ SHEETS = [
                 "Count the stereoisomers skeleton by skeleton; never add n's across skeletons.",
                 "Report structural, geometrical and optical counts separately, then the total.",
             ]),
-            ("h2", "5.12  Worked: C~5~H~11~Cl"),
+            ("h2", '5.12 Worked: C~5~H~11~Cl'),
             ("p", "Degree of unsaturation = 0, so the compound is acyclic and saturated (or a ring). Eight structural isomers "
                   "exist; the stereochemistry multiplies some of them."),
             ("table", ["Skeleton", "Structural isomers", "Stereoisomers", "Optically active?"], [
@@ -201,7 +201,7 @@ SHEETS = [
                 "**Optical purity / ee**: the fraction of the mixture that is one enantiomer, expressed as a percentage.",
             ]),
             ("h2", "The formulas"),
-            ("eq", ["[α] = α / (l × c)     l in dm, c in g mL^−1^",
+            ("eq", ['[α] = α / (l × c) l in dm, c in g mL^−1^',
                     "ee = (observed [α] / [α] of pure enantiomer) × 100 %",
                     "geometrical: 2^n^ (dissimilar ends); (2^n^ + 2^ceil(n/2)^)/2 (similar ends)",
                     "optical: see Table 3.12 (J-19)"]),

@@ -83,7 +83,9 @@ def glyph_runs(text, key):
 # ---------------------------------------------------------------------------
 # markup -> spans
 # ---------------------------------------------------------------------------
-TAG = re.compile(r"(<[^>]+>|\$[^$]+\$)")
+# Only <mark>..</mark> and $..$ are markup tags. Any other '<' is literal text
+# (e.g. "ΔG < 0"), so comparisons are no longer swallowed as fake HTML tags.
+TAG = re.compile(r"(<mark[^>]*>|</mark>|\$[^$]+\$)")
 
 
 class Span:
@@ -108,12 +110,14 @@ class Span:
 
 
 def preprocess(markup):
-    s = markup.replace("\n", " ").replace("&nbsp;", "\u00a0")
+    s = markup.replace("\r\n", "\n").replace("&nbsp;", "\u00a0")
     for a, b in (("\u2010", "-"), ("\u2011", "-"), ("\u2013", "-"), ("\u2014", "\u2014")):
         s = s.replace(a, b)
 
     # Convert ASCII chemical reaction arrows to unicode arrows
-    s = s.replace("<===>", "\u21cc").replace("<===", "\u2190").replace("===>", "\u2192").replace("->", "\u2192")
+    # ('-->' first so it is not mangled into '-→' by the bare '->' rule)
+    s = (s.replace("<===>", "\u21cc").replace("<===", "\u2190")
+          .replace("===>", "\u2192").replace("-->", "\u2192").replace("->", "\u2192"))
 
     # Fix unbracketed superscripts like ^3+, ^2+, ^+, ^- into proper ^3+^, ^2+^, ^+^, ^-^
     s = re.sub(r"\^([0-9]*[+-])(?!\^)", r"^\1^", s)
@@ -147,8 +151,6 @@ def parse(markup):
             continue
         if chunk == "</mark>":
             mark = False
-            continue
-        if chunk.startswith("<"):
             continue
         if chunk.startswith("$") and chunk.endswith("$") and len(chunk) > 2:
             for txt, mode in _scripts(chunk[1:-1]):
@@ -279,45 +281,52 @@ class Rich:
         self.lines = []
 
     # -- layout -------------------------------------------------------
-    def _words(self):
-        out = []
+    def _segments(self):
+        """Split spans into hard-broken segments at newlines, then into words."""
+        segs = [[]]
         for sp in self.spans:
-            chunks = re.split(r"(\s+)", sp.text)
-            for ch in chunks:
-                if not ch:
-                    continue
-                if ch.isspace():
-                    if out:
-                        out[-1].space = True
-                    continue
-                kind = sp.kind
-                if self.base != "kalam" and kind == "kalam":
-                    kind = self.base
-                elif self.base != "kalam" and kind == "kalam-b":
-                    kind = "serif-b"
-                out.append(Word([(kind, ch, sp.size(self.size), sp.dy(self.size),
-                                 sp.color or self.color, sp.mark)]))
-        return out
+            parts = sp.text.split("\n")
+            for pi, part in enumerate(parts):
+                if pi > 0:
+                    segs.append([])
+                chunks = re.split(r"(\s+)", part)
+                for ch in chunks:
+                    if not ch:
+                        continue
+                    if ch.isspace():
+                        if segs[-1]:
+                            segs[-1][-1].space = True
+                        continue
+                    kind = sp.kind
+                    if self.base != "kalam" and kind == "kalam":
+                        kind = self.base
+                    elif self.base != "kalam" and kind == "kalam-b":
+                        kind = "serif-b"
+                    segs[-1].append(Word([(kind, ch, sp.size(self.size), sp.dy(self.size),
+                                          sp.color or self.color, sp.mark)]))
+        return segs
 
     def layout(self, w):
-        words = self._words()
-        if not words:
+        segs = [s for s in self._segments() if s]
+        if not segs:
             self.lines = []
             self.h = self.space_before + self.space_after
             return self.h
-        lines, cur, curw = [], [], 0.0
-        avail = w - 2 * self.pad - self.indent - self.first_indent
-        for word in words:
-            add = word.w + (width(" ", "kalam", self.size) if cur else 0.0)
-            if cur and curw + add > avail:
+        lines = []
+        for words in segs:
+            cur, curw = [], 0.0
+            avail = w - 2 * self.pad - self.indent - self.first_indent
+            for word in words:
+                add = word.w + (width(" ", "kalam", self.size) if cur else 0.0)
+                if cur and curw + add > avail:
+                    lines.append((cur, curw))
+                    cur, curw = [], 0.0
+                    add = word.w
+                    avail = w - 2 * self.pad - self.indent
+                cur.append(word)
+                curw += add
+            if cur:
                 lines.append((cur, curw))
-                cur, curw = [], 0.0
-                add = word.w
-                avail = w - 2 * self.pad - self.indent
-            cur.append(word)
-            curw += add
-        if cur:
-            lines.append((cur, curw))
         self.lines = lines
         self.w = w
         self.h = self.space_before + len(lines) * self.leading + self.space_after

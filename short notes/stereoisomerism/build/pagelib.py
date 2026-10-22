@@ -55,9 +55,11 @@ class Flow:
 
 class Gap(Flow):
     def __init__(self, h=5):
+        self.base_h = h
         self.h = h
 
     def layout(self, w):
+        self.h = self.base_h + self.stretch
         return self.h
 
 
@@ -68,6 +70,7 @@ class Rule(Flow):
         self.h = self.before + self.after
 
     def layout(self, w):
+        self.h = self.before + self.after + self.stretch
         return self.h
 
     def draw(self, page, x, y):
@@ -466,25 +469,46 @@ def build_sheet(sheet, sheet_idx, sheet_total, part_label, part_short, running):
     """
     global COMPACT, ROOMY, TIGHT
 
-    def attempt(compact=False, tight=False):
+    def attempt(compact=False, tight=False, roomy=False):
         global COMPACT, ROOMY, TIGHT
-        COMPACT, ROOMY, TIGHT = compact, False, tight
+        COMPACT, ROOMY, TIGHT = compact, roomy, tight
         flows = [make_flow(b) for b in sheet["blocks"]]
         pages = plan(flows)
         COMPACT = ROOMY = TIGHT = False
         return pages, flows
 
     pages, flows = attempt()
-    if len(pages) > 1 and _fill(pages[-1]) < 0.45:
+    if len(pages) > 1 and _fill(pages[-1]) < 0.55:
         c_pages, c_flows = attempt(compact=True)
         if len(c_pages) < len(pages):
             pages, flows = c_pages, c_flows
         elif len(c_pages) == len(pages) and _fill(c_pages[-1]) > _fill(pages[-1]) + 0.08:
             pages, flows = c_pages, c_flows
-        if len(pages) > 1 and _fill(pages[-1]) < 0.13:
+        if len(pages) > 1 and _fill(pages[-1]) < 0.40:
             t_pages, t_flows = attempt(tight=True)
             if len(t_pages) < len(pages):
                 pages, flows = t_pages, t_flows
+    elif len(pages) == 1:
+        # sparse one-pager: give the sheet room to breathe, then hand out any
+        # remaining slack evenly as inter-block stretch so pages end full
+        if _fill(pages[0]) < 0.85:
+            r_pages, r_flows = attempt(roomy=True)
+            if len(r_pages) == 1:
+                pages, flows = r_pages, r_flows
+        items = pages[0]
+        used = items[-1][1] + items[-1][0].h
+        leftover = BODY_BOTTOM - used - 1.5
+        if leftover > 10:
+            add = leftover / max(1, len(items))
+            for f, _ in items:
+                f.stretch += add
+            grown = plan(flows)
+            if len(grown) == 1:
+                pages = grown
+            else:
+                for f, _ in items:
+                    f.stretch -= add
+                pages = plan(flows)
     return pages, flows
 
 

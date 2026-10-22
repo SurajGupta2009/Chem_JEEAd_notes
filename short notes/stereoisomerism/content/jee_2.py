@@ -61,7 +61,7 @@ SHEETS = [
             ("table", ["Property", "Maleic (cis)", "Fumaric (trans)", "Reason"], [
                 ["melting point", "≈ 135 °C", "≈ 287 °C", "packing / symmetry"],
                 ["solubility in water", "high", "low", "polarity, H-bonding"],
-                ["heat of combustion", "lower", "higher", "cis is less stable"],
+                ["heat of combustion", "**higher** (releases more)", "lower", "cis is less stable; fumaric is the more stable isomer"],
                 ["dipole moment", "larger", "zero by symmetry", "vector addition"],
             ], [24, 18, 18, 40], "Table 2.16 — the data pattern behind the rules."),
             ("warn", "Do not transfer the maleic/fumaric boiling-point reversal to every cis/trans pair. It happens because of a specific intramolecular hydrogen bond between two –COOH groups held close. Without such a group, the cis isomer boils higher."),
