@@ -50,11 +50,41 @@ class Pen:
         c_t = fitz.Point(self.tx(c[0]), self.ty(c[1]))
         self.p.draw_circle(c_t, r * self.sx, fill=fill, color=color, width=width)
 
+    def _runs(self, s):
+        out, buf, mode = [], "", 0
+        for ch in s:
+            if ch in "~^":
+                if buf:
+                    out.append((buf, mode))
+                    buf = ""
+                mode = 0 if mode else (-1 if ch == "~" else 1)
+            else:
+                buf += ch
+        if buf:
+            out.append((buf, mode))
+        return out
+
     def text(self, x, y, txt, font="kalam-bold", size=7.5, color=NAVY, align="center"):
-        import fitz
-        ox = len(txt) * size * 0.25 if align == "center" else (len(txt) * size * 0.5 if align == "right" else 0)
-        pt = fitz.Point(self.tx(x) - ox, self.ty(y))
-        self.p.insert_text(pt, txt, fontsize=size, color=color)
+        from textkit import draw_text, glyph_runs, width
+        s = (txt.replace("**", "")
+                .replace("-->", "→").replace("->", "→")
+                .replace("<===>", "⇌").replace("===>", "→").replace("<===", "←"))
+        parts = []
+        for t, mode in self._runs(s):
+            sz = size * (1.0 if mode == 0 else 0.64)
+            dy = 0.0 if mode == 0 else (0.20 * size if mode == -1 else -0.40 * size)
+            for k, seg in glyph_runs(t, "kalam-b"):
+                parts.append((k, seg, sz, dy))
+        total = sum(width(seg, k, sz) for k, seg, sz, _ in parts)
+        cx = self.tx(x)
+        if align == "center":
+            cx -= total / 2
+        elif align == "right":
+            cx -= total
+        by = self.ty(y)
+        for k, seg, sz, dy in parts:
+            draw_text(self.p, cx, by + dy * self.sy, seg, k, sz, color)
+            cx += width(seg, k, sz)
 
 
 def fig_adsorption_residual(page, x, y, w, h):
@@ -168,7 +198,7 @@ def fig_catalysis_cycle(page, x, y, w, h):
     g.text(167, 44, "A and B chemisorb", color=NAVY, size=5.8)
     g.text(167, 54, "onto active sites via", color=NAVY, size=5.5)
     g.text(167, 64, "chemical bonds.", color=NAVY, size=5.5)
-    g.text(167, 78, "Lowers E_a!", color=RED, size=6.5)
+    g.text(167, 78, "Lowers E~a~!", color=RED, size=6.5)
 
     g.line((215, 57), (225, 57), color=TEAL, width=1.5)
 

@@ -39,7 +39,7 @@ SHEETS = [
             ("fig", "refining_methods", "Fig. 3.1 — High-Purity Refining: Zone refining mechanism and Vapour Phase complexes (Mond and Van Arkel)."),
             ("h2", "1. Zone Refining (Fractional Crystallization Principle)"),
             ("bul", [
-                "**Underlying Principle:** Based on the fundamental thermodynamic fact that **impurities are significantly MORE SOLUBLE in the molten liquid state than in the corresponding solid crystal lattice** (K_D = C_S / C_L < 1).",
+                '**Underlying Principle:** Based on the fundamental thermodynamic fact that **impurities are significantly MORE SOLUBLE in the molten liquid state than in the corresponding solid crystal lattice** (K~D~ = C~S~ / C~L~ < 1).',
                 "**Working Mechanism:** A circular mobile induction heater surrounds a rod of impure metal enclosed in an inert atmosphere (argon) and travels slowly from one end to the other. As the molten zone sweeps forward, pure metal recrystallizes behind it, while impurities stay segregated in the molten zone!",
                 "**Repetition & Truncation:** The process is repeated in the identical direction multiple times. The impurities become heavily concentrated at one end of the ingot, which is finally sawn off and discarded.",
                 "**Applicable Elements:** **Silicon (Si), Germanium (Ge), Gallium (Ga), Indium (In), Boron (B)** — vital for transistor and semiconductor manufacturing!"
@@ -65,10 +65,10 @@ SHEETS = [
             ("p", "Electro-refining yields commercial copper (>99.95%) suitable for electrical wiring, where even 0.05% arsenic or iron reduces conductivity by >10%."),
             ("h2", "1. Electro-Refining Setup for Copper"),
             ("table", ["Cell Component", "Physical Material Used", "Electrochemical Function / Mechanism"], [
-                ["**Anode (+)**", "Thick cast slabs of **crude Blister Copper** (~98% pure)", "Oxidizes copper and more electropositive base metals into solution:\nCu(s) → Cu^2+^(aq) + 2e^−^"],
+                ["**Anode (+)**", 'Thick cast slabs of **crude Blister Copper** (≈98% pure)', "Oxidizes copper and more electropositive base metals into solution:\nCu(s) → Cu^2+^(aq) + 2e^−^"],
                 ["**Cathode (−)**", "Very thin sheets of **pure Copper** coated with graphite", "Selectively plates out pure copper metal from electrolyte:\nCu^2+^(aq) + 2e^−^ → Cu(s)"],
-                ["**Electrolyte**", "Acidified aqueous CuSO~4~ (~15% CuSO~4~ + 5% H~2~SO~4~)", "Provides high Cu^2+^ ionic flux; H~2~SO~4~ prevents hydrolysis of Cu^2+^"],
-                ["**Operating Voltage**", "Low voltage (~0.2 – 0.4 V) precisely controlled", "Prevents more electropositive base metals from discharging at cathode"]
+                ["**Electrolyte**", 'Acidified aqueous CuSO~4~ (≈15% CuSO~4~ + 5% H~2~SO~4~)', "Provides high Cu^2+^ ionic flux; H~2~SO~4~ prevents hydrolysis of Cu^2+^"],
+                ["**Operating Voltage**", 'Low voltage (≈0.2 – 0.4 V) precisely controlled', "Prevents more electropositive base metals from discharging at cathode"]
             ], [18, 26, 32, 24], "Table 3.2 — Electro-refining cell parameters."),
             ("h2", "2. Anode Mud (Anode Slime) — Chemistry & Economic Value"),
             ("p", "Impurities present in crude blister copper behave in two distinct ways based on their standard reduction potentials (E°):\n"
@@ -85,14 +85,14 @@ SHEETS = [
         "title": "Extraction of Iron: The Blast Furnace Architecture, Zones & Reactions",
         "blocks": [
             ("lead", "**Industrial Pyrometallurgy of Iron** — The Blast Furnace (NCERT §6.6)"),
-            ("p", "Iron is extracted from Haematite (Fe~2~O~3~) in a colossal vertical tower (blast furnace, ~30 m high) lined with refractory fire-bricks, operating continuously for years under a counter-current flow of solids and hot gas."),
+            ("p", 'Iron is extracted from Haematite (Fe~2~O~3~) in a colossal vertical tower (blast furnace, ≈30 m high) lined with refractory fire-bricks, operating continuously for years under a counter-current flow of solids and hot gas.'),
             ("fig", "blast_furnace", "Fig. 3.2 — The Blast Furnace: Reduction zones, slag formation, combustion hearth, and forms of iron."),
             ("h2", "1. Thermal Zones & Stepwise Chemical Transformations"),
             ("table", ["Zone & Temp Range", "Primary Chemical Reactions", "Thermodynamic Role / Nature"], [
                 ["**1. Zone of Reduction**\n(Top of stack, 500 – 800 K)", "3 Fe~2~O~3~ + CO → 2 Fe~3~O~4~ + CO~2~\nFe~3~O~4~ + 4 CO → 3 Fe + 4 CO~2~\nFe~2~O~3~ + CO → 2 FeO + CO~2~", "Exothermic gas-solid reduction;\nCO is the primary reducing agent (Ellingham: CO → CO~2~ lies lower)"],
                 ["**2. Zone of Slag Formation**\n(Belly / Middle, 900 – 1200 K)", "CaCO~3~ —(Δ)→ CaO + CO~2~ ↑ (Calcination)\nCaO + SiO~2~ → CaSiO~3~ (Slag formation)\nFeO + CO → Fe + CO~2~", "Flux CaO captures quartz gangue SiO~2~;\nFusible molten CaSiO~3~ floats above molten iron"],
-                ["**3. Zone of Fusion & Carburization**\n(Bosh, 1200 – 1500 K)", "Spongy iron absorbs carbon (lowering its m.p. from 1811 K to ~1473 K) and melts;\nFeO + C → Fe + CO (Direct carbon reduction)", "Endothermic direct reduction by coke;\nCarbon dissolution creates Pig Iron (~4% C)"],
-                ["**4. Zone of Combustion**\n(Hearth / Tuyeres, 1500 – 2170 K)", "C + O~2~ → CO~2~   (ΔH = −393.5 kJ, T ≈ 2170 K)\nC + CO~2~ → 2 CO   (ΔH = +163.2 kJ, Boudouard)", "Blasts of preheated air burn coke to CO~2~, which immediately reduces to CO reducing gas"]
+                ["**3. Zone of Fusion & Carburization**\n(Bosh, 1200 – 1500 K)", 'Spongy iron absorbs carbon (lowering its m.p. from 1811 K to ≈1473 K) and melts;\nFeO + C → Fe + CO (Direct carbon reduction)', 'Endothermic direct reduction by coke;\nCarbon dissolution creates Pig Iron (≈4% C)'],
+                ["**4. Zone of Combustion**\n(Hearth / Tuyeres, 1500 – 2170 K)", 'C + O~2~ → CO~2~ (ΔH = −393.5 kJ, T ≈ 2170 K)\nC + CO~2~ → 2 CO (ΔH = +163.2 kJ, Boudouard)', "Blasts of preheated air burn coke to CO~2~, which immediately reduces to CO reducing gas"]
             ], [22, 44, 34], "Table 3.3 — Comprehensive thermal and chemical zones of the blast furnace."),
             ("trap", "TRAP: Does haematite get reduced directly to Fe in a single step? NO! Reduction proceeds strictly sequentially: Fe~2~O~3~ → Fe~3~O~4~ → FeO → Fe!")
         ]
@@ -109,10 +109,10 @@ SHEETS = [
             ("h2", "1. Stepwise Metallurgy of Copper Pyrites"),
             ("bul", [
                 "**Step 1: Crushing & Froth Floatation:** Concentrated using pine oil and potassium ethyl xanthate collector.",
-                "**Step 2: Roasting in Reverberatory Furnace:** Heated in excess air to remove moisture, arsenic, and antimony as volatile oxides:\n2 CuFeS~2~ + O~2~ → Cu~2~S + 2 FeS + SO~2~ ↑       2 FeS + 3 O~2~ → 2 FeO + 2 SO~2~ ↑",
-                "**Step 3: Smelting in Reverberatory Furnace (+ Silica Flux):** Roasted ore is mixed with **coke and acidic flux SiO~2~**. Because Iron has a higher affinity for oxygen than copper, FeO preferentially reacts with SiO~2~:\n**FeO + SiO~2~ → FeSiO~3~(l)** (Fusible slag floats on top!)\nThe heavier bottom molten layer is **COPPER MATTE** (primarily Cu~2~S + trace FeS, ~45–50% Cu).",
-                "**Step 4: Bessemerization (Pear-shaped, silica-lined converter):** Hot air blast oxidizes residual FeS to FeO, captured by the silica lining as FeSiO~3~ slag. Then, **auto-reduction** converts Cu~2~S to molten copper:\n2 Cu~2~S + 3 O~2~ → 2 Cu~2~O + 2 SO~2~ ↑       **2 Cu~2~O + Cu~2~S → 6 Cu(l) + SO~2~ ↑**",
-                "**Step 5: Solidification:** Cooling molten copper releases dissolved SO~2~ gas, creating blisters on the surface (**Blister Copper**, ~98% pure). Refined by electro-refining."
+                '**Step 2: Roasting in Reverberatory Furnace:** Heated in excess air to remove moisture, arsenic, and antimony as volatile oxides:\n2 CuFeS~2~ + O~2~ → Cu~2~S + 2 FeS + SO~2~ ↑ 2 FeS + 3 O~2~ → 2 FeO + 2 SO~2~ ↑',
+                '**Step 3: Smelting in Reverberatory Furnace (+ Silica Flux):** Roasted ore is mixed with **coke and acidic flux SiO~2~**. Because Iron has a higher affinity for oxygen than copper, FeO preferentially reacts with SiO~2~:\n**FeO + SiO~2~ → FeSiO~3~(l)** (Fusible slag floats on top!)\nThe heavier bottom molten layer is **COPPER MATTE** (primarily Cu~2~S + trace FeS, ≈45–50% Cu).',
+                '**Step 4: Bessemerization (Pear-shaped, silica-lined converter):** Hot air blast oxidizes residual FeS to FeO, captured by the silica lining as FeSiO~3~ slag. Then, **auto-reduction** converts Cu~2~S to molten copper:\n2 Cu~2~S + 3 O~2~ → 2 Cu~2~O + 2 SO~2~ ↑ **2 Cu~2~O + Cu~2~S → 6 Cu(l) + SO~2~ ↑**',
+                '**Step 5: Solidification:** Cooling molten copper releases dissolved SO~2~ gas, creating blisters on the surface (**Blister Copper**, ≈98% pure). Refined by electro-refining.'
             ]),
             ("trap", "EXAMINER TRAP: Copper Matte composition is a universal favourite in JEE! Matte is a mixture of **Cu~2~S and FeS** (NEVER CuS or Fe~2~S~3~!).")
         ]
@@ -128,9 +128,9 @@ SHEETS = [
             ("fig", "hall_heroult", "Fig. 3.4 — Hall-Héroult Electrolytic Cell: Carbon cathode lining, graphite anodes, and cryolite electrolyte."),
             ("h2", "1. Hall-Héroult Process Constants & Traps (NCERT §6.6)"),
             ("bul", [
-                "**Electrolyte Formulation:** Purified Al~2~O~3~ (~5%) dissolved in molten **Cryolite (Na~3~AlF~6~, ~85%)** and **Fluorspar (CaF~2~, ~10%)** at 1170–1220 K.",
-                "**Why add Cryolite & CaF~2~?** Pure alumina melts at an impractically high 2320 K and is an electrical insulator. Cryolite acts as a solvent, dramatically lowers the melting point to ~1170 K, and provides mobile ions for high electrical conductivity!",
-                "**Carbon Anode Consumption Trap:** At the anode, oxygen anions discharge to form CO and CO~2~: C + 2 O^2−^ → CO~2~ + 4 e^−^. For **EVERY 1 kg of aluminium produced, ~0.5 kg of graphite anode is burned away**! Anodes must be continuously replaced."
+                '**Electrolyte Formulation:** Purified Al~2~O~3~ (≈5%) dissolved in molten **Cryolite (Na~3~AlF~6~, ≈85%)** and **Fluorspar (CaF~2~, ≈10%)** at 1170–1220 K.',
+                '**Why add Cryolite & CaF~2~?** Pure alumina melts at an impractically high 2320 K and is an electrical insulator. Cryolite acts as a solvent, dramatically lowers the melting point to ≈1170 K, and provides mobile ions for high electrical conductivity!',
+                '**Carbon Anode Consumption Trap:** At the anode, oxygen anions discharge to form CO and CO~2~: C + 2 O^2−^ → CO~2~ + 4 e^−^. For **EVERY 1 kg of aluminium produced, ≈0.5 kg of graphite anode is burned away**! Anodes must be continuously replaced.'
             ]),
             ("h2", "2. Master Synthesis Matrix: Complete Extraction Pathways for JEE Advanced"),
             ("table", ["Metal", "Principal Ore", "Beneficiation Method", "Conversion to Oxide", "Primary Reduction Process", "Final Refining Method"], [

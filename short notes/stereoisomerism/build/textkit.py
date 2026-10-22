@@ -54,7 +54,7 @@ _SERIF_CHARS = set(
     "\u03c0\u03c1\u03c3\u03c4\u03c5\u03c6\u03c7\u03c8\u03c9\u0393\u0394\u0398\u039b\u039e"
     "\u03a0\u03a3\u03a6\u03a8\u03a9\u2192\u2190\u2194\u21cc\u21d2\u2260\u2264\u2265\u2248"
     "\u2212\u00b1\u00d7\u00f7\u221a\u221e\u2220\u2225\u22a5\u2020\u2021\u25b3\u2261\u2262"
-    "\u222b\u2202\u2206\u03bc\u00b0\u2032\u2033\u2081\u2082\u2083\u2084"
+    "\u222b\u2202\u2206\u03bc\u00b0\u2032\u2033\u2081\u2082\u2083\u2084\u221d\u00bd\u226a\u226b\u2191\u2193\u03b4"
 )
 
 _DIGITS = "\u2080\u2081\u2082\u2083\u2084\u2085\u2086\u2087\u2088\u2089"
@@ -83,7 +83,9 @@ def glyph_runs(text, key):
 # ---------------------------------------------------------------------------
 # markup -> spans
 # ---------------------------------------------------------------------------
-TAG = re.compile(r"(<[^>]+>|\$[^$]+\$)")
+# Only <mark>..</mark> and $..$ are markup tags. Any other '<' is literal text
+# (e.g. "ΔG < 0"), so comparisons are no longer swallowed as fake HTML tags.
+TAG = re.compile(r"(<mark[^>]*>|</mark>|\$[^$]+\$)")
 
 
 class Span:
@@ -108,9 +110,31 @@ class Span:
 
 
 def preprocess(markup):
-    s = markup.replace("\n", " ").replace("&nbsp;", "\u00a0")
+    s = markup.replace("\r\n", "\n").replace("&nbsp;", "\u00a0")
     for a, b in (("\u2010", "-"), ("\u2011", "-"), ("\u2013", "-"), ("\u2014", "\u2014")):
         s = s.replace(a, b)
+
+    # Convert ASCII chemical reaction arrows to unicode arrows
+    # ('-->' first so it is not mangled into '-→' by the bare '->' rule)
+    s = (s.replace("<===>", "\u21cc").replace("<===", "\u2190")
+          .replace("===>", "\u2192").replace("-->", "\u2192").replace("->", "\u2192"))
+
+    # Fix unbracketed superscripts like ^3+, ^2+, ^+, ^- into proper ^3+^, ^2+^, ^+^, ^-^
+    s = re.sub(r"\^([0-9]*[+-])(?!\^)", r"^\1^", s)
+
+    # Auto-subscript chemical formulas containing digits if not already subscripted
+    def _sub_formula(m):
+        raw = m.group(0)
+        if "~" in raw or "$" in raw or "^" in raw:
+            return raw
+        # Avoid years (e.g. 2026), element groups (e.g. G13), temperatures (e.g. 300K)
+        if raw.startswith("G") and raw[1:].isdigit():
+            return raw
+        # Convert digits after letters or closing parens into subscripts: B2H6 -> B~2~H~6~
+        return re.sub(r"([A-Za-z\)])(\d+)", r"\1~\2~", raw)
+
+    chem_pat = re.compile(r"\b(?:[A-Z][a-z]?(?:\d+|(?:\([A-Za-z0-9_]+\)\d*))+[A-Za-z0-9_()·+-]*)\b")
+    s = chem_pat.sub(_sub_formula, s)
     return s
 
 
@@ -127,8 +151,6 @@ def parse(markup):
             continue
         if chunk == "</mark>":
             mark = False
-            continue
-        if chunk.startswith("<"):
             continue
         if chunk.startswith("$") and chunk.endswith("$") and len(chunk) > 2:
             for txt, mode in _scripts(chunk[1:-1]):
@@ -259,45 +281,52 @@ class Rich:
         self.lines = []
 
     # -- layout -------------------------------------------------------
-    def _words(self):
-        out = []
+    def _segments(self):
+        """Split spans into hard-broken segments at newlines, then into words."""
+        segs = [[]]
         for sp in self.spans:
-            chunks = re.split(r"(\s+)", sp.text)
-            for ch in chunks:
-                if not ch:
-                    continue
-                if ch.isspace():
-                    if out:
-                        out[-1].space = True
-                    continue
-                kind = sp.kind
-                if self.base != "kalam" and kind == "kalam":
-                    kind = self.base
-                elif self.base != "kalam" and kind == "kalam-b":
-                    kind = "serif-b"
-                out.append(Word([(kind, ch, sp.size(self.size), sp.dy(self.size),
-                                 sp.color or self.color, sp.mark)]))
-        return out
+            parts = sp.text.split("\n")
+            for pi, part in enumerate(parts):
+                if pi > 0:
+                    segs.append([])
+                chunks = re.split(r"(\s+)", part)
+                for ch in chunks:
+                    if not ch:
+                        continue
+                    if ch.isspace():
+                        if segs[-1]:
+                            segs[-1][-1].space = True
+                        continue
+                    kind = sp.kind
+                    if self.base != "kalam" and kind == "kalam":
+                        kind = self.base
+                    elif self.base != "kalam" and kind == "kalam-b":
+                        kind = "serif-b"
+                    segs[-1].append(Word([(kind, ch, sp.size(self.size), sp.dy(self.size),
+                                          sp.color or self.color, sp.mark)]))
+        return segs
 
     def layout(self, w):
-        words = self._words()
-        if not words:
+        segs = [s for s in self._segments() if s]
+        if not segs:
             self.lines = []
             self.h = self.space_before + self.space_after
             return self.h
-        lines, cur, curw = [], [], 0.0
-        avail = w - 2 * self.pad - self.indent - self.first_indent
-        for word in words:
-            add = word.w + (width(" ", "kalam", self.size) if cur else 0.0)
-            if cur and curw + add > avail:
+        lines = []
+        for words in segs:
+            cur, curw = [], 0.0
+            avail = w - 2 * self.pad - self.indent - self.first_indent
+            for word in words:
+                add = word.w + (width(" ", "kalam", self.size) if cur else 0.0)
+                if cur and curw + add > avail:
+                    lines.append((cur, curw))
+                    cur, curw = [], 0.0
+                    add = word.w
+                    avail = w - 2 * self.pad - self.indent
+                cur.append(word)
+                curw += add
+            if cur:
                 lines.append((cur, curw))
-                cur, curw = [], 0.0
-                add = word.w
-                avail = w - 2 * self.pad - self.indent
-            cur.append(word)
-            curw += add
-        if cur:
-            lines.append((cur, curw))
         self.lines = lines
         self.w = w
         self.h = self.space_before + len(lines) * self.leading + self.space_after

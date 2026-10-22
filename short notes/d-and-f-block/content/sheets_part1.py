@@ -26,12 +26,12 @@ SHEETS_PART1 = [
                 "accent": "navy",
                 "bullets": [
                     "• **General Valence Configuration:** **(n−1)d^1-10^ ns^1-2^** (where n = 4 for 3d, 5 for 4d, 6 for 5d). Note: (n−1)d and ns orbitals possess very close energy levels.",
-                    "• **Order of Filling vs Ionization:** By Aufbau rule, 4s orbital fills before 3d in neutral atoms ($E_{4s} < E_{3d}$). However, upon ionization, **4s electrons are ALWAYS lost first** because once 3d is populated, increased nuclear shielding ($Z_{eff}$) lowers 3d energy below 4s ($E_{3d} < E_{4s}$ in cations!).",
+                    '• **Order of Filling vs Ionization:** By Aufbau rule, 4s orbital fills before 3d in neutral atoms (E~4s~ < E~3d~). However, upon ionization, **4s electrons are ALWAYS lost first** because once 3d is populated, increased nuclear shielding (Z~eff~) lowers 3d energy below 4s (E~3d~ < E~4s~ in cations!).',
                     "• **3d Series Anomalous Configurations:**",
                     "  - **Chromium (Z = 24):** Expected [Ar] 3d^4^ 4s^2^ → **Observed [Ar] 3d^5^ 4s^1^**.",
                     "  - **Copper (Z = 29):** Expected [Ar] 3d^9^ 4s^2^ → **Observed [Ar] 3d^10^ 4s^1^**.",
                     "• **Driving Force Behind Half & Fully Filled Shells:**",
-                    "  1. **Exchange Energy (ΔE_ex):** Quantum mechanical exchange of electrons with parallel spins between degenerate orbitals releases stabilizing energy ($K \\cdot \\frac{n(n-1)}{2}$). For 3d^5^, number of pairs = $5 \\times 4 / 2 = 10$; for 3d^4^, pairs = $4 \\times 3 / 2 = 6$. The jump of 4 exchange pairs heavily stabilizes 3d^5^ 4s^1^.",
+                    '  1. **Exchange Energy (ΔE~ex~):** Quantum mechanical exchange of electrons with parallel spins between degenerate orbitals releases stabilizing energy (K · (n(n-1)) / 2). For 3d^5^, number of pairs = 5 × 4 / 2 = 10; for 3d^4^, pairs = 4 × 3 / 2 = 6. The jump of 4 exchange pairs heavily stabilizes 3d^5^ 4s^1^.',
                     "  2. **Symmetrical Electron Distribution:** Spherical symmetrical charge distribution around nucleus minimizes inter-electronic repulsions.",
                     "• **4d and 5d Anomalies (JEE Advanced Crucial Data):**",
                     "  - **Palladium (Pd, Z = 46):** **[Kr] 4d^10^ 5s^0^** — completely devoid of 5s electrons due to large 4d-5s gap and immense exchange stabilization of d^10^.",
@@ -79,7 +79,7 @@ SHEETS_PART1 = [
                 ]
             },
             {
-                "title": "3. Enthalpy of Atomization (Δ_aH°)",
+                "title": '3. Enthalpy of Atomization (Δ~a~H°)',
                 "tag": "NCERT Data & Analysis",
                 "accent": "gold",
                 "bullets": [
@@ -104,8 +104,8 @@ SHEETS_PART1 = [
                 "accent": "teal",
                 "bullets": [
                     "• **Across a Series (Sc to Zn):** Radii decrease initially, remain almost flat in the middle, and slightly increase at the end.",
-                    "  1. **Sc to Cr (Decrease):** Electrons enter inner (n−1)d subshell. Increase in nuclear charge ($Z_{eff}$) dominates over the screening effect of d electrons → atomic radii contract.",
-                    "  2. **Mn to Ni (Nearly Constant):** Increased shielding by added d electrons balances the increased nuclear pull ($Z_{eff} \\approx \\text{screening}$) → size remains virtually unchanged (Fe ≈ Co ≈ Ni ≈ 125 pm).",
+                    '  1. **Sc to Cr (Decrease):** Electrons enter inner (n−1)d subshell. Increase in nuclear charge (Z~eff~) dominates over the screening effect of d electrons → atomic radii contract.',
+                    '  2. **Mn to Ni (Nearly Constant):** Increased shielding by added d electrons balances the increased nuclear pull (Z~eff~ ≈ screening) → size remains virtually unchanged (Fe ≈ Co ≈ Ni ≈ 125 pm).',
                     "  3. **Cu to Zn (Slight Expansion):** Filling of d^10^ subshell causes strong electron-electron repulsion among paired electrons which exceeds nuclear attraction, expanding the electron cloud (Cu: 128 pm, Zn: 137 pm).",
                     "• **Ionic Radii:** M^2+^ and M^3+^ follow the same regular decreasing trend across the series due to steadily increasing effective nuclear charge."
                 ]
@@ -134,18 +134,18 @@ SHEETS_PART1 = [
         "badge": "Ionization & Orbitals",
         "boxes": [
             {
-                "title": "1. Trends in Ionization Enthalpies (IE_1, IE_2, IE_3)",
+                "title": '1. Trends in Ionization Enthalpies (IE~1~, IE~2~, IE~3~)',
                 "tag": "NCERT Data Analysis",
                 "accent": "teal",
                 "bullets": [
                     "• **General Across 3d Series:** Ionization enthalpies increase from left to right, but much less steeply than in s and p blocks because additional electrons enter inner (n−1)d subshell, partially shielding outer ns electrons.",
-                    "• **IE_1 Trends:** Sc (631) to Zn (906 kJ/mol). Highest IE_1 in Zn due to removal of electron from completely filled, stable 4s^2^ orbital.",
-                    "• **IE_2 Anomalies (Extremely High Values for Cr and Cu):**",
-                    "  - **Cr (1592 kJ/mol):** Second electron must be removed from stable half-filled **3d^5^** (Cr^+^: [Ar] 3d^5^ → Cr^2+^: 3d^4^). Loss of exchange energy makes IE_2 very high.",
+                    '• **IE~1~ Trends:** Sc (631) to Zn (906 kJ/mol). Highest IE~1~ in Zn due to removal of electron from completely filled, stable 4s^2^ orbital.',
+                    '• **IE~2~ Anomalies (Extremely High Values for Cr and Cu):**',
+                    '  - **Cr (1592 kJ/mol):** Second electron must be removed from stable half-filled **3d^5^** (Cr^+^: [Ar] 3d^5^ → Cr^2+^: 3d^4^). Loss of exchange energy makes IE~2~ very high.',
                     "  - **Cu (1958 kJ/mol):** Second electron must be removed from fully filled, extraordinarily stable **3d^10^** (Cu^+^: [Ar] 3d^10^ → Cu^2+^: 3d^9^).",
-                    "• **IE_3 Anomalies (Extremely High Values for Mn and Zn):**",
+                    '• **IE~3~ Anomalies (Extremely High Values for Mn and Zn):**',
                     "  - **Mn (3248 kJ/mol):** Third electron must be stripped from exceptionally stable **3d^5^** (Mn^2+^: [Ar] 3d^5^ → Mn^3+^: 3d^4^). Hence, Mn^2+^ resists oxidation to Mn^3+^.",
-                    "  - **Fe (2957 kJ/mol):** Relatively low IE_3 because removing third electron yields stable **3d^5^** (Fe^2+^: [Ar] 3d^6^ → Fe^3+^: 3d^5^). Thus, Fe^2+^ is easily oxidized to Fe^3+^.",
+                    '  - **Fe (2957 kJ/mol):** Relatively low IE~3~ because removing third electron yields stable **3d^5^** (Fe^2+^: [Ar] 3d^6^ → Fe^3+^: 3d^5^). Thus, Fe^2+^ is easily oxidized to Fe^3+^.',
                     "  - **Zn (3833 kJ/mol):** Disruption of completely filled 3d^10^ (Zn^2+^: [Ar] 3d^10^ → Zn^3+^: 3d^9^)."
                 ]
             },
@@ -155,7 +155,7 @@ SHEETS_PART1 = [
                 "accent": "navy",
                 "bullets": [
                     "• **Vertical Trend Disruption:** In s and p blocks, IE decreases down the group. In transition groups, IE follows the anomalous order: **5d > 3d > 4d** (or 5d > 4d > 3d in many groups!).",
-                    "• **Why 5d has HIGHEST IE:** Because of **Lanthanoid Contraction**, 5d elements experience an enormous effective nuclear charge ($Z_{eff}$) without size expansion. Valence 6s electrons are held with intense electrostatic force.",
+                    '• **Why 5d has HIGHEST IE:** Because of **Lanthanoid Contraction**, 5d elements experience an enormous effective nuclear charge (Z~eff~) without size expansion. Valence 6s electrons are held with intense electrostatic force.',
                     "• **Chemical Inertness of Heavy Metals:** High IE values of 5d metals (Pt, Au, Hg) explain why Gold and Platinum are noble, chemically inert, and resist oxidation/dissolution in standard mineral acids."
                 ]
             },
@@ -165,7 +165,7 @@ SHEETS_PART1 = [
                 "accent": "gold",
                 "bullets": [
                     "• **Thermodynamic Stability of Oxidation States:** Thermodynamic stability of an ion in aqueous solution does NOT depend on ionization energy alone! It depends on the net balance of **Atomization + Ionization Enthalpies vs Hydration Enthalpy**.",
-                    "• **Cu^+^ vs Cu^2+^ in Water:** Although IE_2 of Cu is very high (+1958 kJ/mol), **Cu^2+^(aq) is far more stable than Cu^+^(aq)** in water because high charge density of Cu^2+^ yields massive negative hydration enthalpy (Δ_hyd H° = −2121 kJ/mol), which more than compensates for IE_2! Cu^+^ disproportionates: 2 Cu^+^(aq) → Cu^2+^(aq) + Cu(s)."
+                    '• **Cu^+^ vs Cu^2+^ in Water:** Although IE~2~ of Cu is very high (+1958 kJ/mol), **Cu^2+^(aq) is far more stable than Cu^+^(aq)** in water because high charge density of Cu^2+^ yields massive negative hydration enthalpy (Δ~hyd~ H° = −2121 kJ/mol), which more than compensates for IE~2~! Cu^+^ disproportionates: 2 Cu^+^(aq) → Cu^2+^(aq) + Cu(s).'
                 ]
             }
         ]
@@ -237,12 +237,12 @@ SHEETS_PART1 = [
                 "tag": "Thermodynamics",
                 "accent": "teal",
                 "bullets": [
-                    "• The standard electrode potential $E^\\circ(M^{2+}/M)$ measures the free energy change for: $M^{2+}(aq) + 2e^- \\rightarrow M(s)$.",
+                    '• The standard electrode potential E°(M^2+^/M) measures the free energy change for: M^2+^(aq) + 2e^-^ → M(s).',
                     "• Linked to three fundamental thermodynamic enthalpies:",
-                    "  1. **Sublimation Enthalpy (Δ_sub H°):** $M(s) \\rightarrow M(g)$ [Endothermic, > 0].",
-                    "  2. **Ionization Enthalpies (IE_1 + IE_2):** $M(g) \\rightarrow M^{2+}(g) + 2e^-$ [Endothermic, > 0].",
-                    "  3. **Hydration Enthalpy (Δ_hyd H°):** $M^{2+}(g) \\rightarrow M^{2+}(aq)$ [Exothermic, < 0].",
-                    "• Net $\\Delta H^\\circ = \\Delta_{sub}H^\\circ + (IE_1 + IE_2) + \\Delta_{hyd}H^\\circ$. More negative $\\Delta H^\\circ$ makes the metal more reducing (more negative $E^\\circ$)."
+                    '  1. **Sublimation Enthalpy (Δ~sub~ H°):** M(s) → M(g) [Endothermic, > 0].',
+                    '  2. **Ionization Enthalpies (IE~1~ + IE~2~):** M(g) → M^2+^(g) + 2e^-^ [Endothermic, > 0].',
+                    '  3. **Hydration Enthalpy (Δ~hyd~ H°):** M^2+^(g) → M^2+^(aq) [Exothermic, < 0].',
+                    '• Net Δ H° = Δ~sub~H° + (IE~1~ + IE~2~) + Δ~hyd~H°. More negative Δ H° makes the metal more reducing (more negative E°).'
                 ]
             },
             {
@@ -250,11 +250,11 @@ SHEETS_PART1 = [
                 "tag": "NCERT Key Data",
                 "accent": "navy",
                 "bullets": [
-                    "• **General Trend:** Values become less negative across the series, reflecting general increase in (IE_1 + IE_2).",
-                    "• **The Copper Anomaly ($E^\\circ = +0.34\\text{ V}$):** Copper is the ONLY 3d metal with a **positive reduction potential**! Reason: Extremely high sum of atomization and ionization enthalpies is NOT compensated by its hydration enthalpy. Consequently, Cu cannot displace H~2~ from non-oxidizing acids (HCl, dil H~2~SO~4~); only oxidizing acids (HNO~3~, conc H~2~SO~4~) react by reducing nitrogen/sulfur.",
-                    "• **Manganese Peak ($E^\\circ = -1.18\\text{ V}$):** More negative than expected from trend. Reason: Mn^2+^ attains extra exchange stability of **half-filled 3d^5^** shell, lowering IE_2 and stabilizing the aqueous cation.",
-                    "• **Zinc Peak ($E^\\circ = -0.76\\text{ V}$):** More negative due to completely filled **3d^10^** in Zn^2+^.",
-                    "• **Nickel Peak ($E^\\circ = -0.25\\text{ V}$):** More negative than predicted because Ni^2+^ has an exceptionally high negative hydration enthalpy (small ionic radius, high charge density)."
+                    '• **General Trend:** Values become less negative across the series, reflecting general increase in (IE~1~ + IE~2~).',
+                    '• **The Copper Anomaly (E° = +0.34 V):** Copper is the ONLY 3d metal with a **positive reduction potential**! Reason: Extremely high sum of atomization and ionization enthalpies is NOT compensated by its hydration enthalpy. Consequently, Cu cannot displace H~2~ from non-oxidizing acids (HCl, dil H~2~SO~4~); only oxidizing acids (HNO~3~, conc H~2~SO~4~) react by reducing nitrogen/sulfur.',
+                    '• **Manganese Peak (E° = -1.18 V):** More negative than expected from trend. Reason: Mn^2+^ attains extra exchange stability of **half-filled 3d^5^** shell, lowering IE~2~ and stabilizing the aqueous cation.',
+                    '• **Zinc Peak (E° = -0.76 V):** More negative due to completely filled **3d^10^** in Zn^2+^.',
+                    '• **Nickel Peak (E° = -0.25 V):** More negative than predicted because Ni^2+^ has an exceptionally high negative hydration enthalpy (small ionic radius, high charge density).'
                 ]
             },
             {
@@ -262,10 +262,10 @@ SHEETS_PART1 = [
                 "tag": "High-Yield JEE Advanced",
                 "accent": "gold",
                 "bullets": [
-                    "• **Manganese ($E^\\circ(Mn^{3+}/Mn^{2+}) = +1.57\\text{ V}$):** Extremely positive! Mn^3+^ (3d^4^) desperately seeks an electron to become stable 3d^5^ (Mn^2+^). Hence, Mn^3+^ is a powerful oxidizing agent.",
-                    "• **Chromium ($E^\\circ(Cr^{3+}/Cr^{2+}) = -0.41\\text{ V}$):** Negative value! Cr^2+^ (3d^4^) is a **strong reducing agent** because oxidation yields Cr^3+^ with half-filled stable **t~2g~^3^** configuration in octahedral crystal field (CFSE stabilization!).",
-                    "• **Iron ($E^\\circ(Fe^{3+}/Fe^{2+}) = +0.77\\text{ V}$):** Moderate positive value. Fe^3+^ has stable 3d^5^, making Fe^2+^ easily oxidizable by atmospheric oxygen.",
-                    "• **Cobalt ($E^\\circ(Co^{3+}/Co^{2+}) = +1.97\\text{ V}$):** Co^3+^(aq) oxidizes water to O~2~, but is stabilized in complexes with strong field ligands like NH~3~ ([Co(NH~3~)~6~]^3+^, d^6^ low-spin diamagnetic)."
+                    '• **Manganese (E°(Mn^3+^/Mn^2+^) = +1.57 V):** Extremely positive! Mn^3+^ (3d^4^) desperately seeks an electron to become stable 3d^5^ (Mn^2+^). Hence, Mn^3+^ is a powerful oxidizing agent.',
+                    '• **Chromium (E°(Cr^3+^/Cr^2+^) = -0.41 V):** Negative value! Cr^2+^ (3d^4^) is a **strong reducing agent** because oxidation yields Cr^3+^ with half-filled stable **t~2g~^3^** configuration in octahedral crystal field (CFSE stabilization!).',
+                    '• **Iron (E°(Fe^3+^/Fe^2+^) = +0.77 V):** Moderate positive value. Fe^3+^ has stable 3d^5^, making Fe^2+^ easily oxidizable by atmospheric oxygen.',
+                    '• **Cobalt (E°(Co^3+^/Co^2+^) = +1.97 V):** Co^3+^(aq) oxidizes water to O~2~, but is stabilized in complexes with strong field ligands like NH~3~ ([Co(NH~3~)~6~]^3+^, d^6^ low-spin diamagnetic).'
                 ]
             }
         ]
@@ -286,8 +286,8 @@ SHEETS_PART1 = [
                     "  - Ti forms **TiF~4~** (+4), V forms **VF~5~** (+5), Cr forms **CrF~6~** (+6, unstable/disputed; CrF~5~ is standard).",
                     "  - Manganese cannot form MnF~7~ (highest fluoride is **MnF~4~**); Mn tops out at +7 only with oxygen (MnO~3~F or Mn~2~O~7~).",
                     "• **Halide Instability with Fe and Cu:**",
-                    "  - **FeI~3~ does not exist!** Reason: Fe^3+^ is a strong enough oxidant to oxidize iodide to iodine: $2 Fe^{3+} + 2 I^- \\rightarrow 2 Fe^{2+} + I_2$.",
-                    "  - **CuI~2~ does not exist!** Cu^2+^ oxidizes I^−^: $2 Cu^{2+} + 4 I^- \\rightarrow 2 CuI(s) \\downarrow (white) + I_2$. Only CuI (cuprous iodide) is stable.",
+                    '  - **FeI~3~ does not exist!** Reason: Fe^3+^ is a strong enough oxidant to oxidize iodide to iodine: 2 Fe^3+^ + 2 I^-^ → 2 Fe^2+^ + I~2~.',
+                    '  - **CuI~2~ does not exist!** Cu^2+^ oxidizes I^−^: 2 Cu^2+^ + 4 I^-^ → 2 CuI(s) ↓ (white) + I~2~. Only CuI (cuprous iodide) is stable.',
                     "  - **CuF~2~ is stable** (ionic, high lattice energy), whereas CuF is unstable and disproportionates."
                 ]
             },
@@ -329,17 +329,17 @@ SHEETS_PART1 = [
                 "tag": "Quantum Basis",
                 "accent": "teal",
                 "bullets": [
-                    "• **Two Magnetic Contributions:** Magnetic moment arises from (1) electron spin angular momentum ($S$), and (2) orbital angular momentum ($L$).",
-                    "• **Quenching of Orbital Contribution in 3d:** In 3d transition metals, outer 3d orbitals are directly exposed to the electrostatic field of surrounding ligands/ions (Crystal Field). This electric field quenches (cancels) the orbital angular momentum ($L \\approx 0$).",
+                    '• **Two Magnetic Contributions:** Magnetic moment arises from (1) electron spin angular momentum (S), and (2) orbital angular momentum (L).',
+                    '• **Quenching of Orbital Contribution in 3d:** In 3d transition metals, outer 3d orbitals are directly exposed to the electrostatic field of surrounding ligands/ions (Crystal Field). This electric field quenches (cancels) the orbital angular momentum (L ≈ 0).',
                     "• **Spin-Only Formula (Bohr Magnetons, BM):**",
-                    "  $$\\mu_s = \\sqrt{n(n+2)} \\text{ BM} = 2\\sqrt{S(S+1)} \\text{ BM}$$",
-                    "  where $n$ is the number of unpaired d electrons, $S = n/2$ is the total spin, and $1\\text{ BM} = \\frac{eh}{4\\pi m_e} = 9.274 \\times 10^{-24} \\text{ J/T}$.",
+                    '  μ~s~ = √(n(n+2)) BM = 2√(S(S+1)) BM',
+                    '  where n is the number of unpaired d electrons, S = n/2 is the total spin, and 1 BM = eh / (4π m~e~) = 9.274 × 10^−24^ J/T.',
                     "• **Direct Value Quick-Lookup Table:**",
-                    "  - $n = 1$: $\\sqrt{3} = 1.73\\text{ BM}$ (Ti^3+^, Cu^2+^, V^4+^)",
-                    "  - $n = 2$: $\\sqrt{8} = 2.83\\text{ BM}$ (Ti^2+^, V^3+^, Ni^2+^)",
-                    "  - $n = 3$: $\\sqrt{15} = 3.87\\text{ BM}$ (V^2+^, Cr^3+^, Co^2+^)",
-                    "  - $n = 4$: $\\sqrt{24} = 4.90\\text{ BM}$ (Cr^2+^, Fe^2+^, Mn^3+^)",
-                    "  - $n = 5$: $\\sqrt{35} = 5.92\\text{ BM}$ (Mn^2+^, Fe^3+^ — maximum in 3d series!)."
+                    '  - n = 1: √3 = 1.73 BM (Ti^3+^, Cu^2+^, V^4+^)',
+                    '  - n = 2: √8 = 2.83 BM (Ti^2+^, V^3+^, Ni^2+^)',
+                    '  - n = 3: √15 = 3.87 BM (V^2+^, Cr^3+^, Co^2+^)',
+                    '  - n = 4: √24 = 4.90 BM (Cr^2+^, Fe^2+^, Mn^3+^)',
+                    '  - n = 5: √35 = 5.92 BM (Mn^2+^, Fe^3+^ — maximum in 3d series!).'
                 ]
             },
             {
@@ -347,8 +347,8 @@ SHEETS_PART1 = [
                 "tag": "Solid State Magnetism",
                 "accent": "navy",
                 "bullets": [
-                    "• **Diamagnetism:** All electrons paired ($n = 0$). Weakly repelled by magnetic field. E.g. Sc^3+^ (d^0^), Ti^4+^ (d^0^), Cu^+^ (d^10^), Zn^2+^ (d^10^).",
-                    "• **Paramagnetism:** Unpaired electrons present ($n \\ge 1$). Attracted into magnetic field; inversely proportional to temperature (Curie's Law: $\\chi = C/T$).",
+                    '• **Diamagnetism:** All electrons paired (n = 0). Weakly repelled by magnetic field. E.g. Sc^3+^ (d^0^), Ti^4+^ (d^0^), Cu^+^ (d^10^), Zn^2+^ (d^10^).',
+                    "• **Paramagnetism:** Unpaired electrons present (n ≥ 1). Attracted into magnetic field; inversely proportional to temperature (Curie's Law: χ = C/T).",
                     "• **Ferromagnetism:** Extreme paramagnetism where permanent magnetic domains align spontaneously in the direction of the field (Fe, Co, Ni, CrO~2~). CrO~2~ is used in magnetic audio/video recording tapes."
                 ]
             },
@@ -357,8 +357,8 @@ SHEETS_PART1 = [
                 "tag": "Advanced Concept",
                 "accent": "gold",
                 "bullets": [
-                    "• **Why Spin-Only Formula FAILS in 4d and 5d:** In heavier transition metals, spin-orbit coupling is extraordinarily strong; orbital angular momentum is NOT quenched. Total angular momentum $J$ must be used.",
-                    "• **Lanthanoids Magnetism:** As 4f electrons are deeply buried, crystal field cannot quench orbital motion: $\\mu = g_J \\sqrt{J(J+1)}$ is used. However, **Gd^3+^ (4f^7^, L = 0)** obeys the spin-only formula perfectly ($n = 7, \\mu = 7.94\\text{ BM}$)!"
+                    '• **Why Spin-Only Formula FAILS in 4d and 5d:** In heavier transition metals, spin-orbit coupling is extraordinarily strong; orbital angular momentum is NOT quenched. Total angular momentum J must be used.',
+                    '• **Lanthanoids Magnetism:** As 4f electrons are deeply buried, crystal field cannot quench orbital motion: μ = g~J~ √(J(J+1)) is used. However, **Gd^3+^ (4f^7^, L = 0)** obeys the spin-only formula perfectly (n = 7, μ = 7.94 BM)!'
                 ]
             }
         ]
@@ -374,8 +374,8 @@ SHEETS_PART1 = [
                 "tag": "Crystal Field Splitting",
                 "accent": "teal",
                 "bullets": [
-                    "• **Degeneracy Breakdown:** In an isolated gaseous transition metal atom, all five d-orbitals are degenerate (equal in energy). When ligands/water molecules approach in an octahedral field, the orbitals split into lower energy **t~2g~** ($d_{xy}, d_{yz}, d_{zx}$) and higher energy **e~g~** ($d_{x^2-y^2}, d_{z^2}$) sets.",
-                    "• **Photon Absorption:** When visible light strikes the complex, an electron absorbs energy equal to $\\Delta_o$ ($h\\nu$) and jumps from t~2g~ to e~g~. The transmitted light possesses the **complementary colour**.",
+                    '• **Degeneracy Breakdown:** In an isolated gaseous transition metal atom, all five d-orbitals are degenerate (equal in energy). When ligands/water molecules approach in an octahedral field, the orbitals split into lower energy **t~2g~** (d~xy~, d~yz~, d~zx~) and higher energy **e~g~** (d~x²−y²~, d~z²~) sets.',
+                    '• **Photon Absorption:** When visible light strikes the complex, an electron absorbs energy equal to Δ~o~ (hν) and jumps from t~2g~ to e~g~. The transmitted light possesses the **complementary colour**.',
                     "• **Why d^0^ and d^10^ are Colourless:**",
                     "  - **d^0^ Ions:** Sc^3+^, Ti^4+^, V^5+^ have NO electrons to promote → colourless salts.",
                     "  - **d^10^ Ions:** Cu^+^, Zn^2+^, Cd^2+^, Hg^2+^ have no vacant d orbital to receive promoted electrons → colourless salts."
@@ -388,8 +388,8 @@ SHEETS_PART1 = [
                 "bullets": [
                     "• **The Grand JEE Paradox:** Why are [MnO~4~]^−^ (intense purple), [Cr~2~O~7~]^2−^ (bright orange), and [CrO~4~]^2−^ (vivid yellow) intensely coloured even though Mn(+7) and Cr(+6) have **d^0^ configurations**?",
                     "• **Mechanism: Ligand-to-Metal Charge Transfer (LMCT):**",
-                    "  - Since metal is in a very high oxidation state with strong positive pull and vacant d-orbitals, an electron temporarily migrates from the ligand (oxide $O^{2-} 2p$ orbital) to the metal's empty d-orbitals upon absorption of visible light.",
-                    "  - **Laporte Rule:** LMCT transitions are fully *Laporte-allowed* (p to d transition involves change of parity $g \\rightarrow u$), yielding molar extinction coefficients $\\sim 10^4\\text{ L mol}^{-1}\\text{ cm}^{-1}$ (1000x more intense than weak Laporte-forbidden d-d transitions!).",
+                    "  - Since metal is in a very high oxidation state with strong positive pull and vacant d-orbitals, an electron temporarily migrates from the ligand (oxide O^2−^ 2p orbital) to the metal's empty d-orbitals upon absorption of visible light.",
+                    '  - **Laporte Rule:** LMCT transitions are fully *Laporte-allowed* (p to d transition involves change of parity g → u), yielding molar extinction coefficients ≈ 10^4^ L mol^−1^ cm^−1^ (1000x more intense than weak Laporte-forbidden d-d transitions!).',
                     "• **Other Famous CT Systems:**",
                     "  - **Fe(SCN)~3~ or [Fe(H~2~O)~5~(SCN)]^2+^:** Blood red colour due to LMCT from SCN^−^ to Fe^3+^.",
                     "  - **HgI~2~ (Scarlet red), AgI (Yellow), Ag~3~PO~4~ (Yellow):** LMCT from iodide/phosphate to metal."

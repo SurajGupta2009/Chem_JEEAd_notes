@@ -1,14 +1,4 @@
-"""Redox Reactions — Part 1: Sheets RD-01 to RD-07.
-
-Covers:
-- RD-01: The Three Tiers of Redox: Classical, Electronic & Oxidation Number
-- RD-02: Rules for Assigning Oxidation Numbers & Periodic Trends
-- RD-03: The Peroxide Traps: CrO5, Caro's Acid & Marshall's Acid
-- RD-04: Mixed Oxides & Fractional Oxidation States: Fe3O4, Pb3O4, C3O2, Br3O8, S4O6^2-
-- RD-05: Chemical Significance: Oxidation Number vs Formal Charge vs Real Charge
-- RD-06: Classification of Redox Reactions: Combination, Decomposition, Displacement
-- RD-07: Disproportionation, Comproportionation & Non-Redox Traps
-"""
+"Redox Reactions — Part 1: Sheets RD-01 to RD-07.\n\nCovers:\n- RD-01: The Three Tiers of Redox: Classical, Electronic & Oxidation Number\n- RD-02: Rules for Assigning Oxidation Numbers & Periodic Trends\n- RD-03: The Peroxide Traps: CrO5, Caro's Acid & Marshall's Acid\n- RD-04: Mixed Oxides & Fractional Oxidation States: Fe3O4, Pb3O4, C3O2, Br3O8, S4O6^2-^\n- RD-05: Chemical Significance: Oxidation Number vs Formal Charge vs Real Charge\n- RD-06: Classification of Redox Reactions: Combination, Decomposition, Displacement\n- RD-07: Disproportionation, Comproportionation & Non-Redox Traps\n"
 from __future__ import annotations
 
 SHEETS = [
@@ -57,7 +47,7 @@ SHEETS = [
             ("key", "• In a **neutral molecule**, the algebraic sum of oxidation numbers of all atoms is **identically 0**:\n"
                     "  For A~x~B~y~: **x · O.S.(A) + y · O.S.(B) = 0**\n"
                     "• In a **polyatomic ion**, the algebraic sum equals the **net electrical charge** of the ion:\n"
-                    "  For [SO~4~]^2−^: O.S.(S) + 4(−2) = −2  ⇒  **O.S.(S) = +6**\n"
+                    '  For [SO~4~]^2−^: O.S.(S) + 4(−2) = −2 ⇒ **O.S.(S) = +6**\n'
                     "• **Periodic Range Limit:** Maximum positive O.S. of a representative element **CANNOT exceed its valence shell group number** (e.g. S cannot exceed +6, P cannot exceed +5, Cr cannot exceed +6). If naive algebra yields > Group Number, look for a **peroxide bridge**!"),
         ],
     },
@@ -114,7 +104,7 @@ SHEETS = [
             ("h2", "1. Conceptual Comparison of the Three Charges"),
             ("table", ["Feature", "Oxidation Number (O.N.)", "Formal Charge (F.C.)", "Real Partial Charge (δ)"], [
                 ["Underlying Assumption", "**100% Ionic Limit:** All bonding electrons are assigned entirely to the more electronegative atom.", "**100% Covalent Limit:** All bonding electrons are shared equally (50:50) regardless of EN difference.", "**Actual Physical Charge:** Electron density calculated from dipole moments or quantum wavefunction."],
-                ["Calculation Formula", "O.N. = V − N_lone − N_hetero_assigned", "F.C. = V − L − ½ S", "δ = q / e (fractional continuum between −1 and +1)"],
+                ["Calculation Formula", "O.N. = V − N~lone~ − N~assigned~", "F.C. = V − L − ½ S", "δ = q / e (fractional continuum between −1 and +1)"],
                 ["Sensitivity to Electronegativity", "**Extremely sensitive** (step-function: winner takes all)", "**Completely blind** to electronegativity differences", "**Gradual function** of electronegativity difference"],
                 ["Example: HCl", "H = **+1**, Cl = **−1**", "H = **0**, Cl = **0**", "H = **+0.18**, Cl = **−0.18**"],
                 ["Example: CO", "C = **+2**, O = **−2**", "C = **−1**, O = **+1** (due to dative bond!)", "C = **−0.11**, O = **+0.11** (nearly non-polar, μ = 0.11 D)"],

@@ -56,7 +56,7 @@ SHEETS = [
                 ["Step 3: Balance O atoms", "Add **H~2~O** to the oxygen-deficient side.", "Add **H~2~O** to the oxygen-deficient side."],
                 ["Step 4: Balance H atoms", "Add **H^+^** to the hydrogen-deficient side.", "Add **H~2~O** to H-deficient side and equal **OH^−^** to opposite side (or balance with H^+^ first, then add OH^−^ to neutralize H^+^)."],
                 ["Step 5: Balance charge", "Add **electrons (e^−^)** to the more positive side.", "Add **electrons (e^−^)** to the more positive side."],
-                ["Step 6: Equalize e^- & Add", "Multiply half-reactions by integers so e^−^ cancel, then sum and cancel duplicate H~2~O/H^+^.", "Multiply by integers so e^−^ cancel, then sum and cancel duplicate species."],
+                ['Step 6: Equalize e^-^ & Add', "Multiply half-reactions by integers so e^−^ cancel, then sum and cancel duplicate H~2~O/H^+^.", "Multiply by integers so e^−^ cancel, then sum and cancel duplicate species."],
             ], [16, 42, 42], "Table 2.1 — Stepwise rules for ion-electron balancing in acidic vs basic media."),
             ("h2", "2. Worked Exemplar: Permanganate + Iodide in Basic Medium (NCERT Problem 7.9)"),
             ("key", "Reaction: **MnO~4~^−^ + I^−^ → MnO~2~ + IO~3~^−^ (Basic Medium)**\n"
@@ -64,7 +64,7 @@ SHEETS = [
                     "  - Add 3 H~2~O to left: I^−^ + 3 H~2~O → IO~3~^−^\n"
                     "  - Add 6 H^+^ to right: I^−^ + 3 H~2~O → IO~3~^−^ + 6 H^+^\n"
                     "  - Add 6 e^−^ to right: I^−^ + 3 H~2~O → IO~3~^−^ + 6 H^+^ + 6 e^−^\n"
-                    "• **Reduction Half-Reaction:** MnO~4~^−^ → MnO~2^\n"
+                    "• **Reduction Half-Reaction:** MnO~4~^−^ → MnO~2~\n"
                     "  - Add 2 H~2~O to right: MnO~4~^−^ → MnO~2~ + 2 H~2~O\n"
                     "  - Add 4 H^+^ to left: MnO~4~^−^ + 4 H^+^ → MnO~2~ + 2 H~2~O\n"
                     "  - Add 3 e^−^ to left: MnO~4~^−^ + 4 H^+^ + 3 e^−^ → MnO~2~ + 2 H~2~O\n"
@@ -114,7 +114,7 @@ SHEETS = [
                 ["Potassium Dichromate (K~2~Cr~2~O~7~)", "Cr~2~O~7~^2−^(+6) + 14 H^+^ + 6 e^−^ → 2 Cr^3+^(+3)", "2 Cr atoms per molecule", "2 × (6 − 3)", "**n = 6** (E = M/6 = 49.0)"],
                 ["Oxalic Acid / Oxalate (H~2~C~2~O~4~ / C~2~O~4~^2−^)", "C~2~O~4~^2−^(+3) → 2 CO~2~(+4) + 2 e^−^", "2 C atoms per molecule", "2 × (4 − 3)", "**n = 2** (E = M/2)"],
                 ["Ferrous Sulphate (FeSO~4~)", "Fe^2+^(+2) → Fe^3+^(+3) + e^−^", "1 Fe atom", "1 × (3 − 2)", "**n = 1** (E = M/1)"],
-                ["Ferrous Oxalate (FeC~2~O~4~)", "Fe^2+^ → Fe^3+^ + e^−^  AND  C~2~O~4~^2−^ → 2 CO~2~ + 2 e^−^", "**Both cation and anion oxidised!**", "1 (from Fe) + 2 (from C~2~O~4~)", "**n = 3** (E = M/3)"],
+                ["Ferrous Oxalate (FeC~2~O~4~)", 'Fe^2+^ → Fe^3+^ + e^−^ AND C~2~O~4~^2−^ → 2 CO~2~ + 2 e^−^', "**Both cation and anion oxidised!**", "1 (from Fe) + 2 (from C~2~O~4~)", "**n = 3** (E = M/3)"],
                 ["Ferric Oxalate [Fe~2~(C~2~O~4~)~3~]", "Fe is already +3 (no ox); 3 C~2~O~4~^2−^ → 6 CO~2~ + 6 e^−^", "6 C atoms", "3 × 2 electrons lost", "**n = 6** (E = M/6)"],
                 ["Sodium Thiosulphate (Na~2~S~2~O~3~)", "2 S~2~O~3~^2−^(+2) → S~4~O~6~^2−^(+2.5) + 2 e^−^ (with I~2~)", "2 S atoms per molecule", "2 × (2.5 − 2)", "**n = 1** (E = M/1)"],
             ], [22, 34, 18, 16, 10], "Table 2.4 — Universal reference table for common redox partners in titrations."),
@@ -131,19 +131,19 @@ SHEETS = [
             ("h2", "1. Disproportionation n-Factor Formula"),
             ("key", "For an element undergoing disproportionation where one mole undergoes oxidation with change n~1~ and reduction with change n~2~:\n"
                     "• **If 1 mole of reactant splits into both paths:**\n"
-                    "  **1 / n_eq = 1 / n_1 + 1 / n_2  ⇒  n_factor = (n_1 · n_2) / (n_1 + n_2)**\n"
+                    '  **1 / n~eq~ = 1 / n~1~ + 1 / n~2~ ⇒ n-factor = (n~1~ · n~2~) / (n~1~ + n~2~)**\n'
                     "• **Example 1: Chlorine in Cold/Dilute Alkali:**\n"
-                    "  Cl~2~(0) → Cl^−^(−1) [n_1 = 1 e^-^ per Cl]  AND  Cl~2~(0) → ClO^−^(+1) [n_2 = 1 e^-^ per Cl]\n"
-                    "  n_factor of Cl~2~ = **(1 × 1) / (1 + 1) = 0.5** per Cl atom (or **1** per Cl~2~ molecule: 2 Cl atoms transfer 1 electron total).\n"
+                    '  Cl~2~(0) → Cl^−^(−1) [n~1~ = 1 e^-^ per Cl] AND Cl~2~(0) → ClO^−^(+1) [n~2~ = 1 e^-^ per Cl]\n'
+                    "  n-factor of Cl~2~ = **(1 × 1) / (1 + 1) = 0.5** per Cl atom (or **1** per Cl~2~ molecule: 2 Cl atoms transfer 1 electron total).\n"
                     "• **Example 2: Chlorine in Hot/Concentrated Alkali:**\n"
-                    "  Cl~2~(0) → 5 Cl^−^(−1) (5 e^-^ gained)  AND  Cl~2~(0) → ClO~3~^−^(+5) (5 e^-^ lost)\n"
-                    "  n_factor of Cl~2~ = **(1 × 5) / (1 + 5) = 5/6** per Cl atom (or **5/3** per Cl~2~ molecule)."),
+                    '  Cl~2~(0) → 5 Cl^−^(−1) (5 e^-^ gained) AND Cl~2~(0) → ClO~3~^−^(+5) (5 e^-^ lost)\n'
+                    "  n-factor of Cl~2~ = **(1 × 5) / (1 + 5) = 5/6** per Cl atom (or **5/3** per Cl~2~ molecule)."),
             ("h2", "2. Multi-Element Redox (Cuprous Sulphide Cu~2~S)"),
             ("p", "Consider the oxidation of **Cuprous Sulphide (Cu~2~S)** to **Cu^2+^ + SO~2~** in acidic medium:\n"
                   "• Cu goes from **+1 to +2**: 2 Cu atoms lose **2 × 1 = 2 electrons**.\n"
                   "• S goes from **−2 to +4**: 1 S atom loses **6 electrons**.\n"
                   "• **Total electrons lost per mole of Cu~2~S = 2 + 6 = 8 electrons!**\n"
-                  "• Therefore, **n-factor of Cu~2~S = 8**  ⇒  **Equivalent Weight E = M / 8**!"),
+                  '• Therefore, **n-factor of Cu~2~S = 8** ⇒ **Equivalent Weight E = M / 8**!'),
             ("h2", "3. Partial Redox Reactions"),
             ("bul", [
                 "**When a reagent acts BOTH as a redox agent and as an acid/base (salt former):**\n"

@@ -15,7 +15,7 @@ SHEETS = [
                 ["**Visibility**", "Invisible under all optical microscopes", "Scatters light under ultramicroscope (Tyndall)", "Visible to naked eye or ordinary microscope"],
                 ["**Filterability**", "Passes through filter paper and animal parchment", "Passes through ordinary filter paper, but **retained by ultrafilter/parchment**", "Retained by ordinary filter paper"],
                 ["**Settling under Gravity**", "Does not settle under any gravity", "Does not settle by gravity; settles only in **ultracentrifuge**", "Settles rapidly under gravity"],
-                ["**Colligative Properties**", "High osmotic pressure, ΔT_b, ΔT_f", "**Very small colligative effects** (large particles ⇒ low molarity)", "Practically undetectable"]
+                ["**Colligative Properties**", 'High osmotic pressure, ΔT~b~, ΔT~f~', "**Very small colligative effects** (large particles ⇒ low molarity)", "Practically undetectable"]
             ], [18, 26, 32, 24], "Table 3.1 — Comparative properties of three dispersed systems."),
             ("h2", "2. Master Classification by Physical State (NCERT Table 5.2 — 8 Colloid Types)"),
             ("table", ["Dispersed Phase", "Dispersion Medium", "Type of Colloid", "NCERT Everyday & Laboratory Examples"], [
@@ -68,7 +68,7 @@ SHEETS = [
             ("h2", "1. Two Thermodynamic Benchmarks for Micelle Formation"),
             ("bul", [
                 "**1. Critical Micelle Concentration (CMC):** The **minimum concentration** of surfactant above which micelle formation begins. Below CMC, the surfactant exists as free unassociated ions; above CMC, all additional surfactant enters micelles. For sodium stearate soap: **CMC ≈ 10^−4^ to 10^−3^ mol/L**.",
-                "**2. Kraft Temperature (T_k):** The **minimum temperature** above which the formation of micelles takes place. Below T_k, the surfactant's solubility is too low to reach the CMC; above T_k, solubility increases sharply, permitting micellization.",
+                "**2. Kraft Temperature (T~k~):** The **minimum temperature** above which the formation of micelles takes place. Below T~k~, the surfactant's solubility is too low to reach the CMC; above T~k~, solubility increases sharply, permitting micellization.",
                 "**Aggregation Number:** The average number of monomer surfactant molecules grouped into a single micelle (typically **50 to 100 molecules** per micelle)."
             ]),
             ("h2", "2. Cleansing Action of Soap (NCERT Mechanism)"),
@@ -100,7 +100,7 @@ SHEETS = [
             ("bul", [
                 "**Dialysis:** The process of removing dissolved crystalloid impurities (electrolytes) from a colloidal sol by diffusion through a semi-permeable membrane (animal bladder, parchment paper, or cellophane). Colloidal particles cannot pass through the membrane pores.",
                 "**Electrodialysis:** The dialysis process is slow. When electrodes are placed on either side of the membrane and an electric potential gradient is applied, crystalloid ions migrate out rapidly (**10 to 100 times faster**).",
-                "**Ultrafiltration:** Ordinary filter paper (pore size ~thousands of nm) is treated with a **4% solution of nitrocellulose in an alcohol-ether mixture (COLLODION)** and hardened with formaldehyde. This shrinks pore dimensions down to colloidal scale, retaining colloidal particles!"
+                '**Ultrafiltration:** Ordinary filter paper (pore size ≈thousands of nm) is treated with a **4% solution of nitrocellulose in an alcohol-ether mixture (COLLODION)** and hardened with formaldehyde. This shrinks pore dimensions down to colloidal scale, retaining colloidal particles!'
             ])
         ]
     },
@@ -128,7 +128,7 @@ SHEETS = [
             ("h2", "3. Color of Colloidal Sols"),
             ("p", "• The color of a colloidal sol depends on the wavelength of light scattered by the dispersed particles, which varies with **particle size and shape**.\n"
                   "• *Example:* Extremely fine gold sol is **red**; as particle size grows, it turns **purple**, then **blue**, and finally **golden yellow**!"),
-            ("trap", "TRAP: Colligative Properties of Colloids — Because colloidal particles are massive aggregates, the total number of particles per litre is vastly smaller than in a true solution of the same weight concentration. Hence, osmotic pressure, ΔT_b, and ΔT_f are **extremely tiny** (only osmotic pressure can be accurately measured to determine molar mass of polymers)!")
+            ("trap", 'TRAP: Colligative Properties of Colloids — Because colloidal particles are massive aggregates, the total number of particles per litre is vastly smaller than in a true solution of the same weight concentration. Hence, osmotic pressure, ΔT~b~, and ΔT~f~ are **extremely tiny** (only osmotic pressure can be accurately measured to determine molar mass of polymers)!')
         ]
     },
 
@@ -152,7 +152,7 @@ SHEETS = [
             ("table", ["Positively Charged Sols (+ve)", "Negatively Charged Sols (−ve)"], [
                 ["• **Hydrated metallic oxides:** Al~2~O~3~·xH~2~O, CrO~3~·xH~2~O, Fe~2~O~3~·xH~2~O\n• **Basic dye stuffs:** Methylene blue sol\n• **Hemoglobin** (in blood)\n• **Oxides:** TiO~2~ sol\n• [AgI]Ag^+^ (in excess AgNO~3~)", "• **Metals:** Copper sol, Silver sol, Gold sol, Platinum sol\n• **Metallic sulphides:** As~2~S~3~, Sb~2~S~3~, CdS sols\n• **Acid dye stuffs:** Eosin, Congo red sol\n• **Natural macromolecular sols:** Starch, Gum, Gelatin, Clay, Charcoal\n• [AgI]I^−^ (in excess KI)"]
             ], [50, 50], "Table 3.6 — Definitive catalog of positive and negative sols."),
-            ("key", "Zeta Potential (Electrokinetic Potential ζ): The potential difference between the fixed Stern layer of adsorbed ions and the mobile diffuse layer of counter-ions. High |ζ| > 30 mV maintains mutual repulsion; when |ζ| drops below ~25 mV, coagulation occurs!")
+            ("key", 'Zeta Potential (Electrokinetic Potential ζ): The potential difference between the fixed Stern layer of adsorbed ions and the mobile diffuse layer of counter-ions. High |ζ| > 30 mV maintains mutual repulsion; when |ζ| drops below ≈25 mV, coagulation occurs!')
         ]
     },
 
@@ -169,7 +169,7 @@ SHEETS = [
                 "**2. Valency Rule:** The **coagulating power** of an electrolyte is **directly proportional to the FOURTH POWER of the valency (z^4^)** of the coagulating ion!\n"
                 "  **Coagulating Power ∝ z^4^**\n"
                 "• **For a Negatively Charged Sol (e.g. As~2~S~3~ sol, Gold sol):** Coagulating ions are cations:\n"
-                "  **Al^3+^ > Ba^2+^ > Na^+^**   (Ratios roughly 1000 : 100 : 1!)\n"
+                '  **Al^3+^ > Ba^2+^ > Na^+^** (Ratios roughly 1000 : 100 : 1!)\n'
                 "• **For a Positively Charged Sol (e.g. Fe(OH)~3~ sol):** Coagulating ions are anions:\n"
                 "  **[Fe(CN)~6~]^4−^ > PO~4~^3−^ > SO~4~^2−^ > Cl^−^**"
             ]),

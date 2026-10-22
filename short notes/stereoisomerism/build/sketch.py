@@ -103,6 +103,9 @@ class Pen:
 
     def text(self, x, y, s, size=None, color=NAVY, align="c", kind="kalam-b"):
         size = self.fs if size is None else size
+        s = (s.replace("**", "")
+              .replace("-->", "\u2192").replace("->", "\u2192")
+              .replace("<===>", "\u21cc").replace("===>", "\u2192").replace("<===", "\u2190"))
         parts = []
         for txt, mode in self._runs(s):
             sz = size * (1.0 if mode == 0 else 0.64)

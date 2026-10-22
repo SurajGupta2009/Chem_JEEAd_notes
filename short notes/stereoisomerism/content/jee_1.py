@@ -148,9 +148,9 @@ SHEETS = [
                   "question “how many isomers?” is identical for all four."),
             ("table", ["Reagent", "Product", "C=N formed", "Stereoisomers for RCHO"], [
                 ["NH~2~OH", "oxime  RCH=N–OH", "yes", "2 (syn/anti, or E/Z)"],
-                ["NH~2~NH~2~", "hydrazone  RCH=N–NH~2~", "yes", "2"],
+                ["NH~2~NH~2~", 'hydrazone RCH=N–NH~2~', "yes", "2"],
                 ["NH~2~NHR", "substituted hydrazone", "yes", "2"],
-                ["NH~2~CONH~2~", "semicarbazone  RCH=N–NHCONH~2~", "yes", "2"],
+                ["NH~2~CONH~2~", 'semicarbazone RCH=N–NHCONH~2~', "yes", "2"],
                 ["NH~2~C(=NH)NH~2~", "guanidine condensate", "yes", "2"],
             ], [22, 36, 18, 24], "Table 2.3 — all five families create the same kind of centre, so the counting rule is shared."),
             ("p", "For a ketone R~1~COR~2~ the count depends on whether the two groups differ: R~1~ ≠ R~2~ gives two "
@@ -406,7 +406,7 @@ SHEETS = [
             ("h2", "2.25  The basic count"),
             ("p", "If a molecule has n independent geometrical centres and its two ends are constitutionally different, "
                   "every centre doubles the number of arrangements and no two arrangements are related by symmetry:"),
-            ("eq", "N~geo~ = 2^n^    (dissimilar ends; n = number of qualifying centres)"),
+            ("eq", 'N~geo~ = 2^n^ (dissimilar ends; n = number of qualifying centres)'),
             ("p", "The formula fails in three situations, and each has its own treatment: symmetric (similar-ended) chains, "
                   "centres that cannot give two isomers (C=C in a small ring), and centres that are coupled (cumulenes, "
                   "where the whole chain counts as one)."),
@@ -414,9 +414,9 @@ SHEETS = [
             ("p", "For a chain whose two ends are identical, the sequence of cis/trans descriptors read from left to right is "
                   "the same molecule as the sequence read from right to left. Patterns therefore merge. Counting the "
                   "distinct sequences is a symmetry problem, and the result is:"),
-            ("eq", ["n odd:   N = 2^(n−1)^ + 2^((n−1)/2)^",
-                    "n even:  N = 2^(n−1)^ + 2^(n/2 − 1)^",
-                    "both:    N = (2^n^ + 2^ceil(n/2)^) / 2"]),
+            ("eq", ['n odd: N = 2^(n−1)^ + 2^((n−1)/2)^',
+                    'n even: N = 2^(n−1)^ + 2^(n/2 − 1)^',
+                    'both: N = (2^n^ + 2^ceil(n/2)^) / 2']),
             ("table", ["n", "Raw 2^n^", "Distinct (similar ends)", "Formula check"], [
                 ["1", "2", "2", "2^0^ + 2^0^ = 2 (but-2-ene: cis and trans)"],
                 ["2", "4", "3", "2^1^ + 2^0^ = 3"],

@@ -50,11 +50,41 @@ class Pen:
         c_t = fitz.Point(self.tx(c[0]), self.ty(c[1]))
         self.p.draw_circle(c_t, r * self.sx, fill=fill, color=color, width=width)
 
+    def _runs(self, s):
+        out, buf, mode = [], "", 0
+        for ch in s:
+            if ch in "~^":
+                if buf:
+                    out.append((buf, mode))
+                    buf = ""
+                mode = 0 if mode else (-1 if ch == "~" else 1)
+            else:
+                buf += ch
+        if buf:
+            out.append((buf, mode))
+        return out
+
     def text(self, x, y, txt, font="kalam-bold", size=7.5, color=NAVY, align="center"):
-        import fitz
-        ox = len(txt) * size * 0.25 if align == "center" else (len(txt) * size * 0.5 if align == "right" else 0)
-        pt = fitz.Point(self.tx(x) - ox, self.ty(y))
-        self.p.insert_text(pt, txt, fontsize=size, color=color)
+        from textkit import draw_text, glyph_runs, width
+        s = (txt.replace("**", "")
+                .replace("-->", "→").replace("->", "→")
+                .replace("<===>", "⇌").replace("===>", "→").replace("<===", "←"))
+        parts = []
+        for t, mode in self._runs(s):
+            sz = size * (1.0 if mode == 0 else 0.64)
+            dy = 0.0 if mode == 0 else (0.20 * size if mode == -1 else -0.40 * size)
+            for k, seg in glyph_runs(t, "kalam-b"):
+                parts.append((k, seg, sz, dy))
+        total = sum(width(seg, k, sz) for k, seg, sz, _ in parts)
+        cx = self.tx(x)
+        if align == "center":
+            cx -= total / 2
+        elif align == "right":
+            cx -= total
+        by = self.ty(y)
+        for k, seg, sz, dy in parts:
+            draw_text(self.p, cx, by + dy * self.sy, seg, k, sz, color)
+            cx += width(seg, k, sz)
 
 
 def fig_lanthanoid_contraction(page, x, y, w, h):
@@ -103,7 +133,7 @@ def fig_lanthanoid_contraction(page, x, y, w, h):
     g.text(412, 34, "• **Poor Shielding of 4f Electrons:**", color=NAVY, size=6.2)
     g.text(412, 44, "  Intervening 14 Ce-Lu electrons have diffuse", color=NAVY, size=5.8)
     g.text(412, 53, "  shapes → shielding order: s > p > d > f (worst!).", color=NAVY, size=5.8)
-    g.text(412, 64, "• **Z_eff Skyrockets:**", color=RED, size=6.2)
+    g.text(412, 64, "• **Z~eff~ Skyrockets:**", color=RED, size=6.2)
     g.text(412, 74, "  Net nuclear pull pulls valence 5d/6s inwards,", color=NAVY, size=5.8)
     g.text(412, 83, "  cancelling expected shell expansion from 4d to 5d!", color=NAVY, size=5.8)
     g.text(412, 94, "• **Consequences:** Zr/Hf, Nb/Ta, Mo/W have", color=TEAL, size=5.8)
@@ -126,7 +156,7 @@ def fig_electrode_potentials(page, x, y, w, h):
     g.text(177, 37, "M(g)", color=NAVY, size=7.5)
 
     g.line((177, 50), (177, 75), color=GOLD, width=1.2) # Ionization
-    g.text(210, 62, "IE_1 + IE_2 (>0)", color=GOLD, size=5.8)
+    g.text(210, 62, "IE~1~ + IE~2~ (>0)", color=GOLD, size=5.8)
 
     g.rect((145, 75, 65, 30), fill=PAPER, color=NAVY, width=1.0)
     g.text(177, 92, "M^2+^(g)", color=NAVY, size=7.5)
@@ -139,13 +169,13 @@ def fig_electrode_potentials(page, x, y, w, h):
 
     # Direct diagonal arrow for E°
     g.line((52, 50), (52, 75), color=NAVY, width=1.5)
-    g.text(32, 63, "E°_red", color=NAVY, size=6.5)
+    g.text(32, 63, "E°~red~", color=NAVY, size=6.5)
 
     # Right: Four Anomalous JEE Traps
     g.rect((255, 12, 270, 96), fill=PAPER, color=TEAL, width=1.0)
     g.text(390, 22, "E°(M^2+^/M) Anomalies Explained (NCERT §8.3.5)", color=TEAL, size=7.0)
     g.text(390, 34, "1. **Cu is POSITIVE (+0.34 V):**", color=RED, size=6.2)
-    g.text(390, 44, "   High atomisation energy + high (IE_1+IE_2) is NOT", color=NAVY, size=5.5)
+    g.text(390, 44, "   High atomisation energy + high (IE~1~+IE~2~) is NOT", color=NAVY, size=5.5)
     g.text(390, 52, "   compensated by hydration enthalpy! Cu cannot displace H~2~.", color=NAVY, size=5.5)
     g.text(390, 63, "2. **Mn is More Negative (−1.18 V):**", color=TEAL, size=6.2)
     g.text(390, 72, "   Half-filled d^5^ stability makes Mn^2+^ extremely stable!", color=NAVY, size=5.5)
@@ -169,7 +199,7 @@ def fig_chromate_dichromate(page, x, y, w, h):
         g.text(ox, oy+2.5, "O", color=RED, size=6.5)
         g.line((90, 55), (ox, oy), color=GOLD, width=1.2)
     g.text(90, 100, "Chromate [CrO~4~]^2−^", color=GOLD, size=7.2)
-    g.text(90, 110, "Yellow, T_d symmetry, all Cr-O 166 pm", color=NAVY, size=5.8)
+    g.text(90, 110, "Yellow, T~d~ symmetry, all Cr-O 166 pm", color=NAVY, size=5.8)
 
     # Equilibrium Arrow in Center
     g.line((145, 52), (185, 52), color=RED, width=1.5)

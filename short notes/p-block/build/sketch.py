@@ -104,6 +104,9 @@ class Pen:
 
     def text(self, x, y, s, size=None, color=NAVY, align="c", kind="kalam-b"):
         size = self.fs if size is None else size
+        s = (s.replace("**", "")
+              .replace("-->", "\u2192").replace("->", "\u2192")
+              .replace("<===>", "\u21cc").replace("===>", "\u2192").replace("<===", "\u2190"))
         parts = []
         for txt, mode in self._runs(s):
             sz = size * (1.0 if mode == 0 else 0.64)
@@ -598,11 +601,11 @@ def fig_interhalogens(page, x, y, w, h):
     # (a) ClF3 T-Shaped at left
     g.circle((90, 55), 11, fill=PAPER, color=TEAL); g.text(90, 58, "Cl", color=TEAL, size=8.0)
     # 2 Axial F atoms (175° angle)
-    g.circle((90, 24), 8, fill=PAPER, color=NAVY); g.text(90, 26.5, "F_ax", color=NAVY, size=6.5)
-    g.circle((90, 86), 8, fill=PAPER, color=NAVY); g.text(90, 88.5, "F_ax", color=NAVY, size=6.5)
+    g.circle((90, 24), 8, fill=PAPER, color=NAVY); g.text(90, 26.5, "F~ax~", color=NAVY, size=6.5)
+    g.circle((90, 86), 8, fill=PAPER, color=NAVY); g.text(90, 88.5, "F~ax~", color=NAVY, size=6.5)
     g.bond((90, 55), (90, 24)); g.bond((90, 55), (90, 86))
     # 1 Equatorial F atom
-    g.circle((130, 55), 8, fill=PAPER, color=NAVY); g.text(130, 57.5, "F_eq", color=NAVY, size=6.5)
+    g.circle((130, 55), 8, fill=PAPER, color=NAVY); g.text(130, 57.5, "F~eq~", color=NAVY, size=6.5)
     g.bond((90, 55), (130, 55))
     # 2 Equatorial lone pairs (repelling axial bonds inward to 87.5°)
     g.circle((65, 42), 4, fill=(1.0, 0.95, 0.8), color=GOLD); g.text(65, 44, "••", color=GOLD, size=6.0)
@@ -628,8 +631,8 @@ def fig_interhalogens(page, x, y, w, h):
     # (c) IF7 Pentagonal Bipyramidal at right
     g.circle((440, 52), 12, fill=PAPER, color=NAVY); g.text(440, 55, "I", color=NAVY, size=8.0)
     # 2 Axial F atoms (90° to plane, 180° to each other)
-    g.circle((440, 18), 8, fill=PAPER, color=TEAL); g.text(440, 20.5, "F_ax", color=TEAL, size=6.0)
-    g.circle((440, 86), 8, fill=PAPER, color=TEAL); g.text(440, 88.5, "F_ax", color=TEAL, size=6.0)
+    g.circle((440, 18), 8, fill=PAPER, color=TEAL); g.text(440, 20.5, "F~ax~", color=TEAL, size=6.0)
+    g.circle((440, 86), 8, fill=PAPER, color=TEAL); g.text(440, 88.5, "F~ax~", color=TEAL, size=6.0)
     g.bond((440, 52), (440, 18)); g.bond((440, 52), (440, 86))
     # 5 Equatorial F atoms (72° angle)
     for ang in [0, 72, 144, 216, 288]:
