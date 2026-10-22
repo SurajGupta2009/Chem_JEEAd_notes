@@ -109,6 +109,7 @@ PDFs, a gallery page and a reproducible build.
 | The p-Block Elements (Groups 13–18) | 50 sheets / 50 pages | [Gallery](short%20notes/p-block/index.html) · [README](short%20notes/p-block/README.md) · [PDF](short%20notes/p-block/pdf/p-block-complete.pdf) |
 | Chemical Bonding & Molecular Structure | 24 sheets / 24 pages | [Gallery](short%20notes/chemical-bonding/index.html) · [README](short%20notes/chemical-bonding/README.md) · [PDF](short%20notes/chemical-bonding/pdf/chemical-bonding-complete.pdf) |
 | Redox Reactions & Equivalent Concept | 19 sheets / 19 pages | [Gallery](short%20notes/redox/index.html) · [README](short%20notes/redox/README.md) · [PDF](short%20notes/redox/pdf/redox-complete.pdf) |
+| General Principles & Processes of Isolation of Elements (Metallurgy) | 18 sheets / 18 pages | [Gallery](short%20notes/metallurgy/index.html) · [README](short%20notes/metallurgy/README.md) · [PDF](short%20notes/metallurgy/pdf/metallurgy-complete.pdf) |
 
 These are separate editions, not replacements for `notes.md`: the Markdown chapters remain
 the reference text, while the image sets are the dense, teacher-style revision pass. The

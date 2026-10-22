@@ -1,0 +1,96 @@
+{
+ "part": "Redox Reactions & Equivalent Concept",
+ "sheets": [
+  {
+   "id": "MT-01",
+   "title": "Minerals, Ores, Occurrence of Metals & Planetary Distribution",
+   "pages": 1
+  },
+  {
+   "id": "MT-02",
+   "title": "Physical Beneficiation: Crushing, Gravity Separation & Magnetic Sorting",
+   "pages": 1
+  },
+  {
+   "id": "MT-03",
+   "title": "Froth Floatation: Collectors, Frothers, Stabilizers & Depressants",
+   "pages": 1
+  },
+  {
+   "id": "MT-04",
+   "title": "Chemical Leaching: Bayer's, Hall's, Serpeck's & Cyanide Processes",
+   "pages": 1
+  },
+  {
+   "id": "MT-05",
+   "title": "Conversion to Oxide: Calcination vs Roasting Mechanisms",
+   "pages": 1
+  },
+  {
+   "id": "MT-06",
+   "title": "Flux, Gangue & Slag: High-Temperature Acid-Base Chemistry",
+   "pages": 1
+  },
+  {
+   "id": "MT-07",
+   "title": "Thermodynamics of Reduction: Gibbs Free Energy & Ellingham Diagrams",
+   "pages": 1
+  },
+  {
+   "id": "MT-08",
+   "title": "The Anomalous Carbon Curves: C vs CO as Universal Reducing Agents",
+   "pages": 1
+  },
+  {
+   "id": "MT-09",
+   "title": "Smelting & Carbon Reduction: Extraction of Iron, Zinc & Tin",
+   "pages": 1
+  },
+  {
+   "id": "MT-10",
+   "title": "Self-Reduction (Auto-Reduction) of Copper, Lead & Mercury Sulphides",
+   "pages": 1
+  },
+  {
+   "id": "MT-11",
+   "title": "Thermite Reduction, Metal Displacement & Hydrometallurgy",
+   "pages": 1
+  },
+  {
+   "id": "MT-12",
+   "title": "Electrometallurgy: Fused Salt Electrolysis for Highly Electropositive Metals",
+   "pages": 1
+  },
+  {
+   "id": "MT-13",
+   "title": "Refining of Crude Metals: Liquation, Distillation & Poling",
+   "pages": 1
+  },
+  {
+   "id": "MT-14",
+   "title": "Ultra-Pure Refining: Zone Refining & Vapour Phase (Mond & Van Arkel)",
+   "pages": 1
+  },
+  {
+   "id": "MT-15",
+   "title": "Electrolytic Refining: Anode Mud, Overvoltage & Recovery of Precious Metals",
+   "pages": 1
+  },
+  {
+   "id": "MT-16",
+   "title": "Extraction of Iron: The Blast Furnace Architecture, Zones & Reactions",
+   "pages": 1
+  },
+  {
+   "id": "MT-17",
+   "title": "Extraction of Copper: Smelting, Copper Matte & Bessemerization",
+   "pages": 1
+  },
+  {
+   "id": "MT-18",
+   "title": "Extraction of Aluminium, Zinc, Gold & Master Reagents Matrix",
+   "pages": 1
+  }
+ ],
+ "pages": 18
+}
